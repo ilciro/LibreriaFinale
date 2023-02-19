@@ -94,7 +94,6 @@ laptop\controller\ControllerAggiungiUtente.class
 web\servlet\InserisciOggettoServletGiornale.class
 web\bean\RicercaBean.class
 laptop\model\raccolta\CategorieRivista.class
-web\servlet\AcquistaServlet.class
 laptop\controller\ControllerRicercaPerTipo.class
 web\servlet\IndexServlet1.class
 web\servlet\InserisciOggettoServlet.class

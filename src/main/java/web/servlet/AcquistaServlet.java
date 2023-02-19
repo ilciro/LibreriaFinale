@@ -25,9 +25,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/AcquistaServlet")
 public class AcquistaServlet extends HttpServlet {
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	private static AcquistaBean aB=new AcquistaBean();
 	private static LibroDao lD=new LibroDao();
@@ -44,7 +42,6 @@ public class AcquistaServlet extends HttpServlet {
 	public AcquistaServlet()
 	{
 		super();
-		System.out.println("rwdvcewsf"+SystemBean.getIstance().getType());
 		if(SystemBean.getIstance().getType().equals("libro"))
 		{
 			lB.setId(SystemBean.getIstance().getId());

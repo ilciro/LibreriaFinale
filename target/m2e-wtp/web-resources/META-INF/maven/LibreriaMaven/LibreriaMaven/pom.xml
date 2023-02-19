@@ -10,8 +10,7 @@
   <packaging>war</packaging>
 
   <name>LibreriaMaven Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>https://github.com/ilciro/LibreriaFinale.git</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -40,8 +39,8 @@
     <sonar.coverage.jacoco.xmlReportPaths>../app-it/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     <sonar.language>java</sonar.language>
     
-    <sonar.exclusions>**/src/main/java/laptop/view/**,**/src/test/java/**
-    <!--**/src/main/java/web/bean/**,**/src/main/java/web/servlet/**--></sonar.exclusions>
+    <sonar.exclusions>**/src/main/java/laptop.view/**,**/src/test.java/**
+    **/src/main/java/web/bean/**,**/src/main/java/web/servlet/**</sonar.exclusions>
     
   </properties>
 
@@ -210,8 +209,8 @@
     <version>${jacoco.version}</version>
     <configuration>
       <excludes>
-        <exclude>**/laptop/view/**</exclude>
-        <exclude>**/laptop/test/**</exclude>
+        <exclude>**/laptop.view/**</exclude>
+        <exclude>**/laptop.test/**</exclude>
       </excludes>
     </configuration>
     <executions>
@@ -238,6 +237,11 @@
     <artifactId>maven-war-plugin</artifactId>
     <version>3.3.2</version>
 	</plugin>
+	<plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-site-plugin</artifactId>
+      <version>3.3</version>
+    </plugin>
       </plugins>
     </pluginManagement>
   </build>
