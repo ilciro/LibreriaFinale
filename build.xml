@@ -6,6 +6,7 @@
               as the first entry and export the buildfile again. --><project basedir="." default="build" name="LibreriaMaven">
     <property environment="env"/>
     <property name="ECLIPSE_HOME" value="../../eclipse/jee-2022-12/eclipse/"/>
+    <property name="junit.output.dir" value="junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="11"/>
     <property name="source" value="11"/>
@@ -45,6 +46,7 @@
         <pathelement location="../../.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.6.0/selenium-firefox-driver-4.6.0.jar"/>
         <pathelement location="../../.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.6.0/selenium-ie-driver-4.6.0.jar"/>
         <pathelement location="../../.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.6.0/selenium-remote-driver-4.6.0.jar"/>
+        <pathelement location="../../.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar"/>
         <pathelement location="../../.m2/repository/io/netty/netty-buffer/4.1.84.Final/netty-buffer-4.1.84.Final.jar"/>
         <pathelement location="../../.m2/repository/io/netty/netty-codec-http/4.1.84.Final/netty-codec-http-4.1.84.Final.jar"/>
         <pathelement location="../../.m2/repository/io/netty/netty-codec/4.1.84.Final/netty-codec-4.1.84.Final.jar"/>
@@ -81,6 +83,7 @@
         <pathelement location="../../.m2/repository/io/netty/netty-transport-native-kqueue/4.1.60.Final/netty-transport-native-kqueue-4.1.60.Final-osx-x86_64.jar"/>
         <pathelement location="../../.m2/repository/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar"/>
         <pathelement location="../../.m2/repository/com/typesafe/netty/netty-reactive-streams/2.0.4/netty-reactive-streams-2.0.4.jar"/>
+        <pathelement location="../../.m2/repository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar"/>
         <pathelement location="../../.m2/repository/org/seleniumhq/selenium/selenium-http/4.6.0/selenium-http-4.6.0.jar"/>
         <pathelement location="../../.m2/repository/dev/failsafe/failsafe/3.3.0/failsafe-3.3.0.jar"/>
         <pathelement location="../../.m2/repository/org/seleniumhq/selenium/selenium-manager/4.6.0/selenium-manager-4.6.0.jar"/>
@@ -111,35 +114,62 @@
         <pathelement location="../../.m2/repository/org/apache/tomcat/tomcat-util/10.1.4/tomcat-util-10.1.4.jar"/>
         <pathelement location="../../.m2/repository/org/apache/tomcat/tomcat-util-scan/10.1.4/tomcat-util-scan-10.1.4.jar"/>
         <pathelement location="../../.m2/repository/org/apache/tomcat/tomcat-jaspic-api/10.1.4/tomcat-jaspic-api-10.1.4.jar"/>
-        <pathelement location="../../.m2/repository/org/jacoco/jacoco-maven-plugin/0.8.8/jacoco-maven-plugin-0.8.8.jar"/>
-        <pathelement location="../../.m2/repository/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.jar"/>
-        <pathelement location="../../.m2/repository/org/apache/maven/shared/file-management/1.2.1/file-management-1.2.1.jar"/>
-        <pathelement location="../../.m2/repository/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.jar"/>
-        <pathelement location="../../.m2/repository/org/apache/maven/shared/maven-shared-io/1.1/maven-shared-io-1.1.jar"/>
-        <pathelement location="../../.m2/repository/org/apache/maven/maven-artifact/2.0.2/maven-artifact-2.0.2.jar"/>
-        <pathelement location="../../.m2/repository/org/apache/maven/maven-artifact-manager/2.0.2/maven-artifact-manager-2.0.2.jar"/>
-        <pathelement location="../../.m2/repository/org/apache/maven/maven-repository-metadata/2.0.2/maven-repository-metadata-2.0.2.jar"/>
-        <pathelement location="../../.m2/repository/org/apache/maven/wagon/wagon-provider-api/1.0-alpha-6/wagon-provider-api-1.0-alpha-6.jar"/>
-        <pathelement location="../../.m2/repository/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar"/>
-        <pathelement location="../../.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar"/>
-        <pathelement location="../../.m2/repository/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar"/>
-        <pathelement location="../../.m2/repository/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar"/>
-        <pathelement location="../../.m2/repository/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar"/>
-        <pathelement location="../../.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar"/>
-        <pathelement location="../../.m2/repository/org/jacoco/org.jacoco.core/0.8.8/org.jacoco.core-0.8.8.jar"/>
-        <pathelement location="../../.m2/repository/org/ow2/asm/asm/9.2/asm-9.2.jar"/>
-        <pathelement location="../../.m2/repository/org/ow2/asm/asm-commons/9.2/asm-commons-9.2.jar"/>
-        <pathelement location="../../.m2/repository/org/ow2/asm/asm-analysis/9.2/asm-analysis-9.2.jar"/>
-        <pathelement location="../../.m2/repository/org/ow2/asm/asm-tree/9.2/asm-tree-9.2.jar"/>
-        <pathelement location="../../.m2/repository/org/jacoco/org.jacoco.report/0.8.8/org.jacoco.report-0.8.8.jar"/>
-        <pathelement location="../../.m2/repository/org/testng/testng/7.7.1/testng-7.7.1.jar"/>
-        <pathelement location="../../.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar"/>
-        <pathelement location="../../.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar"/>
-        <pathelement location="../../.m2/repository/org/webjars/jquery/3.6.1/jquery-3.6.1.jar"/>
+    </path>
+    <path id="Server Runtime [Apache Tomcat v10.0].libraryclasspath">
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/annotations-api.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/catalina-ant.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/catalina-ha.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/catalina-ssi.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/catalina-storeconfig.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/catalina-tribes.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/catalina.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/ecj-4.20.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/el-api.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/jakartaee-migration-1.0.4-shaded.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/jasper-el.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/jasper.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/jaspic-api.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/jsp-api.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/servlet-api.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/tomcat-api.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/tomcat-coyote.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/tomcat-dbcp.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/tomcat-i18n-cs.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/tomcat-i18n-de.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/tomcat-i18n-es.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/tomcat-i18n-fr.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/tomcat-i18n-ja.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/tomcat-i18n-ko.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/tomcat-i18n-pt-BR.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/tomcat-i18n-ru.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/tomcat-i18n-zh-CN.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/tomcat-jdbc.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/tomcat-jni.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/tomcat-util-scan.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/tomcat-util.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/tomcat-websocket.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 10.0/lib/websocket-api.jar"/>
     </path>
     <path id="LibreriaMaven.classpath">
         <pathelement location="target/classes"/>
         <pathelement location="target/test-classes"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+        <path refid="Server Runtime [Apache Tomcat v10.0].libraryclasspath"/>
+    </path>
+    <path id="run.java.classpath">
+        <path refid="LibreriaMaven.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.LibreriaMaven (1).classpath">
+        <path refid="LibreriaMaven.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.LibreriaMaven.classpath">
+        <path refid="LibreriaMaven.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.TestLaptop.classpath">
+        <path refid="LibreriaMaven.classpath"/>
         <path refid="Maven Dependencies.libraryclasspath"/>
     </path>
     <target name="init">
@@ -151,17 +181,17 @@
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
-        <copy includeemptydirs="false" todir="target/test-classes">
-            <fileset dir="src/test/java">
-                <exclude name="**/*.launch"/>
-                <exclude name="**/*.java"/>
-            </fileset>
-        </copy>
         <copy includeemptydirs="false" todir="target/classes">
             <fileset dir="src/main/resources">
                 <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
                 <exclude name="**"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/test-classes">
+            <fileset dir="src/test/java">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
             </fileset>
         </copy>
     </target>
@@ -198,5 +228,46 @@
     <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
+    </target>
+    <target name="java">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.java.classpath"/>
+        </junit>
+    </target>
+    <target name="LibreriaMaven (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.LibreriaMaven (1).classpath"/>
+        </junit>
+    </target>
+    <target name="LibreriaMaven">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.LibreriaMaven.classpath"/>
+        </junit>
+    </target>
+    <target name="TestLaptop">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="laptop.test.TestLaptop" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.TestLaptop.classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
     </target>
 </project>
