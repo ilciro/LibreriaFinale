@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RivistaBean.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">web.bean</a> &gt; <span class="el_source">RivistaBean.java</span></div><h1>RivistaBean.java</h1><pre class="source lang-java linenums">package web.bean;
+
+import java.sql.Date;
+
+import java.time.LocalDate;
+
+import javafx.collections.ObservableList;
+import laptop.model.raccolta.Raccolta;
+
+
+<span class="nc" id="L11">public class RivistaBean {</span>
+	private Exception mex;
+	private ObservableList&lt;Raccolta&gt; listaRiviste;
+	private String listaCategorie;
+	private String titolo;
+	private String tipologia;
+	private String autore;
+	private String lingua;
+	private String editore;
+	private String descrizione;
+	private LocalDate dataPubb;
+	private int disp;
+	private float prezzo;
+	private int copieRim;
+	private Date data;
+
+	
+	public Exception getMex() {
+<span class="nc" id="L29">		return mex;</span>
+	}
+	public void setMex(Exception mex) {
+<span class="nc" id="L32">		this.mex = mex;</span>
+<span class="nc" id="L33">	}</span>
+	
+	
+	public int getId() {
+<span class="nc" id="L37">		return id;</span>
+	}
+	public void setId(int id) {
+<span class="nc" id="L40">		this.id = id;</span>
+<span class="nc" id="L41">	}</span>
+	private int id;
+
+	public String getListaCategorie() {
+<span class="nc" id="L45">		return listaCategorie;</span>
+	}
+	public void setListaCategorie(String listaCategorie) {
+<span class="nc" id="L48">		this.listaCategorie = listaCategorie;</span>
+<span class="nc" id="L49">	}</span>
+	public String getTipologia() {
+<span class="nc" id="L51">		return tipologia;</span>
+	}
+	public void setTipologia(String tipologia) {
+<span class="nc" id="L54">		this.tipologia = tipologia;</span>
+<span class="nc" id="L55">	}</span>
+	public String getAutore() {
+<span class="nc" id="L57">		return autore;</span>
+	}
+	public void setAutore(String autore) {
+<span class="nc" id="L60">		this.autore = autore;</span>
+<span class="nc" id="L61">	}</span>
+	public String getLingua() {
+<span class="nc" id="L63">		return lingua;</span>
+	}
+	public void setLingua(String lingua) {
+<span class="nc" id="L66">		this.lingua = lingua;</span>
+<span class="nc" id="L67">	}</span>
+	public String getEditore() {
+<span class="nc" id="L69">		return editore;</span>
+	}
+	public void setEditore(String editore) {
+<span class="nc" id="L72">		this.editore = editore;</span>
+<span class="nc" id="L73">	}</span>
+	public String getDescrizione() {
+<span class="nc" id="L75">		return descrizione;</span>
+	}
+	public void setDescrizione(String descrizione) {
+<span class="nc" id="L78">		this.descrizione = descrizione;</span>
+<span class="nc" id="L79">	}</span>
+	public LocalDate getDataPubb() {
+<span class="nc" id="L81">		return dataPubb;</span>
+	}
+	public void setDataPubb(LocalDate dataPubb) {
+<span class="nc" id="L84">		this.dataPubb = dataPubb;</span>
+<span class="nc" id="L85">	}</span>
+	public int getDisp() {
+<span class="nc" id="L87">		return disp;</span>
+	}
+	public void setDisp(int disp) {
+<span class="nc" id="L90">		this.disp = disp;</span>
+<span class="nc" id="L91">	}</span>
+	public int getCopieRim() {
+<span class="nc" id="L93">		return copieRim;</span>
+	}
+	public void setCopieRim(int copieRim) {
+<span class="nc" id="L96">		this.copieRim = copieRim;</span>
+<span class="nc" id="L97">	}</span>
+	
+	public String getTitolo() {
+<span class="nc" id="L100">		return titolo;</span>
+	}
+	public void setTitolo(String titolo) {
+<span class="nc" id="L103">		this.titolo = titolo;</span>
+<span class="nc" id="L104">	}</span>
+	public float getPrezzo() {
+<span class="nc" id="L106">		return prezzo;</span>
+	}
+	public void setPrezzo(float prezzo) {
+<span class="nc" id="L109">		this.prezzo = prezzo;</span>
+<span class="nc" id="L110">	}</span>
+	public Date getData() {
+<span class="nc" id="L112">		return data;</span>
+	}
+	public void setData(Date data) {
+<span class="nc" id="L115">		this.data = data;</span>
+<span class="nc" id="L116">	}</span>
+	
+	
+	
+	public String elencoCategorie()
+	{
+<span class="nc" id="L122">		String s= &quot;SETTIMANALE&quot;;</span>
+<span class="nc" id="L123">		s+=&quot;\n&quot;;</span>
+<span class="nc" id="L124">		s+=&quot;BISETTIMANALE&quot; ;</span>
+<span class="nc" id="L125">		s+=&quot;\n&quot;;</span>
+<span class="nc" id="L126">		s+= &quot;MENSILE&quot;;</span>
+<span class="nc" id="L127">		s+=&quot;\n&quot;;</span>
+<span class="nc" id="L128">		s+= &quot;BIMESTRALE&quot; ;</span>
+<span class="nc" id="L129">		s+=&quot;\n&quot;;</span>
+<span class="nc" id="L130">		s+=&quot;TRIMESTRALE&quot; ;	</span>
+<span class="nc" id="L131">		s+=&quot;\n&quot;;</span>
+<span class="nc" id="L132">		s+= &quot;ANNUALE&quot; ;</span>
+<span class="nc" id="L133">		s+=&quot;\n&quot;;</span>
+
+<span class="nc" id="L135">		s+= &quot;ESTIVO&quot; ;</span>
+<span class="nc" id="L136">		s+=&quot;\n&quot;;</span>
+
+<span class="nc" id="L138">		s+= &quot;INVERNALE&quot; ;</span>
+<span class="nc" id="L139">		s+=&quot;\n&quot;;</span>
+
+<span class="nc" id="L141">		s+= &quot;SPORTIVO&quot; ;</span>
+<span class="nc" id="L142">		s+=&quot;\n&quot;;</span>
+
+<span class="nc" id="L144">		s+= &quot;CINEMATOGRAFICA&quot; ; </span>
+<span class="nc" id="L145">		s+=&quot;\n&quot;;</span>
+
+<span class="nc" id="L147">		s+= &quot;GOSSIP&quot; ;</span>
+<span class="nc" id="L148">		s+=&quot;\n&quot;;</span>
+
+<span class="nc" id="L150">		s+= &quot;TELEVISIVO&quot; ;</span>
+<span class="nc" id="L151">		s+=&quot;\n&quot;;</span>
+
+<span class="nc" id="L153">		s+= &quot;MILITARE&quot; ;</span>
+<span class="nc" id="L154">		s+=&quot;\n&quot;;</span>
+
+<span class="nc" id="L156">		s+= &quot;INFORMATICA&quot;;</span>
+<span class="nc" id="L157">		s+=&quot;\n&quot;;</span>
+
+<span class="nc" id="L159">		return s;</span>
+	}
+	public ObservableList&lt;Raccolta&gt; getListaRiviste() {
+<span class="nc" id="L162">		return listaRiviste;</span>
+	}
+	public void setListaRiviste(ObservableList&lt;Raccolta&gt; listaRiviste) {
+<span class="nc" id="L165">		this.listaRiviste = listaRiviste;</span>
+<span class="nc" id="L166">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>InserisciUtenteServlet.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">web.servlet</a> &gt; <span class="el_source">InserisciUtenteServlet.java</span></div><h1>InserisciUtenteServlet.java</h1><pre class="source lang-java linenums">package web.servlet;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+
+import laptop.database.UsersDao;
+import web.bean.UserBean;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import laptop.model.User;
+
+@WebServlet(&quot;/InserisciUtenteServlet&quot;)
+<span class="nc" id="L20">public class InserisciUtenteServlet extends HttpServlet{</span>
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+<span class="nc" id="L29">		String nome=req.getParameter(&quot;nomeU&quot;);</span>
+<span class="nc" id="L30">		String cognome=req.getParameter(&quot;cognomeU&quot;);</span>
+<span class="nc" id="L31">		String email=req.getParameter(&quot;emailU&quot;);</span>
+<span class="nc" id="L32">		String pass=req.getParameter(&quot;passU&quot;);</span>
+<span class="nc" id="L33">		String dataN=req.getParameter(&quot;dataU&quot;);</span>
+<span class="nc" id="L34">		String invia=req.getParameter(&quot;buttonI&quot;);</span>
+<span class="nc" id="L35">		String indietro=req.getParameter(&quot;buttonA&quot;);</span>
+		try {
+<span class="nc bnc" id="L37" title="All 4 branches missed.">			if(invia!=null &amp;&amp; invia.equals(&quot;invia&quot;))</span>
+			{
+<span class="nc" id="L39">				UserBean.getInstance().setNome(nome);</span>
+<span class="nc" id="L40">				UserBean.getInstance().setCognome(cognome);</span>
+<span class="nc" id="L41">				UserBean.getInstance().setEmail(email);</span>
+<span class="nc" id="L42">				UserBean.getInstance().setPassword(pass);</span>
+				java.util.Date utilDate;
+			    java.sql.Date sqlDate;
+<span class="nc" id="L45">			    SimpleDateFormat format = new SimpleDateFormat(&quot;yyyy/MM/dd&quot;);</span>
+				
+			    
+<span class="nc" id="L48">		         utilDate = format.parse(dataN);</span>
+<span class="nc" id="L49">		        sqlDate = new java.sql.Date(utilDate.getTime());</span>
+<span class="nc" id="L50">		        UserBean.getInstance().setDataDiNascita(sqlDate.toLocalDate());</span>
+		        
+<span class="nc" id="L52">		        User.getInstance().setNome(UserBean.getInstance().getNome());</span>
+<span class="nc" id="L53">		        User.getInstance().setCognome(UserBean.getInstance().getCognome());</span>
+<span class="nc" id="L54">		        User.getInstance().setEmail(UserBean.getInstance().getEmail());</span>
+<span class="nc" id="L55">		        User.getInstance().setPassword(UserBean.getInstance().getPassword());</span>
+<span class="nc" id="L56">		        User.getInstance().setDataDiNascita(UserBean.getInstance().getDataDiNascita());</span>
+		        
+<span class="nc bnc" id="L58" title="All 2 branches missed.">		        if(UsersDao.createUser(User.getInstance()))</span>
+		        		{
+<span class="nc" id="L60">		        			RequestDispatcher view=getServletContext().getRequestDispatcher(&quot;/gestioneUtente.jsp&quot;);</span>
+<span class="nc" id="L61">		        			view.forward(req, resp);</span>
+<span class="nc" id="L62">		        		}</span>
+		        else {
+<span class="nc" id="L64">		        	UserBean.getInstance().setMex(&quot;errore nella creazione del nuovo utente&quot;);</span>
+<span class="nc" id="L65">		        	req.setAttribute(&quot;beanUb&quot;,UserBean.getInstance());</span>
+<span class="nc" id="L66">		        	RequestDispatcher view=getServletContext().getRequestDispatcher(&quot;/inserisciUtente.jsp&quot;);</span>
+<span class="nc" id="L67">        			view.forward(req, resp);</span>
+		        }
+			}
+<span class="nc bnc" id="L70" title="All 4 branches missed.">			if(indietro!=null &amp;&amp; indietro.equals(&quot;indietro&quot;))</span>
+			{
+<span class="nc" id="L72">				RequestDispatcher view=getServletContext().getRequestDispatcher(&quot;/gestioneUtente.jsp&quot;);</span>
+<span class="nc" id="L73">    			view.forward(req, resp);</span>
+			}
+<span class="nc" id="L75">		}catch(SQLException | ParseException  e)</span>
+		{
+<span class="nc" id="L77">			java.util.logging.Logger.getLogger(&quot;post &quot;).log(Level.INFO, &quot;eccezione nel post {0}.&quot;,e.toString());</span>
+
+<span class="nc" id="L79">		}</span>
+		
+<span class="nc" id="L81">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

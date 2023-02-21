@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RivistaDao.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.database</a> &gt; <span class="el_source">RivistaDao.java</span></div><h1>RivistaDao.java</h1><pre class="source lang-java linenums">package laptop.database;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+
+
+import laptop.controller.ControllerSystemState;
+import laptop.exception.IdException;
+import laptop.model.raccolta.Factory;
+import laptop.model.raccolta.Raccolta;
+import laptop.model.raccolta.Rivista;
+import laptop.utilities.ConnToDb;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+public class RivistaDao {
+	
+	private  Factory f;
+	
+	private  String query ;
+	
+	private  int q;
+<span class="fc" id="L32">	private int id = 0;</span>
+<span class="fc" id="L33">	private boolean state=false;</span>
+<span class="fc" id="L34">	private String riv=&quot;SELECT * from RIVISTA;&quot;;</span>
+
+<span class="fc" id="L36">	private ControllerSystemState vis=ControllerSystemState.getIstance();</span>
+	private static final String RIVISTA=&quot;rivista&quot;;
+
+<span class="fc" id="L39">	private static String eccezione=&quot;eccezione generata:&quot;;</span>
+	private int disp;
+<span class="fc" id="L41">	private static String rivistaS=&quot;rivista singola&quot;;</span>
+
+	
+	
+	
+	public void getDesc(Rivista r) throws SQLException
+	{
+<span class="fc" id="L48">		query=&quot;select * from rivista where titolo=?&quot;;</span>
+<span class="fc" id="L49">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L50">				PreparedStatement prepQ=conn.prepareStatement(query);</span>
+				)
+		{
+<span class="fc" id="L53">			prepQ.setString(1,r.getTitolo());</span>
+<span class="fc" id="L54">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">			while ( rs.next() ) {</span>
+<span class="fc" id="L56">	                rs.getString(&quot;titolo&quot;);</span>
+<span class="fc" id="L57">	               rs.getString(&quot;tipologia&quot;);</span>
+<span class="fc" id="L58">	               rs.getString(&quot;autore&quot;);</span>
+<span class="fc" id="L59">	               rs.getString(&quot;lingua&quot;);	   </span>
+<span class="fc" id="L60">	               rs.getString(&quot;editore&quot;);</span>
+<span class="fc" id="L61">	               rs.getString(&quot;Descrizione&quot;);</span>
+
+<span class="fc" id="L63">	               rs.getDate(&quot;dataPubblicazione&quot;);</span>
+	               
+<span class="fc" id="L65">	               rs.getInt(&quot;disp&quot;);</span>
+<span class="fc" id="L66">	               rs.getFloat(&quot;prezzo&quot;);</span>
+<span class="fc" id="L67">	               rs.getInt(&quot;copieRimanenti&quot;);</span>
+
+
+	                
+	                
+	    	        
+	            }
+<span class="nc" id="L74">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L76">			java.util.logging.Logger.getLogger(&quot;Test GestDesc&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L77">		}</span>
+	            
+	        
+				
+		 
+<span class="fc" id="L82">	    }</span>
+
+	public float getCosto(Rivista r) throws SQLException
+	{
+<span class="fc" id="L86">		float prezzo=(float) 0.0;</span>
+<span class="fc" id="L87">		query=&quot;select * from rivista where id=?&quot;;</span>
+<span class="fc" id="L88">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L89">				PreparedStatement prepQ=conn.prepareCall(query);)</span>
+		{
+<span class="fc" id="L91">			prepQ.setInt(1, r.getId());</span>
+<span class="fc" id="L92">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L93" title="All 2 branches covered.">			 while ( rs.next() ) {</span>
+<span class="fc" id="L94">              prezzo=rs.getFloat(&quot;prezzo&quot;);</span>
+
+         }
+<span class="nc" id="L97">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L99">			java.util.logging.Logger.getLogger(&quot;get costo&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L100">		}</span>
+		
+		
+<span class="fc" id="L103">		return prezzo;</span>
+		
+	}
+
+	public void aggiornaDisponibilita(Rivista r) throws SQLException
+	{
+		
+<span class="fc" id="L110">		int d=vis.getQuantita();</span>
+<span class="fc" id="L111">		int i=r.getCopieRim();</span>
+		
+<span class="fc" id="L113">		int rim=i-d;</span>
+		
+		
+<span class="fc" id="L116">		query=&quot;update ispw.rivista set copieRimanenti= ? where  id=?&quot;;</span>
+		
+<span class="fc" id="L118">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L119">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
+		{
+<span class="fc" id="L121">			prepQ.setInt(1, rim);</span>
+<span class="fc" id="L122">			prepQ.setInt(2, r.getId());</span>
+<span class="fc" id="L123">			prepQ.executeUpdate();</span>
+<span class="nc" id="L124">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L126">			java.util.logging.Logger.getLogger(&quot;aggiorna disp&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L127">		}</span>
+		
+		
+
+<span class="fc" id="L131">		}</span>
+
+	public void daiPrivilegi() throws SQLException
+	{
+<span class="fc" id="L135">		query=&quot;set sql_safe_updates=?&quot;;</span>
+<span class="fc" id="L136">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L137">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		{
+<span class="fc" id="L139">			prepQ.setInt(1,0);</span>
+<span class="fc" id="L140">			prepQ.executeUpdate();</span>
+
+<span class="nc" id="L142">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L144">			java.util.logging.Logger.getLogger(&quot;dai privilegi&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L145">		}</span>
+
+		
+<span class="fc" id="L148">		java.util.logging.Logger.getLogger(&quot;privilegi&quot;).log(Level.INFO, &quot;rivistaDao dai privilegi&quot;);</span>
+		
+
+<span class="fc" id="L151">	}</span>
+	
+	public ObservableList&lt;Raccolta&gt; getRiviste() throws SQLException
+	{
+		
+
+		
+<span class="fc" id="L158">		ObservableList&lt;Raccolta&gt; catalogo=FXCollections.observableArrayList();</span>
+		 
+<span class="fc" id="L160">		query=riv;</span>
+<span class="fc" id="L161">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L162">				PreparedStatement prepQ=conn.prepareStatement(query);</span>
+<span class="fc" id="L163">				ResultSet rs=prepQ.executeQuery())</span>
+		{
+<span class="fc bfc" id="L165" title="All 2 branches covered.">            while(rs.next())</span>
+            {
+
+        		
+<span class="fc" id="L169">        			f.createRaccoltaFinale1(RIVISTA, rs.getString(1),rs.getString(2), rs.getString(3),rs.getString(4),rs.getString(5),null);</span>
+<span class="fc" id="L170">					f.createRaccoltaFinale2(RIVISTA,0,null,0,rs.getInt(8),rs.getFloat(9),rs.getInt(10));</span>
+<span class="fc" id="L171">					catalogo.add(f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(), null, null,rs.getInt(11)));</span>
+		
+					
+        		
+            }
+<span class="nc" id="L176">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L178">			java.util.logging.Logger.getLogger(&quot;elenco riviste&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L179">		}</span>
+<span class="fc" id="L180">		return catalogo;</span>
+		
+	}
+	
+	
+	public ObservableList&lt;Raccolta&gt; getRivisteByName(String s) throws SQLException
+	{
+		 
+
+		
+<span class="fc" id="L190">		ObservableList&lt;Raccolta&gt; catalogo=FXCollections.observableArrayList();</span>
+		
+<span class="fc" id="L192">		query=&quot;select * from rivista where titolo=? or autore=?&quot;;</span>
+<span class="fc" id="L193">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L194">				PreparedStatement prepQ=conn.prepareStatement(query);</span>
+				)
+		{
+<span class="fc" id="L197">			prepQ.setString(1, s);</span>
+<span class="fc" id="L198">			prepQ.setString(2, s);</span>
+<span class="fc" id="L199">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L200" title="All 2 branches covered.">            while(rs.next())</span>
+            {
+
+        		
+<span class="fc" id="L204">        			f.createRaccoltaFinale1(RIVISTA, rs.getString(1),rs.getString(2), rs.getString(3),rs.getString(4),rs.getString(5),null);</span>
+<span class="fc" id="L205">					f.createRaccoltaFinale2(RIVISTA,0,null,0,rs.getInt(8),rs.getFloat(9),rs.getInt(10));</span>
+<span class="fc" id="L206">					catalogo.add(f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(), null, null,rs.getInt(11)));</span>
+		
+					
+        		
+            }
+<span class="nc" id="L211">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L213">			java.util.logging.Logger.getLogger(&quot;rivista by name&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L214">		}</span>
+<span class="fc" id="L215">		return catalogo;</span>
+		 
+		
+	}
+
+
+	public Rivista getRivista(Rivista r) throws SQLException
+	{
+<span class="fc" id="L223">		query=&quot;select *from rivista where id=?&quot;;</span>
+
+<span class="fc" id="L225">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L226">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		{
+			
+<span class="fc" id="L229">		prepQ.setInt(1, r.getId());</span>
+<span class="fc" id="L230">		ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L231" title="All 2 branches covered.">        while (rs.next())</span>
+        {
+<span class="fc" id="L233">        	f.createRaccoltaFinale1(RIVISTA, rs.getString(1),null,rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));</span>
+<span class="fc" id="L234">			f.createRaccoltaFinale2(RIVISTA,0,null,0,rs.getInt(8),rs.getFloat(9),rs.getInt(10));</span>
+<span class="fc" id="L235">			r=(Rivista) (f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(), null, rs.getString(6),rs.getInt(11)));</span>
+        }
+<span class="nc" id="L237">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L239">			java.util.logging.Logger.getLogger(&quot;rivista by id&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L240">		}</span>
+<span class="fc" id="L241">             return r;</span>
+	}
+
+	public RivistaDao()
+<span class="fc" id="L245">	{</span>
+<span class="fc" id="L246">		f=new Factory();</span>
+<span class="fc" id="L247">	}</span>
+	
+	public int retId(Rivista r) throws SQLException {
+<span class="fc" id="L250">		query=&quot;select id from rivista where titolo=?&quot;;</span>
+		
+<span class="fc" id="L252">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L253">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		{
+<span class="fc" id="L255">			prepQ.setString(1, r.getTitolo());</span>
+<span class="fc" id="L256">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L257" title="All 2 branches covered.">         while ( rs.next() ) {</span>
+<span class="fc" id="L258">              id=rs.getInt(&quot;id&quot;);</span>
+
+         }
+<span class="nc" id="L261">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L263">			java.util.logging.Logger.getLogger(&quot;rivista by titolo&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L264">		}</span>
+<span class="fc" id="L265">		return id;</span>
+
+		
+		
+	}
+
+	public String retTip(Rivista r) throws SQLException {
+		
+<span class="fc" id="L273">		String categoria=null;</span>
+<span class="fc" id="L274">		query=&quot;select tipologia from rivista where titolo=? or id=?&quot;;</span>
+<span class="fc" id="L275">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L276">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		{
+<span class="fc" id="L278">			prepQ.setString(1, r.getTitolo());</span>
+<span class="fc" id="L279">			prepQ.setInt(2, r.getId());</span>
+<span class="fc" id="L280">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L281" title="All 2 branches covered.">	         while ( rs.next() ) {</span>
+<span class="fc" id="L282">	              categoria=rs.getString(&quot;tipologia&quot;);</span>
+	
+	         }
+<span class="nc" id="L285">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L287">			java.util.logging.Logger.getLogger(&quot;rivista titolo/id&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L288">		}</span>
+<span class="fc" id="L289">		return categoria;</span>
+
+		
+	}
+	
+	public String getNome(Rivista r) throws SQLException
+	{
+<span class="fc" id="L296">		String name=null;</span>
+<span class="fc" id="L297">		query=&quot;select titolo from rivista where id=?&quot;;</span>
+<span class="fc" id="L298">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L299">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		{
+<span class="fc" id="L301">			prepQ.setInt(1,r.getId());</span>
+<span class="fc" id="L302">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L303" title="All 2 branches covered.">			while (rs.next())</span>
+	        {
+<span class="fc" id="L305">	        	name = rs.getString(1);</span>
+	        }
+<span class="nc" id="L307">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L309">			java.util.logging.Logger.getLogger(&quot;nome rivista&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L310">		}</span>
+        	
+<span class="fc" id="L312">        return name;</span>
+   }
+
+	public int getDisp(Rivista r) throws SQLException
+	{
+<span class="nc" id="L317">		 disp = 0;</span>
+<span class="nc" id="L318">		query=&quot;select disp from rivista where id=?&quot;;</span>
+		
+<span class="nc" id="L320">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="nc" id="L321">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		{
+<span class="nc" id="L323">			prepQ.setInt(1, r.getId());</span>
+<span class="nc" id="L324">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="nc bnc" id="L325" title="All 2 branches missed.">			while(rs.next())</span>
+				{
+<span class="nc" id="L327">					disp = rs.getInt(&quot;disp&quot;);</span>
+
+				
+<span class="nc bnc" id="L330" title="All 2 branches missed.">					if(disp==1)</span>
+<span class="nc" id="L331">						 disp=1;</span>
+<span class="nc bnc" id="L332" title="All 2 branches missed.">					if (disp == 0)</span>
+<span class="nc" id="L333">						disp=0;</span>
+				}
+<span class="nc" id="L335">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L337">			java.util.logging.Logger.getLogger(&quot;disp r&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="nc" id="L338">		}</span>
+			
+		
+		
+<span class="nc" id="L342">		return disp;</span>
+	}
+	
+	public int getQuantita(Rivista r) throws SQLException
+	{
+        
+<span class="fc" id="L348">		query=&quot;select copieRimanenti from rivista where id=?&quot;;</span>
+<span class="fc" id="L349">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L350">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		{
+			
+<span class="fc" id="L353">			prepQ.setInt(1, r.getId());</span>
+<span class="fc" id="L354">			ResultSet rs=prepQ.executeQuery();</span>
+			
+<span class="fc bfc" id="L356" title="All 2 branches covered.">				while (rs.next()) {</span>
+<span class="fc" id="L357">					q = rs.getInt(1);</span>
+				}			
+			
+<span class="nc" id="L360">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L362">			java.util.logging.Logger.getLogger(&quot;quantita r&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L363">		}</span>
+
+<span class="fc" id="L365">		return q;</span>
+	}
+
+	public boolean checkDisp(Rivista r) throws SQLException
+	{
+		
+<span class="fc" id="L371">			query=&quot;select disp from rivista where id=?&quot;;</span>
+			
+<span class="fc" id="L373">			try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L374">					PreparedStatement prepQ=conn.prepareStatement(query);</span>
+					)
+
+			{
+				
+<span class="fc" id="L379">				prepQ.setInt(1, r.getId());</span>
+			
+<span class="fc" id="L381">				ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L382" title="All 2 branches covered.">			while(rs.next())</span>
+			{
+<span class="fc" id="L384">				disp = rs.getInt(1);</span>
+<span class="pc bpc" id="L385" title="1 of 2 branches missed.">				if (disp == 1)</span>
+<span class="fc" id="L386">					state=true;</span>
+				else
+				{
+<span class="nc" id="L389">					java.util.logging.Logger.getLogger(&quot;check disp&quot;).log(Level.INFO, eccezione, new IdException(&quot;id non trovato&quot;));</span>
+					
+				
+				}
+			}
+<span class="nc" id="L394">			}catch(SQLException e)</span>
+			{
+<span class="nc" id="L396">				java.util.logging.Logger.getLogger(&quot;disp ecc&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L397">			}</span>
+			
+<span class="fc" id="L399">	 	return state;</span>
+	
+	}
+
+	public ObservableList&lt;Raccolta&gt; getRivistaSingolo() throws SQLException {
+<span class="fc" id="L404">		ObservableList&lt;Raccolta&gt; catalogo=FXCollections.observableArrayList();</span>
+
+<span class="fc" id="L406">		query=riv;</span>
+<span class="fc" id="L407">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L408">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		{
+			
+		
+<span class="fc" id="L412">		ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L413" title="All 2 branches covered.">        while (rs.next())</span>
+        {
+<span class="fc" id="L415">        	f.createRaccoltaFinale1(RIVISTA, rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));</span>
+<span class="fc" id="L416">			f.createRaccoltaFinale2(RIVISTA,0,null,0,rs.getInt(8),rs.getFloat(9),rs.getInt(10));</span>
+<span class="fc" id="L417">			catalogo.add(f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(), null, rs.getString(6),rs.getInt(11)));</span>
+        }
+<span class="nc" id="L419">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L421">			java.util.logging.Logger.getLogger(rivistaS).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L422">		}</span>
+<span class="fc" id="L423">             return catalogo;</span>
+             
+		
+		
+	}
+
+	public Boolean creaRivista(Rivista r) throws SQLException {
+    	
+    		
+				
+<span class="fc" id="L433">				query= &quot;INSERT INTO `ispw`.`rivista`&quot;</span>
+			 			+ &quot;(`titolo`,&quot;
+			 			+ &quot;`tipologia`,&quot;
+			 			+ &quot;`autore`,&quot;
+			 			+ &quot;`lingua`,&quot;
+			 			+ &quot;`editore`,&quot;
+			 			+ &quot;`Descrizione`,&quot;
+			 			+ &quot;`dataPubblicazione`,&quot;
+			 			+ &quot;`disp`,&quot;
+			 			+ &quot;`prezzo`,&quot;
+			 			+ &quot;`copieRimanenti`)&quot;
+			 			+ &quot;VALUES (?,?,?,?,?,?,?,?,?,?)&quot;;
+<span class="fc" id="L445">				try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L446">						PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+				{
+<span class="fc" id="L448">				prepQ.setString(1,r.getTitolo()); </span>
+<span class="fc" id="L449">				prepQ.setString(2,r.getTipologia());</span>
+<span class="fc" id="L450">				prepQ.setString(3,r.getAutore());</span>
+<span class="fc" id="L451">				prepQ.setString(4,r.getLingua());</span>
+<span class="fc" id="L452">				prepQ.setString(5,r.getEditore());</span>
+<span class="fc" id="L453">				prepQ.setString(6,r.getDescrizione());</span>
+<span class="fc" id="L454">				prepQ.setDate(7, java.sql.Date.valueOf(r.getDataPubb().toString()));  </span>
+<span class="fc" id="L455">				prepQ.setInt(8, r.getDisp());</span>
+<span class="fc" id="L456">				prepQ.setFloat(9, r.getPrezzo());</span>
+<span class="fc" id="L457">				prepQ.setInt(10,r.getCopieRim());</span>
+
+
+				
+<span class="fc" id="L461">				prepQ.executeUpdate();</span>
+<span class="fc" id="L462">			 	state= true; // true		 			 	</span>
+<span class="nc" id="L463">				}catch(SQLException e)</span>
+				{
+<span class="nc" id="L465">					state=false;</span>
+<span class="nc" id="L466">					java.util.logging.Logger.getLogger(&quot;crea rivista&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L467">				}</span>
+			
+		
+		
+
+<span class="fc" id="L472">		return state;</span>
+		
+		
+	}
+
+	public void cancella(Rivista r) throws SQLException {
+
+<span class="fc" id="L479">		 int row=0;</span>
+<span class="fc" id="L480">		 query=&quot;delete from rivista where id=?&quot;;</span>
+<span class="fc" id="L481">		 try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L482">				 PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		 {
+<span class="fc" id="L484">			 prepQ.setInt(1, r.getId());</span>
+<span class="fc" id="L485">			 row=prepQ.executeUpdate();</span>
+<span class="nc" id="L486">		 }catch(SQLException e)</span>
+		 {
+<span class="nc" id="L488">			 java.util.logging.Logger.getLogger(&quot;cancella r&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L489">		 }</span>
+<span class="fc" id="L490">		 java.util.logging.Logger.getLogger(&quot;rivista cancellata&quot;).log(Level.INFO, &quot;row delected{0}&quot;,row);</span>
+
+<span class="fc" id="L492">	}</span>
+
+	public ObservableList&lt;Rivista&gt; getRivistaSingoloById(Rivista r) throws SQLException {
+<span class="fc" id="L495">		ObservableList&lt;Rivista&gt; catalogo=FXCollections.observableArrayList();</span>
+
+<span class="fc" id="L497">		query=&quot;SELECT * from RIVISTA where id=?&quot;;</span>
+<span class="fc" id="L498">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L499">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		{
+<span class="fc" id="L501">			prepQ.setInt(1, r.getId());</span>
+<span class="fc" id="L502">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L503" title="All 2 branches covered.">            while(rs.next())</span>
+            {
+
+        		
+<span class="fc" id="L507">        			f.createRaccoltaFinale1(RIVISTA, rs.getString(1),rs.getString(2), rs.getString(3),rs.getString(4),rs.getString(5),null);</span>
+<span class="fc" id="L508">					f.createRaccoltaFinale2(RIVISTA,0,null,0,rs.getInt(8),rs.getFloat(9),rs.getInt(10));</span>
+<span class="fc" id="L509">					catalogo.add((Rivista) f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(), null, rs.getString(6),rs.getInt(11)));</span>
+            }
+<span class="nc" id="L511">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L513">			java.util.logging.Logger.getLogger(&quot;rivista by id&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L514">		}</span>
+		
+<span class="fc" id="L516">		return catalogo;</span>
+		
+	}
+	
+	
+	public void aggiornaRivista(Rivista r) throws SQLException {
+<span class="fc" id="L522">		 int rowAffected=0;</span>
+
+
+		
+
+<span class="fc" id="L527">			query=&quot;UPDATE `ispw`.`rivista`&quot;</span>
+		 			+ &quot;SET&quot;
+		 			+ &quot;`titolo` = ?,&quot;
+		 			+ &quot;`tipologia` =?,&quot;
+		 			+ &quot;`autore` = ?,&quot;
+		 			+ &quot;`lingua` = ?,&quot;
+		 			+ &quot;`editore` = ?,&quot;
+		 			+ &quot;`Descrizione` =?,&quot;
+		 			+ &quot;`dataPubblicazione` =?,&quot;
+		 			+ &quot;`disp` = ?,&quot;
+		 			+ &quot;`prezzo` = ?,&quot;
+		 			+ &quot;`copieRimanenti` =? WHERE `id` =?&quot;;
+		 		
+<span class="fc" id="L540">		 	try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L541">		 			PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		 	{
+			
+<span class="fc" id="L544">			prepQ.setString(1,r.getTitolo());</span>
+<span class="fc" id="L545">			prepQ.setString(2,r.getTipologia());</span>
+<span class="fc" id="L546">			prepQ.setString(3,r.getAutore());</span>
+<span class="fc" id="L547">			prepQ.setString(4,r.getLingua());</span>
+<span class="fc" id="L548">			prepQ.setString(5,r.getEditore());</span>
+<span class="fc" id="L549">			prepQ.setString(6,r.getDescrizione());</span>
+<span class="fc" id="L550">			prepQ.setString(7,r.getDataPubb().toString());</span>
+<span class="fc" id="L551">			prepQ.setInt(8,r.getDisp());</span>
+<span class="fc" id="L552">			prepQ.setFloat(9,r.getPrezzo());</span>
+<span class="fc" id="L553">			prepQ.setInt(10,r.getCopieRim());</span>
+<span class="fc" id="L554">			prepQ.setInt(11, r.getId());</span>
+		
+
+<span class="fc" id="L557">			rowAffected = prepQ.executeUpdate();</span>
+<span class="nc" id="L558">		 	}catch(SQLException e)</span>
+		 	{
+<span class="nc" id="L560">		 		java.util.logging.Logger.getLogger(&quot;aggiorna rivista&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L561">		 	}</span>
+<span class="fc" id="L562">		 	java.util.logging.Logger.getLogger(&quot;Aggiorno&quot;).log(Level.INFO,&quot;rows afffected{0}&quot;,rowAffected);</span>
+<span class="fc" id="L563">	 }	</span>
+	
+	public void generaReport() throws SQLException, IOException
+	{
+				FileWriter w;
+<span class="fc" id="L568">				query=&quot;select titolo,editore,copieRimanenti,prezzo as totale  from ispw.rivista&quot;;</span>
+<span class="fc" id="L569">		        w=new FileWriter(&quot;ReportFinale\\riepilogoRiviste.txt&quot;);</span>
+		        
+		        
+<span class="fc" id="L572">		        try (BufferedWriter b=new BufferedWriter (w)){</span>
+<span class="fc" id="L573">		        	try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L574">		        			PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		        	{
+		        		
+<span class="fc" id="L577">		        		ResultSet rs=prepQ.executeQuery();</span>
+				
+		           
+<span class="fc bfc" id="L580" title="All 2 branches covered.">		            while(rs.next())</span>
+		            {
+		        		
+		        	
+
+				
+<span class="fc" id="L586">								rs.getString(1);</span>
+<span class="fc" id="L587">								rs.getString(2);</span>
+<span class="fc" id="L588">								rs.getInt(3);</span>
+<span class="fc" id="L589">								rs.getFloat(4);</span>
+								
+										
+				
+<span class="fc" id="L593">		        		b.write(&quot;Titolo :&quot;+rs.getString(1)+&quot;\t&quot;+&quot;Editore :&quot;+rs.getString(2)+&quot;\t&quot;+&quot;Ricavo totale :&quot; +rs.getInt(3)*rs.getFloat(4)+&quot;\n&quot;);</span>
+
+
+
+
+<span class="fc" id="L598">		     			b.flush();</span>
+
+
+		        			
+		        		
+		            }
+<span class="nc" id="L604">		        	}catch(SQLException e)</span>
+		        	{
+<span class="nc" id="L606">		        		java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L607">		        	}</span>
+		     
+	}
+	
+		
+<span class="fc" id="L612">	}</span>
+			
+	
+	
+	
+
+	public void incrementaDisponibilita(Rivista r) throws SQLException {
+<span class="fc" id="L619">		int d=vis.getQuantita();</span>
+<span class="fc" id="L620">		int i=r.getCopieRim();</span>
+		
+<span class="fc" id="L622">		int rim=i+d;</span>
+		
+<span class="fc" id="L624">		query=&quot;update ispw.rivista set copieRimanenti= ? where titolo=? or id=?&quot;;</span>
+
+<span class="fc" id="L626">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L627">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		{
+<span class="fc" id="L629">			prepQ.setInt(1, rim);</span>
+<span class="fc" id="L630">			prepQ.setString(2,r.getTitolo());</span>
+<span class="fc" id="L631">			prepQ.setInt(3,r.getId());</span>
+<span class="fc" id="L632">			prepQ.executeUpdate();</span>
+			
+<span class="nc" id="L634">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L636">			java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L637">		}</span>
+
+
+		
+		
+<span class="fc" id="L642">	}</span>
+
+	public List&lt;Raccolta&gt; getRivistaSingoloL() throws SQLException {
+<span class="nc" id="L645">		List&lt;Raccolta&gt; catalogo=new ArrayList&lt;&gt;();</span>
+
+<span class="nc" id="L647">		query=riv;</span>
+<span class="nc" id="L648">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="nc" id="L649">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		{
+			
+		
+<span class="nc" id="L653">		ResultSet rs=prepQ.executeQuery();</span>
+<span class="nc bnc" id="L654" title="All 2 branches missed.">        while (rs.next())</span>
+        {
+<span class="nc" id="L656">        	f.createRaccoltaFinale1(RIVISTA, rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));</span>
+<span class="nc" id="L657">			f.createRaccoltaFinale2(RIVISTA,0,null,0,rs.getInt(8),rs.getFloat(9),rs.getInt(10));</span>
+<span class="nc" id="L658">			catalogo.add(f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(), null, rs.getString(6),rs.getInt(11)));</span>
+        }
+<span class="nc" id="L660">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L662">			java.util.logging.Logger.getLogger(rivistaS).log(Level.INFO, eccezione, e);</span>
+<span class="nc" id="L663">		}</span>
+<span class="nc" id="L664">             return catalogo;</span>
+             
+		
+		
+	}
+	
+	
+	
+	
+	public String getTitolo(Rivista r) 
+	{
+<span class="nc" id="L675">		String t=&quot;&quot;;</span>
+<span class="nc" id="L676">		query=&quot;select titolo from rivista where id=? or id=? &quot;;</span>
+<span class="nc" id="L677">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="nc" id="L678">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		{
+<span class="nc" id="L680">			prepQ.setInt(1, r.getId());</span>
+<span class="nc" id="L681">			prepQ.setInt(2, vis.getId());</span>
+<span class="nc" id="L682">			ResultSet res=prepQ.executeQuery();</span>
+<span class="nc bnc" id="L683" title="All 2 branches missed.">			if(res.next())</span>
+			{
+<span class="nc" id="L685">				t=res.getString(&quot;titolo&quot;);</span>
+			}
+<span class="nc" id="L687">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L689">			java.util.logging.Logger.getLogger(&quot;get titolo&quot;).log(Level.INFO, &quot;titolo rivista {0}.&quot;,e.toString());</span>
+<span class="nc" id="L690">		}</span>
+		
+<span class="nc" id="L692">		return t;</span>
+	}
+
+	public void aggiornaData(Rivista r, Date sqlDate) throws SQLException {
+<span class="nc" id="L696">		int row=0;</span>
+<span class="nc" id="L697">		query=&quot;update rivista set dataPubblicazione=? where id=? or id=?  &quot;;</span>
+<span class="nc" id="L698">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="nc" id="L699">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		{
+<span class="nc" id="L701">			prepQ.setDate(1, sqlDate);</span>
+<span class="nc" id="L702">			prepQ.setInt(2, r.getId());</span>
+<span class="nc" id="L703">			prepQ.setInt(row, vis.getId());</span>
+<span class="nc" id="L704">			row=prepQ.executeUpdate();</span>
+		}
+<span class="nc" id="L706">		java.util.logging.Logger.getLogger(&quot;aggiorna data giornale&quot;).log(Level.INFO, &quot;rivista aggiornati {0}.&quot;,row);</span>
+
+<span class="nc" id="L708">	}</span>
+		
+	
+		
+}
+
+		
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

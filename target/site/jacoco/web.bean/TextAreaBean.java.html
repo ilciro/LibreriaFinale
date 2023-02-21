@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TextAreaBean.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">web.bean</a> &gt; <span class="el_source">TextAreaBean.java</span></div><h1>TextAreaBean.java</h1><pre class="source lang-java linenums">package web.bean;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+
+import laptop.model.TempUser;
+import laptop.utilities.ConnToDb;
+
+<span class="nc" id="L16">public class TextAreaBean {</span>
+	private String scrivi;
+<span class="nc" id="L18">	private static String ricavoTotale=&quot;Ricavo totale :&quot;;</span>
+<span class="nc" id="L19">	private static String titolo=&quot; Titolo :&quot;;</span>
+<span class="nc" id="L20">	private static ResourceBundle rB=ResourceBundle.getBundle(&quot;configurations/reportsPath&quot;);</span>
+
+
+	public String getScrivi() {
+<span class="nc" id="L24">		return scrivi;</span>
+	}
+
+	public void setScrivi(String scrivi) {
+<span class="nc" id="L28">		this.scrivi = scrivi;</span>
+<span class="nc" id="L29">	}</span>
+	
+	public String generaReportL() throws SQLException, IOException
+	{
+<span class="nc" id="L33">		StringBuilder s=new StringBuilder();</span>
+
+
+<span class="nc" id="L36">		FileWriter w=null;</span>
+<span class="nc" id="L37">		w=new FileWriter(rB.getString(&quot;libri&quot;));</span>
+<span class="nc" id="L38">		String query=&quot;select titolo,copieVendute,prezzo as totale from libro&quot;;</span>
+		
+<span class="nc" id="L40">		   try (BufferedWriter b=new BufferedWriter (w)){</span>
+		
+
+<span class="nc" id="L43">			   try(Connection 	conn = ConnToDb.generalConnection();</span>
+<span class="nc" id="L44">					   PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+			   {
+		
+<span class="nc" id="L47">			ResultSet rs=prepQ.executeQuery();</span>
+
+
+<span class="nc bnc" id="L50" title="All 2 branches missed.">			while(rs.next())</span>
+			{
+
+
+
+<span class="nc" id="L55">				rs.getString(1);</span>
+<span class="nc" id="L56">				rs.getInt(2);</span>
+<span class="nc" id="L57">				rs.getFloat(3);</span>
+
+
+<span class="nc" id="L60">				b.write(titolo+rs.getString(1)+&quot;\t&quot;+ricavoTotale +rs.getInt(2)*rs.getFloat(3)+&quot;\n&quot;);</span>
+
+				
+<span class="nc" id="L63">				s.append(titolo);</span>
+<span class="nc" id="L64">				s.append(&quot;\t&quot;);</span>
+<span class="nc" id="L65">				s.append(rs.getString(1));</span>
+<span class="nc" id="L66">				s.append(&quot;\t&quot;);</span>
+<span class="nc" id="L67">				s.append(ricavoTotale);</span>
+<span class="nc" id="L68">				s.append(&quot;\t&quot;);</span>
+<span class="nc" id="L69">				s.append(rs.getInt(2)*rs.getFloat(3));</span>
+<span class="nc" id="L70">				s.append(&quot;\n&quot;);</span>
+
+<span class="nc" id="L72">				b.flush();</span>
+
+				
+			}
+
+<span class="nc" id="L77">		}catch(SQLException e)</span>
+			   {
+<span class="nc" id="L79">			java.util.logging.Logger.getLogger(&quot;report l&quot;).log(Level.INFO, &quot;report libri {0}.&quot;,e.toString());</span>
+<span class="nc" id="L80">			   }</span>
+<span class="nc" id="L81">			   return s.toString();</span>
+		   }
+		
+
+	}
+	public String generaReportR() throws SQLException, IOException
+	{
+				FileWriter w;
+<span class="nc" id="L89">				StringBuilder s=new StringBuilder();</span>
+<span class="nc" id="L90">				String query=&quot;select titolo,editore,copieRimanenti,prezzo as totale  from ispw.rivista&quot;;</span>
+<span class="nc" id="L91">				w=new FileWriter(rB.getString(&quot;riviste&quot;));</span>
+		        
+		        
+<span class="nc" id="L94">		        try (BufferedWriter b=new BufferedWriter (w)){</span>
+<span class="nc" id="L95">		        	try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="nc" id="L96">		        			PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		        	{
+		        		
+<span class="nc" id="L99">		        		ResultSet rs=prepQ.executeQuery();</span>
+				
+		           
+<span class="nc bnc" id="L102" title="All 2 branches missed.">		            while(rs.next())</span>
+		            {
+		        		
+		        	
+
+				
+<span class="nc" id="L108">								rs.getString(1);</span>
+<span class="nc" id="L109">								rs.getString(2);</span>
+<span class="nc" id="L110">								rs.getInt(3);</span>
+<span class="nc" id="L111">								rs.getFloat(4);</span>
+								
+										
+				
+<span class="nc" id="L115">		        		b.write(titolo+rs.getString(1)+&quot;\t&quot;+&quot;Editore :&quot;+rs.getString(2)+&quot;\t&quot;+ricavoTotale +rs.getInt(3)*rs.getFloat(4)+&quot;\n&quot;);</span>
+
+
+
+
+<span class="nc" id="L120">		     			b.flush();</span>
+		     			
+<span class="nc" id="L122">		     			s.append(titolo);</span>
+<span class="nc" id="L123">						s.append(&quot;\t&quot;);</span>
+<span class="nc" id="L124">						s.append(rs.getString(1));</span>
+<span class="nc" id="L125">						s.append(&quot;\t&quot;);</span>
+<span class="nc" id="L126">						s.append(&quot;editore :&quot;);</span>
+<span class="nc" id="L127">						s.append(&quot;\t&quot;);</span>
+<span class="nc" id="L128">						s.append(rs.getString(2));</span>
+<span class="nc" id="L129">						s.append(&quot;\t&quot;);</span>
+<span class="nc" id="L130">						s.append(ricavoTotale);</span>
+<span class="nc" id="L131">						s.append(&quot;\t&quot;);</span>
+<span class="nc" id="L132">						s.append(rs.getInt(3)*rs.getFloat(4));</span>
+<span class="nc" id="L133">						s.append(&quot;\n&quot;);</span>
+
+
+		        			
+		        		
+		            }
+<span class="nc" id="L139">		        	}catch(SQLException e)</span>
+		        	{
+<span class="nc" id="L141">		    			java.util.logging.Logger.getLogger(&quot;report R&quot;).log(Level.INFO, &quot;report riviste {0}.&quot;,e.toString());</span>
+<span class="nc" id="L142">		        	}</span>
+<span class="nc" id="L143">		        	return s.toString();</span>
+		     
+		        }
+	}
+	public   String generaReportG() throws IOException, SQLException
+	{
+		FileWriter w;
+<span class="nc" id="L150">		StringBuilder s=new StringBuilder();</span>
+<span class="nc" id="L151">		String query=&quot;select titolo,editore,copiRim,prezzo as totale  from ispw.giornale&quot;;</span>
+<span class="nc" id="L152">		w=new FileWriter(rB.getString(&quot;giornali&quot;));</span>
+<span class="nc" id="L153">		   try (BufferedWriter b=new BufferedWriter (w)){</span>
+<span class="nc" id="L154">			   try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="nc" id="L155">					   PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+			   {
+				  
+<span class="nc" id="L158">				   ResultSet rs=prepQ.executeQuery();</span>
+
+<span class="nc bnc" id="L160" title="All 2 branches missed.">			while(rs.next())</span>
+			{
+
+
+
+<span class="nc" id="L165">				rs.getString(1);</span>
+<span class="nc" id="L166">				rs.getString(2);</span>
+<span class="nc" id="L167">				rs.getInt(3);</span>
+<span class="nc" id="L168">				rs.getFloat(4);</span>
+
+
+
+<span class="nc" id="L172">				b.write(titolo+rs.getString(1)+&quot;\t&quot;+&quot;Editore :&quot;+rs.getString(2)+&quot;\t&quot;+ricavoTotale +rs.getInt(3)*rs.getFloat(4)+&quot;\n&quot;);</span>
+
+
+
+
+<span class="nc" id="L177">				b.flush();</span>
+				
+<span class="nc" id="L179">				s.append(titolo);</span>
+<span class="nc" id="L180">				s.append(&quot;\t&quot;);</span>
+<span class="nc" id="L181">				s.append(rs.getString(1));</span>
+<span class="nc" id="L182">				s.append(&quot;\t&quot;);</span>
+<span class="nc" id="L183">				s.append(&quot;editore :&quot;);</span>
+<span class="nc" id="L184">				s.append(&quot;\t&quot;);</span>
+<span class="nc" id="L185">				s.append(rs.getString(2));</span>
+<span class="nc" id="L186">				s.append(&quot;\t&quot;);</span>
+<span class="nc" id="L187">				s.append(ricavoTotale);</span>
+<span class="nc" id="L188">				s.append(&quot;\t&quot;);</span>
+<span class="nc" id="L189">				s.append(rs.getInt(3)*rs.getFloat(4));</span>
+<span class="nc" id="L190">				s.append(&quot;\n&quot;);</span>
+
+
+
+			}
+
+
+
+<span class="nc" id="L198">			}catch(SQLException e)</span>
+			   {
+<span class="nc" id="L200">				java.util.logging.Logger.getLogger(&quot;report g&quot;).log(Level.INFO, &quot;report giornali {0}.&quot;,e.toString());</span>
+
+<span class="nc" id="L202">			   }</span>
+
+
+<span class="nc" id="L205">			   return s.toString();</span>
+
+		}}
+	
+	public static  String getListaUtenti() throws IOException, SQLException  {
+<span class="nc" id="L210">		String query=&quot;select * from ispw.users&quot;;</span>
+<span class="nc" id="L211">		StringBuilder s=new StringBuilder();</span>
+		FileWriter w;
+<span class="nc" id="L213">		w=new FileWriter(rB.getString(&quot;utenti&quot;));</span>
+
+		
+<span class="nc" id="L216">		try (BufferedWriter b=new BufferedWriter (w)) {</span>
+
+<span class="nc" id="L218">			try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="nc" id="L219">					PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+			{
+				
+<span class="nc" id="L222">			ResultSet rs=prepQ.executeQuery();</span>
+
+
+
+<span class="nc bnc" id="L226" title="All 2 branches missed.">			while(rs.next())</span>
+			{
+
+<span class="nc" id="L229">				TempUser.getInstance().setId(rs.getInt(1));</span>
+<span class="nc" id="L230">				TempUser.getInstance().setIdRuolo(rs.getString(2));</span>
+<span class="nc" id="L231">				TempUser.getInstance().setNome(rs.getString(3));</span>
+<span class="nc" id="L232">				TempUser.getInstance().setCognome(rs.getString(4));</span>
+<span class="nc" id="L233">				TempUser.getInstance().setEmail(rs.getString(5));</span>
+<span class="nc" id="L234">				TempUser.getInstance().setDescrizione(rs.getString(7));</span>
+<span class="nc" id="L235">				TempUser.getInstance().setDataDiNascita(rs.getDate(8).toLocalDate());</span>
+<span class="nc" id="L236">				b.write(&quot;&quot;+TempUser.getInstance().getId()+&quot;\t&quot;+TempUser.getInstance().getIdRuolo()+&quot;\t&quot;+TempUser.getInstance().getNome()+&quot;\t&quot;+TempUser.getInstance().getCognome()+</span>
+<span class="nc" id="L237">						&quot;\t&quot;+TempUser.getInstance().getEmail()+&quot;\t&quot;+TempUser.getInstance().getDescrizione()+&quot;\t&quot;+TempUser.getInstance().getDataDiNascita().toString()+&quot;\n&quot;);</span>
+				
+				
+<span class="nc" id="L240">				s.append(&quot;&quot;);</span>
+<span class="nc" id="L241">				s.append(rs.getInt(1));</span>
+<span class="nc" id="L242">				s.append(&quot;\t&quot;);</span>
+
+<span class="nc" id="L244">				s.append(rs.getString(2));</span>
+<span class="nc" id="L245">				s.append(&quot;\t&quot;);</span>
+<span class="nc" id="L246">				s.append(rs.getString(3));</span>
+<span class="nc" id="L247">				s.append(&quot;\t&quot;);</span>
+<span class="nc" id="L248">				s.append(rs.getString(4));</span>
+<span class="nc" id="L249">				s.append(&quot;\t&quot;);</span>
+<span class="nc" id="L250">				s.append(rs.getString(5));</span>
+<span class="nc" id="L251">				s.append(&quot;\t&quot;);</span>
+<span class="nc" id="L252">				s.append(rs.getString(7));</span>
+<span class="nc" id="L253">				s.append(&quot;\t&quot;);</span>
+<span class="nc" id="L254">				s.append(rs.getDate(8));</span>
+<span class="nc" id="L255">				s.append(&quot;\n&quot;);</span>
+				
+			}
+<span class="nc" id="L258">		}catch(SQLException  e)</span>
+			{
+<span class="nc" id="L260">			java.util.logging.Logger.getLogger(&quot;lista utenti&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta .&quot;,e);</span>
+
+<span class="nc" id="L262">			}</span>
+<span class="nc" id="L263">			b.flush();</span>
+<span class="nc" id="L264">			return s.toString();</span>
+		
+		}
+		
+	}
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

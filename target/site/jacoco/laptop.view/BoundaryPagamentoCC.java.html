@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BoundaryPagamentoCC.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.view</a> &gt; <span class="el_source">BoundaryPagamentoCC.java</span></div><h1>BoundaryPagamentoCC.java</h1><pre class="source lang-java linenums">package laptop.view;
+
+import java.io.IOException;
+import java.net.URL;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+
+import javafx.beans.property.SimpleStringProperty;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import laptop.controller.ControllerPagamentoCC;
+import laptop.controller.ControllerSystemState;
+import laptop.model.CartaDiCredito;
+
+public class BoundaryPagamentoCC implements Initializable {
+
+	@FXML
+	private Pane panel;
+	@FXML
+	private GridPane grid;
+	@FXML
+	private Label header;
+	@FXML
+	private Label labelN;
+	@FXML
+	private Label labelC;
+	@FXML
+	private Label cartaC;
+	@FXML
+	private Label labelS;
+	@FXML
+	private TextField nomeTF;
+	@FXML
+	private TextField cognomeTF;
+	@FXML
+	private TextField codiceTF;
+	@FXML
+	private TextField scadTF;
+	@FXML
+	private Button buttonI;
+	@FXML
+	private Button buttonA;
+
+	@FXML
+	private Label labelCiv;
+	@FXML
+	private Button buttonReg;
+
+	@FXML
+	private TextField nomeInput;
+	@FXML
+	private RadioButton buttonPrendi;
+
+	@FXML
+	private PasswordField codiceTFCiv;
+
+	@FXML
+	private TableView&lt;CartaDiCredito&gt; tableCC;
+<span class="nc" id="L77">	@FXML</span>
+	private TableColumn&lt;CartaDiCredito, SimpleStringProperty&gt; codiceCC = new TableColumn&lt;&gt;(&quot;CodiceCarta&quot;);
+	@FXML
+	private Label labelNU;
+
+	private ControllerPagamentoCC cPCC;
+	protected Boolean esito;
+	protected Scene scene;
+	
+<span class="nc" id="L86">	private static ControllerSystemState vis = ControllerSystemState.getIstance();</span>
+
+	@FXML
+	private void procediCC() throws IOException, SQLException {
+<span class="nc" id="L90">		vis.setMetodoP(&quot;cCredito&quot;);</span>
+
+<span class="nc" id="L92">		String cod = codiceTF.getText();</span>
+<span class="nc" id="L93">		String civ=codiceTFCiv.getText();</span>
+		
+		
+<span class="nc" id="L96">		esito = cPCC.controllaPag(scadTF.getText(),cod,civ);</span>
+		   
+		
+<span class="nc bnc" id="L99" title="All 2 branches missed.">		if (Boolean.TRUE.equals(esito)) {</span>
+			//insrrire pagamento cc
+			//vedasi inserimento fattura
+<span class="nc" id="L102">			cPCC.pagamentoCC(nomeTF.getText());</span>
+<span class="nc bnc" id="L103" title="All 2 branches missed.">			if(vis.getIsPickup()) </span>
+			{
+				Stage stage;
+				Parent root;
+<span class="nc" id="L107">				stage = (Stage) buttonI.getScene().getWindow();</span>
+<span class="nc" id="L108">				root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;scegliNegozio.fxml&quot;));</span>
+<span class="nc" id="L109">				stage.setTitle(&quot;Benvenuto nella schermata per il download&quot;);</span>
+<span class="nc" id="L110">				scene = new Scene(root);</span>
+<span class="nc" id="L111">				stage.setScene(scene);</span>
+<span class="nc" id="L112">				stage.show();	</span>
+<span class="nc" id="L113">			}</span>
+			else
+			{
+				 
+			Stage stage;
+			Parent root;
+<span class="nc" id="L119">			stage = (Stage) buttonI.getScene().getWindow();</span>
+<span class="nc" id="L120">			root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;download.fxml&quot;));</span>
+<span class="nc" id="L121">			stage.setTitle(&quot;Benvenuto nella schermata per il download&quot;);</span>
+<span class="nc" id="L122">			scene = new Scene(root);</span>
+<span class="nc" id="L123">			stage.setScene(scene);</span>
+<span class="nc" id="L124">			stage.show();</span>
+<span class="nc" id="L125">			}</span>
+		} else {
+<span class="nc" id="L127">			java.util.logging.Logger.getLogger(&quot;procedi pagacc&quot;).log(Level.INFO,&quot;\n riprovare&quot;);</span>
+
+			Stage stage;
+			Parent root;
+<span class="nc" id="L131">			stage = (Stage) buttonI.getScene().getWindow();</span>
+<span class="nc" id="L132">			root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;PagamentoCC.fxml&quot;));</span>
+
+<span class="nc" id="L134">			stage.setTitle(&quot;Benvenuto nella schermata per il pagamento&quot;);</span>
+
+<span class="nc" id="L136">			scene = new Scene(root);</span>
+<span class="nc" id="L137">			stage.setScene(scene);</span>
+<span class="nc" id="L138">			stage.show();</span>
+		}
+		
+		
+
+<span class="nc" id="L143">	}</span>
+
+	@FXML
+	private void annullaCC() throws IOException {
+		Stage stage;
+		Parent root;
+<span class="nc" id="L149">		stage = (Stage) buttonA.getScene().getWindow();</span>
+<span class="nc" id="L150">		root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;acquista.fxml&quot;));</span>
+<span class="nc" id="L151">		stage.setTitle(&quot;benvenuto nella schermata del riepilogo ordine&quot;);</span>
+
+<span class="nc" id="L153">		scene = new Scene(root);</span>
+<span class="nc" id="L154">		stage.setScene(scene);</span>
+<span class="nc" id="L155">		stage.show();</span>
+<span class="nc" id="L156">	}</span>
+
+<span class="nc" id="L158">	public BoundaryPagamentoCC()  {</span>
+		try {
+<span class="nc" id="L160">			cPCC = new ControllerPagamentoCC();</span>
+<span class="nc" id="L161">		} catch (Exception e) {</span>
+<span class="nc" id="L162">			java.util.logging.Logger.getLogger(&quot;Test pagacc&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta .&quot;,e);</span>
+
+<span class="nc" id="L164">		}</span>
+		
+<span class="nc" id="L166">	}</span>
+
+	@FXML
+	public void registraCC() throws java.text.ParseException, SQLException {
+		
+
+<span class="nc" id="L172">		String nome = nomeTF.getText();</span>
+
+<span class="nc" id="L174">		String cognome = cognomeTF.getText();</span>
+<span class="nc" id="L175">		String codice = codiceTF.getText();</span>
+<span class="nc" id="L176">		String d = scadTF.getText();</span>
+<span class="nc" id="L177">		String civ=codiceTFCiv.getText();</span>
+		
+<span class="nc" id="L179">		Date sqlDate = null;</span>
+		java.util.Date utilDate;
+		//qui passo stringa per comodita..
+		
+		
+<span class="nc" id="L184">		 SimpleDateFormat format = new SimpleDateFormat(&quot;yyyy/MM/dd&quot;);</span>
+
+		    try {
+<span class="nc" id="L187">		         utilDate = format.parse(d);</span>
+<span class="nc" id="L188">		         sqlDate = new java.sql.Date(utilDate.getTime());</span>
+<span class="nc" id="L189">		    } catch (ParseException e) {</span>
+<span class="nc" id="L190">				java.util.logging.Logger.getLogger(&quot;Test pagacc&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta {0}&quot;,e.toString());</span>
+
+<span class="nc" id="L192">		    }</span>
+<span class="nc" id="L193">		cPCC.aggiungiCartaDB(nome, cognome, codice, sqlDate, civ, (float) 0.0);</span>
+		
+		 
+		 
+<span class="nc" id="L197">	}</span>
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+<span class="nc" id="L201">		codiceCC.setCellValueFactory(new PropertyValueFactory&lt;&gt;(&quot;numeroCC&quot;));</span>
+<span class="nc bnc" id="L202" title="All 2 branches missed.">		if(!vis.getIsLogged())</span>
+		{
+<span class="nc" id="L204">			buttonPrendi.setDisable(true);</span>
+<span class="nc" id="L205">			buttonReg.setDisable(true);</span>
+		}
+
+
+<span class="nc" id="L209">	}</span>
+
+	@FXML
+	private void popolaTabella() throws SQLException {
+		try {
+
+<span class="nc" id="L215">			String nomeUt = nomeInput.getText();</span>
+<span class="nc bnc" id="L216" title="All 2 branches missed.">			if (nomeUt.equals(&quot;&quot;)) {</span>
+<span class="nc" id="L217">				buttonPrendi.setDisable(true);</span>
+<span class="nc" id="L218">				throw new IOException();</span>
+			}
+			else {
+<span class="nc" id="L221">				buttonPrendi.setDisable(false);</span>
+<span class="nc" id="L222">				tableCC.setItems(cPCC.ritornaElencoCC(nomeUt));</span>
+			}
+<span class="nc" id="L224">		} catch (IOException e) {</span>
+<span class="nc" id="L225">			e.getMessage();</span>
+<span class="nc" id="L226">		}</span>
+<span class="nc" id="L227">		buttonPrendi.setDisable(false);</span>
+<span class="nc" id="L228">	}</span>
+
+	@FXML
+	private void prova() throws SQLException
+	{
+<span class="nc" id="L233">		nomeTF.setText(cPCC.tornaDalDb(tableCC.getSelectionModel().getSelectedItem().getNumeroCC()).getNomeUser());</span>
+<span class="nc" id="L234">		cognomeTF.setText(cPCC.tornaDalDb(tableCC.getSelectionModel().getSelectedItem().getNumeroCC()).getCognomeUser());</span>
+<span class="nc" id="L235">		codiceTF.setText(cPCC.tornaDalDb(tableCC.getSelectionModel().getSelectedItem().getNumeroCC()).getNumeroCC());</span>
+<span class="nc" id="L236">		scadTF.setText(cPCC.tornaDalDb(tableCC.getSelectionModel().getSelectedItem().getNumeroCC()).getScadenza().toString());</span>
+
+
+<span class="nc" id="L239">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

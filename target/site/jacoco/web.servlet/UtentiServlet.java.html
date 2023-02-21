@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UtentiServlet.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">web.servlet</a> &gt; <span class="el_source">UtentiServlet.java</span></div><h1>UtentiServlet.java</h1><pre class="source lang-java linenums">package web.servlet;
+
+import java.io.IOException;
+import java.util.logging.Level;
+
+import laptop.exception.LogoutException;
+import web.bean.SystemBean;
+import web.bean.UserBean;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet(&quot;/UtentiServlet&quot;)
+<span class="nc" id="L17">public class UtentiServlet extends HttpServlet {</span>
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+<span class="nc" id="L26">		String libro=req.getParameter(&quot;buttonL&quot;);</span>
+<span class="nc" id="L27">		String giornale=req.getParameter(&quot;buttonG&quot;);</span>
+<span class="nc" id="L28">		String rivista=req.getParameter(&quot;buttonR&quot;);</span>
+<span class="nc" id="L29">		String logout=req.getParameter(&quot;buttonLogout&quot;);</span>
+<span class="nc" id="L30">		String ricerca=req.getParameter(&quot;buttonRic&quot;);</span>
+<span class="nc" id="L31">		String profilo=req.getParameter(&quot;buttonProfilo&quot;);</span>
+		try {
+<span class="nc bnc" id="L33" title="All 4 branches missed.">			if(libro!=null &amp;&amp; libro.equals(&quot;libri&quot;))</span>
+			{
+<span class="nc" id="L35">				RequestDispatcher view = getServletContext().getRequestDispatcher(&quot;/libri.jsp&quot;); </span>
+<span class="nc" id="L36">				view.forward(req,resp);</span>
+			}
+<span class="nc bnc" id="L38" title="All 4 branches missed.">			if(giornale!=null &amp;&amp; giornale.equals(&quot;giornali&quot;))</span>
+			{
+<span class="nc" id="L40">				RequestDispatcher view = getServletContext().getRequestDispatcher(&quot;/giornali.jsp&quot;); </span>
+<span class="nc" id="L41">				view.forward(req,resp);</span>
+			}
+<span class="nc bnc" id="L43" title="All 4 branches missed.">			if(rivista!=null &amp;&amp; rivista.equals(&quot;riviste&quot;))</span>
+			{
+<span class="nc" id="L45">				RequestDispatcher view = getServletContext().getRequestDispatcher(&quot;/rivista.jsp&quot;); </span>
+<span class="nc" id="L46">				view.forward(req,resp);</span>
+			}
+<span class="nc bnc" id="L48" title="All 4 branches missed.">			if(logout!=null &amp;&amp; logout.equals(&quot;logout&quot;))</span>
+			{
+<span class="nc" id="L50">				logout();</span>
+			}
+<span class="nc bnc" id="L52" title="All 4 branches missed.">			if(ricerca!=null &amp;&amp; ricerca.equals(&quot;ricerca&quot;))</span>
+			{
+<span class="nc" id="L54">				RequestDispatcher view = getServletContext().getRequestDispatcher(&quot;/ricerca.jsp&quot;); </span>
+<span class="nc" id="L55">				view.forward(req,resp);</span>
+			}
+<span class="nc bnc" id="L57" title="All 4 branches missed.">			if(profilo!=null &amp;&amp; profilo.equals(&quot;profilo&quot;))</span>
+			{
+<span class="nc" id="L59">				RequestDispatcher view = getServletContext().getRequestDispatcher(&quot;/profilo.jsp&quot;); </span>
+<span class="nc" id="L60">				view.forward(req,resp);</span>
+			}
+<span class="nc" id="L62">		}catch(LogoutException e)</span>
+		{
+<span class="nc" id="L64">			java.util.logging.Logger.getLogger(&quot;post &quot;).log(Level.INFO, &quot;eccezione nel post {0}.&quot;,e.toString());</span>
+
+<span class="nc" id="L66">		}</span>
+<span class="nc" id="L67">	}</span>
+	
+	public static boolean logout() throws LogoutException 
+	{	
+		
+<span class="nc" id="L72">		String n = UserBean.getInstance().getNome();</span>
+<span class="nc" id="L73">		java.util.logging.Logger.getLogger(&quot;Test logout&quot;).log(Level.INFO, &quot;stai sloggando come {0}&quot; ,n);</span>
+		
+<span class="nc bnc" id="L75" title="All 2 branches missed.">		if (n==null)</span>
+		{
+<span class="nc" id="L77">			throw new LogoutException(&quot;Errore Logout&quot;);</span>
+
+		}
+		else {
+<span class="nc" id="L81">			 UserBean.getInstance().setId(-1);</span>
+<span class="nc" id="L82">			 UserBean.getInstance().setNome(null);</span>
+<span class="nc" id="L83">			 UserBean.getInstance().setCognome(null);</span>
+<span class="nc" id="L84">			 UserBean.getInstance().setDataDiNascita(null);</span>
+<span class="nc" id="L85">			 UserBean.getInstance().setDescrizione(null);</span>
+<span class="nc" id="L86">			 UserBean.getInstance().setEmail(null);</span>
+<span class="nc" id="L87">			 UserBean.getInstance().setPassword(null);</span>
+		
+		
+<span class="nc" id="L90">		java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, &quot;stai sloggando {0}&quot;, UserBean.getInstance().getEmail());</span>
+<span class="nc" id="L91">			SystemBean.getIstance().setIsLogged(false);</span>
+<span class="nc" id="L92">			return true;</span>
+		}
+
+	}
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

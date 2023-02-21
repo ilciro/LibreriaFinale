@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CartaCreditoServlet.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">web.servlet</a> &gt; <span class="el_source">CartaCreditoServlet.java</span></div><h1>CartaCreditoServlet.java</h1><pre class="source lang-java linenums">package web.servlet;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+
+import web.bean.CartaCreditoBean;
+import web.bean.GiornaleBean;
+import web.bean.LibroBean;
+import web.bean.SystemBean;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import laptop.database.PagamentoDao;
+import laptop.database.RivistaDao;
+import laptop.model.CartaDiCredito;
+import laptop. model.Pagamento;
+import laptop.model.raccolta.Giornale;
+import laptop.model.raccolta.Libro;
+import laptop.model.raccolta.Rivista;
+import laptop.utilities.ConnToDb;
+
+@WebServlet(&quot;/CartaCreditoServlet&quot;)
+<span class="nc" id="L32">public class CartaCreditoServlet extends HttpServlet {</span>
+
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+<span class="nc" id="L39">	private static CartaCreditoBean ccB=new CartaCreditoBean();</span>
+<span class="nc" id="L40">	private static CartaDiCredito cc=new CartaDiCredito();</span>
+<span class="nc" id="L41">	private static Libro l=new Libro();</span>
+<span class="nc" id="L42">	private static LibroBean lB=new LibroBean();</span>
+<span class="nc" id="L43">	private static Giornale g=new Giornale();</span>
+<span class="nc" id="L44">	private static GiornaleBean gB=new GiornaleBean();</span>
+<span class="nc" id="L45">	private static Rivista r=new Rivista();</span>
+<span class="nc" id="L46">	private static RivistaDao rD=new RivistaDao();</span>
+<span class="nc" id="L47">	private static PagamentoDao pD=new PagamentoDao();</span>
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+<span class="nc" id="L50">		String n=req.getParameter(&quot;nomeL&quot;);</span>
+<span class="nc" id="L51">		String c=req.getParameter(&quot;cognomeL&quot;);</span>
+<span class="nc" id="L52">		String numero=req.getParameter(&quot;cartaL&quot;);</span>
+<span class="nc" id="L53">		String scad=req.getParameter(&quot;scadL&quot;);</span>
+<span class="nc" id="L54">		String civ=req.getParameter(&quot;passL&quot;);</span>
+<span class="nc" id="L55">		String invia=req.getParameter(&quot;buttonI&quot;);</span>
+<span class="nc" id="L56">		String annulla=req.getParameter(&quot;buttonA&quot;);</span>
+<span class="nc" id="L57">		String registra=req.getParameter(&quot;regB&quot;);</span>
+<span class="nc" id="L58">		String generaLista=req.getParameter(&quot;prendiDB&quot;);</span>
+		try {
+<span class="nc bnc" id="L60" title="All 4 branches missed.">		if(annulla!=null &amp;&amp; annulla.equals(&quot;annulla&quot;))</span>
+		{
+<span class="nc" id="L62">			RequestDispatcher view = getServletContext().getRequestDispatcher(&quot;/acquista.jsp&quot;); </span>
+<span class="nc" id="L63">			view.forward(req,resp);</span>
+		}
+<span class="nc bnc" id="L65" title="All 4 branches missed.">		if(invia!=null &amp;&amp; invia.equals(&quot;paga&quot;))</span>
+		{
+<span class="nc" id="L67">			ccB.setNome(n);</span>
+<span class="nc" id="L68">			ccB.setCiv(c);</span>
+<span class="nc" id="L69">			ccB.setNumeroCC(numero);</span>
+<span class="nc" id="L70">			ccB.setCognome(c);</span>
+			
+<span class="nc" id="L72">			ccB.setDataScad(new SimpleDateFormat(&quot;yyyy/mm/dd&quot;).parse(scad));</span>
+<span class="nc" id="L73">			ccB.setCiv(civ);</span>
+<span class="nc" id="L74">			ccB.setPrezzoTransazione(SystemBean.getIstance().getSpesaT());</span>
+			
+<span class="nc bnc" id="L76" title="All 2 branches missed.">			if(controllaPag(scad, ccB.getNumeroCC(), ccB.getCiv()))</span>
+			{
+				//aggiungo carta al db 
+				
+<span class="nc" id="L80">				Date sqlDate = null;</span>
+				java.util.Date utilDate;
+<span class="nc" id="L82">				SimpleDateFormat format = new SimpleDateFormat(&quot;yyyy/MM/dd&quot;);</span>
+
+			  
+<span class="nc" id="L85">			         utilDate = format.parse(scad);</span>
+<span class="nc" id="L86">			         sqlDate = new java.sql.Date(utilDate.getTime());</span>
+			         
+			        
+			         
+			         
+
+					   
+			    
+			    
+<span class="nc" id="L95">					aggiungiCartaDB(ccB.getNome(), ccB.getCognome(), ccB.getNumeroCC(), sqlDate, ccB.getCiv(), SystemBean.getIstance().getSpesaT());</span>
+				
+					//inserisco nel db
+					
+					
+					
+<span class="nc" id="L101">					cc.setTipo(2);</span>
+<span class="nc" id="L102">					cc.setNumeroCC(ccB.getNumeroCC());</span>
+<span class="nc" id="L103">					cc.setAmmontare(1000.0);</span>
+<span class="nc" id="L104">					cc.setScadenza(sqlDate);</span>
+<span class="nc" id="L105">					cc.setNomeUser(ccB.getNome());</span>
+<span class="nc" id="L106">					cc.setPrezzoTransazine(SystemBean.getIstance().getSpesaT());</span>
+					
+<span class="nc" id="L108">					insCC(cc);</span>
+					
+<span class="nc bnc" id="L110" title="All 2 branches missed.">					if(SystemBean.getIstance().isNegozioSelezionato())</span>
+					{
+<span class="nc" id="L112">						req.setAttribute(&quot;bean1&quot;,SystemBean.getIstance());</span>
+
+<span class="nc" id="L114">						RequestDispatcher view = getServletContext().getRequestDispatcher(&quot;/negozi.jsp&quot;); </span>
+<span class="nc" id="L115">						view.forward(req,resp);</span>
+<span class="nc" id="L116">					}</span>
+					else {
+<span class="nc" id="L118">						req.setAttribute(&quot;bean1&quot;,SystemBean.getIstance());</span>
+<span class="nc" id="L119">					RequestDispatcher view = getServletContext().getRequestDispatcher(&quot;/download.jsp&quot;); </span>
+<span class="nc" id="L120">					view.forward(req,resp);</span>
+					}
+					
+			}
+			
+			
+		}
+<span class="nc bnc" id="L127" title="All 4 branches missed.">		if(registra!=null &amp;&amp; registra.equals(&quot;registra e paga&quot;))</span>
+		{
+<span class="nc" id="L129">			java.util.logging.Logger.getLogger(&quot;post registra &quot;).log(Level.INFO, &quot;da fare&quot;);</span>
+
+		}
+<span class="nc bnc" id="L132" title="All 4 branches missed.">		if(generaLista!=null &amp;&amp; generaLista.equals(&quot;generaLista&quot;))</span>
+		{
+<span class="nc" id="L134">			java.util.logging.Logger.getLogger(&quot;post genera&quot;).log(Level.INFO, &quot;da fare&quot;);</span>
+
+		}
+		
+<span class="nc" id="L138">	} catch (ParseException |SQLException  e) {</span>
+<span class="nc" id="L139">		java.util.logging.Logger.getLogger(&quot;post &quot;).log(Level.INFO, &quot;eccezione nel post {0}.&quot;,e.toString());</span>
+<span class="nc" id="L140">	}</span>
+<span class="nc" id="L141">	}</span>
+	
+	private boolean controllaPag(String d, String c,String civ) {
+		int x;
+
+		 int anno;
+		 int mese;
+		 int giorno;
+<span class="nc" id="L149">		String[] verifica=null;</span>
+<span class="nc" id="L150">		String appoggio=&quot;&quot;;</span>
+<span class="nc" id="L151">		int cont=0;</span>
+<span class="nc" id="L152">		boolean state=false;</span>
+
+
+		
+
+<span class="nc" id="L157">		appoggio = appoggio + d;</span>
+		
+
+<span class="nc" id="L160">		  anno = Integer.parseInt((String) appoggio.subSequence(0, 4));</span>
+<span class="nc" id="L161">		  mese = Integer.parseInt((String) appoggio.subSequence(5, 7));</span>
+<span class="nc" id="L162">		  giorno = Integer.parseInt((String) appoggio.subSequence(8, 10));</span>
+		
+<span class="nc bnc" id="L164" title="All 14 branches missed.">		if (anno &gt; 2020 &amp;&amp; (mese &gt;= 1 &amp;&amp; mese &lt;= 12) &amp;&amp; (giorno &gt;= 1 &amp;&amp; giorno &lt;= 31) &amp;&amp; c.length() &lt;= 20 &amp;&amp; civ.length()==3 ) {</span>
+			
+				
+<span class="nc" id="L167">					 verifica= c.split(&quot;-&quot;);</span>
+					
+<span class="nc bnc" id="L169" title="All 2 branches missed.">					for ( x=0; x&lt;verifica.length; x++) {</span>
+<span class="nc bnc" id="L170" title="All 2 branches missed.">							if(verifica[x].length()==4)</span>
+							{
+<span class="nc" id="L172">								cont++;</span>
+							}
+					}
+<span class="nc bnc" id="L175" title="All 2 branches missed.">					if (cont==4)</span>
+					{
+<span class="nc" id="L177">						state=true;</span>
+					}
+					
+				
+
+		} 
+		
+		
+<span class="nc" id="L185">		return state;</span>
+
+	}
+	
+	public void aggiungiCartaDB(String n, String c, String cod, java.sql.Date data, String civ, float prezzo)
+			throws SQLException {
+		
+		
+<span class="nc" id="L193">		cc.setNomeUser(n);</span>
+<span class="nc" id="L194">		cc.setCognomeUser(c);</span>
+<span class="nc" id="L195">		cc.setNumeroCC(cod);</span>
+<span class="nc" id="L196">		cc.setScadenza(data);</span>
+<span class="nc" id="L197">		cc.setCiv(civ);</span>
+<span class="nc" id="L198">		cc.setPrezzoTransazine(prezzo);</span>
+<span class="nc" id="L199">		cc.setPrezzoTransazine(SystemBean.getIstance().getSpesaT());</span>
+		
+			
+<span class="nc" id="L202">			insCC(cc);</span>
+						
+			Pagamento p;
+<span class="nc" id="L205">			 p=new Pagamento(0,&quot;cc&quot;,0,cc.getNomeUser(),SystemBean.getIstance().getSpesaT(),null);</span>
+<span class="nc" id="L206">				p.setMetodo(&quot;cc&quot;);</span>
+<span class="nc" id="L207">				p.setNomeUtente(cc.getNomeUser());</span>
+<span class="nc" id="L208">				String tipo=SystemBean.getIstance().getType();</span>
+<span class="nc bnc" id="L209" title="All 2 branches missed.">				if(tipo.equals(&quot;libro&quot;))</span>
+				{
+					//prenod spesa da vis
+<span class="nc" id="L212">					l.setId(SystemBean.getIstance().getId());</span>
+<span class="nc" id="L213">					p.setAmmontare(SystemBean.getIstance().getSpesaT());</span>
+<span class="nc" id="L214">					p.setId(l.getId());</span>
+<span class="nc" id="L215">					p.setTipo(lB.getCategoria());</span>
+				}
+			
+<span class="nc bnc" id="L218" title="All 2 branches missed.">				if(tipo.equals(&quot;giornale&quot;))</span>
+				{
+					//prenod spesa da vis
+<span class="nc" id="L221">					g.setId(SystemBean.getIstance().getId());</span>
+<span class="nc" id="L222">					p.setAmmontare(SystemBean.getIstance().getSpesaT());</span>
+<span class="nc" id="L223">					p.setId(g.getId());</span>
+<span class="nc" id="L224">					p.setTipo(gB.getTipologia());</span>
+					
+				}
+				
+<span class="nc bnc" id="L228" title="All 2 branches missed.">				if(tipo.equals(&quot;rivista&quot;))</span>
+				{
+					//prenod spesa da vis
+<span class="nc" id="L231">					r.setId(SystemBean.getIstance().getId());</span>
+<span class="nc" id="L232">					p.setAmmontare(SystemBean.getIstance().getSpesaT());</span>
+<span class="nc" id="L233">					p.setId(r.getId());</span>
+<span class="nc" id="L234">					p.setTipo(rD.retTip(r));</span>
+					
+				}
+								
+<span class="nc" id="L238">				pD.inserisciPagamento(p);</span>
+		
+		
+
+<span class="nc" id="L242">	}</span>
+
+	public void insCC(CartaDiCredito cc) throws SQLException
+	{
+
+<span class="nc" id="L247">		String query=&quot;insert into cartacredito (nomeP,cognomeP,codiceCarta,scad,codicePin,ammontare)  values(?,?,?,?,?,?)&quot;;</span>
+				 
+		
+<span class="nc" id="L250">			try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="nc" id="L251">					PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+			{
+<span class="nc" id="L253">				prepQ.setString(1,cc.getNomeUser());</span>
+<span class="nc" id="L254">				prepQ.setString(2, cc.getCognomeUser());</span>
+<span class="nc" id="L255">				prepQ.setString(3, cc.getNumeroCC());</span>
+<span class="nc" id="L256">				prepQ.setDate(4, (Date) cc.getScadenza());</span>
+<span class="nc" id="L257">				prepQ.setString(5,cc.getCiv());</span>
+				//in alternativa vis.getSpesa
+<span class="nc" id="L259">				prepQ.setFloat(6, cc.getPrezzoTransazine());</span>
+<span class="nc" id="L260">				prepQ.executeUpdate();</span>
+<span class="nc" id="L261">			}catch(SQLException e)</span>
+			{
+<span class="nc" id="L263">				java.util.logging.Logger.getLogger(&quot;report libro&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta .&quot;,e);</span>
+
+<span class="nc" id="L265">			}</span>
+
+
+<span class="nc" id="L268">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

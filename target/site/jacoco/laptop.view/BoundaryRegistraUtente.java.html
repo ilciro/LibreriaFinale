@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BoundaryRegistraUtente.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.view</a> &gt; <span class="el_source">BoundaryRegistraUtente.java</span></div><h1>BoundaryRegistraUtente.java</h1><pre class="source lang-java linenums">package laptop.view;
+
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import laptop.controller.ControllerRegistraUtente;
+
+
+<span class="nc" id="L28">public class BoundaryRegistraUtente implements Initializable {</span>
+	@FXML
+	private Pane pane;
+	@FXML
+	private GridPane grid;
+	@FXML
+	private ImageView image;
+	@FXML 
+	private Label nomeL;
+	@FXML
+	private Label cognomeL;
+	@FXML
+	private Label emailL;
+	@FXML
+	private Label passwordL;
+	@FXML
+	private Label confermaPassL;
+	@FXML
+	private TextField nomeTF;
+	@FXML
+	private TextField cognomeTF;
+	@FXML
+	private TextField emailTF;	
+	@FXML
+	private PasswordField passwordTF;
+	@FXML
+	private PasswordField passCheckTF;
+	@FXML
+	private Button buttonReg;
+	@FXML
+	private Button buttonA;
+	@FXML
+	private Label dataL;
+	@FXML 
+	private DatePicker calendarL;
+	protected Scene scene;
+	protected Alert alert;
+	protected Boolean state;
+	protected String message;	
+	private ControllerRegistraUtente cR;
+
+	
+	@FXML
+	private void procedi() throws IOException, SQLException {
+<span class="nc" id="L72">		LocalDate data=calendarL.getValue();</span>
+		
+		
+<span class="nc" id="L75">		state = cR.registra(nomeTF.getText(),cognomeTF.getText(),emailTF.getText(),passwordTF.getText(),passCheckTF.getText(),data);</span>
+		
+		
+		
+<span class="nc bnc" id="L79" title="All 2 branches missed.">		if(Boolean.TRUE.equals(state)) // cosi' controllo e includo i casi di false e null</span>
+		{
+
+<span class="nc" id="L82">			message = calendarL.getValue().toString();</span>
+			Stage stage;
+			Parent root;
+<span class="nc" id="L85">			stage = (Stage) buttonReg.getScene().getWindow();</span>
+<span class="nc" id="L86">			root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;registrazioneOk.fxml&quot;));</span>
+<span class="nc" id="L87">			stage.setTitle(&quot;Registazione andata a buon fine&quot;);</span>
+
+<span class="nc" id="L89">			scene = new Scene(root);</span>
+<span class="nc" id="L90">			stage.setScene(scene);</span>
+<span class="nc" id="L91">			stage.show();</span>
+
+
+<span class="nc" id="L94">		}</span>
+		else {
+<span class="nc" id="L96">			alert=new Alert(AlertType.ERROR);</span>
+<span class="nc" id="L97">			alert.setTitle(&quot;Credenziali errate&quot;);// line 2</span>
+<span class="nc" id="L98">			alert.setHeaderText(&quot;Credenziali non valide &quot;);// line 3</span>
+<span class="nc" id="L99">			alert.setContentText(&quot; Per favore reiimetterle&quot;);// line 4</span>
+<span class="nc" id="L100">			alert.setContentText(&quot; Vedere se lunghezza password&gt;=8&quot;);// line 4</span>
+<span class="nc" id="L101">			alert.showAndWait(); // line 5</span>
+
+		}
+		
+		
+				
+<span class="nc" id="L107">	}</span>
+	@FXML
+	private void annulla() throws IOException
+	{
+		
+		Stage stage;
+		Parent root;
+<span class="nc" id="L114">		stage = (Stage) buttonA.getScene().getWindow();</span>
+<span class="nc" id="L115">		root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;homePage.fxml&quot;));</span>
+<span class="nc" id="L116">		stage.setTitle(&quot;Registazione andata a buon fine&quot;);</span>
+
+<span class="nc" id="L118">		scene = new Scene(root);</span>
+<span class="nc" id="L119">		stage.setScene(scene);</span>
+<span class="nc" id="L120">		stage.show();</span>
+
+<span class="nc" id="L122">	}</span>
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		
+<span class="nc" id="L127">				cR=new ControllerRegistraUtente();</span>
+
+<span class="nc" id="L129">	}</span>
+	
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

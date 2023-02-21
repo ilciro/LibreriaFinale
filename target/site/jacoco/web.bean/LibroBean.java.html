@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LibroBean.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">web.bean</a> &gt; <span class="el_source">LibroBean.java</span></div><h1>LibroBean.java</h1><pre class="source lang-java linenums">package web.bean;
+
+import java.sql.Date;
+
+import java.time.LocalDate;
+import java.util.logging.Level;
+
+import javafx.collections.ObservableList;
+import laptop. model.raccolta.CategorieLibro;
+import laptop.model.raccolta.Raccolta;
+
+
+
+public class LibroBean {
+	/**
+	 * 
+	 */
+	private Exception mex;
+	
+	private String titolo;
+	private String codIsbn;
+	private String editore;
+	private String autore;
+	private String lingua;
+	private LocalDate dataPubb;
+	private String recensione;
+	private int nrCopie; // numero copie vendute
+	private String desc;
+	private int disponibilita;
+	
+	private Date date;
+	
+	private int numeroPagine;
+	private String tipologia;
+
+	private int id;
+	private float prezzo;
+	private String categoria;
+	private ObservableList&lt;Raccolta&gt; listaLibri;
+
+	
+	
+
+
+
+
+	public LibroBean()
+<span class="nc" id="L48">	{</span>
+<span class="nc" id="L49">		java.util.logging.Logger.getLogger(&quot;libro bean&quot;).log(Level.INFO,&quot;costruttore&quot;);</span>
+
+<span class="nc" id="L51">	}</span>
+	
+	
+	
+
+	
+
+	public int getId() {
+<span class="nc" id="L59">		return id;</span>
+	}
+
+	public void setId(int id) {
+<span class="nc" id="L63">		this.id = id;</span>
+<span class="nc" id="L64">	}</span>
+
+
+
+	public Exception getMex() {
+<span class="nc" id="L69">		return mex;</span>
+	}
+
+
+
+	public void setMex(Exception mex) {
+<span class="nc" id="L75">		this.mex = mex;</span>
+<span class="nc" id="L76">	}</span>
+
+	
+public String setCategorie()
+{
+	
+<span class="nc" id="L82">	String s=&quot;ADOLESCENTI_RAGAZZI&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L83">	s+=&quot;ARTE&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L84">	s+=&quot;CINEMA_FOTOGRAFIA&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L85">	s+=&quot;BIOGRAFIE&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L86">	s+=&quot;DIARI_MEMORIE&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L87">	s+=&quot;CALENDARI_AGENDE&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L88">	s+=&quot;DIRITTO&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L89">	s+=&quot;DIZINARI_OPERE&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L90">	s+=&quot;ECONOMIA&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L91">	s+=&quot;FAMIGLIA&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L92">	s+=&quot;SALUTE_BENESSERE&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L93">	s+=&quot;FANTASCIENZA_FANTASY&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L94">	s+=&quot;FUMETTI_MANGA&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L95">	s+=&quot;GIALLI_THRILLER&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L96">	s+=&quot;COMPUTER_GIOCHI&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L97">	s+=&quot;HUMOR&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L98">	s+=&quot;INFORMATICA&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L99">	s+=&quot;WEB_DIGITAL_MEDIA&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L100">	s+=&quot;LETTERATURA_NARRATIVA&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L101">	s+=&quot;LIBRI_BAMBINI&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L102">	s+=&quot;LIBRI_SCOLASTICI&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L103">	s+=&quot;LIBRI_UNIVERSITARI&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L104">	s+=&quot;RICETTARI_GENERALI&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L105">	s+=&quot;LINGUISTICA_SCRITTURA&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L106">	s+=&quot;POLITICA&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L107">	s+=&quot;RELIGIONE&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L108">	s+=&quot;ROMANZI_ROSA&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L109">	s+=&quot;SCIENZE&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L110">	s+=&quot;TECNOLOGIA_MEDICINA&quot;+&quot;\n&quot;;</span>
+<span class="nc" id="L111">	return s;</span>
+	}
+
+
+
+public String getCodIsbn() {
+<span class="nc" id="L117">	return codIsbn;</span>
+}
+
+
+
+public void setCodIsbn(String codIsbn) {
+<span class="nc" id="L123">	this.codIsbn = codIsbn;</span>
+<span class="nc" id="L124">}</span>
+
+
+
+public String getEditore() {
+<span class="nc" id="L129">	return editore;</span>
+}
+
+
+
+public void setEditore(String editore) {
+<span class="nc" id="L135">	this.editore = editore;</span>
+<span class="nc" id="L136">}</span>
+
+
+
+public String getAutore() {
+<span class="nc" id="L141">	return autore;</span>
+}
+
+
+
+public void setAutore(String autore) {
+<span class="nc" id="L147">	this.autore = autore;</span>
+<span class="nc" id="L148">}</span>
+
+
+
+public String getLingua() {
+<span class="nc" id="L153">	return lingua;</span>
+}
+
+
+
+public void setLingua(String lingua) {
+<span class="nc" id="L159">	this.lingua = lingua;</span>
+<span class="nc" id="L160">}</span>
+
+
+
+public LocalDate getDataPubb() {
+<span class="nc" id="L165">	return dataPubb;</span>
+}
+
+
+
+public void setDataPubb(LocalDate dataPubb) {
+<span class="nc" id="L171">	this.dataPubb = dataPubb;</span>
+<span class="nc" id="L172">}</span>
+
+
+
+public String getRecensione() {
+<span class="nc" id="L177">	return recensione;</span>
+}
+
+
+
+public void setRecensione(String recensione) {
+<span class="nc" id="L183">	this.recensione = recensione;</span>
+<span class="nc" id="L184">}</span>
+
+
+
+public int getNrCopie() {
+<span class="nc" id="L189">	return nrCopie;</span>
+}
+
+
+
+public void setNrCopie(int nrCopie) {
+<span class="nc" id="L195">	this.nrCopie = nrCopie;</span>
+<span class="nc" id="L196">}</span>
+
+
+
+public String getDesc() {
+<span class="nc" id="L201">	return desc;</span>
+}
+
+
+
+public void setDesc(String desc) {
+<span class="nc" id="L207">	this.desc = desc;</span>
+<span class="nc" id="L208">}</span>
+
+
+
+public int getDisponibilita() {
+<span class="nc" id="L213">	return disponibilita;</span>
+}
+
+
+
+public void setDisponibilita(int disponibilita) {
+<span class="nc" id="L219">	this.disponibilita = disponibilita;</span>
+<span class="nc" id="L220">}</span>
+
+
+
+public int getNumeroPagine() {
+<span class="nc" id="L225">	return numeroPagine;</span>
+}
+
+
+
+public void setNumeroPagine(int numeroPagine) {
+<span class="nc" id="L231">	this.numeroPagine = numeroPagine;</span>
+<span class="nc" id="L232">}</span>
+
+
+
+public String getTipologia() {
+<span class="nc" id="L237">	return tipologia;</span>
+}
+
+
+
+public void setTipologia(String tipologia) {
+<span class="nc" id="L243">	this.tipologia = tipologia;</span>
+<span class="nc" id="L244">}</span>
+
+
+
+
+
+
+
+public String getTitolo() {
+<span class="nc" id="L253">	return titolo;</span>
+}
+
+
+
+public void setTitolo(String titolo) {
+<span class="nc" id="L259">	this.titolo = titolo;</span>
+<span class="nc" id="L260">}</span>
+
+
+
+
+
+
+
+public Date getDate() {
+<span class="nc" id="L269">	return date;</span>
+}
+
+
+
+public void setDate(Date date) {
+<span class="nc" id="L275">	this.date = date;</span>
+<span class="nc" id="L276">}</span>
+
+
+public float getPrezzo() {
+<span class="nc" id="L280">	return prezzo;</span>
+}
+
+
+
+
+
+
+public void setPrezzo(float prezzo) {
+<span class="nc" id="L289">	this.prezzo = prezzo;</span>
+<span class="nc" id="L290">}</span>
+
+
+
+
+
+
+public String getCategoria() {
+<span class="nc" id="L298">	return categoria;</span>
+}
+
+
+
+
+
+
+public void setCategoria(String categoria) {
+<span class="nc bnc" id="L307" title="All 30 branches missed.">	switch (categoria){</span>
+	case &quot;ADOLESCENTI_RAGAZZI&quot;: 
+<span class="nc" id="L309">		this.categoria = CategorieLibro.ADOLESCENTI_RAGAZZI.toString();  </span>
+<span class="nc" id="L310">		break;</span>
+	case &quot;ARTE&quot;: 
+<span class="nc" id="L312">		this.categoria = CategorieLibro.ARTE.toString();  </span>
+<span class="nc" id="L313">		break;</span>
+	case &quot;CINEMA_FOTOGRAFIA&quot; : 
+<span class="nc" id="L315">		this.categoria = CategorieLibro.CINEMA_FOTOGRAFIA.toString();  </span>
+<span class="nc" id="L316">		break;</span>
+	case &quot;BIOGRAFIE&quot; : 
+<span class="nc" id="L318">		this.categoria = CategorieLibro.BIOGRAFIE.toString();  </span>
+<span class="nc" id="L319">		break;</span>
+	case &quot;DIARI_MEMORIE&quot; : 
+<span class="nc" id="L321">		this.categoria = CategorieLibro.DIARI_MEMORIE.toString();  </span>
+<span class="nc" id="L322">		break;</span>
+	case &quot;CALENDARI_AGENDE&quot; : 
+<span class="nc" id="L324">		this.categoria = CategorieLibro.CALENDARI_AGENDE.toString();  </span>
+<span class="nc" id="L325">		break;</span>
+	case &quot;DIRITTO&quot; : 
+<span class="nc" id="L327">		this.categoria = CategorieLibro.DIRITTO.toString();  </span>
+<span class="nc" id="L328">		break;</span>
+	case &quot;DIZINARI_OPERE&quot; : 
+<span class="nc" id="L330">		this.categoria = CategorieLibro.DIZINARI_OPERE.toString();  </span>
+<span class="nc" id="L331">		break;</span>
+	case &quot;ECONOMIA&quot; : 
+<span class="nc" id="L333">		this.categoria = CategorieLibro.ECONOMIA.toString();  </span>
+<span class="nc" id="L334">		break;</span>
+	case &quot;FAMIGLIA&quot; : 
+<span class="nc" id="L336">		this.categoria = CategorieLibro.FAMIGLIA.toString();  </span>
+<span class="nc" id="L337">		break;</span>
+	case &quot;SALUTE_BENESSERE&quot; : 
+<span class="nc" id="L339">		this.categoria = CategorieLibro.SALUTE_BENESSERE.toString();  </span>
+<span class="nc" id="L340">		break;</span>
+	case &quot;FANTASCIENZA_FANTASY&quot; : 
+<span class="nc" id="L342">		this.categoria = CategorieLibro.FANTASCIENZA_FANTASY.toString();  </span>
+<span class="nc" id="L343">		break;</span>
+	case &quot;FUMETTI_MANGA&quot; : 
+<span class="nc" id="L345">		this.categoria = CategorieLibro.FUMETTI_MANGA.toString();  </span>
+<span class="nc" id="L346">		break;</span>
+	case &quot;GIALLI_THRILLER&quot; : 
+<span class="nc" id="L348">		this.categoria = CategorieLibro.GIALLI_THRILLER.toString();  </span>
+<span class="nc" id="L349">		break;		</span>
+	case &quot;COMPUTER_GIOCHI&quot; : 
+<span class="nc" id="L351">		this.categoria = CategorieLibro.COMPUTER_GIOCHI.toString();  </span>
+<span class="nc" id="L352">		break;</span>
+	case &quot;HUMOR&quot; : 
+<span class="nc" id="L354">		this.categoria = CategorieLibro.HUMOR.toString();  </span>
+<span class="nc" id="L355">		break;</span>
+	case &quot;INFORMATICA&quot; : 
+<span class="nc" id="L357">		this.categoria = CategorieLibro.INFORMATICA.toString();  </span>
+<span class="nc" id="L358">		break;		</span>
+	case &quot;WEB_DIGITAL_MEDIA&quot; : 
+<span class="nc" id="L360">		this.categoria = CategorieLibro.WEB_DIGITAL_MEDIA.toString();  </span>
+<span class="nc" id="L361">		break;		</span>
+	case &quot;LETTERATURA_NARRATIVA&quot; : 
+<span class="nc" id="L363">		this.categoria = CategorieLibro.LETTERATURA_NARRATIVA.toString();  </span>
+<span class="nc" id="L364">		break;		</span>
+	case &quot;LIBRI_BAMBINI&quot; : 
+<span class="nc" id="L366">		this.categoria = CategorieLibro.LIBRI_BAMBINI.toString();  </span>
+<span class="nc" id="L367">		break;		</span>
+	case &quot;LIBRI_SCOLASTICI&quot; : 
+<span class="nc" id="L369">		this.categoria = CategorieLibro.LIBRI_SCOLASTICI.toString();  </span>
+<span class="nc" id="L370">		break;</span>
+	case &quot;LIBRI_UNIVERSITARI&quot; : 
+<span class="nc" id="L372">		this.categoria = CategorieLibro.LIBRI_UNIVERSITARI.toString();  </span>
+<span class="nc" id="L373">		break;			</span>
+	case &quot;RICETTARI_GENERALI&quot; : 
+<span class="nc" id="L375">		this.categoria = CategorieLibro.RICETTARI_GENERALI.toString();  </span>
+<span class="nc" id="L376">		break;	</span>
+	case &quot;LINGUISTICA_SCRITTURA&quot; : 
+<span class="nc" id="L378">		this.categoria = CategorieLibro.LINGUISTICA_SCRITTURA.toString();  </span>
+<span class="nc" id="L379">		break;</span>
+	case &quot;POLITICA&quot; : 
+<span class="nc" id="L381">		this.categoria = CategorieLibro.POLITICA.toString();  </span>
+<span class="nc" id="L382">		break;</span>
+	case &quot;RELIGIONE&quot; : 
+<span class="nc" id="L384">		this.categoria = CategorieLibro.RELIGIONE.toString();  </span>
+<span class="nc" id="L385">		break;</span>
+	case &quot;ROMANZI_ROSA&quot; : 
+<span class="nc" id="L387">		this.categoria = CategorieLibro.ROMANZI_ROSA.toString();  </span>
+<span class="nc" id="L388">		break;		</span>
+	case &quot;SCIENZE&quot; : 
+<span class="nc" id="L390">		this.categoria = CategorieLibro.SCIENZE.toString();  </span>
+<span class="nc" id="L391">		break;		</span>
+	case &quot;TECNOLOGIA_MEDICINA&quot; : 
+<span class="nc" id="L393">		this.categoria = CategorieLibro.TECNOLOGIA_MEDICINA.toString();  </span>
+<span class="nc" id="L394">		break;</span>
+	
+	default :
+<span class="nc" id="L397">		this.categoria = null;</span>
+		break;
+	}
+	
+<span class="nc" id="L401">}</span>
+
+
+
+
+
+
+public ObservableList&lt;Raccolta&gt; getListaLibri() {
+<span class="nc" id="L409">	return listaLibri;</span>
+}
+
+
+
+
+
+
+public void setListaLibri(ObservableList&lt;Raccolta&gt; listaLibri) {
+<span class="nc" id="L418">	this.listaLibri = listaLibri;</span>
+<span class="nc" id="L419">}</span>
+
+
+
+
+
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GestioneOggettoServlet.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">web.servlet</a> &gt; <span class="el_source">GestioneOggettoServlet.java</span></div><h1>GestioneOggettoServlet.java</h1><pre class="source lang-java linenums">package web.servlet;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.logging.Level;
+
+import web.bean.GiornaleBean;
+import web.bean.LibroBean;
+import web.bean.ModificaOggettoBean;
+import web.bean.RivistaBean;
+import web.bean.SystemBean;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import laptop.database.GiornaleDao;
+import laptop.database.LibroDao;
+import laptop.database.RivistaDao;
+import laptop.model.raccolta.Giornale;
+import laptop.model.raccolta.Libro;
+import laptop.model.raccolta.Rivista;
+
+@WebServlet(&quot;/GestioneOggettoServlet&quot;)
+public class GestioneOggettoServlet extends HttpServlet {
+	
+	public GestioneOggettoServlet()
+	{
+<span class="nc" id="L30">		super();</span>
+		try {
+<span class="nc bnc" id="L32" title="All 2 branches missed.">		if (SystemBean.getIstance().getType().equals(libro))</span>
+<span class="nc" id="L33">			mOB.setMiaLista(lD.getLibri());</span>
+			
+<span class="nc bnc" id="L35" title="All 2 branches missed.">		if(SystemBean.getIstance().getType().equals(giornale))</span>
+<span class="nc" id="L36">			mOB.setMiaLista(gD.getGiornali());</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">		if(SystemBean.getIstance().getType().equals(rivista))</span>
+<span class="nc" id="L38">			mOB.setMiaLista(rD.getRiviste());</span>
+<span class="nc" id="L39">		} catch (SQLException e) {</span>
+<span class="nc" id="L40">			java.util.logging.Logger.getLogger(&quot;costruttore &quot;).log(Level.INFO, &quot;eccezione nel costruttore {0}.&quot;,e.toString());</span>
+
+<span class="nc" id="L42">		}</span>
+<span class="nc" id="L43">	}</span>
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+<span class="nc" id="L49">	private static LibroBean lB=new LibroBean();</span>
+<span class="nc" id="L50">	private static ModificaOggettoBean mOB=new ModificaOggettoBean();</span>
+<span class="nc" id="L51">	private static GiornaleBean gB=new GiornaleBean();</span>
+<span class="nc" id="L52">	private static RivistaBean rB=new RivistaBean();</span>
+<span class="nc" id="L53">	private static Giornale g=new Giornale();</span>
+<span class="nc" id="L54">	private static Libro l=new Libro();</span>
+<span class="nc" id="L55">	private static Rivista r=new Rivista();</span>
+<span class="nc" id="L56">	private static LibroDao lD=new LibroDao();</span>
+<span class="nc" id="L57">	private static RivistaDao rD=new RivistaDao();</span>
+<span class="nc" id="L58">	private static GiornaleDao gD=new GiornaleDao();</span>
+<span class="nc" id="L59">	private static String libro=&quot;libro&quot;;</span>
+<span class="nc" id="L60">	private static String rivista=&quot;rivista&quot;;</span>
+<span class="nc" id="L61">	private static String giornale =&quot;giornale&quot;;</span>
+	
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+<span class="nc" id="L66">		String genera=req.getParameter(&quot;buttonGenera&quot;);</span>
+<span class="nc" id="L67">		String aggiungi=req.getParameter(&quot;buttonAdd&quot;);</span>
+<span class="nc" id="L68">		String id=req.getParameter(&quot;idL&quot;);</span>
+<span class="nc" id="L69">		String modifica=req.getParameter(&quot;buttonMod&quot;);</span>
+<span class="nc" id="L70">		String cancella=req.getParameter(&quot;buttonCanc&quot;);</span>
+<span class="nc" id="L71">		String indietro=req.getParameter(&quot;buttonI&quot;);</span>
+		
+<span class="nc" id="L73">		String type=SystemBean.getIstance().getType();</span>
+		
+		try {
+<span class="nc bnc" id="L76" title="All 4 branches missed.">		if(genera!=null &amp;&amp; genera.equals(&quot;genera lista&quot;))</span>
+		{
+<span class="nc" id="L78">			req.setAttribute(&quot;beanMOB&quot;,mOB);</span>
+<span class="nc" id="L79">			req.setAttribute(&quot;beanS&quot;,SystemBean.getIstance());</span>
+<span class="nc" id="L80">			RequestDispatcher view = getServletContext().getRequestDispatcher(&quot;/gestioneOggetto.jsp&quot;); </span>
+<span class="nc" id="L81">			view.forward(req,resp);</span>
+		}
+<span class="nc bnc" id="L83" title="All 4 branches missed.">		if(aggiungi!=null &amp;&amp; aggiungi.equals(&quot;inserisci&quot;))</span>
+		{
+<span class="nc" id="L85">			req.setAttribute(&quot;bean1&quot;,SystemBean.getIstance());</span>
+
+<span class="nc" id="L87">			RequestDispatcher view=getServletContext().getRequestDispatcher(&quot;/aggiungiOggettoPage.jsp&quot;);</span>
+<span class="nc" id="L88">			view.forward(req, resp);</span>
+		}
+		
+<span class="nc bnc" id="L91" title="All 4 branches missed.">		if(modifica!=null &amp;&amp; modifica.equals(&quot;modifica&quot;))</span>
+		{
+<span class="nc" id="L93">			checkModifica(type,id);</span>
+<span class="nc" id="L94">			RequestDispatcher view=getServletContext().getRequestDispatcher(&quot;/modificaOggettoPage.jsp&quot;);</span>
+<span class="nc" id="L95">			view.forward(req, resp);</span>
+		}
+		
+<span class="nc bnc" id="L98" title="All 6 branches missed.">		if(cancella!=null &amp;&amp; cancella.equals(&quot;cancella&quot;) &amp;&amp; !&quot;&quot;.equals(id))</span>
+		{
+			
+<span class="nc" id="L101">			checkCancella(type,id);</span>
+<span class="nc" id="L102">			RequestDispatcher view=getServletContext().getRequestDispatcher(&quot;/modificaOggettoPage.jsp&quot;);</span>
+<span class="nc" id="L103">			view.forward(req, resp);</span>
+		}
+		
+<span class="nc bnc" id="L106" title="All 4 branches missed.">		if(indietro!=null &amp;&amp; indietro.equals(&quot;indietro&quot;))</span>
+		{
+<span class="nc" id="L108">			RequestDispatcher view=getServletContext().getRequestDispatcher(&quot;/raccolta.jsp&quot;);</span>
+<span class="nc" id="L109">			view.forward(req, resp);</span>
+		}
+		
+		
+	
+	
+
+	
+<span class="nc" id="L117">	}catch(SQLException e)</span>
+	{
+<span class="nc" id="L119">		java.util.logging.Logger.getLogger(&quot;post &quot;).log(Level.INFO, &quot;eccezione nel post {0}.&quot;,e.toString());</span>
+
+<span class="nc" id="L121">	}</span>
+<span class="nc" id="L122">	}</span>
+	//used for checkData before modif
+
+	private void checkModifica(String type,String  id)
+	{
+<span class="nc bnc" id="L127" title="All 2 branches missed.">		if(!&quot;&quot;.equals(id))</span>
+		{
+<span class="nc bnc" id="L129" title="All 2 branches missed.">			if(type.equals(libro))</span>
+			{
+<span class="nc" id="L131">				lB.setId(Integer.parseInt(id));</span>
+<span class="nc" id="L132">				SystemBean.getIstance().setId(lB.getId());</span>
+<span class="nc" id="L133">				l.setId(lB.getId());</span>
+			}
+<span class="nc bnc" id="L135" title="All 2 branches missed.">			else if(type.equals( giornale))</span>
+			{
+<span class="nc" id="L137">				gB.setId(Integer.parseInt(id));</span>
+<span class="nc" id="L138">				SystemBean.getIstance().setId(gB.getId());</span>
+<span class="nc" id="L139">				g.setId(gB.getId());</span>
+			}	
+<span class="nc bnc" id="L141" title="All 2 branches missed.">			else if(type.equals(rivista))</span>
+			{
+<span class="nc" id="L143">				rB.setId(Integer.parseInt(id));</span>
+<span class="nc" id="L144">				SystemBean.getIstance().setId(rB.getId());</span>
+<span class="nc" id="L145">				r.setId(rB.getId());</span>
+			
+			}
+		}
+<span class="nc" id="L149">	}</span>
+	//used for checkData before delete
+	private void checkCancella(String type,String  id) throws SQLException
+	{
+<span class="nc bnc" id="L153" title="All 2 branches missed.">		if(!&quot;&quot;.equals(id))</span>
+		{
+<span class="nc bnc" id="L155" title="All 2 branches missed.">			if(type.equals(libro))</span>
+			{
+<span class="nc" id="L157">				lB.setId(Integer.parseInt(type));</span>
+<span class="nc" id="L158">				l.setId(lB.getId());</span>
+<span class="nc" id="L159">				lD.cancella(l);</span>
+			}
+<span class="nc bnc" id="L161" title="All 2 branches missed.">			else if(type.equals(giornale))</span>
+			{
+<span class="nc" id="L163">				gB.setId(Integer.parseInt(id));</span>
+<span class="nc" id="L164">				g.setId(gB.getId());</span>
+<span class="nc" id="L165">				gD.cancella(g);</span>
+			}
+<span class="nc bnc" id="L167" title="All 2 branches missed.">			else if(type.equals(rivista))</span>
+			{
+			
+<span class="nc" id="L170">				rB.setId(Integer.parseInt(id));</span>
+<span class="nc" id="L171">				r.setId(rB.getId());</span>
+<span class="nc" id="L172">				rD.cancella(r);</span>
+			}
+		}
+<span class="nc" id="L175">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

@@ -91,6 +91,11 @@
             <goals>
               <goal>report</goal>
             </goals>
+            <configuration>
+              <excludes>
+                <exclude>**/src/main/java/laptop/view/**/*.class</exclude>
+              </excludes>
+            </configuration>
           </execution>
         </executions>
       </plugin>
@@ -166,7 +171,7 @@
     <sonar.language>java</sonar.language>
     <java.version>11</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
-    <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
+    <sonar.sources>src/main/java</sonar.sources>
     <jacoco.version>0.8.4</jacoco.version>
     <maven.compiler>3.8.1</maven.compiler>
     <maven.shade>3.2.2</maven.shade>
@@ -174,9 +179,12 @@
     <maven.install>3.0.0-M1</maven.install>
     <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
     <maven.compiler.target>${java.version}</maven.compiler.target>
+    <sonar.tests>src/test/java</sonar.tests>
     <maven.resources>3.1.0</maven.resources>
     <maven.war>3.2.0</maven.war>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <sonar.java.binaries>target/classes</sonar.java.binaries>
+    <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     <maven.surefire>3.0.0-M5</maven.surefire>
   </properties>
 </project>

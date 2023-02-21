@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BoundaryModificaUtentePage.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.view</a> &gt; <span class="el_source">BoundaryModificaUtentePage.java</span></div><h1>BoundaryModificaUtentePage.java</h1><pre class="source lang-java linenums">package laptop.view;
+
+import java.io.IOException;
+import java.net.URL;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ResourceBundle;
+
+
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import laptop.controller.ControllerModificaUtente;
+import laptop.controller.ControllerSystemState;
+import laptop.model.User;
+
+<span class="nc" id="L28">public class BoundaryModificaUtentePage implements Initializable {</span>
+	@FXML
+	private Label header;
+	@FXML
+	private Label tipo;
+	@FXML
+	private Label nome;
+	@FXML
+	private Label cognome;
+	@FXML
+	private Label email;
+	@FXML
+	private Label pass;
+	@FXML
+	private Label data;
+	@FXML
+	private TextField utenteL;
+	@FXML
+	private TextField nomeL;
+	@FXML
+	private TextField cognomeL;
+	@FXML
+	private TextField emailL;
+	@FXML
+	private PasswordField passL;
+	@FXML
+	private TextField dataL;
+	@FXML
+	private ListView&lt;String&gt; ruoli;
+	@FXML
+	private TextField utenteTF;
+	@FXML
+	private TextField nomeTF;
+	@FXML
+	private TextField cognomeTF;
+	@FXML
+	private TextField emailTF;
+	@FXML
+	private PasswordField passF;
+	@FXML
+	private TextField dataTF;
+	@FXML
+	private Button buttonI;
+	@FXML
+	private Button buttonA;
+	@FXML
+	private Button buttonM;
+	@FXML
+	private TextArea descTA;
+	
+	protected Scene scene;
+	
+	private ControllerModificaUtente cMU;
+	
+	
+	
+	@FXML
+	private void ritornaUtente()
+	{
+<span class="nc" id="L87">		utenteTF.setText(ruoli.getSelectionModel().getSelectedItem());</span>
+		 
+<span class="nc" id="L89">	}</span>
+	
+	@FXML
+	private void aggiorna() throws SQLException, IOException, ParseException
+	{
+		//buttonM
+<span class="nc" id="L95">		User.getInstance().setId(ControllerSystemState.getIstance().getId());</span>
+<span class="nc" id="L96">		User.getInstance().setDescrizione(descTA.getText());</span>
+		
+<span class="nc" id="L98">		Date sqlDate = null;</span>
+		java.util.Date utilDate;
+<span class="nc" id="L100">		SimpleDateFormat format = new SimpleDateFormat(&quot;yyyy/MM/dd&quot;);</span>
+
+	  
+<span class="nc" id="L103">	         utilDate = format.parse(dataTF.getText());</span>
+<span class="nc" id="L104">	         sqlDate = new java.sql.Date(utilDate.getTime());</span>
+<span class="nc bnc" id="L105" title="All 2 branches missed.">		if(cMU.aggiornaTot( nomeTF.getText(), cognomeTF.getText(), emailTF.getText(),passF.getText(), descTA.getText(), sqlDate.toLocalDate(), utenteTF.getText()))</span>
+		{
+			Stage stage;
+			Parent root;
+<span class="nc" id="L109">			stage = (Stage) buttonI.getScene().getWindow();</span>
+<span class="nc" id="L110">			root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;adminPage.fxml&quot;));</span>
+<span class="nc" id="L111">			scene = new Scene(root);</span>
+<span class="nc" id="L112">			stage.setScene(scene);</span>
+<span class="nc" id="L113">			stage.show();</span>
+			
+<span class="nc" id="L115">		}</span>
+		else {
+			Stage stage;
+			Parent root;
+<span class="nc" id="L119">			stage = (Stage) buttonI.getScene().getWindow();</span>
+<span class="nc" id="L120">			root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;modificaUtentePage.fxml&quot;));</span>
+<span class="nc" id="L121">			scene = new Scene(root);</span>
+<span class="nc" id="L122">			stage.setScene(scene);</span>
+<span class="nc" id="L123">			stage.show();</span>
+			
+		}
+<span class="nc" id="L126">	}</span>
+
+	
+	@FXML
+	private void prendiDati() throws SQLException
+	{
+		
+<span class="nc" id="L133">		utenteL.setText(cMU.prendi().getIdRuolo());</span>
+<span class="nc" id="L134">		nomeL.setText(cMU.prendi().getNome());</span>
+<span class="nc" id="L135">		cognomeL.setText(cMU.prendi().getCognome());</span>
+<span class="nc" id="L136">		emailL.setText(cMU.prendi().getEmail());</span>
+<span class="nc" id="L137">		passL.setText(cMU.prendi().getPassword());</span>
+<span class="nc" id="L138">		dataL.setText(cMU.prendi().getDataDiNascita().toString());</span>
+		//buttonPrendiDati
+		//vedere dati da controller (FARE)
+<span class="nc" id="L141">	}</span>
+	@FXML
+	private void indietro() throws IOException
+	{
+		Stage stage;
+		Parent root;
+<span class="nc" id="L147">		stage = (Stage) buttonI.getScene().getWindow();</span>
+<span class="nc" id="L148">		root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;userPage.fxml&quot;));</span>
+<span class="nc" id="L149">		scene = new Scene(root);</span>
+<span class="nc" id="L150">		stage.setScene(scene);</span>
+<span class="nc" id="L151">		stage.show();</span>
+<span class="nc" id="L152">	}</span>
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		
+	
+<span class="nc" id="L157">        ruoli.getItems().add(&quot;UTENTE&quot;);</span>
+<span class="nc" id="L158">        ruoli.getItems().add(&quot;SCRITTORE&quot;);</span>
+<span class="nc" id="L159">        ruoli.getItems().add(&quot;EDITORE&quot;);</span>
+<span class="nc" id="L160">        ruoli.getItems().add(&quot;ADMIN&quot;);</span>
+
+<span class="nc" id="L162">		descTA=new TextArea();</span>
+<span class="nc" id="L163">		descTA.setText(&quot;descrizione utente&quot;);</span>
+
+<span class="nc" id="L165">		cMU=new ControllerModificaUtente();</span>
+		
+		
+<span class="nc" id="L168">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>InserisciOggettoServlet.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">web.servlet</a> &gt; <span class="el_source">InserisciOggettoServlet.java</span></div><h1>InserisciOggettoServlet.java</h1><pre class="source lang-java linenums">package web.servlet;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.logging.Level;
+
+import web.bean.LibroBean;
+import web.bean.ModificaOggettoBean;
+import web.bean.SystemBean;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import laptop.database.LibroDao;
+import laptop.model.raccolta.Libro;
+
+@WebServlet(&quot;/InserisciOggettoServlet&quot;)
+<span class="nc" id="L24">public class InserisciOggettoServlet extends HttpServlet {</span>
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+<span class="nc" id="L30">	private static LibroBean lB=new LibroBean();</span>
+<span class="nc" id="L31">	private static Libro l=new Libro();</span>
+<span class="nc" id="L32">	private static ModificaOggettoBean mOB=new ModificaOggettoBean();</span>
+<span class="nc" id="L33">	private static LibroDao lD=new LibroDao();</span>
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+<span class="nc" id="L37">		String conferma=req.getParameter(&quot;confermaB&quot;);</span>
+<span class="nc" id="L38">		String annulla=req.getParameter(&quot;annullaB&quot;);</span>
+<span class="nc" id="L39">		String genera=req.getParameter(&quot;generaL&quot;);</span>
+		
+<span class="nc" id="L41">		String type=SystemBean.getIstance().getType();</span>
+		try {
+<span class="nc bnc" id="L43" title="All 4 branches missed.">			if(genera!=null &amp;&amp; genera.equals(&quot;prendi lista&quot;))</span>
+			{
+<span class="nc" id="L45">				mOB.setTipologiaL(lB.setCategorie());				</span>
+<span class="nc" id="L46">				req.setAttribute(&quot;beanMOB&quot;,mOB);</span>
+<span class="nc" id="L47">				RequestDispatcher view=getServletContext().getRequestDispatcher(&quot;/aggiungiOggettoPage.jsp&quot;);</span>
+<span class="nc" id="L48">				view.forward(req, resp);</span>
+			}
+			
+<span class="nc bnc" id="L51" title="All 6 branches missed.">		if(conferma!=null &amp;&amp; conferma.equals(&quot;conferma&quot;) &amp;&amp; (type.equals(&quot;libro&quot;)))</span>
+			
+		{
+				
+<span class="nc" id="L55">				String titolo=req.getParameter(&quot;titoloL&quot;);</span>
+<span class="nc" id="L56">				String pagine=req.getParameter(&quot;nrPagL&quot;);//to int</span>
+<span class="nc" id="L57">				String codice=req.getParameter(&quot;codiceL&quot;);</span>
+<span class="nc" id="L58">				String autore=req.getParameter(&quot;autoreL&quot;);</span>
+<span class="nc" id="L59">				String editore=req.getParameter(&quot;editoreL&quot;);</span>
+<span class="nc" id="L60">				String lingua=req.getParameter(&quot;linguaL&quot;);</span>
+<span class="nc" id="L61">				String catS=req.getParameter(&quot;catS&quot;);</span>
+				
+<span class="nc" id="L63">				String data=req.getParameter(&quot;dataL&quot;);</span>
+<span class="nc" id="L64">				String recensione=req.getParameter(&quot;recensioneL&quot;);</span>
+<span class="nc" id="L65">				String desc=req.getParameter(&quot;descL&quot;);</span>
+<span class="nc" id="L66">				String disp=req.getParameter(&quot;checkL&quot;);</span>
+<span class="nc" id="L67">				String prezzo=req.getParameter(&quot;prezzoL&quot;);//cast to float</span>
+<span class="nc" id="L68">				String copie=req.getParameter(&quot;copieL&quot;);</span>
+				
+				java.util.Date utilDate;
+			     java.sql.Date sqlDate;
+				
+<span class="nc" id="L73">				lB.setTitolo(titolo);</span>
+<span class="nc" id="L74">				lB.setCodIsbn(codice);</span>
+<span class="nc" id="L75">				lB.setNumeroPagine(Integer.parseInt(pagine));</span>
+<span class="nc" id="L76">				lB.setEditore(editore);</span>
+<span class="nc" id="L77">				lB.setAutore(autore);</span>
+<span class="nc" id="L78">				lB.setLingua(lingua);</span>
+<span class="nc" id="L79">				lB.setCategoria(catS);</span>
+				
+<span class="nc" id="L81">				SimpleDateFormat format = new SimpleDateFormat(&quot;yyyy/MM/dd&quot;);</span>
+	
+			    
+<span class="nc" id="L84">			         utilDate = format.parse(data);</span>
+<span class="nc" id="L85">			        sqlDate = new java.sql.Date(utilDate.getTime());</span>
+<span class="nc" id="L86">			        lB.setDate(sqlDate);</span>
+			   
+				
+<span class="nc" id="L89">			    lB.setRecensione(recensione);</span>
+<span class="nc" id="L90">			    lB.setDesc(desc);</span>
+<span class="nc" id="L91">			    lB.setDisponibilita(0);</span>
+<span class="nc bnc" id="L92" title="All 2 branches missed.">			    if(disp!=null)</span>
+			    {
+<span class="nc" id="L94">			    	lB.setDisponibilita(1);</span>
+			    }
+			    
+<span class="nc" id="L97">				lB.setPrezzo(Float.parseFloat(prezzo));</span>
+<span class="nc" id="L98">				lB.setNrCopie(Integer.parseInt(copie));</span>
+				
+<span class="nc" id="L100">				DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;yyyy/MM/d&quot;);</span>
+<span class="nc" id="L101">				  String date = data;</span>
+	
+				  //convert String to LocalDate
+<span class="nc" id="L104">				  LocalDate localDate = LocalDate.parse(date, formatter);</span>
+			
+			
+				  
+<span class="nc" id="L108">			l.setTitolo(lB.getTitolo());</span>
+<span class="nc" id="L109">			l.setNumeroPagine(lB.getNumeroPagine());</span>
+<span class="nc" id="L110">			l.setCodIsbn(lB.getCodIsbn());</span>
+<span class="nc" id="L111">			l.setEditore(lB.getEditore());</span>
+<span class="nc" id="L112">			l.setAutore(lB.getAutore());</span>
+<span class="nc" id="L113">			l.setLingua(lB.getLingua());</span>
+<span class="nc" id="L114">			l.setCategoria(lB.getCategoria());</span>
+<span class="nc" id="L115">			l.setDataPubb(localDate);</span>
+<span class="nc" id="L116">			l.setRecensione(lB.getRecensione());</span>
+<span class="nc" id="L117">			l.setDesc(lB.getDesc());</span>
+<span class="nc" id="L118">			l.setDisponibilita(lB.getDisponibilita());</span>
+<span class="nc" id="L119">			l.setPrezzo(lB.getPrezzo());</span>
+<span class="nc" id="L120">			l.setNrCopie(lB.getNrCopie());</span>
+			
+				
+<span class="nc bnc" id="L123" title="All 2 branches missed.">				if(lD.creaLibrio(l))</span>
+				{
+<span class="nc" id="L125">					lD.aggiornaData(l, sqlDate);</span>
+<span class="nc" id="L126">					req.setAttribute(&quot;bean&quot;, lB);</span>
+<span class="nc" id="L127">					RequestDispatcher view = getServletContext().getRequestDispatcher(&quot;/gestioneOggettoPage.jsp&quot;); </span>
+<span class="nc" id="L128">					view.forward(req,resp); </span>
+	
+<span class="nc" id="L130">				}</span>
+				else {
+<span class="nc" id="L132">					RequestDispatcher view = getServletContext().getRequestDispatcher(&quot;/aggiungiOggettoPage&quot;); </span>
+<span class="nc" id="L133">					view.forward(req,resp); </span>
+				}
+			
+			
+		}
+				
+				
+<span class="nc bnc" id="L140" title="All 4 branches missed.">		if(annulla!=null &amp;&amp; annulla.equals(&quot;indietro&quot;))</span>
+		{
+<span class="nc" id="L142">			RequestDispatcher view=getServletContext().getRequestDispatcher(&quot;/gestioneOggetto.jsp&quot;);</span>
+<span class="nc" id="L143">			view.forward(req, resp);</span>
+		}
+<span class="nc" id="L145">		}catch(SQLException | ParseException e)</span>
+		{
+<span class="nc" id="L147">			java.util.logging.Logger.getLogger(&quot;post &quot;).log(Level.INFO, &quot;eccezione nel post {0}.&quot;,e.toString());</span>
+
+<span class="nc" id="L149">		}</span>
+<span class="nc" id="L150">	}</span>
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
