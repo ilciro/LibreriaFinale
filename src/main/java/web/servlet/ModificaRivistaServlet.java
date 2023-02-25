@@ -39,7 +39,7 @@ public class ModificaRivistaServlet extends HttpServlet{
 		try {
 			rB.setId(SystemBean.getIstance().getId());
 			r.setId(rB.getId());
-			mOB.setMiaLista(rD.getRivistaSingoloL());
+			mOB.setMiaLista(rD.getRivistaSingolo());
 			
 			
 			if(prendiDati!=null && prendiDati.equals("prendi dati"))
