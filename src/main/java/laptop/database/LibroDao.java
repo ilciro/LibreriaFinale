@@ -576,10 +576,6 @@ public class LibroDao  {
 
 
 
-				rs.getString(1);
-				rs.getInt(2);
-				rs.getFloat(3);
-
 
 				b.write("Titolo :"+rs.getString(1)+"\t"+"Ricavo totale :" +rs.getInt(2)*rs.getFloat(3)+"\n");
 

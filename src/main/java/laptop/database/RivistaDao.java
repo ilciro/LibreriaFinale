@@ -583,14 +583,9 @@ public class RivistaDao {
 		        	
 
 				
-								rs.getString(1);
-								rs.getString(2);
-								rs.getInt(3);
-								rs.getFloat(4);
-								
 										
 				
-		        		b.write("Titolo :"+rs.getString(1)+"\t"+"Editore :"+rs.getString(2)+"\t"+"Ricavo totale :" +rs.getInt(3)*rs.getFloat(4)+"\n");
+		        		b.write("Titolo :"+rs.getString(1)+"\t"+"Editore :"+rs.getString(2)+"\t"+"Ricavo totale :" +rs.getInt(3)*rs.getFloat(4)+"\t"+"pubblicato il : "+rs.getDate(7)+"\n");
 
 
 
