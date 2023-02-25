@@ -72,7 +72,7 @@
         <dependency>
 	    <groupId>org.openjfx</groupId>
 	    <artifactId>javafx-controls</artifactId>
-	    <version>11</version>
+	    <version>${java.version}</version>
 	    <type>pom</type>
 		</dependency>
 	  <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-fxml -->

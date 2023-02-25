@@ -72,6 +72,8 @@ public class BoundaryCompravendita implements Initializable {
 	private void verifica() throws  IOException, SQLException {
 		
 			String i = entryText.getText();
+			
+
 			if(i==null || i.equals(""))
 			{
 				try {
@@ -79,20 +81,22 @@ public class BoundaryCompravendita implements Initializable {
 					
 				}catch(IdException idE)
 				{
-					java.util.logging.Logger.getLogger("Test pagacc").log(Level.SEVERE,"\n eccezione ottenuta {0}.",idE.toString());
+					java.util.logging.Logger.getLogger("boundary compravendita").log(Level.SEVERE,"\n eccezione ottenuta {0}.",idE.toString());
 
 				}
-			}		
+			}	
+			
 			
 			
 			
 			
 			if( cCV.disponibilitaLibro(i) || cCV.disponibilitaGiornale(i) || cCV.disponibilitaRivista(i))
 			{
+				
 				vis.setId(Integer.parseInt(i));
 				
 			}
-			
+
 			
 			Stage stage;
 			Parent root=null;
@@ -115,6 +119,8 @@ public class BoundaryCompravendita implements Initializable {
 	@FXML
 	private void procedi() throws IOException, SQLException {
 		String i = entryText.getText();
+		
+		java.util.logging.Logger.getLogger("entry get text ").log(Level.INFO, "entry get text ", entryText.getText());
 		if(i==null || i.equals(""))
 		{
 			try {
@@ -127,9 +133,14 @@ public class BoundaryCompravendita implements Initializable {
 		}	
 		if( cCV.disponibilitaLibro(i) || cCV.disponibilitaGiornale(i) || cCV.disponibilitaRivista(i))
 		{
+			
+		
+
 			vis.setId(Integer.parseInt(i));
 			
 		}
+		java.util.logging.Logger.getLogger("vis in compravendita boundary ").log(Level.INFO, "vis vale ", vis.getId());
+
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonA.getScene().getWindow();

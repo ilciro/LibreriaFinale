@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.time.LocalDate;
+import java.util.Enumeration;
 import java.util.ResourceBundle;
 
 import com.itextpdf.text.Document;
@@ -242,114 +243,53 @@ public class Libro implements Raccolta {
 		Document document=null;
 		File file;
 		
+		
+		int dimensione=1;
 		ResourceBundle rB=ResourceBundle.getBundle("configurations/booksPath");
-
-		
-		if(i==1)
-		{
-	   		document = new Document();
-   			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Alessandro Coppola - Apocalypse Town.pdf"));
-   			document.open();	   		
-			file=new File(rB.getString("path1"));
-			Desktop.getDesktop().open(file);
-	     }
-		if (i==2)
-		{
-			document = new Document();
-   			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Andrea Baranes - Dobbiamo restituire.pdf"));
-   			document.open();	   		
-			file=new File(rB.getString("path2"));
-	        Desktop.getDesktop().open(file);
-		}
-		if (i==3)
-		{
-
-			document = new Document();
-   			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Ariel Toaff, Elio Toaff - Zohar. Il libro dello splendore.pdf"));
-   			document.open();	   		
-			file=new File(rB.getString("path3"));
-	        Desktop.getDesktop().open(file);
-					
-		}
-		if(i==4)
-		{
-
-			document = new Document();
-   			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Come i servizi segreti usano i media - Aldo Giannuli.pdf"));
-   			document.open();	   		
-			file=new File(rB.getString("path4"));
-	        Desktop.getDesktop().open(file);
-					
-		}
-		if(i==5)
-		{
-			document = new Document();
-   			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Donald Davidson - Sulla verit (2006).pdf"));
-   			document.open();	   		
-			file=new File(rB.getString("path5"));
-	        Desktop.getDesktop().open(file);
-		}
-		if(i==6)
-		{
-
-			document = new Document();
-   			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\eragon.pdf"));
-   			document.open();	
-			file=new File(rB.getString("path6"));
-			
-	        Desktop.getDesktop().open(file);
-		}
-		if(i==8)
-		{
-			document = new Document();
-   			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Gershom Scholem - Alchimia E Kabbalah.pdf"));
-   			document.open();	   		
-			file=new File(rB.getString("path7"));
-	        Desktop.getDesktop().open(file);
-		}
-		if (i==9)
-		{
-			document = new Document();
-   			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Excell - Giampietro Lanzanova.pdf"));
-   			document.open();	   		
-			file=new File(rB.getString("path9"));
-	        Desktop.getDesktop().open(file);
-		}
-		if (i==10)
-		{
-			document = new Document();
-   			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Giocatore5.pdf"));
-   			document.open();	   		
-			file=new File(rB.getString("path10"));
-	        Desktop.getDesktop().open(file);
-		}
-		if (i==11)
-		{
-			document = new Document();
-   			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Grammatica italiana-Garzanti(le garzantine)(2012).pdf"));
-   			document.open();	   		
-			file=new File(rB.getString("path11"));
-	        Desktop.getDesktop().open(file);
-		}
-		else {
-			document = new Document();
-   			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Anteprima Non Disponibile"+i+".pdf"));
-   			document.open();	
-
-   			document.add(new Paragraph("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat ornare dictum. Donec semper pellentesque risus, quis pulvinar nisl efficitur nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus nisl mi, ullamcorper cursus pulvinar ut, pretium ut quam. Proin felis mauris, pretium non scelerisque vitae, posuere vel risus. Sed tortor enim, sollicitudin et eros at, fermentum suscipit urna. Sed at nisi quis libero hendrerit interdum at sodales dui. Nullam nec mattis urna. Quisque rhoncus pharetra malesuada. Etiam porttitor ligula consequat nisi luctus scelerisque. Sed purus purus, gravida ac orci sit amet, faucibus euismod diam. In dignissim enim sed nisl euismod, in vulputate odio facilisis. Sed venenatis facilisis massa, ac condimentum ante rutrum blandit. Vivamus efficitur eros quis diam semper, nec porttitor lectus vehicula. Fusce turpis ipsum, mollis vel nunc vitae, blandit molestie nunc. Nunc sit amet feugiat lacus.\r\n"
-   					+ "\r\n"
-   					+ "Aenean sollicitudin id dolor eu luctus. Proin tincidunt semper lobortis. Nunc nec odio lorem. Praesent consectetur, nunc sed egestas elementum, orci ligula dictum ligula, ut vehicula augue nibh sit amet quam. Nam nec massa lorem. Donec sed elit massa. Praesent neque ante, suscipit nec ornare id, bibendum non dolor. Donec sem ex, placerat ac hendrerit quis, ullamcorper nec quam. Morbi tempus tellus at porta fermentum. Donec vitae dolor orci. Vivamus fermentum faucibus eros, et cursus lorem aliquet in. Integer vitae ipsum eu nulla sodales porta.\r\n"
-   					+ "\r\n"
-   					+ "Donec et purus aliquam, sagittis est eget, molestie dui. In porttitor maximus dui, a mattis urna faucibus ut. Fusce vulputate nisi dolor, sed hendrerit urna placerat quis. In hac habitasse platea dictumst. Aliquam a tempus eros. Aenean at augue quam. Vestibulum lectus enim, mollis sed pulvinar quis, porta vel lorem. Mauris vel eleifend dui. Sed venenatis ullamcorper mollis.\r\n"
-   					+ "\r\n"
-   					+ "Proin non ullamcorper ex, quis bibendum diam. Aliquam eleifend efficitur diam ut porta. Morbi ipsum sapien, vehicula sit amet felis nec, vulputate malesuada tortor. Sed finibus, augue at auctor ornare, ligula nunc venenatis nunc, sit amet mollis est dolor sed erat. Integer fermentum gravida tellus, mattis finibus turpis fringilla et. Nam sed aliquet nunc. Pellentesque nec urna metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rhoncus condimentum ornare. Curabitur pellentesque lacinia scelerisque. Curabitur faucibus et purus fermentum venenatis. Quisque sed tempor augue, non mattis massa. Vivamus vestibulum pulvinar elit id iaculis. Proin tincidunt eros nisi, et volutpat lorem rutrum ut. Phasellus convallis metus fermentum nisi molestie, sit amet rhoncus mauris laoreet.\r\n"
-   					+ "\r\n"
-   					+ "Vestibulum aliquet nisi sit amet tristique consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a fringilla libero. Fusce pharetra purus eu tortor dapibus laoreet. Quisque mattis justo et lacus fringilla mattis. Cras sit amet elementum ipsum. Sed varius congue dolor ac placerat. Integer cursus nulla at lectus sollicitudin hendrerit. Suspendisse sit amet tincidunt nunc, at volutpat nisi."));
-			
-   			document.close();
+		 ResourceBundle rBD=ResourceBundle.getBundle("configurations/downloadConfiguration");
+			 Enumeration<String> enumeration = rBD.getKeys();
+			 
 		
 
-		}
+		      // print all the keys
+		      while (enumeration.hasMoreElements()) {
+		    	 
+		    	  if(i==dimensione)
+		    	  {
+		    		  document = new Document();
+		     			PdfWriter.getInstance(document, new FileOutputStream(rBD.getString("path"+i)));
+		     			document.open();	   		
+		  			file=new File(rB.getString("path"+i));
+		  			Desktop.getDesktop().open(file);
+		    	  }
+		    	  else {
+		  			document = new Document();
+		     			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Anteprima Non Disponibile"+i+".pdf"));
+		     			document.open();	
+
+		     			document.add(new Paragraph("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat ornare dictum. Donec semper pellentesque risus, quis pulvinar nisl efficitur nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus nisl mi, ullamcorper cursus pulvinar ut, pretium ut quam. Proin felis mauris, pretium non scelerisque vitae, posuere vel risus. Sed tortor enim, sollicitudin et eros at, fermentum suscipit urna. Sed at nisi quis libero hendrerit interdum at sodales dui. Nullam nec mattis urna. Quisque rhoncus pharetra malesuada. Etiam porttitor ligula consequat nisi luctus scelerisque. Sed purus purus, gravida ac orci sit amet, faucibus euismod diam. In dignissim enim sed nisl euismod, in vulputate odio facilisis. Sed venenatis facilisis massa, ac condimentum ante rutrum blandit. Vivamus efficitur eros quis diam semper, nec porttitor lectus vehicula. Fusce turpis ipsum, mollis vel nunc vitae, blandit molestie nunc. Nunc sit amet feugiat lacus.\r\n"
+		     					+ "\r\n"
+		     					+ "Aenean sollicitudin id dolor eu luctus. Proin tincidunt semper lobortis. Nunc nec odio lorem. Praesent consectetur, nunc sed egestas elementum, orci ligula dictum ligula, ut vehicula augue nibh sit amet quam. Nam nec massa lorem. Donec sed elit massa. Praesent neque ante, suscipit nec ornare id, bibendum non dolor. Donec sem ex, placerat ac hendrerit quis, ullamcorper nec quam. Morbi tempus tellus at porta fermentum. Donec vitae dolor orci. Vivamus fermentum faucibus eros, et cursus lorem aliquet in. Integer vitae ipsum eu nulla sodales porta.\r\n"
+		     					+ "\r\n"
+		     					+ "Donec et purus aliquam, sagittis est eget, molestie dui. In porttitor maximus dui, a mattis urna faucibus ut. Fusce vulputate nisi dolor, sed hendrerit urna placerat quis. In hac habitasse platea dictumst. Aliquam a tempus eros. Aenean at augue quam. Vestibulum lectus enim, mollis sed pulvinar quis, porta vel lorem. Mauris vel eleifend dui. Sed venenatis ullamcorper mollis.\r\n"
+		     					+ "\r\n"
+		     					+ "Proin non ullamcorper ex, quis bibendum diam. Aliquam eleifend efficitur diam ut porta. Morbi ipsum sapien, vehicula sit amet felis nec, vulputate malesuada tortor. Sed finibus, augue at auctor ornare, ligula nunc venenatis nunc, sit amet mollis est dolor sed erat. Integer fermentum gravida tellus, mattis finibus turpis fringilla et. Nam sed aliquet nunc. Pellentesque nec urna metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rhoncus condimentum ornare. Curabitur pellentesque lacinia scelerisque. Curabitur faucibus et purus fermentum venenatis. Quisque sed tempor augue, non mattis massa. Vivamus vestibulum pulvinar elit id iaculis. Proin tincidunt eros nisi, et volutpat lorem rutrum ut. Phasellus convallis metus fermentum nisi molestie, sit amet rhoncus mauris laoreet.\r\n"
+		     					+ "\r\n"
+		     					+ "Vestibulum aliquet nisi sit amet tristique consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a fringilla libero. Fusce pharetra purus eu tortor dapibus laoreet. Quisque mattis justo et lacus fringilla mattis. Cras sit amet elementum ipsum. Sed varius congue dolor ac placerat. Integer cursus nulla at lectus sollicitudin hendrerit. Suspendisse sit amet tincidunt nunc, at volutpat nisi."));
+		  			
+		     			document.close();
+		  		
+
+		  		}
+		    	  dimensione++;
+		    	
+		    	
+
+		      }
+		     
+		
+		
+		
 	}
 	
 	/*
@@ -409,9 +349,6 @@ public class Libro implements Raccolta {
 	public void setNumeroPagine(int numeroPagine) {
 		this.numeroPagine = numeroPagine;
 	}
-
-
-
 
 
 

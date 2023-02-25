@@ -27,12 +27,13 @@ public class ControllerDownload {
 	private Giornale g;
 	private GiornaleDao gD;
 	private RivistaDao rD;
-	private Rivista r;
-	
+	private Rivista r;	
 	private  Libro l;
+	
 	public void scaricaLibro() throws DocumentException, IOException, URISyntaxException {
 		l.setId(vis.getId());		
 		l.scarica();		
+		
 		l.leggi(vis.getId());
 	}
 	

@@ -2,6 +2,7 @@ package laptop.view;
 
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
+
 import java.util.logging.Level;
 
 import javafx.application.Application;
@@ -59,6 +60,8 @@ public class Main  extends Application {
 		
 		
 		
+		
 	}
+		
 			
 }

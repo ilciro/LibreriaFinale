@@ -126,9 +126,13 @@ public class BoundaryAcquista implements Initializable {
 			stage.setScene(scene);
 			stage.show();
 			java.util.logging.Logger.getLogger("Test pagacc").log(Level.SEVERE,"\n Non vi e sufficiente disponibilita");
+			
+
 
 		}
 		else {
+
+			java.util.logging.Logger.getLogger("vis in acquuista boundary ").log(Level.INFO, "vis vale ", vis.getId());
 
 		Stage stage;
 		Parent root;
