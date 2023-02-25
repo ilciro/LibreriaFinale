@@ -8,8 +8,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.logging.Level;
 
 import laptop.controller.ControllerSystemState;
@@ -627,70 +626,8 @@ public class LibroDao  {
 
 	}
 	
-	public List<Raccolta> getLibriSingoloByIdList(Libro l) throws SQLException
-	{
-		query=queryL;
-		List<Raccolta> catalogo=new ArrayList<>();
-		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-			prepQ.setInt(1, l.getId());
-			ResultSet rs=prepQ.executeQuery();
-		while(rs.next())
-		{
-
-			
-					f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(7), rs.getString(5), rs.getString(6),rs.getString(4), rs.getString(7));
-				
-				
-					f.createRaccoltaFinale2(LIBRO, rs.getInt(2), rs.getString(3), rs.getInt(10),rs.getInt(12),rs.getFloat(13),rs.getInt(14));
-
-					catalogo.add(f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11),rs.getInt(15)));
-
-				
-
-		}
-
-		}catch(SQLException e)
-		{
-						java.util.logging.Logger.getLogger("libro by id").log(Level.INFO, ECCEZIONE, e);
-		}
-		java.util.logging.Logger.getLogger("catalogo").log(Level.INFO,"catalogo trovato");
-
-		return catalogo;
-
-	}
-	public List<Raccolta> getLibriByNameL(String s) throws SQLException
-	{
-		List<Raccolta> catalogo=new ArrayList<>();
-		
-		query="select * from libro where titolo=? or autore=?";
-		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ= conn.prepareStatement(query);)
-		{
-			prepQ.setString(1, s);
-			prepQ.setString(2, s);
-			ResultSet rs=prepQ.executeQuery();
-			while(rs.next())
-			{
-				
-					f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(7), rs.getString(5), rs.getString(6),rs.getString(4), rs.getString(7));
-					f.createRaccoltaFinale2(LIBRO,rs.getInt(2),rs.getString(3),rs.getInt(10),rs.getInt(12),rs.getFloat(13),rs.getInt(14));
-					catalogo.add(f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11),rs.getInt(15)));
-				
-					
-				
-			}
-		
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("get libri by name").log(Level.INFO, ECCEZIONE, e);
-		}
-		
-		
-		return catalogo;
-
-	}
+	
+	
 	public String getTitolo(Libro l) 
 	{
 		String t="";

@@ -9,8 +9,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.logging.Level;
 
 import laptop.controller.ControllerSystemState;
@@ -610,73 +609,7 @@ public class GiornaleDao {
 		
 	}
 
-	public  List<Raccolta> getGiornaleSingoloL() throws SQLException   {
-
-		List<Raccolta> catalogo=new ArrayList<>();
-		
-		query="select * from giornale";
-		
-		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-			
-			ResultSet rs=prepQ.executeQuery();
-			while (rs.next())
-			{
-
-				f.createRaccoltaFinale1(GIORNALE, rs.getString(1),rs.getString(2), null,rs.getString(3),rs.getString(4),null);
-				f.createRaccoltaFinale2(GIORNALE,0,null,0,rs.getInt(7),rs.getFloat(8),rs.getInt(6));
-				catalogo.add((f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), null, null,rs.getInt(9))));
 	
-			
-			}
-			
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("grionale singolo ").log(Level.INFO, eccezione, e);
-		}
-		return catalogo;
-
-
-	}
-	
-	public  List<Raccolta> getGiornaliByNameL(String s) throws SQLException {
-
-		List<Raccolta> catalogo=new ArrayList<>();
-		
-		query="select * from giornale where titolo=? or editore=?";
-		
-		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-			prepQ.setString(1,s);
-			prepQ.setString(2, s);
-			ResultSet rs=prepQ.executeQuery();
-			while (rs.next())
-			{
-
-				f.createRaccoltaFinale1(GIORNALE, rs.getString(1),rs.getString(2), null,rs.getString(3),rs.getString(4),null);
-				f.createRaccoltaFinale2(GIORNALE,0,null,0,rs.getInt(7),rs.getFloat(8),rs.getInt(6));
-				catalogo.add (f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), null, null,rs.getInt(9)));
-	
-			
-			}
-			
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("gionali by name").log(Level.INFO, eccezione, e);
-		}
-
-		
-		
-
-			
-
-		return catalogo;
-
-
-	}
-
 	public String getTitolo(Giornale g) 
 	{
 		String t="";

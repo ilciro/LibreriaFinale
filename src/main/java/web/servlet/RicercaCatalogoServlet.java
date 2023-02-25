@@ -43,15 +43,15 @@ public class RicercaCatalogoServlet extends HttpServlet {
 			switch(type)
 			{
 			case "libro":
-				rB.setLista(lD.getLibriByNameL(titolo));
+				rB.setLista(lD.getLibriByName(titolo));
 				req.setAttribute(beanRicerca,rB);
 				break;
 			case "giornale":
-				rB.setLista(gD.getGiornaliByNameL(titolo));
+				rB.setLista(gD.getGiornaliByName(titolo));
 				req.setAttribute(beanRicerca,rB);				
 				break;
 			case "rivista":
-				rB.setLista(rD.getRivistaSingoloL());
+				rB.setLista(rD.getRivistaSingolo());
 				req.setAttribute(beanRicerca, rB);
 				break;
 				default:break;

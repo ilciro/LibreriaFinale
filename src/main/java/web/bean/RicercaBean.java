@@ -1,18 +1,20 @@
 package web.bean;
 
-import java.util.List;
 
+import javafx.collections.ObservableList;
 import laptop.model.raccolta.Raccolta;
 
 public class RicercaBean {
 
-	private List<Raccolta> lista;
+	private ObservableList<Raccolta>lista;
 
-	public List<Raccolta> getLista() {
+	public ObservableList<Raccolta> getLista() {
 		return lista;
 	}
 
-	public void setLista(List<Raccolta> lista) {
+	public void setLista(ObservableList<Raccolta> lista) {
 		this.lista = lista;
 	}
+
+	
 }
