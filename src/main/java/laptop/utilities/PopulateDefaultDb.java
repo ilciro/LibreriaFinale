@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.Reader;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.logging.Level;
 
 import org.apache.ibatis.jdbc.ScriptRunner;
@@ -21,13 +23,14 @@ public class PopulateDefaultDb {
 
 	}
 	
-	public static boolean populateDefaultDb() throws FileNotFoundException
+	public static boolean populateDefaultDb() throws FileNotFoundException, SQLException
 	{
 			createLibri();
 			 createGiornale() ;
 			  createRivista();
 			   createUser(); 
 			   createNegozio();
+			   daiPrivilegi();
 		
 			state=true;
 		
@@ -111,6 +114,25 @@ public class PopulateDefaultDb {
 			state=true;
 	return state;
 
+
+	}
+	public static void daiPrivilegi() throws SQLException
+	{
+		String query="set sql_safe_updates=?";
+		try(Connection conn=ConnToDb.generalConnection();
+				PreparedStatement prepQ=conn.prepareStatement(query);)
+		{
+			prepQ.setInt(1,0);
+			prepQ.executeUpdate();
+
+		}catch(SQLException e)
+		{
+			java.util.logging.Logger.getLogger("dai privilegi").log(Level.INFO, "eccezione ottenuta nel dare i provilegi", e);
+		}
+
+		
+		java.util.logging.Logger.getLogger("privilegi").log(Level.INFO, "rivistaDao dai privilegi");
+		
 
 	}
 	

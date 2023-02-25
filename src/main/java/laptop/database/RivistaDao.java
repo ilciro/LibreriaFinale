@@ -129,25 +129,7 @@ public class RivistaDao {
 
 		}
 
-	public void daiPrivilegi() throws SQLException
-	{
-		query="set sql_safe_updates=?";
-		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-			prepQ.setInt(1,0);
-			prepQ.executeUpdate();
-
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("dai privilegi").log(Level.INFO, eccezione, e);
-		}
-
-		
-		java.util.logging.Logger.getLogger("privilegi").log(Level.INFO, "rivistaDao dai privilegi");
-		
-
-	}
+	
 	
 	public ObservableList<Raccolta> getRiviste() throws SQLException
 	{

@@ -6,7 +6,6 @@ import java.util.logging.Level;
 
 import javafx.collections.ObservableList;
 import laptop.database.CartaCreditoDao;
-import laptop.database.ContrassegnoDao;
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
 import laptop.database.PagamentoDao;
@@ -22,7 +21,6 @@ public class ControllerPagamentoCC {
 	private String appoggio = "";
 	private CartaDiCredito cc;
 	private PagamentoDao pDao;
-	private ContrassegnoDao pD;
 	private ControllerSystemState vis= ControllerSystemState.getIstance();
 	private Libro l;
 	private LibroDao lD;
@@ -75,11 +73,9 @@ public class ControllerPagamentoCC {
 	}
 
 	public ControllerPagamentoCC() {
-		try {
+		
 		cDao = new CartaCreditoDao();
-		cDao.daiPrivilegi();
-		pD=new ContrassegnoDao();
-		pD.daiPrivilegi();
+		
 		pDao=new PagamentoDao();
 		lD=new LibroDao();
 		l=new Libro();
@@ -87,10 +83,7 @@ public class ControllerPagamentoCC {
 		g=new Giornale();
 		rD=new RivistaDao();
 		r=new Rivista();
-		} catch (SQLException e) {
-			java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, "errore in sql",e);
-
-		}
+		
 	}
 
 	public void aggiungiCartaDB(String n, String c, String cod, java.sql.Date data, String civ, float prezzo)

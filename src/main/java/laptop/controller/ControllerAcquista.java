@@ -5,7 +5,7 @@ import java.util.logging.Level;
 
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
-import laptop.database.PagamentoDao;
+
 import laptop.database.RivistaDao;
 import laptop.exception.IdException;
 import laptop.model.raccolta.Giornale;
@@ -21,7 +21,6 @@ public class ControllerAcquista {
 	private LibroDao lD;
 	private GiornaleDao gD;
 	private RivistaDao rD;
-	private PagamentoDao pagD;
 	private Libro l;
 	private Giornale g;
 	private Rivista r;
@@ -40,7 +39,6 @@ public class ControllerAcquista {
 	
 	public float totale(String titolo,int nrCopie, int quantita) throws SQLException {
 		
-			lD.daiPrivilegi();
 			l.setTitolo(titolo);
 			l.setNrCopie(nrCopie);
 			vis.setQuantita(quantita);
@@ -61,7 +59,6 @@ public class ControllerAcquista {
 	public float totaleG(String titolo,int nrCopie, int disp) throws SQLException {
 		
 		
-		gD.daiPrivilegi();
 		g.setTitolo(titolo);
 		g.setId(vis.getId());
 		g.setCopieRimanenti(nrCopie);
@@ -74,7 +71,7 @@ public class ControllerAcquista {
 
 	public float totaleR(String titolo, int nRC,int disp) throws SQLException {
 		
-		rD.daiPrivilegi();		
+		
 		r.setTitolo(titolo);
 		r.setId(vis.getId());
 		r.setCopieRim(nRC);
@@ -94,13 +91,7 @@ public class ControllerAcquista {
 		l = new Libro();
 		g = new Giornale();
 		r = new Rivista();
-		pagD = new PagamentoDao();
 		
-		try {
-			pagD.daiPrivilegi();
-		} catch (SQLException e) {
-				java.util.logging.Logger.getLogger("Costruttore ControllerAcquista").log(Level.INFO, stringaErrore, e);
-		}
 		
 
 	}

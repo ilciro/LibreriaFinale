@@ -119,31 +119,7 @@ public class GiornaleDao {
 	}
 	
 
-	public   void daiPrivilegi() throws  SQLException 
-	{
-
-			query="set sql_safe_updates=?";
-			
-			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
-			{
-				prepQ.setInt(1,0);
-
-
-				prepQ.executeUpdate();
-
-
-			}catch(SQLException e)
-			{
-				java.util.logging.Logger.getLogger("Dai privilegi g").log(Level.INFO, eccezione, e);
-			}
-
-		
-
-
-
-
-	}
+	
 
 	public  ObservableList<Raccolta> getGiornali() throws SQLException   {
 

@@ -55,23 +55,7 @@ public class CartaCreditoDao {
 
 	}	
 
-	public void daiPrivilegi() throws SQLException
-	{
-
-		query="set sql_safe_updates=?";
-		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-			prepQ.setInt(1, 0);
-			prepQ.executeUpdate();
-
-		}catch(SQLException e)
-		{
-						java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, eccezione, e);
-		}
-
-
-	}
+	
 	public void insCC(CartaDiCredito cc) throws SQLException
 	{
 

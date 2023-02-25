@@ -28,8 +28,7 @@ public class ControllerPagamentoCash {
 
 	public void controlla(String nome, String cognome, String via, String com) throws SQLException {
 		
-			cD.daiPrivilegi();
-			pagD.daiPrivilegi();
+			
 			float spesa=vis.getSpesaT();
 
 			//fino a qui va

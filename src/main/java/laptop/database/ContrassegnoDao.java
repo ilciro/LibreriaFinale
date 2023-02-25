@@ -43,23 +43,6 @@ public class ContrassegnoDao {
          
         	 
 	}  
-	public void daiPrivilegi() throws SQLException 
-	{
-		
-			query="set sql_safe_updates=?";
-			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
-			{
-				prepQ.setInt(1,0);
-
-				prepQ.executeUpdate();
-
-			}catch(SQLException e)
-			{
-				java.util.logging.Logger.getLogger("dai privilegi").log(Level.INFO, eccezione, e);
-			}
-
-		}
 	
 
 	public int retUltimoOrdine() throws SQLException 
