@@ -1,7 +1,6 @@
 package laptop.controller;
 
 import java.sql.SQLException;
-import java.util.logging.Level;
 
 import javafx.collections.ObservableList;
 import laptop.database.GiornaleDao;
@@ -35,8 +34,7 @@ public class ControllerCompravendita {
 	public  boolean disponibilitaLibro(String i ) throws SQLException {
 	
 		
-		java.util.logging.Logger.getLogger("i in disponibilita libro ").log(Level.INFO, "i  ", Integer.parseInt(i));
-
+		
 		
 			 l.setId(Integer.parseInt(i));
 			 status=lD.checkDisp(l);
