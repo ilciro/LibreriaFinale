@@ -5,11 +5,11 @@ import java.time.LocalDate;
 
 
 public class TempUser {
-	enum Ruoli {
-		ADMIN,
-		UTENTE,
-		SCRITTORE,
-		EDITORE;
+	enum RuoliT {
+		ADMINT,
+		UTENTET,
+		SCRITTORET,
+		EDITORET;
  }
 	@Override
 	public String toString() {
@@ -112,30 +112,30 @@ public String getIdRuolo()  {
 	public void setIdRuolo(String ruolo) {
 
 		 switch (ruolo){
-			case "ADMIN":
-				r = Ruoli.ADMIN.toString();
+			case "ADMINT":
+				r = RuoliT.ADMINT.toString();
 				break;				
-			case "EDITORE":
-				r = Ruoli.EDITORE.toString();
+			case "EDITORET":
+				r = RuoliT.EDITORET.toString();
 				break;
-			case "SCRITTORE":
-				r = Ruoli.SCRITTORE.toString();
+			case "SCRITTORET":
+				r = RuoliT.SCRITTORET.toString();
 				break;
-			case "UTENTE":
-				r = Ruoli.UTENTE.toString();
+			case "UTENTET":
+				r = RuoliT.UTENTET.toString();
 				break;	
-			case "W":
-				r = Ruoli.SCRITTORE.toString();
+			case "WT":
+				r = RuoliT.SCRITTORET.toString();
 				break;
-			case "E":
-				r = Ruoli.EDITORE.toString();
+			case "ET":
+				r = RuoliT.EDITORET.toString();
 				break;	
-			case "A":
-				r = Ruoli.ADMIN.toString();
+			case "AT":
+				r = RuoliT.ADMINT.toString();
 				break;
 				
 			default:
-				r= Ruoli.UTENTE.toString();
+				r= RuoliT.UTENTET.toString();
 				break;
 			}
 		
