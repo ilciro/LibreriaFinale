@@ -19,6 +19,7 @@ public class ControllerAggiungiPage {
 	private boolean status = false;
 	private Rivista r;
 	private RivistaDao rD;
+	private ControllerBookData cBD;
 	
 	//funzione di aggiunta dei libri
 	//e verifica dei dati inseriti 
@@ -34,19 +35,7 @@ public class ControllerAggiungiPage {
 		}
 		else
 		{
-		l.setTitolo(info[0]);
-		l.setNumeroPagine(Integer.parseInt(infoCosti[0]));
-		l.setCodIsbn(infoCosti[1]);
-		l.setEditore(info[4]);
-		l.setAutore(info[2]);
-		l.setLingua(info[3]);
-		l.setCategoria(info[5]);
-		l.setDataPubb(data);
-		l.setRecensione(recensione);
-		l.setDesc(descrizione);
-		l.setDisponibilita(Integer.parseInt(infoCosti[3]));
-		l.setPrezzo(Float.parseFloat(infoCosti[4]));
-		l.setNrCopie(Integer.parseInt(infoCosti[5]));
+		cBD.checkBookData(info, recensione, descrizione, data, infoCosti);
 		
 		
 		
@@ -107,6 +96,7 @@ public class ControllerAggiungiPage {
 		gD=new GiornaleDao();
 		r=new Rivista();
 		rD=new RivistaDao();
+		cBD=new ControllerBookData();
 	}
 
 }

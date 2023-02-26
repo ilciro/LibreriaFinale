@@ -18,6 +18,7 @@ public class ControllerModifPage {
 	private GiornaleDao gD;
 	private Rivista r;
 	private RivistaDao rD;
+	private ControllerBookData cBD;
 	
 	
 	public ObservableList<Libro> getLibriById(int id) throws SQLException {
@@ -84,6 +85,7 @@ public class ControllerModifPage {
 		gD=new GiornaleDao();
 		r=new Rivista();
 		rD=new RivistaDao();
+		cBD=new ControllerBookData();
 	}
 	
 	
@@ -92,19 +94,7 @@ public class ControllerModifPage {
 		
 		
 	
-		l.setTitolo(info[0]);
-		l.setNumeroPagine(Integer.parseInt(infoCosti[0]));
-		l.setCodIsbn(infoCosti[1]);
-		l.setEditore(info[4]);
-		l.setAutore(info[2]);
-		l.setLingua(info[3]);
-		l.setCategoria(info[5]);
-		l.setDataPubb(data);
-		l.setRecensione(recensione);
-		l.setDesc(descrizione);
-		l.setDisponibilita(Integer.parseInt(infoCosti[3]));
-		l.setPrezzo(Float.parseFloat(infoCosti[4]));
-		l.setNrCopie(Integer.parseInt(infoCosti[5]));
+		cBD.checkBookData(info, recensione, descrizione, data, infoCosti);
 		
 		
 		ld.aggiornaLibro(l);
