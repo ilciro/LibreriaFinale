@@ -17,7 +17,8 @@
 <div>
 <table>
 <caption>
-scegliere tra libri , giornali e riviste, gestione,cerca,logout e visualizza profilo
+scegliere tra libri , giornali e riviste, gestione,cerca,logout e visualizza profilo con 
+privilegi di editore
 </caption>
 <tr>
 
