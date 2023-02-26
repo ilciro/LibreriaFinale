@@ -77,10 +77,9 @@ public class ContrassegnoDao {
 	{
 		boolean state=false;
 		int row=0;
-		
-		query="delete from fattura where id=?";
+		String query1="delete from fattura where id=?";
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query1);)
 		{
 			prepQ.setInt(1,idC);
 			row=prepQ.executeUpdate();

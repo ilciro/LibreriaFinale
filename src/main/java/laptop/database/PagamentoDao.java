@@ -106,10 +106,9 @@ public class PagamentoDao {
 	{
 		boolean state=false;
 		int row=0;
-		
-		query="delete from pagamento where id_op=?";
+		String query2="delete from pagamento where id_op=?";
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query2);)
 		{
 			prepQ.setInt(1,idC);
 			row=prepQ.executeUpdate();
