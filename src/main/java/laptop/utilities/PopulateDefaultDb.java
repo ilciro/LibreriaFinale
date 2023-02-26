@@ -131,7 +131,7 @@ public class PopulateDefaultDb {
 		}
 
 		
-		java.util.logging.Logger.getLogger("privilegi").log(Level.INFO, "rivistaDao dai privilegi");
+		java.util.logging.Logger.getLogger("Populate default db").log(Level.INFO, "Dai privilegi generali");
 		
 
 	}

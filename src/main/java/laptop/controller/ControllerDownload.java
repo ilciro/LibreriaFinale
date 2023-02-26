@@ -64,20 +64,18 @@ public class ControllerDownload {
 				{
 					case "libro":
 					{
-						l.setId(vis.getId());
-						lD.incrementaDisponibilita(l);
+						incrementaLibri();
 						break;
 					}
 					case "giornale":
 					{
-						g.setId(vis.getId());
-						gD.incrementaDisponibilita(g);
+						incrementaGiornali();
+
 						break;
 					}
 					case "rivista":
 					{
-						r.setId(vis.getId());
-						rD.incrementaDisponibilita(r);
+						incrementaRivista();
 						break;
 					}
 					default :
@@ -96,20 +94,20 @@ public class ControllerDownload {
 				{
 					case "libro":
 					{
-						l.setId(vis.getId());
-						lD.incrementaDisponibilita(l);
+						incrementaLibri();
+
 						break;
 					}
 					case "giornale":
 					{
-						g.setId(vis.getId());
-						gD.incrementaDisponibilita(g);
+						incrementaGiornali();
+
 						break;
 					}
 					case "rivista":
 					{
-						r.setId(vis.getId());
-						rD.incrementaDisponibilita(r);
+						incrementaRivista();
+
 						break;
 					}
 					default :
@@ -164,6 +162,22 @@ public class ControllerDownload {
 
 	public void setNrOrdine(String nrOrdine) {
 		this.nrOrdine = nrOrdine;
+	}
+	
+	public void incrementaLibri() throws SQLException
+	{
+		l.setId(vis.getId());
+		lD.incrementaDisponibilita(l);
+	}
+	public void incrementaGiornali() throws SQLException
+	{
+		g.setId(vis.getId());
+		gD.incrementaDisponibilita(g);
+	}
+	public void incrementaRivista() throws SQLException
+	{
+		r.setId(vis.getId());
+		rD.incrementaDisponibilita(r);
 	}
 
 }
