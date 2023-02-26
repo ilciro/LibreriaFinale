@@ -130,7 +130,7 @@ class TestLaptop {
 	
 	@Test
 	void testAnnullaOrdine() throws SQLException {
-		assertFalse(cDao.annullaOrdine(2));
+		assertFalse(cDao.annullaOrdineF(2));
 	}
 	
 	@Test

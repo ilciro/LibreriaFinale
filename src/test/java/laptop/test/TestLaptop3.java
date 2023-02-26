@@ -81,7 +81,7 @@ class TestLaptop3 {
 	@Test
 	void testAnnullaOrdine() throws SQLException {
 		int id=pD.retUltimoOrdine();
-		assertTrue(pD.annullaOrdine(id));
+		assertTrue(pD.annullaOrdinePag(id));
 		
 	}
 	@ParameterizedTest

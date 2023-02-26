@@ -84,13 +84,13 @@ public class PagamentoDao {
 	public int retUltimoOrdine() throws SQLException 
 	{
 		int id=0;
-		query="select count(*) as massimo from pagamento";
+		query="select count(*) as massimoP from pagamento";
 		try(Connection conn=ConnToDb.generalConnection();
 				PreparedStatement prepQ=conn.prepareStatement(query);)
 		{
 			ResultSet rs=prepQ.executeQuery();
 			while ( rs.next() ) {
-				id=rs.getInt("massimo");
+				id=rs.getInt("massimoP");
 
 			}
 		}catch(SQLException e)
@@ -102,7 +102,7 @@ public class PagamentoDao {
 		
 	}
 
-	public boolean annullaOrdine(int idC) throws SQLException
+	public boolean annullaOrdinePag(int idC) throws SQLException
 	{
 		boolean state=false;
 		int row=0;

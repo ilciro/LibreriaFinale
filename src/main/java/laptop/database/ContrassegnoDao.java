@@ -48,7 +48,7 @@ public class ContrassegnoDao {
 	public int retUltimoOrdine() throws SQLException 
 	{
 		int id=0;
-		 query="select count(*) as massimo from fattura";
+		 query="select count(*) as massimoF from fattura";
 		 
 		 try(Connection conn=ConnToDb.generalConnection();
 				 PreparedStatement prepQ=conn.prepareStatement(query);
@@ -57,7 +57,7 @@ public class ContrassegnoDao {
 			 ResultSet rs=prepQ.executeQuery();
 			 while(rs.next())
 				{
-					id=rs.getInt("massimo");
+					id=rs.getInt("massimoF");
 
 				}
 			
@@ -73,7 +73,7 @@ public class ContrassegnoDao {
 		
 	}
 	
-	public boolean annullaOrdine(int idC) throws SQLException
+	public boolean annullaOrdineF(int idC) throws SQLException
 	{
 		boolean state=false;
 		int row=0;

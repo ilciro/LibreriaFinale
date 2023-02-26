@@ -50,10 +50,10 @@ public class ControllerDownload {
 		String typeO=vis.getType(); //tipo oggetto
 		
 		int idF=cDao.retUltimoOrdine(); //ultimo elemento (preso con count)
-		statusF=cDao.annullaOrdine(idF);
+		statusF=cDao.annullaOrdineF(idF);
 		
 		int idP=pDao.retUltimoOrdine();
-		statusP=pDao.annullaOrdine(idP);
+		statusP=pDao.annullaOrdinePag(idP);
 		
 		
 		if((typeP.equals("cash") &&(statusF && statusP))||(typeP.equals("cCredito") && statusP))
