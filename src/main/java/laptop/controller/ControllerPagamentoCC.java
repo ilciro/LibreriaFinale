@@ -6,15 +6,12 @@ import java.util.logging.Level;
 
 import javafx.collections.ObservableList;
 import laptop.database.CartaCreditoDao;
-import laptop.database.GiornaleDao;
-import laptop.database.LibroDao;
+
 import laptop.database.PagamentoDao;
-import laptop.database.RivistaDao;
+
 import laptop.model.CartaDiCredito;
 import laptop.model.Pagamento;
-import laptop.model.raccolta.Giornale;
-import laptop.model.raccolta.Libro;
-import laptop.model.raccolta.Rivista;
+
 
 public class ControllerPagamentoCC {
 	private CartaCreditoDao cDao;
@@ -22,16 +19,12 @@ public class ControllerPagamentoCC {
 	private CartaDiCredito cc;
 	private PagamentoDao pDao;
 	private ControllerSystemState vis= ControllerSystemState.getIstance();
-	private Libro l;
-	private LibroDao lD;
-	private GiornaleDao gD;
-	private RivistaDao rD;
-	private Giornale g;
-	private Rivista r;
+	
 	private boolean state=false;
 	
 	
 	private int cont=0;
+	private ControllerCheckPagamentoData cCPD;
 
 	public boolean controllaPag(String d, String c,String civ) {
 		int x;
@@ -77,12 +70,8 @@ public class ControllerPagamentoCC {
 		cDao = new CartaCreditoDao();
 		
 		pDao=new PagamentoDao();
-		lD=new LibroDao();
-		l=new Libro();
-		gD=new GiornaleDao();
-		g=new Giornale();
-		rD=new RivistaDao();
-		r=new Rivista();
+		
+		cCPD=new ControllerCheckPagamentoData();
 		
 	}
 
@@ -100,33 +89,7 @@ public class ControllerPagamentoCC {
 			 p=new Pagamento(0,"cc",0,cc.getNomeUser(),vis.getSpesaT(),null);
 				p.setMetodo("cc");
 				p.setNomeUtente(cc.getNomeUser());
-				String tipo=vis.getType();
-				if(tipo.equals("libro"))
-				{
-					//prenod spesa da vis
-					l.setId(vis.getId());
-					p.setAmmontare(vis.getSpesaT());
-					p.setId(l.getId());
-					p.setTipo(lD.retTip(l));
-				}
-				if(tipo.equals("giornale"))
-				{
-					//prenod spesa da vis
-					g.setId(vis.getId());
-					p.setAmmontare(vis.getSpesaT());
-					p.setId(g.getId());
-					p.setTipo(gD.retTip(g));
-					
-				}
-				if(tipo.equals("rivista"))
-				{
-					//prenod spesa da vis
-					r.setId(vis.getId());
-					p.setAmmontare(vis.getSpesaT());
-					p.setId(r.getId());
-					p.setTipo(rD.retTip(r));
-					
-				}
+				cCPD.checkPagamentoData(n);
 								
 				pDao.inserisciPagamento(p);
 		
@@ -154,36 +117,7 @@ public class ControllerPagamentoCC {
 		//inserire qui
 		p.setMetodo("cCredito");
 		p.setNomeUtente(nome);
-		String tipo=vis.getType();
-		if(tipo.equals("libro"))
-		{
-			//prenod spesa da vis
-			l.setId(vis.getId());
-			p.setAmmontare(vis.getSpesaT());
-			p.setId(l.getId());
-			p.setTipo(lD.retTip(l));
-			lD.aggiornaDisponibilita(l);
-		}
-		if(tipo.equals("giornale"))
-		{
-			//prenod spesa da vis
-			g.setId(vis.getId());
-			p.setAmmontare(vis.getSpesaT());
-			p.setId(g.getId());
-			p.setTipo(gD.retTip(g));
-			gD.aggiornaDisponibilita(g);
-		}
-		if(tipo.equals("rivista"))
-		{
-			//prenod spesa da vis
-			r.setId(vis.getId());
-			p.setAmmontare(vis.getSpesaT());
-			p.setId(r.getId());
-			p.setTipo(rD.retTip(r));
-			rD.aggiornaDisponibilita(r);
-			
-		}
-		
+		cCPD.checkPagamentoData(nome);
 		
 		
 		//ammontare,acquisto,idProd
