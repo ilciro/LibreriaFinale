@@ -56,7 +56,7 @@ public class ControllerDownload {
 		statusP=pDao.annullaOrdine(idP);
 		
 		
-		if(typeP.equals("cash") &&(statusF && statusP))
+		if((typeP.equals("cash") &&(statusF && statusP))||(typeP.equals("cCredito") && statusP))
 			{
 				//aggiorno disponibilita
 				
@@ -86,38 +86,7 @@ public class ControllerDownload {
 			
 			
 		}
-		 if(typeP.equals("cCredito") && statusP)
-		{
-			
-				//aggiorno disponibilita
-				switch(typeO)
-				{
-					case "libro":
-					{
-						incrementaLibri();
-
-						break;
-					}
-					case "giornale":
-					{
-						incrementaGiornali();
-
-						break;
-					}
-					case "rivista":
-					{
-						incrementaRivista();
-
-						break;
-					}
-					default :
-						break;
-				}
-			
-				
-			}
-		
-		
+		// messo su come condizione		
 		
 		
 	}
