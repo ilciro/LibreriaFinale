@@ -79,7 +79,7 @@ public class UsersDao {
 	public static boolean createUser2(TempUser uT) throws SQLException
 	{
 
-		LocalDate d=uT.getDataDiNascita();
+		LocalDate d=uT.getDataDiNascitaT();
 		query= "INSERT INTO `ispw`.`users`"
 				+ "(`idRuolo`,"
 				+ "`Nome`,"
@@ -98,11 +98,11 @@ public class UsersDao {
 			
 			
 			prepQ.setString(1,uT.getIdRuolo().substring(0,1));
-			prepQ.setString(2,uT.getNome()); 
-			prepQ.setString(3,uT.getCognome()); 
-			prepQ.setString(4,uT.getEmail());
-			prepQ.setString(5, uT.getPassword());
-			prepQ.setString(6, uT.getDescrizione());
+			prepQ.setString(2,uT.getNomeT()); 
+			prepQ.setString(3,uT.getCognomeT()); 
+			prepQ.setString(4,uT.getEmailT());
+			prepQ.setString(5, uT.getPasswordT());
+			prepQ.setString(6, uT.getDescrizioneT());
 			// alternativa NO se rompe tutto se passi un oggetto di tipo data java lui
 			// vuole un oggetto di tipo data sql 
 			prepQ.setDate(7, java.sql.Date.valueOf(d)); 
@@ -162,7 +162,7 @@ public class UsersDao {
 	{
 		// ritorna int per motivi legati al controller
 		// anche se lo tratto come boolean
-		String email = uT.getEmail();
+		String email = uT.getEmailT();
 		int status = -1;
 		
 		int idUser=0;
@@ -296,7 +296,7 @@ public class UsersDao {
 
 	public static boolean deleteTempUser(TempUser uT) throws SQLException 
 	{
-		String email = uT.getEmail();
+		String email = uT.getEmailT();
 		
 
 		
@@ -514,8 +514,8 @@ public class UsersDao {
 					PreparedStatement prepQ=conn.prepareStatement(query);)
 			{
 
-			prepQ.setString(1,uT.getNome() );
-			prepQ.setString(2, uT.getEmail());
+			prepQ.setString(1,uT.getNomeT() );
+			prepQ.setString(2, uT.getEmailT());
 			prepQ.executeUpdate();  		 		
 
 			}catch(SQLException e)
@@ -544,8 +544,8 @@ public class UsersDao {
 
 			
 
-			prepQ.setString(1,uT.getPassword());
-			prepQ.setString(2, uT.getEmail());
+			prepQ.setString(1,uT.getPasswordT());
+			prepQ.setString(2, uT.getEmailT());
 			prepQ.executeUpdate();  		 		
 
 			}catch(SQLException e)
@@ -566,8 +566,8 @@ public class UsersDao {
 
 
 
-			prepQ.setString(1,uT.getDescrizione());
-			prepQ.setString(2, uT.getEmail());
+			prepQ.setString(1,uT.getDescrizioneT());
+			prepQ.setString(2, uT.getEmailT());
 			prepQ.executeUpdate();  		 		
 
 			}catch(SQLException e)
@@ -587,8 +587,8 @@ public class UsersDao {
 
 			
 
-			prepQ.setString(1,uT.getDataDiNascita().toString());
-			prepQ.setString(2, uT.getEmail());
+			prepQ.setString(1,uT.getDataDiNascitaT().toString());
+			prepQ.setString(2, uT.getEmailT());
 			prepQ.executeUpdate();  		 		
 
 		}catch(SQLException e)
@@ -622,13 +622,13 @@ public class UsersDao {
 
 				TempUser.getInstance().setId(rs.getInt(1));
 				TempUser.getInstance().setIdRuolo(rs.getString(2));
-				TempUser.getInstance().setNome(rs.getString(3));
-				TempUser.getInstance().setCognome(rs.getString(4));
-				TempUser.getInstance().setEmail(rs.getString(5));
-				TempUser.getInstance().setDescrizione(rs.getString(7));
-				TempUser.getInstance().setDataDiNascita(rs.getDate(8).toLocalDate());
-				b.write(""+TempUser.getInstance().getId()+"\t"+TempUser.getInstance().getIdRuolo()+"\t"+TempUser.getInstance().getNome()+"\t"+TempUser.getInstance().getCognome()+
-						"\t"+TempUser.getInstance().getEmail()+"\t"+TempUser.getInstance().getDescrizione()+"\t"+TempUser.getInstance().getDataDiNascita().toString()+"\n");
+				TempUser.getInstance().setNomeT(rs.getString(3));
+				TempUser.getInstance().setCognomeT(rs.getString(4));
+				TempUser.getInstance().setEmailT(rs.getString(5));
+				TempUser.getInstance().setDescrizioneT(rs.getString(7));
+				TempUser.getInstance().setDataDiNascitaT(rs.getDate(8).toLocalDate());
+				b.write(""+TempUser.getInstance().getId()+"\t"+TempUser.getInstance().getIdRuolo()+"\t"+TempUser.getInstance().getNomeT()+"\t"+TempUser.getInstance().getCognomeT()+
+						"\t"+TempUser.getInstance().getEmailT()+"\t"+TempUser.getInstance().getDescrizioneT()+"\t"+TempUser.getInstance().getDataDiNascitaT().toString()+"\n");
 				
 			}
 		}catch(SQLException  e)
@@ -658,12 +658,12 @@ public class UsersDao {
 		{
 
 			uT.setIdRuolo(rs.getString(2));
-			uT.setNome(rs.getString(3));
-			uT.setCognome(rs.getString(4));
-			uT.setEmail(rs.getString(5));
-			uT.setPassword(rs.getString(6));
-			uT.setDescrizione(rs.getString(7));
-			uT.setDataDiNascita(rs.getDate(8).toLocalDate());
+			uT.setNomeT(rs.getString(3));
+			uT.setCognomeT(rs.getString(4));
+			uT.setEmailT(rs.getString(5));
+			uT.setPasswordT(rs.getString(6));
+			uT.setDescrizioneT(rs.getString(7));
+			uT.setDataDiNascitaT(rs.getDate(8).toLocalDate());
 
 
 		}

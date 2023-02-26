@@ -251,19 +251,19 @@ class TestLaptop2 {
 	@Test
 	void testCreateUser2() throws SQLException {
 		tu.setIdRuolo("E");
-		tu.setNome("tempUser nome");
-		tu.setCognome("tempUser cognome");
-		tu.setEmail("tempUser@libero.it");
-		tu.setPassword("userTemp963");
-		tu.setDescrizione("provo ad inserire un tempUser");
-		tu.setDataDiNascita(LocalDate.of(1988, 5,12));
+		tu.setNomeT("tempUser nome");
+		tu.setCognomeT("tempUser cognome");
+		tu.setEmailT("tempUser@libero.it");
+		tu.setPasswordT("userTemp963");
+		tu.setDescrizioneT("provo ad inserire un tempUser");
+		tu.setDataDiNascitaT(LocalDate.of(1988, 5,12));
 		assertTrue(UsersDao.createUser2(tu));
 		
 	}
 
 	@Test
 	void testAggiornaTempNome() throws SQLException {
-		tu.setNome("alfredo");
+		tu.setNomeT("alfredo");
 		assertNotNull(UsersDao.aggiornaTempNome(tu));
 	}
 
@@ -278,7 +278,7 @@ class TestLaptop2 {
 	@ValueSource(strings={"baoPublishing@gmail.com","giannni@gmail.com"} )
 	void testCheckTempUser(String strings) throws SQLException
 	{
-		tu.setEmail(strings);
+		tu.setEmailT(strings);
 		assertEquals(-1,UsersDao.checkTempUser(tu));
 	}
 	
@@ -290,7 +290,7 @@ class TestLaptop2 {
 	@Test
 	void testDeleteTempUser() throws SQLException
 	{
-		tu.setEmail("alfredino25@libro.it");
+		tu.setEmailT("alfredino25@libro.it");
 		assertTrue(UsersDao.deleteTempUser(tu));
 	}
 	@Test

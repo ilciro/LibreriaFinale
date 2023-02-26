@@ -208,37 +208,37 @@ class TestLaptop3 {
 
 	@Test
 	void testGetNome() {
-		tu.setNome("tempUserN");
-		assertNotNull(tu.getNome());
+		tu.setNomeT("tempUserN");
+		assertNotNull(tu.getNomeT());
 	}
 
 	@Test
 	void testGetCognome() {
-		tu.setCognome("tempUserC");
-		assertNotNull(tu.getCognome());
+		tu.setCognomeT("tempUserC");
+		assertNotNull(tu.getCognomeT());
 	}
 
 	@Test
 	void testGetEmail() {
-		tu.setEmail("tempUserE@gmail.com");
-		assertNotNull(tu.getEmail());
+		tu.setEmailT("tempUserE@gmail.com");
+		assertNotNull(tu.getEmailT());
 	}
 
 	@Test
 	void testGetPassword() {
-		tu.setPassword("tempUser12");
-		assertNotNull(tu.getPassword());
+		tu.setPasswordT("tempUser12");
+		assertNotNull(tu.getPasswordT());
 	}
 
 	@Test
 	void testGetDescrizioneTU() {
-		assertNotEquals("",tu.getDescrizione());
+		assertNotEquals("",tu.getDescrizioneT());
 	}
 
 	@Test
 	void testGetDataDiNascita() {
-		tu.setDataDiNascita(LocalDate.now());
-		assertNotNull(tu.getDataDiNascita());
+		tu.setDataDiNascitaT(LocalDate.now());
+		assertNotNull(tu.getDataDiNascitaT());
 	}
 	@ParameterizedTest
 	@ValueSource(strings= {"ADMIN","EDITORE","SCRITTORE"})

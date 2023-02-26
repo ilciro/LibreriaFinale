@@ -34,17 +34,17 @@ public class ModificaUtenteServlet extends HttpServlet{
 		try {
 			if(genera!=null &&genera.equals("prendi valori"))
 			{
-				TempUser.getInstance().setId(SystemBean.getIstance().getId());
+				User.getInstance().setId(SystemBean.getIstance().getId());
 				UsersDao.getTempUserSingolo(TempUser.getInstance());
 				
 				
 				UserBean.getInstance().setIdRuolo(TempUser.getInstance().getIdRuolo());
-				UserBean.getInstance().setNome(TempUser.getInstance().getNome());
-				UserBean.getInstance().setCognome(TempUser.getInstance().getCognome());
-				UserBean.getInstance().setEmail(TempUser.getInstance().getEmail());
-				UserBean.getInstance().setPassword(TempUser.getInstance().getPassword());
-				UserBean.getInstance().setDescrizione(TempUser.getInstance().getDescrizione());
-				UserBean.getInstance().setDataDiNascita(TempUser.getInstance().getDataDiNascita());
+				UserBean.getInstance().setNome(TempUser.getInstance().getNomeT());
+				UserBean.getInstance().setCognome(User.getInstance().getCognome());
+				UserBean.getInstance().setEmail(User.getInstance().getEmail());
+				UserBean.getInstance().setPassword(TempUser.getInstance().getPasswordT());
+				UserBean.getInstance().setDescrizione(TempUser.getInstance().getDescrizioneT());
+				UserBean.getInstance().setDataDiNascita(TempUser.getInstance().getDataDiNascitaT());
 				
 				req.setAttribute("beanUb",UserBean.getInstance());
 				RequestDispatcher view=getServletContext().getRequestDispatcher("/modificaUtente.jsp");

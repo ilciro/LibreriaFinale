@@ -13,18 +13,76 @@ public class TempUser {
  }
 	@Override
 	public String toString() {
-		return "User [nome=" + nome + ", Cognome=" + cognome + ", email=" + email + ", idRuolo=" + r + "]";
+		return "User [nome=" + nomeT + ", Cognome=" + cognomeT + ", email=" + emailT + ", idRuolo=" + r + "]";
 	}
 	
 	
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getNomeT() {
+		return nomeT;
+	}
+
+	public void setNomeT(String nomeT) {
+		this.nomeT = nomeT;
+	}
+
+	public String getCognomeT() {
+		return cognomeT;
+	}
+
+	public void setCognomeT(String cognomeT) {
+		this.cognomeT = cognomeT;
+	}
+
+	public String getEmailT() {
+		return emailT;
+	}
+
+	public void setEmailT(String emailT) {
+		this.emailT = emailT;
+	}
+
+	public String getPasswordT() {
+		return passwordT;
+	}
+
+	public void setPasswordT(String passwordT) {
+		this.passwordT = passwordT;
+	}
+
+	public String getDescrizioneT() {
+		return descrizioneT;
+	}
+
+	public void setDescrizioneT(String descrizioneT) {
+		this.descrizioneT = descrizioneT;
+	}
+
+	public LocalDate getDataDiNascitaT() {
+		return dataDiNascitaT;
+	}
+
+	public void setDataDiNascitaT(LocalDate dataDiNascitaT) {
+		this.dataDiNascitaT = dataDiNascitaT;
+	}
+
+
+
 	private int id;
-	private String nome;
-	private String cognome;
-	private String email;
-	private String password;
-	private String descrizione;
-	private LocalDate dataDiNascita;
+	private String nomeT;
+	private String cognomeT;
+	private String emailT;
+	private String passwordT;
+	private String descrizioneT;
+	private LocalDate dataDiNascitaT;
 	private String r;
 
 	//istanza per il patter singleton
@@ -43,48 +101,7 @@ public class TempUser {
 		return userInstance;
 	} 
 
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getCognome() {
-		return cognome;
-	}
-	public void setCognome(String cognome) {
-		this.cognome = cognome;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getDescrizione() {
-		return descrizione;
-	}
-	public void setDescrizione(String descrizione) {
-		this.descrizione = descrizione;
-	}
-	public LocalDate getDataDiNascita() {
-		return dataDiNascita;
-	}
-	public void setDataDiNascita(LocalDate dataDiNascita) {
-		this.dataDiNascita = dataDiNascita;
-	}
+	
 public String getIdRuolo()  {
 		
 		return r;

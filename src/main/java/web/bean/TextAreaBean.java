@@ -228,13 +228,13 @@ public class TextAreaBean {
 
 				TempUser.getInstance().setId(rs.getInt(1));
 				TempUser.getInstance().setIdRuolo(rs.getString(2));
-				TempUser.getInstance().setNome(rs.getString(3));
-				TempUser.getInstance().setCognome(rs.getString(4));
-				TempUser.getInstance().setEmail(rs.getString(5));
-				TempUser.getInstance().setDescrizione(rs.getString(7));
-				TempUser.getInstance().setDataDiNascita(rs.getDate(8).toLocalDate());
-				b.write(""+TempUser.getInstance().getId()+"\t"+TempUser.getInstance().getIdRuolo()+"\t"+TempUser.getInstance().getNome()+"\t"+TempUser.getInstance().getCognome()+
-						"\t"+TempUser.getInstance().getEmail()+"\t"+TempUser.getInstance().getDescrizione()+"\t"+TempUser.getInstance().getDataDiNascita().toString()+"\n");
+				TempUser.getInstance().setNomeT(rs.getString(3));
+				TempUser.getInstance().setCognomeT(rs.getString(4));
+				TempUser.getInstance().setEmailT(rs.getString(5));
+				TempUser.getInstance().setDescrizioneT(rs.getString(7));
+				TempUser.getInstance().setDataDiNascitaT(rs.getDate(8).toLocalDate());
+				b.write(""+TempUser.getInstance().getId()+"\t"+TempUser.getInstance().getIdRuolo()+"\t"+TempUser.getInstance().getNomeT()+"\t"+TempUser.getInstance().getCognomeT()+
+						"\t"+TempUser.getInstance().getEmailT()+"\t"+TempUser.getInstance().getDescrizioneT()+"\t"+TempUser.getInstance().getDataDiNascitaT().toString()+"\n");
 				
 				
 				s.append("");
