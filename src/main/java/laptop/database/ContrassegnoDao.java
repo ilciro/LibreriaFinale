@@ -45,7 +45,7 @@ public class ContrassegnoDao {
 	}  
 	
 
-	public int retUltimoOrdine() throws SQLException 
+	public int retUltimoOrdineF() throws SQLException 
 	{
 		int id=0;
 		 query="select count(*) as massimoF from fattura";

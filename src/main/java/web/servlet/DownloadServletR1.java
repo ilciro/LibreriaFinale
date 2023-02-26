@@ -75,10 +75,10 @@ public class DownloadServletR1 extends HttpServlet {
 				
 				String metodoP=sB.getMetodoP();
 				
-				int idF=fDao.retUltimoOrdine(); //ultimo elemento (preso con count)
+				int idF=fDao.retUltimoOrdineF(); //ultimo elemento (preso con count)
 				statusF=fDao.annullaOrdineF(idF);
 				
-				int idP=pD.retUltimoOrdine();
+				int idP=pD.retUltimoOrdinePag();
 				statusP=pD.annullaOrdinePag(idP);
 				
 				

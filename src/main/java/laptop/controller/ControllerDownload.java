@@ -49,10 +49,10 @@ public class ControllerDownload {
 		String typeP=vis.getMetodoP(); //tipo pagamento
 		String typeO=vis.getType(); //tipo oggetto
 		
-		int idF=cDao.retUltimoOrdine(); //ultimo elemento (preso con count)
+		int idF=cDao.retUltimoOrdineF(); //ultimo elemento (preso con count)
 		statusF=cDao.annullaOrdineF(idF);
 		
-		int idP=pDao.retUltimoOrdine();
+		int idP=pDao.retUltimoOrdinePag();
 		statusP=pDao.annullaOrdinePag(idP);
 		
 		

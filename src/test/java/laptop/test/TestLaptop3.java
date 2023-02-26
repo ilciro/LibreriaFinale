@@ -75,12 +75,12 @@ class TestLaptop3 {
 
 	@Test
 	void testRetUltimoOrdine() throws SQLException {
-		assertNotEquals(0,pD.retUltimoOrdine());
+		assertNotEquals(0,pD.retUltimoOrdinePag());
 	}
 
 	@Test
 	void testAnnullaOrdine() throws SQLException {
-		int id=pD.retUltimoOrdine();
+		int id=pD.retUltimoOrdinePag();
 		assertTrue(pD.annullaOrdinePag(id));
 		
 	}

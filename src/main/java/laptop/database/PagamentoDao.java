@@ -81,7 +81,7 @@ public class PagamentoDao {
 
 	
 		
-	public int retUltimoOrdine() throws SQLException 
+	public int retUltimoOrdinePag() throws SQLException 
 	{
 		int id=0;
 		query="select count(*) as massimoP from pagamento";
