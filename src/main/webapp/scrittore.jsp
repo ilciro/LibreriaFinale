@@ -18,29 +18,30 @@
 <table>
 <caption>
 scegliere tra libri , giornali e riviste, gestione,cerca,logout e visualizza profilo
+come scrittore
 </caption>
 <tr>
 
 <th scope="col">
-libro
+libro scrittore
 </th>
 <th>
-giornale
+giornale scrittore
 </th>
 <th>
-rivista
+rivista scrittore
 </th>
 <th>
-gestione
+gestione scrittore
 </th>
 <th>
-ricerca
+ricerca scrittore
 </th>
 <th>
-logout
+logout da scrittore
 </th>
 <th>
-visualizza profilo
+visualizza profilo scrittore
 </th>
 </tr>
 <tr>

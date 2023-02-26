@@ -23,25 +23,25 @@ privilegi di editore
 <tr>
 
 <th scope="col">
-libro
+libro editore
 </th>
 <th>
-giornale
+giornale editore
 </th>
 <th>
-rivista
+rivista editore
 </th>
 <th>
-gestione
+gestione editore
 </th>
 <th>
-ricerca
+ricerca editore
 </th>
 <th>
-logout
+logout come editore
 </th>
 <th>
-visualizza profilo
+visualizza profilo editore
 </th>
 </tr>
 <tr>
