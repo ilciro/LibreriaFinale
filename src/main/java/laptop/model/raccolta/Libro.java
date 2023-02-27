@@ -240,7 +240,7 @@ public class Libro implements Raccolta {
 
 	}
 	@Override
-	public void leggi(int i) throws IOException, DocumentException, URISyntaxException,NullPointerException {
+	public void leggi(int i) throws IOException, DocumentException, URISyntaxException {
 		Document document=null;
 		File file;
 		
@@ -292,7 +292,7 @@ public class Libro implements Raccolta {
 	    	  
 
 		   
-   			document.close();
+   			//document.close();
 		  
 
 		
