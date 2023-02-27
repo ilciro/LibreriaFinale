@@ -8,7 +8,7 @@ import java.net.URISyntaxException;
 import java.time.LocalDate;
 import java.util.Enumeration;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
+
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -240,7 +240,7 @@ public class Libro implements Raccolta {
 
 	}
 	@Override
-	public void leggi(int i) throws IOException, DocumentException, URISyntaxException {
+	public void leggi(int i) throws IOException, DocumentException, URISyntaxException,NullPointerException {
 		Document document=null;
 		File file;
 		
@@ -291,14 +291,9 @@ public class Libro implements Raccolta {
 		      }
 	    	  
 
-		     try {
 		   
    			document.close();
-		     }catch(NullPointerException e)
-		     {
-					java.util.logging.Logger.getLogger("libro leggi ").log(Level.INFO, "eccezione ottenuta ",e);
-
-		     }
+		  
 
 		
 		
