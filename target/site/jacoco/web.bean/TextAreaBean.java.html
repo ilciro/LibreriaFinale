@@ -77,7 +77,7 @@ import laptop.utilities.ConnToDb;
 <span class="nc" id="L77">		}catch(SQLException e)</span>
 			   {
 <span class="nc" id="L79">			java.util.logging.Logger.getLogger(&quot;report l&quot;).log(Level.INFO, &quot;report libri {0}.&quot;,e.toString());</span>
-<span class="nc" id="L80">			   }</span>
+			   }
 <span class="nc" id="L81">			   return s.toString();</span>
 		   }
 		
@@ -139,7 +139,7 @@ import laptop.utilities.ConnToDb;
 <span class="nc" id="L139">		        	}catch(SQLException e)</span>
 		        	{
 <span class="nc" id="L141">		    			java.util.logging.Logger.getLogger(&quot;report R&quot;).log(Level.INFO, &quot;report riviste {0}.&quot;,e.toString());</span>
-<span class="nc" id="L142">		        	}</span>
+		        	}
 <span class="nc" id="L143">		        	return s.toString();</span>
 		     
 		        }
@@ -199,7 +199,7 @@ import laptop.utilities.ConnToDb;
 			   {
 <span class="nc" id="L200">				java.util.logging.Logger.getLogger(&quot;report g&quot;).log(Level.INFO, &quot;report giornali {0}.&quot;,e.toString());</span>
 
-<span class="nc" id="L202">			   }</span>
+			   }
 
 
 <span class="nc" id="L205">			   return s.toString();</span>
@@ -228,13 +228,13 @@ import laptop.utilities.ConnToDb;
 
 <span class="nc" id="L229">				TempUser.getInstance().setId(rs.getInt(1));</span>
 <span class="nc" id="L230">				TempUser.getInstance().setIdRuolo(rs.getString(2));</span>
-<span class="nc" id="L231">				TempUser.getInstance().setNome(rs.getString(3));</span>
-<span class="nc" id="L232">				TempUser.getInstance().setCognome(rs.getString(4));</span>
-<span class="nc" id="L233">				TempUser.getInstance().setEmail(rs.getString(5));</span>
-<span class="nc" id="L234">				TempUser.getInstance().setDescrizione(rs.getString(7));</span>
-<span class="nc" id="L235">				TempUser.getInstance().setDataDiNascita(rs.getDate(8).toLocalDate());</span>
-<span class="nc" id="L236">				b.write(&quot;&quot;+TempUser.getInstance().getId()+&quot;\t&quot;+TempUser.getInstance().getIdRuolo()+&quot;\t&quot;+TempUser.getInstance().getNome()+&quot;\t&quot;+TempUser.getInstance().getCognome()+</span>
-<span class="nc" id="L237">						&quot;\t&quot;+TempUser.getInstance().getEmail()+&quot;\t&quot;+TempUser.getInstance().getDescrizione()+&quot;\t&quot;+TempUser.getInstance().getDataDiNascita().toString()+&quot;\n&quot;);</span>
+<span class="nc" id="L231">				TempUser.getInstance().setNomeT(rs.getString(3));</span>
+<span class="nc" id="L232">				TempUser.getInstance().setCognomeT(rs.getString(4));</span>
+<span class="nc" id="L233">				TempUser.getInstance().setEmailT(rs.getString(5));</span>
+<span class="nc" id="L234">				TempUser.getInstance().setDescrizioneT(rs.getString(7));</span>
+<span class="nc" id="L235">				TempUser.getInstance().setDataDiNascitaT(rs.getDate(8).toLocalDate());</span>
+<span class="nc" id="L236">				b.write(&quot;&quot;+TempUser.getInstance().getId()+&quot;\t&quot;+TempUser.getInstance().getIdRuolo()+&quot;\t&quot;+TempUser.getInstance().getNomeT()+&quot;\t&quot;+TempUser.getInstance().getCognomeT()+</span>
+<span class="nc" id="L237">						&quot;\t&quot;+TempUser.getInstance().getEmailT()+&quot;\t&quot;+TempUser.getInstance().getDescrizioneT()+&quot;\t&quot;+TempUser.getInstance().getDataDiNascitaT().toString()+&quot;\n&quot;);</span>
 				
 				
 <span class="nc" id="L240">				s.append(&quot;&quot;);</span>
@@ -259,7 +259,7 @@ import laptop.utilities.ConnToDb;
 			{
 <span class="nc" id="L260">			java.util.logging.Logger.getLogger(&quot;lista utenti&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta .&quot;,e);</span>
 
-<span class="nc" id="L262">			}</span>
+			}
 <span class="nc" id="L263">			b.flush();</span>
 <span class="nc" id="L264">			return s.toString();</span>
 		
@@ -268,4 +268,4 @@ import laptop.utilities.ConnToDb;
 	}
 	
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

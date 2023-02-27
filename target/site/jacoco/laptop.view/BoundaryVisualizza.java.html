@@ -87,8 +87,8 @@ public class BoundaryVisualizza implements Initializable {
 <span class="nc" id="L87">	private static String indisponibile=&quot;not found&quot;;</span>
 
 	
-	public BoundaryVisualizza()
-<span class="nc" id="L91">	{</span>
+<span class="nc" id="L90">	public BoundaryVisualizza()</span>
+	{
 <span class="nc" id="L92">		cV = new ControllerVisualizza();</span>
 <span class="nc" id="L93">	}</span>
 	
@@ -151,7 +151,7 @@ public class BoundaryVisualizza implements Initializable {
 <span class="nc" id="L151">				labelDisp.setText(String.valueOf(cV.getDataL(i).getDisponibilita()));</span>
 <span class="nc" id="L152">				labelPrezzo.setText(String.valueOf(cV.getDataL(i).getPrezzo()));</span>
 <span class="nc" id="L153">				labelCopieRimanenti.setText(String.valueOf(cV.getDataL(i).getNrCopie()));</span>
-			}
+<span class="nc" id="L154">			}</span>
 <span class="nc bnc" id="L155" title="All 2 branches missed.">			else if(tipo.equals(&quot;giornale&quot;))</span>
 			{
 <span class="nc" id="L157">				labelTitolo.setText(cV.getDataG(i).getTitolo());</span>
@@ -167,7 +167,7 @@ public class BoundaryVisualizza implements Initializable {
 <span class="nc" id="L167">				labelDisp.setText(String.valueOf(cV.getDataG(i).getDisponibilita()));</span>
 <span class="nc" id="L168">				labelPrezzo.setText(String.valueOf(cV.getDataG(i).getPrezzo()));</span>
 <span class="nc" id="L169">				labelCopieRimanenti.setText(String.valueOf(0));</span>
-			}
+<span class="nc" id="L170">			}</span>
 <span class="nc bnc" id="L171" title="All 2 branches missed.">			else if(tipo.equals(&quot;rivista&quot;))</span>
 			{
 <span class="nc" id="L173">				labelTitolo.setText(cV.getDataR(i).getTitolo());</span>
@@ -188,7 +188,7 @@ public class BoundaryVisualizza implements Initializable {
 <span class="nc" id="L188">			e.getMessage();</span>
 
 			
-<span class="nc" id="L191">		}</span>
+		}
 		
 		
 
@@ -196,4 +196,4 @@ public class BoundaryVisualizza implements Initializable {
 	
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

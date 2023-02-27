@@ -3,110 +3,52 @@
 import java.sql.SQLException;
 
 import laptop.database.ContrassegnoDao;
-import laptop.database.GiornaleDao;
-import laptop.database.LibroDao;
-import laptop.database.PagamentoDao;
-import laptop.database.RivistaDao;
 import laptop.model.Fattura;
-import laptop.model.Pagamento;
-import laptop.model.raccolta.Giornale;
-import laptop.model.raccolta.Libro;
-import laptop.model.raccolta.Rivista;
+
 
 public class ControllerPagamentoCash {
 	private ContrassegnoDao cD;
 	private Fattura f;
-	private PagamentoDao pagD;
-<span class="fc" id="L20">	private ControllerSystemState vis= ControllerSystemState.getIstance();</span>
-	private Libro l;	
-	private LibroDao lD;
-	private GiornaleDao gD;
-	private RivistaDao rD;
-	private Giornale g;
-	private Rivista r;
+<span class="fc" id="L12">	private ControllerSystemState vis= ControllerSystemState.getIstance();</span>
+	private ControllerCheckPagamentoData cCPD;
+	
 	
 
 	public void controlla(String nome, String cognome, String via, String com) throws SQLException {
 		
-<span class="fc" id="L31">			cD.daiPrivilegi();</span>
-<span class="fc" id="L32">			pagD.daiPrivilegi();</span>
-<span class="fc" id="L33">			float spesa=vis.getSpesaT();</span>
+			
+<span class="fc" id="L20">			float spesa=vis.getSpesaT();</span>
 
 			//fino a qui va
 			
-<span class="fc" id="L37">			f.setNome(nome);</span>
-<span class="fc" id="L38">			f.setCognome(cognome);</span>
-<span class="fc" id="L39">			f.setVia(via);</span>
-<span class="fc" id="L40">			f.setCom(com);</span>
-<span class="fc" id="L41">			f.setAmmontare(spesa);</span>
+<span class="fc" id="L24">			f.setNome(nome);</span>
+<span class="fc" id="L25">			f.setCognome(cognome);</span>
+<span class="fc" id="L26">			f.setVia(via);</span>
+<span class="fc" id="L27">			f.setCom(com);</span>
+<span class="fc" id="L28">			f.setAmmontare(spesa);</span>
 			
 	 		
 
 					
 			
-<span class="fc" id="L47">			cD.inserisciFattura(f);</span>
+<span class="fc" id="L34">			cD.inserisciFattura(f);</span>
 			
 			
-			
-			Pagamento p;
-			
-<span class="fc" id="L53">			p=new Pagamento(0,&quot;&quot;, 0, &quot;utGene&quot;,0, null);</span>
-				
-			//inserire qui
-<span class="fc" id="L56">			p.setMetodo(&quot;cash&quot;);</span>
-<span class="fc" id="L57">			p.setNomeUtente(nome);</span>
-<span class="fc" id="L58">			String tipo=vis.getType();</span>
-<span class="fc" id="L59">			p.setId(vis.getId());</span>
-<span class="fc bfc" id="L60" title="All 2 branches covered.">			if(tipo.equals(&quot;libro&quot;))</span>
-			{
-				//prenod spesa da vis
-<span class="fc" id="L63">				l.setId(vis.getId());</span>
-<span class="fc" id="L64">				p.setAmmontare(vis.getSpesaT());</span>
-<span class="fc" id="L65">				p.setId(l.getId());</span>
-<span class="fc" id="L66">				p.setTipo(lD.retTip(l));</span>
-			}
-<span class="fc bfc" id="L68" title="All 2 branches covered.">			if(tipo.equals(&quot;giornale&quot;))</span>
-			{
-				//prenod spesa da vis
-<span class="fc" id="L71">				g.setId(vis.getId());</span>
-<span class="fc" id="L72">				p.setAmmontare(vis.getSpesaT());</span>
-<span class="fc" id="L73">				p.setId(g.getId());</span>
-<span class="fc" id="L74">				p.setTipo(gD.retTip(g));</span>
-				
-			}
-<span class="fc bfc" id="L77" title="All 2 branches covered.">			if(tipo.equals(&quot;rivista&quot;))</span>
-			{
-				//prenod spesa da vis
-<span class="fc" id="L80">				r.setId(vis.getId());</span>
-<span class="fc" id="L81">				p.setAmmontare(vis.getSpesaT());</span>
-<span class="fc" id="L82">				p.setId(r.getId());</span>
-<span class="fc" id="L83">				p.setTipo(rD.retTip(r));</span>
-				
-			}
+<span class="fc" id="L37">			cCPD.checkPagamentoData(nome);</span>
 			
 			
 			
 			
-<span class="fc" id="L90">			pagD.inserisciPagamento(p);</span>
 			
-			
-			
-			
-<span class="fc" id="L95">	}</span>
+<span class="fc" id="L43">	}</span>
 
-<span class="fc" id="L97">	public ControllerPagamentoCash()  {</span>
-<span class="fc" id="L98">		cD = new ContrassegnoDao();</span>
-<span class="fc" id="L99">		f = new Fattura();</span>
-<span class="fc" id="L100">		pagD=new PagamentoDao();</span>
-<span class="fc" id="L101">		lD=new LibroDao();</span>
-<span class="fc" id="L102">		l=new Libro();</span>
-<span class="fc" id="L103">		gD=new GiornaleDao();</span>
-<span class="fc" id="L104">		g=new Giornale();</span>
-<span class="fc" id="L105">		rD=new RivistaDao();</span>
-<span class="fc" id="L106">		r=new Rivista();</span>
+<span class="fc" id="L45">	public ControllerPagamentoCash()  {</span>
+<span class="fc" id="L46">		cD = new ContrassegnoDao();</span>
+<span class="fc" id="L47">		f = new Fattura();</span>
+<span class="fc" id="L48">		cCPD=new ControllerCheckPagamentoData();</span>
 		
 		
-<span class="fc" id="L109">	}</span>
+<span class="fc" id="L51">	}</span>
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

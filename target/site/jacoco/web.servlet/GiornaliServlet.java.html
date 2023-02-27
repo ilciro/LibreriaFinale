@@ -41,7 +41,7 @@ import laptop.model.raccolta.Giornale;
 <span class="nc" id="L41">			dimensione =gD.getGiornali().size();</span>
 <span class="nc" id="L42">		} catch (SQLException e1) {</span>
 <span class="nc" id="L43">			java.util.logging.Logger.getLogger(&quot;post &quot;).log(Level.INFO, &quot;eccezione nel post .&quot;,e1);</span>
-<span class="nc" id="L44">		}	</span>
+		}	
 <span class="nc" id="L45">		setDim(dimensione);</span>
 		try {
 <span class="nc bnc" id="L47" title="All 4 branches missed.">			if(g!=null &amp;&amp; g.equals(&quot;genera lista&quot;))</span>
@@ -91,7 +91,7 @@ import laptop.model.raccolta.Giornale;
 <span class="nc" id="L91">			req.setAttribute(&quot;beanL&quot;,gB);</span>
 <span class="nc" id="L92">			RequestDispatcher view = getServletContext().getRequestDispatcher(giornali); </span>
 <span class="nc" id="L93">			view.forward(req,resp);</span>
-<span class="nc" id="L94">		}</span>
+		}
 <span class="nc" id="L95">	}</span>
 	
 	private int getDim()
@@ -108,4 +108,4 @@ import laptop.model.raccolta.Giornale;
 	
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

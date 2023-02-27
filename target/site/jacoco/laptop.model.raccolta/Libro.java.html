@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.time.LocalDate;
+import java.util.Enumeration;
 import java.util.ResourceBundle;
 
 import com.itextpdf.text.Document;
@@ -29,391 +30,334 @@ public class Libro implements Raccolta {
 	private String desc;
 	private int disponibilita;
 	private float prezzo;
-<span class="fc" id="L32">	private String[] infoGenerali=new String[6];</span>
-<span class="fc" id="L33">	private String[] infoCostiDisp=new String[6];</span>
+<span class="fc" id="L33">	private String[] infoGenerali=new String[6];</span>
+<span class="fc" id="L34">	private String[] infoCostiDisp=new String[6];</span>
 	private int numeroPagine;
 	private String tipologia;
 
 	private int id;
-<span class="fc" id="L38">	private String url=&quot;C:\\libriScaricati&quot;;</span>
+<span class="fc" id="L39">	private String url=&quot;C:\\libriScaricati&quot;;</span>
 
-<span class="fc" id="L40">	public Libro() {	</span>
+<span class="fc" id="L41">	public Libro() {	</span>
 
-<span class="fc" id="L42">	}</span>
+<span class="fc" id="L43">	}</span>
 
 	public String getTitolo() {
-<span class="fc" id="L45">		return this.titolo;</span>
+<span class="fc" id="L46">		return this.titolo;</span>
 	}
 	
 	public String getCodIsbn() {
-<span class="fc" id="L49">		return this.codIsbn;</span>
+<span class="fc" id="L50">		return this.codIsbn;</span>
 	}
 	public String getEditore() {
-<span class="fc" id="L52">		return this.editore;</span>
+<span class="fc" id="L53">		return this.editore;</span>
 	}
 	public String getAutore() {
-<span class="fc" id="L55">		return this.autore;</span>
+<span class="fc" id="L56">		return this.autore;</span>
 	}
 	public String getLingua() {
-<span class="fc" id="L58">		return this.lingua;</span>
+<span class="fc" id="L59">		return this.lingua;</span>
 	}
 	public String getCategoria() {
-<span class="fc" id="L61">		return this.categoria;</span>
+<span class="fc" id="L62">		return this.categoria;</span>
 	}
 	public LocalDate getDataPubb() {
-<span class="fc" id="L64">		return this.dataPubb;</span>
+<span class="fc" id="L65">		return this.dataPubb;</span>
 	}
 	public String getRecensione() {
-<span class="fc" id="L67">		return this.recensione;</span>
+<span class="fc" id="L68">		return this.recensione;</span>
 	}
 	public int getNrCopie() {
-<span class="fc" id="L70">		return this.nrCopie;</span>
+<span class="fc" id="L71">		return this.nrCopie;</span>
 	}
 	public String getDesc() {
-<span class="fc" id="L73">		return this.desc;</span>
+<span class="fc" id="L74">		return this.desc;</span>
 	}
 	public int getDisponibilita() {
-<span class="fc" id="L76">		return this.disponibilita;</span>
+<span class="fc" id="L77">		return this.disponibilita;</span>
 	}
 	public float getPrezzo() {
-<span class="fc" id="L79">		return this.prezzo;</span>
+<span class="fc" id="L80">		return this.prezzo;</span>
 	}
 	
 	public void setTitolo(String titolo) {
-<span class="fc" id="L83">		this.titolo = titolo;</span>
-<span class="fc" id="L84">	}</span>
+<span class="fc" id="L84">		this.titolo = titolo;</span>
+<span class="fc" id="L85">	}</span>
 	
 	public void setCodIsbn(String codIsbn) {
-<span class="fc" id="L87">		this.codIsbn = codIsbn;</span>
-<span class="fc" id="L88">	}</span>
+<span class="fc" id="L88">		this.codIsbn = codIsbn;</span>
+<span class="fc" id="L89">	}</span>
 	public void setEditore(String editore) {
-<span class="fc" id="L90">		this.editore = editore;</span>
-<span class="fc" id="L91">	}</span>
+<span class="fc" id="L91">		this.editore = editore;</span>
+<span class="fc" id="L92">	}</span>
 	public void setAutore(String autore) {
-<span class="fc" id="L93">		this.autore = autore;</span>
-<span class="fc" id="L94">	}</span>
+<span class="fc" id="L94">		this.autore = autore;</span>
+<span class="fc" id="L95">	}</span>
 	public void setLingua(String lingua) {
-<span class="fc" id="L96">		this.lingua = lingua;</span>
-<span class="fc" id="L97">	}</span>
+<span class="fc" id="L97">		this.lingua = lingua;</span>
+<span class="fc" id="L98">	}</span>
 	public void setCategoria(String categoria) {
-<span class="pc bpc" id="L99" title="20 of 30 branches missed.">		switch (categoria){</span>
+<span class="pc bpc" id="L100" title="20 of 30 branches missed.">		switch (categoria){</span>
 		case &quot;ADOLESCENTI_RAGAZZI&quot;: 
-<span class="fc" id="L101">			this.categoria = CategorieLibro.ADOLESCENTI_RAGAZZI.toString();  </span>
-<span class="fc" id="L102">			break;</span>
+<span class="fc" id="L102">			this.categoria = CategorieLibro.ADOLESCENTI_RAGAZZI.toString();  </span>
+<span class="fc" id="L103">			break;</span>
 		case &quot;ARTE&quot;: 
-<span class="fc" id="L104">			this.categoria = CategorieLibro.ARTE.toString();  </span>
-<span class="fc" id="L105">			break;</span>
+<span class="fc" id="L105">			this.categoria = CategorieLibro.ARTE.toString();  </span>
+<span class="fc" id="L106">			break;</span>
 		case &quot;CINEMA_FOTOGRAFIA&quot; : 
-<span class="fc" id="L107">			this.categoria = CategorieLibro.CINEMA_FOTOGRAFIA.toString();  </span>
-<span class="fc" id="L108">			break;</span>
+<span class="fc" id="L108">			this.categoria = CategorieLibro.CINEMA_FOTOGRAFIA.toString();  </span>
+<span class="fc" id="L109">			break;</span>
 		case &quot;BIOGRAFIE&quot; : 
-<span class="nc" id="L110">			this.categoria = CategorieLibro.BIOGRAFIE.toString();  </span>
-<span class="nc" id="L111">			break;</span>
+<span class="nc" id="L111">			this.categoria = CategorieLibro.BIOGRAFIE.toString();  </span>
+<span class="nc" id="L112">			break;</span>
 		case &quot;DIARI_MEMORIE&quot; : 
-<span class="nc" id="L113">			this.categoria = CategorieLibro.DIARI_MEMORIE.toString();  </span>
-<span class="nc" id="L114">			break;</span>
+<span class="nc" id="L114">			this.categoria = CategorieLibro.DIARI_MEMORIE.toString();  </span>
+<span class="nc" id="L115">			break;</span>
 		case &quot;CALENDARI_AGENDE&quot; : 
-<span class="nc" id="L116">			this.categoria = CategorieLibro.CALENDARI_AGENDE.toString();  </span>
-<span class="nc" id="L117">			break;</span>
+<span class="nc" id="L117">			this.categoria = CategorieLibro.CALENDARI_AGENDE.toString();  </span>
+<span class="nc" id="L118">			break;</span>
 		case &quot;DIRITTO&quot; : 
-<span class="nc" id="L119">			this.categoria = CategorieLibro.DIRITTO.toString();  </span>
-<span class="nc" id="L120">			break;</span>
+<span class="nc" id="L120">			this.categoria = CategorieLibro.DIRITTO.toString();  </span>
+<span class="nc" id="L121">			break;</span>
 		case &quot;DIZINARI_OPERE&quot; : 
-<span class="nc" id="L122">			this.categoria = CategorieLibro.DIZINARI_OPERE.toString();  </span>
-<span class="nc" id="L123">			break;</span>
+<span class="nc" id="L123">			this.categoria = CategorieLibro.DIZINARI_OPERE.toString();  </span>
+<span class="nc" id="L124">			break;</span>
 		case &quot;ECONOMIA&quot; : 
-<span class="fc" id="L125">			this.categoria = CategorieLibro.ECONOMIA.toString();  </span>
-<span class="fc" id="L126">			break;</span>
+<span class="fc" id="L126">			this.categoria = CategorieLibro.ECONOMIA.toString();  </span>
+<span class="fc" id="L127">			break;</span>
 		case &quot;FAMIGLIA&quot; : 
-<span class="nc" id="L128">			this.categoria = CategorieLibro.FAMIGLIA.toString();  </span>
-<span class="nc" id="L129">			break;</span>
+<span class="nc" id="L129">			this.categoria = CategorieLibro.FAMIGLIA.toString();  </span>
+<span class="nc" id="L130">			break;</span>
 		case &quot;SALUTE_BENESSERE&quot; : 
-<span class="nc" id="L131">			this.categoria = CategorieLibro.SALUTE_BENESSERE.toString();  </span>
-<span class="nc" id="L132">			break;</span>
+<span class="nc" id="L132">			this.categoria = CategorieLibro.SALUTE_BENESSERE.toString();  </span>
+<span class="nc" id="L133">			break;</span>
 		case &quot;FANTASCIENZA_FANTASY&quot; : 
-<span class="nc" id="L134">			this.categoria = CategorieLibro.FANTASCIENZA_FANTASY.toString();  </span>
-<span class="nc" id="L135">			break;</span>
+<span class="nc" id="L135">			this.categoria = CategorieLibro.FANTASCIENZA_FANTASY.toString();  </span>
+<span class="nc" id="L136">			break;</span>
 		case &quot;FUMETTI_MANGA&quot; : 
-<span class="nc" id="L137">			this.categoria = CategorieLibro.FUMETTI_MANGA.toString();  </span>
-<span class="nc" id="L138">			break;</span>
+<span class="nc" id="L138">			this.categoria = CategorieLibro.FUMETTI_MANGA.toString();  </span>
+<span class="nc" id="L139">			break;</span>
 		case &quot;GIALLI_THRILLER&quot; : 
-<span class="nc" id="L140">			this.categoria = CategorieLibro.GIALLI_THRILLER.toString();  </span>
-<span class="nc" id="L141">			break;		</span>
+<span class="nc" id="L141">			this.categoria = CategorieLibro.GIALLI_THRILLER.toString();  </span>
+<span class="nc" id="L142">			break;		</span>
 		case &quot;COMPUTER_GIOCHI&quot; : 
-<span class="nc" id="L143">			this.categoria = CategorieLibro.COMPUTER_GIOCHI.toString();  </span>
-<span class="nc" id="L144">			break;</span>
+<span class="nc" id="L144">			this.categoria = CategorieLibro.COMPUTER_GIOCHI.toString();  </span>
+<span class="nc" id="L145">			break;</span>
 		case &quot;HUMOR&quot; : 
-<span class="nc" id="L146">			this.categoria = CategorieLibro.HUMOR.toString();  </span>
-<span class="nc" id="L147">			break;</span>
+<span class="nc" id="L147">			this.categoria = CategorieLibro.HUMOR.toString();  </span>
+<span class="nc" id="L148">			break;</span>
 		case &quot;INFORMATICA&quot; : 
-<span class="fc" id="L149">			this.categoria = CategorieLibro.INFORMATICA.toString();  </span>
-<span class="fc" id="L150">			break;		</span>
+<span class="fc" id="L150">			this.categoria = CategorieLibro.INFORMATICA.toString();  </span>
+<span class="fc" id="L151">			break;		</span>
 		case &quot;WEB_DIGITAL_MEDIA&quot; : 
-<span class="fc" id="L152">			this.categoria = CategorieLibro.WEB_DIGITAL_MEDIA.toString();  </span>
-<span class="fc" id="L153">			break;		</span>
+<span class="fc" id="L153">			this.categoria = CategorieLibro.WEB_DIGITAL_MEDIA.toString();  </span>
+<span class="fc" id="L154">			break;		</span>
 		case &quot;LETTERATURA_NARRATIVA&quot; : 
-<span class="nc" id="L155">			this.categoria = CategorieLibro.LETTERATURA_NARRATIVA.toString();  </span>
-<span class="nc" id="L156">			break;		</span>
+<span class="nc" id="L156">			this.categoria = CategorieLibro.LETTERATURA_NARRATIVA.toString();  </span>
+<span class="nc" id="L157">			break;		</span>
 		case &quot;LIBRI_BAMBINI&quot; : 
-<span class="nc" id="L158">			this.categoria = CategorieLibro.LIBRI_BAMBINI.toString();  </span>
-<span class="nc" id="L159">			break;		</span>
+<span class="nc" id="L159">			this.categoria = CategorieLibro.LIBRI_BAMBINI.toString();  </span>
+<span class="nc" id="L160">			break;		</span>
 		case &quot;LIBRI_SCOLASTICI&quot; : 
-<span class="nc" id="L161">			this.categoria = CategorieLibro.LIBRI_SCOLASTICI.toString();  </span>
-<span class="nc" id="L162">			break;</span>
+<span class="nc" id="L162">			this.categoria = CategorieLibro.LIBRI_SCOLASTICI.toString();  </span>
+<span class="nc" id="L163">			break;</span>
 		case &quot;LIBRI_UNIVERSITARI&quot; : 
-<span class="nc" id="L164">			this.categoria = CategorieLibro.LIBRI_UNIVERSITARI.toString();  </span>
-<span class="nc" id="L165">			break;			</span>
+<span class="nc" id="L165">			this.categoria = CategorieLibro.LIBRI_UNIVERSITARI.toString();  </span>
+<span class="nc" id="L166">			break;			</span>
 		case &quot;RICETTARI_GENERALI&quot; : 
-<span class="nc" id="L167">			this.categoria = CategorieLibro.RICETTARI_GENERALI.toString();  </span>
-<span class="nc" id="L168">			break;	</span>
+<span class="nc" id="L168">			this.categoria = CategorieLibro.RICETTARI_GENERALI.toString();  </span>
+<span class="nc" id="L169">			break;	</span>
 		case &quot;LINGUISTICA_SCRITTURA&quot; : 
-<span class="fc" id="L170">			this.categoria = CategorieLibro.LINGUISTICA_SCRITTURA.toString();  </span>
-<span class="fc" id="L171">			break;</span>
+<span class="fc" id="L171">			this.categoria = CategorieLibro.LINGUISTICA_SCRITTURA.toString();  </span>
+<span class="fc" id="L172">			break;</span>
 		case &quot;POLITICA&quot; : 
-<span class="fc" id="L173">			this.categoria = CategorieLibro.POLITICA.toString();  </span>
-<span class="fc" id="L174">			break;</span>
+<span class="fc" id="L174">			this.categoria = CategorieLibro.POLITICA.toString();  </span>
+<span class="fc" id="L175">			break;</span>
 		case &quot;RELIGIONE&quot; : 
-<span class="nc" id="L176">			this.categoria = CategorieLibro.RELIGIONE.toString();  </span>
-<span class="nc" id="L177">			break;</span>
+<span class="nc" id="L177">			this.categoria = CategorieLibro.RELIGIONE.toString();  </span>
+<span class="nc" id="L178">			break;</span>
 		case &quot;ROMANZI_ROSA&quot; : 
-<span class="fc" id="L179">			this.categoria = CategorieLibro.ROMANZI_ROSA.toString();  </span>
-<span class="fc" id="L180">			break;		</span>
+<span class="fc" id="L180">			this.categoria = CategorieLibro.ROMANZI_ROSA.toString();  </span>
+<span class="fc" id="L181">			break;		</span>
 		case &quot;SCIENZE&quot; : 
-<span class="nc" id="L182">			this.categoria = CategorieLibro.SCIENZE.toString();  </span>
-<span class="nc" id="L183">			break;		</span>
+<span class="nc" id="L183">			this.categoria = CategorieLibro.SCIENZE.toString();  </span>
+<span class="nc" id="L184">			break;		</span>
 		case &quot;TECNOLOGIA_MEDICINA&quot; : 
-<span class="fc" id="L185">			this.categoria = CategorieLibro.TECNOLOGIA_MEDICINA.toString();  </span>
-<span class="fc" id="L186">			break;</span>
+<span class="fc" id="L186">			this.categoria = CategorieLibro.TECNOLOGIA_MEDICINA.toString();  </span>
+<span class="fc" id="L187">			break;</span>
 		
 		default :
-<span class="nc" id="L189">			this.categoria = null;</span>
+<span class="nc" id="L190">			this.categoria = null;</span>
 			break;
 		}
-<span class="fc" id="L192">	}</span>
+<span class="fc" id="L193">	}</span>
 	public void setDataPubb(LocalDate dataPubb) {
-<span class="fc" id="L194">		this.dataPubb = dataPubb;</span>
-<span class="fc" id="L195">	}</span>
+<span class="fc" id="L195">		this.dataPubb = dataPubb;</span>
+<span class="fc" id="L196">	}</span>
 	public void setRecensione(String recensione) {
-<span class="fc" id="L197">		this.recensione = recensione;</span>
-<span class="fc" id="L198">	}</span>
+<span class="fc" id="L198">		this.recensione = recensione;</span>
+<span class="fc" id="L199">	}</span>
 	public void setNrCopie(int nrCopie) {
-<span class="fc" id="L200">		this.nrCopie = nrCopie;</span>
-<span class="fc" id="L201">	}</span>
+<span class="fc" id="L201">		this.nrCopie = nrCopie;</span>
+<span class="fc" id="L202">	}</span>
 	public void setDesc(String desc) {
-<span class="fc" id="L203">		this.desc = desc;</span>
-<span class="fc" id="L204">	}</span>
+<span class="fc" id="L204">		this.desc = desc;</span>
+<span class="fc" id="L205">	}</span>
 	public void setDisponibilita(int disponibilita) {
-<span class="fc" id="L206">		this.disponibilita = disponibilita;</span>
-<span class="fc" id="L207">	}</span>
+<span class="fc" id="L207">		this.disponibilita = disponibilita;</span>
+<span class="fc" id="L208">	}</span>
 	public void setPrezzo(float prezzo) {
-<span class="fc" id="L209">		this.prezzo = prezzo;</span>
-<span class="fc" id="L210">	}</span>
+<span class="fc" id="L210">		this.prezzo = prezzo;</span>
+<span class="fc" id="L211">	}</span>
 	
 
 	public int getId() {
-<span class="fc" id="L214">		return id;</span>
+<span class="fc" id="L215">		return id;</span>
 	}
 
 	public void setId(int id)
 	{
-<span class="fc" id="L219">		this.id = id ;</span>
-<span class="fc" id="L220">	}</span>
+<span class="fc" id="L220">		this.id = id ;</span>
+<span class="fc" id="L221">	}</span>
 
 	@Override
 	public void scarica() throws DocumentException, IOException {
-<span class="fc" id="L224">		File file=null;</span>
-<span class="fc" id="L225">		File dirToOpen=null;</span>
-<span class="fc" id="L226">		file = new File(url);</span>
-<span class="fc" id="L227">		Desktop desktop=null;</span>
-<span class="fc" id="L228">		file.mkdir();</span>
+<span class="fc" id="L225">		File file=null;</span>
+<span class="fc" id="L226">		File dirToOpen=null;</span>
+<span class="fc" id="L227">		file = new File(url);</span>
+<span class="fc" id="L228">		Desktop desktop=null;</span>
+<span class="fc" id="L229">		file.mkdir();</span>
 
 
-<span class="fc" id="L231">		desktop = Desktop.getDesktop();</span>
+<span class="fc" id="L232">		desktop = Desktop.getDesktop();</span>
 		
-<span class="fc" id="L233">			dirToOpen = new File(url);</span>
+<span class="fc" id="L234">			dirToOpen = new File(url);</span>
 
-<span class="fc" id="L235">			desktop.open(dirToOpen);</span>
+<span class="fc" id="L236">			desktop.open(dirToOpen);</span>
 
 		
 
-<span class="fc" id="L239">	}</span>
+<span class="fc" id="L240">	}</span>
 	@Override
 	public void leggi(int i) throws IOException, DocumentException, URISyntaxException {
-<span class="fc" id="L242">		Document document=null;</span>
+<span class="fc" id="L243">		Document document=null;</span>
 		File file;
 		
-<span class="fc" id="L245">		ResourceBundle rB=ResourceBundle.getBundle(&quot;configurations/booksPath&quot;);</span>
-
 		
-<span class="fc bfc" id="L248" title="All 2 branches covered.">		if(i==1)</span>
-		{
-<span class="fc" id="L250">	   		document = new Document();</span>
-<span class="fc" id="L251">   			PdfWriter.getInstance(document, new FileOutputStream(&quot;C:\\libriScaricati\\Alessandro Coppola - Apocalypse Town.pdf&quot;));</span>
-<span class="fc" id="L252">   			document.open();	   		</span>
-<span class="fc" id="L253">			file=new File(rB.getString(&quot;path1&quot;));</span>
-<span class="fc" id="L254">			Desktop.getDesktop().open(file);</span>
-	     }
-<span class="fc bfc" id="L256" title="All 2 branches covered.">		if (i==2)</span>
-		{
-<span class="fc" id="L258">			document = new Document();</span>
-<span class="fc" id="L259">   			PdfWriter.getInstance(document, new FileOutputStream(&quot;C:\\libriScaricati\\Andrea Baranes - Dobbiamo restituire.pdf&quot;));</span>
-<span class="fc" id="L260">   			document.open();	   		</span>
-<span class="fc" id="L261">			file=new File(rB.getString(&quot;path2&quot;));</span>
-<span class="fc" id="L262">	        Desktop.getDesktop().open(file);</span>
-		}
-<span class="fc bfc" id="L264" title="All 2 branches covered.">		if (i==3)</span>
-		{
-
-<span class="fc" id="L267">			document = new Document();</span>
-<span class="fc" id="L268">   			PdfWriter.getInstance(document, new FileOutputStream(&quot;C:\\libriScaricati\\Ariel Toaff, Elio Toaff - Zohar. Il libro dello splendore.pdf&quot;));</span>
-<span class="fc" id="L269">   			document.open();	   		</span>
-<span class="fc" id="L270">			file=new File(rB.getString(&quot;path3&quot;));</span>
-<span class="fc" id="L271">	        Desktop.getDesktop().open(file);</span>
-					
-		}
-<span class="fc bfc" id="L274" title="All 2 branches covered.">		if(i==4)</span>
-		{
-
-<span class="fc" id="L277">			document = new Document();</span>
-<span class="fc" id="L278">   			PdfWriter.getInstance(document, new FileOutputStream(&quot;C:\\libriScaricati\\Come i servizi segreti usano i media - Aldo Giannuli.pdf&quot;));</span>
-<span class="fc" id="L279">   			document.open();	   		</span>
-<span class="fc" id="L280">			file=new File(rB.getString(&quot;path4&quot;));</span>
-<span class="fc" id="L281">	        Desktop.getDesktop().open(file);</span>
-					
-		}
-<span class="fc bfc" id="L284" title="All 2 branches covered.">		if(i==5)</span>
-		{
-<span class="fc" id="L286">			document = new Document();</span>
-<span class="fc" id="L287">   			PdfWriter.getInstance(document, new FileOutputStream(&quot;C:\\libriScaricati\\Donald Davidson - Sulla verit (2006).pdf&quot;));</span>
-<span class="fc" id="L288">   			document.open();	   		</span>
-<span class="fc" id="L289">			file=new File(rB.getString(&quot;path5&quot;));</span>
-<span class="fc" id="L290">	        Desktop.getDesktop().open(file);</span>
-		}
-<span class="fc bfc" id="L292" title="All 2 branches covered.">		if(i==6)</span>
-		{
-
-<span class="fc" id="L295">			document = new Document();</span>
-<span class="fc" id="L296">   			PdfWriter.getInstance(document, new FileOutputStream(&quot;C:\\libriScaricati\\eragon.pdf&quot;));</span>
-<span class="fc" id="L297">   			document.open();	</span>
-<span class="fc" id="L298">			file=new File(rB.getString(&quot;path6&quot;));</span>
-			
-<span class="fc" id="L300">	        Desktop.getDesktop().open(file);</span>
-		}
-<span class="pc bpc" id="L302" title="1 of 2 branches missed.">		if(i==8)</span>
-		{
-<span class="nc" id="L304">			document = new Document();</span>
-<span class="nc" id="L305">   			PdfWriter.getInstance(document, new FileOutputStream(&quot;C:\\libriScaricati\\Gershom Scholem - Alchimia E Kabbalah.pdf&quot;));</span>
-<span class="nc" id="L306">   			document.open();	   		</span>
-<span class="nc" id="L307">			file=new File(rB.getString(&quot;path7&quot;));</span>
-<span class="nc" id="L308">	        Desktop.getDesktop().open(file);</span>
-		}
-<span class="pc bpc" id="L310" title="1 of 2 branches missed.">		if (i==9)</span>
-		{
-<span class="nc" id="L312">			document = new Document();</span>
-<span class="nc" id="L313">   			PdfWriter.getInstance(document, new FileOutputStream(&quot;C:\\libriScaricati\\Excell - Giampietro Lanzanova.pdf&quot;));</span>
-<span class="nc" id="L314">   			document.open();	   		</span>
-<span class="nc" id="L315">			file=new File(rB.getString(&quot;path9&quot;));</span>
-<span class="nc" id="L316">	        Desktop.getDesktop().open(file);</span>
-		}
-<span class="pc bpc" id="L318" title="1 of 2 branches missed.">		if (i==10)</span>
-		{
-<span class="nc" id="L320">			document = new Document();</span>
-<span class="nc" id="L321">   			PdfWriter.getInstance(document, new FileOutputStream(&quot;C:\\libriScaricati\\Giocatore5.pdf&quot;));</span>
-<span class="nc" id="L322">   			document.open();	   		</span>
-<span class="nc" id="L323">			file=new File(rB.getString(&quot;path10&quot;));</span>
-<span class="nc" id="L324">	        Desktop.getDesktop().open(file);</span>
-		}
-<span class="pc bpc" id="L326" title="1 of 2 branches missed.">		if (i==11)</span>
-		{
-<span class="nc" id="L328">			document = new Document();</span>
-<span class="nc" id="L329">   			PdfWriter.getInstance(document, new FileOutputStream(&quot;C:\\libriScaricati\\Grammatica italiana-Garzanti(le garzantine)(2012).pdf&quot;));</span>
-<span class="nc" id="L330">   			document.open();	   		</span>
-<span class="nc" id="L331">			file=new File(rB.getString(&quot;path11&quot;));</span>
-<span class="nc" id="L332">	        Desktop.getDesktop().open(file);</span>
-		}
-		else {
-<span class="fc" id="L335">			document = new Document();</span>
-<span class="fc" id="L336">   			PdfWriter.getInstance(document, new FileOutputStream(&quot;C:\\libriScaricati\\Anteprima Non Disponibile&quot;+i+&quot;.pdf&quot;));</span>
-<span class="fc" id="L337">   			document.open();	</span>
-
-<span class="fc" id="L339">   			document.add(new Paragraph(&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat ornare dictum. Donec semper pellentesque risus, quis pulvinar nisl efficitur nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus nisl mi, ullamcorper cursus pulvinar ut, pretium ut quam. Proin felis mauris, pretium non scelerisque vitae, posuere vel risus. Sed tortor enim, sollicitudin et eros at, fermentum suscipit urna. Sed at nisi quis libero hendrerit interdum at sodales dui. Nullam nec mattis urna. Quisque rhoncus pharetra malesuada. Etiam porttitor ligula consequat nisi luctus scelerisque. Sed purus purus, gravida ac orci sit amet, faucibus euismod diam. In dignissim enim sed nisl euismod, in vulputate odio facilisis. Sed venenatis facilisis massa, ac condimentum ante rutrum blandit. Vivamus efficitur eros quis diam semper, nec porttitor lectus vehicula. Fusce turpis ipsum, mollis vel nunc vitae, blandit molestie nunc. Nunc sit amet feugiat lacus.\r\n&quot;</span>
-   					+ &quot;\r\n&quot;
-   					+ &quot;Aenean sollicitudin id dolor eu luctus. Proin tincidunt semper lobortis. Nunc nec odio lorem. Praesent consectetur, nunc sed egestas elementum, orci ligula dictum ligula, ut vehicula augue nibh sit amet quam. Nam nec massa lorem. Donec sed elit massa. Praesent neque ante, suscipit nec ornare id, bibendum non dolor. Donec sem ex, placerat ac hendrerit quis, ullamcorper nec quam. Morbi tempus tellus at porta fermentum. Donec vitae dolor orci. Vivamus fermentum faucibus eros, et cursus lorem aliquet in. Integer vitae ipsum eu nulla sodales porta.\r\n&quot;
-   					+ &quot;\r\n&quot;
-   					+ &quot;Donec et purus aliquam, sagittis est eget, molestie dui. In porttitor maximus dui, a mattis urna faucibus ut. Fusce vulputate nisi dolor, sed hendrerit urna placerat quis. In hac habitasse platea dictumst. Aliquam a tempus eros. Aenean at augue quam. Vestibulum lectus enim, mollis sed pulvinar quis, porta vel lorem. Mauris vel eleifend dui. Sed venenatis ullamcorper mollis.\r\n&quot;
-   					+ &quot;\r\n&quot;
-   					+ &quot;Proin non ullamcorper ex, quis bibendum diam. Aliquam eleifend efficitur diam ut porta. Morbi ipsum sapien, vehicula sit amet felis nec, vulputate malesuada tortor. Sed finibus, augue at auctor ornare, ligula nunc venenatis nunc, sit amet mollis est dolor sed erat. Integer fermentum gravida tellus, mattis finibus turpis fringilla et. Nam sed aliquet nunc. Pellentesque nec urna metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rhoncus condimentum ornare. Curabitur pellentesque lacinia scelerisque. Curabitur faucibus et purus fermentum venenatis. Quisque sed tempor augue, non mattis massa. Vivamus vestibulum pulvinar elit id iaculis. Proin tincidunt eros nisi, et volutpat lorem rutrum ut. Phasellus convallis metus fermentum nisi molestie, sit amet rhoncus mauris laoreet.\r\n&quot;
-   					+ &quot;\r\n&quot;
-   					+ &quot;Vestibulum aliquet nisi sit amet tristique consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a fringilla libero. Fusce pharetra purus eu tortor dapibus laoreet. Quisque mattis justo et lacus fringilla mattis. Cras sit amet elementum ipsum. Sed varius congue dolor ac placerat. Integer cursus nulla at lectus sollicitudin hendrerit. Suspendisse sit amet tincidunt nunc, at volutpat nisi.&quot;));
-			
-<span class="fc" id="L349">   			document.close();</span>
+<span class="fc" id="L247">		int dimensione=0;</span>
+	
+<span class="fc" id="L249">		ResourceBundle rB=ResourceBundle.getBundle(&quot;configurations/booksPath&quot;);</span>
+<span class="fc" id="L250">		 ResourceBundle rBD=ResourceBundle.getBundle(&quot;configurations/downloadConfiguration&quot;);</span>
+<span class="fc" id="L251">			 Enumeration&lt;String&gt; enumeration = rBD.getKeys();</span>
+			 
 		
 
-		}
-<span class="fc" id="L353">	}</span>
+		      // print all the keys
+<span class="fc bfc" id="L256" title="All 2 branches covered.">		      while (enumeration.hasMoreElements()) {</span>
+<span class="fc" id="L257">		    	 enumeration.nextElement();</span>
+		     
+		    	
+<span class="fc bfc" id="L260" title="All 2 branches covered.">		    		 if(i==dimensione)</span>
+		    	  {
+<span class="fc" id="L262">		    		  document = new Document();</span>
+<span class="fc" id="L263">		     			PdfWriter.getInstance(document, new FileOutputStream(rBD.getString(&quot;path&quot;+i)));</span>
+<span class="fc" id="L264">		     			document.open();	   		</span>
+<span class="fc" id="L265">		  			file=new File(rB.getString(&quot;path&quot;+i));</span>
+<span class="fc" id="L266">		  			Desktop.getDesktop().open(file);</span>
+<span class="fc" id="L267">		    	  }</span>
+		    	  
+		    	  else {
+<span class="fc" id="L270">		  			document = new Document();</span>
+<span class="fc" id="L271">		     			PdfWriter.getInstance(document, new FileOutputStream(rBD.getString(&quot;pathNonFound&quot;)));</span>
+<span class="fc" id="L272">		     			document.open();	</span>
+
+<span class="fc" id="L274">		     			document.add(new Paragraph(&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat ornare dictum. Donec semper pellentesque risus, quis pulvinar nisl efficitur nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus nisl mi, ullamcorper cursus pulvinar ut, pretium ut quam. Proin felis mauris, pretium non scelerisque vitae, posuere vel risus. Sed tortor enim, sollicitudin et eros at, fermentum suscipit urna. Sed at nisi quis libero hendrerit interdum at sodales dui. Nullam nec mattis urna. Quisque rhoncus pharetra malesuada. Etiam porttitor ligula consequat nisi luctus scelerisque. Sed purus purus, gravida ac orci sit amet, faucibus euismod diam. In dignissim enim sed nisl euismod, in vulputate odio facilisis. Sed venenatis facilisis massa, ac condimentum ante rutrum blandit. Vivamus efficitur eros quis diam semper, nec porttitor lectus vehicula. Fusce turpis ipsum, mollis vel nunc vitae, blandit molestie nunc. Nunc sit amet feugiat lacus.\r\n&quot;</span>
+		     					+ &quot;\r\n&quot;
+		     					+ &quot;Aenean sollicitudin id dolor eu luctus. Proin tincidunt semper lobortis. Nunc nec odio lorem. Praesent consectetur, nunc sed egestas elementum, orci ligula dictum ligula, ut vehicula augue nibh sit amet quam. Nam nec massa lorem. Donec sed elit massa. Praesent neque ante, suscipit nec ornare id, bibendum non dolor. Donec sem ex, placerat ac hendrerit quis, ullamcorper nec quam. Morbi tempus tellus at porta fermentum. Donec vitae dolor orci. Vivamus fermentum faucibus eros, et cursus lorem aliquet in. Integer vitae ipsum eu nulla sodales porta.\r\n&quot;
+		     					+ &quot;\r\n&quot;
+		     					+ &quot;Donec et purus aliquam, sagittis est eget, molestie dui. In porttitor maximus dui, a mattis urna faucibus ut. Fusce vulputate nisi dolor, sed hendrerit urna placerat quis. In hac habitasse platea dictumst. Aliquam a tempus eros. Aenean at augue quam. Vestibulum lectus enim, mollis sed pulvinar quis, porta vel lorem. Mauris vel eleifend dui. Sed venenatis ullamcorper mollis.\r\n&quot;
+		     					+ &quot;\r\n&quot;
+		     					+ &quot;Proin non ullamcorper ex, quis bibendum diam. Aliquam eleifend efficitur diam ut porta. Morbi ipsum sapien, vehicula sit amet felis nec, vulputate malesuada tortor. Sed finibus, augue at auctor ornare, ligula nunc venenatis nunc, sit amet mollis est dolor sed erat. Integer fermentum gravida tellus, mattis finibus turpis fringilla et. Nam sed aliquet nunc. Pellentesque nec urna metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rhoncus condimentum ornare. Curabitur pellentesque lacinia scelerisque. Curabitur faucibus et purus fermentum venenatis. Quisque sed tempor augue, non mattis massa. Vivamus vestibulum pulvinar elit id iaculis. Proin tincidunt eros nisi, et volutpat lorem rutrum ut. Phasellus convallis metus fermentum nisi molestie, sit amet rhoncus mauris laoreet.\r\n&quot;
+		     					+ &quot;\r\n&quot;
+		     					+ &quot;Vestibulum aliquet nisi sit amet tristique consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a fringilla libero. Fusce pharetra purus eu tortor dapibus laoreet. Quisque mattis justo et lacus fringilla mattis. Cras sit amet elementum ipsum. Sed varius congue dolor ac placerat. Integer cursus nulla at lectus sollicitudin hendrerit. Suspendisse sit amet tincidunt nunc, at volutpat nisi.&quot;));
+		  			
+		     			
+
+		  		} 
+		    	
+<span class="fc" id="L288">		    	   dimensione++;</span>
+
+		      }
+	    	  
+
+		     
+		   
+<span class="fc" id="L295">   			document.close();</span>
+
+		
+		
+		
+<span class="fc" id="L300">	}</span>
 	
 	/*
 	 * provo a levare i codeSmells &gt; 7 paramentri
 	 */
-<span class="fc" id="L358">	public Libro(String[] info, LocalDate dataPubb,  String recensione,  int id,String desc,String [] quantita) {</span>
-<span class="fc" id="L359">		this.infoGenerali=info;</span>
-<span class="fc" id="L360">		this.recensione=recensione;	</span>
-<span class="fc" id="L361">		this.dataPubb = dataPubb;		</span>
-<span class="fc" id="L362">		this.id=id;</span>
-<span class="fc" id="L363">		this.infoCostiDisp=quantita;</span>
-<span class="fc" id="L364">		this.desc=desc;</span>
-<span class="fc" id="L365">		this.titolo=info[0];</span>
-<span class="fc" id="L366">		this.editore=info[4];</span>
-<span class="fc" id="L367">		this.autore=info[2];</span>
-<span class="fc" id="L368">		this.categoria=info[5];</span>
-<span class="fc" id="L369">		this.prezzo=Float.parseFloat(quantita[4]);</span>
-<span class="fc" id="L370">		this.numeroPagine=Integer.parseInt(quantita[0]);</span>
-<span class="fc" id="L371">		this.codIsbn=quantita[1];</span>
-<span class="fc" id="L372">		this.lingua=info[3];</span>
-<span class="fc" id="L373">		this.disponibilita=Integer.parseInt(quantita[3]);</span>
-<span class="fc" id="L374">		this.nrCopie=Integer.parseInt(quantita[5]);</span>
+<span class="fc" id="L305">	public Libro(String[] info, LocalDate dataPubb,  String recensione,  int id,String desc,String [] quantita) {</span>
+<span class="fc" id="L306">		this.infoGenerali=info;</span>
+<span class="fc" id="L307">		this.recensione=recensione;	</span>
+<span class="fc" id="L308">		this.dataPubb = dataPubb;		</span>
+<span class="fc" id="L309">		this.id=id;</span>
+<span class="fc" id="L310">		this.infoCostiDisp=quantita;</span>
+<span class="fc" id="L311">		this.desc=desc;</span>
+<span class="fc" id="L312">		this.titolo=info[0];</span>
+<span class="fc" id="L313">		this.editore=info[4];</span>
+<span class="fc" id="L314">		this.autore=info[2];</span>
+<span class="fc" id="L315">		this.categoria=info[5];</span>
+<span class="fc" id="L316">		this.prezzo=Float.parseFloat(quantita[4]);</span>
+<span class="fc" id="L317">		this.numeroPagine=Integer.parseInt(quantita[0]);</span>
+<span class="fc" id="L318">		this.codIsbn=quantita[1];</span>
+<span class="fc" id="L319">		this.lingua=info[3];</span>
+<span class="fc" id="L320">		this.disponibilita=Integer.parseInt(quantita[3]);</span>
+<span class="fc" id="L321">		this.nrCopie=Integer.parseInt(quantita[5]);</span>
 		
-<span class="fc" id="L376">	}</span>
+<span class="fc" id="L323">	}</span>
 
 	public String[] getInfoGenerali() {
-<span class="fc" id="L379">		return infoGenerali;</span>
+<span class="fc" id="L326">		return infoGenerali;</span>
 	}
 
 	public void setInfoGenerali(String[] infoGenerali) {
-<span class="fc" id="L383">		this.infoGenerali = infoGenerali;</span>
-<span class="fc" id="L384">	}</span>
+<span class="fc" id="L330">		this.infoGenerali = infoGenerali;</span>
+<span class="fc" id="L331">	}</span>
 
 	
 	
 
 	public String[] getInfoCostiDisp() {
-<span class="fc" id="L390">		return infoCostiDisp;</span>
+<span class="fc" id="L337">		return infoCostiDisp;</span>
 	}
 
 	public void setInfoCostiDisp(String[] infoCostiDisp) {
-<span class="fc" id="L394">		this.infoCostiDisp = infoCostiDisp;</span>
-<span class="fc" id="L395">	}</span>
+<span class="fc" id="L341">		this.infoCostiDisp = infoCostiDisp;</span>
+<span class="fc" id="L342">	}</span>
 
 	public String getTipologia() {
-<span class="nc" id="L398">		return tipologia;</span>
+<span class="nc" id="L345">		return tipologia;</span>
 	}
 
 	public void setTipologia(String tipologia) {
-<span class="nc" id="L402">		this.tipologia = tipologia;</span>
-<span class="nc" id="L403">	}</span>
+<span class="nc" id="L349">		this.tipologia = tipologia;</span>
+<span class="nc" id="L350">	}</span>
 
 	public int getNumeroPagine() {
-<span class="fc" id="L406">		return numeroPagine;</span>
+<span class="fc" id="L353">		return numeroPagine;</span>
 	}
 
 	public void setNumeroPagine(int numeroPagine) {
-<span class="fc" id="L410">		this.numeroPagine = numeroPagine;</span>
-<span class="fc" id="L411">	}</span>
-
-
-
+<span class="fc" id="L357">		this.numeroPagine = numeroPagine;</span>
+<span class="fc" id="L358">	}</span>
 
 
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

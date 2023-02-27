@@ -149,7 +149,7 @@ import laptop.controller.ControllerSystemState;
 		{
 <span class="nc" id="L150">			infoCostoDisp[3]=String.valueOf(1);</span>
 			//
-		}
+<span class="nc" id="L152">		}</span>
 		else {
 <span class="nc" id="L154">			infoCostoDisp[3]=String.valueOf(0);</span>
 		}
@@ -183,7 +183,7 @@ import laptop.controller.ControllerSystemState;
 			{
 <span class="nc" id="L184">				dispo=1;</span>
 				//disponibile
-			}
+<span class="nc" id="L186">			}</span>
 			else {
 <span class="nc" id="L188">				dispo=0;</span>
 			}
@@ -216,7 +216,7 @@ import laptop.controller.ControllerSystemState;
 			{
 <span class="nc" id="L217">				dispo=1;</span>
 				//disponibile
-			}
+<span class="nc" id="L219">			}</span>
 			else {
 <span class="nc" id="L221">				dispo=0;</span>
 			}
@@ -303,7 +303,7 @@ import laptop.controller.ControllerSystemState;
 			
 <span class="nc" id="L304">				items.add(&quot;SCIENZE&quot;);</span>
 <span class="nc" id="L305">				items.add(&quot;TECNOLOGIA_MEDICINA&quot;);</span>
-			}
+<span class="nc" id="L306">			}</span>
 <span class="nc bnc" id="L307" title="All 2 branches missed.">			else if(vis.getType().equals(&quot;giornale&quot;))</span>
 			{
 <span class="nc" id="L309">				labelT.setText(cMP.getGiornaliById(vis.getId()).get(0).getTitolo());</span>
@@ -314,7 +314,7 @@ import laptop.controller.ControllerSystemState;
 <span class="nc" id="L314">				labelCopie.setText(String.valueOf(cMP.getGiornaliById(vis.getId()).get(0).getCopieRimanenti()));</span>
 <span class="nc" id="L315">				labelD.setText(cMP.getGiornaliById(vis.getId()).get(0).getDataPubb().toString());</span>
 <span class="nc" id="L316">				labelDisp.setText(String.valueOf(cMP.getGiornaliById(vis.getId()).get(0).getDisponibilita()));</span>
-			}
+<span class="nc" id="L317">			}</span>
 <span class="nc bnc" id="L318" title="All 2 branches missed.">			else if(vis.getType().equals(&quot;rivista&quot;))</span>
 			{
 <span class="nc" id="L320">				labelT.setText(cMP.getRivistaById(vis.getId()).get(0).getTitolo());</span>
@@ -351,7 +351,7 @@ import laptop.controller.ControllerSystemState;
 		{
 <span class="nc" id="L352">			java.util.logging.Logger.getLogger(&quot;Test pagacc&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta {0}&quot;,e.toString());</span>
 
-<span class="nc" id="L354">		} </span>
+		} 
 		
 		
 
@@ -363,4 +363,4 @@ import laptop.controller.ControllerSystemState;
 
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

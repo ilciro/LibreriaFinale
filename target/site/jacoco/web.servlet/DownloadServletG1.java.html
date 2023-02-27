@@ -73,11 +73,11 @@ import com.itextpdf.text.DocumentException;
 				
 <span class="nc" id="L74">				String metodoP=sB.getMetodoP();</span>
 				
-<span class="nc" id="L76">				int idF=fDao.retUltimoOrdine(); //ultimo elemento (preso con count)</span>
-<span class="nc" id="L77">				statusF=fDao.annullaOrdine(idF);</span>
+<span class="nc" id="L76">				int idF=fDao.retUltimoOrdineF(); //ultimo elemento (preso con count)</span>
+<span class="nc" id="L77">				statusF=fDao.annullaOrdineF(idF);</span>
 				
-<span class="nc" id="L79">				int idP=pD.retUltimoOrdine();</span>
-<span class="nc" id="L80">				statusP=pD.annullaOrdine(idP);</span>
+<span class="nc" id="L79">				int idP=pD.retUltimoOrdinePag();</span>
+<span class="nc" id="L80">				statusP=pD.annullaOrdinePag(idP);</span>
 				
 				
 <span class="nc bnc" id="L83" title="All 6 branches missed.">					if(statusF &amp;&amp; statusP &amp;&amp; metodoP.equals(&quot;cash&quot;))</span>
@@ -119,10 +119,10 @@ import com.itextpdf.text.DocumentException;
 <span class="nc" id="L119">			RequestDispatcher view = getServletContext().getRequestDispatcher(index); </span>
 <span class="nc" id="L120">			view.forward(request,response);</span>
 		
-<span class="nc" id="L122">		}</span>
+		}
 		
 <span class="nc" id="L124">	}</span>
 	
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

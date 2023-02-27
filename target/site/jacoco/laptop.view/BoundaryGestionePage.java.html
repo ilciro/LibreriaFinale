@@ -30,20 +30,20 @@ import laptop.model.raccolta.Raccolta;
 	private Pane pane;
 	@FXML
 	private Label header;
-<span class="nc" id="L33">	@FXML</span>
-	private TableView&lt;Raccolta&gt;table=new TableView&lt;&gt;();
-<span class="nc" id="L35">	@FXML</span>
-	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; titolo = new TableColumn&lt;&gt;(&quot;Titolo&quot;);
-<span class="nc" id="L37">	@FXML</span>
-	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; tipologia = new TableColumn&lt;&gt;(&quot;Tipologia&quot;);
-<span class="nc" id="L39">	@FXML</span>
-	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; editore = new TableColumn&lt;&gt;(&quot;Editore&quot;);
-<span class="nc" id="L41">	@FXML</span>
-	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; autore = new TableColumn&lt;&gt;(&quot;Autore&quot;);
-<span class="nc" id="L43">	@FXML</span>
-	private TableColumn&lt;Raccolta, SimpleFloatProperty&gt; prezzo = new TableColumn&lt;&gt;(&quot;Prezzo&quot;);
-<span class="nc" id="L45">	@FXML</span>
-	private TableColumn&lt;Raccolta, SimpleIntegerProperty&gt; id = new TableColumn&lt;&gt;(&quot;ID ProdottoTitolo&quot;);
+	@FXML
+<span class="nc" id="L34">	private TableView&lt;Raccolta&gt;table=new TableView&lt;&gt;();</span>
+	@FXML
+<span class="nc" id="L36">	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; titolo = new TableColumn&lt;&gt;(&quot;Titolo&quot;);</span>
+	@FXML
+<span class="nc" id="L38">	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; tipologia = new TableColumn&lt;&gt;(&quot;Tipologia&quot;);</span>
+	@FXML
+<span class="nc" id="L40">	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; editore = new TableColumn&lt;&gt;(&quot;Editore&quot;);</span>
+	@FXML
+<span class="nc" id="L42">	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; autore = new TableColumn&lt;&gt;(&quot;Autore&quot;);</span>
+	@FXML
+<span class="nc" id="L44">	private TableColumn&lt;Raccolta, SimpleFloatProperty&gt; prezzo = new TableColumn&lt;&gt;(&quot;Prezzo&quot;);</span>
+	@FXML
+<span class="nc" id="L46">	private TableColumn&lt;Raccolta, SimpleIntegerProperty&gt; id = new TableColumn&lt;&gt;(&quot;ID ProdottoTitolo&quot;);</span>
 	@FXML
 	private Button buttonG;
 	@FXML
@@ -70,11 +70,11 @@ import laptop.model.raccolta.Raccolta;
 <span class="nc bnc" id="L70" title="All 2 branches missed.">		if(vis.getType().equals(&quot;libro&quot;))</span>
 		{
 <span class="nc" id="L72">			table.setItems(cGP.getLibroS());</span>
-		}
+<span class="nc" id="L73">		}</span>
 <span class="nc bnc" id="L74" title="All 2 branches missed.">		else if(vis.getType().equals(&quot;giornale&quot;))</span>
 		{
 <span class="nc" id="L76">			table.setItems(cGP.getGiornaleS());</span>
-		}
+<span class="nc" id="L77">		}</span>
 <span class="nc bnc" id="L78" title="All 2 branches missed.">		else if(vis.getType().equals(&quot;rivista&quot;))</span>
 		{
 <span class="nc" id="L80">			table.setItems(cGP.getRivistaS());</span>
@@ -156,4 +156,4 @@ import laptop.model.raccolta.Raccolta;
 <span class="nc" id="L156">	}</span>
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

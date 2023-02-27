@@ -41,7 +41,7 @@ import jakarta.servlet.http.HttpServletResponse;
 <span class="nc" id="L41">		} catch (SQLException e1) {</span>
 <span class="nc" id="L42">			java.util.logging.Logger.getLogger(&quot;post &quot;).log(Level.INFO, &quot;eccezione nel post .&quot;,e1);</span>
 
-<span class="nc" id="L44">		}	</span>
+		}	
 <span class="nc" id="L45">		setDim(dimensione);</span>
 		try {
 <span class="nc bnc" id="L47" title="All 4 branches missed.">			if(g!=null &amp;&amp; g.equals(&quot;genera lista&quot;))</span>
@@ -96,7 +96,7 @@ import jakarta.servlet.http.HttpServletResponse;
 <span class="nc" id="L96">			req.setAttribute(&quot;beanR&quot;,rB);</span>
 <span class="nc" id="L97">			RequestDispatcher view = getServletContext().getRequestDispatcher(riviste); </span>
 <span class="nc" id="L98">			view.forward(req,resp);</span>
-<span class="nc" id="L99">		}</span>
+		}
 <span class="nc" id="L100">	}</span>
 	
 	private int getDim()
@@ -109,4 +109,4 @@ import jakarta.servlet.http.HttpServletResponse;
 <span class="nc" id="L109">	}</span>
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

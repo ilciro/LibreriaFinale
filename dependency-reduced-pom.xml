@@ -28,12 +28,6 @@
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.0.0-M5</version>
-        <configuration>
-          <argLine>-Xmx1024M ${argLine}</argLine>
-          <excludes>
-            <exclude>**/laptop/view/*.java</exclude>
-          </excludes>
-        </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-install-plugin</artifactId>
@@ -80,14 +74,13 @@
         <version>${jacoco.version}</version>
         <executions>
           <execution>
-            <id>jacoco-initialize</id>
+            <id>prepare-agent</id>
             <goals>
               <goal>prepare-agent</goal>
             </goals>
           </execution>
           <execution>
-            <id>jacoco-site</id>
-            <phase>package</phase>
+            <id>report</id>
             <goals>
               <goal>report</goal>
             </goals>
@@ -175,8 +168,7 @@
     <jacoco.version>0.8.8</jacoco.version>
     <maven.compiler>3.8.1</maven.compiler>
     <maven.shade>3.2.2</maven.shade>
-    <sonar.exclusions>**/src/main/java/laptop/view/**,**/src/test/java/**,
-    **/src/main/java/web/bean/**,**/src/main/java/web/servlet/**</sonar.exclusions>
+    <sonar.exclusions>**/src/main/java/laptop/view/**,**/src/test/java/laptop.test/**</sonar.exclusions>
     <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
     <maven.install>3.0.0-M1</maven.install>
     <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>

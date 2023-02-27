@@ -75,7 +75,7 @@ public class BoundaryAcquista implements Initializable {
 		
 <span class="nc bnc" id="L76" title="All 2 branches missed.">		if(ritiroN.isSelected()) {</span>
 <span class="nc" id="L77">			vis.setPickup(true);</span>
-		}
+<span class="nc" id="L78">		}</span>
 <span class="nc bnc" id="L79" title="All 2 branches missed.">		else if (!ritiroN.isSelected())</span>
 		{
 <span class="nc" id="L81">			vis.setPickup(false);</span>
@@ -110,7 +110,7 @@ public class BoundaryAcquista implements Initializable {
 	private void pagaCash() throws IOException {
 <span class="nc bnc" id="L111" title="All 2 branches missed.">		if(ritiroN.isSelected()) {</span>
 <span class="nc" id="L112">			vis.setPickup(true);</span>
-		}
+<span class="nc" id="L113">		}</span>
 <span class="nc bnc" id="L114" title="All 2 branches missed.">		else if (!ritiroN.isSelected())</span>
 		{
 <span class="nc" id="L116">			vis.setPickup(false);</span>
@@ -126,131 +126,135 @@ public class BoundaryAcquista implements Initializable {
 <span class="nc" id="L126">			stage.setScene(scene);</span>
 <span class="nc" id="L127">			stage.show();</span>
 <span class="nc" id="L128">			java.util.logging.Logger.getLogger(&quot;Test pagacc&quot;).log(Level.SEVERE,&quot;\n Non vi e sufficiente disponibilita&quot;);</span>
+			
 
-<span class="nc" id="L130">		}</span>
+
+<span class="nc" id="L132">		}</span>
 		else {
+
+<span class="nc" id="L135">			java.util.logging.Logger.getLogger(&quot;vis in acquuista boundary &quot;).log(Level.INFO, &quot;vis vale &quot;, vis.getId());</span>
 
 		Stage stage;
 		Parent root;
-<span class="nc" id="L135">		stage = (Stage) buttonCash.getScene().getWindow();</span>
-<span class="nc" id="L136">		root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;pagamentoContrassegno.fxml&quot;));</span>
-<span class="nc" id="L137">		stage.setTitle(&quot;Benvenuto nella schermata dell'acquisto in contanti&quot;);</span>
+<span class="nc" id="L139">		stage = (Stage) buttonCash.getScene().getWindow();</span>
+<span class="nc" id="L140">		root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;pagamentoContrassegno.fxml&quot;));</span>
+<span class="nc" id="L141">		stage.setTitle(&quot;Benvenuto nella schermata dell'acquisto in contanti&quot;);</span>
 
-<span class="nc" id="L139">		scene = new Scene(root);</span>
-<span class="nc" id="L140">		stage.setScene(scene);</span>
-<span class="nc" id="L141">		stage.show();</span>
+<span class="nc" id="L143">		scene = new Scene(root);</span>
+<span class="nc" id="L144">		stage.setScene(scene);</span>
+<span class="nc" id="L145">		stage.show();</span>
 		}
 
-<span class="nc" id="L144">	}</span>
+<span class="nc" id="L148">	}</span>
 
 	
 
 	@FXML
 	private void importo() throws IOException, SQLException, NumberFormatException {
 		
-<span class="nc bnc" id="L151" title="All 2 branches missed.">		if (!nome.getText().equals(&quot;&quot;)) {</span>
-<span class="nc" id="L152">			buttonCC.setDisable(false);</span>
-<span class="nc" id="L153">			buttonCash.setDisable(false);</span>
+<span class="nc bnc" id="L155" title="All 2 branches missed.">		if (!nome.getText().equals(&quot;&quot;)) {</span>
+<span class="nc" id="L156">			buttonCC.setDisable(false);</span>
+<span class="nc" id="L157">			buttonCash.setDisable(false);</span>
 
-<span class="nc" id="L155">			String scelta = cA.getType();</span>
+<span class="nc" id="L159">			String scelta = cA.getType();</span>
 			
 			// qui mettere un controllo dal db oer il tipo di prodotto scelto usando l'istanza visualizza
-<span class="nc bnc" id="L158" title="All 2 branches missed.">			if (scelta.equals(&quot;libro&quot;)) {</span>
+<span class="nc bnc" id="L162" title="All 2 branches missed.">			if (scelta.equals(&quot;libro&quot;)) {</span>
 				
 				
-<span class="nc" id="L161">				float x = cA.totale(nome.getText(), Integer.parseInt(dispLabel.getText()),Integer.parseInt(quantita.getText()));</span>
-<span class="nc" id="L162">				costo.setText(String.valueOf(x));</span>
+<span class="nc" id="L165">				float x = cA.totale(nome.getText(), Integer.parseInt(dispLabel.getText()),Integer.parseInt(quantita.getText()));</span>
+<span class="nc" id="L166">				costo.setText(String.valueOf(x));</span>
 				float tot;
-<span class="nc" id="L164">				tot = x * (Float.parseFloat(quantita.getText()));</span>
-<span class="nc" id="L165">				totale.setText(String.valueOf( tot));</span>
-<span class="nc" id="L166">				cA.inserisciAmmontareL(Integer.parseInt(quantita.getText()));</span>
-<span class="nc" id="L167">				vis.setSpesaT(tot);</span>
-<span class="nc" id="L168">				vis.setQuantita(Integer.parseInt(quantita.getText()));</span>
+<span class="nc" id="L168">				tot = x * (Float.parseFloat(quantita.getText()));</span>
+<span class="nc" id="L169">				totale.setText(String.valueOf( tot));</span>
+<span class="nc" id="L170">				cA.inserisciAmmontareL(Integer.parseInt(quantita.getText()));</span>
+<span class="nc" id="L171">				vis.setSpesaT(tot);</span>
+<span class="nc" id="L172">				vis.setQuantita(Integer.parseInt(quantita.getText()));</span>
 				
 				
 				
 
-<span class="nc bnc" id="L173" title="All 2 branches missed.">			} else if (scelta.equals(&quot;giornale&quot;)) {</span>
-<span class="nc" id="L174">				float y = cA.totaleG(nome.getText(), Integer.parseInt(dispLabel.getText()),Integer.parseInt(quantita.getText()));</span>
-<span class="nc" id="L175">				costo.setText(String.valueOf(y));</span>
+<span class="nc bnc" id="L177" title="All 2 branches missed.">			} else if (scelta.equals(&quot;giornale&quot;)) {</span>
+<span class="nc" id="L178">				float y = cA.totaleG(nome.getText(), Integer.parseInt(dispLabel.getText()),Integer.parseInt(quantita.getText()));</span>
+<span class="nc" id="L179">				costo.setText(String.valueOf(y));</span>
 				float tot1;
-<span class="nc" id="L177">				tot1 = y * (Float.parseFloat(quantita.getText()));</span>
-<span class="nc" id="L178">				totale.setText(String.valueOf(tot1));</span>
-<span class="nc" id="L179">				cA.inserisciAmmontareG(Integer.parseInt(quantita.getText()));</span>
-<span class="nc" id="L180">				vis.setSpesaT(tot1);</span>
-<span class="nc" id="L181">				vis.setQuantita(Integer.parseInt(quantita.getText()));</span>
+<span class="nc" id="L181">				tot1 = y * (Float.parseFloat(quantita.getText()));</span>
+<span class="nc" id="L182">				totale.setText(String.valueOf(tot1));</span>
+<span class="nc" id="L183">				cA.inserisciAmmontareG(Integer.parseInt(quantita.getText()));</span>
+<span class="nc" id="L184">				vis.setSpesaT(tot1);</span>
+<span class="nc" id="L185">				vis.setQuantita(Integer.parseInt(quantita.getText()));</span>
 
 
-<span class="nc bnc" id="L184" title="All 2 branches missed.">			} else if (scelta.equals(&quot;rivista&quot;)) {</span>
-<span class="nc" id="L185">				float z = cA.totaleR(nome.getText(),Integer.parseInt(dispLabel.getText()), Integer.parseInt(quantita.getText()));</span>
-<span class="nc" id="L186">				costo.setText(String.valueOf(z));</span>
+<span class="nc bnc" id="L188" title="All 2 branches missed.">			} else if (scelta.equals(&quot;rivista&quot;)) {</span>
+<span class="nc" id="L189">				float z = cA.totaleR(nome.getText(),Integer.parseInt(dispLabel.getText()), Integer.parseInt(quantita.getText()));</span>
+<span class="nc" id="L190">				costo.setText(String.valueOf(z));</span>
 				float tot2;
-<span class="nc" id="L188">				tot2 = z * (Float.parseFloat(quantita.getText()));</span>
-<span class="nc" id="L189">				totale.setText(String.valueOf(tot2));</span>
-<span class="nc" id="L190">				cA.inserisciAmmontareR(Integer.parseInt(quantita.getText()));</span>
-<span class="nc" id="L191">				vis.setSpesaT(tot2);</span>
-<span class="nc" id="L192">				vis.setQuantita(Integer.parseInt(quantita.getText()));</span>
+<span class="nc" id="L192">				tot2 = z * (Float.parseFloat(quantita.getText()));</span>
+<span class="nc" id="L193">				totale.setText(String.valueOf(tot2));</span>
+<span class="nc" id="L194">				cA.inserisciAmmontareR(Integer.parseInt(quantita.getText()));</span>
+<span class="nc" id="L195">				vis.setSpesaT(tot2);</span>
+<span class="nc" id="L196">				vis.setQuantita(Integer.parseInt(quantita.getText()));</span>
 
 
 
 				
 
-<span class="nc" id="L198">			} else {</span>
-<span class="nc" id="L199">				throw new IOException();</span>
+<span class="nc" id="L202">			} else {</span>
+<span class="nc" id="L203">				throw new IOException();</span>
 			}
 
 		}
 		
 
-<span class="nc" id="L205">	}</span>
-
-<span class="nc" id="L207">	public BoundaryAcquista() throws SQLException {</span>
-<span class="nc" id="L208">		cA = new ControllerAcquista();</span>
 <span class="nc" id="L209">	}</span>
+
+<span class="nc" id="L211">	public BoundaryAcquista() throws SQLException {</span>
+<span class="nc" id="L212">		cA = new ControllerAcquista();</span>
+<span class="nc" id="L213">	}</span>
 
 	@FXML
 	private void indietro() throws IOException {
-<span class="nc bnc" id="L213" title="All 2 branches missed.">		if( vis.getIsLogged()) {</span>
+<span class="nc bnc" id="L217" title="All 2 branches missed.">		if( vis.getIsLogged()) {</span>
 		Stage stage;
 		Parent root;
-<span class="nc" id="L216">		stage = (Stage) link.getScene().getWindow();</span>
-<span class="nc" id="L217">		root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;homePageAfterLogin.fxml&quot;));</span>
-<span class="nc" id="L218">		scene = new Scene(root);</span>
-<span class="nc" id="L219">		stage.setScene(scene);</span>
-<span class="nc" id="L220">		stage.show();</span>
-<span class="nc" id="L221">		}</span>
+<span class="nc" id="L220">		stage = (Stage) link.getScene().getWindow();</span>
+<span class="nc" id="L221">		root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;homePageAfterLogin.fxml&quot;));</span>
+<span class="nc" id="L222">		scene = new Scene(root);</span>
+<span class="nc" id="L223">		stage.setScene(scene);</span>
+<span class="nc" id="L224">		stage.show();</span>
+<span class="nc" id="L225">		}</span>
 		else
 		{
 			Stage stage;
 			Parent root;
-<span class="nc" id="L226">			stage = (Stage) link.getScene().getWindow();</span>
-<span class="nc" id="L227">			root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;homePage.fxml&quot;));</span>
-<span class="nc" id="L228">			scene = new Scene(root);</span>
-<span class="nc" id="L229">			stage.setScene(scene);</span>
-<span class="nc" id="L230">			stage.show();</span>
+<span class="nc" id="L230">			stage = (Stage) link.getScene().getWindow();</span>
+<span class="nc" id="L231">			root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;homePage.fxml&quot;));</span>
+<span class="nc" id="L232">			scene = new Scene(root);</span>
+<span class="nc" id="L233">			stage.setScene(scene);</span>
+<span class="nc" id="L234">			stage.show();</span>
 		}
-<span class="nc" id="L232">	}</span>
+<span class="nc" id="L236">	}</span>
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources)   {
 		
-<span class="nc" id="L237">		buttonCC.setDisable(true);</span>
-<span class="nc" id="L238">		buttonCash.setDisable(true);</span>
+<span class="nc" id="L241">		buttonCC.setDisable(true);</span>
+<span class="nc" id="L242">		buttonCash.setDisable(true);</span>
 		
 			try {
-<span class="nc" id="L241">			nome.setText(cA.getNomeById());</span>
-<span class="nc" id="L242">			dispLabel.setText(String.valueOf(cA.getDisp()));</span>
+<span class="nc" id="L245">			nome.setText(cA.getNomeById());</span>
+<span class="nc" id="L246">			dispLabel.setText(String.valueOf(cA.getDisp()));</span>
 		
-<span class="nc" id="L244">				costo.setText(String.valueOf(cA.getCosto()));</span>
-<span class="nc" id="L245">			} catch (SQLException  e) {</span>
-<span class="nc" id="L246">				java.util.logging.Logger.getLogger(&quot;Test initialize&quot;).log(Level.SEVERE,&quot; eccezione ottenuta {0}.&quot;,e.toString());</span>
+<span class="nc" id="L248">				costo.setText(String.valueOf(cA.getCosto()));</span>
+<span class="nc" id="L249">			} catch (SQLException  e) {</span>
+<span class="nc" id="L250">				java.util.logging.Logger.getLogger(&quot;Test initialize&quot;).log(Level.SEVERE,&quot; eccezione ottenuta {0}.&quot;,e.toString());</span>
 
-<span class="nc" id="L248">				} </span>
+				} 
 		
 		
 		
 
-<span class="nc" id="L253">	}</span>
+<span class="nc" id="L257">	}</span>
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

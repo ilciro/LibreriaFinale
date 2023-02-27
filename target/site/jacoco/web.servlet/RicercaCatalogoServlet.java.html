@@ -43,15 +43,15 @@ import jakarta.servlet.http.HttpServletResponse;
 <span class="nc bnc" id="L43" title="All 4 branches missed.">			switch(type)</span>
 			{
 			case &quot;libro&quot;:
-<span class="nc" id="L46">				rB.setLista(lD.getLibriByNameL(titolo));</span>
+<span class="nc" id="L46">				rB.setLista(lD.getLibriByName(titolo));</span>
 <span class="nc" id="L47">				req.setAttribute(beanRicerca,rB);</span>
 <span class="nc" id="L48">				break;</span>
 			case &quot;giornale&quot;:
-<span class="nc" id="L50">				rB.setLista(gD.getGiornaliByNameL(titolo));</span>
+<span class="nc" id="L50">				rB.setLista(gD.getGiornaliByName(titolo));</span>
 <span class="nc" id="L51">				req.setAttribute(beanRicerca,rB);				</span>
 <span class="nc" id="L52">				break;</span>
 			case &quot;rivista&quot;:
-<span class="nc" id="L54">				rB.setLista(rD.getRivistaSingoloL());</span>
+<span class="nc" id="L54">				rB.setLista(rD.getRivistaSingolo());</span>
 <span class="nc" id="L55">				req.setAttribute(beanRicerca, rB);</span>
 <span class="nc" id="L56">				break;</span>
 				default:break;
@@ -93,9 +93,9 @@ import jakarta.servlet.http.HttpServletResponse;
 		{
 <span class="nc" id="L94">		java.util.logging.Logger.getLogger(&quot;post &quot;).log(Level.INFO, &quot;eccezione nel post {0}.&quot;,e.toString());</span>
 
-<span class="nc" id="L96">		}</span>
+		}
 <span class="nc" id="L97">	}</span>
 	
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

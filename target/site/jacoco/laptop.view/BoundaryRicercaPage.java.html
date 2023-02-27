@@ -37,12 +37,12 @@ public class BoundaryRicercaPage  implements Initializable{
 	private TextField idT;
 	@FXML
 	private TableView &lt;Raccolta&gt; table;
-<span class="nc" id="L40">	@FXML</span>
-	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; titolo = new TableColumn&lt;&gt;(&quot;Titolo&quot;);
-<span class="nc" id="L42">	@FXML</span>
-	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; autore = new TableColumn&lt;&gt;(&quot;Autore&quot;);
-<span class="nc" id="L44">	@FXML</span>
-	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; id = new TableColumn&lt;&gt;(&quot;ID&quot;);
+	@FXML
+<span class="nc" id="L41">	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; titolo = new TableColumn&lt;&gt;(&quot;Titolo&quot;);</span>
+	@FXML
+<span class="nc" id="L43">	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; autore = new TableColumn&lt;&gt;(&quot;Autore&quot;);</span>
+	@FXML
+<span class="nc" id="L45">	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; id = new TableColumn&lt;&gt;(&quot;ID&quot;);</span>
 	@FXML
 	private Button buttonC; 
 	@FXML
@@ -57,8 +57,8 @@ public class BoundaryRicercaPage  implements Initializable{
 	protected Scene scene;
 	
 	
-	public BoundaryRicercaPage()
-<span class="nc" id="L61">	{</span>
+<span class="nc" id="L60">	public BoundaryRicercaPage()</span>
+	{
 <span class="nc" id="L62">		cRP = new ControllerRicercaPage();</span>
 <span class="nc" id="L63">		cV=new ControllerVisualizza();</span>
 		
@@ -127,4 +127,4 @@ public class BoundaryRicercaPage  implements Initializable{
 
 	
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

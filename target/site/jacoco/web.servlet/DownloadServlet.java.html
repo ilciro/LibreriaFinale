@@ -68,11 +68,11 @@ import laptop.model.raccolta.Libro;
 				
 <span class="nc" id="L69">				String metodoP=sB.getMetodoP();</span>
 				
-<span class="nc" id="L71">				int idF=fDao.retUltimoOrdine(); //ultimo elemento (preso con count)</span>
-<span class="nc" id="L72">				statusF=fDao.annullaOrdine(idF);</span>
+<span class="nc" id="L71">				int idF=fDao.retUltimoOrdineF(); //ultimo elemento (preso con count)</span>
+<span class="nc" id="L72">				statusF=fDao.annullaOrdineF(idF);</span>
 				
-<span class="nc" id="L74">				int idP=pD.retUltimoOrdine();</span>
-<span class="nc" id="L75">				statusP=pD.annullaOrdine(idP);</span>
+<span class="nc" id="L74">				int idP=pD.retUltimoOrdinePag();</span>
+<span class="nc" id="L75">				statusP=pD.annullaOrdinePag(idP);</span>
 				
 				
 <span class="nc bnc" id="L78" title="All 6 branches missed.">					if(statusF &amp;&amp; statusP &amp;&amp; metodoP.equals(&quot;cash&quot;))</span>
@@ -114,7 +114,7 @@ import laptop.model.raccolta.Libro;
 <span class="nc" id="L114">			RequestDispatcher view = getServletContext().getRequestDispatcher(index); </span>
 <span class="nc" id="L115">			view.forward(req,resp);</span>
 		
-<span class="nc" id="L117">		}</span>
+		}
 		
 <span class="nc" id="L119">	}</span>
 	
@@ -128,4 +128,4 @@ import laptop.model.raccolta.Libro;
 	
 
 
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

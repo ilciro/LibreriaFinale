@@ -94,16 +94,16 @@ import laptop.controller.ControllerModificaUtente;
 	@FXML
 	private void aggiorna() throws SQLException
 	{
-<span class="nc bnc" id="L97" title="All 2 branches missed.">		if(cMU.aggiorna(nuovoNL.getText(),nuovoCL.getText(),</span>
+<span class="nc" id="L97">		if(cMU.aggiorna(nuovoNL.getText(),nuovoCL.getText(),</span>
 <span class="nc" id="L98">				nuovaEmailL.getText(),nuovaPwd.getText(),</span>
-<span class="nc" id="L99">				nuovaDescL.getText(),nuovaDNL.getValue(),vecchiaEmailL.getText()))</span>
+<span class="nc bnc" id="L99" title="All 2 branches missed.">				nuovaDescL.getText(),nuovaDNL.getValue(),vecchiaEmailL.getText()))</span>
 		{
 <span class="nc" id="L101">			java.util.logging.Logger.getLogger(&quot;modifica utente&quot;).log(Level.INFO,&quot;\n modifica avventuta con successo&quot;);</span>
 
 			
 
 		
-		}
+<span class="nc" id="L106">		}</span>
 		else
 		{	
 <span class="nc" id="L109">			java.util.logging.Logger.getLogger(&quot;errore modifica utente&quot;).log(Level.SEVERE,&quot;\n errore nei dati&quot;);</span>
@@ -140,4 +140,4 @@ import laptop.controller.ControllerModificaUtente;
 
 	
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -39,7 +39,7 @@ public class GestioneOggettoServlet extends HttpServlet {
 <span class="nc" id="L39">		} catch (SQLException e) {</span>
 <span class="nc" id="L40">			java.util.logging.Logger.getLogger(&quot;costruttore &quot;).log(Level.INFO, &quot;eccezione nel costruttore {0}.&quot;,e.toString());</span>
 
-<span class="nc" id="L42">		}</span>
+		}
 <span class="nc" id="L43">	}</span>
 
 	/**
@@ -118,7 +118,7 @@ public class GestioneOggettoServlet extends HttpServlet {
 	{
 <span class="nc" id="L119">		java.util.logging.Logger.getLogger(&quot;post &quot;).log(Level.INFO, &quot;eccezione nel post {0}.&quot;,e.toString());</span>
 
-<span class="nc" id="L121">	}</span>
+	}
 <span class="nc" id="L122">	}</span>
 	//used for checkData before modif
 
@@ -131,13 +131,13 @@ public class GestioneOggettoServlet extends HttpServlet {
 <span class="nc" id="L131">				lB.setId(Integer.parseInt(id));</span>
 <span class="nc" id="L132">				SystemBean.getIstance().setId(lB.getId());</span>
 <span class="nc" id="L133">				l.setId(lB.getId());</span>
-			}
+<span class="nc" id="L134">			}</span>
 <span class="nc bnc" id="L135" title="All 2 branches missed.">			else if(type.equals( giornale))</span>
 			{
 <span class="nc" id="L137">				gB.setId(Integer.parseInt(id));</span>
 <span class="nc" id="L138">				SystemBean.getIstance().setId(gB.getId());</span>
 <span class="nc" id="L139">				g.setId(gB.getId());</span>
-			}	
+<span class="nc" id="L140">			}	</span>
 <span class="nc bnc" id="L141" title="All 2 branches missed.">			else if(type.equals(rivista))</span>
 			{
 <span class="nc" id="L143">				rB.setId(Integer.parseInt(id));</span>
@@ -157,13 +157,13 @@ public class GestioneOggettoServlet extends HttpServlet {
 <span class="nc" id="L157">				lB.setId(Integer.parseInt(type));</span>
 <span class="nc" id="L158">				l.setId(lB.getId());</span>
 <span class="nc" id="L159">				lD.cancella(l);</span>
-			}
+<span class="nc" id="L160">			}</span>
 <span class="nc bnc" id="L161" title="All 2 branches missed.">			else if(type.equals(giornale))</span>
 			{
 <span class="nc" id="L163">				gB.setId(Integer.parseInt(id));</span>
 <span class="nc" id="L164">				g.setId(gB.getId());</span>
 <span class="nc" id="L165">				gD.cancella(g);</span>
-			}
+<span class="nc" id="L166">			}</span>
 <span class="nc bnc" id="L167" title="All 2 branches missed.">			else if(type.equals(rivista))</span>
 			{
 			
@@ -174,4 +174,4 @@ public class GestioneOggettoServlet extends HttpServlet {
 		}
 <span class="nc" id="L175">	}</span>
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

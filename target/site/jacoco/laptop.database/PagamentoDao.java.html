@@ -44,101 +44,82 @@ import javafx.collections.ObservableList;
 <span class="fc" id="L44">			prepQ.setString(6,p.getTipo());</span>
 <span class="fc" id="L45">			prepQ.setInt(7, p.getId());</span>
 <span class="fc" id="L46">			prepQ.executeUpdate();</span>
-<span class="fc" id="L47">		}catch(SQLException e)</span>
+<span class="nc" id="L47">		}catch(SQLException e)</span>
 		{
-<span class="fc" id="L49">						java.util.logging.Logger.getLogger(&quot;insert pagamento&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L50">		}</span>
+<span class="nc" id="L49">						java.util.logging.Logger.getLogger(&quot;insert pagamento&quot;).log(Level.INFO, eccezione, e);</span>
+		}
 		
 		
 <span class="fc" id="L53">		}</span>
 		
-	public void daiPrivilegi() throws SQLException 
-	{
-
-		
-<span class="fc" id="L59">		query=&quot;set sql_safe_updates=?&quot;;</span>
-<span class="fc" id="L60">		try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="fc" id="L61">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
-		{
-<span class="fc" id="L63">			prepQ.setInt(1,0);</span>
-
-<span class="fc" id="L65">			prepQ.executeUpdate();</span>
-
-<span class="nc" id="L67">		}catch(SQLException e)</span>
-		{
-<span class="nc" id="L69">			java.util.logging.Logger.getLogger(&quot;dai pribvilegi&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L70">		}</span>
-
-
-<span class="fc" id="L73">	}</span>
+	
 	public ObservableList&lt;Pagamento&gt; getPagamenti() throws SQLException  {
 
-<span class="fc" id="L76">			ObservableList&lt;Pagamento&gt; catalogo=FXCollections.observableArrayList();</span>
-<span class="fc" id="L77">			query=&quot;SELECT id_op,metodo,esito,nomeUtente,spesaTotale,tipoAcquisto,idProd from ispw.pagamento where eMail=?&quot;;</span>
-<span class="fc" id="L78">			try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="fc" id="L79">					PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+<span class="fc" id="L58">			ObservableList&lt;Pagamento&gt; catalogo=FXCollections.observableArrayList();</span>
+<span class="fc" id="L59">			query=&quot;SELECT id_op,metodo,esito,nomeUtente,spesaTotale,tipoAcquisto,idProd from ispw.pagamento where eMail=?&quot;;</span>
+<span class="fc" id="L60">			try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L61">					PreparedStatement prepQ=conn.prepareStatement(query);)</span>
 			{
-<span class="fc" id="L81">				prepQ.setString(1, User.getInstance().getEmail());</span>
-<span class="fc" id="L82">				ResultSet rs=prepQ.executeQuery();</span>
-<span class="fc bfc" id="L83" title="All 2 branches covered.">			while(rs.next())</span>
+<span class="fc" id="L63">				prepQ.setString(1, User.getInstance().getEmail());</span>
+<span class="fc" id="L64">				ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">			while(rs.next())</span>
 			{
 
 
-<span class="fc" id="L87">				catalogo.add(new Pagamento (rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getFloat(5),rs.getString(6)));</span>
+<span class="fc" id="L69">				catalogo.add(new Pagamento (rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getFloat(5),rs.getString(6)));</span>
 
 			}
-<span class="nc" id="L90">			}catch(SQLException e)</span>
+<span class="nc" id="L72">			}catch(SQLException e)</span>
 			{
-<span class="nc" id="L92">							java.util.logging.Logger.getLogger(&quot;lista pagamenti&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L93">			}</span>
+<span class="nc" id="L74">							java.util.logging.Logger.getLogger(&quot;lista pagamenti&quot;).log(Level.INFO, eccezione, e);</span>
+			}
 		
-<span class="fc" id="L95">		return catalogo;</span>
+<span class="fc" id="L77">		return catalogo;</span>
 	}
 	
 	
 
 	
 		
-	public int retUltimoOrdine() throws SQLException 
+	public int retUltimoOrdinePag() throws SQLException 
 	{
-<span class="fc" id="L104">		int id=0;</span>
-<span class="fc" id="L105">		query=&quot;select count(*) as massimo from pagamento&quot;;</span>
-<span class="fc" id="L106">		try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="fc" id="L107">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+<span class="fc" id="L86">		int id=0;</span>
+<span class="fc" id="L87">		query=&quot;select count(*) as massimoP from pagamento&quot;;</span>
+<span class="fc" id="L88">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L89">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
 		{
-<span class="fc" id="L109">			ResultSet rs=prepQ.executeQuery();</span>
-<span class="fc bfc" id="L110" title="All 2 branches covered.">			while ( rs.next() ) {</span>
-<span class="fc" id="L111">				id=rs.getInt(&quot;massimo&quot;);</span>
+<span class="fc" id="L91">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L92" title="All 2 branches covered.">			while ( rs.next() ) {</span>
+<span class="fc" id="L93">				id=rs.getInt(&quot;massimoP&quot;);</span>
 
 			}
-<span class="nc" id="L114">		}catch(SQLException e)</span>
+<span class="nc" id="L96">		}catch(SQLException e)</span>
 		{
-<span class="nc" id="L116">						java.util.logging.Logger.getLogger(&quot;ultimo ordine&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L117">		}</span>
+<span class="nc" id="L98">						java.util.logging.Logger.getLogger(&quot;ultimo ordine&quot;).log(Level.INFO, eccezione, e);</span>
+		}
 				
-<span class="fc" id="L119">		return id;</span>
+<span class="fc" id="L101">		return id;</span>
 		
 	}
 
-	public boolean annullaOrdine(int idC) throws SQLException
+	public boolean annullaOrdinePag(int idC) throws SQLException
 	{
-<span class="fc" id="L125">		boolean state=false;</span>
-<span class="fc" id="L126">		int row=0;</span>
-		
-<span class="fc" id="L128">		query=&quot;delete from pagamento where id_op=?&quot;;</span>
-<span class="fc" id="L129">		try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="fc" id="L130">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+<span class="fc" id="L107">		boolean state=false;</span>
+<span class="fc" id="L108">		int row=0;</span>
+<span class="fc" id="L109">		String query2=&quot;delete from pagamento where id_op=?&quot;;</span>
+<span class="fc" id="L110">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L111">				PreparedStatement prepQ=conn.prepareStatement(query2);)</span>
 		{
-<span class="fc" id="L132">			prepQ.setInt(1,idC);</span>
-<span class="fc" id="L133">			row=prepQ.executeUpdate();</span>
-<span class="pc bpc" id="L134" title="1 of 2 branches missed.">			if(row==1)</span>
-<span class="fc" id="L135">				state=true;</span>
-<span class="nc" id="L136">		}catch(SQLException e)</span>
+<span class="fc" id="L113">			prepQ.setInt(1,idC);</span>
+<span class="fc" id="L114">			row=prepQ.executeUpdate();</span>
+<span class="pc bpc" id="L115" title="1 of 2 branches missed.">			if(row==1)</span>
+<span class="fc" id="L116">				state=true;</span>
+<span class="nc" id="L117">		}catch(SQLException e)</span>
 		{
-<span class="nc" id="L138">						java.util.logging.Logger.getLogger(&quot;annulla ordine&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L139">		}</span>
+<span class="nc" id="L119">						java.util.logging.Logger.getLogger(&quot;annulla ordine&quot;).log(Level.INFO, eccezione, e);</span>
+		}
 			
-<span class="fc" id="L141">			return state;</span>
+<span class="fc" id="L122">			return state;</span>
 
 		}
 		
@@ -152,4 +133,4 @@ import javafx.collections.ObservableList;
 
 
 
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -74,8 +74,8 @@ public class BoundaryPagamentoCC implements Initializable {
 
 	@FXML
 	private TableView&lt;CartaDiCredito&gt; tableCC;
-<span class="nc" id="L77">	@FXML</span>
-	private TableColumn&lt;CartaDiCredito, SimpleStringProperty&gt; codiceCC = new TableColumn&lt;&gt;(&quot;CodiceCarta&quot;);
+	@FXML
+<span class="nc" id="L78">	private TableColumn&lt;CartaDiCredito, SimpleStringProperty&gt; codiceCC = new TableColumn&lt;&gt;(&quot;CodiceCarta&quot;);</span>
 	@FXML
 	private Label labelNU;
 
@@ -122,8 +122,8 @@ public class BoundaryPagamentoCC implements Initializable {
 <span class="nc" id="L122">			scene = new Scene(root);</span>
 <span class="nc" id="L123">			stage.setScene(scene);</span>
 <span class="nc" id="L124">			stage.show();</span>
-<span class="nc" id="L125">			}</span>
-		} else {
+			}
+<span class="nc" id="L126">		} else {</span>
 <span class="nc" id="L127">			java.util.logging.Logger.getLogger(&quot;procedi pagacc&quot;).log(Level.INFO,&quot;\n riprovare&quot;);</span>
 
 			Stage stage;
@@ -161,7 +161,7 @@ public class BoundaryPagamentoCC implements Initializable {
 <span class="nc" id="L161">		} catch (Exception e) {</span>
 <span class="nc" id="L162">			java.util.logging.Logger.getLogger(&quot;Test pagacc&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta .&quot;,e);</span>
 
-<span class="nc" id="L164">		}</span>
+		}
 		
 <span class="nc" id="L166">	}</span>
 
@@ -189,7 +189,7 @@ public class BoundaryPagamentoCC implements Initializable {
 <span class="nc" id="L189">		    } catch (ParseException e) {</span>
 <span class="nc" id="L190">				java.util.logging.Logger.getLogger(&quot;Test pagacc&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta {0}&quot;,e.toString());</span>
 
-<span class="nc" id="L192">		    }</span>
+		    }
 <span class="nc" id="L193">		cPCC.aggiungiCartaDB(nome, cognome, codice, sqlDate, civ, (float) 0.0);</span>
 		
 		 
@@ -223,7 +223,7 @@ public class BoundaryPagamentoCC implements Initializable {
 			}
 <span class="nc" id="L224">		} catch (IOException e) {</span>
 <span class="nc" id="L225">			e.getMessage();</span>
-<span class="nc" id="L226">		}</span>
+		}
 <span class="nc" id="L227">		buttonPrendi.setDisable(false);</span>
 <span class="nc" id="L228">	}</span>
 
@@ -238,4 +238,4 @@ public class BoundaryPagamentoCC implements Initializable {
 
 <span class="nc" id="L239">	}</span>
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

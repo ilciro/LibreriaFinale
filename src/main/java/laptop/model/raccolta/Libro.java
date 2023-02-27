@@ -264,7 +264,6 @@ public class Libro implements Raccolta {
 		     			document.open();	   		
 		  			file=new File(rB.getString("path"+i));
 		  			Desktop.getDesktop().open(file);
-		  			
 		    	  }
 		    	  
 		    	  else {
@@ -283,18 +282,18 @@ public class Libro implements Raccolta {
 		     					+ "Vestibulum aliquet nisi sit amet tristique consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a fringilla libero. Fusce pharetra purus eu tortor dapibus laoreet. Quisque mattis justo et lacus fringilla mattis. Cras sit amet elementum ipsum. Sed varius congue dolor ac placerat. Integer cursus nulla at lectus sollicitudin hendrerit. Suspendisse sit amet tincidunt nunc, at volutpat nisi."));
 		  			
 		     			
-		  		
 
-		  		}
+		  		} 
 		    	
 		    	   dimensione++;
 
 		      }
-	    	   document.close();
+	    	  
 
 		     
 		   
-		     
+   			document.close();
+
 		
 		
 		

@@ -34,17 +34,17 @@ import laptop.model.User;
 		try {
 <span class="nc bnc" id="L35" title="All 4 branches missed.">			if(genera!=null &amp;&amp;genera.equals(&quot;prendi valori&quot;))</span>
 			{
-<span class="nc" id="L37">				TempUser.getInstance().setId(SystemBean.getIstance().getId());</span>
+<span class="nc" id="L37">				User.getInstance().setId(SystemBean.getIstance().getId());</span>
 <span class="nc" id="L38">				UsersDao.getTempUserSingolo(TempUser.getInstance());</span>
 				
 				
 <span class="nc" id="L41">				UserBean.getInstance().setIdRuolo(TempUser.getInstance().getIdRuolo());</span>
-<span class="nc" id="L42">				UserBean.getInstance().setNome(TempUser.getInstance().getNome());</span>
-<span class="nc" id="L43">				UserBean.getInstance().setCognome(TempUser.getInstance().getCognome());</span>
-<span class="nc" id="L44">				UserBean.getInstance().setEmail(TempUser.getInstance().getEmail());</span>
-<span class="nc" id="L45">				UserBean.getInstance().setPassword(TempUser.getInstance().getPassword());</span>
-<span class="nc" id="L46">				UserBean.getInstance().setDescrizione(TempUser.getInstance().getDescrizione());</span>
-<span class="nc" id="L47">				UserBean.getInstance().setDataDiNascita(TempUser.getInstance().getDataDiNascita());</span>
+<span class="nc" id="L42">				UserBean.getInstance().setNome(TempUser.getInstance().getNomeT());</span>
+<span class="nc" id="L43">				UserBean.getInstance().setCognome(User.getInstance().getCognome());</span>
+<span class="nc" id="L44">				UserBean.getInstance().setEmail(User.getInstance().getEmail());</span>
+<span class="nc" id="L45">				UserBean.getInstance().setPassword(TempUser.getInstance().getPasswordT());</span>
+<span class="nc" id="L46">				UserBean.getInstance().setDescrizione(TempUser.getInstance().getDescrizioneT());</span>
+<span class="nc" id="L47">				UserBean.getInstance().setDataDiNascita(TempUser.getInstance().getDataDiNascitaT());</span>
 				
 <span class="nc" id="L49">				req.setAttribute(&quot;beanUb&quot;,UserBean.getInstance());</span>
 <span class="nc" id="L50">				RequestDispatcher view=getServletContext().getRequestDispatcher(&quot;/modificaUtente.jsp&quot;);</span>
@@ -110,8 +110,8 @@ import laptop.model.User;
 		{
 <span class="nc" id="L111">			java.util.logging.Logger.getLogger(&quot;post &quot;).log(Level.INFO, &quot;eccezione nel post {0}.&quot;,e.toString());</span>
 
-<span class="nc" id="L113">		}</span>
+		}
 <span class="nc" id="L114">	}</span>
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
