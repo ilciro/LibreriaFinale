@@ -1,4 +1,4 @@
-Titolo :cambio giornale	Editore :cambio ediitore	Ricavo totale :-6.25
+Titolo :cambio giornale	Editore :cambio ediitore	Ricavo totale :12.5
 Titolo :La Republica2	Editore :La Republica	Ricavo totale :6.0
 Titolo :La Republica3	Editore :La Republica	Ricavo totale :94.0
 Titolo :La Republica4	Editore :La Republica	Ricavo totale :28.0

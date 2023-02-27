@@ -18,75 +18,76 @@
 <table>
 <caption>
 scegliere tra libri , giornali e riviste, gestione,cerca,logout e visualizza profilo
+come scrittore
 </caption>
 <tr>
 
 <th scope="col">
-libro
+libro scrittore
 </th>
 <th>
-giornale
+giornale scrittore
 </th>
 <th>
-rivista
+rivista scrittore
 </th>
 <th>
-gestione
+gestione scrittore
 </th>
 <th>
-ricerca
+ricerca scrittore
 </th>
 <th>
-logout
+logout da scrittore
 </th>
 <th>
-visualizza profilo
+visualizza profilo scrittore
 </th>
 </tr>
 <tr>
 <td>
-<img alt="source not found" src="immagini/libro.png_860.png" width=100  height=100 >
+<img id ="libro scrittore" alt="source not found" src="immagini/libro.png_860.png" width=100  height=100 >
 </td>
 <td>
-<img alt="source not found" src="immagini/newspaper-284-542534.png" width=100  height=100 >
+<img id ="giornale scrittore" alt="source not found" src="immagini/newspaper-284-542534.png" width=100  height=100 >
 </td>
 <td>
-<img alt="source not found" src="immagini/una-rivista_318-1607.jpg" width=100  height=100 >
+<img id ="rivista scrittore"alt="source not found" src="immagini/una-rivista_318-1607.jpg" width=100  height=100 >
 </td>
 <td>
-<img alt="source not found" src="immagini/vector-users-icon-png_302626.jpg" width=100  height=100 >
+<img id ="profilo scrittore" alt="source not found" src="immagini/vector-users-icon-png_302626.jpg" width=100  height=100 >
 </td>
 <td>
-<img alt="source not found" src="immagini/Search-icon-13.png" width=100  height=100 >
+<img id ="cerca scrittore"alt="source not found" src="immagini/Search-icon-13.png" width=100  height=100 >
 </td>
 <td>
-<img alt="source not found" src="immagini/icons8-logout-rounded-48.png" width=100  height=100 >
+<img id ="logout scrittore" alt="source not found" src="immagini/icons8-logout-rounded-48.png" width=100  height=100 >
 </td>
 <td>
-<img alt="source not found" src="immagini/Profile-PNG-High-Quality-Image-180x180.png" width=100  height=100>
+<img id ="libro scrittore" alt="source not found" src="immagini/Profile-PNG-High-Quality-Image-180x180.png" width=100  height=100>
 </td>
 </tr>
 <tr>
 <td>
-<input type="submit" name="buttonL" id="buttonL" value="libri" class="libri">
+<input type="submit"  id="buttonL" name="buttonL"  value="libri" class="libri">
 </td>
 <td>
-<input type="submit" name="buttonG" id="buttonG" value="giornali" class="giornali">
+<input type="submit" id="buttonG" name="buttonG"  value="giornali" class="giornali">
 </td>
 <td>
-<input type="submit" name="buttonR" id="buttonR" value="riviste" class="riviste">
+<input type="submit" id="buttonR" name="buttonR"  value="riviste" class="riviste">
 </td>
 <td>
-<input type="submit" name="buttonGestione" id="buttonGestione" value="gestione" class="gestione">
+<input type="submit" id="buttonGestione"  name="buttonGestione" value="gestione" class="gestione">
 </td>
 <td>
-<input type="submit" name="buttonRic" id="buttonRic" value="ricerca" class="ricerca">
+<input type="submit" id="buttonRic" name="buttonRic"  value="ricerca" class="ricerca">
 </td>
 <td>
-<input type="submit" name="logoutB" id="logoutB" value="logout" class="logout">
+<input type="submit" id="logoutB" name="logoutB"  value="logout" class="logout">
 </td>
 <td>
-<input type="submit" name="profiloB" id="profiloB" value="vai al profilo" class="profilo">
+<input type="submit" id="profiloB" name="profiloB"  value="vai al profilo" class="profilo">
 </td>
 </tr>
 </table>

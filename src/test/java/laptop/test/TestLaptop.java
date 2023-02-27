@@ -316,6 +316,7 @@ class TestLaptop {
 		User.getInstance().setIdRuolo(strings);
 		assertEquals(strings,User.getInstance().getIdRuolo());
 	}
+	
 	@ParameterizedTest
 	@ValueSource(ints= {1,2,3,4,5,6})
 	void testScaricaLibro(int ints) throws DocumentException, IOException, URISyntaxException {
@@ -323,6 +324,7 @@ class TestLaptop {
 		cD.scaricaLibro();
 		assertEquals(ints,vis.getId());
 	}
+	
 	@ParameterizedTest
 	@ValueSource(ints= {1,2,3,4,5,6})
 	void testScaricaGiornale(int ints) throws IOException, DocumentException {

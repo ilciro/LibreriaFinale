@@ -94,10 +94,10 @@ public class ControllerModifPage {
 		
 		
 	
-		cBD.checkBookData(info, recensione, descrizione, data, infoCosti);
 		
 		
-		ld.aggiornaLibro(l);
+		
+		ld.aggiornaLibro(cBD.checkBookData(info, recensione, descrizione, data, infoCosti));
 	}
 	
 	

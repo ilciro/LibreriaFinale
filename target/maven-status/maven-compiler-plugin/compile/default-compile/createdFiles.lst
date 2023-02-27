@@ -23,6 +23,7 @@ web\servlet\ServletEditore.class
 web\bean\LibroBean.class
 web\servlet\ModificaGiornaleServlet.class
 laptop\controller\ControllerCancellaUser.class
+laptop\controller\ControllerBookData.class
 laptop\controller\ControllerPagamentoCC.class
 laptop\controller\ControllerModificaUtente.class
 laptop\database\ContrassegnoDao.class
@@ -32,7 +33,6 @@ laptop\controller\ControllerAggiungiPage.class
 laptop\controller\ControllerGestionePage.class
 web\bean\FatturaBean.class
 laptop\model\raccolta\Raccolta.class
-laptop\model\TempUser$Ruoli.class
 laptop\controller\ControllerCompravendita.class
 web\bean\ModificaOggettoBean.class
 laptop\view\BoundaryVisualizzaOrdine.class
@@ -90,6 +90,7 @@ web\servlet\ServletScrittore.class
 laptop\view\BoundaryReportPage.class
 web\servlet\LoginServlet.class
 laptop\view\BoundaryRicercaPerTipo.class
+laptop\model\TempUser$RuoliT.class
 laptop\controller\ControllerAggiungiUtente.class
 web\servlet\InserisciOggettoServletGiornale.class
 web\bean\RicercaBean.class
@@ -126,6 +127,7 @@ web\servlet\RicercaServlet.class
 laptop\controller\ControllerVisualizzaOrdine.class
 laptop\view\BoundaryHomePageAfterLoginSE.class
 web\servlet\RaccoltaServlet.class
+laptop\controller\ControllerCheckPagamentoData.class
 web\servlet\DownloadServletR.class
 laptop\view\BoundaryDownload.class
 laptop\model\User$Ruoli.class

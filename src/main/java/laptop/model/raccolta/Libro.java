@@ -244,7 +244,8 @@ public class Libro implements Raccolta {
 		File file;
 		
 		
-		int dimensione=1;
+		int dimensione=0;
+	
 		ResourceBundle rB=ResourceBundle.getBundle("configurations/booksPath");
 		 ResourceBundle rBD=ResourceBundle.getBundle("configurations/downloadConfiguration");
 			 Enumeration<String> enumeration = rBD.getKeys();
@@ -253,15 +254,19 @@ public class Libro implements Raccolta {
 
 		      // print all the keys
 		      while (enumeration.hasMoreElements()) {
-		    	 
-		    	  if(i==dimensione)
+		    	 enumeration.nextElement();
+		     
+		    	
+		    		 if(i==dimensione)
 		    	  {
 		    		  document = new Document();
 		     			PdfWriter.getInstance(document, new FileOutputStream(rBD.getString("path"+i)));
 		     			document.open();	   		
 		  			file=new File(rB.getString("path"+i));
 		  			Desktop.getDesktop().open(file);
+		  			
 		    	  }
+		    	  
 		    	  else {
 		  			document = new Document();
 		     			PdfWriter.getInstance(document, new FileOutputStream(rBD.getString("pathNonFound")));
@@ -277,15 +282,18 @@ public class Libro implements Raccolta {
 		     					+ "\r\n"
 		     					+ "Vestibulum aliquet nisi sit amet tristique consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a fringilla libero. Fusce pharetra purus eu tortor dapibus laoreet. Quisque mattis justo et lacus fringilla mattis. Cras sit amet elementum ipsum. Sed varius congue dolor ac placerat. Integer cursus nulla at lectus sollicitudin hendrerit. Suspendisse sit amet tincidunt nunc, at volutpat nisi."));
 		  			
-		     			document.close();
+		     			
 		  		
 
 		  		}
-		    	  dimensione++;
 		    	
-		    	
+		    	   dimensione++;
 
 		      }
+	    	   document.close();
+
+		     
+		   
 		     
 		
 		

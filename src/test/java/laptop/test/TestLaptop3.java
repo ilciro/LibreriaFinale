@@ -241,7 +241,7 @@ class TestLaptop3 {
 		assertNotNull(tu.getDataDiNascitaT());
 	}
 	@ParameterizedTest
-	@ValueSource(strings= {"ADMIN","EDITORE","SCRITTORE"})
+	@ValueSource(strings= {"ADMINT","EDITORET","SCRITTORET"})
 	void testGetIdRuolo(String strings) {
 		tu.setIdRuolo(strings);
 		assertEquals(strings,tu.getIdRuolo());
@@ -249,8 +249,8 @@ class TestLaptop3 {
 	
 	@Test
 	void testGetIdRuoloF() {
-		tu.setIdRuolo("F");
-		assertEquals("UTENTE",tu.getIdRuolo());
+		tu.setIdRuolo("FT");
+		assertEquals("UTENTET",tu.getIdRuolo());
 		}
 	@Test
 	void testGetInstanceU() {

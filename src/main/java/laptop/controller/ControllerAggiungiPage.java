@@ -7,14 +7,12 @@ import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
 import laptop.database.RivistaDao;
 import laptop.model.raccolta.Giornale;
-import laptop.model.raccolta.Libro;
 import laptop.model.raccolta.Rivista;
 
 
 
 public class ControllerAggiungiPage {
 	private LibroDao lD;
-	private Libro l;
 	private GiornaleDao gD;
 	private boolean status = false;
 	private Rivista r;
@@ -35,11 +33,11 @@ public class ControllerAggiungiPage {
 		}
 		else
 		{
-		cBD.checkBookData(info, recensione, descrizione, data, infoCosti);
 		
 		
 		
-		status =lD.creaLibrio(l);
+		
+		status =lD.creaLibrio(cBD.checkBookData(info, recensione, descrizione, data, infoCosti));
 		
 		return status;
 		}
@@ -92,7 +90,6 @@ public class ControllerAggiungiPage {
 	public ControllerAggiungiPage()
 	{
 		lD=new LibroDao();
-		l=new Libro();
 		gD=new GiornaleDao();
 		r=new Rivista();
 		rD=new RivistaDao();
