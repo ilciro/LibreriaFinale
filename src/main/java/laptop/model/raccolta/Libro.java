@@ -291,8 +291,7 @@ public class Libro implements Raccolta {
 		      }
 	    	  
 
-		   
-   			//document.close();
+	
 		  
 
 		
