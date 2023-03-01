@@ -33,11 +33,11 @@ public class TextAreaBean {
 		StringBuilder s=new StringBuilder();
 
 
-		FileWriter w=null;
-		w=new FileWriter(rB.getString("libri"));
+		FileWriter w1=null;
+		w1=new FileWriter(rB.getString("libri"));
 		String query="select titolo,copieVendute,prezzo as totale from libro";
 		
-		   try (BufferedWriter b=new BufferedWriter (w)){
+		   try (BufferedWriter b1=new BufferedWriter (w1)){
 		
 
 			   try(Connection 	conn = ConnToDb.generalConnection();
@@ -57,7 +57,7 @@ public class TextAreaBean {
 				rs.getFloat(3);
 
 
-				b.write(titolo+rs.getString(1)+"\t"+ricavoTotale +rs.getInt(2)*rs.getFloat(3)+"\n");
+				b1.write(titolo+rs.getString(1)+"\t"+ricavoTotale +rs.getInt(2)*rs.getFloat(3)+"\n");
 
 				
 				s.append(titolo);
@@ -69,7 +69,7 @@ public class TextAreaBean {
 				s.append(rs.getInt(2)*rs.getFloat(3));
 				s.append("\n");
 
-				b.flush();
+				b1.flush();
 
 				
 			}
@@ -85,15 +85,15 @@ public class TextAreaBean {
 	}
 	public String generaReportR() throws SQLException, IOException
 	{
-				FileWriter w;
+				FileWriter w2;
 				StringBuilder s=new StringBuilder();
-				String query="select titolo,editore,copieRimanenti,prezzo as totale  from ispw.rivista";
-				w=new FileWriter(rB.getString("riviste"));
+				String query2="select titolo,editore,copieRimanenti,prezzo as totale  from ispw.rivista";
+				w2=new FileWriter(rB.getString("riviste"));
 		        
 		        
-		        try (BufferedWriter b=new BufferedWriter (w)){
+		        try (BufferedWriter b=new BufferedWriter (w2)){
 		        	try(Connection conn=ConnToDb.generalConnection();
-		        			PreparedStatement prepQ=conn.prepareStatement(query);)
+		        			PreparedStatement prepQ=conn.prepareStatement(query2);)
 		        	{
 		        		
 		        		ResultSet rs=prepQ.executeQuery();
@@ -146,13 +146,13 @@ public class TextAreaBean {
 	}
 	public   String generaReportG() throws IOException, SQLException
 	{
-		FileWriter w;
+		FileWriter w3;
 		StringBuilder s=new StringBuilder();
-		String query="select titolo,editore,copiRim,prezzo as totale  from ispw.giornale";
-		w=new FileWriter(rB.getString("giornali"));
-		   try (BufferedWriter b=new BufferedWriter (w)){
+		String query3="select titolo,editore,copiRim,prezzo as totale  from ispw.giornale";
+		w3=new FileWriter(rB.getString("giornali"));
+		   try (BufferedWriter b=new BufferedWriter (w3)){
 			   try(Connection conn=ConnToDb.generalConnection();
-					   PreparedStatement prepQ=conn.prepareStatement(query);)
+					   PreparedStatement prepQ=conn.prepareStatement(query3);)
 			   {
 				  
 				   ResultSet rs=prepQ.executeQuery();

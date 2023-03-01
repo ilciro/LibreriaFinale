@@ -76,7 +76,7 @@ public class InserisciOggettoServlet extends HttpServlet {
 				lB.setEditoreB(editore);
 				lB.setAutoreB(autore);
 				lB.setLinguaB(lingua);
-				lB.setCategoriaB(catS);
+				lB.setcategoriaB(catS);
 				
 				SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
 	

@@ -231,95 +231,95 @@ public class LibroBean {
 	public void setcategoriaB(String categoriaB) {
 		switch (categoriaB){
 		case "ADOLESCENTI_RAGAZZI": 
-			this.setCategoriaB(CategorieLibro.ADOLESCENTI_RAGAZZI.toString());  
+			this.setcategoriaB(CategorieLibro.ADOLESCENTI_RAGAZZI.toString());  
 			break;
 		case "ARTE": 
-			this.setCategoriaB(CategorieLibro.ARTE.toString());  
+			this.setcategoriaB(CategorieLibro.ARTE.toString());  
 			break;
 		case "CINEMA_FOTOGRAFIA" : 
-			this.setCategoriaB(CategorieLibro.CINEMA_FOTOGRAFIA.toString());  
+			this.setcategoriaB(CategorieLibro.CINEMA_FOTOGRAFIA.toString());  
 			break;
 		case "BIOGRAFIE" : 
-			this.setCategoriaB(CategorieLibro.BIOGRAFIE.toString());  
+			this.setcategoriaB(CategorieLibro.BIOGRAFIE.toString());  
 			break;
 		case "DIARI_MEMORIE" : 
-			this.setCategoriaB(CategorieLibro.DIARI_MEMORIE.toString());  
+			this.setcategoriaB(CategorieLibro.DIARI_MEMORIE.toString());  
 			break;
 		case "CALENDARI_AGENDE" : 
-			this.setCategoriaB(CategorieLibro.CALENDARI_AGENDE.toString());  
+			this.setcategoriaB(CategorieLibro.CALENDARI_AGENDE.toString());  
 			break;
 		case "DIRITTO" : 
-			this.setCategoriaB(CategorieLibro.DIRITTO.toString());  
+			this.setcategoriaB(CategorieLibro.DIRITTO.toString());  
 			break;
 		case "DIZINARI_OPERE" : 
-			this.setCategoriaB(CategorieLibro.DIZINARI_OPERE.toString());  
+			this.setcategoriaB(CategorieLibro.DIZINARI_OPERE.toString());  
 			break;
 		case "ECONOMIA" : 
-			this.setCategoriaB(CategorieLibro.ECONOMIA.toString());  
+			this.setcategoriaB(CategorieLibro.ECONOMIA.toString());  
 			break;
 		case "FAMIGLIA" : 
-			this.setCategoriaB(CategorieLibro.FAMIGLIA.toString());  
+			this.setcategoriaB(CategorieLibro.FAMIGLIA.toString());  
 			break;
 		case "SALUTE_BENESSERE" : 
-			this.setCategoriaB(CategorieLibro.SALUTE_BENESSERE.toString());  
+			this.setcategoriaB(CategorieLibro.SALUTE_BENESSERE.toString());  
 			break;
 		case "FANTASCIENZA_FANTASY" : 
-			this.setCategoriaB(CategorieLibro.FANTASCIENZA_FANTASY.toString());  
+			this.setcategoriaB(CategorieLibro.FANTASCIENZA_FANTASY.toString());  
 			break;
 		case "FUMETTI_MANGA" : 
-			this.setCategoriaB(CategorieLibro.FUMETTI_MANGA.toString());  
+			this.setcategoriaB(CategorieLibro.FUMETTI_MANGA.toString());  
 			break;
 		case "GIALLI_THRILLER" : 
-			this.setCategoriaB(CategorieLibro.GIALLI_THRILLER.toString());  
+			this.setcategoriaB(CategorieLibro.GIALLI_THRILLER.toString());  
 			break;		
 		case "COMPUTER_GIOCHI" : 
-			this.setCategoriaB(CategorieLibro.COMPUTER_GIOCHI.toString());  
+			this.setcategoriaB(CategorieLibro.COMPUTER_GIOCHI.toString());  
 			break;
 		case "HUMOR" : 
-			this.setCategoriaB(CategorieLibro.HUMOR.toString());  
+			this.setcategoriaB(CategorieLibro.HUMOR.toString());  
 			break;
 		case "INFORMATICA" : 
-			this.setCategoriaB(CategorieLibro.INFORMATICA.toString());  
+			this.setcategoriaB(CategorieLibro.INFORMATICA.toString());  
 			break;		
 		case "WEB_DIGITAL_MEDIA" : 
-			this.setCategoriaB(CategorieLibro.WEB_DIGITAL_MEDIA.toString());  
+			this.setcategoriaB(CategorieLibro.WEB_DIGITAL_MEDIA.toString());  
 			break;		
 		case "LETTERATURA_NARRATIVA" : 
-			this.setCategoriaB(CategorieLibro.LETTERATURA_NARRATIVA.toString());  
+			this.setcategoriaB(CategorieLibro.LETTERATURA_NARRATIVA.toString());  
 			break;		
 		case "LIBRI_BAMBINI" : 
-			this.setCategoriaB(CategorieLibro.LIBRI_BAMBINI.toString());  
+			this.setcategoriaB(CategorieLibro.LIBRI_BAMBINI.toString());  
 			break;		
 		case "LIBRI_SCOLASTICI" : 
-			this.setCategoriaB(CategorieLibro.LIBRI_SCOLASTICI.toString());  
+			this.setcategoriaB(CategorieLibro.LIBRI_SCOLASTICI.toString());  
 			break;
 		case "LIBRI_UNIVERSITARI" : 
-			this.setCategoriaB(CategorieLibro.LIBRI_UNIVERSITARI.toString());  
+			this.setcategoriaB(CategorieLibro.LIBRI_UNIVERSITARI.toString());  
 			break;			
 		case "RICETTARI_GENERALI" : 
-			this.setCategoriaB(CategorieLibro.RICETTARI_GENERALI.toString());  
+			this.setcategoriaB(CategorieLibro.RICETTARI_GENERALI.toString());  
 			break;	
 		case "LINGUISTICA_SCRITTURA" : 
-			this.setCategoriaB(CategorieLibro.LINGUISTICA_SCRITTURA.toString());  
+			this.setcategoriaB(CategorieLibro.LINGUISTICA_SCRITTURA.toString());  
 			break;
 		case "POLITICA" : 
-			this.setCategoriaB(CategorieLibro.POLITICA.toString());  
+			this.setcategoriaB(CategorieLibro.POLITICA.toString());  
 			break;
 		case "RELIGIONE" : 
-			this.setCategoriaB(CategorieLibro.RELIGIONE.toString());  
+			this.setcategoriaB(CategorieLibro.RELIGIONE.toString());  
 			break;
 		case "ROMANZI_ROSA" : 
-			this.setCategoriaB(CategorieLibro.ROMANZI_ROSA.toString());  
+			this.setcategoriaB(CategorieLibro.ROMANZI_ROSA.toString());  
 			break;		
 		case "SCIENZE" : 
-			this.setCategoriaB(CategorieLibro.SCIENZE.toString());  
+			this.setcategoriaB(CategorieLibro.SCIENZE.toString());  
 			break;		
 		case "TECNOLOGIA_MEDICINA" : 
-			this.setCategoriaB(CategorieLibro.TECNOLOGIA_MEDICINA.toString());  
+			this.setcategoriaB(CategorieLibro.TECNOLOGIA_MEDICINA.toString());  
 			break;
 		
 		default :
-			this.setCategoriaB(null);
+			this.setcategoriaB(null);
 			break;
 		}
 		
@@ -367,10 +367,6 @@ public class LibroBean {
 	}
 
 
-	public void setCategoriaB(String categoriaB) {
-		this.categoriaB = categoriaB;
-	}
-	
 	
 
 	

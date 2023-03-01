@@ -78,7 +78,7 @@ public class ModificaLibroServlet extends HttpServlet{
 			lB.setEditoreB(editoreN);
 			lB.setAutoreB(autoreN);
 			lB.setLinguaB(linguaN);
-			lB.setCategoriaB(categoriaN);
+			lB.setcategoriaB(categoriaN);
 			java.util.Date utilDate;
 		     java.sql.Date sqlDate;
 			SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
