@@ -4,14 +4,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.time.LocalDate;
-import java.util.logging.Level;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -28,7 +25,6 @@ import laptop.model.Pagamento;
 import laptop.model.TempUser;
 import laptop.model.User;
 import laptop.model.raccolta.Rivista;
-import laptop.utilities.ConnToDb;
 
 class TestLaptop3 {
 	private PagamentoDao pD=new PagamentoDao();
@@ -333,19 +329,6 @@ class TestLaptop3 {
 		assertTrue(cCU.cancellaUser());
 	}
 
-	@AfterAll
-	static void  testCancellaDB() throws SQLException
-	{
-		int rows=0;
-		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement("drop schema ispw"))
-		{
-			rows=prepQ.executeUpdate();		}
-		
-		java.util.logging.Logger.getLogger("cancella db").log(Level.INFO, "database cancellato ");
-
-		assertEquals(rows,11);
-
-	}
+	
 
 }
