@@ -38,8 +38,8 @@ public class ModificaLibroServlet extends HttpServlet{
 		String annulla=req.getParameter("buttonA");
 		try {
 			
-		lB.setId(SystemBean.getIstance().getId());
-		l.setId(lB.getId());
+		lB.setIdB(SystemBean.getIstance().getIdB());
+		l.setId(lB.getIdB());
 		
 		if(buttonLista!=null && buttonLista.equals("prendi dati"))
 		{
@@ -72,13 +72,13 @@ public class ModificaLibroServlet extends HttpServlet{
 			String dispN=req.getParameter("dispNL");
 			String prezzoN=req.getParameter("prezzoNL");
 			
-			lB.setTitolo(titoloN);
-			lB.setNumeroPagine(Integer.parseInt(pagineN));
-			lB.setCodIsbn(codiceN);
-			lB.setEditore(editoreN);
-			lB.setAutore(autoreN);
-			lB.setLingua(linguaN);
-			lB.setCategoria(categoriaN);
+			lB.setTitoloB(titoloN);
+			lB.setNumeroPagineB(Integer.parseInt(pagineN));
+			lB.setCodIsbnB(codiceN);
+			lB.setEditoreB(editoreN);
+			lB.setAutoreB(autoreN);
+			lB.setLinguaB(linguaN);
+			lB.setCategoriaB(categoriaN);
 			java.util.Date utilDate;
 		     java.sql.Date sqlDate;
 			SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
@@ -86,26 +86,26 @@ public class ModificaLibroServlet extends HttpServlet{
 		    
 	         utilDate = format.parse(dataN);
 	        sqlDate = new java.sql.Date(utilDate.getTime());
-	        lB.setDataPubb(sqlDate.toLocalDate());
-	        lB.setRecensione(recN);
-	        lB.setNrCopie(Integer.parseInt(copieN));
-	        lB.setDesc(descN);
-	        lB.setDisponibilita(Integer.parseInt(dispN));
-	        lB.setPrezzo(Float.parseFloat(prezzoN));
+	        lB.setDataPubbB(sqlDate.toLocalDate());
+	        lB.setRecensioneB(recN);
+	        lB.setNrCopieB(Integer.parseInt(copieN));
+	        lB.setDescB(descN);
+	        lB.setDisponibilitaB(Integer.parseInt(dispN));
+	        lB.setPrezzoB(Float.parseFloat(prezzoN));
 	        
-			l.setTitolo(lB.getTitolo());
-			l.setNumeroPagine(lB.getNumeroPagine());
-			l.setCodIsbn(lB.getCodIsbn());
-			l.setEditore(lB.getEditore());
-			l.setAutore(lB.getAutore());
-			l.setLingua(lB.getLingua());
+			l.setTitolo(lB.getTitoloB());
+			l.setNumeroPagine(lB.getNumeroPagineB());
+			l.setCodIsbn(lB.getCodIsbnB());
+			l.setEditore(lB.getEditoreB());
+			l.setAutore(lB.getAutoreB());
+			l.setLingua(lB.getLinguaB());
 			l.setCategoria(categoriaN);
-			l.setDataPubb(lB.getDataPubb());
-			l.setRecensione(lB.getRecensione());
-			l.setNrCopie(lB.getNrCopie());
-			l.setDesc(lB.getDesc());
-			l.setDisponibilita(lB.getDisponibilita());
-			l.setPrezzo(lB.getPrezzo());
+			l.setDataPubb(lB.getDataPubbB());
+			l.setRecensione(lB.getRecensioneB());
+			l.setNrCopie(lB.getNrCopieB());
+			l.setDesc(lB.getDescB());
+			l.setDisponibilita(lB.getDisponibilitaB());
+			l.setPrezzo(lB.getPrezzoB());
 			
 			lD.aggiornaLibro(l);
 			RequestDispatcher view=getServletContext().getRequestDispatcher("/gestioneOggetto.jsp");

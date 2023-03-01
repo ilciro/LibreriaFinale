@@ -37,13 +37,13 @@ public class NegozioServlet extends HttpServlet {
 		try {
 		if(neg1!=null && neg1.equals("Negozio A"))
 		{
-			nB.setNome("Negozio A");
+			nB.setNomeB("Negozio A");
 			
-			n.setNome(nB.getNome());
+			n.setNome(nB.getNomeB());
 			n.setIsOpen(nD.checkOpen(n));
 			n.setIsValid(nD.checkRitiro(n));
-			nB.setApertura(n.getIsOpen());
-			nB.setDisponibile(n.getIsValid());
+			nB.setAperturaB(n.getIsOpen());
+			nB.setDisponibileB(n.getIsValid());
 			
 			checkDisp(n,req,resp);
 			
@@ -51,12 +51,12 @@ public class NegozioServlet extends HttpServlet {
 		}
 		if(neg2!=null && neg2.equals("Negozio B"))
 		{
-			nB.setNome("Negozio B");
-			n.setNome(nB.getNome());
+			nB.setNomeB("Negozio B");
+			n.setNome(nB.getNomeB());
 			n.setIsOpen(nD.checkOpen(n));
 			n.setIsValid(nD.checkRitiro(n));
-			nB.setApertura(n.getIsOpen());
-			nB.setDisponibile(n.getIsValid());
+			nB.setAperturaB(n.getIsOpen());
+			nB.setDisponibileB(n.getIsValid());
 			
 			checkDisp(n,req,resp);
 
@@ -64,12 +64,12 @@ public class NegozioServlet extends HttpServlet {
 		}
 		if(neg3!=null && neg3.equals("Negozio C"))
 		{
-			nB.setNome("Negozio C");
-			n.setNome(nB.getNome());
+			nB.setNomeB("Negozio C");
+			n.setNome(nB.getNomeB());
 			n.setIsOpen(nD.checkOpen(n));
 			n.setIsValid(nD.checkRitiro(n));
-			nB.setApertura(n.getIsOpen());
-			nB.setDisponibile(n.getIsValid());
+			nB.setAperturaB(n.getIsOpen());
+			nB.setDisponibileB(n.getIsValid());
 			
 			checkDisp(n,req,resp);
 
@@ -77,12 +77,12 @@ public class NegozioServlet extends HttpServlet {
 		}
 		if(neg4!=null && neg4.equals("Negozio D"))
 		{
-			nB.setNome("Negozio D");
-			n.setNome(nB.getNome());
+			nB.setNomeB("Negozio D");
+			n.setNome(nB.getNomeB());
 			n.setIsOpen(nD.checkOpen(n));
 			n.setIsValid(nD.checkRitiro(n));
-			nB.setApertura(n.getIsOpen());
-			nB.setDisponibile(n.getIsValid());
+			nB.setAperturaB(n.getIsOpen());
+			nB.setDisponibileB(n.getIsValid());
 			
 			checkDisp(n,req,resp);
 
@@ -90,7 +90,7 @@ public class NegozioServlet extends HttpServlet {
 			
 		}
 		else {
-			nB.setMessaggio(" negozio chiuso o non vi è possibile ritirare");
+			nB.setMessaggioB(" negozio chiuso o non vi è possibile ritirare");
 			req.setAttribute("beanNeg", nB);
 			RequestDispatcher view = getServletContext().getRequestDispatcher("/negozi.jsp"); 
 			view.forward(req,resp);

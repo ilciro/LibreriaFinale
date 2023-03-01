@@ -37,9 +37,9 @@ public class ModificaRivistaServlet extends HttpServlet{
 		String annulla=req.getParameter("buttonA");
 		
 		try {
-			rB.setId(SystemBean.getIstance().getId());
-			r.setId(rB.getId());
-			mOB.setMiaLista(rD.getRivistaSingolo());
+			rB.setIdB(SystemBean.getIstance().getIdB());
+			r.setId(rB.getIdB());
+			mOB.setMiaListaB(rD.getRivistaSingolo());
 			
 			
 			if(prendiDati!=null && prendiDati.equals("prendi dati"))
@@ -65,12 +65,12 @@ public class ModificaRivistaServlet extends HttpServlet{
 				String prezzoN=req.getParameter("prezzoNR");
 				String copieN=req.getParameter("copieNR");
 				
-				rB.setTitolo(titoloN);
-				rB.setTipologia(tipologia);
-				rB.setAutore(autoreN);
-				rB.setLingua(linguaN);
-				rB.setEditore(editoreN);
-				rB.setDescrizione(desc);
+				rB.setTitoloB(titoloN);
+				rB.setTipologiaB(tipologia);
+				rB.setAutoreB(autoreN);
+				rB.setLinguaB(linguaN);
+				rB.setEditoreB(editoreN);
+				rB.setDescrizioneB(desc);
 			
 				java.util.Date utilDate;
 			    java.sql.Date sqlDate;
@@ -80,20 +80,20 @@ public class ModificaRivistaServlet extends HttpServlet{
 		        utilDate = format.parse(dataN);
 		        sqlDate = new java.sql.Date(utilDate.getTime());
 		        
-		        rB.setDataPubb(sqlDate.toLocalDate());
-		        rB.setDisp(Integer.parseInt(dispN));
-		        rB.setPrezzo(Float.parseFloat(prezzoN));
-		        rB.setCopieRim(Integer.parseInt(copieN));
-		        r.setTitolo(rB.getTitolo());
-		        r.setTipologia(rB.getTipologia());
-		        r.setAutore(rB.getAutore());
-		        r.setLingua(rB.getLingua());
-		        r.setEditore(rB.getEditore());
-		        r.setDescrizione(rB.getDescrizione());
-		        r.setDataPubb(rB.getDataPubb());
-		        r.setDisp(rB.getDisp());
-		        r.setPrezzo(rB.getPrezzo());
-		        r.setCopieRim(rB.getCopieRim());
+		        rB.setDataPubbB(sqlDate.toLocalDate());
+		        rB.setDispB(Integer.parseInt(dispN));
+		        rB.setPrezzoB(Float.parseFloat(prezzoN));
+		        rB.setCopieRimB(Integer.parseInt(copieN));
+		        r.setTitolo(rB.getTitoloB());
+		        r.setTipologia(rB.getTipologiaB());
+		        r.setAutore(rB.getAutoreB());
+		        r.setLingua(rB.getLinguaB());
+		        r.setEditore(rB.getEditoreB());
+		        r.setDescrizione(rB.getDescrizioneB());
+		        r.setDataPubb(rB.getDataPubbB());
+		        r.setDisp(rB.getDispB());
+		        r.setPrezzo(rB.getPrezzoB());
+		        r.setCopieRim(rB.getCopieRimB());
 		        
 				
 				rD.aggiornaRivista(r);

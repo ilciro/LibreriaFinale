@@ -49,9 +49,9 @@ public class DownloadServlet extends HttpServlet{
 
 			{
 				
-						dB.setId(sB.getId());
-						dB.setTitolo(sB.getTitolo());
-						l.setId(sB.getId());
+						dB.setIdB(sB.getIdB());
+						dB.setTitoloB(sB.getTitoloB());
+						l.setId(sB.getIdB());
 						l.scarica();						
 						l.leggi(l.getId());
 				
@@ -66,7 +66,7 @@ public class DownloadServlet extends HttpServlet{
 				boolean statusF=false;
 				boolean statusP=false;
 				
-				String metodoP=sB.getMetodoP();
+				String metodoP=sB.getMetodoPB();
 				
 				int idF=fDao.retUltimoOrdineF(); //ultimo elemento (preso con count)
 				statusF=fDao.annullaOrdineF(idF);
@@ -78,7 +78,7 @@ public class DownloadServlet extends HttpServlet{
 					if(statusF && statusP && metodoP.equals("cash"))
 					{
 						
-							l.setId(sB.getId());
+							l.setId(sB.getIdB());
 							lD.aggiornaDisponibilita(l);
 						
 						
@@ -91,7 +91,7 @@ public class DownloadServlet extends HttpServlet{
 					 if( statusP && metodoP.equals("cCredito"))
 					{
 						
-							l.setId(sB.getId());
+							l.setId(sB.getIdB());
 							lD.aggiornaDisponibilita(l);
 							req.setAttribute("bean",dB);
 							RequestDispatcher view = getServletContext().getRequestDispatcher(index); 

@@ -10,78 +10,62 @@ public class PagamentoBean  {
 	/**
 	 * 
 	 */
-	private int id;
-	private String metodo;
-	private int esito; //0 ok 1 fallito
-	private String nomeUtente;
-	private float ammontare;
-	private String tipo;
-	private int idOggetto;
-	private ObservableList<Pagamento> listaPagamenti;
-
-public int getId() {
-	return id;
-}
-
-public void setId(int id) {
-	this.id = id;
-}
-
-public String getMetodo() {
-	return metodo;
-}
-
-public void setMetodo(String metodo) {
-	this.metodo = metodo;
-}
-
-public int getEsito() {
-	return esito;
-}
-
-public void setEsito(int esito) {
-	this.esito = esito;
-}
-
-public String getNomeUtente() {
-	return nomeUtente;
-}
-
-public void setNomeUtente(String nomeUtente) {
-	this.nomeUtente = nomeUtente;
-}
-
-public float getAmmontare() {
-	return ammontare;
-}
-
-public void setAmmontare(float ammontare) {
-	this.ammontare = ammontare;
-}
-
-public String getTipo() {
-	return tipo;
-}
-
-public void setTipo(String tipo) {
-	this.tipo = tipo;
-}
-
-public int getIdOggetto() {
-	return idOggetto;
-}
-
-public void setIdOggetto(int idOggetto) {
-	this.idOggetto = idOggetto;
-}
-
-public ObservableList<Pagamento> getListaPagamenti() {
-	return listaPagamenti;
-}
-
-public void setListaPagamenti(ObservableList<Pagamento> listaPagamenti) {
-	this.listaPagamenti = listaPagamenti;
-}
+	private int idB;
+	private String metodoB;
+	private int esitoB; //0 ok 1 fallito
+	private String nomeUtenteB;
+	private float ammontareB;
+	private String tipoB;
+	private int idOggettoB;
+	private ObservableList<Pagamento> listaPagamentiB;
+	public int getIdB() {
+		return idB;
+	}
+	public void setIdB(int idB) {
+		this.idB = idB;
+	}
+	public String getMetodoB() {
+		return metodoB;
+	}
+	public void setMetodoB(String metodoB) {
+		this.metodoB = metodoB;
+	}
+	public int getEsitoB() {
+		return esitoB;
+	}
+	public void setEsitoB(int esitoB) {
+		this.esitoB = esitoB;
+	}
+	public String getNomeUtenteB() {
+		return nomeUtenteB;
+	}
+	public void setNomeUtenteB(String nomeUtenteB) {
+		this.nomeUtenteB = nomeUtenteB;
+	}
+	public float getAmmontareB() {
+		return ammontareB;
+	}
+	public void setAmmontareB(float ammontareB) {
+		this.ammontareB = ammontareB;
+	}
+	public String getTipoB() {
+		return tipoB;
+	}
+	public void setTipoB(String tipoB) {
+		this.tipoB = tipoB;
+	}
+	public int getIdOggettoB() {
+		return idOggettoB;
+	}
+	public void setIdOggettoB(int idOggettoB) {
+		this.idOggettoB = idOggettoB;
+	}
+	public ObservableList<Pagamento> getListaPagamentiB() {
+		return listaPagamentiB;
+	}
+	public void setListaPagamentiB(ObservableList<Pagamento> listaPagamentiB) {
+		this.listaPagamentiB = listaPagamentiB;
+	}
 
 
 

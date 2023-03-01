@@ -1,60 +1,62 @@
 package web.bean;
 
 import java.util.Date;
-import java.util.List;
 
+
+import javafx.collections.ObservableList;
 import laptop.model.CartaDiCredito;
 
 public class CartaCreditoBean {
-	private String nome;
-	private String cognome;
-	private String numeroCC;
-	private Date dataScad;
-	private String civ;
-	private List<CartaDiCredito> listaCarteCredito;
-	private float prezzoTransazione;
-	public String getNome() {
-		return nome;
+	private String nomeB;
+	private String cognomeB;
+	private String numeroCCB;
+	private Date dataScadB;
+	private String civB;
+	private ObservableList<CartaDiCredito> listaCarteCreditoB;
+	private float prezzoTransazioneB;
+	public String getNomeB() {
+		return nomeB;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeB(String nomeB) {
+		this.nomeB = nomeB;
 	}
-	public String getCognome() {
-		return cognome;
+	public String getCognomeB() {
+		return cognomeB;
 	}
-	public void setCognome(String cognome) {
-		this.cognome = cognome;
+	public void setCognomeB(String cognomeB) {
+		this.cognomeB = cognomeB;
 	}
-	public String getNumeroCC() {
-		return numeroCC;
+	public String getNumeroCCB() {
+		return numeroCCB;
 	}
-	public void setNumeroCC(String numeroCC) {
-		this.numeroCC = numeroCC;
+	public void setNumeroCCB(String numeroCCB) {
+		this.numeroCCB = numeroCCB;
 	}
-	public Date getDataScad() {
-		return dataScad;
+	public Date getDataScadB() {
+		return dataScadB;
 	}
-	public void setDataScad(Date dataScad) {
-		this.dataScad = dataScad;
+	public void setDataScadB(Date dataScadB) {
+		this.dataScadB = dataScadB;
 	}
-	public String getCiv() {
-		return civ;
+	public String getCivB() {
+		return civB;
 	}
-	public void setCiv(String civ) {
-		this.civ = civ;
+	public void setCivB(String civB) {
+		this.civB = civB;
 	}
-	public List<CartaDiCredito> getListaCarteCredito() {
-		return listaCarteCredito;
+	public ObservableList<CartaDiCredito> getListaCarteCreditoB() {
+		return listaCarteCreditoB;
 	}
-	public void setListaCarteCredito(List<CartaDiCredito> listaCarteCredito) {
-		this.listaCarteCredito = listaCarteCredito;
+	public void setListaCarteCreditoB(ObservableList<CartaDiCredito> listaCarteCreditoB) {
+		this.listaCarteCreditoB = listaCarteCreditoB;
 	}
-	public float getPrezzoTransazione() {
-		return prezzoTransazione;
+	public float getPrezzoTransazioneB() {
+		return prezzoTransazioneB;
 	}
-	public void setPrezzoTransazione(float prezzoTransazione) {
-		this.prezzoTransazione = prezzoTransazione;
+	public void setPrezzoTransazioneB(float prezzoTransazioneB) {
+		this.prezzoTransazioneB = prezzoTransazioneB;
 	}
+	
 	
 	
 

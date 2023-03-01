@@ -39,10 +39,10 @@ public class ModificaGiornaleServlet extends HttpServlet {
 		
 		try {
 			
-			gB.setId(SystemBean.getIstance().getId());
-			g.setId(gB.getId());
+			gB.setIdB(SystemBean.getIstance().getIdB());
+			g.setId(gB.getIdB());
 			
-				mOB.setMiaLista(gD.getGiornaleSingolo());
+				mOB.setMiaListaB(gD.getGiornaleSingolo());
 			
 			if(genera!=null && genera.equals("prendi dati"))
 			{
@@ -69,24 +69,24 @@ public class ModificaGiornaleServlet extends HttpServlet {
 		         utilDate = format.parse(dataN);
 		        sqlDate = new java.sql.Date(utilDate.getTime());
 		        
-		        gB.setTitolo(titoloN);
-		        gB.setTipologia(tipoN);
-		        gB.setLingua(linguaN);
-		        gB.setEditore(editoreN);
-		        gB.setDataPubb(sqlDate.toLocalDate());
+		        gB.setTitoloB(titoloN);
+		        gB.setTipologiaB(tipoN);
+		        gB.setLinguaB(linguaN);
+		        gB.setEditoreB(editoreN);
+		        gB.setDataPubbB(sqlDate.toLocalDate());
 		       
-		        gB.setCopieRimanenti(Integer.parseInt(copieN));
-		        gB.setDisponibilita(Integer.parseInt(dispN));
-		        gB.setPrezzo(Float.parseFloat(prezzoN));
+		        gB.setCopieRimanentiB(Integer.parseInt(copieN));
+		        gB.setDisponibilitaB(Integer.parseInt(dispN));
+		        gB.setPrezzoB(Float.parseFloat(prezzoN));
 		        
-		        g.setTitolo(gB.getTitolo());
-		        g.setTipologia(gB.getTipologia());
-		        g.setLingua(gB.getLingua());
-		        g.setEditore(gB.getEditore());
-		        g.setDataPubb(gB.getDataPubb());
-				g.setCopieRimanenti(gB.getCopieRimanenti());
-				g.setDisponibilita(gB.getDisponibilita());
-				g.setPrezzo(gB.getPrezzo());
+		        g.setTitolo(gB.getTitoloB());
+		        g.setTipologia(gB.getTipologiaB());
+		        g.setLingua(gB.getLinguaB());
+		        g.setEditore(gB.getEditoreB());
+		        g.setDataPubb(gB.getDataPubbB());
+				g.setCopieRimanenti(gB.getCopieRimanentiB());
+				g.setDisponibilita(gB.getDisponibilitaB());
+				g.setPrezzo(gB.getPrezzoB());
 				
 				
 

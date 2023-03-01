@@ -43,8 +43,8 @@ class TestLibri {
 		driver.get("http://localhost:8087/LibreriaMaven/libri.jsp");
 		WebElement buttonL=driver.findElement(By.xpath("//input[@id='genera lista']"));
 		buttonL.click();
-		lB.setListaLibri(lD.getLibri());
-		assertNotNull(lB.getListaLibri());
+		lB.setListaLibriB(lD.getLibri());
+		assertNotNull(lB.getListaLibriB());
 		
 	}
 	@ParameterizedTest
@@ -56,9 +56,9 @@ class TestLibri {
 		driver.get("http://localhost:8087/LibreriaMaven/libri.jsp");
 		WebElement idL=driver.findElement(By.xpath("//input[@id='idOgg']"));
 		idL.sendKeys(strings);
-		lB.setId(Integer.parseInt(strings));
+		lB.setIdB(Integer.parseInt(strings));
 		driver.findElement(By.xpath("//input[@id='procedi']")).click();
-		assertEquals(lB.getId(),Integer.parseInt(strings));
+		assertEquals(lB.getIdB(),Integer.parseInt(strings));
 	}
 	@AfterEach
 	void tearDown()

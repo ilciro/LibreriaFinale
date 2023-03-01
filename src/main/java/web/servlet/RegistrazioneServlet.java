@@ -41,10 +41,10 @@ public class RegistrazioneServlet extends HttpServlet {
 		try {
 		if(invia!=null && invia.equals("registrati") && checkData(nome,cognome,email,pass,confermaPass) )
 			{
-				UserBean.getInstance().setNome(nome);
-				UserBean.getInstance().setCognome(cognome);
-				UserBean.getInstance().setEmail(email);
-				UserBean.getInstance().setPassword(pass);
+				UserBean.getInstanceB().setNomeB(nome);
+				UserBean.getInstanceB().setCognomeB(cognome);
+				UserBean.getInstanceB().setEmailB(email);
+				UserBean.getInstanceB().setPasswordB(pass);
 				Date sqlDate = null;
 				java.util.Date utilDate;
 				SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
@@ -55,13 +55,13 @@ public class RegistrazioneServlet extends HttpServlet {
 						sqlDate = new java.sql.Date(utilDate.getTime());
 
 					
-				UserBean.getInstance().setDataDiNascita(sqlDate.toLocalDate());
+				UserBean.getInstanceB().setDataDiNascitaB(sqlDate.toLocalDate());
 				
-				User.getInstance().setNome(UserBean.getInstance().getNome());
-				User.getInstance().setCognome(UserBean.getInstance().getCognome());
-				User.getInstance().setEmail(UserBean.getInstance().getEmail());
-				User.getInstance().setPassword(UserBean.getInstance().getPassword());
-				User.getInstance().setDataDiNascita(UserBean.getInstance().getDataDiNascita());
+				User.getInstance().setNome(UserBean.getInstanceB().getNomeB());
+				User.getInstance().setCognome(UserBean.getInstanceB().getCognomeB());
+				User.getInstance().setEmail(UserBean.getInstanceB().getEmailB());
+				User.getInstance().setPassword(UserBean.getInstanceB().getPasswordB());
+				User.getInstance().setDataDiNascita(UserBean.getInstanceB().getDataDiNascitaB());
 
 
 
@@ -70,8 +70,8 @@ public class RegistrazioneServlet extends HttpServlet {
 					if(UsersDao.checkUser(User.getInstance())==1)
 							{
 								//utente già trovato
-						UserBean.getInstance().setMex("utente gia registrato nel sistema !!!");
-						req.setAttribute("beanUb", UserBean.getInstance());
+						UserBean.getInstanceB().setMexB("utente gia registrato nel sistema !!!");
+						req.setAttribute("beanUb", UserBean.getInstanceB());
 							RequestDispatcher view = getServletContext().getRequestDispatcher("/registrazione.jsp"); 
 							view.forward(req,resp);
 							}

@@ -64,7 +64,7 @@ public class InserisciOggettoServletRivista extends HttpServlet{
      			s+="MILITARE"+"\n";
      			s+="INFORMATICA"+"\n";
      			
-     			rB.setListaCategorie(s);
+     			rB.setListaCategorieB(s);
      			req.setAttribute("bean",rB);
      			RequestDispatcher view = getServletContext().getRequestDispatcher("/aggiungiOggettoPage.jsp"); 
      			view.forward(req,resp);
@@ -72,12 +72,12 @@ public class InserisciOggettoServletRivista extends HttpServlet{
      		}
      		if(buttonC!=null && buttonC.equals("conferma") && (data!=null) )
      			{
-     				rB.setTitolo(titolo);
-     				rB.setTipologia(cat);
-     				rB.setAutore(autore);
-     				rB.setLingua(lingua);
-     				rB.setEditore(editore);
-     				rB.setDescrizione(desc);
+     				rB.setTitoloB(titolo);
+     				rB.setTipologiaB(cat);
+     				rB.setAutoreB(autore);
+     				rB.setLinguaB(lingua);
+     				rB.setEditoreB(editore);
+     				rB.setDescrizioneB(desc);
      			
      				
      				java.util.Date utilDate;
@@ -88,14 +88,14 @@ public class InserisciOggettoServletRivista extends HttpServlet{
      			    
      			         utilDate = format.parse(data);
      			        sqlDate = new java.sql.Date(utilDate.getTime());
-     			        rB.setData(sqlDate);
+     			        rB.setDataB(sqlDate);
      			   
-     				rB.setPrezzo(Float.parseFloat(prezzo));
-     				rB.setCopieRim(Integer.parseInt(copie));
+     				rB.setPrezzoB(Float.parseFloat(prezzo));
+     				rB.setCopieRimB(Integer.parseInt(copie));
      			
      			    if(checkL!=null && checkL.equals("on"))
      			    {
-     					rB.setDisp(1);
+     					rB.setDispB(1);
 
      			    }
      			    
@@ -107,16 +107,16 @@ public class InserisciOggettoServletRivista extends HttpServlet{
      				  //convert String to LocalDate
      				  LocalDate localDate = LocalDate.parse(date, formatter);
      			
-     			r.setTitolo(rB.getTitolo());
-     			r.setTipologia(rB.getTipologia());
-     			r.setAutore(rB.getAutore());
-     			r.setLingua(rB.getLingua());
-     			r.setEditore(rB.getEditore());
-     			r.setDescrizione(rB.getDescrizione());
+     			r.setTitolo(rB.getTitoloB());
+     			r.setTipologia(rB.getTipologiaB());
+     			r.setAutore(rB.getAutoreB());
+     			r.setLingua(rB.getLinguaB());
+     			r.setEditore(rB.getEditoreB());
+     			r.setDescrizione(rB.getDescrizioneB());
      			r.setDataPubb(localDate);
-     			r.setDisp(rB.getDisp());
-     			r.setPrezzo(rB.getPrezzo());
-     			r.setCopieRim(rB.getCopieRim());
+     			r.setDisp(rB.getDispB());
+     			r.setPrezzo(rB.getPrezzoB());
+     			r.setCopieRim(rB.getCopieRimB());
      			
      			  
      			
@@ -129,7 +129,7 @@ public class InserisciOggettoServletRivista extends HttpServlet{
      	
      				}
      				else {
-     					rB.setMex(new SQLException(" data non corretta"));
+     					rB.setMexB(new SQLException(" data non corretta"));
      					RequestDispatcher view = getServletContext().getRequestDispatcher("/aggiungiOggettoPage.jsp"); 
      					view.forward(req,resp); 
      				}

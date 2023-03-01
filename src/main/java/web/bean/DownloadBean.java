@@ -3,30 +3,29 @@ package web.bean;
 
 
 public class DownloadBean {
-	private int id;
-	private String titolo;
-	private Exception mex;
+	private int idB;
+	private String titoloB;
+	private Exception mexB;
+	public int getIdB() {
+		return idB;
+	}
+	public void setIdB(int idB) {
+		this.idB = idB;
+	}
+	public String getTitoloB() {
+		return titoloB;
+	}
+	public void setTitoloB(String titoloB) {
+		this.titoloB = titoloB;
+	}
+	public Exception getMexB() {
+		return mexB;
+	}
+	public void setMexB(Exception mexB) {
+		this.mexB = mexB;
+	}
 	
 
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getTitolo() {
-		return titolo;
-	}
-	public void setTitolo(String titolo) {
-		this.titolo = titolo;
-	}
-	public Exception getMex() {
-		return mex;
-	}
-	public void setMex(Exception mex) {
-		this.mex = mex;
-	}
-	
 	
 
 }

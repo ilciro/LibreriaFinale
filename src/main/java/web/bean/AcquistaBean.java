@@ -2,33 +2,34 @@ package web.bean;
 
 
 public class AcquistaBean {
-	private String titolo;
-	private String tipo;
-	private float prezzo;
-	private Exception mex;
-	public String getTitolo() {
-		return titolo;
+	private String titoloB;
+	private String tipoB;
+	private float prezzoB;
+	private Exception mexB;
+	public String getTitoloB() {
+		return titoloB;
 	}
-	public void setTitolo(String titolo) {
-		this.titolo = titolo;
+	public void setTitoloB(String titoloB) {
+		this.titoloB = titoloB;
 	}
-	public String getTipo() {
-		return tipo;
+	public String getTipoB() {
+		return tipoB;
 	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setTipoB(String tipoB) {
+		this.tipoB = tipoB;
 	}
-	public float getPrezzo() {
-		return prezzo;
+	public float getPrezzoB() {
+		return prezzoB;
 	}
-	public void setPrezzo(float prezzo) {
-		this.prezzo = prezzo;
+	public void setPrezzoB(float prezzoB) {
+		this.prezzoB = prezzoB;
 	}
-	public Exception getMex() {
-		return mex;
+	public Exception getMexB() {
+		return mexB;
 	}
-	public void setMex(Exception mex) {
-		this.mex = mex;
+	public void setMexB(Exception mexB) {
+		this.mexB = mexB;
 	}
+	
 
 }

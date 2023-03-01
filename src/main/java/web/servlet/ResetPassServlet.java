@@ -53,16 +53,16 @@ public class ResetPassServlet extends HttpServlet {
 	public boolean aggiornaPass(String email,String vecchiaP,String nuovaP) throws SQLException
 	{
 		boolean status=false;
-		UserBean.getInstance().setEmail(email);
-		UserBean.getInstance().setPassword(vecchiaP);
-		if(UserBean.getInstance().getPassword().equals(vecchiaP) && (nuovaP.length()>=8 || !email.equals("") ) )
+		UserBean.getInstanceB().setEmailB(email);
+		UserBean.getInstanceB().setPasswordB(vecchiaP);
+		if(UserBean.getInstanceB().getPasswordB().equals(vecchiaP) && (nuovaP.length()>=8 || !email.equals("") ) )
 		{
 			
-			UserBean.getInstance().setPassword(nuovaP);
+			UserBean.getInstanceB().setPasswordB(nuovaP);
 
-				if(checkUser(UserBean.getInstance()) == 1)
+				if(checkUser(UserBean.getInstanceB()) == 1)
 				{
-					status=checkResetpass(UserBean.getInstance(), nuovaP,email);
+					status=checkResetpass(UserBean.getInstanceB(), nuovaP,email);
 				}
 				
 				
@@ -86,7 +86,7 @@ public class ResetPassServlet extends HttpServlet {
 					PreparedStatement prepQ=conn.prepareStatement(query);)
 			{
 				
-			prepQ.setString(1, u.getEmail());
+			prepQ.setString(1, u.getEmailB());
 			ResultSet rs = prepQ.executeQuery();
 			if(rs.next())
 			{
@@ -101,7 +101,7 @@ public class ResetPassServlet extends HttpServlet {
 
 			}
 			
-			java.util.logging.Logger.getLogger("check user id").log(Level.INFO, "idUser {0}",u.getEmail());
+			java.util.logging.Logger.getLogger("check user id").log(Level.INFO, "idUser {0}",u.getEmailB());
 
 
 		return status ;
@@ -131,7 +131,7 @@ public class ResetPassServlet extends HttpServlet {
 				}
 		
 		
-		java.util.logging.Logger.getLogger("Reset pwd").log(Level.INFO, "row affected{0}",u.getEmail());
+		java.util.logging.Logger.getLogger("Reset pwd").log(Level.INFO, "row affected{0}",u.getEmailB());
 		return state ;
 	}
 

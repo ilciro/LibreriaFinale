@@ -6,43 +6,44 @@ public class FatturaBean  {
 	/**
 	 * 
 	 */
-	private String nome;
-	private String cognome;
-	private String indirizzo;
-	private String comunicazioni;
-	private Exception mex;
+	private String nomeB;
+	private String cognomeB;
+	private String indirizzoB;
+	private String comunicazioniB;
+	private Exception mexB;
+	public String getNomeB() {
+		return nomeB;
+	}
+	public void setNomeB(String nomeB) {
+		this.nomeB = nomeB;
+	}
+	public String getCognomeB() {
+		return cognomeB;
+	}
+	public void setCognomeB(String cognomeB) {
+		this.cognomeB = cognomeB;
+	}
+	public String getIndirizzoB() {
+		return indirizzoB;
+	}
+	public void setIndirizzoB(String indirizzoB) {
+		this.indirizzoB = indirizzoB;
+	}
+	public String getComunicazioniB() {
+		return comunicazioniB;
+	}
+	public void setComunicazioniB(String comunicazioniB) {
+		this.comunicazioniB = comunicazioniB;
+	}
+	public Exception getMexB() {
+		return mexB;
+	}
+	public void setMexB(Exception mexB) {
+		this.mexB = mexB;
+	}
 	
 
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getCognome() {
-		return cognome;
-	}
-	public void setCognome(String cognome) {
-		this.cognome = cognome;
-	}
-	public String getIndirizzo() {
-		return indirizzo;
-	}
-	public void setIndirizzo(String indirizzo) {
-		this.indirizzo = indirizzo;
-	}
-	public String getComunicazioni() {
-		return comunicazioni;
-	}
-	public void setComunicazioni(String comunicazioni) {
-		this.comunicazioni = comunicazioni;
-	}
-	public Exception getMex() {
-		return mex;
-	}
-	public void setMex(Exception mex) {
-		this.mex = mex;
-	}
+	
 	
 	
 

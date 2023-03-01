@@ -6,14 +6,14 @@ import laptop.model.raccolta.Raccolta;
 
 public class RicercaBean {
 
-	private ObservableList<Raccolta>lista;
+	private ObservableList<Raccolta>listaB;
 
-	public ObservableList<Raccolta> getLista() {
-		return lista;
+	public ObservableList<Raccolta> getListaB() {
+		return listaB;
 	}
 
-	public void setLista(ObservableList<Raccolta> lista) {
-		this.lista = lista;
+	public void setListaB(ObservableList<Raccolta> listaB) {
+		this.listaB = listaB;
 	}
 
 	

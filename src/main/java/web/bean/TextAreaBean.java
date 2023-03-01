@@ -14,18 +14,18 @@ import laptop.model.TempUser;
 import laptop.utilities.ConnToDb;
 
 public class TextAreaBean {
-	private String scrivi;
+	private String scriviB;
 	private static String ricavoTotale="Ricavo totale :";
 	private static String titolo=" Titolo :";
 	private static ResourceBundle rB=ResourceBundle.getBundle("configurations/reportsPath");
 
 
-	public String getScrivi() {
-		return scrivi;
+	public String getScriviB() {
+		return scriviB;
 	}
 
-	public void setScrivi(String scrivi) {
-		this.scrivi = scrivi;
+	public void setScriviB(String scriviB) {
+		this.scriviB = scriviB;
 	}
 	
 	public String generaReportL() throws SQLException, IOException

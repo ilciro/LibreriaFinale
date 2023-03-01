@@ -38,13 +38,13 @@ public class ProfiloServlet extends HttpServlet{
 		try {
 		if(dati!=null && dati.equals("prendi dati"))
 		{
-			User.getInstance().setEmail(UserBean.getInstance().getEmail());
+			User.getInstance().setEmail(UserBean.getInstanceB().getEmailB());
 			UsersDao.pickData(User.getInstance());
-			UserBean.getInstance().setNome(User.getInstance().getNome());
-			UserBean.getInstance().setCognome(User.getInstance().getCognome());
-			UserBean.getInstance().setEmail(User.getInstance().getEmail());
-			UserBean.getInstance().setDataDiNascita(UserBean.getInstance().getDataDiNascita());
-			req.setAttribute("beanUb",UserBean.getInstance());
+			UserBean.getInstanceB().setNomeB(User.getInstance().getNome());
+			UserBean.getInstanceB().setCognomeB(User.getInstance().getCognome());
+			UserBean.getInstanceB().setEmailB(User.getInstance().getEmail());
+			UserBean.getInstanceB().setDataDiNascitaB(UserBean.getInstanceB().getDataDiNascitaB());
+			req.setAttribute("beanUb",UserBean.getInstanceB());
 			RequestDispatcher view = getServletContext().getRequestDispatcher(profilo); 
 			view.forward(req,resp);
 		}
@@ -56,8 +56,8 @@ public class ProfiloServlet extends HttpServlet{
 		if(ordini!=null && ordini.equals("ordini"))
 		{
 			//prendo pagamento dao> lista pagamento
-			User.getInstance().setEmail(UserBean.getInstance().getEmail());
-			pB.setListaPagamenti(pD.getPagamenti());
+			User.getInstance().setEmail(UserBean.getInstanceB().getEmailB());
+			pB.setListaPagamentiB(pD.getPagamenti());
 			req.setAttribute("bean", User.getInstance());
 			req.setAttribute("beanP", pB);
 			RequestDispatcher view = getServletContext().getRequestDispatcher(profilo); 
@@ -65,15 +65,15 @@ public class ProfiloServlet extends HttpServlet{
 		}
 		if(cancella!=null && cancella.equals("cancella"))
 		{
-			User.getInstance().setEmail(UserBean.getInstance().getEmail());
+			User.getInstance().setEmail(UserBean.getInstanceB().getEmailB());
 			if(UsersDao.deleteUser(User.getInstance()))
 			{
 				RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp"); 
 				view.forward(req,resp);
 			}
 			else {
-				UserBean.getInstance().setMex(" utente non cancellato... ");
-				req.setAttribute("beanUb",UserBean.getInstance());
+				UserBean.getInstanceB().setMexB(" utente non cancellato... ");
+				req.setAttribute("beanUb",UserBean.getInstanceB());
 				RequestDispatcher view = getServletContext().getRequestDispatcher(profilo); 
 				view.forward(req,resp);
 			}

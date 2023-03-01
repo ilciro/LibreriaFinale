@@ -48,7 +48,7 @@ public class GiornaliServlet extends HttpServlet{
 			{
 			
 					
-				gB.setListaGiornali(gD.getGiornali());
+				gB.setListaGiornaliB(gD.getGiornali());
 				
 				req.setAttribute("beanG",gB);
 				RequestDispatcher view = getServletContext().getRequestDispatcher(giornali); 
@@ -64,11 +64,11 @@ public class GiornaliServlet extends HttpServlet{
 				{
 					
 				
-					gB.setId(idO);
-					gior.setId(gB.getId());
-					gB.setTitolo(gD.getTitolo(gior));
-					SystemBean.getIstance().setId(gB.getId());					
-					SystemBean.getIstance().setTitolo(gB.getTitolo());
+					gB.setIdB(idO);
+					gior.setId(gB.getIdB());
+					gB.setTitoloB(gD.getTitolo(gior));
+					SystemBean.getIstance().setIdB(gB.getIdB());					
+					SystemBean.getIstance().setTitoloB(gB.getTitoloB());
 				
 					
 					req.setAttribute("beanG",gB);
@@ -87,7 +87,7 @@ public class GiornaliServlet extends HttpServlet{
 			
 		
 		} catch (SQLException e) {
-			gB.setMex(new IdException("id nullo o eccede lista"));
+			gB.setMexB(new IdException("id nullo o eccede lista"));
 			req.setAttribute("beanL",gB);
 			RequestDispatcher view = getServletContext().getRequestDispatcher(giornali); 
 			view.forward(req,resp);

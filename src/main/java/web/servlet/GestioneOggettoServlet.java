@@ -29,13 +29,13 @@ public class GestioneOggettoServlet extends HttpServlet {
 	{
 		super();
 		try {
-		if (SystemBean.getIstance().getType().equals(libro))
-			mOB.setMiaLista(lD.getLibri());
+		if (SystemBean.getIstance().getTypeB().equals(libro))
+			mOB.setMiaListaB(lD.getLibri());
 			
-		if(SystemBean.getIstance().getType().equals(giornale))
-			mOB.setMiaLista(gD.getGiornali());
-		if(SystemBean.getIstance().getType().equals(rivista))
-			mOB.setMiaLista(rD.getRiviste());
+		if(SystemBean.getIstance().getTypeB().equals(giornale))
+			mOB.setMiaListaB(gD.getGiornali());
+		if(SystemBean.getIstance().getTypeB().equals(rivista))
+			mOB.setMiaListaB(rD.getRiviste());
 		} catch (SQLException e) {
 			java.util.logging.Logger.getLogger("costruttore ").log(Level.INFO, "eccezione nel costruttore {0}.",e.toString());
 
@@ -70,7 +70,7 @@ public class GestioneOggettoServlet extends HttpServlet {
 		String cancella=req.getParameter("buttonCanc");
 		String indietro=req.getParameter("buttonI");
 		
-		String type=SystemBean.getIstance().getType();
+		String type=SystemBean.getIstance().getTypeB();
 		
 		try {
 		if(genera!=null && genera.equals("genera lista"))
@@ -128,21 +128,21 @@ public class GestioneOggettoServlet extends HttpServlet {
 		{
 			if(type.equals(libro))
 			{
-				lB.setId(Integer.parseInt(id));
-				SystemBean.getIstance().setId(lB.getId());
-				l.setId(lB.getId());
+				lB.setIdB(Integer.parseInt(id));
+				SystemBean.getIstance().setIdB(lB.getIdB());
+				l.setId(lB.getIdB());
 			}
 			else if(type.equals( giornale))
 			{
-				gB.setId(Integer.parseInt(id));
-				SystemBean.getIstance().setId(gB.getId());
-				g.setId(gB.getId());
+				gB.setIdB(Integer.parseInt(id));
+				SystemBean.getIstance().setIdB(gB.getIdB());
+				g.setId(gB.getIdB());
 			}	
 			else if(type.equals(rivista))
 			{
-				rB.setId(Integer.parseInt(id));
-				SystemBean.getIstance().setId(rB.getId());
-				r.setId(rB.getId());
+				rB.setIdB(Integer.parseInt(id));
+				SystemBean.getIstance().setIdB(rB.getIdB());
+				r.setId(rB.getIdB());
 			
 			}
 		}
@@ -154,21 +154,21 @@ public class GestioneOggettoServlet extends HttpServlet {
 		{
 			if(type.equals(libro))
 			{
-				lB.setId(Integer.parseInt(type));
-				l.setId(lB.getId());
+				lB.setIdB(Integer.parseInt(type));
+				l.setId(lB.getIdB());
 				lD.cancella(l);
 			}
 			else if(type.equals(giornale))
 			{
-				gB.setId(Integer.parseInt(id));
-				g.setId(gB.getId());
+				gB.setIdB(Integer.parseInt(id));
+				g.setId(gB.getIdB());
 				gD.cancella(g);
 			}
 			else if(type.equals(rivista))
 			{
 			
-				rB.setId(Integer.parseInt(id));
-				r.setId(rB.getId());
+				rB.setIdB(Integer.parseInt(id));
+				r.setId(rB.getIdB());
 				rD.cancella(r);
 			}
 		}

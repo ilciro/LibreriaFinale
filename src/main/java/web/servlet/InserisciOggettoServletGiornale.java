@@ -48,21 +48,21 @@ public class InserisciOggettoServletGiornale extends HttpServlet{
 			
 				if(data!=null)
 				{
-					gB.setTitolo(titolo);
-					gB.setTipologia(tipologia);
-					gB.setLingua(lingua);
-					gB.setEditore(editore);
+					gB.setTitoloB(titolo);
+					gB.setTipologiaB(tipologia);
+					gB.setLinguaB(lingua);
+					gB.setEditoreB(editore);
 					
 					SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
 		
 				    
 				         utilDate = format.parse(data);
 				        sqlDate = new java.sql.Date(utilDate.getTime());
-				        gB.setData(sqlDate);
+				        gB.setDataB(sqlDate);
 				    
-				    gB.setCopieRimanenti(Integer.parseInt(copie));
-				    gB.setDisponibilita(Integer.parseInt(disp));
-				    gB.setPrezzo(Float.parseFloat(prezzo));
+				    gB.setCopieRimanentiB(Integer.parseInt(copie));
+				    gB.setDisponibilitaB(Integer.parseInt(disp));
+				    gB.setPrezzoB(Float.parseFloat(prezzo));
 				    
 				    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/d");
 					  String date = data;
@@ -70,14 +70,14 @@ public class InserisciOggettoServletGiornale extends HttpServlet{
 					  //convert String to LocalDate
 					  LocalDate localDate = LocalDate.parse(date, formatter);
 					  
-					  g.setTitolo(gB.getTitolo());
-					  g.setTipologia(gB.getTipologia());
-					  g.setLingua(gB.getLingua());
-					  g.setEditore(gB.getEditore());
+					  g.setTitolo(gB.getTitoloB());
+					  g.setTipologia(gB.getTipologiaB());
+					  g.setLingua(gB.getLinguaB());
+					  g.setEditore(gB.getEditoreB());
 					  g.setDataPubb(localDate);
-					  g.setCopieRimanenti(gB.getCopieRimanenti());
-					  g.setDisponibilita(gB.getDisponibilita());
-					  g.setPrezzo(gB.getPrezzo());
+					  g.setCopieRimanenti(gB.getCopieRimanentiB());
+					  g.setDisponibilita(gB.getDisponibilitaB());
+					  g.setPrezzo(gB.getPrezzoB());
 					  
 					  
 						if(gD.creaGiornale(g))
@@ -90,7 +90,7 @@ public class InserisciOggettoServletGiornale extends HttpServlet{
 					
 				}
 				else {
-					gB.setMex(new Exception(" data nulla"));
+					gB.setMexB(new Exception(" data nulla"));
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/aggiungiOggettoPage.jsp"); 
 					view.forward(req,resp); 
 				}

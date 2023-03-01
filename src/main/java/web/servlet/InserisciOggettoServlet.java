@@ -38,11 +38,11 @@ public class InserisciOggettoServlet extends HttpServlet {
 		String annulla=req.getParameter("annullaB");
 		String genera=req.getParameter("generaL");
 		
-		String type=SystemBean.getIstance().getType();
+		String type=SystemBean.getIstance().getTypeB();
 		try {
 			if(genera!=null && genera.equals("prendi lista"))
 			{
-				mOB.setTipologiaL(lB.setCategorie());				
+				mOB.setTipologiaLB(lB.setCategorie());				
 				req.setAttribute("beanMOB",mOB);
 				RequestDispatcher view=getServletContext().getRequestDispatcher("/aggiungiOggettoPage.jsp");
 				view.forward(req, resp);
@@ -70,32 +70,32 @@ public class InserisciOggettoServlet extends HttpServlet {
 				java.util.Date utilDate;
 			     java.sql.Date sqlDate;
 				
-				lB.setTitolo(titolo);
-				lB.setCodIsbn(codice);
-				lB.setNumeroPagine(Integer.parseInt(pagine));
-				lB.setEditore(editore);
-				lB.setAutore(autore);
-				lB.setLingua(lingua);
-				lB.setCategoria(catS);
+				lB.setTitoloB(titolo);
+				lB.setCodIsbnB(codice);
+				lB.setNumeroPagineB(Integer.parseInt(pagine));
+				lB.setEditoreB(editore);
+				lB.setAutoreB(autore);
+				lB.setLinguaB(lingua);
+				lB.setCategoriaB(catS);
 				
 				SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
 	
 			    
 			         utilDate = format.parse(data);
 			        sqlDate = new java.sql.Date(utilDate.getTime());
-			        lB.setDate(sqlDate);
+			        lB.setDateB(sqlDate);
 			   
 				
-			    lB.setRecensione(recensione);
-			    lB.setDesc(desc);
-			    lB.setDisponibilita(0);
+			    lB.setRecensioneB(recensione);
+			    lB.setDescB(desc);
+			    lB.setDisponibilitaB(0);
 			    if(disp!=null)
 			    {
-			    	lB.setDisponibilita(1);
+			    	lB.setDisponibilitaB(1);
 			    }
 			    
-				lB.setPrezzo(Float.parseFloat(prezzo));
-				lB.setNrCopie(Integer.parseInt(copie));
+				lB.setPrezzoB(Float.parseFloat(prezzo));
+				lB.setNrCopieB(Integer.parseInt(copie));
 				
 				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/d");
 				  String date = data;
@@ -105,19 +105,19 @@ public class InserisciOggettoServlet extends HttpServlet {
 			
 			
 				  
-			l.setTitolo(lB.getTitolo());
-			l.setNumeroPagine(lB.getNumeroPagine());
-			l.setCodIsbn(lB.getCodIsbn());
-			l.setEditore(lB.getEditore());
-			l.setAutore(lB.getAutore());
-			l.setLingua(lB.getLingua());
-			l.setCategoria(lB.getCategoria());
+			l.setTitolo(lB.getTitoloB());
+			l.setNumeroPagine(lB.getNumeroPagineB());
+			l.setCodIsbn(lB.getCodIsbnB());
+			l.setEditore(lB.getEditoreB());
+			l.setAutore(lB.getAutoreB());
+			l.setLingua(lB.getLinguaB());
+			l.setCategoria(lB.getCategoriaB());
 			l.setDataPubb(localDate);
-			l.setRecensione(lB.getRecensione());
-			l.setDesc(lB.getDesc());
-			l.setDisponibilita(lB.getDisponibilita());
-			l.setPrezzo(lB.getPrezzo());
-			l.setNrCopie(lB.getNrCopie());
+			l.setRecensione(lB.getRecensioneB());
+			l.setDesc(lB.getDescB());
+			l.setDisponibilita(lB.getDisponibilitaB());
+			l.setPrezzo(lB.getPrezzoB());
+			l.setNrCopie(lB.getNrCopieB());
 			
 				
 				if(lD.creaLibrio(l))

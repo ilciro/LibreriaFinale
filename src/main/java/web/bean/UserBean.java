@@ -17,110 +17,142 @@ public class UserBean {
 		
 
 
-	private int id;
-	private String nome;
-	private String cognome;
-	private String email;
-	private String password;
-	private String descrizione;
-	private LocalDate dataDiNascita;
-	private String r;
-	private String mex;
-	private String listaUtenti;
+	private int idB;
+	private String nomeB;
+	private String cognomeB;
+	private String emailB;
+	private String passwordB;
+	private String descrizioneB;
+	private LocalDate dataDiNascitaB;
+	private String rB;
+	private String mexB;
+	private String listaUtentiB;
 	
 	//istanza per il patter singleton
-	private static UserBean userInstance ;
+	private static UserBean userInstanceB ;
 
 	private UserBean() {
 
 	}
 
-	public static UserBean getInstance() {
-		if (userInstance == null)
+	public static UserBean getInstanceB() {
+		if (userInstanceB == null)
 		{
-			userInstance = new UserBean();
-			return userInstance; 
+			userInstanceB = new UserBean();
+			return userInstanceB; 
 		}
-		return userInstance;
+		return userInstanceB;
 	} 
 
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getCognome() {
-		return cognome;
-	}
-	public void setCognome(String cognome) {
-		this.cognome = cognome;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getDescrizione() {
-		return descrizione;
-	}
-	public void setDescrizione(String descrizione) {
-		this.descrizione = descrizione;
-	}
-	public LocalDate getDataDiNascita() {
-		return dataDiNascita;
-	}
-	public void setDataDiNascita(LocalDate dataDiNascita) {
-		this.dataDiNascita = dataDiNascita;
-	}
 	
-	public String getIdRuolo()  {
-		
-		return r;
+
+	public int getIdB() {
+		return idB;
 	}
 
+	public void setIdB(int idB) {
+		this.idB = idB;
+	}
 
+	public String getNomeB() {
+		return nomeB;
+	}
+
+	public void setNomeB(String nomeB) {
+		this.nomeB = nomeB;
+	}
+
+	public String getCognomeB() {
+		return cognomeB;
+	}
+
+	public void setCognomeB(String cognomeB) {
+		this.cognomeB = cognomeB;
+	}
+
+	public String getEmailB() {
+		return emailB;
+	}
+
+	public void setEmailB(String emailB) {
+		this.emailB = emailB;
+	}
+
+	public String getPasswordB() {
+		return passwordB;
+	}
+
+	public void setPasswordB(String passwordB) {
+		this.passwordB = passwordB;
+	}
+
+	public String getDescrizioneB() {
+		return descrizioneB;
+	}
+
+	public void setDescrizioneB(String descrizioneB) {
+		this.descrizioneB = descrizioneB;
+	}
+
+	public LocalDate getDataDiNascitaB() {
+		return dataDiNascitaB;
+	}
+
+	public void setDataDiNascitaB(LocalDate dataDiNascitaB) {
+		this.dataDiNascitaB = dataDiNascitaB;
+	}
+
+	public String getrB() {
+		return rB;
+	}
+
+	public void setrB(String rB) {
+		this.rB = rB;
+	}
+
+	public String getMexB() {
+		return mexB;
+	}
+
+	public void setMexB(String mexB) {
+		this.mexB = mexB;
+	}
+
+	public String getListaUtentiB() {
+		return listaUtentiB;
+	}
+
+	public void setListaUtentiB(String listaUtentiB) {
+		this.listaUtentiB = listaUtentiB;
+	}
 
 	public void setIdRuolo(String ruolo) {
 
 		 switch (ruolo){
 			case "ADMIN":
-				r = Ruoli.ADMIN.toString();
+				rB= Ruoli.ADMIN.toString();
 				break;				
 			case "EDITORE":
-				r = Ruoli.EDITORE.toString();
+				rB= Ruoli.EDITORE.toString();
 				break;
 			case "SCRITTORE":
-				r = Ruoli.SCRITTORE.toString();
+				rB= Ruoli.SCRITTORE.toString();
 				break;
 			case "UTENTE":
-				r = Ruoli.UTENTE.toString();
+				rB= Ruoli.UTENTE.toString();
 				break;	
 			case "W":
-				r = Ruoli.SCRITTORE.toString();
+				rB= Ruoli.SCRITTORE.toString();
 				break;
 			case "E":
-				r = Ruoli.EDITORE.toString();
+				rB= Ruoli.EDITORE.toString();
 				break;	
 			case "A":
-				r = Ruoli.ADMIN.toString();
+				rB= Ruoli.ADMIN.toString();
 				break;
 				
 			default:
-				r= Ruoli.UTENTE.toString();
+				rB= Ruoli.UTENTE.toString();
 				break;
 			}
 		
@@ -128,22 +160,6 @@ public class UserBean {
 	}
 
 	
-
-	public String getMex() {
-		return mex;
-	}
-
-	public void setMex(String mex) {
-		this.mex = mex;
-	}
-
-	public String getListaUtenti() {
-		return listaUtenti;
-	}
-
-	public void setListaUtenti(String listaUtenti) {
-		this.listaUtenti = listaUtenti;
-	}
 
 	
 

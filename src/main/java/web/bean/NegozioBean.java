@@ -1,40 +1,40 @@
 package web.bean;
 
 public class NegozioBean {
-	private String nome;
-	private String indirizzo;
-	private boolean apertura;
-	private boolean disponibile;
-	private String messaggio;
-	public String getNome() {
-		return nome;
+	private String nomeB;
+	private String indirizzoB;
+	private boolean aperturaB;
+	private boolean disponibileB;
+	private String messaggioB;
+	public String getNomeB() {
+		return nomeB;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeB(String nomeB) {
+		this.nomeB = nomeB;
 	}
-	public String getIndirizzo() {
-		return indirizzo;
+	public String getIndirizzoB() {
+		return indirizzoB;
 	}
-	public void setIndirizzo(String indirizzo) {
-		this.indirizzo = indirizzo;
+	public void setIndirizzoB(String indirizzoB) {
+		this.indirizzoB = indirizzoB;
 	}
-	public boolean isApertura() {
-		return apertura;
+	public boolean isAperturaB() {
+		return aperturaB;
 	}
-	public void setApertura(boolean apertura) {
-		this.apertura = apertura;
+	public void setAperturaB(boolean aperturaB) {
+		this.aperturaB = aperturaB;
 	}
-	public boolean isDisponibile() {
-		return disponibile;
+	public boolean isDisponibileB() {
+		return disponibileB;
 	}
-	public void setDisponibile(boolean disponibile) {
-		this.disponibile = disponibile;
+	public void setDisponibileB(boolean disponibileB) {
+		this.disponibileB = disponibileB;
 	}
-	public String getMessaggio() {
-		return messaggio;
+	public String getMessaggioB() {
+		return messaggioB;
 	}
-	public void setMessaggio(String messaggio) {
-		this.messaggio = messaggio;
+	public void setMessaggioB(String messaggioB) {
+		this.messaggioB = messaggioB;
 	}
 	
 

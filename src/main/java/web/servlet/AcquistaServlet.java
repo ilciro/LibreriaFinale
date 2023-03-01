@@ -25,7 +25,6 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/AcquistaServlet")
 public class AcquistaServlet extends HttpServlet {
 
-	
 	private static final long serialVersionUID = 1L;
 	private static AcquistaBean aB=new AcquistaBean();
 	private static LibroDao lD=new LibroDao();
@@ -42,25 +41,25 @@ public class AcquistaServlet extends HttpServlet {
 	public AcquistaServlet()
 	{
 		super();
-		if(SystemBean.getIstance().getType().equals("libro"))
+		if(SystemBean.getIstance().getTypeB().equals("libro"))
 		{
-			lB.setId(SystemBean.getIstance().getId());
-			l.setId(lB.getId());
-			aB.setTitolo(lD.getTitolo(l));
+			lB.setIdB(SystemBean.getIstance().getIdB());
+			l.setId(lB.getIdB());
+			aB.setTitoloB(lD.getTitolo(l));
 			
 		}
-		if(SystemBean.getIstance().getType().equals("giornale"))
+		if(SystemBean.getIstance().getTypeB().equals("giornale"))
 		{
-			gB.setId(SystemBean.getIstance().getId());
-			g.setId(gB.getId());
-			aB.setTitolo(gD.getTitolo(g));
+			gB.setIdB(SystemBean.getIstance().getIdB());
+			g.setId(gB.getIdB());
+			aB.setTitoloB(gD.getTitolo(g));
 
 		}
-		if(SystemBean.getIstance().getType().equals("rivista"))
+		if(SystemBean.getIstance().getTypeB().equals("rivista"))
 		{
-			rB.setId(SystemBean.getIstance().getId());
-			r.setId(rB.getId());
-			aB.setTitolo(rD.getTitolo(r));
+			rB.setIdB(SystemBean.getIstance().getIdB());
+			r.setId(rB.getIdB());
+			aB.setTitoloB(rD.getTitolo(r));
 
 		}
 	}
@@ -70,11 +69,11 @@ public class AcquistaServlet extends HttpServlet {
 		String calcola=req.getParameter("totaleB");
 		String metodo=req.getParameter("metodoP");
 		String negozio=req.getParameter("negozioB");
-		SystemBean.getIstance().setMetodoP(metodo);
+		SystemBean.getIstance().setMetodoPB(metodo);
 		String download=req.getParameter("pdfB");
 		float costo=(float)0.0;
-		String type=SystemBean.getIstance().getType();
-		String pagamento=SystemBean.getIstance().getMetodoP();
+		String type=SystemBean.getIstance().getTypeB();
+		String pagamento=SystemBean.getIstance().getMetodoPB();
 		try {
 		
 			
@@ -87,10 +86,10 @@ public class AcquistaServlet extends HttpServlet {
 				{
 					
 							costo=Integer.parseInt(q)*lD.getCosto(l);							
-							aB.setPrezzo(costo);						
-							SystemBean.getIstance().setQuantita(Integer.parseInt(q));
-							SystemBean.getIstance().setSpesaT(costo);
-							SystemBean.getIstance().setTitolo(aB.getTitolo());
+							aB.setPrezzoB(costo);						
+							SystemBean.getIstance().setQuantitaB(Integer.parseInt(q));
+							SystemBean.getIstance().setSpesaTB(costo);
+							SystemBean.getIstance().setTitoloB(aB.getTitoloB());
 							
 						
 					break;
@@ -99,10 +98,10 @@ public class AcquistaServlet extends HttpServlet {
 				{
 					
 						costo=Integer.parseInt(q)*gD.getCosto(g);
-						aB.setPrezzo(costo);
-						SystemBean.getIstance().setQuantita(Integer.parseInt(q));
-						SystemBean.getIstance().setSpesaT(costo);
-						SystemBean.getIstance().setTitolo(aB.getTitolo());
+						aB.setPrezzoB(costo);
+						SystemBean.getIstance().setQuantitaB(Integer.parseInt(q));
+						SystemBean.getIstance().setSpesaTB(costo);
+						SystemBean.getIstance().setTitoloB(aB.getTitoloB());
 					
 					break;
 				}
@@ -110,10 +109,10 @@ public class AcquistaServlet extends HttpServlet {
 				{
 				
 						costo=Integer.parseInt(q)*rD.getCosto(r);
-						aB.setPrezzo(costo);
-						SystemBean.getIstance().setQuantita(Integer.parseInt(q));
-						SystemBean.getIstance().setSpesaT(costo);
-						SystemBean.getIstance().setTitolo(aB.getTitolo());
+						aB.setPrezzoB(costo);
+						SystemBean.getIstance().setQuantitaB(Integer.parseInt(q));
+						SystemBean.getIstance().setSpesaTB(costo);
+						SystemBean.getIstance().setTitoloB(aB.getTitoloB());
 					
 					break;
 				}
@@ -133,7 +132,7 @@ public class AcquistaServlet extends HttpServlet {
 		
 		if(negozio!=null && negozio.equals("ritiro in negozio"))
 		{
-			SystemBean.getIstance().setNegozioSelezionato(true);
+			SystemBean.getIstance().setNegozioSelezionatoB(true);
 			switch(pagamento)
 			{
 				case "cash":
@@ -158,7 +157,7 @@ public class AcquistaServlet extends HttpServlet {
 		}
 		if(download!=null && download.equals("scarica il pdf"))
 		{
-			SystemBean.getIstance().setNegozioSelezionato(false);
+			SystemBean.getIstance().setNegozioSelezionatoB(false);
 			switch(pagamento)
 			{
 				case "cash":
@@ -183,7 +182,7 @@ public class AcquistaServlet extends HttpServlet {
 		
 		
 	} catch (NumberFormatException | SQLException e) {
-		aB.setMex(new IdException("quantita eccede la scorta nel magazzino"));
+		aB.setMexB(new IdException("quantita eccede la scorta nel magazzino"));
 		req.setAttribute("beanA",aB);
 		RequestDispatcher view = getServletContext().getRequestDispatcher("/acquista.jsp"); 
 		view.forward(req,resp);

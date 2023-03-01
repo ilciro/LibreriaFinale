@@ -49,7 +49,7 @@ public class RicercaServlet extends HttpServlet {
 		}
 		if(buttonI!=null && buttonI.equals("indietro"))
 		{
-			if(SystemBean.getIstance().getIsLogged())
+			if(SystemBean.getIstance().isLoggedB())
 			{
 				RequestDispatcher view=getServletContext().getRequestDispatcher("/scrittore.jsp");
 				view.forward(req, resp);

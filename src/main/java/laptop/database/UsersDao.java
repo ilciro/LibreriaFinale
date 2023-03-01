@@ -781,7 +781,7 @@ public class UsersDao {
 	public static boolean logout() throws LogoutException 
 	{	
 		
-		String n = UserBean.getInstance().getNome();
+		String n = UserBean.getInstanceB().getNomeB();
 		java.util.logging.Logger.getLogger("Test logout").log(Level.INFO, "stai sloggando come {0}" ,n);
 		
 		if (n==null)
@@ -790,17 +790,17 @@ public class UsersDao {
 
 		}
 		else {
-			 UserBean.getInstance().setId(-1);
-			 UserBean.getInstance().setNome(null);
-			 UserBean.getInstance().setCognome(null);
-			 UserBean.getInstance().setDataDiNascita(null);
-			 UserBean.getInstance().setDescrizione(null);
-			 UserBean.getInstance().setEmail(null);
-			 UserBean.getInstance().setPassword(null);
+			 UserBean.getInstanceB().setIdB(-1);
+			 UserBean.getInstanceB().setNomeB(null);
+			 UserBean.getInstanceB().setCognomeB(null);
+			 UserBean.getInstanceB().setDataDiNascitaB(null);
+			 UserBean.getInstanceB().setDescrizioneB(null);
+			 UserBean.getInstanceB().setEmailB(null);
+			 UserBean.getInstanceB().setPasswordB(null);
 		
 		
-		java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, "stai sloggando {0}", UserBean.getInstance().getEmail());
-			SystemBean.getIstance().setIsLogged(false);
+		java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, "stai sloggando {0}", UserBean.getInstanceB().getEmailB());
+			SystemBean.getIstance().setLoggedB(false);
 			return true;
 		}
 

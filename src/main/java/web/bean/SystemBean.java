@@ -3,32 +3,97 @@ package web.bean;
 public class SystemBean {
 
 		
-		 private int id;
-		 private String type;
-		 private boolean isLogged ;
-		 private boolean isSearch;
-		 private boolean isPickup;
-		 private static SystemBean instance=new SystemBean() ;
-		 private float spesaT;// usato per avere importo totale 
-		 private int quantita; //usato per avere quantita oggetto che compro
-		 private String metodoP; //usato per vedere se contanti o cc
-		 private boolean negozioSelezionato;// per vedere se download o negozio
-		 private String titolo;
+		 private int idB;
+		 private String typeB;
+		 private boolean isLoggedB ;
+		 private boolean isSearchB;
+		 private boolean isPickupB;
+		 private static SystemBean instanceB=new SystemBean() ;
+		 private float spesaTB;// usato per avere importo totale 
+		 private int quantitaB; //usato per avere quantita oggetto che compro
+		 private String metodoPB; //usato per vedere se contanti o cc
+		 private boolean negozioSelezionatoB;// per vedere se download o negozio
+		 private String titoloB;
 		 
-		 public int getQuantita() {
-			return quantita;
+		 
+		public int getIdB() {
+			return idB;
 		}
 
-		public void setQuantita(int quantita) {
-			this.quantita = quantita;
+		public void setIdB(int idB) {
+			this.idB = idB;
 		}
 
-		public float getSpesaT() {
-			return spesaT;
+		public String getTypeB() {
+			return typeB;
 		}
 
-		public void setSpesaT(float spesaT) {
-			this.spesaT = spesaT;
+		public void setTypeB(String typeB) {
+			this.typeB = typeB;
+		}
+
+		public boolean isLoggedB() {
+			return isLoggedB;
+		}
+
+		public void setLoggedB(boolean isLoggedB) {
+			this.isLoggedB = isLoggedB;
+		}
+
+		public boolean isSearchB() {
+			return isSearchB;
+		}
+
+		public void setSearchB(boolean isSearchB) {
+			this.isSearchB = isSearchB;
+		}
+
+		public boolean isPickupB() {
+			return isPickupB;
+		}
+
+		public void setPickupB(boolean isPickupB) {
+			this.isPickupB = isPickupB;
+		}
+
+		public float getSpesaTB() {
+			return spesaTB;
+		}
+
+		public void setSpesaTB(float spesaTB) {
+			this.spesaTB = spesaTB;
+		}
+
+		public int getQuantitaB() {
+			return quantitaB;
+		}
+
+		public void setQuantitaB(int quantitaB) {
+			this.quantitaB = quantitaB;
+		}
+
+		public String getMetodoPB() {
+			return metodoPB;
+		}
+
+		public void setMetodoPB(String metodoPB) {
+			this.metodoPB = metodoPB;
+		}
+
+		public boolean isNegozioSelezionatoB() {
+			return negozioSelezionatoB;
+		}
+
+		public void setNegozioSelezionatoB(boolean negozioSelezionatoB) {
+			this.negozioSelezionatoB = negozioSelezionatoB;
+		}
+
+		public String getTitoloB() {
+			return titoloB;
+		}
+
+		public void setTitoloB(String titoloB) {
+			this.titoloB = titoloB;
 		}
 
 		private SystemBean()
@@ -38,87 +103,30 @@ public class SystemBean {
 		 
 		 public static SystemBean getIstance()
 		 {
-			 if (instance == null) 
+			 if (instanceB == null) 
 			 {
 				 return new SystemBean();
 			 }
-		 return instance;
+		 return instanceB;
 		 }
 
-		public int getId() {
-			return id;
+		public void setTypeAsBook() {
+			this.typeB="libro";
+			
 		}
 
-		public void setId(int id) {
-			this.id = id;
-		}
-		public void setTypeAsBook()
-		{
-			this.type = "libro";
-		}
-		public void setTypeAsMagazine()
-		{
-			this.type = "rivista";
-		}
-		public void setTypeAsDaily()
-		{
-			this.type = "giornale";
-		}
-		public String getType()
-		{
-			return type;
+		public void setTypeAsDaily() {
+			this.typeB="giornale";
+			
 		}
 
-		public boolean getIsLogged() {
-			return isLogged;
-		}
-
-		public void setIsLogged(boolean isLogged) {
-			this.isLogged = isLogged;
-		}
-		
-		public boolean getIsSearch() {
-			return isSearch;
-		}
-
-		public void setIsSearch(boolean isSearch) {
-			this.isSearch = isSearch;
-		}
-
-		public boolean getIsPickup() {
-			return isPickup;
-		}
-
-		public void setPickup(boolean isPickup) {
-			this.isPickup = isPickup;
-		}
-
-		public String getMetodoP() {
-			return metodoP;
-		}
-
-		public void setMetodoP(String metodoP) {
-			this.metodoP = metodoP;
-		}
-
-		public boolean isNegozioSelezionato() {
-			return negozioSelezionato;
-		}
-
-		public void setNegozioSelezionato(boolean negozioSelezionato) {
-			this.negozioSelezionato = negozioSelezionato;
-		}
-
-		public String getTitolo() {
-			return titolo;
-		}
-
-		public void setTitolo(String titolo) {
-			this.titolo = titolo;
+		public void setTypeAsMagazine() {
+			this.typeB="rivista";
+			
 		}
 
 		
+
 		
-	
 
 }

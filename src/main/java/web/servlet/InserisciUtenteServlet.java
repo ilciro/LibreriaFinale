@@ -36,10 +36,10 @@ public class InserisciUtenteServlet extends HttpServlet{
 		try {
 			if(invia!=null && invia.equals("invia"))
 			{
-				UserBean.getInstance().setNome(nome);
-				UserBean.getInstance().setCognome(cognome);
-				UserBean.getInstance().setEmail(email);
-				UserBean.getInstance().setPassword(pass);
+				UserBean.getInstanceB().setNomeB(nome);
+				UserBean.getInstanceB().setCognomeB(cognome);
+				UserBean.getInstanceB().setEmailB(email);
+				UserBean.getInstanceB().setPasswordB(pass);
 				java.util.Date utilDate;
 			    java.sql.Date sqlDate;
 			    SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
@@ -47,13 +47,13 @@ public class InserisciUtenteServlet extends HttpServlet{
 			    
 		         utilDate = format.parse(dataN);
 		        sqlDate = new java.sql.Date(utilDate.getTime());
-		        UserBean.getInstance().setDataDiNascita(sqlDate.toLocalDate());
+		        UserBean.getInstanceB().setDataDiNascitaB(sqlDate.toLocalDate());
 		        
-		        User.getInstance().setNome(UserBean.getInstance().getNome());
-		        User.getInstance().setCognome(UserBean.getInstance().getCognome());
-		        User.getInstance().setEmail(UserBean.getInstance().getEmail());
-		        User.getInstance().setPassword(UserBean.getInstance().getPassword());
-		        User.getInstance().setDataDiNascita(UserBean.getInstance().getDataDiNascita());
+		        User.getInstance().setNome(UserBean.getInstanceB().getNomeB());
+		        User.getInstance().setCognome(UserBean.getInstanceB().getCognomeB());
+		        User.getInstance().setEmail(UserBean.getInstanceB().getEmailB());
+		        User.getInstance().setPassword(UserBean.getInstanceB().getPasswordB());
+		        User.getInstance().setDataDiNascita(UserBean.getInstanceB().getDataDiNascitaB());
 		        
 		        if(UsersDao.createUser(User.getInstance()))
 		        		{
@@ -61,8 +61,8 @@ public class InserisciUtenteServlet extends HttpServlet{
 		        			view.forward(req, resp);
 		        		}
 		        else {
-		        	UserBean.getInstance().setMex("errore nella creazione del nuovo utente");
-		        	req.setAttribute("beanUb",UserBean.getInstance());
+		        	UserBean.getInstanceB().setMexB("errore nella creazione del nuovo utente");
+		        	req.setAttribute("beanUb",UserBean.getInstanceB());
 		        	RequestDispatcher view=getServletContext().getRequestDispatcher("/inserisciUtente.jsp");
         			view.forward(req, resp);
 		        }

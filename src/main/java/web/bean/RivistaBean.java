@@ -9,111 +9,218 @@ import laptop.model.raccolta.Raccolta;
 
 
 public class RivistaBean {
-	private Exception mex;
-	private ObservableList<Raccolta> listaRiviste;
-	private String listaCategorie;
-	private String titolo;
-	private String tipologia;
-	private String autore;
-	private String lingua;
-	private String editore;
-	private String descrizione;
-	private LocalDate dataPubb;
-	private int disp;
-	private float prezzo;
-	private int copieRim;
-	private Date data;
+	private int idB;
+	private Exception mexB;
+	private ObservableList<Raccolta> listaRivisteB;
+	private String listaCategorieB;
+	private String titoloB;
+	private String tipologiaB;
+	private String autoreB;
+	private String linguaB;
+	public Exception getMexB() {
+		return mexB;
+	}
 
-	
-	public Exception getMex() {
-		return mex;
-	}
-	public void setMex(Exception mex) {
-		this.mex = mex;
-	}
-	
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	private int id;
 
-	public String getListaCategorie() {
-		return listaCategorie;
+
+
+	public void setMexB(Exception mexB) {
+		this.mexB = mexB;
 	}
-	public void setListaCategorie(String listaCategorie) {
-		this.listaCategorie = listaCategorie;
+
+
+
+
+	public ObservableList<Raccolta> getListaRivisteB() {
+		return listaRivisteB;
 	}
-	public String getTipologia() {
-		return tipologia;
+
+
+
+
+	public void setListaRivisteB(ObservableList<Raccolta> listaRivisteB) {
+		this.listaRivisteB = listaRivisteB;
 	}
-	public void setTipologia(String tipologia) {
-		this.tipologia = tipologia;
+
+
+
+
+	public String getListaCategorieB() {
+		return listaCategorieB;
 	}
-	public String getAutore() {
-		return autore;
+
+
+
+
+	public void setListaCategorieB(String listaCategorieB) {
+		this.listaCategorieB = listaCategorieB;
 	}
-	public void setAutore(String autore) {
-		this.autore = autore;
+
+
+
+
+	public String getTitoloB() {
+		return titoloB;
 	}
-	public String getLingua() {
-		return lingua;
+
+
+
+
+	public void setTitoloB(String titoloB) {
+		this.titoloB = titoloB;
 	}
-	public void setLingua(String lingua) {
-		this.lingua = lingua;
+
+
+
+
+	public String getTipologiaB() {
+		return tipologiaB;
 	}
-	public String getEditore() {
-		return editore;
+
+
+
+
+	public void setTipologiaB(String tipologiaB) {
+		this.tipologiaB = tipologiaB;
 	}
-	public void setEditore(String editore) {
-		this.editore = editore;
+
+
+
+
+	public String getAutoreB() {
+		return autoreB;
 	}
-	public String getDescrizione() {
-		return descrizione;
+
+
+
+
+	public void setAutoreB(String autoreB) {
+		this.autoreB = autoreB;
 	}
-	public void setDescrizione(String descrizione) {
-		this.descrizione = descrizione;
+
+
+
+
+	public String getLinguaB() {
+		return linguaB;
 	}
-	public LocalDate getDataPubb() {
-		return dataPubb;
+
+
+
+
+	public void setLinguaB(String linguaB) {
+		this.linguaB = linguaB;
 	}
-	public void setDataPubb(LocalDate dataPubb) {
-		this.dataPubb = dataPubb;
+
+
+
+
+	public String getEditoreB() {
+		return editoreB;
 	}
-	public int getDisp() {
-		return disp;
+
+
+
+
+	public void setEditoreB(String editoreB) {
+		this.editoreB = editoreB;
 	}
-	public void setDisp(int disp) {
-		this.disp = disp;
+
+
+
+
+	public String getDescrizioneB() {
+		return descrizioneB;
 	}
-	public int getCopieRim() {
-		return copieRim;
+
+
+
+
+	public void setDescrizioneB(String descrizioneB) {
+		this.descrizioneB = descrizioneB;
 	}
-	public void setCopieRim(int copieRim) {
-		this.copieRim = copieRim;
+
+
+
+
+	public LocalDate getDataPubbB() {
+		return dataPubbB;
 	}
-	
-	public String getTitolo() {
-		return titolo;
+
+
+
+
+	public void setDataPubbB(LocalDate dataPubbB) {
+		this.dataPubbB = dataPubbB;
 	}
-	public void setTitolo(String titolo) {
-		this.titolo = titolo;
+
+
+
+
+	public int getDispB() {
+		return dispB;
 	}
-	public float getPrezzo() {
-		return prezzo;
+
+
+
+
+	public void setDispB(int dispB) {
+		this.dispB = dispB;
 	}
-	public void setPrezzo(float prezzo) {
-		this.prezzo = prezzo;
+
+
+
+
+	public float getPrezzoB() {
+		return prezzoB;
 	}
-	public Date getData() {
-		return data;
+
+
+
+
+	public void setPrezzoB(float prezzoB) {
+		this.prezzoB = prezzoB;
 	}
-	public void setData(Date data) {
-		this.data = data;
+
+
+
+
+	public int getCopieRimB() {
+		return copieRimB;
 	}
+
+
+
+
+	public void setCopieRimB(int copieRimB) {
+		this.copieRimB = copieRimB;
+	}
+
+
+
+
+	public Date getDataB() {
+		return dataB;
+	}
+
+
+
+
+	public void setDataB(Date dataB) {
+		this.dataB = dataB;
+	}
+
+
+
+
+	private String editoreB;
+	private String descrizioneB;
+	private LocalDate dataPubbB;
+	private int dispB;
+	private float prezzoB;
+	private int copieRimB;
+	private Date dataB;
+
 	
 	
 	
@@ -158,10 +265,19 @@ public class RivistaBean {
 
 		return s;
 	}
-	public ObservableList<Raccolta> getListaRiviste() {
-		return listaRiviste;
+
+
+
+
+	public int getIdB() {
+		return idB;
 	}
-	public void setListaRiviste(ObservableList<Raccolta> listaRiviste) {
-		this.listaRiviste = listaRiviste;
+
+
+
+
+	public void setIdB(int idB) {
+		this.idB = idB;
 	}
+	
 }

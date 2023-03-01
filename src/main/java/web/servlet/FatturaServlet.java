@@ -44,33 +44,33 @@ public class FatturaServlet extends HttpServlet{
 		String invia=req.getParameter("buttonC");
 		String annullaO=req.getParameter("annulla");
 		
-		if(checkData(fB.getNome(),fB.getCognome(),fB.getIndirizzo()) && (invia!=null )&& invia.equals("procedi"))
+		if(checkData(fB.getNomeB(),fB.getCognomeB(),fB.getIndirizzoB()) && (invia!=null )&& invia.equals("procedi"))
 		{
 			
-			fB.setNome(nome);
-			fB.setCognome(cognome);
-			fB.setIndirizzo(indirizzo);
-			fB.setComunicazioni(com);
+			fB.setNomeB(nome);
+			fB.setCognomeB(cognome);
+			fB.setIndirizzoB(indirizzo);
+			fB.setComunicazioniB(com);
 			
-			f.setNome(fB.getNome());
-			f.setCognome(fB.getCognome());
-			f.setVia(fB.getIndirizzo());
-			f.setCom(fB.getComunicazioni());
-			f.setAmmontare(SystemBean.getIstance().getSpesaT());
+			f.setNome(fB.getNomeB());
+			f.setCognome(fB.getCognomeB());
+			f.setVia(fB.getIndirizzoB());
+			f.setCom(fB.getComunicazioniB());
+			f.setAmmontare(SystemBean.getIstance().getSpesaTB());
 			
-			pB.setId(0);
-			pB.setMetodo(SystemBean.getIstance().getMetodoP());
-			pB.setAmmontare(SystemBean.getIstance().getSpesaT());
-			pB.setEsito(0);
-			pB.setNomeUtente(fB.getNome());
-			pB.setTipo(lB.getCategoria());
+			pB.setIdB(0);
+			pB.setMetodoB(SystemBean.getIstance().getMetodoPB());
+			pB.setAmmontareB(SystemBean.getIstance().getSpesaTB());
+			pB.setEsitoB(0);
+			pB.setNomeUtenteB(fB.getNomeB());
+			pB.setTipoB(lB.getCategoriaB());
 		
-			p.setId(pB.getId());
-			p.setMetodo(pB.getMetodo());
-			p.setAmmontare(pB.getAmmontare());
-			p.setEsito(pB.getEsito());
-			p.setNomeUtente(pB.getNomeUtente());
-			p.setTipo(pB.getTipo());
+			p.setId(pB.getIdB());
+			p.setMetodo(pB.getMetodoB());
+			p.setAmmontare(pB.getAmmontareB());
+			p.setEsito(pB.getEsitoB());
+			p.setNomeUtente(pB.getNomeUtenteB());
+			p.setTipo(pB.getTipoB());
 			
 			try {
 				fD.inserisciFattura(f);
@@ -79,7 +79,7 @@ public class FatturaServlet extends HttpServlet{
 				java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
 			}
 		
-			if(SystemBean.getIstance().isNegozioSelezionato())
+			if(SystemBean.getIstance().isNegozioSelezionatoB())
 			{
 				RequestDispatcher view = getServletContext().getRequestDispatcher("/negozi.jsp"); 
 				view.forward(req,resp);

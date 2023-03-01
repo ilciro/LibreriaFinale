@@ -47,7 +47,7 @@ public class RivisteServlet extends HttpServlet {
 			if(g!=null && g.equals("genera lista"))
 			{
 			
-				rB.setListaRiviste(rD.getRiviste());
+				rB.setListaRivisteB(rD.getRiviste());
 				req.setAttribute("beanR",rB);
 				RequestDispatcher view = getServletContext().getRequestDispatcher(riviste); 
 				view.forward(req,resp);
@@ -69,11 +69,11 @@ public class RivisteServlet extends HttpServlet {
 				{
 					
 					
-					rB.setId(Integer.parseInt(id));
-					r.setId(rB.getId());
-					rB.setTitolo(rD.getTitolo(r));
-					SystemBean.getIstance().setId(rB.getId());
-					SystemBean.getIstance().setTitolo(rB.getTitolo());
+					rB.setIdB(Integer.parseInt(id));
+					r.setId(rB.getIdB());
+					rB.setTitoloB(rD.getTitolo(r));
+					SystemBean.getIstance().setIdB(rB.getIdB());
+					SystemBean.getIstance().setTitoloB(rB.getTitoloB());
 					req.setAttribute("beanL",rB);
 					req.setAttribute("bean1",SystemBean.getIstance());
 				
@@ -92,7 +92,7 @@ public class RivisteServlet extends HttpServlet {
 			
 		
 		} catch (SQLException e) {
-			rB.setMex(new IdException("id nullo o eccede lista"));
+			rB.setMexB(new IdException("id nullo o eccede lista"));
 			req.setAttribute("beanR",rB);
 			RequestDispatcher view = getServletContext().getRequestDispatcher(riviste); 
 			view.forward(req,resp);

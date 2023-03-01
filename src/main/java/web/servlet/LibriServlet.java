@@ -44,7 +44,7 @@ public class LibriServlet extends HttpServlet {
 			
 					
 			 
-				lB.setListaLibri(lD.getLibri());
+				lB.setListaLibriB(lD.getLibri());
 				req.setAttribute(beanL,lB);
 				RequestDispatcher view = getServletContext().getRequestDispatcher(libri); 
 				view.forward(req,resp);
@@ -59,11 +59,11 @@ public class LibriServlet extends HttpServlet {
 				{
 					
 					
-					lB.setId(Integer.parseInt(id));
-					l.setId(lB.getId());
-					lB.setTitolo(lD.getTitolo(l));
-					SystemBean.getIstance().setId(lB.getId());
-					SystemBean.getIstance().setTitolo(lB.getTitolo());
+					lB.setIdB(Integer.parseInt(id));
+					l.setId(lB.getIdB());
+					lB.setTitoloB(lD.getTitolo(l));
+					SystemBean.getIstance().setIdB(lB.getIdB());
+					SystemBean.getIstance().setTitoloB(lB.getTitoloB());
 					req.setAttribute(beanL,lB);
 					req.setAttribute("bean1",SystemBean.getIstance());
 				
@@ -81,7 +81,7 @@ public class LibriServlet extends HttpServlet {
 			
 		
 		} catch (SQLException e) {
-			lB.setMex(new IdException("id nullo o eccede lista"));
+			lB.setMexB(new IdException("id nullo o eccede lista"));
 			req.setAttribute(beanL,lB);
 			RequestDispatcher view = getServletContext().getRequestDispatcher(libri); 
 			view.forward(req,resp);

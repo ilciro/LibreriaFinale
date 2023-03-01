@@ -35,7 +35,7 @@ public class RicercaCatalogoServlet extends HttpServlet {
 		String cercaB=req.getParameter("cercaB");
 		String visualizza=req.getParameter("visualizzaB");
 		String indietro=req.getParameter("buttonI");
-		String type=SystemBean.getIstance().getType();
+		String type=SystemBean.getIstance().getTypeB();
 		
 		try {
 		if(cercaB!=null && cercaB.equals("cerca"))
@@ -43,15 +43,15 @@ public class RicercaCatalogoServlet extends HttpServlet {
 			switch(type)
 			{
 			case "libro":
-				rB.setLista(lD.getLibriByName(titolo));
+				rB.setListaB(lD.getLibriByName(titolo));
 				req.setAttribute(beanRicerca,rB);
 				break;
 			case "giornale":
-				rB.setLista(gD.getGiornaliByName(titolo));
+				rB.setListaB(gD.getGiornaliByName(titolo));
 				req.setAttribute(beanRicerca,rB);				
 				break;
 			case "rivista":
-				rB.setLista(rD.getRivistaSingolo());
+				rB.setListaB(rD.getRivistaSingolo());
 				req.setAttribute(beanRicerca, rB);
 				break;
 				default:break;

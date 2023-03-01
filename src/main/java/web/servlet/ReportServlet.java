@@ -39,7 +39,7 @@ public class ReportServlet extends HttpServlet {
 			{
 				
 								
-				tAB.setScrivi(finale);
+				tAB.setScriviB(finale);
 				
 				
 					s.append(tAB.generaReportL());
@@ -47,7 +47,7 @@ public class ReportServlet extends HttpServlet {
 					s.append(tAB.generaReportR());
 					s.append(TextAreaBean.getListaUtenti());
 					finale=s.toString();
-					tAB.setScrivi(finale);
+					tAB.setScriviB(finale);
 					req.setAttribute("bean",tAB);
 					RequestDispatcher view = getServletContext().getRequestDispatcher(report); 
 					view.forward(req,resp);			
@@ -57,11 +57,11 @@ public class ReportServlet extends HttpServlet {
 			else if(buttonL!=null && buttonL.equals("libri") )
 			{
 				finale="";
-				tAB.setScrivi(finale);
+				tAB.setScriviB(finale);
 				
 					s.append(tAB.generaReportL());
 					finale=s.toString();					
-					tAB.setScrivi(finale);
+					tAB.setScriviB(finale);
 					req.setAttribute("bean",tAB);
 					RequestDispatcher view = getServletContext().getRequestDispatcher(report); 
 					view.forward(req,resp);			
@@ -70,13 +70,13 @@ public class ReportServlet extends HttpServlet {
 			}
 			else if(buttonG!=null && buttonG.equals("giornale") )
 			{
-				tAB.setScrivi(finale);
+				tAB.setScriviB(finale);
 				
 				
 					
 					s.append(tAB.generaReportG());
 					finale=s.toString();
-					tAB.setScrivi(finale);
+					tAB.setScriviB(finale);
 					req.setAttribute("bean",tAB);
 					RequestDispatcher view = getServletContext().getRequestDispatcher(report); 
 					view.forward(req,resp);			
@@ -86,13 +86,13 @@ public class ReportServlet extends HttpServlet {
 			else if(buttonR!=null && buttonR.equals("rivista")  )
 			{
 				finale="";
-				tAB.setScrivi(finale);
+				tAB.setScriviB(finale);
 				
 				
 					
 					s.append(tAB.generaReportR());
 					finale=s.toString();
-					tAB.setScrivi(finale);
+					tAB.setScriviB(finale);
 					req.setAttribute("bean",tAB);
 					RequestDispatcher view = getServletContext().getRequestDispatcher(report); 
 					view.forward(req,resp);			
@@ -102,14 +102,14 @@ public class ReportServlet extends HttpServlet {
 			else if(buttonRacc!=null && buttonRacc.equals("raccolta")  )
 			{
 				finale="";
-				tAB.setScrivi(finale);
+				tAB.setScriviB(finale);
 			
 				
 					s.append(tAB.generaReportL());
 					s.append(tAB.generaReportG());
 					s.append(tAB.generaReportR());
 					finale=s.toString();
-					tAB.setScrivi(finale);
+					tAB.setScriviB(finale);
 					req.setAttribute("bean",tAB);
 					RequestDispatcher view = getServletContext().getRequestDispatcher(report); 
 					view.forward(req,resp);			
