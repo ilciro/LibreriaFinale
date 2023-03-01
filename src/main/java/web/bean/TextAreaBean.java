@@ -52,10 +52,7 @@ public class TextAreaBean {
 
 
 
-				rs.getString(1);
-				rs.getInt(2);
-				rs.getFloat(3);
-
+				
 
 				b1.write(titolo+rs.getString(1)+"\t"+ricavoTotale +rs.getInt(2)*rs.getFloat(3)+"\n");
 
@@ -105,10 +102,7 @@ public class TextAreaBean {
 		        	
 
 				
-								rs.getString(1);
-								rs.getString(2);
-								rs.getInt(3);
-								rs.getFloat(4);
+								
 								
 										
 				
