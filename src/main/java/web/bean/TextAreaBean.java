@@ -99,14 +99,9 @@ public class TextAreaBean {
 		            while(rs.next())
 		            {
 		        		
-		        	
-
+		        					
 				
-								
-								
-										
-				
-		        		b.write(titolo+rs.getString(1)+"\t"+"Editore :"+rs.getString(2)+"\t"+ricavoTotale +rs.getInt(3)*rs.getFloat(4)+"\n");
+		        		b.write("Rivista :\n"+titolo+rs.getString(1)+"\t"+"Editore rivista :"+rs.getString(2)+"\t"+ricavoTotale+ "delle riviste" +rs.getInt(3)*rs.getFloat(4)+"\n");
 
 
 
@@ -163,7 +158,7 @@ public class TextAreaBean {
 
 
 
-				b.write(titolo+rs.getString(1)+"\t"+"Editore :"+rs.getString(2)+"\t"+ricavoTotale +rs.getInt(3)*rs.getFloat(4)+"\n");
+				b.write("Riepigolo Giornale :\n"+titolo+rs.getString(1)+"\t"+"Editore del giornale :"+rs.getString(2)+"\t"+ricavoTotale +"dei giornali :" +rs.getInt(3)*rs.getFloat(4)+"\n");
 
 
 
@@ -201,16 +196,16 @@ public class TextAreaBean {
 		}}
 	
 	public static  String getListaUtenti() throws IOException, SQLException  {
-		String query="select * from ispw.users";
+		String queryU="select * from ispw.users";
 		StringBuilder s=new StringBuilder();
-		FileWriter w;
-		w=new FileWriter(rB.getString("utenti"));
+		FileWriter wU;
+		wU=new FileWriter(rB.getString("utenti"));
 
 		
-		try (BufferedWriter b=new BufferedWriter (w)) {
+		try (BufferedWriter bU=new BufferedWriter (wU)) {
 
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(queryU);)
 			{
 				
 			ResultSet rs=prepQ.executeQuery();
@@ -227,7 +222,7 @@ public class TextAreaBean {
 				TempUser.getInstance().setEmailT(rs.getString(5));
 				TempUser.getInstance().setDescrizioneT(rs.getString(7));
 				TempUser.getInstance().setDataDiNascitaT(rs.getDate(8).toLocalDate());
-				b.write(""+TempUser.getInstance().getId()+"\t"+TempUser.getInstance().getIdRuolo()+"\t"+TempUser.getInstance().getNomeT()+"\t"+TempUser.getInstance().getCognomeT()+
+				bU.write(""+TempUser.getInstance().getId()+"\t"+TempUser.getInstance().getIdRuolo()+"\t"+TempUser.getInstance().getNomeT()+"\t"+TempUser.getInstance().getCognomeT()+
 						"\t"+TempUser.getInstance().getEmailT()+"\t"+TempUser.getInstance().getDescrizioneT()+"\t"+TempUser.getInstance().getDataDiNascitaT().toString()+"\n");
 				
 				
@@ -254,7 +249,7 @@ public class TextAreaBean {
 			java.util.logging.Logger.getLogger("lista utenti").log(Level.SEVERE,"\n eccezione ottenuta .",e);
 
 			}
-			b.flush();
+			bU.flush();
 			return s.toString();
 		
 		}
