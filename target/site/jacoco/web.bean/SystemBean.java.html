@@ -3,33 +3,98 @@
 public class SystemBean {
 
 		
-		 private int id;
-		 private String type;
-		 private boolean isLogged ;
-		 private boolean isSearch;
-		 private boolean isPickup;
-<span class="nc" id="L11">		 private static SystemBean instance=new SystemBean() ;</span>
-		 private float spesaT;// usato per avere importo totale 
-		 private int quantita; //usato per avere quantita oggetto che compro
-		 private String metodoP; //usato per vedere se contanti o cc
-		 private boolean negozioSelezionato;// per vedere se download o negozio
-		 private String titolo;
+		 private int idB;
+		 private String typeB;
+		 private boolean isLoggedB ;
+		 private boolean isSearchB;
+		 private boolean isPickupB;
+<span class="fc" id="L11">		 private static SystemBean instanceB=new SystemBean() ;</span>
+		 private float spesaTB;// usato per avere importo totale 
+		 private int quantitaB; //usato per avere quantita oggetto che compro
+		 private String metodoPB; //usato per vedere se contanti o cc
+		 private boolean negozioSelezionatoB;// per vedere se download o negozio
+		 private String titoloB;
 		 
-		 public int getQuantita() {
-<span class="nc" id="L19">			return quantita;</span>
+		 
+		public int getIdB() {
+<span class="fc" id="L20">			return idB;</span>
 		}
 
-		public void setQuantita(int quantita) {
-<span class="nc" id="L23">			this.quantita = quantita;</span>
-<span class="nc" id="L24">		}</span>
+		public void setIdB(int idB) {
+<span class="fc" id="L24">			this.idB = idB;</span>
+<span class="fc" id="L25">		}</span>
 
-		public float getSpesaT() {
-<span class="nc" id="L27">			return spesaT;</span>
+		public String getTypeB() {
+<span class="nc" id="L28">			return typeB;</span>
 		}
 
-		public void setSpesaT(float spesaT) {
-<span class="nc" id="L31">			this.spesaT = spesaT;</span>
-<span class="nc" id="L32">		}</span>
+		public void setTypeB(String typeB) {
+<span class="nc" id="L32">			this.typeB = typeB;</span>
+<span class="nc" id="L33">		}</span>
+
+		public boolean isLoggedB() {
+<span class="nc" id="L36">			return isLoggedB;</span>
+		}
+
+		public void setLoggedB(boolean isLoggedB) {
+<span class="fc" id="L40">			this.isLoggedB = isLoggedB;</span>
+<span class="fc" id="L41">		}</span>
+
+		public boolean isSearchB() {
+<span class="nc" id="L44">			return isSearchB;</span>
+		}
+
+		public void setSearchB(boolean isSearchB) {
+<span class="nc" id="L48">			this.isSearchB = isSearchB;</span>
+<span class="nc" id="L49">		}</span>
+
+		public boolean isPickupB() {
+<span class="nc" id="L52">			return isPickupB;</span>
+		}
+
+		public void setPickupB(boolean isPickupB) {
+<span class="fc" id="L56">			this.isPickupB = isPickupB;</span>
+<span class="fc" id="L57">		}</span>
+
+		public float getSpesaTB() {
+<span class="nc" id="L60">			return spesaTB;</span>
+		}
+
+		public void setSpesaTB(float spesaTB) {
+<span class="fc" id="L64">			this.spesaTB = spesaTB;</span>
+<span class="fc" id="L65">		}</span>
+
+		public int getQuantitaB() {
+<span class="nc" id="L68">			return quantitaB;</span>
+		}
+
+		public void setQuantitaB(int quantitaB) {
+<span class="fc" id="L72">			this.quantitaB = quantitaB;</span>
+<span class="fc" id="L73">		}</span>
+
+		public String getMetodoPB() {
+<span class="nc" id="L76">			return metodoPB;</span>
+		}
+
+		public void setMetodoPB(String metodoPB) {
+<span class="fc" id="L80">			this.metodoPB = metodoPB;</span>
+<span class="fc" id="L81">		}</span>
+
+		public boolean isNegozioSelezionatoB() {
+<span class="nc" id="L84">			return negozioSelezionatoB;</span>
+		}
+
+		public void setNegozioSelezionatoB(boolean negozioSelezionatoB) {
+<span class="fc" id="L88">			this.negozioSelezionatoB = negozioSelezionatoB;</span>
+<span class="fc" id="L89">		}</span>
+
+		public String getTitoloB() {
+<span class="nc" id="L92">			return titoloB;</span>
+		}
+
+		public void setTitoloB(String titoloB) {
+<span class="fc" id="L96">			this.titoloB = titoloB;</span>
+<span class="fc" id="L97">		}</span>
 
 		private SystemBean()
 		 {
@@ -38,88 +103,31 @@ public class SystemBean {
 		 
 		 public static SystemBean getIstance()
 		 {
-<span class="nc bnc" id="L41" title="All 2 branches missed.">			 if (instance == null) </span>
+<span class="pc bpc" id="L106" title="1 of 2 branches missed.">			 if (instanceB == null) </span>
 			 {
-<span class="nc" id="L43">				 return new SystemBean();</span>
+<span class="nc" id="L108">				 return new SystemBean();</span>
 			 }
-<span class="nc" id="L45">		 return instance;</span>
+<span class="fc" id="L110">		 return instanceB;</span>
 		 }
 
-		public int getId() {
-<span class="nc" id="L49">			return id;</span>
-		}
+		public void setTypeAsBook() {
+<span class="fc" id="L114">			this.typeB=&quot;libro&quot;;</span>
+			
+<span class="fc" id="L116">		}</span>
 
-		public void setId(int id) {
-<span class="nc" id="L53">			this.id = id;</span>
-<span class="nc" id="L54">		}</span>
-		public void setTypeAsBook()
-		{
-<span class="nc" id="L57">			this.type = &quot;libro&quot;;</span>
-<span class="nc" id="L58">		}</span>
-		public void setTypeAsMagazine()
-		{
-<span class="nc" id="L61">			this.type = &quot;rivista&quot;;</span>
-<span class="nc" id="L62">		}</span>
-		public void setTypeAsDaily()
-		{
-<span class="nc" id="L65">			this.type = &quot;giornale&quot;;</span>
-<span class="nc" id="L66">		}</span>
-		public String getType()
-		{
-<span class="nc" id="L69">			return type;</span>
-		}
+		public void setTypeAsDaily() {
+<span class="nc" id="L119">			this.typeB=&quot;giornale&quot;;</span>
+			
+<span class="nc" id="L121">		}</span>
 
-		public boolean getIsLogged() {
-<span class="nc" id="L73">			return isLogged;</span>
-		}
-
-		public void setIsLogged(boolean isLogged) {
-<span class="nc" id="L77">			this.isLogged = isLogged;</span>
-<span class="nc" id="L78">		}</span>
-		
-		public boolean getIsSearch() {
-<span class="nc" id="L81">			return isSearch;</span>
-		}
-
-		public void setIsSearch(boolean isSearch) {
-<span class="nc" id="L85">			this.isSearch = isSearch;</span>
-<span class="nc" id="L86">		}</span>
-
-		public boolean getIsPickup() {
-<span class="nc" id="L89">			return isPickup;</span>
-		}
-
-		public void setPickup(boolean isPickup) {
-<span class="nc" id="L93">			this.isPickup = isPickup;</span>
-<span class="nc" id="L94">		}</span>
-
-		public String getMetodoP() {
-<span class="nc" id="L97">			return metodoP;</span>
-		}
-
-		public void setMetodoP(String metodoP) {
-<span class="nc" id="L101">			this.metodoP = metodoP;</span>
-<span class="nc" id="L102">		}</span>
-
-		public boolean isNegozioSelezionato() {
-<span class="nc" id="L105">			return negozioSelezionato;</span>
-		}
-
-		public void setNegozioSelezionato(boolean negozioSelezionato) {
-<span class="nc" id="L109">			this.negozioSelezionato = negozioSelezionato;</span>
-<span class="nc" id="L110">		}</span>
-
-		public String getTitolo() {
-<span class="nc" id="L113">			return titolo;</span>
-		}
-
-		public void setTitolo(String titolo) {
-<span class="nc" id="L117">			this.titolo = titolo;</span>
-<span class="nc" id="L118">		}</span>
+		public void setTypeAsMagazine() {
+<span class="nc" id="L124">			this.typeB=&quot;rivista&quot;;</span>
+			
+<span class="nc" id="L126">		}</span>
 
 		
+
 		
-	
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

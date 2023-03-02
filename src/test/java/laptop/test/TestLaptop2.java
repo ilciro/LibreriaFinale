@@ -38,6 +38,7 @@ import laptop.model.raccolta.Factory;
 import laptop.model.raccolta.Giornale;
 import laptop.model.raccolta.Libro;
 
+
 class TestLaptop2 {
 	
 	private ControllerSystemState vis=ControllerSystemState.getIstance();

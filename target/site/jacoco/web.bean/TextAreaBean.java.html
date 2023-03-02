@@ -13,181 +13,165 @@ import java.util.logging.Level;
 import laptop.model.TempUser;
 import laptop.utilities.ConnToDb;
 
-<span class="nc" id="L16">public class TextAreaBean {</span>
-	private String scrivi;
-<span class="nc" id="L18">	private static String ricavoTotale=&quot;Ricavo totale :&quot;;</span>
-<span class="nc" id="L19">	private static String titolo=&quot; Titolo :&quot;;</span>
-<span class="nc" id="L20">	private static ResourceBundle rB=ResourceBundle.getBundle(&quot;configurations/reportsPath&quot;);</span>
+<span class="fc" id="L16">public class TextAreaBean {</span>
+	private String scriviB;
+<span class="fc" id="L18">	private static String ricavoTotale=&quot;Ricavo totale :&quot;;</span>
+<span class="fc" id="L19">	private static String titolo=&quot; Titolo :&quot;;</span>
+<span class="fc" id="L20">	private static ResourceBundle rB=ResourceBundle.getBundle(&quot;configurations/reportsPath&quot;);</span>
 
 
-	public String getScrivi() {
-<span class="nc" id="L24">		return scrivi;</span>
+	public String getScriviB() {
+<span class="nc" id="L24">		return scriviB;</span>
 	}
 
-	public void setScrivi(String scrivi) {
-<span class="nc" id="L28">		this.scrivi = scrivi;</span>
+	public void setScriviB(String scriviB) {
+<span class="nc" id="L28">		this.scriviB = scriviB;</span>
 <span class="nc" id="L29">	}</span>
 	
 	public String generaReportL() throws SQLException, IOException
 	{
-<span class="nc" id="L33">		StringBuilder s=new StringBuilder();</span>
+<span class="fc" id="L33">		StringBuilder s=new StringBuilder();</span>
 
 
-<span class="nc" id="L36">		FileWriter w=null;</span>
-<span class="nc" id="L37">		w=new FileWriter(rB.getString(&quot;libri&quot;));</span>
-<span class="nc" id="L38">		String query=&quot;select titolo,copieVendute,prezzo as totale from libro&quot;;</span>
+<span class="fc" id="L36">		FileWriter w1=null;</span>
+<span class="fc" id="L37">		w1=new FileWriter(rB.getString(&quot;libri&quot;));</span>
+<span class="fc" id="L38">		String query=&quot;select titolo,copieVendute,prezzo as totale from libro&quot;;</span>
 		
-<span class="nc" id="L40">		   try (BufferedWriter b=new BufferedWriter (w)){</span>
+<span class="fc" id="L40">		   try (BufferedWriter b1=new BufferedWriter (w1)){</span>
 		
 
-<span class="nc" id="L43">			   try(Connection 	conn = ConnToDb.generalConnection();</span>
-<span class="nc" id="L44">					   PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+<span class="fc" id="L43">			   try(Connection 	conn = ConnToDb.generalConnection();</span>
+<span class="fc" id="L44">					   PreparedStatement prepQ=conn.prepareStatement(query);)</span>
 			   {
 		
-<span class="nc" id="L47">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc" id="L47">			ResultSet rs=prepQ.executeQuery();</span>
 
 
-<span class="nc bnc" id="L50" title="All 2 branches missed.">			while(rs.next())</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">			while(rs.next())</span>
 			{
 
 
 
-<span class="nc" id="L55">				rs.getString(1);</span>
-<span class="nc" id="L56">				rs.getInt(2);</span>
-<span class="nc" id="L57">				rs.getFloat(3);</span>
+				
 
-
-<span class="nc" id="L60">				b.write(titolo+rs.getString(1)+&quot;\t&quot;+ricavoTotale +rs.getInt(2)*rs.getFloat(3)+&quot;\n&quot;);</span>
+<span class="fc" id="L57">				b1.write(titolo+rs.getString(1)+&quot;\t&quot;+ricavoTotale +rs.getInt(2)*rs.getFloat(3)+&quot;\n&quot;);</span>
 
 				
-<span class="nc" id="L63">				s.append(titolo);</span>
-<span class="nc" id="L64">				s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L65">				s.append(rs.getString(1));</span>
-<span class="nc" id="L66">				s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L67">				s.append(ricavoTotale);</span>
-<span class="nc" id="L68">				s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L69">				s.append(rs.getInt(2)*rs.getFloat(3));</span>
-<span class="nc" id="L70">				s.append(&quot;\n&quot;);</span>
+<span class="fc" id="L60">				s.append(titolo);</span>
+<span class="fc" id="L61">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L62">				s.append(rs.getString(1));</span>
+<span class="fc" id="L63">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L64">				s.append(ricavoTotale);</span>
+<span class="fc" id="L65">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L66">				s.append(rs.getInt(2)*rs.getFloat(3));</span>
+<span class="fc" id="L67">				s.append(&quot;\n&quot;);</span>
 
-<span class="nc" id="L72">				b.flush();</span>
+<span class="fc" id="L69">				b1.flush();</span>
 
 				
 			}
 
-<span class="nc" id="L77">		}catch(SQLException e)</span>
+<span class="nc" id="L74">		}catch(SQLException e)</span>
 			   {
-<span class="nc" id="L79">			java.util.logging.Logger.getLogger(&quot;report l&quot;).log(Level.INFO, &quot;report libri {0}.&quot;,e.toString());</span>
+<span class="nc" id="L76">			java.util.logging.Logger.getLogger(&quot;report l&quot;).log(Level.INFO, &quot;report libri {0}.&quot;,e.toString());</span>
 			   }
-<span class="nc" id="L81">			   return s.toString();</span>
+<span class="fc" id="L78">			   return s.toString();</span>
 		   }
 		
 
 	}
 	public String generaReportR() throws SQLException, IOException
 	{
-				FileWriter w;
-<span class="nc" id="L89">				StringBuilder s=new StringBuilder();</span>
-<span class="nc" id="L90">				String query=&quot;select titolo,editore,copieRimanenti,prezzo as totale  from ispw.rivista&quot;;</span>
-<span class="nc" id="L91">				w=new FileWriter(rB.getString(&quot;riviste&quot;));</span>
+				FileWriter w2;
+<span class="fc" id="L86">				StringBuilder s=new StringBuilder();</span>
+<span class="fc" id="L87">				String query2=&quot;select titolo,editore,copieRimanenti,prezzo as totale  from ispw.rivista&quot;;</span>
+<span class="fc" id="L88">				w2=new FileWriter(rB.getString(&quot;riviste&quot;));</span>
 		        
 		        
-<span class="nc" id="L94">		        try (BufferedWriter b=new BufferedWriter (w)){</span>
-<span class="nc" id="L95">		        	try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="nc" id="L96">		        			PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+<span class="fc" id="L91">		        try (BufferedWriter bR=new BufferedWriter (w2)){</span>
+<span class="fc" id="L92">		        	try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L93">		        			PreparedStatement prepQ=conn.prepareStatement(query2);)</span>
 		        	{
 		        		
-<span class="nc" id="L99">		        		ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc" id="L96">		        		ResultSet rsR=prepQ.executeQuery();</span>
 				
 		           
-<span class="nc bnc" id="L102" title="All 2 branches missed.">		            while(rs.next())</span>
+<span class="fc bfc" id="L99" title="All 2 branches covered.">		            while(rsR.next())</span>
 		            {
 		        		
-		        	
-
+		        					
 				
-<span class="nc" id="L108">								rs.getString(1);</span>
-<span class="nc" id="L109">								rs.getString(2);</span>
-<span class="nc" id="L110">								rs.getInt(3);</span>
-<span class="nc" id="L111">								rs.getFloat(4);</span>
-								
-										
-				
-<span class="nc" id="L115">		        		b.write(titolo+rs.getString(1)+&quot;\t&quot;+&quot;Editore :&quot;+rs.getString(2)+&quot;\t&quot;+ricavoTotale +rs.getInt(3)*rs.getFloat(4)+&quot;\n&quot;);</span>
+<span class="fc" id="L104">		        		bR.write(&quot;Rivista :\n&quot;+titolo+rsR.getString(1)+&quot;\t&quot;+&quot;Editore rivista :&quot;+rsR.getString(2)+&quot;\t&quot;+ricavoTotale+ &quot;delle riviste&quot; +rsR.getInt(3)*rsR.getFloat(4)+&quot;\n&quot;);</span>
 
 
 
 
-<span class="nc" id="L120">		     			b.flush();</span>
+<span class="fc" id="L109">		     			bR.flush();</span>
 		     			
-<span class="nc" id="L122">		     			s.append(titolo);</span>
-<span class="nc" id="L123">						s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L124">						s.append(rs.getString(1));</span>
-<span class="nc" id="L125">						s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L126">						s.append(&quot;editore :&quot;);</span>
-<span class="nc" id="L127">						s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L128">						s.append(rs.getString(2));</span>
-<span class="nc" id="L129">						s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L130">						s.append(ricavoTotale);</span>
-<span class="nc" id="L131">						s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L132">						s.append(rs.getInt(3)*rs.getFloat(4));</span>
-<span class="nc" id="L133">						s.append(&quot;\n&quot;);</span>
+<span class="fc" id="L111">		     			s.append(titolo);</span>
+<span class="fc" id="L112">						s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L113">						s.append(rsR.getString(1));</span>
+<span class="fc" id="L114">						s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L115">						s.append(&quot;editore :&quot;);</span>
+<span class="fc" id="L116">						s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L117">						s.append(rsR.getString(2));</span>
+<span class="fc" id="L118">						s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L119">						s.append(ricavoTotale);</span>
+<span class="fc" id="L120">						s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L121">						s.append(rsR.getInt(3)*rsR.getFloat(4));</span>
+<span class="fc" id="L122">						s.append(&quot;\n&quot;);</span>
 
 
 		        			
 		        		
 		            }
-<span class="nc" id="L139">		        	}catch(SQLException e)</span>
+<span class="nc" id="L128">		        	}catch(SQLException e)</span>
 		        	{
-<span class="nc" id="L141">		    			java.util.logging.Logger.getLogger(&quot;report R&quot;).log(Level.INFO, &quot;report riviste {0}.&quot;,e.toString());</span>
+<span class="nc" id="L130">		    			java.util.logging.Logger.getLogger(&quot;report R&quot;).log(Level.INFO, &quot;report riviste &quot;,e);</span>
 		        	}
-<span class="nc" id="L143">		        	return s.toString();</span>
+<span class="fc" id="L132">		        	return s.toString();</span>
 		     
 		        }
 	}
 	public   String generaReportG() throws IOException, SQLException
 	{
-		FileWriter w;
-<span class="nc" id="L150">		StringBuilder s=new StringBuilder();</span>
-<span class="nc" id="L151">		String query=&quot;select titolo,editore,copiRim,prezzo as totale  from ispw.giornale&quot;;</span>
-<span class="nc" id="L152">		w=new FileWriter(rB.getString(&quot;giornali&quot;));</span>
-<span class="nc" id="L153">		   try (BufferedWriter b=new BufferedWriter (w)){</span>
-<span class="nc" id="L154">			   try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="nc" id="L155">					   PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		FileWriter w3;
+<span class="fc" id="L139">		StringBuilder s=new StringBuilder();</span>
+<span class="fc" id="L140">		String query3=&quot;select titolo,editore,copiRim,prezzo as totale  from ispw.giornale&quot;;</span>
+<span class="fc" id="L141">		w3=new FileWriter(rB.getString(&quot;giornali&quot;));</span>
+<span class="fc" id="L142">		   try (BufferedWriter bG=new BufferedWriter (w3)){</span>
+<span class="fc" id="L143">			   try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L144">					   PreparedStatement prepQ=conn.prepareStatement(query3);)</span>
 			   {
 				  
-<span class="nc" id="L158">				   ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc" id="L147">				   ResultSet rsG=prepQ.executeQuery();</span>
 
-<span class="nc bnc" id="L160" title="All 2 branches missed.">			while(rs.next())</span>
+<span class="fc bfc" id="L149" title="All 2 branches covered.">			while(rsG.next())</span>
 			{
 
 
 
-<span class="nc" id="L165">				rs.getString(1);</span>
-<span class="nc" id="L166">				rs.getString(2);</span>
-<span class="nc" id="L167">				rs.getInt(3);</span>
-<span class="nc" id="L168">				rs.getFloat(4);</span>
 
 
-
-<span class="nc" id="L172">				b.write(titolo+rs.getString(1)+&quot;\t&quot;+&quot;Editore :&quot;+rs.getString(2)+&quot;\t&quot;+ricavoTotale +rs.getInt(3)*rs.getFloat(4)+&quot;\n&quot;);</span>
+<span class="fc" id="L156">				bG.write(&quot;Riepigolo Giornale :\n&quot;+titolo+rsG.getString(1)+&quot;\t&quot;+&quot;Editore del giornale :&quot;+rsG.getString(2)+&quot;\t&quot;+ricavoTotale +&quot;dei giornali :&quot; +rsG.getInt(3)*rsG.getFloat(4)+&quot;\n&quot;);</span>
 
 
 
 
-<span class="nc" id="L177">				b.flush();</span>
+<span class="fc" id="L161">				bG.flush();</span>
 				
-<span class="nc" id="L179">				s.append(titolo);</span>
-<span class="nc" id="L180">				s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L181">				s.append(rs.getString(1));</span>
-<span class="nc" id="L182">				s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L183">				s.append(&quot;editore :&quot;);</span>
-<span class="nc" id="L184">				s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L185">				s.append(rs.getString(2));</span>
-<span class="nc" id="L186">				s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L187">				s.append(ricavoTotale);</span>
-<span class="nc" id="L188">				s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L189">				s.append(rs.getInt(3)*rs.getFloat(4));</span>
-<span class="nc" id="L190">				s.append(&quot;\n&quot;);</span>
+<span class="fc" id="L163">				s.append(titolo);</span>
+<span class="fc" id="L164">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L165">				s.append(rsG.getString(1));</span>
+<span class="fc" id="L166">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L167">				s.append(&quot;editore :&quot;);</span>
+<span class="fc" id="L168">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L169">				s.append(rsG.getString(2));</span>
+<span class="fc" id="L170">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L171">				s.append(ricavoTotale);</span>
+<span class="fc" id="L172">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L173">				s.append(rsG.getInt(3)*rsG.getFloat(4));</span>
+<span class="fc" id="L174">				s.append(&quot;\n&quot;);</span>
 
 
 
@@ -195,73 +179,73 @@ import laptop.utilities.ConnToDb;
 
 
 
-<span class="nc" id="L198">			}catch(SQLException e)</span>
+<span class="nc" id="L182">			}catch(SQLException e)</span>
 			   {
-<span class="nc" id="L200">				java.util.logging.Logger.getLogger(&quot;report g&quot;).log(Level.INFO, &quot;report giornali {0}.&quot;,e.toString());</span>
+<span class="nc" id="L184">				java.util.logging.Logger.getLogger(&quot;report g &quot;).log(Level.INFO, &quot;report giornali eccezione &quot;,e);</span>
+
 
 			   }
 
 
-<span class="nc" id="L205">			   return s.toString();</span>
+<span class="fc" id="L190">			   return s.toString();</span>
 
 		}}
 	
 	public static  String getListaUtenti() throws IOException, SQLException  {
-<span class="nc" id="L210">		String query=&quot;select * from ispw.users&quot;;</span>
-<span class="nc" id="L211">		StringBuilder s=new StringBuilder();</span>
-		FileWriter w;
-<span class="nc" id="L213">		w=new FileWriter(rB.getString(&quot;utenti&quot;));</span>
+<span class="fc" id="L195">		String queryU=&quot;select * from ispw.users&quot;;</span>
+<span class="fc" id="L196">		StringBuilder s=new StringBuilder();</span>
+		FileWriter wU;
+<span class="fc" id="L198">		wU=new FileWriter(rB.getString(&quot;utenti&quot;));</span>
 
 		
-<span class="nc" id="L216">		try (BufferedWriter b=new BufferedWriter (w)) {</span>
+<span class="fc" id="L201">		try (BufferedWriter bU=new BufferedWriter (wU)) {</span>
 
-<span class="nc" id="L218">			try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="nc" id="L219">					PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+<span class="fc" id="L203">			try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L204">					PreparedStatement prepQ=conn.prepareStatement(queryU);)</span>
 			{
 				
-<span class="nc" id="L222">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc" id="L207">			ResultSet rs=prepQ.executeQuery();</span>
 
 
 
-<span class="nc bnc" id="L226" title="All 2 branches missed.">			while(rs.next())</span>
+<span class="fc bfc" id="L211" title="All 2 branches covered.">			while(rs.next())</span>
 			{
 
-<span class="nc" id="L229">				TempUser.getInstance().setId(rs.getInt(1));</span>
-<span class="nc" id="L230">				TempUser.getInstance().setIdRuolo(rs.getString(2));</span>
-<span class="nc" id="L231">				TempUser.getInstance().setNomeT(rs.getString(3));</span>
-<span class="nc" id="L232">				TempUser.getInstance().setCognomeT(rs.getString(4));</span>
-<span class="nc" id="L233">				TempUser.getInstance().setEmailT(rs.getString(5));</span>
-<span class="nc" id="L234">				TempUser.getInstance().setDescrizioneT(rs.getString(7));</span>
-<span class="nc" id="L235">				TempUser.getInstance().setDataDiNascitaT(rs.getDate(8).toLocalDate());</span>
-<span class="nc" id="L236">				b.write(&quot;&quot;+TempUser.getInstance().getId()+&quot;\t&quot;+TempUser.getInstance().getIdRuolo()+&quot;\t&quot;+TempUser.getInstance().getNomeT()+&quot;\t&quot;+TempUser.getInstance().getCognomeT()+</span>
-<span class="nc" id="L237">						&quot;\t&quot;+TempUser.getInstance().getEmailT()+&quot;\t&quot;+TempUser.getInstance().getDescrizioneT()+&quot;\t&quot;+TempUser.getInstance().getDataDiNascitaT().toString()+&quot;\n&quot;);</span>
+<span class="fc" id="L214">				TempUser.getInstance().setId(rs.getInt(1));</span>
+<span class="fc" id="L215">				TempUser.getInstance().setIdRuolo(rs.getString(2));</span>
+<span class="fc" id="L216">				TempUser.getInstance().setNomeT(rs.getString(3));</span>
+<span class="fc" id="L217">				TempUser.getInstance().setCognomeT(rs.getString(4));</span>
+<span class="fc" id="L218">				TempUser.getInstance().setEmailT(rs.getString(5));</span>
+<span class="fc" id="L219">				TempUser.getInstance().setDescrizioneT(rs.getString(7));</span>
+<span class="fc" id="L220">				TempUser.getInstance().setDataDiNascitaT(rs.getDate(8).toLocalDate());</span>
+<span class="fc" id="L221">				bU.write(&quot;&quot;+TempUser.getInstance().getId()+&quot;\t&quot;+TempUser.getInstance().getIdRuolo()+&quot;\t&quot;+TempUser.getInstance().getNomeT()+&quot;\t&quot;+TempUser.getInstance().getCognomeT()+</span>
+<span class="fc" id="L222">						&quot;\t&quot;+TempUser.getInstance().getEmailT()+&quot;\t&quot;+TempUser.getInstance().getDescrizioneT()+&quot;\t&quot;+TempUser.getInstance().getDataDiNascitaT().toString()+&quot;\n&quot;);</span>
 				
 				
-<span class="nc" id="L240">				s.append(&quot;&quot;);</span>
-<span class="nc" id="L241">				s.append(rs.getInt(1));</span>
-<span class="nc" id="L242">				s.append(&quot;\t&quot;);</span>
-
-<span class="nc" id="L244">				s.append(rs.getString(2));</span>
-<span class="nc" id="L245">				s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L246">				s.append(rs.getString(3));</span>
-<span class="nc" id="L247">				s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L248">				s.append(rs.getString(4));</span>
-<span class="nc" id="L249">				s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L250">				s.append(rs.getString(5));</span>
-<span class="nc" id="L251">				s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L252">				s.append(rs.getString(7));</span>
-<span class="nc" id="L253">				s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L254">				s.append(rs.getDate(8));</span>
-<span class="nc" id="L255">				s.append(&quot;\n&quot;);</span>
+				
+<span class="fc" id="L226">				s.append(TempUser.getInstance().getId());</span>
+<span class="fc" id="L227">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L228">				s.append(TempUser.getInstance().getIdRuolo());</span>
+<span class="fc" id="L229">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L230">				s.append(TempUser.getInstance().getNomeT());</span>
+<span class="fc" id="L231">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L232">				s.append(TempUser.getInstance().getCognomeT());</span>
+<span class="fc" id="L233">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L234">				s.append(TempUser.getInstance().getEmailT());</span>
+<span class="fc" id="L235">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L236">				s.append(TempUser.getInstance().getDescrizioneT());</span>
+<span class="fc" id="L237">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L238">				s.append(TempUser.getInstance().getDataDiNascitaT().toString());</span>
+<span class="fc" id="L239">				s.append(&quot;\n&quot;);</span>
 				
 			}
-<span class="nc" id="L258">		}catch(SQLException  e)</span>
+<span class="nc" id="L242">		}catch(SQLException  e)</span>
 			{
-<span class="nc" id="L260">			java.util.logging.Logger.getLogger(&quot;lista utenti&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta .&quot;,e);</span>
+<span class="nc" id="L244">			java.util.logging.Logger.getLogger(&quot;lista utenti&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta .&quot;,e);</span>
 
 			}
-<span class="nc" id="L263">			b.flush();</span>
-<span class="nc" id="L264">			return s.toString();</span>
+<span class="fc" id="L247">			bU.flush();</span>
+<span class="fc" id="L248">			return s.toString();</span>
 		
 		}
 		

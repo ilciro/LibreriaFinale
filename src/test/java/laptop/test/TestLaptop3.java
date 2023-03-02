@@ -26,6 +26,7 @@ import laptop.model.TempUser;
 import laptop.model.User;
 import laptop.model.raccolta.Rivista;
 
+
 class TestLaptop3 {
 	private PagamentoDao pD=new PagamentoDao();
 	private Pagamento p;

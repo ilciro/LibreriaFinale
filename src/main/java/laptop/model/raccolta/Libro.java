@@ -223,10 +223,12 @@ public class Libro implements Raccolta {
 
 	@Override
 	public void scarica() throws DocumentException, IOException {
-		File file=null;
-		File dirToOpen=null;
-		file = new File(url);
 		Desktop desktop=null;
+		File dirToOpen=null;
+		File file;
+
+
+		file = new File(url);
 		file.mkdir();
 
 
@@ -235,7 +237,6 @@ public class Libro implements Raccolta {
 			dirToOpen = new File(url);
 
 			desktop.open(dirToOpen);
-
 		
 
 	}
