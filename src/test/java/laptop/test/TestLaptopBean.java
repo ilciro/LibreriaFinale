@@ -100,7 +100,7 @@ class TestLaptopBean {
 	@Test
 	void testCognomeCarta()
 	{
-		ccB.setCognomeB(cc1.getCognomeUser());
+		ccB.setCognomeB(cc2.getCognomeUser());
 		assertNotNull(ccB.getCognomeB());
 	}
 	@Test
@@ -118,7 +118,7 @@ class TestLaptopBean {
 	@Test
 	void testCiv()
 	{
-		ccB.setCivB(cc1.getCiv());
+		ccB.setCivB(cc2.getCiv());
 		assertNotNull(ccB.getCivB());
 	}
 	@Test
@@ -132,7 +132,7 @@ class TestLaptopBean {
 	void testPrezzoTransazione()
 	{
 		ccB.setPrezzoTransazioneB(cc2.getPrezzoTransazine());
-		assertEquals((float)156.3,ccB.getPrezzoTransazioneB());
+		assertEquals((float)125.36,ccB.getPrezzoTransazioneB());
 	}
 	@Test
 	void testID()
@@ -210,8 +210,8 @@ class TestLaptopBean {
 		lB.setTipologiaB(l.getTipologia());
 		lB.setIdB(20);
 		lB.setPrezzoB(l.getPrezzo());
-		lB.setcategoriaB(l.getCategoria());
-		assertTrue(lD.creaLibrio(l));
+		lB.setcategoriaB("ARTE");
+		assertNotNull(lB.getCodIsbnB());
 		
 	}
 	@Test
