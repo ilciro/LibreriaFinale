@@ -599,6 +599,14 @@ class TestLaptop2 {
 	void testGetIdOggetto() {
 		assertNotEquals(0,p2.getId());
 	}
+	@Test 
+	void testGiornaleId()
+	{
+		vis.setId(5);
+		g.setId(1);
+		assertNotNull(gD.getTitolo(g));
+		
+	}
 	
 
 

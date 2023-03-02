@@ -329,7 +329,18 @@ class TestLaptop3 {
 		User.getInstance().setId(5);
 		assertTrue(cCU.cancellaUser());
 	}
-
+	@Test
+	void testDispRivista() throws SQLException
+	{
+		r.setId(1);
+		assertNotNull(rD.getDisp(r));
+	}
+	@Test
+	void testGetTitoloRivista()
+	{
+		r.setId(5);
+		assertNotNull(rD.getTitolo(r));
+	}
 	
 
 }

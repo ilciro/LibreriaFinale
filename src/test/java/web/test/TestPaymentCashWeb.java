@@ -76,7 +76,7 @@ import org.junit.jupiter.api.ClassOrderer;
 		WebElement 	buttonConferma=driver.findElement(By.xpath("//input[@id='buttonC']"));
 
 		buttonConferma.click();
-		//driver.findElement(By.xpath("//input[@id='downloadB']")).click();
+		driver.findElement(By.xpath("//input[@id='downloadB']")).click();
 		assertEquals(idPreso,4);
 	}
 	@AfterEach

@@ -66,6 +66,7 @@ class TestLaptop4 {
 	private SystemBean visB=SystemBean.getIstance();
 	private TextAreaBean tAB=new TextAreaBean();
 	private UserBean uB=UserBean.getInstanceB();
+	
 
 	
 
@@ -301,5 +302,42 @@ class TestLaptop4 {
 		uB.setDataDiNascitaB(LocalDate.of(1936, 8,11));
 		uB.setIdRuolo("EDITORE");
 		assertNotNull(uB.getEmailB());
+	}
+	@Test
+	void testCreaLibroBean()
+	{
+		lB.setTitoloB("libro prova");
+		lB.setCodIsbnB("1526369845");
+		lB.setEditoreB("editore prova");
+		lB.setAutoreB("autore prova");
+		lB.setLinguaB("de");
+		lB.setDateB(dataS);
+		lB.setRecensioneB(" autore cimentato in nuova avventura ");
+		lB.setNrCopieB(150);
+		lB.setRecensioneB("primo manuale in tedesco");
+		lB.setDisponibilitaB(1);
+		lB.setDataPubbB(LocalDate.now());
+		lB.setNrCopieB(47);
+		lB.setTipologiaB("INFORMATICA");
+		lB.setcategoriaB("FAMIGLIA");
+		assertNotNull(lB.getCodIsbnB());
+	}
+	@Test
+	void testLibriBean() throws SQLException
+	{
+		lB.setListaLibriB(lD.getLibri());
+		assertNotNull(lB.getListaLibriB());
+	}
+	@Test
+	void testCategorieLibriBean()
+	{
+		assertNotNull(lB.setCategorie());
+	}
+	@ParameterizedTest
+	@ValueSource(strings = {"BIOGRAFIE","DIARI_MEMORIE","DIZINARI_OPERE","FANTASCIENZA_FANTASY","GIALLI_THRILLER","LIBRI_SCOLASTICI","LIBRI_UNIVERSITARI"})
+	void testCategorie(String strings)
+	{
+		lB.setcategoriaB(strings);
+		assertEquals(lB.getCategoriaB(),strings);
 	}
 }
