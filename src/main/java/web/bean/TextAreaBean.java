@@ -93,15 +93,15 @@ public class TextAreaBean {
 		        			PreparedStatement prepQ=conn.prepareStatement(query2);)
 		        	{
 		        		
-		        		ResultSet rs=prepQ.executeQuery();
+		        		ResultSet rsR=prepQ.executeQuery();
 				
 		           
-		            while(rs.next())
+		            while(rsR.next())
 		            {
 		        		
 		        					
 				
-		        		bR.write("Rivista :\n"+titolo+rs.getString(1)+"\t"+"Editore rivista :"+rs.getString(2)+"\t"+ricavoTotale+ "delle riviste" +rs.getInt(3)*rs.getFloat(4)+"\n");
+		        		bR.write("Rivista :\n"+titolo+rsR.getString(1)+"\t"+"Editore rivista :"+rsR.getString(2)+"\t"+ricavoTotale+ "delle riviste" +rsR.getInt(3)*rsR.getFloat(4)+"\n");
 
 
 
@@ -110,15 +110,15 @@ public class TextAreaBean {
 		     			
 		     			s.append(titolo);
 						s.append("\t");
-						s.append(rs.getString(1));
+						s.append(rsR.getString(1));
 						s.append("\t");
 						s.append("editore :");
 						s.append("\t");
-						s.append(rs.getString(2));
+						s.append(rsR.getString(2));
 						s.append("\t");
 						s.append(ricavoTotale);
 						s.append("\t");
-						s.append(rs.getInt(3)*rs.getFloat(4));
+						s.append(rsR.getInt(3)*rsR.getFloat(4));
 						s.append("\n");
 
 
@@ -127,7 +127,7 @@ public class TextAreaBean {
 		            }
 		        	}catch(SQLException e)
 		        	{
-		    			java.util.logging.Logger.getLogger("report R").log(Level.INFO, "report riviste {0}.",e);
+		    			java.util.logging.Logger.getLogger("report R").log(Level.INFO, "report riviste ",e);
 		        	}
 		        	return s.toString();
 		     
@@ -144,21 +144,16 @@ public class TextAreaBean {
 					   PreparedStatement prepQ=conn.prepareStatement(query3);)
 			   {
 				  
-				   ResultSet rs=prepQ.executeQuery();
+				   ResultSet rsG=prepQ.executeQuery();
 
-			while(rs.next())
+			while(rsG.next())
 			{
 
 
 
-				rs.getString(1);
-				rs.getString(2);
-				rs.getInt(3);
-				rs.getFloat(4);
 
 
-
-				bG.write("Riepigolo Giornale :\n"+titolo+rs.getString(1)+"\t"+"Editore del giornale :"+rs.getString(2)+"\t"+ricavoTotale +"dei giornali :" +rs.getInt(3)*rs.getFloat(4)+"\n");
+				bG.write("Riepigolo Giornale :\n"+titolo+rsG.getString(1)+"\t"+"Editore del giornale :"+rsG.getString(2)+"\t"+ricavoTotale +"dei giornali :" +rsG.getInt(3)*rsG.getFloat(4)+"\n");
 
 
 
@@ -167,15 +162,15 @@ public class TextAreaBean {
 				
 				s.append(titolo);
 				s.append("\t");
-				s.append(rs.getString(1));
+				s.append(rsG.getString(1));
 				s.append("\t");
 				s.append("editore :");
 				s.append("\t");
-				s.append(rs.getString(2));
+				s.append(rsG.getString(2));
 				s.append("\t");
 				s.append(ricavoTotale);
 				s.append("\t");
-				s.append(rs.getInt(3)*rs.getFloat(4));
+				s.append(rsG.getInt(3)*rsG.getFloat(4));
 				s.append("\n");
 
 
@@ -186,7 +181,7 @@ public class TextAreaBean {
 
 			}catch(SQLException e)
 			   {
-				java.util.logging.Logger.getLogger("report g").log(Level.INFO, "report giornali {0}.",e);
+				java.util.logging.Logger.getLogger("report g").log(Level.INFO, "report giornali {0}",e);
 
 			   }
 
