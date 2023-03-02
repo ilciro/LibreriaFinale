@@ -88,7 +88,7 @@ public class TextAreaBean {
 				w2=new FileWriter(rB.getString("riviste"));
 		        
 		        
-		        try (BufferedWriter b=new BufferedWriter (w2)){
+		        try (BufferedWriter bR=new BufferedWriter (w2)){
 		        	try(Connection conn=ConnToDb.generalConnection();
 		        			PreparedStatement prepQ=conn.prepareStatement(query2);)
 		        	{
@@ -101,12 +101,12 @@ public class TextAreaBean {
 		        		
 		        					
 				
-		        		b.write("Rivista :\n"+titolo+rs.getString(1)+"\t"+"Editore rivista :"+rs.getString(2)+"\t"+ricavoTotale+ "delle riviste" +rs.getInt(3)*rs.getFloat(4)+"\n");
+		        		bR.write("Rivista :\n"+titolo+rs.getString(1)+"\t"+"Editore rivista :"+rs.getString(2)+"\t"+ricavoTotale+ "delle riviste" +rs.getInt(3)*rs.getFloat(4)+"\n");
 
 
 
 
-		     			b.flush();
+		     			bR.flush();
 		     			
 		     			s.append(titolo);
 						s.append("\t");
@@ -127,7 +127,7 @@ public class TextAreaBean {
 		            }
 		        	}catch(SQLException e)
 		        	{
-		    			java.util.logging.Logger.getLogger("report R").log(Level.INFO, "report riviste {0}.",e.toString());
+		    			java.util.logging.Logger.getLogger("report R").log(Level.INFO, "report riviste {0}.",e);
 		        	}
 		        	return s.toString();
 		     
@@ -139,7 +139,7 @@ public class TextAreaBean {
 		StringBuilder s=new StringBuilder();
 		String query3="select titolo,editore,copiRim,prezzo as totale  from ispw.giornale";
 		w3=new FileWriter(rB.getString("giornali"));
-		   try (BufferedWriter b=new BufferedWriter (w3)){
+		   try (BufferedWriter bG=new BufferedWriter (w3)){
 			   try(Connection conn=ConnToDb.generalConnection();
 					   PreparedStatement prepQ=conn.prepareStatement(query3);)
 			   {
@@ -158,12 +158,12 @@ public class TextAreaBean {
 
 
 
-				b.write("Riepigolo Giornale :\n"+titolo+rs.getString(1)+"\t"+"Editore del giornale :"+rs.getString(2)+"\t"+ricavoTotale +"dei giornali :" +rs.getInt(3)*rs.getFloat(4)+"\n");
+				bG.write("Riepigolo Giornale :\n"+titolo+rs.getString(1)+"\t"+"Editore del giornale :"+rs.getString(2)+"\t"+ricavoTotale +"dei giornali :" +rs.getInt(3)*rs.getFloat(4)+"\n");
 
 
 
 
-				b.flush();
+				bG.flush();
 				
 				s.append(titolo);
 				s.append("\t");
@@ -186,7 +186,7 @@ public class TextAreaBean {
 
 			}catch(SQLException e)
 			   {
-				java.util.logging.Logger.getLogger("report g").log(Level.INFO, "report giornali {0}.",e.toString());
+				java.util.logging.Logger.getLogger("report g").log(Level.INFO, "report giornali {0}.",e);
 
 			   }
 
@@ -226,21 +226,20 @@ public class TextAreaBean {
 						"\t"+TempUser.getInstance().getEmailT()+"\t"+TempUser.getInstance().getDescrizioneT()+"\t"+TempUser.getInstance().getDataDiNascitaT().toString()+"\n");
 				
 				
-				s.append("");
-				s.append(rs.getInt(1));
+				
+				s.append(TempUser.getInstance().getId());
 				s.append("\t");
-
-				s.append(rs.getString(2));
+				s.append(TempUser.getInstance().getIdRuolo());
 				s.append("\t");
-				s.append(rs.getString(3));
+				s.append(TempUser.getInstance().getNomeT());
 				s.append("\t");
-				s.append(rs.getString(4));
+				s.append(TempUser.getInstance().getCognomeT());
 				s.append("\t");
-				s.append(rs.getString(5));
+				s.append(TempUser.getInstance().getEmailT());
 				s.append("\t");
-				s.append(rs.getString(7));
+				s.append(TempUser.getInstance().getDescrizioneT());
 				s.append("\t");
-				s.append(rs.getDate(8));
+				s.append(TempUser.getInstance().getDataDiNascitaT().toString());
 				s.append("\n");
 				
 			}
