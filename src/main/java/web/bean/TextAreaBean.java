@@ -181,7 +181,8 @@ public class TextAreaBean {
 
 			}catch(SQLException e)
 			   {
-				java.util.logging.Logger.getLogger("report g").log(Level.INFO, "report giornali {0}",e);
+				java.util.logging.Logger.getLogger("report g ").log(Level.INFO, "report giornali eccezione ",e);
+
 
 			   }
 
