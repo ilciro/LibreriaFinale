@@ -106,9 +106,7 @@ public class UserBean {
 		return rB;
 	}
 
-	public void setrB(String rB) {
-		this.rB = rB;
-	}
+	
 
 	public String getMexB() {
 		return mexB;

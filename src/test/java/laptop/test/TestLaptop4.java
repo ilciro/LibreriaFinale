@@ -344,5 +344,12 @@ class TestLaptop4 {
 	{
 		assertNotNull(rivB.elencoCategorie());
 	}
+	@ParameterizedTest
+	@ValueSource(strings= {"ADMIN","SCRITTORE","UTENTE","EDITORE"})
+	void testUserBeanType(String strings)
+	{
+		uB.setIdRuolo(strings);
+		assertEquals(uB.getrB(),strings);
+	}
 	
 }

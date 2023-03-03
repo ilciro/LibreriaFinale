@@ -610,6 +610,5 @@ class TestLaptop2 {
 	
 
 
-
 	
 }
