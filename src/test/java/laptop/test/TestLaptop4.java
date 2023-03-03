@@ -67,9 +67,7 @@ class TestLaptop4 {
 	private TextAreaBean tAB=new TextAreaBean();
 	private UserBean uB=UserBean.getInstanceB();
 	
-
 	
-
 	
 
 	@Test
@@ -338,6 +336,6 @@ class TestLaptop4 {
 	void testCategorie(String strings)
 	{
 		lB.setcategoriaB(strings);
-		assertEquals(lB.getCategoriaB(),strings);
+		assertEquals(lB.getcategoriaB(),strings);
 	}
 }

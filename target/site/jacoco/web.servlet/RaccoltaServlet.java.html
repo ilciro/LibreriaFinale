@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RaccoltaServlet.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">web.servlet</a> &gt; <span class="el_source">RaccoltaServlet.java</span></div><h1>RaccoltaServlet.java</h1><pre class="source lang-java linenums">package web.servlet;
+
+import java.io.IOException;
+import java.util.logging.Level;
+
+import laptop.exception.LogoutException;
+import web.bean.SystemBean;
+import web.bean.UserBean;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet(&quot;/RaccoltaServlet&quot;)
+<span class="nc" id="L17">public class RaccoltaServlet extends HttpServlet {</span>
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+<span class="nc" id="L23">	private static String gestioneOggetto=&quot;/gestioneOggetto.jsp&quot;;</span>
+<span class="nc" id="L24">	private static String beanS=&quot;beanS&quot;;</span>
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+<span class="nc" id="L28">		String libro=req.getParameter(&quot;buttonL&quot;);</span>
+<span class="nc" id="L29">		String giornale=req.getParameter(&quot;buttonG&quot;);</span>
+<span class="nc" id="L30">		String rivista=req.getParameter(&quot;buttonR&quot;);</span>
+<span class="nc" id="L31">		String logout=req.getParameter(&quot;buttonLog&quot;);</span>
+		try {
+<span class="nc bnc" id="L33" title="All 4 branches missed.">		if(libro!=null &amp;&amp; libro.equals(&quot;libri&quot;))</span>
+			{
+<span class="nc" id="L35">				SystemBean.getIstance().setTypeAsBook();</span>
+<span class="nc" id="L36">				req.setAttribute(beanS,SystemBean.getIstance());</span>
+<span class="nc" id="L37">				RequestDispatcher view = getServletContext().getRequestDispatcher(gestioneOggetto); </span>
+<span class="nc" id="L38">				view.forward(req,resp);</span>
+			}
+<span class="nc bnc" id="L40" title="All 4 branches missed.">		if(giornale!=null &amp;&amp; giornale.equals(&quot;giornali&quot;) )</span>
+		{
+<span class="nc" id="L42">			SystemBean.getIstance().setTypeAsDaily();</span>
+<span class="nc" id="L43">			req.setAttribute(beanS,SystemBean.getIstance());</span>
+<span class="nc" id="L44">			RequestDispatcher view = getServletContext().getRequestDispatcher(gestioneOggetto); </span>
+<span class="nc" id="L45">			view.forward(req,resp);</span>
+		}
+<span class="nc bnc" id="L47" title="All 4 branches missed.">		if(rivista!=null &amp;&amp; rivista.equals(&quot;riviste&quot;))</span>
+		{
+<span class="nc" id="L49">			SystemBean.getIstance().setTypeAsMagazine();</span>
+<span class="nc" id="L50">			req.setAttribute(beanS,SystemBean.getIstance());</span>
+<span class="nc" id="L51">			RequestDispatcher view = getServletContext().getRequestDispatcher(gestioneOggetto); </span>
+<span class="nc" id="L52">			view.forward(req,resp);</span>
+		}
+<span class="nc bnc" id="L54" title="All 4 branches missed.">		if(logout!=null &amp;&amp; logout.equals(&quot;logout&quot;))</span>
+		{
+			
+<span class="nc" id="L57">				logout();</span>
+<span class="nc bnc" id="L58" title="All 2 branches missed.">				if(!SystemBean.getIstance().getIsLogged())</span>
+				{
+<span class="nc" id="L60">					RequestDispatcher view = getServletContext().getRequestDispatcher(&quot;/index.jsp&quot;); </span>
+<span class="nc" id="L61">					view.forward(req,resp);</span>
+				}
+			
+		}
+<span class="nc" id="L65">		} catch (LogoutException e) {</span>
+<span class="nc" id="L66">			java.util.logging.Logger.getLogger(&quot;post &quot;).log(Level.INFO, &quot;eccezione nel post {0}.&quot;,e.toString());</span>
+
+		}
+			
+			
+<span class="nc" id="L71">	}</span>
+	
+	public static boolean logout() throws LogoutException 
+	{	
+		
+<span class="nc" id="L76">		String n = UserBean.getInstance().getNome();</span>
+<span class="nc" id="L77">		java.util.logging.Logger.getLogger(&quot;Test logout&quot;).log(Level.INFO, &quot;stai sloggando come {0}&quot; ,n);</span>
+		
+<span class="nc bnc" id="L79" title="All 2 branches missed.">		if (n==null)</span>
+		{
+<span class="nc" id="L81">			throw new LogoutException(&quot;Errore Logout&quot;);</span>
+
+		}
+		else {
+<span class="nc" id="L85">			 UserBean.getInstance().setId(-1);</span>
+<span class="nc" id="L86">			 UserBean.getInstance().setNome(null);</span>
+<span class="nc" id="L87">			 UserBean.getInstance().setCognome(null);</span>
+<span class="nc" id="L88">			 UserBean.getInstance().setDataDiNascita(null);</span>
+<span class="nc" id="L89">			 UserBean.getInstance().setDescrizione(null);</span>
+<span class="nc" id="L90">			 UserBean.getInstance().setEmail(null);</span>
+<span class="nc" id="L91">			 UserBean.getInstance().setPassword(null);</span>
+		
+		
+<span class="nc" id="L94">		java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, &quot;stai sloggando {0}&quot;, UserBean.getInstance().getEmail());</span>
+<span class="nc" id="L95">			SystemBean.getIstance().setIsLogged(false);</span>
+<span class="nc" id="L96">			return true;</span>
+		}
+
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

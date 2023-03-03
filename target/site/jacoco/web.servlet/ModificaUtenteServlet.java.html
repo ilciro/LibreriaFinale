@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ModificaUtenteServlet.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">web.servlet</a> &gt; <span class="el_source">ModificaUtenteServlet.java</span></div><h1>ModificaUtenteServlet.java</h1><pre class="source lang-java linenums">package web.servlet;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+
+import laptop.database.UsersDao;
+import web.bean.SystemBean;
+import web.bean.UserBean;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import laptop.model.TempUser;
+import laptop.model.User;
+
+@WebServlet(&quot;/ModificaUtenteServlet&quot;)
+<span class="nc" id="L22">public class ModificaUtenteServlet extends HttpServlet{</span>
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+<span class="nc" id="L31">		String genera=req.getParameter(&quot;generaB&quot;);</span>
+<span class="nc" id="L32">		String aggiorna=req.getParameter(&quot;buttonI&quot;);</span>
+<span class="nc" id="L33">		String indietro=req.getParameter(&quot;buttonA&quot;);</span>
+		try {
+<span class="nc bnc" id="L35" title="All 4 branches missed.">			if(genera!=null &amp;&amp;genera.equals(&quot;prendi valori&quot;))</span>
+			{
+<span class="nc" id="L37">				User.getInstance().setId(SystemBean.getIstance().getId());</span>
+<span class="nc" id="L38">				UsersDao.getTempUserSingolo(TempUser.getInstance());</span>
+				
+				
+<span class="nc" id="L41">				UserBean.getInstance().setIdRuolo(TempUser.getInstance().getIdRuolo());</span>
+<span class="nc" id="L42">				UserBean.getInstance().setNome(TempUser.getInstance().getNomeT());</span>
+<span class="nc" id="L43">				UserBean.getInstance().setCognome(User.getInstance().getCognome());</span>
+<span class="nc" id="L44">				UserBean.getInstance().setEmail(User.getInstance().getEmail());</span>
+<span class="nc" id="L45">				UserBean.getInstance().setPassword(TempUser.getInstance().getPasswordT());</span>
+<span class="nc" id="L46">				UserBean.getInstance().setDescrizione(TempUser.getInstance().getDescrizioneT());</span>
+<span class="nc" id="L47">				UserBean.getInstance().setDataDiNascita(TempUser.getInstance().getDataDiNascitaT());</span>
+				
+<span class="nc" id="L49">				req.setAttribute(&quot;beanUb&quot;,UserBean.getInstance());</span>
+<span class="nc" id="L50">				RequestDispatcher view=getServletContext().getRequestDispatcher(&quot;/modificaUtente.jsp&quot;);</span>
+<span class="nc" id="L51">				view.forward(req, resp);</span>
+				
+			}
+<span class="nc bnc" id="L54" title="All 4 branches missed.">			if(aggiorna!=null &amp;&amp; aggiorna.equals(&quot;aggiorna&quot;))</span>
+			{
+<span class="nc" id="L56">				String ruoloN=req.getParameter(&quot;ruoloNL&quot;);</span>
+<span class="nc" id="L57">				String nomeN=req.getParameter(&quot;nomeNL&quot;);</span>
+<span class="nc" id="L58">				String cognomeN=req.getParameter(&quot;cognomeNL&quot;);</span>
+<span class="nc" id="L59">				String emailN=req.getParameter(&quot;emailNL&quot;);</span>
+<span class="nc" id="L60">				String passN=req.getParameter(&quot;passNL&quot;);</span>
+<span class="nc" id="L61">				String descN=req.getParameter(&quot;descNL&quot;);</span>
+<span class="nc" id="L62">				String dataN=req.getParameter(&quot;dataNL&quot;);//cast</span>
+				
+<span class="nc" id="L64">				UserBean.getInstance().setId(SystemBean.getIstance().getId());</span>
+<span class="nc" id="L65">				UserBean.getInstance().setIdRuolo(ruoloN);</span>
+<span class="nc" id="L66">				UserBean.getInstance().setNome(nomeN);</span>
+<span class="nc" id="L67">				UserBean.getInstance().setCognome(cognomeN);</span>
+<span class="nc" id="L68">				UserBean.getInstance().setEmail(emailN);</span>
+<span class="nc" id="L69">				UserBean.getInstance().setPassword(passN);</span>
+<span class="nc" id="L70">				UserBean.getInstance().setDescrizione(descN);</span>
+				java.util.Date utilDate;
+			     java.sql.Date sqlDate;
+<span class="nc" id="L73">				SimpleDateFormat format = new SimpleDateFormat(&quot;yyyy/MM/dd&quot;);</span>
+				
+			    
+<span class="nc" id="L76">		         utilDate = format.parse(dataN);</span>
+<span class="nc" id="L77">		        sqlDate = new java.sql.Date(utilDate.getTime());</span>
+		        
+<span class="nc" id="L79">		        UserBean.getInstance().setDataDiNascita(sqlDate.toLocalDate());</span>
+		        
+<span class="nc" id="L81">		        User.getInstance().setId(UserBean.getInstance().getId());</span>
+<span class="nc" id="L82">		        User.getInstance().setIdRuolo(UserBean.getInstance().getIdRuolo());</span>
+<span class="nc" id="L83">		        User.getInstance().setNome(UserBean.getInstance().getNome());</span>
+<span class="nc" id="L84">		        User.getInstance().setCognome(UserBean.getInstance().getCognome());</span>
+<span class="nc" id="L85">		        User.getInstance().setEmail(UserBean.getInstance().getEmail());</span>
+<span class="nc" id="L86">		        User.getInstance().setPassword(UserBean.getInstance().getPassword());</span>
+<span class="nc" id="L87">		        User.getInstance().setDescrizione(UserBean.getInstance().getDescrizione());</span>
+<span class="nc" id="L88">		        User.getInstance().setDataDiNascita(UserBean.getInstance().getDataDiNascita());</span>
+		        
+<span class="nc bnc" id="L90" title="All 2 branches missed.">		        if(UsersDao.aggiornaUtente(User.getInstance())!=null)</span>
+		        {
+<span class="nc" id="L92">		        	RequestDispatcher view=getServletContext().getRequestDispatcher(&quot;/gestioneUtente.jsp&quot;);</span>
+<span class="nc" id="L93">					view.forward(req, resp);</span>
+<span class="nc" id="L94">		        }</span>
+		        else {
+<span class="nc" id="L96">		        	UserBean.getInstance().setMex(&quot;Aggiornamento NON andato a buon fine&quot;);</span>
+<span class="nc" id="L97">		        	req.setAttribute(&quot;beanUb&quot;, UserBean.getInstance());</span>
+<span class="nc" id="L98">		        	RequestDispatcher view=getServletContext().getRequestDispatcher(&quot;/modificaUtente.jsp&quot;);</span>
+<span class="nc" id="L99">					view.forward(req, resp);</span>
+		        }
+		        
+				
+			}
+<span class="nc bnc" id="L104" title="All 4 branches missed.">			if(indietro!=null &amp;&amp; indietro.equals(&quot;indietro&quot;))</span>
+			{
+<span class="nc" id="L106">				RequestDispatcher view=getServletContext().getRequestDispatcher(&quot;/gestioneUtente.jsp&quot;);</span>
+<span class="nc" id="L107">				view.forward(req, resp);</span>
+			}
+<span class="nc" id="L109">		}catch(SQLException | ParseException e)</span>
+		{
+<span class="nc" id="L111">			java.util.logging.Logger.getLogger(&quot;post &quot;).log(Level.INFO, &quot;eccezione nel post {0}.&quot;,e.toString());</span>
+
+		}
+<span class="nc" id="L114">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

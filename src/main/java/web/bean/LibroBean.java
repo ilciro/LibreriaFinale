@@ -223,118 +223,6 @@ public class LibroBean {
 		}
 
 
-
-
-
-
-
-	public void setcategoriaB(String categoriaB) {
-		switch (categoriaB){
-		case "ADOLESCENTI_RAGAZZI": 
-			this.setcategoriaB(CategorieLibro.ADOLESCENTI_RAGAZZI.toString());  
-			break;
-		case "ARTE": 
-			this.setcategoriaB(CategorieLibro.ARTE.toString());  
-			break;
-		case "CINEMA_FOTOGRAFIA" : 
-			this.setcategoriaB(CategorieLibro.CINEMA_FOTOGRAFIA.toString());  
-			break;
-		case "BIOGRAFIE" : 
-			this.setcategoriaB(CategorieLibro.BIOGRAFIE.toString());  
-			break;
-		case "DIARI_MEMORIE" : 
-			this.setcategoriaB(CategorieLibro.DIARI_MEMORIE.toString());  
-			break;
-		case "CALENDARI_AGENDE" : 
-			this.setcategoriaB(CategorieLibro.CALENDARI_AGENDE.toString());  
-			break;
-		case "DIRITTO" : 
-			this.setcategoriaB(CategorieLibro.DIRITTO.toString());  
-			break;
-		case "DIZINARI_OPERE" : 
-			this.setcategoriaB(CategorieLibro.DIZINARI_OPERE.toString());  
-			break;
-		case "ECONOMIA" : 
-			this.setcategoriaB(CategorieLibro.ECONOMIA.toString());  
-			break;
-		case "FAMIGLIA" : 
-			this.setcategoriaB(CategorieLibro.FAMIGLIA.toString());  
-			break;
-		case "SALUTE_BENESSERE" : 
-			this.setcategoriaB(CategorieLibro.SALUTE_BENESSERE.toString());  
-			break;
-		case "FANTASCIENZA_FANTASY" : 
-			this.setcategoriaB(CategorieLibro.FANTASCIENZA_FANTASY.toString());  
-			break;
-		case "FUMETTI_MANGA" : 
-			this.setcategoriaB(CategorieLibro.FUMETTI_MANGA.toString());  
-			break;
-		case "GIALLI_THRILLER" : 
-			this.setcategoriaB(CategorieLibro.GIALLI_THRILLER.toString());  
-			break;		
-		case "COMPUTER_GIOCHI" : 
-			this.setcategoriaB(CategorieLibro.COMPUTER_GIOCHI.toString());  
-			break;
-		case "HUMOR" : 
-			this.setcategoriaB(CategorieLibro.HUMOR.toString());  
-			break;
-		case "INFORMATICA" : 
-			this.setcategoriaB(CategorieLibro.INFORMATICA.toString());  
-			break;		
-		case "WEB_DIGITAL_MEDIA" : 
-			this.setcategoriaB(CategorieLibro.WEB_DIGITAL_MEDIA.toString());  
-			break;		
-		case "LETTERATURA_NARRATIVA" : 
-			this.setcategoriaB(CategorieLibro.LETTERATURA_NARRATIVA.toString());  
-			break;		
-		case "LIBRI_BAMBINI" : 
-			this.setcategoriaB(CategorieLibro.LIBRI_BAMBINI.toString());  
-			break;		
-		case "LIBRI_SCOLASTICI" : 
-			this.setcategoriaB(CategorieLibro.LIBRI_SCOLASTICI.toString());  
-			break;
-		case "LIBRI_UNIVERSITARI" : 
-			this.setcategoriaB(CategorieLibro.LIBRI_UNIVERSITARI.toString());  
-			break;			
-		case "RICETTARI_GENERALI" : 
-			this.setcategoriaB(CategorieLibro.RICETTARI_GENERALI.toString());  
-			break;	
-		case "LINGUISTICA_SCRITTURA" : 
-			this.setcategoriaB(CategorieLibro.LINGUISTICA_SCRITTURA.toString());  
-			break;
-		case "POLITICA" : 
-			this.setcategoriaB(CategorieLibro.POLITICA.toString());  
-			break;
-		case "RELIGIONE" : 
-			this.setcategoriaB(CategorieLibro.RELIGIONE.toString());  
-			break;
-		case "ROMANZI_ROSA" : 
-			this.setcategoriaB(CategorieLibro.ROMANZI_ROSA.toString());  
-			break;		
-		case "SCIENZE" : 
-			this.setcategoriaB(CategorieLibro.SCIENZE.toString());  
-			break;		
-		case "TECNOLOGIA_MEDICINA" : 
-			this.setcategoriaB(CategorieLibro.TECNOLOGIA_MEDICINA.toString());  
-			break;
-		
-		default :
-			this.setcategoriaB(null);
-			break;
-		}
-		
-	}
-
-
-
-
-
-
-
-
-
-
-
 	public ObservableList<Raccolta> getListaLibriB() {
 		return listaLibriB;
 	}
@@ -355,6 +243,108 @@ public class LibroBean {
 
 
 
+	public String getcategoriaB() {
+		return this.categoriaB;
+	}
+
+
+	public void setcategoriaB(String categoriaB) {
+		switch (categoriaB){
+		case "ADOLESCENTI_RAGAZZI": 
+			this.categoriaB = CategorieLibro.ADOLESCENTI_RAGAZZI.toString();  
+			break;
+		case "ARTE": 
+			this.categoriaB = CategorieLibro.ARTE.toString();  
+			break;
+		case "CINEMA_FOTOGRAFIA" : 
+			this.categoriaB = CategorieLibro.CINEMA_FOTOGRAFIA.toString();  
+			break;
+		case "BIOGRAFIE" : 
+			this.categoriaB = CategorieLibro.BIOGRAFIE.toString();  
+			break;
+		case "DIARI_MEMORIE" : 
+			this.categoriaB = CategorieLibro.DIARI_MEMORIE.toString();  
+			break;
+		case "CALENDARI_AGENDE" : 
+			this.categoriaB = CategorieLibro.CALENDARI_AGENDE.toString();  
+			break;
+		case "DIRITTO" : 
+			this.categoriaB = CategorieLibro.DIRITTO.toString();  
+			break;
+		case "DIZINARI_OPERE" : 
+			this.categoriaB = CategorieLibro.DIZINARI_OPERE.toString();  
+			break;
+		case "ECONOMIA" : 
+			this.categoriaB = CategorieLibro.ECONOMIA.toString();  
+			break;
+		case "FAMIGLIA" : 
+			this.categoriaB = CategorieLibro.FAMIGLIA.toString();  
+			break;
+		case "SALUTE_BENESSERE" : 
+			this.categoriaB = CategorieLibro.SALUTE_BENESSERE.toString();  
+			break;
+		case "FANTASCIENZA_FANTASY" : 
+			this.categoriaB = CategorieLibro.FANTASCIENZA_FANTASY.toString();  
+			break;
+		case "FUMETTI_MANGA" : 
+			this.categoriaB = CategorieLibro.FUMETTI_MANGA.toString();  
+			break;
+		case "GIALLI_THRILLER" : 
+			this.categoriaB = CategorieLibro.GIALLI_THRILLER.toString();  
+			break;		
+		case "COMPUTER_GIOCHI" : 
+			this.categoriaB = CategorieLibro.COMPUTER_GIOCHI.toString();  
+			break;
+		case "HUMOR" : 
+			this.categoriaB = CategorieLibro.HUMOR.toString();  
+			break;
+		case "INFORMATICA" : 
+			this.categoriaB = CategorieLibro.INFORMATICA.toString();  
+			break;		
+		case "WEB_DIGITAL_MEDIA" : 
+			this.categoriaB = CategorieLibro.WEB_DIGITAL_MEDIA.toString();  
+			break;		
+		case "LETTERATURA_NARRATIVA" : 
+			this.categoriaB = CategorieLibro.LETTERATURA_NARRATIVA.toString();  
+			break;		
+		case "LIBRI_BAMBINI" : 
+			this.categoriaB = CategorieLibro.LIBRI_BAMBINI.toString();  
+			break;		
+		case "LIBRI_SCOLASTICI" : 
+			this.categoriaB = CategorieLibro.LIBRI_SCOLASTICI.toString();  
+			break;
+		case "LIBRI_UNIVERSITARI" : 
+			this.categoriaB = CategorieLibro.LIBRI_UNIVERSITARI.toString();  
+			break;			
+		case "RICETTARI_GENERALI" : 
+			this.categoriaB = CategorieLibro.RICETTARI_GENERALI.toString();  
+			break;	
+		case "LINGUISTICA_SCRITTURA" : 
+			this.categoriaB = CategorieLibro.LINGUISTICA_SCRITTURA.toString();  
+			break;
+		case "POLITICA" : 
+			this.categoriaB = CategorieLibro.POLITICA.toString();  
+			break;
+		case "RELIGIONE" : 
+			this.categoriaB = CategorieLibro.RELIGIONE.toString();  
+			break;
+		case "ROMANZI_ROSA" : 
+			this.categoriaB = CategorieLibro.ROMANZI_ROSA.toString();  
+			break;		
+		case "SCIENZE" : 
+			this.categoriaB = CategorieLibro.SCIENZE.toString();  
+			break;		
+		case "TECNOLOGIA_MEDICINA" : 
+			this.categoriaB = CategorieLibro.TECNOLOGIA_MEDICINA.toString();  
+			break;
+		
+		default :
+			this.categoriaB = null;
+			break;
+		}
+	}
+
+
 	public LibroBean()
 	{
 		java.util.logging.Logger.getLogger("libro bean").log(Level.INFO,"costruttore");
@@ -362,13 +352,7 @@ public class LibroBean {
 	}
 
 
-	public String getCategoriaB() {
-		return categoriaB;
-	}
-
-
 	
-
 	
 
 

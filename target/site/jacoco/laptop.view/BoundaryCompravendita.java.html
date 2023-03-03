@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BoundaryCompravendita.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.view</a> &gt; <span class="el_source">BoundaryCompravendita.java</span></div><h1>BoundaryCompravendita.java</h1><pre class="source lang-java linenums">package laptop.view;
+
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+
+import javafx.beans.property.SimpleFloatProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import laptop.controller.ControllerCompravendita;
+import laptop.controller.ControllerSystemState;
+import laptop.exception.IdException;
+import laptop.model.raccolta.Raccolta;
+
+<span class="nc" id="L31">public class BoundaryCompravendita implements Initializable {</span>
+	@FXML
+	private Pane panel;
+	@FXML
+	private Label header;
+	@FXML
+	private TableView&lt;Raccolta&gt; table;
+	@FXML
+<span class="nc" id="L39">	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; titolo = new TableColumn&lt;&gt;(&quot;Titolo&quot;);</span>
+	@FXML
+<span class="nc" id="L41">	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; editore = new TableColumn&lt;&gt;(&quot;Editore&quot;);</span>
+	@FXML
+<span class="nc" id="L43">	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; autore = new TableColumn&lt;&gt;(&quot;Autore&quot;);</span>
+	@FXML
+<span class="nc" id="L45">	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; categoria = new TableColumn&lt;&gt;(&quot;Categoria&quot;);</span>
+	@FXML
+<span class="nc" id="L47">	private TableColumn&lt;Raccolta, SimpleFloatProperty&gt; prezzo = new TableColumn&lt;&gt;(&quot;Prezzo&quot;);</span>
+	@FXML
+<span class="nc" id="L49">	private TableColumn&lt;Raccolta, SimpleIntegerProperty&gt; idLibro = new TableColumn&lt;&gt;(&quot;Id Libro&quot;);</span>
+
+	@FXML
+	private Button buttonL;
+	@FXML
+	private TextField entryText;
+	@FXML
+	private Button buttonV;
+	@FXML
+	private Button buttonA;
+	@FXML
+	private Button buttonI;
+
+	private ControllerCompravendita cCV;
+<span class="nc" id="L63">	private ControllerSystemState vis = ControllerSystemState.getIstance() ;</span>
+	protected Scene scene;
+<span class="nc" id="L65">	private static String titoloS=&quot;titolo&quot;;</span>
+<span class="nc" id="L66">	private static String editoreS=&quot;editore&quot;;</span>
+<span class="nc" id="L67">	private static String prezzoS=&quot;prezzo&quot;;</span>
+
+
+
+	@FXML
+	private void verifica() throws  IOException, SQLException {
+		
+<span class="nc" id="L74">			String i = entryText.getText();</span>
+			
+
+<span class="nc bnc" id="L77" title="All 4 branches missed.">			if(i==null || i.equals(&quot;&quot;))</span>
+			{
+				try {
+<span class="nc" id="L80">					throw new IdException(&quot;id null or empty&quot;);</span>
+					
+<span class="nc" id="L82">				}catch(IdException idE)</span>
+				{
+<span class="nc" id="L84">					java.util.logging.Logger.getLogger(&quot;boundary compravendita&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta {0}.&quot;,idE.toString());</span>
+
+				}
+			}	
+			
+			
+			
+			
+			
+<span class="nc bnc" id="L93" title="All 6 branches missed.">			if( cCV.disponibilitaLibro(i) || cCV.disponibilitaGiornale(i) || cCV.disponibilitaRivista(i))</span>
+			{
+				
+<span class="nc" id="L96">				vis.setId(Integer.parseInt(i));</span>
+				
+			}
+
+			
+			Stage stage;
+<span class="nc" id="L102">			Parent root=null;</span>
+<span class="nc" id="L103">			stage = (Stage) buttonV.getScene().getWindow();</span>
+<span class="nc" id="L104">			root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;visualizzaPage.fxml&quot;));</span>
+<span class="nc" id="L105">			stage.setTitle(&quot;Benvenuto nella schermata del riepilogo ordine&quot;);</span>
+<span class="nc" id="L106">			scene = new Scene(root);</span>
+<span class="nc" id="L107">			stage.setScene(scene);</span>
+<span class="nc" id="L108">			stage.show();</span>
+			
+			
+				
+
+			
+		
+		
+
+<span class="nc" id="L117">	}</span>
+
+	@FXML
+	private void procedi() throws IOException, SQLException {
+<span class="nc" id="L121">		String i = entryText.getText();</span>
+		
+<span class="nc" id="L123">		java.util.logging.Logger.getLogger(&quot;entry get text &quot;).log(Level.INFO, &quot;entry get text &quot;, entryText.getText());</span>
+<span class="nc bnc" id="L124" title="All 4 branches missed.">		if(i==null || i.equals(&quot;&quot;))</span>
+		{
+			try {
+<span class="nc" id="L127">				throw new IdException(&quot;id null or empty&quot;);</span>
+				
+<span class="nc" id="L129">			}catch(IdException idE)</span>
+			{
+<span class="nc" id="L131">				java.util.logging.Logger.getLogger(&quot;Test pagacc&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta {0}&quot;,idE.toString());</span>
+			}
+		}	
+<span class="nc bnc" id="L134" title="All 6 branches missed.">		if( cCV.disponibilitaLibro(i) || cCV.disponibilitaGiornale(i) || cCV.disponibilitaRivista(i))</span>
+		{
+			
+		
+
+<span class="nc" id="L139">			vis.setId(Integer.parseInt(i));</span>
+			
+		}
+<span class="nc" id="L142">		java.util.logging.Logger.getLogger(&quot;vis in compravendita boundary &quot;).log(Level.INFO, &quot;vis vale &quot;, vis.getId());</span>
+
+			Stage stage;
+			Parent root;
+<span class="nc" id="L146">			stage = (Stage) buttonA.getScene().getWindow();</span>
+<span class="nc" id="L147">			root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;acquista.fxml&quot;));</span>
+<span class="nc" id="L148">			stage.setTitle(&quot;Benvenuto nella schermata del riepilogo ordine&quot;);</span>
+
+<span class="nc" id="L150">			scene = new Scene(root);</span>
+<span class="nc" id="L151">			stage.setScene(scene);</span>
+<span class="nc" id="L152">			stage.show();</span>
+			
+
+
+<span class="nc" id="L156">	}</span>
+
+	@FXML
+	private void vediLista() throws SQLException {
+		//vedere if anche qui
+<span class="nc bnc" id="L161" title="All 2 branches missed.">		if(ControllerSystemState.getIstance().getType().equals(&quot;libro&quot;))</span>
+<span class="nc" id="L162">			table.setItems(cCV.getLibri());</span>
+<span class="nc bnc" id="L163" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(&quot;giornale&quot;))</span>
+<span class="nc" id="L164">			table.setItems(cCV.getGiornali());</span>
+<span class="nc bnc" id="L165" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(&quot;rivista&quot;))</span>
+<span class="nc" id="L166">			table.setItems(cCV.getRiviste());</span>
+
+<span class="nc" id="L168">	}</span>
+
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		
+<span class="nc" id="L174">		cCV = new ControllerCompravendita();</span>
+		
+<span class="nc" id="L176">		buttonV.setText(cCV.popolaBottoneV());</span>
+<span class="nc" id="L177">		buttonA.setText(cCV.popolaBottoneA());</span>
+		
+<span class="nc bnc" id="L179" title="All 2 branches missed.">		if(ControllerSystemState.getIstance().getType().equals(&quot;libro&quot;))</span>
+		{
+<span class="nc" id="L181">			header.setText(cCV.ritornaMessaggio());</span>
+<span class="nc" id="L182">			titolo.setCellValueFactory(new PropertyValueFactory&lt;&gt;(titoloS));</span>
+<span class="nc" id="L183">			editore.setCellValueFactory(new PropertyValueFactory&lt;&gt;(editoreS));</span>
+<span class="nc" id="L184">			autore.setCellValueFactory(new PropertyValueFactory&lt;&gt;(&quot;autore&quot;));</span>
+<span class="nc" id="L185">			categoria.setCellValueFactory(new PropertyValueFactory&lt;&gt;(&quot;categoria&quot;));</span>
+<span class="nc" id="L186">			prezzo.setCellValueFactory(new PropertyValueFactory&lt;&gt;(prezzoS));</span>
+<span class="nc" id="L187">			idLibro.setCellValueFactory(new PropertyValueFactory&lt;&gt;(&quot;id&quot;));</span>
+			
+<span class="nc" id="L189">		}</span>
+<span class="nc bnc" id="L190" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(&quot;giornale&quot;))</span>
+		{
+<span class="nc" id="L192">			header.setText(cCV.ritornaMessaggio());</span>
+<span class="nc" id="L193">			titolo.setCellValueFactory(new PropertyValueFactory&lt;&gt;(titoloS));</span>
+<span class="nc" id="L194">			editore.setCellValueFactory(new PropertyValueFactory&lt;&gt;(editoreS));</span>
+<span class="nc" id="L195">			autore.setCellValueFactory(null);</span>
+<span class="nc" id="L196">			categoria.setCellValueFactory(null);</span>
+<span class="nc" id="L197">			prezzo.setCellValueFactory(new PropertyValueFactory&lt;&gt;(prezzoS));</span>
+<span class="nc" id="L198">			idLibro.setCellValueFactory(new PropertyValueFactory&lt;&gt;(&quot;id&quot;));</span>
+<span class="nc" id="L199">		}</span>
+<span class="nc bnc" id="L200" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(&quot;rivista&quot;))</span>
+		{
+<span class="nc" id="L202">			header.setText(cCV.ritornaMessaggio());</span>
+<span class="nc" id="L203">			titolo.setCellValueFactory(new PropertyValueFactory&lt;&gt;(titoloS));</span>
+<span class="nc" id="L204">			editore.setCellValueFactory(new PropertyValueFactory&lt;&gt;(editoreS));</span>
+<span class="nc" id="L205">			autore.setCellValueFactory(new PropertyValueFactory&lt;&gt;(&quot;autore&quot;));</span>
+<span class="nc" id="L206">			categoria.setCellValueFactory(null);</span>
+<span class="nc" id="L207">			prezzo.setCellValueFactory(new PropertyValueFactory&lt;&gt;(prezzoS));</span>
+<span class="nc" id="L208">			idLibro.setCellValueFactory(new PropertyValueFactory&lt;&gt;(&quot;id&quot;));</span>
+		}
+		
+		//stampare sttringa opportuuna
+
+
+<span class="nc" id="L214">	}</span>
+
+	@FXML
+	private void torna() throws IOException {
+		
+		/*
+		 * Si vede utente &quot;generico &quot; loggato 
+		 * se non � loggato si inposta come tipo &quot;Utente&quot;
+		 * qui viene usato utente &quot;UTENtE&quot; come quello che non puo fare nulla (utente base)
+		 * per restituire tipo vedere controllerCompravenditaLibri
+		 * 
+		 * FATTO QUESTO per aggirare il problema del nullPointer EXcoeption di cCV.retTipoUser
+		 * 
+		 */
+		
+<span class="nc bnc" id="L229" title="All 2 branches missed.">		if(!vis.getIsLogged())</span>
+<span class="nc" id="L230">			cCV.setTipoUser(&quot;UTENTE&quot;);</span>
+		
+<span class="nc" id="L232">		String tipoU=cCV.retTipoUser();</span>
+		
+<span class="nc bnc" id="L234" title="All 4 branches missed.">		if( vis.getIsLogged() &amp;&amp;  tipoU.equalsIgnoreCase(&quot;ADMIN&quot;)) {</span>
+			Stage stage;
+			Parent root;
+<span class="nc" id="L237">			stage = (Stage) buttonI.getScene().getWindow();</span>
+<span class="nc" id="L238">			root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;homePageAfterLogin.fxml&quot;));</span>
+<span class="nc" id="L239">			scene = new Scene(root);</span>
+<span class="nc" id="L240">			stage.setScene(scene);</span>
+<span class="nc" id="L241">			stage.show();</span>
+<span class="nc" id="L242">		}</span>
+<span class="nc bnc" id="L243" title="All 6 branches missed.">		else if( vis.getIsLogged() &amp;&amp; (tipoU.equalsIgnoreCase(&quot;SCRITTORE&quot;) || tipoU.equalsIgnoreCase(&quot;EDITORE&quot;)) ) {</span>
+			Stage stage;
+			Parent root;
+<span class="nc" id="L246">			stage = (Stage) buttonI.getScene().getWindow();</span>
+<span class="nc" id="L247">			root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;homePageAfterLoginES.fxml&quot;));</span>
+<span class="nc" id="L248">			scene = new Scene(root);</span>
+<span class="nc" id="L249">			stage.setScene(scene);</span>
+<span class="nc" id="L250">			stage.show();</span>
+<span class="nc" id="L251">		}	</span>
+<span class="nc bnc" id="L252" title="All 2 branches missed.">		else if((tipoU.equalsIgnoreCase(&quot;UTENTE&quot;) ) )</span>
+		{
+			Stage stage;
+			Parent root;
+<span class="nc" id="L256">			stage = (Stage) buttonI.getScene().getWindow();</span>
+<span class="nc" id="L257">			root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;homePage.fxml&quot;));</span>
+<span class="nc" id="L258">			scene = new Scene(root);</span>
+<span class="nc" id="L259">			stage.setScene(scene);</span>
+<span class="nc" id="L260">			stage.show();</span>
+		}
+
+
+<span class="nc" id="L264">	}</span>
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

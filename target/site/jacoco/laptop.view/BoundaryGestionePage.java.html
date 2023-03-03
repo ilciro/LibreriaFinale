@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BoundaryGestionePage.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.view</a> &gt; <span class="el_source">BoundaryGestionePage.java</span></div><h1>BoundaryGestionePage.java</h1><pre class="source lang-java linenums">package laptop.view;
+
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+
+import javafx.beans.property.SimpleFloatProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import laptop.controller.ControllerGestionePage;
+import laptop.controller.ControllerSystemState;
+import laptop.model.raccolta.Raccolta;
+
+<span class="nc" id="L28">public class BoundaryGestionePage implements Initializable {</span>
+	@FXML
+	private Pane pane;
+	@FXML
+	private Label header;
+	@FXML
+<span class="nc" id="L34">	private TableView&lt;Raccolta&gt;table=new TableView&lt;&gt;();</span>
+	@FXML
+<span class="nc" id="L36">	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; titolo = new TableColumn&lt;&gt;(&quot;Titolo&quot;);</span>
+	@FXML
+<span class="nc" id="L38">	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; tipologia = new TableColumn&lt;&gt;(&quot;Tipologia&quot;);</span>
+	@FXML
+<span class="nc" id="L40">	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; editore = new TableColumn&lt;&gt;(&quot;Editore&quot;);</span>
+	@FXML
+<span class="nc" id="L42">	private TableColumn&lt;Raccolta, SimpleStringProperty&gt; autore = new TableColumn&lt;&gt;(&quot;Autore&quot;);</span>
+	@FXML
+<span class="nc" id="L44">	private TableColumn&lt;Raccolta, SimpleFloatProperty&gt; prezzo = new TableColumn&lt;&gt;(&quot;Prezzo&quot;);</span>
+	@FXML
+<span class="nc" id="L46">	private TableColumn&lt;Raccolta, SimpleIntegerProperty&gt; id = new TableColumn&lt;&gt;(&quot;ID ProdottoTitolo&quot;);</span>
+	@FXML
+	private Button buttonG;
+	@FXML
+	private Button buttonAdd;
+	@FXML
+	private Button modB;
+	@FXML
+	private Button buttonDel;
+	@FXML
+	private Button buttonB;
+	@FXML
+	private TextField idL;
+	private ControllerGestionePage cGP;
+<span class="nc" id="L60">	private ControllerSystemState vis=ControllerSystemState.getIstance();</span>
+	protected Scene scene;
+	protected int identity;
+	
+	
+	
+	
+	@FXML
+	private void genera() throws SQLException  
+	{
+<span class="nc bnc" id="L70" title="All 2 branches missed.">		if(vis.getType().equals(&quot;libro&quot;))</span>
+		{
+<span class="nc" id="L72">			table.setItems(cGP.getLibroS());</span>
+<span class="nc" id="L73">		}</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">		else if(vis.getType().equals(&quot;giornale&quot;))</span>
+		{
+<span class="nc" id="L76">			table.setItems(cGP.getGiornaleS());</span>
+<span class="nc" id="L77">		}</span>
+<span class="nc bnc" id="L78" title="All 2 branches missed.">		else if(vis.getType().equals(&quot;rivista&quot;))</span>
+		{
+<span class="nc" id="L80">			table.setItems(cGP.getRivistaS());</span>
+		}
+		
+		
+<span class="nc" id="L84">	}</span>
+	@FXML
+	private void aggiungi() throws IOException
+	{
+		Stage stage;
+		Parent root;
+<span class="nc" id="L90">		stage = (Stage) buttonAdd.getScene().getWindow();</span>
+<span class="nc" id="L91">		root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;aggiungiOggettoPage.fxml&quot;));</span>
+<span class="nc" id="L92">		scene = new Scene(root);</span>
+<span class="nc" id="L93">		stage.setScene(scene);</span>
+<span class="nc" id="L94">		stage.show();</span>
+		
+<span class="nc" id="L96">	}</span>
+	@FXML
+	private void modifica() throws IOException {
+<span class="nc" id="L99">		vis.setId(Integer.parseInt(idL.getText()));</span>
+		Stage stage;
+		Parent root;
+<span class="nc" id="L102">		stage = (Stage) modB.getScene().getWindow();</span>
+<span class="nc" id="L103">		root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;modificaOggettoPage.fxml&quot;));</span>
+<span class="nc" id="L104">		scene = new Scene(root);</span>
+<span class="nc" id="L105">		stage.setScene(scene);</span>
+<span class="nc" id="L106">		stage.show();</span>
+		
+		
+<span class="nc" id="L109">	}</span>
+	@FXML
+	private void cancella() throws  SQLException
+	{
+		
+		
+<span class="nc" id="L115">		cGP.cancella(Integer.parseInt(idL.getText()));</span>
+		
+<span class="nc" id="L117">	}</span>
+	@FXML
+	private void indietro() throws IOException
+	{
+		Stage stage;
+		Parent root;
+<span class="nc" id="L123">		stage = (Stage) buttonB.getScene().getWindow();</span>
+<span class="nc" id="L124">		root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;adminPage.fxml&quot;));</span>
+<span class="nc" id="L125">		scene = new Scene(root);</span>
+<span class="nc" id="L126">		stage.setScene(scene);</span>
+<span class="nc" id="L127">		stage.show();</span>
+
+<span class="nc" id="L129">	}</span>
+	
+	
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		
+		
+<span class="nc" id="L137">		cGP=new ControllerGestionePage();</span>
+<span class="nc" id="L138">		header.setText(cGP.settaHeader());</span>
+		
+<span class="nc" id="L140">		titolo.setCellValueFactory(new PropertyValueFactory&lt;&gt;(&quot;titolo&quot;));</span>
+<span class="nc bnc" id="L141" title="All 4 branches missed.">		if(vis.getType().equals(&quot;libro&quot;) || vis.getType().equals(&quot;rivista&quot;))</span>
+<span class="nc" id="L142">			tipologia.setCellValueFactory(null);</span>
+		else 
+<span class="nc" id="L144">			tipologia.setCellValueFactory(new PropertyValueFactory&lt;&gt;(&quot;tipologia&quot;));</span>
+<span class="nc bnc" id="L145" title="All 2 branches missed.">		if(vis.getType().equals(&quot;giornale&quot;))</span>
+<span class="nc" id="L146">			autore.setCellValueFactory(null);</span>
+		else 
+<span class="nc" id="L148">			autore.setCellValueFactory(new PropertyValueFactory&lt;&gt;(&quot;autore&quot;));			</span>
+		
+<span class="nc" id="L150">		editore.setCellValueFactory(new PropertyValueFactory&lt;&gt;(&quot;editore&quot;));</span>
+<span class="nc" id="L151">		prezzo.setCellValueFactory(new PropertyValueFactory&lt;&gt;(&quot;prezzo&quot;));</span>
+<span class="nc" id="L152">		id.setCellValueFactory(new PropertyValueFactory&lt;&gt;(&quot;id&quot;));</span>
+	
+		
+		
+<span class="nc" id="L156">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

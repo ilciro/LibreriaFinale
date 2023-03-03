@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BoundaryAcquista.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.view</a> &gt; <span class="el_source">BoundaryAcquista.java</span></div><h1>BoundaryAcquista.java</h1><pre class="source lang-java linenums">package laptop.view;
+
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.SplitPane;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import laptop.controller.ControllerAcquista;
+import laptop.controller.ControllerSystemState;
+
+public class BoundaryAcquista implements Initializable {
+	@FXML
+	private SplitPane split;
+	@FXML
+	private AnchorPane ap1;
+	@FXML
+	private AnchorPane ap2;
+	@FXML
+	private Label header;
+	@FXML
+	private Label labelN;
+	@FXML
+	private Label labelCosto;
+	@FXML
+	private Label labelQ;
+	@FXML
+	private Label labelT;
+	@FXML
+	private Label  nome;
+	@FXML
+	private Label  dispLabel;
+	@FXML
+	private Label costo;
+	@FXML
+	private TextField quantita;
+	@FXML
+	private CheckBox ritiroN;
+
+	@FXML
+	private Label totale;
+	@FXML
+	private Label labelPag;
+	@FXML
+	private RadioButton buttonCC;
+	@FXML
+	private RadioButton buttonCash;
+	@FXML
+	private Button calcola;
+	@FXML
+	private Button link;
+
+	protected Scene scene;
+	private ControllerAcquista cA;
+<span class="nc" id="L68">	private ControllerSystemState vis = ControllerSystemState.getIstance() ;</span>
+
+	
+	
+	@FXML
+
+	private void pagaCC() throws IOException {
+		
+<span class="nc bnc" id="L76" title="All 2 branches missed.">		if(ritiroN.isSelected()) {</span>
+<span class="nc" id="L77">			vis.setPickup(true);</span>
+<span class="nc" id="L78">		}</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">		else if (!ritiroN.isSelected())</span>
+		{
+<span class="nc" id="L81">			vis.setPickup(false);</span>
+		}
+<span class="nc bnc" id="L83" title="All 2 branches missed.">		if(Integer.parseInt(quantita.getText())&gt;Integer.parseInt(dispLabel.getText()))</span>
+		{
+			Stage stage;
+			Parent root;
+<span class="nc" id="L87">			stage = (Stage) buttonCC.getScene().getWindow();</span>
+<span class="nc" id="L88">			root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;acquista.fxml&quot;));</span>
+<span class="nc" id="L89">			stage.setTitle(&quot;Benvenuto nella schermata di acquisto&quot;);</span>
+<span class="nc" id="L90">			scene = new Scene(root);</span>
+<span class="nc" id="L91">			stage.setScene(scene);</span>
+<span class="nc" id="L92">			stage.show();</span>
+<span class="nc" id="L93">			java.util.logging.Logger.getLogger(&quot;Test pagacc&quot;).log(Level.SEVERE,&quot;\n Non vi e sufficiente disponibilita&quot;);</span>
+<span class="nc" id="L94">		}</span>
+		else {
+		Stage stage;
+		Parent root;
+<span class="nc" id="L98">		stage = (Stage) buttonCC.getScene().getWindow();</span>
+<span class="nc" id="L99">		root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;pagamentoCC.fxml&quot;));</span>
+<span class="nc" id="L100">		stage.setTitle(&quot;Benvenuto nella schermata dell'acquisto con carta credito&quot;);</span>
+<span class="nc" id="L101">		scene = new Scene(root);</span>
+<span class="nc" id="L102">		stage.setScene(scene);</span>
+<span class="nc" id="L103">		stage.show();</span>
+		}
+
+
+<span class="nc" id="L107">	}</span>
+
+	@FXML
+	private void pagaCash() throws IOException {
+<span class="nc bnc" id="L111" title="All 2 branches missed.">		if(ritiroN.isSelected()) {</span>
+<span class="nc" id="L112">			vis.setPickup(true);</span>
+<span class="nc" id="L113">		}</span>
+<span class="nc bnc" id="L114" title="All 2 branches missed.">		else if (!ritiroN.isSelected())</span>
+		{
+<span class="nc" id="L116">			vis.setPickup(false);</span>
+		}
+<span class="nc bnc" id="L118" title="All 2 branches missed.">		if(Integer.parseInt(quantita.getText())&gt;Integer.parseInt(dispLabel.getText()))</span>
+		{
+			Stage stage;
+			Parent root;
+<span class="nc" id="L122">			stage = (Stage) buttonCC.getScene().getWindow();</span>
+<span class="nc" id="L123">			root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;acquista.fxml&quot;));</span>
+<span class="nc" id="L124">			stage.setTitle(&quot;Benvenuto nella schermata di acquisto&quot;);</span>
+<span class="nc" id="L125">			scene = new Scene(root);</span>
+<span class="nc" id="L126">			stage.setScene(scene);</span>
+<span class="nc" id="L127">			stage.show();</span>
+<span class="nc" id="L128">			java.util.logging.Logger.getLogger(&quot;Test pagacc&quot;).log(Level.SEVERE,&quot;\n Non vi e sufficiente disponibilita&quot;);</span>
+			
+
+
+<span class="nc" id="L132">		}</span>
+		else {
+
+<span class="nc" id="L135">			java.util.logging.Logger.getLogger(&quot;vis in acquuista boundary &quot;).log(Level.INFO, &quot;vis vale &quot;, vis.getId());</span>
+
+		Stage stage;
+		Parent root;
+<span class="nc" id="L139">		stage = (Stage) buttonCash.getScene().getWindow();</span>
+<span class="nc" id="L140">		root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;pagamentoContrassegno.fxml&quot;));</span>
+<span class="nc" id="L141">		stage.setTitle(&quot;Benvenuto nella schermata dell'acquisto in contanti&quot;);</span>
+
+<span class="nc" id="L143">		scene = new Scene(root);</span>
+<span class="nc" id="L144">		stage.setScene(scene);</span>
+<span class="nc" id="L145">		stage.show();</span>
+		}
+
+<span class="nc" id="L148">	}</span>
+
+	
+
+	@FXML
+	private void importo() throws IOException, SQLException, NumberFormatException {
+		
+<span class="nc bnc" id="L155" title="All 2 branches missed.">		if (!nome.getText().equals(&quot;&quot;)) {</span>
+<span class="nc" id="L156">			buttonCC.setDisable(false);</span>
+<span class="nc" id="L157">			buttonCash.setDisable(false);</span>
+
+<span class="nc" id="L159">			String scelta = cA.getType();</span>
+			
+			// qui mettere un controllo dal db oer il tipo di prodotto scelto usando l'istanza visualizza
+<span class="nc bnc" id="L162" title="All 2 branches missed.">			if (scelta.equals(&quot;libro&quot;)) {</span>
+				
+				
+<span class="nc" id="L165">				float x = cA.totale(nome.getText(), Integer.parseInt(dispLabel.getText()),Integer.parseInt(quantita.getText()));</span>
+<span class="nc" id="L166">				costo.setText(String.valueOf(x));</span>
+				float tot;
+<span class="nc" id="L168">				tot = x * (Float.parseFloat(quantita.getText()));</span>
+<span class="nc" id="L169">				totale.setText(String.valueOf( tot));</span>
+<span class="nc" id="L170">				cA.inserisciAmmontareL(Integer.parseInt(quantita.getText()));</span>
+<span class="nc" id="L171">				vis.setSpesaT(tot);</span>
+<span class="nc" id="L172">				vis.setQuantita(Integer.parseInt(quantita.getText()));</span>
+				
+				
+				
+
+<span class="nc bnc" id="L177" title="All 2 branches missed.">			} else if (scelta.equals(&quot;giornale&quot;)) {</span>
+<span class="nc" id="L178">				float y = cA.totaleG(nome.getText(), Integer.parseInt(dispLabel.getText()),Integer.parseInt(quantita.getText()));</span>
+<span class="nc" id="L179">				costo.setText(String.valueOf(y));</span>
+				float tot1;
+<span class="nc" id="L181">				tot1 = y * (Float.parseFloat(quantita.getText()));</span>
+<span class="nc" id="L182">				totale.setText(String.valueOf(tot1));</span>
+<span class="nc" id="L183">				cA.inserisciAmmontareG(Integer.parseInt(quantita.getText()));</span>
+<span class="nc" id="L184">				vis.setSpesaT(tot1);</span>
+<span class="nc" id="L185">				vis.setQuantita(Integer.parseInt(quantita.getText()));</span>
+
+
+<span class="nc bnc" id="L188" title="All 2 branches missed.">			} else if (scelta.equals(&quot;rivista&quot;)) {</span>
+<span class="nc" id="L189">				float z = cA.totaleR(nome.getText(),Integer.parseInt(dispLabel.getText()), Integer.parseInt(quantita.getText()));</span>
+<span class="nc" id="L190">				costo.setText(String.valueOf(z));</span>
+				float tot2;
+<span class="nc" id="L192">				tot2 = z * (Float.parseFloat(quantita.getText()));</span>
+<span class="nc" id="L193">				totale.setText(String.valueOf(tot2));</span>
+<span class="nc" id="L194">				cA.inserisciAmmontareR(Integer.parseInt(quantita.getText()));</span>
+<span class="nc" id="L195">				vis.setSpesaT(tot2);</span>
+<span class="nc" id="L196">				vis.setQuantita(Integer.parseInt(quantita.getText()));</span>
+
+
+
+				
+
+<span class="nc" id="L202">			} else {</span>
+<span class="nc" id="L203">				throw new IOException();</span>
+			}
+
+		}
+		
+
+<span class="nc" id="L209">	}</span>
+
+<span class="nc" id="L211">	public BoundaryAcquista() throws SQLException {</span>
+<span class="nc" id="L212">		cA = new ControllerAcquista();</span>
+<span class="nc" id="L213">	}</span>
+
+	@FXML
+	private void indietro() throws IOException {
+<span class="nc bnc" id="L217" title="All 2 branches missed.">		if( vis.getIsLogged()) {</span>
+		Stage stage;
+		Parent root;
+<span class="nc" id="L220">		stage = (Stage) link.getScene().getWindow();</span>
+<span class="nc" id="L221">		root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;homePageAfterLogin.fxml&quot;));</span>
+<span class="nc" id="L222">		scene = new Scene(root);</span>
+<span class="nc" id="L223">		stage.setScene(scene);</span>
+<span class="nc" id="L224">		stage.show();</span>
+<span class="nc" id="L225">		}</span>
+		else
+		{
+			Stage stage;
+			Parent root;
+<span class="nc" id="L230">			stage = (Stage) link.getScene().getWindow();</span>
+<span class="nc" id="L231">			root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;homePage.fxml&quot;));</span>
+<span class="nc" id="L232">			scene = new Scene(root);</span>
+<span class="nc" id="L233">			stage.setScene(scene);</span>
+<span class="nc" id="L234">			stage.show();</span>
+		}
+<span class="nc" id="L236">	}</span>
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources)   {
+		
+<span class="nc" id="L241">		buttonCC.setDisable(true);</span>
+<span class="nc" id="L242">		buttonCash.setDisable(true);</span>
+		
+			try {
+<span class="nc" id="L245">			nome.setText(cA.getNomeById());</span>
+<span class="nc" id="L246">			dispLabel.setText(String.valueOf(cA.getDisp()));</span>
+		
+<span class="nc" id="L248">				costo.setText(String.valueOf(cA.getCosto()));</span>
+<span class="nc" id="L249">			} catch (SQLException  e) {</span>
+<span class="nc" id="L250">				java.util.logging.Logger.getLogger(&quot;Test initialize&quot;).log(Level.SEVERE,&quot; eccezione ottenuta {0}.&quot;,e.toString());</span>
+
+				} 
+		
+		
+		
+
+<span class="nc" id="L257">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

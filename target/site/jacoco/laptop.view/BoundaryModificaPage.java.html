@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BoundaryModificaPage.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.view</a> &gt; <span class="el_source">BoundaryModificaPage.java</span></div><h1>BoundaryModificaPage.java</h1><pre class="source lang-java linenums">package laptop.view;
+
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import laptop.controller.ControllerModifPage;
+import laptop.controller.ControllerSystemState;
+
+<span class="nc" id="L30">public class BoundaryModificaPage implements Initializable {</span>
+	@FXML
+	private Pane pane;
+	@FXML
+	private GridPane gridpane ;
+	@FXML
+	private TextField titoloT;
+	@FXML 
+	private TextField numeroPagineT;
+	@FXML
+	private TextField codeIsbnT;
+	@FXML
+	private TextField editoreT;
+	@FXML
+	private TextField autoreT;
+	@FXML
+	private TextField linguaT;
+	@FXML
+	private ListView&lt;String&gt; categoriaTF ;
+	@FXML
+	private DatePicker dataP;
+	@FXML
+	private TextField recensioneT;
+	@FXML 
+	private TextArea descrizioneT;
+	@FXML
+	private CheckBox disponibilitaC;
+	@FXML
+	private TextField prezzoT;
+	@FXML
+	private TextField copieRimanentiT;
+	@FXML
+	private Button buttonC;
+	@FXML
+	private Button buttonA;
+	@FXML
+	private Label titoloL;
+	@FXML
+	private Label numeroPagineL;
+	@FXML
+	private Label codeIsbnL;
+	@FXML
+	private Label editoreL;
+	@FXML
+	private Label autoreL;
+	@FXML
+	private Label linguaL;
+	@FXML
+	private Label categoriaL;
+	@FXML
+	private Label dataL;
+	@FXML
+	private Label recensioneL;
+	@FXML
+	private Label descrizioneL;
+	@FXML
+	private Label disponibilitaL;
+	@FXML
+	private Label prezzoL;
+	@FXML
+	private Label copieRimanentiL;
+	
+	@FXML
+	private Label labelT;
+	@FXML
+	private Label labelNP;
+	@FXML
+	private Label labelCod;
+	@FXML
+	private Label labelE;
+	@FXML
+	private Label labelA;
+	@FXML
+	private Label labelL;
+	@FXML
+	private Label labelCat;
+	@FXML
+	private Label labelD;
+	@FXML
+	private Label labelR;
+	@FXML
+	private Label labelDesc;
+	@FXML
+	private Label labelDisp;
+	@FXML
+	private Label labelP;
+	@FXML
+	private Label labelCopie;
+
+	private ControllerModifPage cMP;
+<span class="nc" id="L120">	private ControllerSystemState vis= ControllerSystemState.getIstance();</span>
+	protected float prezzo ;
+	protected int copie;
+	protected Scene scene;
+	protected int np;
+<span class="nc" id="L125">	private String[] infoGen=new String[7];</span>
+<span class="nc" id="L126">	private String[] infoCostoDisp=new String[7];</span>
+<span class="nc" id="L127">	private String [] info=new String[5];</span>
+<span class="nc" id="L128">	private ObservableList&lt;String&gt; items = FXCollections.observableArrayList();</span>
+
+
+	@FXML
+	private void aggiorna() throws SQLException, NullPointerException
+	{
+<span class="nc bnc" id="L134" title="All 2 branches missed.">		if(vis.getType().equals(&quot;libro&quot;))</span>
+		{
+<span class="nc" id="L136">		String t=titoloT.getText();</span>
+<span class="nc" id="L137">		np=Integer.parseInt(numeroPagineT.getText());</span>
+<span class="nc" id="L138">		String cod=codeIsbnT.getText();</span>
+<span class="nc" id="L139">		String ed=editoreT.getText();</span>
+<span class="nc" id="L140">		String a=autoreT.getText();</span>
+<span class="nc" id="L141">		String l=linguaT.getText();</span>
+<span class="nc" id="L142">		String c= categoriaTF.getSelectionModel().getSelectedItem();</span>
+<span class="nc" id="L143">		LocalDate d=dataP.getValue();</span>
+<span class="nc" id="L144">		String r=recensioneT.getText();</span>
+<span class="nc" id="L145">		boolean disp=disponibilitaC.isSelected();</span>
+<span class="nc" id="L146">		String desc=descrizioneT.getText();</span>
+		
+<span class="nc bnc" id="L148" title="All 2 branches missed.">		if(disp)</span>
+		{
+<span class="nc" id="L150">			infoCostoDisp[3]=String.valueOf(1);</span>
+			//
+<span class="nc" id="L152">		}</span>
+		else {
+<span class="nc" id="L154">			infoCostoDisp[3]=String.valueOf(0);</span>
+		}
+<span class="nc" id="L156">		prezzo=Float.parseFloat(prezzoT.getText());</span>
+<span class="nc" id="L157">		copie=Integer.parseInt(copieRimanentiT.getText());</span>
+		
+<span class="nc" id="L159">		infoGen[0]=t;</span>
+<span class="nc" id="L160">		infoGen[2]=a;</span>
+<span class="nc" id="L161">		infoGen[3]=l;</span>
+<span class="nc" id="L162">		infoGen[4]=ed;</span>
+<span class="nc" id="L163">		infoGen[5]=c;</span>
+<span class="nc" id="L164">		infoCostoDisp[0]=String.valueOf(np);</span>
+<span class="nc" id="L165">		infoCostoDisp[1]=cod;</span>
+<span class="nc" id="L166">		infoCostoDisp[4]=String.valueOf(prezzo);</span>
+<span class="nc" id="L167">		infoCostoDisp[5]=String.valueOf(copie);</span>
+		
+<span class="nc" id="L169">		cMP.checkDataL(infoGen,r,desc,d,infoCostoDisp);</span>
+<span class="nc bnc" id="L170" title="All 2 branches missed.">		}else if(vis.getType().equals(&quot;giornale&quot;))</span>
+		{
+<span class="nc" id="L172">			String t=titoloT.getText();</span>
+<span class="nc" id="L173">			String tipo=&quot;Quotidiano&quot;;</span>
+<span class="nc" id="L174">			String ed=editoreT.getText();</span>
+<span class="nc" id="L175">			String l=linguaT.getText();</span>
+
+<span class="nc" id="L177">			LocalDate d=dataP.getValue();</span>
+<span class="nc" id="L178">			boolean disp=disponibilitaC.isPressed();</span>
+			
+			int dispo;
+			
+<span class="nc bnc" id="L182" title="All 2 branches missed.">			if(disp)</span>
+			{
+<span class="nc" id="L184">				dispo=1;</span>
+				//disponibile
+<span class="nc" id="L186">			}</span>
+			else {
+<span class="nc" id="L188">				dispo=0;</span>
+			}
+<span class="nc" id="L190">			prezzo=Float.parseFloat(prezzoT.getText());</span>
+<span class="nc" id="L191">			copie=Integer.parseInt(copieRimanentiT.getText());</span>
+			
+<span class="nc" id="L193">			info[0]=t;</span>
+<span class="nc" id="L194">			info[1]=tipo;</span>
+<span class="nc" id="L195">			info[2]=ed;</span>
+<span class="nc" id="L196">			info[3]=l;</span>
+			
+<span class="nc" id="L198">			cMP.checkDataG(info,d,dispo,prezzo,copie);</span>
+			
+<span class="nc" id="L200">		}</span>
+<span class="nc bnc" id="L201" title="All 2 branches missed.">		else if(vis.getType().equals(&quot;rivista&quot;))</span>
+		{
+<span class="nc" id="L203">			String t=titoloT.getText();</span>
+<span class="nc" id="L204">			String tipologia=categoriaTF.getSelectionModel().getSelectedItem();</span>
+<span class="nc" id="L205">			String autore=autoreT.getText();</span>
+<span class="nc" id="L206">			String l=linguaT.getText();</span>
+<span class="nc" id="L207">			String e=editoreT.getText();</span>
+<span class="nc" id="L208">			String desc=descrizioneT.getText();</span>
+<span class="nc" id="L209">			LocalDate d=dataP.getValue();</span>
+<span class="nc" id="L210">			boolean disp=disponibilitaC.isPressed();</span>
+
+			
+			int dispo;
+			
+<span class="nc bnc" id="L215" title="All 2 branches missed.">			if(disp)</span>
+			{
+<span class="nc" id="L217">				dispo=1;</span>
+				//disponibile
+<span class="nc" id="L219">			}</span>
+			else {
+<span class="nc" id="L221">				dispo=0;</span>
+			}
+<span class="nc" id="L223">			prezzo=Float.parseFloat(prezzoT.getText());</span>
+<span class="nc" id="L224">			copie=Integer.parseInt(copieRimanentiT.getText());</span>
+			
+<span class="nc" id="L226">			info[0]=t;</span>
+<span class="nc" id="L227">			info[1]=tipologia;</span>
+<span class="nc" id="L228">			info[2]=autore;</span>
+<span class="nc" id="L229">			info[3]=l;</span>
+<span class="nc" id="L230">			info[4]=e;</span>
+
+<span class="nc" id="L232">			cMP.checkDataR(info,d,dispo,prezzo,copie,vis.getId(),desc);</span>
+			
+			
+		}
+<span class="nc" id="L236">	}</span>
+		
+		
+	@FXML
+	private void annulla() throws IOException
+	{
+		Stage stage;
+		Parent root;
+<span class="nc" id="L244">		stage = (Stage) buttonA.getScene().getWindow();</span>
+<span class="nc" id="L245">		root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;paginaGestione.fxml&quot;));</span>
+<span class="nc" id="L246">		scene = new Scene(root);</span>
+<span class="nc" id="L247">		stage.setScene(scene);</span>
+<span class="nc" id="L248">		stage.show();</span>
+<span class="nc" id="L249">	}</span>
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		/* settare valori textArea*/
+<span class="nc" id="L254">		cMP=new ControllerModifPage();</span>
+		
+		try {
+<span class="nc bnc" id="L257" title="All 2 branches missed.">			if(vis.getType().equals(&quot;libro&quot;))</span>
+			{
+<span class="nc" id="L259">				labelT.setText(cMP.getLibriById(vis.getId()).get(0).getTitolo());</span>
+<span class="nc" id="L260">				labelNP.setText(String.valueOf(cMP.getLibriById(vis.getId()).get(0).getNumeroPagine()));</span>
+<span class="nc" id="L261">				labelCod.setText(cMP.getLibriById(vis.getId()).get(0).getCodIsbn());</span>
+<span class="nc" id="L262">				labelE.setText(cMP.getLibriById(vis.getId()).get(0).getEditore());</span>
+<span class="nc" id="L263">				labelA.setText(cMP.getLibriById(vis.getId()).get(0).getAutore());</span>
+<span class="nc" id="L264">				labelL.setText(cMP.getLibriById(vis.getId()).get(0).getLingua());</span>
+<span class="nc" id="L265">				labelCat.setText(String.valueOf(cMP.getLibriById(vis.getId()).get(0).getCategoria()));</span>
+<span class="nc" id="L266">				labelR.setText(cMP.getLibriById(vis.getId()).get(0).getRecensione());</span>
+<span class="nc" id="L267">				labelP.setText(String.valueOf(cMP.getLibriById(vis.getId()).get(0).getPrezzo()));</span>
+<span class="nc" id="L268">				labelCopie.setText(String.valueOf(cMP.getLibriById(vis.getId()).get(0).getNrCopie()));</span>
+<span class="nc" id="L269">				labelD.setText(cMP.getLibriById(vis.getId()).get(0).getDataPubb().toString());</span>
+<span class="nc" id="L270">				labelDesc.setText(cMP.getLibriById(vis.getId()).get(0).getDesc());</span>
+<span class="nc" id="L271">				labelDisp.setText(String.valueOf(cMP.getLibriById(vis.getId()).get(0).getDisponibilita()));</span>
+	
+<span class="nc" id="L273">				categoriaTF.setItems(items);</span>
+<span class="nc" id="L274">				items.add(&quot;ADOLESCENTI_RAGAZZI&quot;);</span>
+<span class="nc" id="L275">				items.add(&quot;ARTE&quot;);</span>
+<span class="nc" id="L276">				items.add(&quot;CINEMA_FOTOGRAFIA&quot;);</span>
+<span class="nc" id="L277">				items.add(&quot;BIOGRAFIE&quot;);</span>
+<span class="nc" id="L278">				items.add(&quot;DIARI_MEMORIE&quot;);</span>
+<span class="nc" id="L279">				items.add(&quot;CALENDARI_AGENDE&quot;);</span>
+<span class="nc" id="L280">				items.add(&quot;DIRITTO&quot;);</span>
+<span class="nc" id="L281">				items.add(&quot;DIZINARI_OPERE&quot;);</span>
+<span class="nc" id="L282">				items.add(&quot;ECONOMIA&quot;);</span>
+<span class="nc" id="L283">				items.add(&quot;FAMIGLIA&quot;);</span>
+<span class="nc" id="L284">				items.add(&quot;SALUTE_BENESSERE&quot;);</span>
+				
+<span class="nc" id="L286">				items.add(&quot;FANTASCIENZA_FANTASY&quot;);</span>
+<span class="nc" id="L287">				items.add(&quot;FUMETTI_MANGA&quot;);</span>
+<span class="nc" id="L288">				items.add(&quot;GIALLI_THRILLER&quot;);</span>
+<span class="nc" id="L289">				items.add(&quot;COMPUTER_GIOCHI&quot;);</span>
+<span class="nc" id="L290">				items.add(&quot;HUMOR&quot;);</span>
+<span class="nc" id="L291">				items.add(&quot;INFORMATICA&quot;);</span>
+<span class="nc" id="L292">				items.add(&quot;WEB_DIGITAL_MEDIA&quot;);</span>
+<span class="nc" id="L293">				items.add(&quot;LETTERATURA_NARRATIVA&quot;);</span>
+<span class="nc" id="L294">				items.add(&quot;LIBRI_BAMBINI&quot;);</span>
+<span class="nc" id="L295">				items.add(&quot;LIBRI_SCOLASTICI&quot;);</span>
+<span class="nc" id="L296">				items.add(&quot;LIBRI_UNIVERSITARI&quot;);</span>
+<span class="nc" id="L297">				items.add(&quot;RICETTARI_GENERALI&quot;);</span>
+				
+<span class="nc" id="L299">				items.add(&quot;LINGUISTICA_SCRITTURA&quot;);</span>
+<span class="nc" id="L300">				items.add(&quot;POLITICA&quot;);</span>
+<span class="nc" id="L301">				items.add(&quot;RELIGIONE&quot;);</span>
+<span class="nc" id="L302">				items.add(&quot;ROMANZI_ROSA&quot;);</span>
+			
+<span class="nc" id="L304">				items.add(&quot;SCIENZE&quot;);</span>
+<span class="nc" id="L305">				items.add(&quot;TECNOLOGIA_MEDICINA&quot;);</span>
+<span class="nc" id="L306">			}</span>
+<span class="nc bnc" id="L307" title="All 2 branches missed.">			else if(vis.getType().equals(&quot;giornale&quot;))</span>
+			{
+<span class="nc" id="L309">				labelT.setText(cMP.getGiornaliById(vis.getId()).get(0).getTitolo());</span>
+<span class="nc" id="L310">				labelE.setText(cMP.getGiornaliById(vis.getId()).get(0).getEditore());</span>
+<span class="nc" id="L311">				labelL.setText(cMP.getGiornaliById(vis.getId()).get(0).getLingua());</span>
+<span class="nc" id="L312">				labelCat.setText(&quot;Quotidiano&quot;);</span>
+<span class="nc" id="L313">				labelP.setText(String.valueOf(cMP.getGiornaliById(vis.getId()).get(0).getPrezzo()));</span>
+<span class="nc" id="L314">				labelCopie.setText(String.valueOf(cMP.getGiornaliById(vis.getId()).get(0).getCopieRimanenti()));</span>
+<span class="nc" id="L315">				labelD.setText(cMP.getGiornaliById(vis.getId()).get(0).getDataPubb().toString());</span>
+<span class="nc" id="L316">				labelDisp.setText(String.valueOf(cMP.getGiornaliById(vis.getId()).get(0).getDisponibilita()));</span>
+<span class="nc" id="L317">			}</span>
+<span class="nc bnc" id="L318" title="All 2 branches missed.">			else if(vis.getType().equals(&quot;rivista&quot;))</span>
+			{
+<span class="nc" id="L320">				labelT.setText(cMP.getRivistaById(vis.getId()).get(0).getTitolo());</span>
+<span class="nc" id="L321">				labelE.setText(cMP.getRivistaById(vis.getId()).get(0).getEditore());</span>
+<span class="nc" id="L322">				labelA.setText(cMP.getRivistaById(vis.getId()).get(0).getAutore());</span>
+<span class="nc" id="L323">				labelL.setText(cMP.getRivistaById(vis.getId()).get(0).getLingua());</span>
+<span class="nc" id="L324">				labelCat.setText(String.valueOf(cMP.getRivistaById(vis.getId()).get(0).getTipologia()));</span>
+<span class="nc" id="L325">				labelP.setText(String.valueOf(cMP.getRivistaById(vis.getId()).get(0).getPrezzo()));</span>
+<span class="nc" id="L326">				labelCopie.setText(String.valueOf(cMP.getRivistaById(vis.getId()).get(0).getCopieRim()));</span>
+<span class="nc" id="L327">				labelD.setText(cMP.getRivistaById(vis.getId()).get(0).getDataPubb().toString());</span>
+<span class="nc" id="L328">				labelDesc.setText(cMP.getRivistaById(vis.getId()).get(0).getDescrizione());</span>
+<span class="nc" id="L329">				labelDisp.setText(String.valueOf(cMP.getRivistaById(vis.getId()).get(0).getDisp()));</span>
+				
+<span class="nc" id="L331">				categoriaTF.setItems(items);</span>
+<span class="nc" id="L332">				items.add(&quot;SETTIMANALE&quot;);</span>
+<span class="nc" id="L333">				items.add(&quot;BISETTIMANALE&quot;);</span>
+<span class="nc" id="L334">				items.add(&quot;MENSILE&quot;);</span>
+<span class="nc" id="L335">				items.add(&quot;BIMESTRALE&quot;);</span>
+<span class="nc" id="L336">				items.add(&quot;TRIMESTRALE&quot;);</span>
+<span class="nc" id="L337">				items.add(&quot;ANNUALE&quot;);</span>
+<span class="nc" id="L338">				items.add(&quot;ESTIVO&quot;);</span>
+<span class="nc" id="L339">				items.add(&quot;INVERNALE&quot;);</span>
+<span class="nc" id="L340">				items.add(&quot;SPORTIVO&quot;);</span>
+<span class="nc" id="L341">				items.add(&quot;CINEMATOGRAFIA&quot;);</span>
+<span class="nc" id="L342">				items.add(&quot;GOSSIP&quot;);</span>
+<span class="nc" id="L343">				items.add(&quot;TELEVISIVO&quot;);</span>
+<span class="nc" id="L344">				items.add(&quot;MILITARE&quot;);</span>
+<span class="nc" id="L345">				items.add(&quot;INFORMATICA&quot;);</span>
+			}
+
+
+
+<span class="nc" id="L350">		} catch (SQLException   e) 	</span>
+		{
+<span class="nc" id="L352">			java.util.logging.Logger.getLogger(&quot;Test pagacc&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta {0}&quot;,e.toString());</span>
+
+		} 
+		
+		
+
+
+<span class="nc" id="L359">	}</span>
+
+	
+			
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -212,7 +212,7 @@ public class CartaCreditoServlet extends HttpServlet {
 					l.setId(SystemBean.getIstance().getIdB());
 					p.setAmmontare(SystemBean.getIstance().getSpesaTB());
 					p.setId(l.getId());
-					p.setTipo(lB.getCategoriaB());
+					p.setTipo(lB.getcategoriaB());
 				}
 			
 				if(tipo.equals("giornale"))

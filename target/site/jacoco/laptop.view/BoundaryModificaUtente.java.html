@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BoundaryModificaUtente.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.view</a> &gt; <span class="el_source">BoundaryModificaUtente.java</span></div><h1>BoundaryModificaUtente.java</h1><pre class="source lang-java linenums">package laptop.view;
+
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import laptop.controller.ControllerModificaUtente;
+
+<span class="nc" id="L24">public class BoundaryModificaUtente implements Initializable {</span>
+	
+	private ControllerModificaUtente cMU;
+	@FXML
+	private Pane pane;
+	@FXML
+	private GridPane grid;
+	@FXML
+	private Label header;
+	@FXML
+	private Label credV;
+	@FXML
+	private Label credN;
+	@FXML
+	private Label nomeL;
+	@FXML
+	private Label vecchioNL;
+	@FXML
+	private TextField nuovoNL;
+	@FXML
+	private Label cognomeL;
+	@FXML
+	private Label vecchioCL;
+	@FXML
+	private TextField nuovoCL;
+	@FXML
+	private Label emailL;
+	@FXML
+	private Label vecchiaEmailL;
+	@FXML
+	private TextField nuovaEmailL;
+	@FXML
+	private Label pwdL;
+	@FXML
+	private PasswordField vecchiaPwd;
+	@FXML
+	private PasswordField nuovaPwd;
+	@FXML
+	private Label descL;
+	@FXML
+	private Label vecchiaDescL;
+	@FXML
+	private TextField nuovaDescL;
+	@FXML
+	private Label dataL;
+	@FXML
+	private Label vecchiaDNL;
+	@FXML
+	private DatePicker nuovaDNL;
+	@FXML
+	private Button buttonV;
+	@FXML
+	private Button aggiornaB;
+	@FXML
+	private Button annullaB;
+	
+	protected Scene scene;
+	
+	@FXML
+	private void visualizza() throws SQLException
+	{
+<span class="nc" id="L85">		vecchioNL.setText(cMU.prendi().getNome());</span>
+<span class="nc" id="L86">		vecchioCL.setText(cMU.prendi().getCognome());</span>
+<span class="nc" id="L87">		vecchiaEmailL.setText(cMU.prendi().getEmail());</span>
+<span class="nc" id="L88">		vecchiaPwd.setText(cMU.prendi().getPassword());</span>
+<span class="nc" id="L89">		vecchiaDescL.setText(cMU.prendi().getDescrizione());</span>
+<span class="nc" id="L90">		vecchiaDNL.setText(cMU.prendi().getDataDiNascita().toString());</span>
+		
+
+<span class="nc" id="L93">	}</span>
+	@FXML
+	private void aggiorna() throws SQLException
+	{
+<span class="nc" id="L97">		if(cMU.aggiorna(nuovoNL.getText(),nuovoCL.getText(),</span>
+<span class="nc" id="L98">				nuovaEmailL.getText(),nuovaPwd.getText(),</span>
+<span class="nc bnc" id="L99" title="All 2 branches missed.">				nuovaDescL.getText(),nuovaDNL.getValue(),vecchiaEmailL.getText()))</span>
+		{
+<span class="nc" id="L101">			java.util.logging.Logger.getLogger(&quot;modifica utente&quot;).log(Level.INFO,&quot;\n modifica avventuta con successo&quot;);</span>
+
+			
+
+		
+<span class="nc" id="L106">		}</span>
+		else
+		{	
+<span class="nc" id="L109">			java.util.logging.Logger.getLogger(&quot;errore modifica utente&quot;).log(Level.SEVERE,&quot;\n errore nei dati&quot;);</span>
+
+			
+		}
+
+		
+		// scermata  di conferma aggiornamento dati  
+		
+		
+<span class="nc" id="L118">	}</span>
+	@FXML
+	private void annulla() throws IOException
+	{
+		//scermata precedente
+		Stage stage;
+		Parent root;
+<span class="nc" id="L125">		stage = (Stage) annullaB.getScene().getWindow();</span>
+<span class="nc" id="L126">		root = FXMLLoader.load(getClass().getClassLoader().getResource(&quot;visualizzaProfilo.fxml&quot;));</span>
+<span class="nc" id="L127">		stage.setTitle(&quot;Benvenuto nella schermata del riepilogo ordine&quot;);</span>
+<span class="nc" id="L128">		scene = new Scene(root);</span>
+<span class="nc" id="L129">		stage.setScene(scene);</span>
+<span class="nc" id="L130">		stage.show();</span>
+
+<span class="nc" id="L132">	}</span>
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		
+<span class="nc" id="L137">		cMU=new ControllerModificaUtente();</span>
+
+<span class="nc" id="L139">	}</span>
+
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

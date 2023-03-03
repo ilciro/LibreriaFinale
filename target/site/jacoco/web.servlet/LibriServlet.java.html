@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LibriServlet.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">web.servlet</a> &gt; <span class="el_source">LibriServlet.java</span></div><h1>LibriServlet.java</h1><pre class="source lang-java linenums">package web.servlet;
+
+import java.io.IOException;
+import java.sql.SQLException;
+
+import laptop.database.LibroDao;
+import laptop.exception.IdException;
+import laptop.model.raccolta.Libro;
+import web.bean.LibroBean;
+import web.bean.SystemBean;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet(&quot;/LibriServlet&quot;)
+<span class="nc" id="L19">public class LibriServlet extends HttpServlet {</span>
+
+	private static final long serialVersionUID = 1L;
+<span class="nc" id="L22">	private static LibroBean lB=new LibroBean();</span>
+<span class="nc" id="L23">	private static String libri=&quot;/libri.jsp&quot;;</span>
+<span class="nc" id="L24">	private int dimensione=0;</span>
+<span class="nc" id="L25">	private static LibroDao lD=new LibroDao();</span>
+<span class="nc" id="L26">	private static Libro l=new Libro();</span>
+<span class="nc" id="L27">	private static String beanL=&quot;beanL&quot;;</span>
+
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+<span class="nc" id="L32">		String i=req.getParameter(&quot;procedi&quot;);</span>
+<span class="nc" id="L33">		String g=req.getParameter(&quot;genera lista&quot;);</span>
+<span class="nc" id="L34">		String a=req.getParameter(&quot;annulla&quot;);</span>
+<span class="nc" id="L35">		String id=req.getParameter(&quot;idOgg&quot;);</span>
+		
+		try {
+<span class="nc" id="L38">			dimensione =lD.getLibri().size();</span>
+		
+<span class="nc" id="L40">		setDim(dimensione);</span>
+		
+<span class="nc bnc" id="L42" title="All 4 branches missed.">			if(g!=null &amp;&amp; g.equals(&quot;genera lista&quot;))</span>
+			{
+			
+					
+			 
+<span class="nc" id="L47">				lB.setListaLibri(lD.getLibri());</span>
+<span class="nc" id="L48">				req.setAttribute(beanL,lB);</span>
+<span class="nc" id="L49">				RequestDispatcher view = getServletContext().getRequestDispatcher(libri); </span>
+<span class="nc" id="L50">				view.forward(req,resp);</span>
+			
+			
+			}
+<span class="nc bnc" id="L54" title="All 4 branches missed.">			if(i!=null &amp;&amp; i.equals(&quot;procedi&quot;))</span>
+			{
+				
+<span class="nc" id="L57">				int idO=Integer.parseInt(id);</span>
+<span class="nc bnc" id="L58" title="All 4 branches missed.">				if((idO&gt;=1) &amp;&amp; (idO&lt;getDim()))</span>
+				{
+					
+					
+<span class="nc" id="L62">					lB.setId(Integer.parseInt(id));</span>
+<span class="nc" id="L63">					l.setId(lB.getId());</span>
+<span class="nc" id="L64">					lB.setTitolo(lD.getTitolo(l));</span>
+<span class="nc" id="L65">					SystemBean.getIstance().setId(lB.getId());</span>
+<span class="nc" id="L66">					SystemBean.getIstance().setTitolo(lB.getTitolo());</span>
+<span class="nc" id="L67">					req.setAttribute(beanL,lB);</span>
+<span class="nc" id="L68">					req.setAttribute(&quot;bean1&quot;,SystemBean.getIstance());</span>
+				
+<span class="nc" id="L70">					RequestDispatcher view = getServletContext().getRequestDispatcher(&quot;/acquista.jsp&quot;); </span>
+<span class="nc" id="L71">					view.forward(req,resp);</span>
+				}
+				
+				
+			}
+<span class="nc bnc" id="L76" title="All 4 branches missed.">			if(a!=null &amp;&amp; a.equals(&quot;indietro&quot;))</span>
+			{
+<span class="nc" id="L78">				RequestDispatcher view = getServletContext().getRequestDispatcher(&quot;/index.jsp&quot;); </span>
+<span class="nc" id="L79">				view.forward(req,resp);</span>
+			}
+			
+		
+<span class="nc" id="L83">		} catch (SQLException e) {</span>
+<span class="nc" id="L84">			lB.setMex(new IdException(&quot;id nullo o eccede lista&quot;));</span>
+<span class="nc" id="L85">			req.setAttribute(beanL,lB);</span>
+<span class="nc" id="L86">			RequestDispatcher view = getServletContext().getRequestDispatcher(libri); </span>
+<span class="nc" id="L87">			view.forward(req,resp);</span>
+		}
+<span class="nc" id="L89">	}</span>
+	
+	private int getDim()
+	{
+<span class="nc" id="L93">		return dimensione;</span>
+	}
+	private void setDim(int dim)
+	{
+<span class="nc" id="L97">		dimensione=dim;</span>
+<span class="nc" id="L98">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

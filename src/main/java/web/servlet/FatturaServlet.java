@@ -63,7 +63,7 @@ public class FatturaServlet extends HttpServlet{
 			pB.setAmmontareB(SystemBean.getIstance().getSpesaTB());
 			pB.setEsitoB(0);
 			pB.setNomeUtenteB(fB.getNomeB());
-			pB.setTipoB(lB.getCategoriaB());
+			pB.setTipoB(lB.getcategoriaB());
 		
 			p.setId(pB.getIdB());
 			p.setMetodo(pB.getMetodoB());

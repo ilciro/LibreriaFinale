@@ -156,19 +156,15 @@
         <path refid="Maven Dependencies.libraryclasspath"/>
         <path refid="Server Runtime [Apache Tomcat v10.0].libraryclasspath"/>
     </path>
-    <path id="run.java.classpath">
-        <path refid="LibreriaMaven.classpath"/>
-        <path refid="Maven Dependencies.libraryclasspath"/>
-    </path>
-    <path id="run.LibreriaMaven (1).classpath">
-        <path refid="LibreriaMaven.classpath"/>
-        <path refid="Maven Dependencies.libraryclasspath"/>
-    </path>
     <path id="run.LibreriaMaven.classpath">
         <path refid="LibreriaMaven.classpath"/>
         <path refid="Maven Dependencies.libraryclasspath"/>
     </path>
-    <path id="run.TestLaptop.classpath">
+    <path id="run.test.classpath">
+        <path refid="LibreriaMaven.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.test4.classpath">
         <path refid="LibreriaMaven.classpath"/>
         <path refid="Maven Dependencies.libraryclasspath"/>
     </path>
@@ -229,22 +225,6 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    <target name="java">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.java.classpath"/>
-        </junit>
-    </target>
-    <target name="LibreriaMaven (1)">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.LibreriaMaven (1).classpath"/>
-        </junit>
-    </target>
     <target name="LibreriaMaven">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
@@ -253,13 +233,21 @@
             <classpath refid="run.LibreriaMaven.classpath"/>
         </junit>
     </target>
-    <target name="TestLaptop">
+    <target name="test">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="laptop.test.TestLaptop" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
-            <classpath refid="run.TestLaptop.classpath"/>
+            <classpath refid="run.test.classpath"/>
+        </junit>
+    </target>
+    <target name="test4">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="laptop.test.TestLaptop4" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.test4.classpath"/>
         </junit>
     </target>
     <target name="junitreport">
