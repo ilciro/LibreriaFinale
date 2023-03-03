@@ -20,7 +20,7 @@ import laptop.database.RivistaDao;
 import laptop.model.CartaDiCredito;
 import laptop.model.Negozio;
 import laptop.model.Pagamento;
-import laptop.model.raccolta.Giornale;
+
 import laptop.model.raccolta.Rivista;
 import web.bean.AcquistaBean;
 import web.bean.CartaCreditoBean;
@@ -49,7 +49,6 @@ class TestLaptop4 {
 	private DownloadBean dB=new DownloadBean();
 	private FatturaBean fB=new FatturaBean();
 	private GiornaleBean gB=new GiornaleBean();
-	private Giornale g=new Giornale();
 	private GiornaleDao gD=new GiornaleDao();
 	private LibroBean lB=new LibroBean();
 	private LibroDao lD=new LibroDao();
@@ -66,6 +65,7 @@ class TestLaptop4 {
 	private SystemBean visB=SystemBean.getIstance();
 	private TextAreaBean tAB=new TextAreaBean();
 	private UserBean uB=UserBean.getInstanceB();
+	
 	
 	
 	
@@ -157,16 +157,17 @@ class TestLaptop4 {
 	@Test
 	void testCreaGiornale() throws SQLException
 	{
-		g.setTitolo("giornale da inserire");
-		g.setTipologia("quotidiano");
-		g.setLingua("ita");
-		g.setEditore("editore ins prova");
-		g.setDataPubb(LocalDate.of(2022, 12,12));
-		g.setCopieRimanenti(100);
-		g.setDisponibilita(0);
-		g.setPrezzo((float)2.45);
-		gD.creaGiornale(g);
-		assertNotNull(g);
+		gB.setTitoloB("giornale da inserire");
+		gB.setTipologiaB("quotidiano");
+		gB.setLinguaB("ita");
+		gB.setEditoreB("editore ins prova");
+		gB.setDataPubbB(LocalDate.of(2022, 12,12));
+		gB.setCopieRimanentiB(100);
+		gB.setDisponibilitaB(0);
+		gB.setPrezzoB((float)2.45);
+		
+		
+		assertNotNull(gB);
 	}
 	@Test
 	void testListaGiornali() throws SQLException
@@ -332,10 +333,16 @@ class TestLaptop4 {
 		assertNotNull(lB.setCategorie());
 	}
 	@ParameterizedTest
-	@ValueSource(strings = {"BIOGRAFIE","DIARI_MEMORIE","DIZINARI_OPERE","FANTASCIENZA_FANTASY","GIALLI_THRILLER","LIBRI_SCOLASTICI","LIBRI_UNIVERSITARI"})
+	@ValueSource(strings = {"BIOGRAFIE","WEB_DIGITAL_MEDIA","DIZINARI_OPERE","FANTASCIENZA_FANTASY","POLITICA" ,"GIALLI_THRILLER","LIBRI_SCOLASTICI","LIBRI_UNIVERSITARI"})
 	void testCategorie(String strings)
 	{
 		lB.setcategoriaB(strings);
 		assertEquals(lB.getcategoriaB(),strings);
 	}
+	@Test
+	void testCategorieRivista()
+	{
+		assertNotNull(rivB.elencoCategorie());
+	}
+	
 }
