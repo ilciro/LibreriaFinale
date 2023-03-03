@@ -21,6 +21,7 @@ import laptop.controller.ControllerModificaUtente;
 import laptop.controller.ControllerUserPage;
 import laptop.database.PagamentoDao;
 import laptop.database.RivistaDao;
+import laptop.database.UsersDao;
 import laptop.model.Pagamento;
 import laptop.model.TempUser;
 import laptop.model.User;
@@ -38,7 +39,7 @@ class TestLaptop3 {
 	private ControllerAggiungiUtente cAU=new ControllerAggiungiUtente();
 	private ControllerModificaUtente cMU=new ControllerModificaUtente();
 	private ControllerCancellaUser cCU=new ControllerCancellaUser();
-
+	
 
 	@ParameterizedTest
 	@ValueSource(strings={"cash","cCredito"})
@@ -340,6 +341,27 @@ class TestLaptop3 {
 	{
 		r.setId(5);
 		assertNotNull(rD.getTitolo(r));
+	}
+	@Test
+	void testCambioTemUser() throws IOException, SQLException
+	{
+		
+		TempUser tu1=TempUser.getInstance();
+		tu.setId(7);
+		tu1=UsersDao.getTempUserSingolo(tu);
+		tu1.setDescrizioneT("utente comune");
+		UsersDao.aggiornaTempDesc(tu1);
+		tu1.setPasswordT("Frossi185");
+		UsersDao.aggiornaTempPass(tu1);
+		assertNotNull(tu1.getId());
+		
+		
+		
+	}
+	@Test
+	void testListaUsers() throws SQLException
+	{
+		assertNotNull(UsersDao.getUserList());
 	}
 	
 

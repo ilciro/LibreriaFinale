@@ -66,7 +66,7 @@ public class UsersDao {
 			{
 <span class="nc" id="L67">				java.util.logging.Logger.getLogger(&quot;createUser&quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="fc" id="L69">			}</span>
+			}
 			
 		
 		
@@ -114,7 +114,7 @@ public class UsersDao {
 		{
 <span class="nc" id="L115">			java.util.logging.Logger.getLogger(&quot;create temp User&quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="fc" id="L117">		}</span>
+		}
 		
 		
 <span class="fc" id="L120">		return state;</span>
@@ -149,7 +149,7 @@ public class UsersDao {
 			{
 <span class="nc" id="L150">				java.util.logging.Logger.getLogger(&quot;check user&quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="fc" id="L152">			}</span>
+			}
 			
 <span class="fc" id="L154">			java.util.logging.Logger.getLogger(&quot;check user id&quot;).log(Level.INFO, &quot;idUser {0}&quot;,u.getEmail());</span>
 
@@ -174,7 +174,7 @@ public class UsersDao {
 <span class="fc" id="L174">				prepQ.setString(1,email);</span>
 			
 <span class="fc" id="L176">				ResultSet rs = prepQ.executeQuery();</span>
-<span class="fc bfc" id="L177" title="All 2 branches covered.">				while(rs.next())</span>
+<span class="pc bpc" id="L177" title="1 of 2 branches missed.">				while(rs.next())</span>
 				{
 <span class="nc" id="L179">				idUser=rs.getInt(&quot;idUser&quot;);		</span>
 <span class="nc bnc" id="L180" title="All 2 branches missed.">					if(idUser!=0)</span>
@@ -186,7 +186,7 @@ public class UsersDao {
 			{
 <span class="fc" id="L187">				java.util.logging.Logger.getLogger(&quot;check temp user&quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="fc" id="L189">			}</span>
+			}
 			
 <span class="fc" id="L191">		return status;</span>
 	}
@@ -215,7 +215,7 @@ public class UsersDao {
 			{
 <span class="nc" id="L216">				java.util.logging.Logger.getLogger(&quot;get ruolo user&quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="fc" id="L218">			}</span>
+			}
 <span class="fc" id="L219">		u.setIdRuolo(r);</span>
 		
 <span class="fc" id="L221">		return r;</span>
@@ -242,7 +242,7 @@ public class UsersDao {
 				{
 <span class="nc" id="L243">					java.util.logging.Logger.getLogger(&quot;check reset pwd&quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="fc" id="L245">				}</span>
+				}
 		
 		
 <span class="fc" id="L248">		java.util.logging.Logger.getLogger(&quot;Reset pwd&quot;).log(Level.INFO, &quot;row affected{0}&quot;,u.getEmail());</span>
@@ -282,7 +282,7 @@ public class UsersDao {
 		{
 <span class="nc" id="L283">			java.util.logging.Logger.getLogger(&quot;delete user&quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="fc" id="L285">		}</span>
+		}
 			
 
 		
@@ -315,7 +315,7 @@ public class UsersDao {
 			{
 <span class="nc" id="L316">				java.util.logging.Logger.getLogger(&quot;delete user&quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="fc" id="L318">			}</span>
+			}
 <span class="fc" id="L319">			java.util.logging.Logger.getLogger(&quot;delete user okr&quot;).log(Level.INFO, &quot;user deleted &quot;);</span>
 
 <span class="fc" id="L321">		return state ;</span>
@@ -352,7 +352,7 @@ public class UsersDao {
 			{
 <span class="nc" id="L353">				java.util.logging.Logger.getLogger(&quot;pick data &quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="fc" id="L355">			}</span>
+			}
 
 <span class="fc" id="L357">			java.util.logging.Logger.getLogger(&quot;pick user data email&quot;).log(Level.INFO, eccezione, u.getEmail());</span>
 
@@ -383,7 +383,7 @@ public class UsersDao {
 			{
 <span class="nc" id="L384">				java.util.logging.Logger.getLogger(&quot;aggiorna nome user&quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="fc" id="L386">			}</span>
+			}
 
 
 
@@ -416,7 +416,7 @@ public class UsersDao {
 			{
 <span class="nc" id="L417">				java.util.logging.Logger.getLogger(&quot;aggiorna cognome&quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="fc" id="L419">			}</span>
+			}
 
 		
 		// errore
@@ -443,7 +443,7 @@ public class UsersDao {
 			{
 <span class="nc" id="L444">				java.util.logging.Logger.getLogger(&quot;aggiorna email user&quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="fc" id="L446">			}</span>
+			}
 
 <span class="fc" id="L448">		return u;</span>
 	}
@@ -471,7 +471,7 @@ public class UsersDao {
 			{
 <span class="nc" id="L472">				java.util.logging.Logger.getLogger(&quot;aggiornaPass&quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="fc" id="L474">			}</span>
+			}
 
 
 <span class="fc" id="L477">		return u;</span>
@@ -495,7 +495,7 @@ public class UsersDao {
 			{
 <span class="nc" id="L496">				java.util.logging.Logger.getLogger(&quot;aggiorna desc&quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="fc" id="L498">			}</span>
+			}
 <span class="fc" id="L499">		return u;</span>
 	}
 
@@ -522,7 +522,7 @@ public class UsersDao {
 			{
 <span class="nc" id="L523">				java.util.logging.Logger.getLogger(&quot;aggiorna temp nome&quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="fc" id="L525">			}</span>
+			}
 <span class="fc" id="L526">		return uT;</span>
 	}
 
@@ -552,7 +552,7 @@ public class UsersDao {
 			{
 <span class="nc" id="L553">				java.util.logging.Logger.getLogger(&quot;aggiorna pass temp user&quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="nc" id="L555">			}</span>
+			}
 
 <span class="nc" id="L557">		return uT;</span>
 	}
@@ -573,7 +573,7 @@ public class UsersDao {
 <span class="nc" id="L573">			}catch(SQLException e)</span>
 			{
 <span class="nc" id="L575">				java.util.logging.Logger.getLogger(&quot;aggiorna email temp user&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="nc" id="L576">			}</span>
+			}
 
 <span class="nc" id="L578">		return uT;</span>
 	}
@@ -595,7 +595,7 @@ public class UsersDao {
 		{
 <span class="nc" id="L596">			java.util.logging.Logger.getLogger(&quot;aggiorna data temp user&quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="nc" id="L598">		}</span>
+		}
 		// errore
 <span class="nc" id="L600">		return uT;</span>
 	}
@@ -635,7 +635,7 @@ public class UsersDao {
 			{
 <span class="nc" id="L636">			java.util.logging.Logger.getLogger(&quot;lista utenti&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta .&quot;,e);</span>
 
-<span class="fc" id="L638">			}</span>
+			}
 <span class="fc" id="L639">			b.flush();</span>
 		
 		}
@@ -671,7 +671,7 @@ public class UsersDao {
 		{
 <span class="nc" id="L672">			java.util.logging.Logger.getLogger(&quot;get single temp user&quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="nc" id="L674">		}</span>
+		}
 
 <span class="nc" id="L676">		return uT;</span>
 	}
@@ -707,7 +707,7 @@ public class UsersDao {
 			{
 <span class="nc" id="L708">				java.util.logging.Logger.getLogger(&quot;aggiorna utente&quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="fc" id="L710">			}</span>
+			}
 
 <span class="fc" id="L712">		return u;</span>
 	}
@@ -729,7 +729,7 @@ public class UsersDao {
 		{
 <span class="nc" id="L730">			java.util.logging.Logger.getLogger(&quot;get max id user&quot;).log(Level.INFO, eccezione, e);</span>
 
-<span class="fc" id="L732">		}</span>
+		}
 <span class="fc" id="L733">		return max;</span>
 	}
 
@@ -774,7 +774,7 @@ public class UsersDao {
 		{
 <span class="nc" id="L775">			java.util.logging.Logger.getLogger(&quot;user list&quot;).log(Level.INFO, &quot;user list {0}.&quot;,e.toString());</span>
 
-<span class="nc" id="L777">		}</span>
+		}
 <span class="nc" id="L778">		return s.toString();</span>
 	}
 	

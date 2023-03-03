@@ -61,7 +61,7 @@ public class GiornaleDao {
 <span class="nc" id="L61">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L63">			java.util.logging.Logger.getLogger(&quot;GetCosto g&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L64">		}</span>
+		}
 		
 <span class="fc" id="L66">		return prezzo;</span>
 
@@ -90,7 +90,7 @@ public class GiornaleDao {
 <span class="nc" id="L90">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L92">			java.util.logging.Logger.getLogger(&quot;aggiornaDisp g&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L93">		}</span>
+		}
 		
 		
 <span class="fc" id="L96">	}</span>
@@ -110,7 +110,7 @@ public class GiornaleDao {
 <span class="nc" id="L110">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L112">			java.util.logging.Logger.getLogger(&quot;id girnoale&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L113">		}</span>
+		}
 
 <span class="fc" id="L115">		return id;</span>
 
@@ -145,7 +145,7 @@ public class GiornaleDao {
 <span class="nc" id="L145">			}catch(SQLException e)</span>
 			{
 <span class="nc" id="L147">				java.util.logging.Logger.getLogger(&quot;catalogo giornali&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L148">			}</span>
+			}
 
 <span class="fc" id="L150">		return catalogo;</span>
 	}
@@ -173,12 +173,12 @@ public class GiornaleDao {
 <span class="nc" id="L173">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L175">			java.util.logging.Logger.getLogger(&quot;get giornale&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L176">		}</span>
+		}
 <span class="fc" id="L177">		return g;</span>
 
 	}
-	public GiornaleDao()
-<span class="fc" id="L181">	{</span>
+<span class="fc" id="L180">	public GiornaleDao()</span>
+	{
 <span class="fc" id="L182">		f=new Factory();</span>
 <span class="fc" id="L183">	}</span>
 
@@ -201,7 +201,7 @@ public class GiornaleDao {
 <span class="nc" id="L201">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L203">			java.util.logging.Logger.getLogger(&quot;ret tipo&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L204">		}</span>
+		}
 		
 <span class="fc" id="L206">		return categoria;</span>
 
@@ -226,7 +226,7 @@ public class GiornaleDao {
 <span class="nc" id="L226">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L228">			java.util.logging.Logger.getLogger(&quot;nome giornale&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L229">		}</span>
+		}
 			
 <span class="fc" id="L231">		return name;</span>
 	}
@@ -249,7 +249,7 @@ public class GiornaleDao {
 			}
 <span class="nc" id="L250">		}catch(SQLException e) {</span>
 <span class="nc" id="L251">			java.util.logging.Logger.getLogger(&quot;get disp g&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L252">		}</span>
+		}
 	
 	
 <span class="fc" id="L255">		return disp;</span>
@@ -274,7 +274,7 @@ public class GiornaleDao {
 <span class="nc" id="L274">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L276">			java.util.logging.Logger.getLogger(&quot;get quantita g&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L277">		}</span>
+		}
 
 <span class="fc" id="L279">		return q;</span>
 	}
@@ -300,7 +300,7 @@ public class GiornaleDao {
 <span class="nc" id="L300">			}catch(SQLException e)</span>
 			{
 <span class="nc" id="L302">				java.util.logging.Logger.getLogger(&quot;Controlla disp&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L303">			}</span>
+			}
 			
 <span class="fc" id="L305">	 	return state;</span>
 	}
@@ -329,7 +329,7 @@ public class GiornaleDao {
 <span class="nc" id="L329">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L331">			java.util.logging.Logger.getLogger(&quot;grionale singolo &quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L332">		}</span>
+		}
 <span class="fc" id="L333">		return catalogo;</span>
 
 
@@ -371,7 +371,7 @@ public class GiornaleDao {
 <span class="nc" id="L371">			}catch(SQLException e)</span>
 			{
 <span class="nc" id="L373">				java.util.logging.Logger.getLogger(&quot;creazione giornale&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L374">			}</span>
+			}
 
 
 <span class="fc" id="L377">		return state;</span>
@@ -392,7 +392,7 @@ public class GiornaleDao {
 <span class="nc" id="L392">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L394">						java.util.logging.Logger.getLogger(&quot;cancella&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L395">		}</span>
+		}
 <span class="fc" id="L396">		java.util.logging.Logger.getLogger(&quot;cancella g&quot;).log(Level.INFO,&quot;\n rows affcted {0}&quot;,row);</span>
 
 
@@ -422,7 +422,7 @@ public class GiornaleDao {
 <span class="nc" id="L422">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L424">						java.util.logging.Logger.getLogger(&quot;giornale by id&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L425">		}</span>
+		}
 		
 <span class="fc" id="L427">		java.util.logging.Logger.getLogger(&quot;elenco giornali by id&quot;).log(Level.INFO,&quot;catalogo {0}&quot;,catalogo);</span>
 
@@ -456,7 +456,7 @@ public class GiornaleDao {
 <span class="nc" id="L456">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L458">			java.util.logging.Logger.getLogger(&quot;gionali by name&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L459">		}</span>
+		}
 
 		
 		
@@ -503,7 +503,7 @@ public class GiornaleDao {
 <span class="nc" id="L503">			}catch(SQLException e)</span>
 			{
 <span class="nc" id="L505">							java.util.logging.Logger.getLogger(&quot;update g&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L506">			}</span>
+			}
 
 <span class="fc" id="L508">			java.util.logging.Logger.getLogger(&quot;aggiorna g&quot;).log(Level.INFO,&quot; rows aggiornalte {0}&quot;,row);</span>
 
@@ -545,7 +545,7 @@ public class GiornaleDao {
 <span class="nc" id="L545">			}catch(SQLException e)</span>
 			   {
 <span class="nc" id="L547">							java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L548">			   }</span>
+			   }
 
 
 
@@ -576,7 +576,7 @@ public class GiornaleDao {
 <span class="nc" id="L576">			}catch(SQLException e)</span>
 			{
 <span class="nc" id="L578">				java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L579">			}</span>
+			}
 
 		
 <span class="fc" id="L582">	}</span>
@@ -599,7 +599,7 @@ public class GiornaleDao {
 <span class="nc" id="L599">		 }catch(SQLException e)</span>
 		 {
 <span class="nc" id="L601">				java.util.logging.Logger.getLogger(&quot;titolo giornale&quot;).log(Level.INFO, &quot;titolo aggiornati {0}.&quot;,e.toString());</span>
-<span class="fc" id="L602">		 }</span>
+		 }
 		 
 		
 <span class="fc" id="L605">		 return t;</span>

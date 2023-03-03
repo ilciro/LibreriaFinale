@@ -74,7 +74,7 @@ import laptop.utilities.ConnToDb;
 <span class="nc" id="L74">		}catch(SQLException e)</span>
 			   {
 <span class="nc" id="L76">			java.util.logging.Logger.getLogger(&quot;report l&quot;).log(Level.INFO, &quot;report libri {0}.&quot;,e.toString());</span>
-<span class="fc" id="L77">			   }</span>
+			   }
 <span class="fc" id="L78">			   return s.toString();</span>
 		   }
 		
@@ -128,7 +128,7 @@ import laptop.utilities.ConnToDb;
 <span class="nc" id="L128">		        	}catch(SQLException e)</span>
 		        	{
 <span class="nc" id="L130">		    			java.util.logging.Logger.getLogger(&quot;report R&quot;).log(Level.INFO, &quot;report riviste &quot;,e);</span>
-<span class="fc" id="L131">		        	}</span>
+		        	}
 <span class="fc" id="L132">		        	return s.toString();</span>
 		     
 		        }
@@ -184,7 +184,7 @@ import laptop.utilities.ConnToDb;
 <span class="nc" id="L184">				java.util.logging.Logger.getLogger(&quot;report g &quot;).log(Level.INFO, &quot;report giornali eccezione &quot;,e);</span>
 
 
-<span class="fc" id="L187">			   }</span>
+			   }
 
 
 <span class="fc" id="L190">			   return s.toString();</span>
@@ -243,7 +243,7 @@ import laptop.utilities.ConnToDb;
 			{
 <span class="nc" id="L244">			java.util.logging.Logger.getLogger(&quot;lista utenti&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta .&quot;,e);</span>
 
-<span class="fc" id="L246">			}</span>
+			}
 <span class="fc" id="L247">			bU.flush();</span>
 <span class="fc" id="L248">			return s.toString();</span>
 		
