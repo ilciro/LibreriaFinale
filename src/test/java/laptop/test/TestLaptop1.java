@@ -563,6 +563,27 @@ class TestLaptop1 {
 		assertEquals(3,vis.getId());
 		
 	}
+	@Test
+	void testRitornaMessaggio()
+	{
+		vis.setTypeAsBook();
+		String s=cC.ritornaMessaggio();
+		assertEquals(s,"Benvenuto... ecco la lista dei libri nel nostro catalogo...");
+	}
+	@Test
+	void testPopolaBottoneV()
+	{
+		vis.setTypeAsBook();
+		String s=cC.popolaBottoneV();
+		assertEquals(s,"Mostra Libro");
+	}
+	@Test
+	void testPopolaBottoneA()
+	{
+		vis.setTypeAsBook();
+		String s=cC.popolaBottoneA();
+		assertEquals(s,"Acquista Libro");
+	}
 	
 	
 

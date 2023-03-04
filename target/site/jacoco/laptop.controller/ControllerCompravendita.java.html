@@ -98,36 +98,36 @@ public  boolean disponibilitaRivista(String i ) throws SQLException {
 
 	public String ritornaMessaggio()
 	{
-<span class="nc" id="L101">		String s=null;</span>
-<span class="nc bnc" id="L102" title="All 2 branches missed.">		if(ControllerSystemState.getIstance().getType().equals(libro))</span>
-<span class="nc" id="L103">			s=&quot;Benvenuto... ecco la lista dei libri nel nostro catalogo...&quot;;</span>
+<span class="fc" id="L101">		String s=null;</span>
+<span class="pc bpc" id="L102" title="1 of 2 branches missed.">		if(ControllerSystemState.getIstance().getType().equals(libro))</span>
+<span class="fc" id="L103">			s=&quot;Benvenuto... ecco la lista dei libri nel nostro catalogo...&quot;;</span>
 <span class="nc bnc" id="L104" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(giornale))</span>
 <span class="nc" id="L105">			s=&quot;Benvenuto... ecco la lista dei giornali nel nostro catalogo...&quot;;</span>
 <span class="nc bnc" id="L106" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(rivista))</span>
 <span class="nc" id="L107">			s=&quot;Benvenuto... ecco la lista dele riviste nel nostro catalogo...&quot;;</span>
-<span class="nc" id="L108">		return s;</span>
+<span class="fc" id="L108">		return s;</span>
 	}
 	public String popolaBottoneV()
 	{
-<span class="nc" id="L112">		String s=null;</span>
-<span class="nc bnc" id="L113" title="All 2 branches missed.">		if(ControllerSystemState.getIstance().getType().equals(libro))</span>
-<span class="nc" id="L114">			s=&quot;Mostra Libro&quot;;</span>
+<span class="fc" id="L112">		String s=null;</span>
+<span class="pc bpc" id="L113" title="1 of 2 branches missed.">		if(ControllerSystemState.getIstance().getType().equals(libro))</span>
+<span class="fc" id="L114">			s=&quot;Mostra Libro&quot;;</span>
 <span class="nc bnc" id="L115" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(giornale))</span>
 <span class="nc" id="L116">			s=&quot;Mostra Giornale&quot;;</span>
 <span class="nc bnc" id="L117" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(rivista))</span>
 <span class="nc" id="L118">			s=&quot;Mostra Rivista&quot;;</span>
-<span class="nc" id="L119">		return s;</span>
+<span class="fc" id="L119">		return s;</span>
 	}
 	public String popolaBottoneA()
 	{
-<span class="nc" id="L123">		String s=null;</span>
-<span class="nc bnc" id="L124" title="All 2 branches missed.">		if(ControllerSystemState.getIstance().getType().equals(libro))</span>
-<span class="nc" id="L125">			s=&quot;Acquista Libro&quot;;</span>
+<span class="fc" id="L123">		String s=null;</span>
+<span class="pc bpc" id="L124" title="1 of 2 branches missed.">		if(ControllerSystemState.getIstance().getType().equals(libro))</span>
+<span class="fc" id="L125">			s=&quot;Acquista Libro&quot;;</span>
 <span class="nc bnc" id="L126" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(giornale))</span>
 <span class="nc" id="L127">			s=&quot;Acquista Giornale&quot;;</span>
 <span class="nc bnc" id="L128" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(rivista))</span>
 <span class="nc" id="L129">			s=&quot;Acquista Rivista&quot;;</span>
-<span class="nc" id="L130">		return s;</span>
+<span class="fc" id="L130">		return s;</span>
 	}
 
 

@@ -321,6 +321,7 @@ class TestLaptop4 {
 		lB.setTipologiaB("INFORMATICA");
 		lB.setcategoriaB("FAMIGLIA");
 		lB.setPrezzoB((float)15.36);
+		lB.setNumeroPagineB(250);
 		assertNotNull(lB.getCodIsbnB());
 	}
 	@Test
