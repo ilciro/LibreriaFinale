@@ -26,12 +26,12 @@ public class ControllerGestionePage {
 		{
 <span class="fc" id="L27">			l.setId(id);</span>
 <span class="fc" id="L28">			lD.cancella(l);</span>
-		}
+<span class="fc" id="L29">		}</span>
 <span class="fc bfc" id="L30" title="All 2 branches covered.">		else if(ControllerSystemState.getIstance().getType().equals(&quot;giornale&quot;))</span>
 		{
 <span class="fc" id="L32">			g.setId(id);</span>
 <span class="fc" id="L33">			gD.cancella(g);</span>
-		}
+<span class="fc" id="L34">		}</span>
 <span class="pc bpc" id="L35" title="1 of 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(&quot;rivista&quot;))</span>
 		{
 <span class="fc" id="L37">			r.setId(id);</span>
@@ -51,8 +51,8 @@ public class ControllerGestionePage {
 <span class="fc" id="L51">		return gD.getGiornaleSingolo();</span>
 	}
 	
-	public ControllerGestionePage()
-<span class="fc" id="L55">	{</span>
+<span class="fc" id="L54">	public ControllerGestionePage()</span>
+	{
 <span class="fc" id="L56">		rD=new RivistaDao();</span>
 <span class="fc" id="L57">		gD=new GiornaleDao();</span>
 <span class="fc" id="L58">		lD=new LibroDao();</span>
@@ -66,11 +66,11 @@ public class ControllerGestionePage {
 <span class="nc bnc" id="L66" title="All 2 branches missed.">		if(ControllerSystemState.getIstance().getType().equals(&quot;libro&quot;))</span>
 		{
 <span class="nc" id="L68">			s=&quot;Benvenuto nella schermata dei libri&quot;;</span>
-		}
+<span class="nc" id="L69">		}</span>
 <span class="nc bnc" id="L70" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(&quot;giornale&quot;))</span>
 		{
 <span class="nc" id="L72">			s=&quot;Benvenuto nella schermata dei giornali&quot;;</span>
-		}
+<span class="nc" id="L73">		}</span>
 <span class="nc bnc" id="L74" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(&quot;rivista&quot;))</span>
 		{
 <span class="nc" id="L76">			s=&quot;Benvenuto nella schermata dele riviste&quot;;</span>
