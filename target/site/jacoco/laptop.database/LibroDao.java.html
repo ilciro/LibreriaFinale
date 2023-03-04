@@ -54,7 +54,7 @@ public class LibroDao  {
 <span class="nc" id="L54">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L56">			java.util.logging.Logger.getLogger(&quot;costo libro&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-		}
+<span class="fc" id="L57">		}</span>
 <span class="fc" id="L58">		return prezzo;</span>
 
 	}
@@ -81,7 +81,7 @@ public class LibroDao  {
 <span class="nc" id="L81">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L83">			java.util.logging.Logger.getLogger(&quot;aggiorna disp l&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-		}
+<span class="fc" id="L84">		}</span>
 		
 
 
@@ -113,7 +113,7 @@ public class LibroDao  {
 <span class="nc" id="L113">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L115">			java.util.logging.Logger.getLogger(&quot;get libri&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-		}
+<span class="fc" id="L116">		}</span>
 		
 
 <span class="fc" id="L119">		return catalogo;</span>
@@ -144,7 +144,7 @@ public class LibroDao  {
 <span class="nc" id="L144">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L146">			java.util.logging.Logger.getLogger(&quot;get libri by name&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-		}
+<span class="fc" id="L147">		}</span>
 		
 		
 <span class="fc" id="L150">		return catalogo;</span>
@@ -173,15 +173,15 @@ public class LibroDao  {
 <span class="nc" id="L173">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L175">			java.util.logging.Logger.getLogger(&quot;get libro&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-		}
+<span class="fc" id="L176">		}</span>
 		
 <span class="fc" id="L178">		return l;</span>
 
 	}
 	
 
-<span class="fc" id="L183">	public LibroDao()</span>
-	{
+	public LibroDao()
+<span class="fc" id="L184">	{</span>
 <span class="fc" id="L185">		f=new Factory();</span>
 <span class="fc" id="L186">	}</span>
 
@@ -200,7 +200,7 @@ public class LibroDao  {
 <span class="nc" id="L200">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L202">			java.util.logging.Logger.getLogger(&quot;ret id libro&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-		}
+<span class="fc" id="L203">		}</span>
 <span class="fc" id="L204">		return id;</span>
 
 
@@ -228,7 +228,7 @@ public class LibroDao  {
 <span class="nc" id="L228">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L230">			java.util.logging.Logger.getLogger(&quot;tipo l&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-		}
+<span class="fc" id="L231">		}</span>
 <span class="fc" id="L232">		return categoria;</span>
 
 
@@ -255,7 +255,7 @@ public class LibroDao  {
 <span class="nc" id="L255">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L257">			java.util.logging.Logger.getLogger(&quot;aggiorna copie vendute&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-		}
+<span class="fc" id="L258">		}</span>
 		
 
 		
@@ -307,7 +307,7 @@ public class LibroDao  {
 <span class="nc" id="L307">				}catch(SQLException e)</span>
 				{
 <span class="nc" id="L309">						java.util.logging.Logger.getLogger(&quot;crea libro&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-				}
+<span class="fc" id="L310">				}</span>
 			
 			
 		
@@ -333,7 +333,7 @@ public class LibroDao  {
 <span class="nc" id="L333">			}catch(SQLException e)</span>
 		{
 <span class="nc" id="L335">			java.util.logging.Logger.getLogger(&quot;quantita l&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-		}
+<span class="fc" id="L336">		}</span>
 			
 		
 
@@ -371,7 +371,7 @@ public class LibroDao  {
 <span class="nc" id="L371">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L373">			java.util.logging.Logger.getLogger(&quot;disponibilita l&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-		}
+<span class="fc" id="L374">		}</span>
 				
 
 <span class="fc" id="L377">		return state;</span>
@@ -396,7 +396,7 @@ public class LibroDao  {
 <span class="nc" id="L396">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L398">			java.util.logging.Logger.getLogger(&quot;nome l&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-		}
+<span class="fc" id="L399">		}</span>
 <span class="fc" id="L400">		return name;</span>
 	}
 
@@ -423,7 +423,7 @@ public class LibroDao  {
 <span class="nc" id="L423">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L425">			java.util.logging.Logger.getLogger(&quot;libro singolo&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-		}
+<span class="fc" id="L426">		}</span>
 		
 <span class="fc" id="L428">		java.util.logging.Logger.getLogger(&quot;Catalogo&quot;).log(Level.INFO, &quot;ctalogo {0}&quot;,catalogo);</span>
 	
@@ -474,7 +474,7 @@ public class LibroDao  {
 <span class="nc" id="L474">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L476">						java.util.logging.Logger.getLogger(&quot;libro by id&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-		}
+<span class="fc" id="L477">		}</span>
 <span class="fc" id="L478">		java.util.logging.Logger.getLogger(&quot;catalogo&quot;).log(Level.INFO,&quot;catalogo trovato&quot;);</span>
 
 <span class="fc" id="L480">		return catalogo;</span>
@@ -571,7 +571,7 @@ public class LibroDao  {
 <span class="nc" id="L571">		}catch(SQLException e)</span>
 			   {
 <span class="nc" id="L573">								java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-			   }
+<span class="fc" id="L574">			   }</span>
 		   }
 		
 
@@ -597,7 +597,7 @@ public class LibroDao  {
 <span class="nc" id="L597">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L599">			java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-		}
+<span class="fc" id="L600">		}</span>
 		
 		
 
@@ -623,7 +623,7 @@ public class LibroDao  {
 		{
 <span class="nc" id="L624">			java.util.logging.Logger.getLogger(&quot;get Titolo l&quot;).log(Level.INFO, &quot;titolo libro .&quot;,e);</span>
 
-		}
+<span class="fc" id="L626">		}</span>
 <span class="fc" id="L627">		return t;</span>
 	}
 

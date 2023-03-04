@@ -17,6 +17,8 @@ import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
 import laptop.database.PagamentoDao;
 import laptop.database.RivistaDao;
+import laptop.database.UsersDao;
+import laptop.exception.LogoutException;
 import laptop.model.CartaDiCredito;
 import laptop.model.Negozio;
 import laptop.model.Pagamento;
@@ -354,5 +356,10 @@ class TestLaptop4 {
 		uB.setIdRuolo(strings);
 		assertEquals(uB.getrB(),strings);
 	}
-	
+	@Test 
+	void testLogout() throws LogoutException
+	{
+		UserBean.getInstanceB().setNomeB("franco");
+		assertTrue(UsersDao.logout());
+	}
 }
