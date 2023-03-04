@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: laptop.test.TestLaptop1
 -------------------------------------------------------------------------------
-Tests run: 77, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 69.316 s - in laptop.test.TestLaptop1
+Tests run: 77, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 61.383 s - in laptop.test.TestLaptop1

@@ -18,13 +18,16 @@ import com.itextpdf.text.DocumentException;
 import laptop.controller.ControllerAggiungiUtente;
 import laptop.controller.ControllerCancellaUser;
 import laptop.controller.ControllerModificaUtente;
+import laptop.controller.ControllerSystemState;
 import laptop.controller.ControllerUserPage;
+import laptop.database.LibroDao;
 import laptop.database.PagamentoDao;
 import laptop.database.RivistaDao;
 import laptop.database.UsersDao;
 import laptop.model.Pagamento;
 import laptop.model.TempUser;
 import laptop.model.User;
+import laptop.model.raccolta.Libro;
 import laptop.model.raccolta.Rivista;
 
 
@@ -39,6 +42,9 @@ class TestLaptop3 {
 	private ControllerAggiungiUtente cAU=new ControllerAggiungiUtente();
 	private ControllerModificaUtente cMU=new ControllerModificaUtente();
 	private ControllerCancellaUser cCU=new ControllerCancellaUser();
+	private LibroDao lD=new LibroDao();
+	private Libro l=new Libro();
+	private ControllerSystemState vis=ControllerSystemState.getIstance();
 	
 
 	@ParameterizedTest
@@ -363,6 +369,26 @@ class TestLaptop3 {
 	{
 		assertNotNull(UsersDao.getUserList());
 	}
-	
+	@Test
+	void testIdLibro() throws SQLException
+	{
+		l.setCodIsbn("8867231553");
+		assertNotNull(lD.retId(l));
+	}
+	@Test
+	void testAggiornaCopieVendute() throws SQLException
+	{
+		l.setCodIsbn("8867231553");
+		l.setNrCopie(100);
+		vis.setQuantita(8);
+		lD.aggiornaCopieVendute(l);
+		assertNotNull(l.getCodIsbn());
+	}
+	@Test
+	void testLibroTitolo()
+	{
+		vis.setId(6);
+		assertNotNull(lD.getTitolo(l));
+	}
 
 }

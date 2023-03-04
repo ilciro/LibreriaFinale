@@ -305,6 +305,7 @@ class TestLaptop4 {
 	@Test
 	void testCreaLibroBean()
 	{
+		lB.setIdB(5);
 		lB.setTitoloB("libro prova");
 		lB.setCodIsbnB("1526369845");
 		lB.setEditoreB("editore prova");
@@ -319,6 +320,7 @@ class TestLaptop4 {
 		lB.setNrCopieB(47);
 		lB.setTipologiaB("INFORMATICA");
 		lB.setcategoriaB("FAMIGLIA");
+		lB.setPrezzoB((float)15.36);
 		assertNotNull(lB.getCodIsbnB());
 	}
 	@Test
@@ -333,7 +335,7 @@ class TestLaptop4 {
 		assertNotNull(lB.setCategorie());
 	}
 	@ParameterizedTest
-	@ValueSource(strings = {"BIOGRAFIE","WEB_DIGITAL_MEDIA","DIZINARI_OPERE","FANTASCIENZA_FANTASY","POLITICA" ,"GIALLI_THRILLER","LIBRI_SCOLASTICI","LIBRI_UNIVERSITARI"})
+	@ValueSource(strings = {"BIOGRAFIE","WEB_DIGITAL_MEDIA","DIZINARI_OPERE","FANTASCIENZA_FANTASY","POLITICA" ,"GIALLI_THRILLER","LIBRI_SCOLASTICI","LIBRI_UNIVERSITARI","HUMOR"})
 	void testCategorie(String strings)
 	{
 		lB.setcategoriaB(strings);
