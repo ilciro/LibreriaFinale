@@ -187,6 +187,7 @@ class TestLaptop1 {
 	{
 		vis.setTypeAsBook();
 		vis.setId(1);
+		
 		assertNotEquals(0,cA.getDisp());
 	}
 	@Test 

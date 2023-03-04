@@ -628,21 +628,21 @@ public class LibroDao  {
 	}
 
 	public void aggiornaData(Libro l, Date sqlDate) throws SQLException {
-<span class="nc" id="L631">		int row=0;</span>
-<span class="nc" id="L632">		query=&quot;update libro set dataPubblicazione=? where idProd=? or idProd=?&quot;;</span>
-<span class="nc" id="L633">		try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="nc" id="L634">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+<span class="fc" id="L631">		int row=0;</span>
+<span class="fc" id="L632">		query=&quot;update libro set dataPubblicazione=? where idProd=? or idProd=?&quot;;</span>
+<span class="fc" id="L633">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L634">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
 		{
-<span class="nc" id="L636">			prepQ.setDate(1, sqlDate);</span>
-<span class="nc" id="L637">			prepQ.setInt(2, l.getId());</span>
-<span class="nc" id="L638">			prepQ.setInt(3, vis.getId());</span>
-<span class="nc" id="L639">			row=prepQ.executeUpdate();</span>
+<span class="fc" id="L636">			prepQ.setDate(1, sqlDate);</span>
+<span class="fc" id="L637">			prepQ.setInt(2, l.getId());</span>
+<span class="fc" id="L638">			prepQ.setInt(3, vis.getId());</span>
+<span class="fc" id="L639">			row=prepQ.executeUpdate();</span>
 			
 		}
 		
-<span class="nc" id="L643">		java.util.logging.Logger.getLogger(&quot;aggiorna data&quot;).log(Level.INFO, &quot;libri aggiornati {0}.&quot;,row);</span>
+<span class="fc" id="L643">		java.util.logging.Logger.getLogger(&quot;aggiorna data&quot;).log(Level.INFO, &quot;libri aggiornati {0}.&quot;,row);</span>
 
-<span class="nc" id="L645">	}</span>
+<span class="fc" id="L645">	}</span>
 
 	
 

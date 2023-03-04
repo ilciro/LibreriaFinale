@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
+import java.sql.Date;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.time.LocalDate;
@@ -390,5 +390,14 @@ class TestLaptop3 {
 		vis.setId(6);
 		assertNotNull(lD.getTitolo(l));
 	}
+	@Test
+	void testUpdateDataL() throws SQLException
+	{
+		java.sql.Date sqlDate = new Date(System.currentTimeMillis());
+		l.setId(7);
+		lD.aggiornaData(l, sqlDate);
+		assertNotNull(sqlDate);
+	}
+	
 
 }
