@@ -68,11 +68,11 @@ public class CreateDefaultDB
 			+ &quot;nomeUtente varchar(10),spesaTotale float,&quot;
 			+ &quot;eMail varchar(100 ),&quot;
 			+ &quot;tipoAcquisto varchar(20),&quot;
-<span class="fc" id="L71">			+ &quot;idProd int )&quot;;</span>
+			+ &quot;idProd int )&quot;;
 
 
-<span class="nc" id="L74">	private CreateDefaultDB() </span>
-	{
+	private CreateDefaultDB() 
+<span class="nc" id="L75">	{</span>
 <span class="nc" id="L76">		java.util.logging.Logger.getLogger(&quot;Test Costruttore&quot;).log(Level.INFO, &quot;creo db default&quot;);</span>
 		
 <span class="nc" id="L78">	}</span>
@@ -143,13 +143,13 @@ public class CreateDefaultDB
 <span class="fc" id="L143">						java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, &quot;trovato db e connesso.. buon proseguimento&quot;);</span>
 
 					
-<span class="fc" id="L146">				}</span>
+				}
 				else
 				{
 <span class="nc" id="L149">					java.util.logging.Logger.getLogger(&quot;Test popolamento db&quot;).log(Level.INFO, &quot;Ops ..! Qualcosa andato storto nel popolamento&quot;);</span>
 
 				}
-<span class="nc" id="L152">			}</span>
+			}
 			// Se trovo tutto  chiudo la connesione e vado avanti con l'esecuzione del programma
 			// Se qualcosa non va chiudo la connessione e vado nel cacth
 			else 

@@ -30,12 +30,12 @@ public class ControllerRegistraUtente {
 <span class="fc" id="L30">				u.setCognome(c);</span>
 				
 <span class="fc" id="L32">				state=UsersDao.createUser(u);</span>
-<span class="fc" id="L33">			}</span>
+			}
 			else 			{
 				// utente gia registrato o errore 
 <span class="nc" id="L36">				state = false;</span>
 			}
-<span class="nc" id="L38">		}</span>
+		}
 		else {
 <span class="nc" id="L40">			state=false;</span>
 		}
@@ -84,8 +84,8 @@ public class ControllerRegistraUtente {
 <span class="fc" id="L84">		return state;</span>
 	}
 	
-<span class="fc" id="L87">	public ControllerRegistraUtente()</span>
-	{
+	public ControllerRegistraUtente()
+<span class="fc" id="L88">	{</span>
 <span class="fc" id="L89">		java.util.logging.Logger.getLogger(&quot;Test Costruttore&quot;).log(Level.INFO, &quot;Costruttore ControllerRegistaUtente&quot;);</span>
 
 <span class="fc" id="L91">	}</span>

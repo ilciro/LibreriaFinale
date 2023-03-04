@@ -103,61 +103,59 @@ public class UserBean {
 <span class="fc" id="L103">	}</span>
 
 	public String getrB() {
-<span class="nc" id="L106">		return rB;</span>
+<span class="fc" id="L106">		return rB;</span>
 	}
 
-	public void setrB(String rB) {
-<span class="nc" id="L110">		this.rB = rB;</span>
-<span class="nc" id="L111">	}</span>
+	
 
 	public String getMexB() {
-<span class="nc" id="L114">		return mexB;</span>
+<span class="nc" id="L112">		return mexB;</span>
 	}
 
 	public void setMexB(String mexB) {
-<span class="nc" id="L118">		this.mexB = mexB;</span>
-<span class="nc" id="L119">	}</span>
+<span class="nc" id="L116">		this.mexB = mexB;</span>
+<span class="nc" id="L117">	}</span>
 
 	public String getListaUtentiB() {
-<span class="nc" id="L122">		return listaUtentiB;</span>
+<span class="nc" id="L120">		return listaUtentiB;</span>
 	}
 
 	public void setListaUtentiB(String listaUtentiB) {
-<span class="nc" id="L126">		this.listaUtentiB = listaUtentiB;</span>
-<span class="nc" id="L127">	}</span>
+<span class="nc" id="L124">		this.listaUtentiB = listaUtentiB;</span>
+<span class="nc" id="L125">	}</span>
 
 	public void setIdRuolo(String ruolo) {
 
-<span class="pc bpc" id="L131" title="7 of 8 branches missed.">		 switch (ruolo){</span>
+<span class="pc bpc" id="L129" title="4 of 8 branches missed.">		 switch (ruolo){</span>
 			case &quot;ADMIN&quot;:
-<span class="nc" id="L133">				rB= Ruoli.ADMIN.toString();</span>
-<span class="nc" id="L134">				break;				</span>
+<span class="fc" id="L131">				rB= Ruoli.ADMIN.toString();</span>
+<span class="fc" id="L132">				break;				</span>
 			case &quot;EDITORE&quot;:
-<span class="fc" id="L136">				rB= Ruoli.EDITORE.toString();</span>
-<span class="fc" id="L137">				break;</span>
+<span class="fc" id="L134">				rB= Ruoli.EDITORE.toString();</span>
+<span class="fc" id="L135">				break;</span>
 			case &quot;SCRITTORE&quot;:
-<span class="nc" id="L139">				rB= Ruoli.SCRITTORE.toString();</span>
-<span class="nc" id="L140">				break;</span>
+<span class="fc" id="L137">				rB= Ruoli.SCRITTORE.toString();</span>
+<span class="fc" id="L138">				break;</span>
 			case &quot;UTENTE&quot;:
-<span class="nc" id="L142">				rB= Ruoli.UTENTE.toString();</span>
-<span class="nc" id="L143">				break;	</span>
+<span class="fc" id="L140">				rB= Ruoli.UTENTE.toString();</span>
+<span class="fc" id="L141">				break;	</span>
 			case &quot;W&quot;:
-<span class="nc" id="L145">				rB= Ruoli.SCRITTORE.toString();</span>
-<span class="nc" id="L146">				break;</span>
+<span class="nc" id="L143">				rB= Ruoli.SCRITTORE.toString();</span>
+<span class="nc" id="L144">				break;</span>
 			case &quot;E&quot;:
-<span class="nc" id="L148">				rB= Ruoli.EDITORE.toString();</span>
-<span class="nc" id="L149">				break;	</span>
+<span class="nc" id="L146">				rB= Ruoli.EDITORE.toString();</span>
+<span class="nc" id="L147">				break;	</span>
 			case &quot;A&quot;:
-<span class="nc" id="L151">				rB= Ruoli.ADMIN.toString();</span>
-<span class="nc" id="L152">				break;</span>
+<span class="nc" id="L149">				rB= Ruoli.ADMIN.toString();</span>
+<span class="nc" id="L150">				break;</span>
 				
 			default:
-<span class="nc" id="L155">				rB= Ruoli.UTENTE.toString();</span>
+<span class="nc" id="L153">				rB= Ruoli.UTENTE.toString();</span>
 				break;
 			}
 		
 
-<span class="fc" id="L160">	}</span>
+<span class="fc" id="L158">	}</span>
 
 	
 
