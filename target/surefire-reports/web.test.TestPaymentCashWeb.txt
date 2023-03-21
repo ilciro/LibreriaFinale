@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: web.test.TestPaymentCashWeb
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 62.498 s - in web.test.TestPaymentCashWeb
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 28.94 s <<< FAILURE! - in web.test.TestPaymentCashWeb
+web.test.TestPaymentCashWeb.testPagamento  Time elapsed: 11.185 s  <<< ERROR!
+org.openqa.selenium.remote.http.ConnectionFailedException: 
+Unable to establish websocket connection to http://localhost:50763/devtools/browser/ba06293c-28a4-4eaa-9de2-3834f1fca13f
+Build info: version: '4.6.0', revision: '79f1c02ae20'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: driver.version: ChromeDriver
+	at web.test.TestPaymentCashWeb.tearUp(TestPaymentCashWeb.java:36)
+

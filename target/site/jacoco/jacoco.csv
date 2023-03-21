@@ -67,6 +67,6 @@ LibreriaMaven Maven Webapp,laptop.controller,ControllerUserPage,0,10,0,0,0,5,0,2
 LibreriaMaven Maven Webapp,laptop.controller,ControllerCompravendita,54,139,15,3,15,37,11,11,2,11
 LibreriaMaven Maven Webapp,laptop.controller,ControllerCancellaUser,0,15,0,0,0,5,0,2,0,2
 LibreriaMaven Maven Webapp,laptop.controller,ControllerPagamentoCC,0,229,9,11,0,42,9,7,0,6
-LibreriaMaven Maven Webapp,laptop.utilities,ConnToDb,27,128,1,1,8,39,1,4,0,4
+LibreriaMaven Maven Webapp,laptop.utilities,ConnToDb,14,141,1,1,4,43,1,4,0,4
 LibreriaMaven Maven Webapp,laptop.utilities,PopulateDefaultDb,7,190,0,0,2,57,0,8,0,8
-LibreriaMaven Maven Webapp,laptop.utilities,CreateDefaultDB,20,116,4,4,5,35,5,2,1,2
+LibreriaMaven Maven Webapp,laptop.utilities,CreateDefaultDB,14,122,2,6,4,36,3,4,1,2

@@ -569,21 +569,21 @@ class TestLaptop1 {
 	{
 		vis.setTypeAsBook();
 		String s=cC.ritornaMessaggio();
-		assertEquals(s,"Benvenuto... ecco la lista dei libri nel nostro catalogo...");
+		assertEquals("Benvenuto... ecco la lista dei libri nel nostro catalogo...",s);
 	}
 	@Test
 	void testPopolaBottoneV()
 	{
 		vis.setTypeAsBook();
 		String s=cC.popolaBottoneV();
-		assertEquals(s,"Mostra Libro");
+		assertEquals("Mostra Libro",s);
 	}
 	@Test
 	void testPopolaBottoneA()
 	{
 		vis.setTypeAsBook();
 		String s=cC.popolaBottoneA();
-		assertEquals(s,"Acquista Libro");
+		assertEquals("Acquista Libro",s);
 	}
 	
 	

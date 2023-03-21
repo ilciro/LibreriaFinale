@@ -86,13 +86,13 @@ public class CreateDefaultDB
 
 	 
 		
-<span class="pc bpc" id="L89" title="2 of 4 branches missed.">			 status = ConnToDb.initailConnection() &amp;&amp; !ConnToDb.connection() ; </span>
+<span class="pc bpc" id="L89" title="1 of 4 branches missed.">			 status = ConnToDb.initailConnection() &amp;&amp; !ConnToDb.connection() ; </span>
 			 
 		
 			// status = 1 se c'e' workbench ma non il db 
 			// status = 0 se c'e' tutto
 			// Se non trovo il db chiamo questa funzione che lo crea
-<span class="pc bpc" id="L95" title="1 of 2 branches missed.">			if(status) </span>
+<span class="fc bfc" id="L95" title="All 2 branches covered.">			if(status) </span>
 			{
 <span class="fc" id="L97">				try (Statement st=ConnToDb.conn.createStatement())</span>
 				{
@@ -154,7 +154,7 @@ public class CreateDefaultDB
 			// Se qualcosa non va chiudo la connessione e vado nel cacth
 			else 
 			{
-<span class="nc" id="L157">				java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.WARNING, &quot;Ops..! qualcosa è andato storto nella connesione al database!&quot;);</span>
+<span class="fc" id="L157">				java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.WARNING, &quot;Ops..! qualcosa è andato storto nella connesione al database!&quot;);</span>
 
 			}
 <span class="fc" id="L160">		}</span>

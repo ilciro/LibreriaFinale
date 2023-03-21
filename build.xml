@@ -160,14 +160,6 @@
         <path refid="LibreriaMaven.classpath"/>
         <path refid="Maven Dependencies.libraryclasspath"/>
     </path>
-    <path id="run.test.classpath">
-        <path refid="LibreriaMaven.classpath"/>
-        <path refid="Maven Dependencies.libraryclasspath"/>
-    </path>
-    <path id="run.test4.classpath">
-        <path refid="LibreriaMaven.classpath"/>
-        <path refid="Maven Dependencies.libraryclasspath"/>
-    </path>
     <target name="init">
         <mkdir dir="target/classes"/>
         <mkdir dir="target/test-classes"/>
@@ -231,23 +223,6 @@
             <formatter type="xml"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.LibreriaMaven.classpath"/>
-        </junit>
-    </target>
-    <target name="test">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.test.classpath"/>
-        </junit>
-    </target>
-    <target name="test4">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="laptop.test.TestLaptop4" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.test4.classpath"/>
         </junit>
     </target>
     <target name="junitreport">
