@@ -546,7 +546,7 @@ public class RivistaDao {
 	public void generaReport() throws SQLException, IOException
 	{
 				FileWriter w;
-				query="select titolo,editore,copieRimanenti,prezzo as totale  from ispw.rivista";
+				query="select titolo,editore,copieRimanenti,prezzo as totale ,dataPubblicazione from ispw.rivista";
 		        w=new FileWriter("ReportFinale\\riepilogoRiviste.txt");
 		        
 		        
@@ -566,7 +566,7 @@ public class RivistaDao {
 				
 										
 				
-		        		b.write("Titolo :"+rs.getString(1)+"\t"+"Editore :"+rs.getString(2)+"\t"+"Ricavo totale :" +rs.getInt(3)*rs.getFloat(4)+"\t"+"pubblicato il : "+rs.getDate(7)+"\n");
+		        		b.write("Titolo :"+rs.getString(1)+"\t"+"Editore :"+rs.getString(2)+"\t"+"Ricavo totale :" +rs.getInt(3)*rs.getFloat(4)+"\t"+"pubblicato il : "+rs.getDate("dataPubblicazione")+"\n");
 
 
 
