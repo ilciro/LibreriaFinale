@@ -23,7 +23,7 @@
 
 
 
-<c:forEach items="#{beanUB.listaUtenti }" var="lista">
+<c:forEach items="#{beanUB.listaUtentiB }" var="lista">
 ${lista }
 
 

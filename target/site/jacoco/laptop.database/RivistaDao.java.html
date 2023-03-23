@@ -546,7 +546,7 @@ public class RivistaDao {
 	public void generaReport() throws SQLException, IOException
 	{
 				FileWriter w;
-<span class="fc" id="L549">				query=&quot;select titolo,editore,copieRimanenti,prezzo as totale  from ispw.rivista&quot;;</span>
+<span class="fc" id="L549">				query=&quot;select titolo,editore,copieRimanenti,prezzo as totale ,dataPubblicazione from ispw.rivista&quot;;</span>
 <span class="fc" id="L550">		        w=new FileWriter(&quot;ReportFinale\\riepilogoRiviste.txt&quot;);</span>
 		        
 		        
@@ -558,7 +558,7 @@ public class RivistaDao {
 <span class="fc" id="L558">		        		ResultSet rs=prepQ.executeQuery();</span>
 				
 		           
-<span class="pc bpc" id="L561" title="1 of 2 branches missed.">		            while(rs.next())</span>
+<span class="fc bfc" id="L561" title="All 2 branches covered.">		            while(rs.next())</span>
 		            {
 		        		
 		        	
@@ -566,21 +566,21 @@ public class RivistaDao {
 				
 										
 				
-<span class="nc" id="L569">		        		b.write(&quot;Titolo :&quot;+rs.getString(1)+&quot;\t&quot;+&quot;Editore :&quot;+rs.getString(2)+&quot;\t&quot;+&quot;Ricavo totale :&quot; +rs.getInt(3)*rs.getFloat(4)+&quot;\t&quot;+&quot;pubblicato il : &quot;+rs.getDate(7)+&quot;\n&quot;);</span>
+<span class="fc" id="L569">		        		b.write(&quot;Titolo :&quot;+rs.getString(1)+&quot;\t&quot;+&quot;Editore :&quot;+rs.getString(2)+&quot;\t&quot;+&quot;Ricavo totale :&quot; +rs.getInt(3)*rs.getFloat(4)+&quot;\t&quot;+&quot;pubblicato il : &quot;+rs.getDate(&quot;dataPubblicazione&quot;)+&quot;\n&quot;);</span>
 
 
 
 
-<span class="nc" id="L574">		     			b.flush();</span>
+<span class="fc" id="L574">		     			b.flush();</span>
 
 
 		        			
 		        		
 		            }
-<span class="fc" id="L580">		        	}catch(SQLException e)</span>
+<span class="nc" id="L580">		        	}catch(SQLException e)</span>
 		        	{
-<span class="fc" id="L582">		        		java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="nc" id="L583">		        	}</span>
+<span class="nc" id="L582">		        		java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L583">		        	}</span>
 		     
 	}
 	

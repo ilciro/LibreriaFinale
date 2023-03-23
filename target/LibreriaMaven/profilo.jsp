@@ -18,19 +18,19 @@
 <form action="ProfiloServlet" method="post">
 <div>
 nome utente:
-<input type="text" name="nomeL" id="nomeL" value="${beanUb.getNome()}">
+<input type="text" name="nomeL" id="nomeL" value="${beanUb.getNomeB()}">
 <br>
 <br>
 cognome utente:
-<input type="text" id="cognomeL" name="cognomeL" value="${beanUb.getCognome() }">
+<input type="text" id="cognomeL" name="cognomeL" value="${beanUb.getCognomeB() }">
 <br>
 <br>
 email utente:
-<input type="text" id="emailL" name="emaiL" value="${beanUb.getEmail() }">
+<input type="text" id="emailL" name="emaiL" value="${beanUb.getEmailB() }">
 <br>
 <br>
 data nascita:
-<input type="text" id="dataL" name="dataL" value="${beanUb.getDataDiNascita() }">
+<input type="text" id="dataL" name="dataL" value="${beanUb.getDataDiNascitaB() }">
 <br>
 <br>
 
@@ -62,7 +62,7 @@ id prodotto
 </th>
 </tr>
 
-<c:forEach items="#{beanP.listaPagamenti }" var="lista">
+<c:forEach items="#{beanP.listaPagamentiB }" var="lista">
 
 
 <tr>
@@ -88,7 +88,7 @@ id prodotto
 <input type="submit" name="indietroB" id="indietroB" value="indietro" class="annulla">
 
 <p class="exception">
-${beanUb.getMex() }
+${beanUb.getMexB() }
 </p>
 </div>
 </form>

@@ -13,7 +13,7 @@
 <h1> Benvenuto nella sezione per ricercare </h1>
 
 <h2> Inserire titolo/autore e selezionare id per visualizzarlo</h2>
-<c:set var = "tipo" scope = "session" value = "${beanS.getType() }"/>
+<c:set var = "tipo" scope = "session" value = "${beanS.getTypeB() }"/>
 
 <form action="RicercaCatalogoServlet" method="post">
 <c:choose>
@@ -59,7 +59,7 @@ autore
 id oggetto
 </th>
 </tr>
-<c:forEach items="#{beanRicerca.lista }" var="lista">
+<c:forEach items="#{beanRicerca.listaB }" var="lista">
 
 
 <tr>
@@ -67,15 +67,15 @@ id oggetto
 <c:choose>
 <c:when test="${tipo=='libro' or tipo=='rivista' }">
 
-<td>${ lista.getTitolo() }</td>
-<td>${ lista.getAutore() }</td>
-<td>${ lista.getId()}</td>
+<td>${ lista.getTitoloB() }</td>
+<td>${ lista.getAutoreB() }</td>
+<td>${ lista.getIdB()}</td>
 </c:when>
 
 <c:when test="${tipo=='libro' or tipo=='rivista' }">
-<td>${ lista.getTitolo() }</td>
+<td>${ lista.getTitoloB() }</td>
 <td> not available </td>
-<td>${ lista.getId()}</td>
+<td>${ lista.getIdB()}</td>
 </c:when>
 </c:choose>
 </tr>

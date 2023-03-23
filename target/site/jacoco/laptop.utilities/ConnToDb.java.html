@@ -73,11 +73,11 @@ public class ConnToDb
 				
 				
 
-<span class="fc" id="L76">				conn = DriverManager.getConnection(url, user,pwd);</span>
-<span class="fc" id="L77">				java.util.logging.Logger.getLogger(&quot;Test connection standard&quot;).log(Level.INFO, &quot;Connesso standard ........\n&quot;);</span>
+<span class="nc" id="L76">				conn = DriverManager.getConnection(url, user,pwd);</span>
+<span class="nc" id="L77">				java.util.logging.Logger.getLogger(&quot;Test connection standard&quot;).log(Level.INFO, &quot;Connesso standard ........\n&quot;);</span>
 				
 
-<span class="fc" id="L80">				status= true;</span>
+<span class="nc" id="L80">				status= true;</span>
 			}
 			
 		} 
@@ -85,7 +85,7 @@ public class ConnToDb
 		{
 <span class="fc" id="L86">			java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, errore, e1);</span>
 
-<span class="fc" id="L88">		} </span>
+<span class="nc" id="L88">		} </span>
 		
 
 <span class="fc" id="L91">		return status;</span>

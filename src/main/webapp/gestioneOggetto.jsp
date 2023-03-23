@@ -46,11 +46,11 @@ id
 
 
 
-<c:set var = "tipo" scope = "session" value = "${beanS.getType() }"/>
+<c:set var = "tipo" scope = "session" value = "${beanS.getTypeB() }"/>
 
 <c:choose>
 <c:when test="${ tipo=='libro'}">
-<c:forEach items="#{beanMOB.miaLista }" var="lista">
+<c:forEach items="#{beanMOB.miaListaB }" var="lista">
 <tr>
 <td>${ lista.getTitolo() }</td>
 <td>${ lista.getCategoria()}</td>
@@ -63,7 +63,7 @@ id
 </c:when>
 
 <c:when test="${ tipo=='giornale'}">
-<c:forEach items="#{beanMOB.miaLista }" var="lista">
+<c:forEach items="#{beanMOB.miaListaB }" var="lista">
 <tr>
 <td>${ lista.getTitolo() }</td>
 <td>QUOTIDIANO</td>
@@ -75,7 +75,7 @@ id
 </c:forEach>
 </c:when>
 <c:when test="${ tipo=='rivista'}">
-<c:forEach items="#{beanMOB.miaLista }" var="lista">
+<c:forEach items="#{beanMOB.miaListaB }" var="lista">
 <tr>
 <td>${ lista.getTitolo() }</td>
 <td>NULL</td>

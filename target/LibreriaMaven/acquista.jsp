@@ -85,7 +85,7 @@ totale da pagare :
 </form>
 
 <div>
-${beanA.getMex()}
+${beanA.getMexB()}
 </div>
 
 </body>

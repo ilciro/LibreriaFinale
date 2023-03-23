@@ -52,7 +52,7 @@
  
  <br>
  <br>
- ${beanUb.getMex()}
+ ${beanUb.getMexB()}
  
  </div>
 </form>

@@ -16,31 +16,31 @@
 <form action="ModificaUtenteServlet" method="post">
 <div class="column">
 Ruolo :
-<input type="text" id="ruoloL" name="ruoloL" value="${beanUb.getIdRuolo() }">
+<input type="text" id="ruoloL" name="ruoloL" value="${beanUb.getIdRuoloB() }">
 <br>
 <br>
 Nome:
-<input type="text" id="nomeL" name="nomeL" value="${beanUb.getNome() }">
+<input type="text" id="nomeL" name="nomeL" value="${beanUb.getNomeB() }">
 <br>
 <br>
 Cognome:
-<input type="text" id="cognomeL" name="cognomeL" value="${beanUb.getCognome() }">
+<input type="text" id="cognomeL" name="cognomeL" value="${beanUb.getCognomeB() }">
 <br>
 <br>
 Email:
-<input type="text" id="emailL"  name="emailL" value="${beanUb.getEmail() }">
+<input type="text" id="emailL"  name="emailL" value="${beanUb.getEmailB() }">
 <br>
 <br>
 Password:
-<input type="text" id="passL" name="passL" value="${beanUb.getPassword() }">
+<input type="text" id="passL" name="passL" value="${beanUb.getPasswordB() }">
 <br>
 <br>
 Descrizione :
-<input type="text" id="descL" name="descL" value="${beanUb.getDescrizione() }">
+<input type="text" id="descL" name="descL" value="${beanUb.getDescrizioneB() }">
 <br> 
 <br>
 Data di nascita:
-<input type="text" id="dataL" name="dataL"value="${beanUb.getDataDiNascita() }">
+<input type="text" id="dataL" name="dataL"value="${beanUb.getDataDiNascitaB() }">
 <br>
 <br>
 <input type="submit" id="generaB" name="generaB" value="prendi valori" class="prendi">
@@ -89,7 +89,7 @@ Data di nascita (yyyy/mm/dd):
 </div>
 
 <p class="exception">
-${beanUb.getMex() }
+${beanUb.getMexB() }
 </p>
 </form>
 </body>

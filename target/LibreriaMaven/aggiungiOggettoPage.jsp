@@ -17,7 +17,7 @@
 
 
  
-<c:set var = "tipo" scope = "session" value = "${bean1.getType() }"/>
+<c:set var = "tipo" scope = "session" value = "${bean1.getTypeB() }"/>
 <form action ="InserisciOggettoServlet" method="post">
 
 <div>
@@ -58,7 +58,7 @@ lingua
 categoria
 <label for="catL"></label>
 <textarea  cols=25 rows=5 id="catL" name="catL" readonly>
-${beanMOB.getTipologiaL()}
+${beanMOB.getTipologiaLB()}
 </textarea> 
 <input type="submit" id="generaL" name="generaL" value="prendi lista">
 <label for="catS"></label>
@@ -169,7 +169,7 @@ titolo :
 tipologia:
 <label for="catR"></label>
 <textarea  cols=25 rows=5 id="catR" name="catR" disabled>
-${bean.getListaCategorie()}
+${bean.getListaCategorieB()}
 </textarea>
 
 <input type="submit" id="generaL" name="generaL" value="prendi lista">

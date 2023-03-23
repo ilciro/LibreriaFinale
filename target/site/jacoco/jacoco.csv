@@ -1,6 +1,6 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 LibreriaMaven Maven Webapp,laptop.database,ContrassegnoDao,21,103,0,4,6,34,0,7,0,5
-LibreriaMaven Maven Webapp,laptop.database,RivistaDao,212,1054,5,31,54,247,6,35,1,22
+LibreriaMaven Maven Webapp,laptop.database,RivistaDao,195,1071,4,32,53,248,5,36,1,22
 LibreriaMaven Maven Webapp,laptop.database,PagamentoDao,28,160,1,5,8,45,1,8,0,6
 LibreriaMaven Maven Webapp,laptop.database,NegozioDao,48,154,6,4,14,46,4,8,0,7
 LibreriaMaven Maven Webapp,laptop.database,GiornaleDao,175,962,2,28,49,222,3,34,1,21
@@ -41,7 +41,7 @@ LibreriaMaven Maven Webapp,laptop.exception,IdException,4,0,0,0,2,0,1,0,1,0
 LibreriaMaven Maven Webapp,laptop.exception,LogoutException,4,0,0,0,2,0,1,0,1,0
 LibreriaMaven Maven Webapp,laptop.controller,ControllerGestionePage,27,90,7,5,8,21,5,7,1,5
 LibreriaMaven Maven Webapp,laptop.controller,ControllerRegistraUtente,11,123,11,11,3,27,11,6,0,6
-LibreriaMaven Maven Webapp,laptop.controller,ControllerAcquista,145,297,7,17,28,69,14,16,10,8
+LibreriaMaven Maven Webapp,laptop.controller,ControllerAcquista,145,289,7,17,28,68,14,16,10,8
 LibreriaMaven Maven Webapp,laptop.controller,ControllerModifPage,0,186,0,0,0,40,0,7,0,7
 LibreriaMaven Maven Webapp,laptop.controller,ControllerDownload,3,200,5,9,1,52,6,12,1,9
 LibreriaMaven Maven Webapp,laptop.controller,ControllerAggiungiPage,6,129,4,4,2,28,4,4,0,4
@@ -67,6 +67,6 @@ LibreriaMaven Maven Webapp,laptop.controller,ControllerUserPage,0,10,0,0,0,5,0,2
 LibreriaMaven Maven Webapp,laptop.controller,ControllerCompravendita,54,139,15,3,15,37,11,11,2,11
 LibreriaMaven Maven Webapp,laptop.controller,ControllerCancellaUser,0,15,0,0,0,5,0,2,0,2
 LibreriaMaven Maven Webapp,laptop.controller,ControllerPagamentoCC,0,229,9,11,0,42,9,7,0,6
-LibreriaMaven Maven Webapp,laptop.utilities,ConnToDb,14,141,1,1,4,43,1,4,0,4
+LibreriaMaven Maven Webapp,laptop.utilities,ConnToDb,27,128,1,1,8,39,1,4,0,4
 LibreriaMaven Maven Webapp,laptop.utilities,PopulateDefaultDb,7,190,0,0,2,57,0,8,0,8
-LibreriaMaven Maven Webapp,laptop.utilities,CreateDefaultDB,14,122,2,6,4,36,3,4,1,2
+LibreriaMaven Maven Webapp,laptop.utilities,CreateDefaultDB,20,116,4,4,5,35,5,2,1,2

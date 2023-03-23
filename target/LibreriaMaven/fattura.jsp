@@ -66,8 +66,8 @@ inserire eventuali comunicazioni :
 </form>
 
 <div>
-${beanF.getMex() }
-${aB.getTitolo() }
+${beanF.getMexB() }
+${aB.getTitoloB() }
 </div>
 </body>
 </html>

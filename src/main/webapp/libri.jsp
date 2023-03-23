@@ -65,7 +65,7 @@ id prodotto
 </tr>
 
 
-<c:forEach items="#{beanL.listaLibri }" var="lista">
+<c:forEach items="#{beanL.listaLibriB }" var="lista">
 
 
 <tr>
@@ -118,7 +118,7 @@ Inserire id di oggetto scelto:
 </form>
 
 <div class="exception">
-${bean.getMex()}
+${bean.getMexB()}
 </div>
 
 

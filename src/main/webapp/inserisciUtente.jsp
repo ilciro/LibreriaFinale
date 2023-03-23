@@ -38,7 +38,7 @@ data di nascita (yyyy/mm/dd):
 <input type="submit" id="buttonA" name="buttonA" value="indietro" class="annulla">
 
 <p class="exception">
-${beanUb.getMex() }
+${beanUb.getMexB() }
 </p> 
 </div>
 </form>

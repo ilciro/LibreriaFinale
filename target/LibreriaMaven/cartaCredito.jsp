@@ -92,7 +92,7 @@ xyz
 <br>
 <br>
 
-<c:set var = "tipo" scope = "session" value = "${bean1.getIsLogged() }"/>
+<c:set var = "tipo" scope = "session" value = "${bean1.getIsLoggedB() }"/>
 
 <c:choose>
 <c:when test="${ tipo==true}">
@@ -113,7 +113,7 @@ xyz
 numero carta 
 </td>
 <!--  mette	re foreach by database -->
-<c:forEach items="#{beanL.listaCarteCredito }" var="lista">
+<c:forEach items="#{beanL.listaCarteCreditoB }" var="lista">
 
 
 <tr>

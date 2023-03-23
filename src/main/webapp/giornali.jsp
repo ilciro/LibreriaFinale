@@ -45,7 +45,7 @@ id
 </th>
 </tr>
 
-<c:forEach items="#{beanG.listaGiornali }" var="lista">
+<c:forEach items="#{beanG.listaGiornaliB }" var="lista">
 
 
 <tr>
@@ -92,7 +92,7 @@ Inserire id di oggetto scelto:
 </form>
 
 <div class="exception">
-${beanG.getMex()}
+${beanG.getMexB()}
 </div>
 
 

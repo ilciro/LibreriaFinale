@@ -32,7 +32,7 @@ inserire password:
 
 <br>
 <br>
-${beanUb.getMex() }
+${beanUb.getMexB() }
 </div>
 
 

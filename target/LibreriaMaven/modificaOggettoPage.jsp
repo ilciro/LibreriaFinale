@@ -15,7 +15,7 @@
 <h2> Scegliere i campi da modificare</h2>
 
 
-<c:set var = "tipo" scope = "session" value = "${SystemBean.getIstance().getType() }"/>
+<c:set var = "tipo" scope = "session" value = "${SystemBean.getIstance().getTypeB() }"/>
 
 <form action="ModificaLibroServlet" method="post">
 
@@ -23,60 +23,60 @@
 <c:when test="${ tipo=='libro'}">
 <div class="column">
 titolo:
-<input type="text" id="titoloL" name="titoloL" value="${beanMOB.getMiaLista().get(0).getTitolo() }">
+<input type="text" id="titoloL" name="titoloL" value="${beanMOB.getMiaListaB().get(0).getTitolo() }">
 <br>
 <br>
 numero pagine:
-<input type="text" id="pagineL" name="pagineL" value="${beanMOB.getMiaLista().get(0).getNumeroPagine() }">
+<input type="text" id="pagineL" name="pagineL" value="${beanMOB.getMiaListaB().get(0).getNumeroPagine() }">
 <br>
 <br>
 codice isbn:
-<input type="text" id="codiceL" name="codiceL" value="${beanMOB.getMiaLista().get(0).getCodIsbn() }">
+<input type="text" id="codiceL" name="codiceL" value="${beanMOB.getMiaListaB().get(0).getCodIsbn() }">
 <br>
 <br>
 editore:
-<input type="text" id="editoreL" name="editoreL" value="${beanMOB.getMiaLista().get(0).getEditore() }">
+<input type="text" id="editoreL" name="editoreL" value="${beanMOB.getMiaListaB().get(0).getEditore() }">
 <br>
 <br>
 autore:
-<input type="text" id="autoreL" name="autoreL" value="${beanMOB.getMiaLista().get(0).getAutore() }">
+<input type="text" id="autoreL" name="autoreL" value="${beanMOB.getMiaListaB().get(0).getAutore() }">
 <br>
 <br>
 lingua:
-<input type="text" id="linguaL" name="linguaL" value="${beanMOB.getMiaLista().get(0).getLingua() }">
+<input type="text" id="linguaL" name="linguaL" value="${beanMOB.getMiaListaB().get(0).getLingua() }">
 <br>
 <br>
 categoria:
-<input type="text" id="categoriaL" name="categoriaL" value="${beanMOB.getMiaLista().get(0).getCategoria() }">
+<input type="text" id="categoriaL" name="categoriaL" value="${beanMOB.getMiaListaB().get(0).getCategoria() }">
 <br>
 <br>
 data pubblicazione 
-<input type="text" id="dataL" name="dataL" value="${beanMOB.getMiaLista().get(0).getDataPubb() }">
+<input type="text" id="dataL" name="dataL" value="${beanMOB.getMiaListaB().get(0).getDataPubb() }">
 <br>
 <br>
 recensione:
 <label for="recL"></label>
 <textarea rows="10" cols="50" id="recL" name="recL">
-${beanMOB.getMiaLista().get(0).getRecensione() }
+${beanMOB.getMiaListaB().get(0).getRecensione() }
 </textarea>
 <br>
 <br>
 nr copie rimanenti:
-<input type="text" id="copieL" name="copieL" value="${beanMOB.getMiaLista().get(0).getNrCopie() }">
+<input type="text" id="copieL" name="copieL" value="${beanMOB.getMiaListaB().get(0).getNrCopie() }">
 <br>
 <br>
 descrizione :
 <label for="descL"></label>
 <textarea rows="10" cols="50" name="descL" id="descL">
-${beanMOB.getMiaLista().get(0).getDesc() }</textarea>
+${beanMOB.getMiaListaB().get(0).getDesc() }</textarea>
 <br>
 <br>
 disponibilita:
-<input type="text" id="dispL" name="dispL" value="${beanMOB.getMiaLista().get(0).getDisponibilita() }">
+<input type="text" id="dispL" name="dispL" value="${beanMOB.getMiaListaB().get(0).getDisponibilita() }">
 <br>
 <br>
 prezzo:
-<input type="text" id="prezzoL" name="prezzoL" value="${beanMOB.getMiaLista().get(0).getPrezzo() }">
+<input type="text" id="prezzoL" name="prezzoL" value="${beanMOB.getMiaListaB().get(0).getPrezzo() }">
 <br>
 <br>
 
@@ -165,7 +165,7 @@ prezzo da aggiornare:
 <div class="columnG">
 <!--  assegnare a mob il gironale -->
 titolo:
-<input type="text" id="titoloG" name="titoloG" value="${beanMOB.getMiaLista().get(0).getTitolo() }">
+<input type="text" id="titoloG" name="titoloG" value="${beanMOB.getMiaListaB().get(0).getTitolo() }">
 <br>
 <br>
 
@@ -174,27 +174,27 @@ tipologia:
 <br>
 <br>
 lingua:
-<input type="text" id="linguaG" name="linguaG" value="${beanMOB.getMiaLista().get(0).getLingua() }">
+<input type="text" id="linguaG" name="linguaG" value="${beanMOB.getMiaListaB().get(0).getLingua() }">
 <br>
 <br>
 editore:
-<input type="text" id="editoreG" name="editoreG" value="${beanMOB.getMiaLista().get(0).getEditore() }">
+<input type="text" id="editoreG" name="editoreG" value="${beanMOB.getMiaListaB().get(0).getEditore() }">
 <br>
 <br>
 data pubb (yyyy/mm/dd) :
-<input type="text" id="dataG" name="dataG" value="${beanMOB.getMiaLista().get(0).getDataPubb() }">
+<input type="text" id="dataG" name="dataG" value="${beanMOB.getMiaListaB().get(0).getDataPubb() }">
 <br>
 <br>
 copie rimanenti:
-<input type="text" id="copieG" name="copieG" value="${beanMOB.getMiaLista().get(0).getCopieRimanenti() }"> 
+<input type="text" id="copieG" name="copieG" value="${beanMOB.getMiaListaB().get(0).getCopieRimanenti() }"> 
 <br>
 <br>
 disponibilita (0->no 1->si):
-<input type="text" id="dispG" name="dispG" value="${beanMOB.getMiaLista().get(0).getDisponibilita() }">
+<input type="text" id="dispG" name="dispG" value="${beanMOB.getMiaListaB().get(0).getDisponibilita() }">
 <br>
 <br>
 prezzo:
-<input type="text" id="prezzoG" name="prezzoG" value="${beanMOB.getMiaLista().get(0).getPrezzo() }">
+<input type="text" id="prezzoG" name="prezzoG" value="${beanMOB.getMiaListaB().get(0).getPrezzo() }">
 <br>
 <br>
 <input type="submit" id="buttonG" name="buttonG" value="prendi dati" class="genera">
@@ -249,46 +249,46 @@ prezzo da modificare:
 <c:when test="${ tipo=='rivista'}">
 <div class="column">
 titolo:
-<input type="text" id="titoloR" name="titoloR" value="${beanMOB.getMiaLista().get(0).getTitolo() }">
+<input type="text" id="titoloR" name="titoloR" value="${beanMOB.getMiaListaB().get(0).getTitolo() }">
 <br>
 <br>
 categoria:
-<input type="text" id="categoriaR" name="categoriaR" value="${beanMOB.getMiaLista().get(0).getTipologia() }">
+<input type="text" id="categoriaR" name="categoriaR" value="${beanMOB.getMiaListaB().get(0).getTipologia() }">
 <br>
 <br>
 autore:
-<input type="text" id="autoreR" name="autoreR" value="${beanMOB.getMiaLista().get(0).getAutore() }">
+<input type="text" id="autoreR" name="autoreR" value="${beanMOB.getMiaListaB().get(0).getAutore() }">
 <br>
 <br>
 lingua:
-<input type="text" id="linguaR" name="linguaR" value="${beanMOB.getMiaLista().get(0).getLingua() }">
+<input type="text" id="linguaR" name="linguaR" value="${beanMOB.getMiaListaB().get(0).getLingua() }">
 <br>
 <br>
 editore:
-<input type="text" id="editoreR" name="editoreR" value="${beanMOB.getMiaLista().get(0).getEditore() }">
+<input type="text" id="editoreR" name="editoreR" value="${beanMOB.getMiaListaB().get(0).getEditore() }">
 <br>
 <br>
 descrizione:
 <label for="descR"></label>
 <textarea rows="10" cols="50">
-${beanMOB.getMiaLista().get(0).getDescrizione() }
+${beanMOB.getMiaListaB().get(0).getDescrizione() }
 </textarea>
 <br>
 <br>
 data pubblicazione:
-<input type="text" id="dataR" name="dataR" value="${beanMOB.getMiaLista().get(0).getDataPubb() }">
+<input type="text" id="dataR" name="dataR" value="${beanMOB.getMiaListaB().get(0).getDataPubb() }">
 <br>
 <br>
 disponibilita:
-<input type="text" id="dispL" name="dispL" value="${beanMOB.getMiaLista().get(0).getDisp() }">
+<input type="text" id="dispL" name="dispL" value="${beanMOB.getMiaListaB().get(0).getDisp() }">
 <br>
 <br>
 prezzo:
-<input type="text" id="prezzoL" name="prezzoL" value="${beanMOB.getMiaLista().get(0).getPrezzo() }">
+<input type="text" id="prezzoL" name="prezzoL" value="${beanMOB.getMiaListaB().get(0).getPrezzo() }">
 <br>
 <br>
 copieRimanenti :
-<input type="text" id="copieR" name="copieR" value="${beanMOB.getMiaLista().get(0).getCopieRim() }">
+<input type="text" id="copieR" name="copieR" value="${beanMOB.getMiaListaB().get(0).getCopieRim() }">
 <br>
 <br>
 

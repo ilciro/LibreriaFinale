@@ -52,7 +52,7 @@ elenco negozi presenti
 </table>
 
 <div>
-${beanNeg.getMessaggio() }
+${beanNeg.getMessaggioB() }
 </div>
 
 </form>
