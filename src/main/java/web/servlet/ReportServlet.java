@@ -62,6 +62,7 @@ public class ReportServlet extends HttpServlet {
 					s.append(tAB.generaReportL());
 					finale=s.toString();					
 					tAB.setScriviB(finale);
+					
 					req.setAttribute("bean",tAB);
 					RequestDispatcher view = getServletContext().getRequestDispatcher(report); 
 					view.forward(req,resp);			

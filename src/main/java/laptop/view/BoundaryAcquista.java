@@ -132,7 +132,6 @@ public class BoundaryAcquista implements Initializable {
 		}
 		else {
 
-			java.util.logging.Logger.getLogger("vis in acquuista boundary ").log(Level.INFO, "vis vale ", vis.getId());
 
 		Stage stage;
 		Parent root;

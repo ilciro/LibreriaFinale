@@ -49,7 +49,7 @@ public class ControllerAcquista {
 			
 			lD.aggiornaDisponibilita(l);
 			
-			java.util.logging.Logger.getLogger("vis in acquista controler ").log(Level.INFO, "vis vale ", vis.getId());
+			
 
 			
 		

@@ -1,12 +1,24 @@
-Titolo :La Republica1	Editore :La Republica	Ricavo totale :0.0
-Titolo :La Republica2	Editore :La Republica	Ricavo totale :0.0
-Titolo :La Republica3	Editore :La Republica	Ricavo totale :20.0
-Titolo :La Republica4	Editore :La Republica	Ricavo totale :28.0
-Titolo :La Republica5	Editore :La Republica	Ricavo totale :20.0
-Titolo :La Republica6	Editore :La Republica	Ricavo totale :30.0
-Titolo :Il Fatto Quotidiano1	Editore :Il Fatto Quotidiano	Ricavo totale :0.0
-Titolo :Il Fatto Quotidiano2	Editore :Il Fatto Quotidiano	Ricavo totale :0.0
-Titolo :Il Fatto Quotidiano3	Editore :Il Fatto Quotidiano	Ricavo totale :0.0
-Titolo :Il Fatto Quotidiano4	Editore :Il Fatto Quotidiano	Ricavo totale :30.0
-Titolo :Il Fatto Quotidiano5	Editore :Il Fatto Quotidiano	Ricavo totale :32.0
-Titolo :La gazzetta del profeta	Editore :Hoepli	Ricavo totale :17.0
+Riepigolo Giornale :
+ Titolo :cambio giornale	Editore del giornale :cambio ediitore	Ricavo totale :dei giornali :12.5
+Riepigolo Giornale :
+ Titolo :La Republica2	Editore del giornale :La Republica	Ricavo totale :dei giornali :6.0
+Riepigolo Giornale :
+ Titolo :La Republica3	Editore del giornale :La Republica	Ricavo totale :dei giornali :94.0
+Riepigolo Giornale :
+ Titolo :La Republica4	Editore del giornale :La Republica	Ricavo totale :dei giornali :28.0
+Riepigolo Giornale :
+ Titolo :La Republica5	Editore del giornale :La Republica	Ricavo totale :dei giornali :20.0
+Riepigolo Giornale :
+ Titolo :La Republica6	Editore del giornale :La Republica	Ricavo totale :dei giornali :30.0
+Riepigolo Giornale :
+ Titolo :Il Fatto Quotidiano1	Editore del giornale :Il Fatto Quotidiano	Ricavo totale :dei giornali :0.0
+Riepigolo Giornale :
+ Titolo :Il Fatto Quotidiano2	Editore del giornale :Il Fatto Quotidiano	Ricavo totale :dei giornali :0.0
+Riepigolo Giornale :
+ Titolo :Il Fatto Quotidiano3	Editore del giornale :Il Fatto Quotidiano	Ricavo totale :dei giornali :0.0
+Riepigolo Giornale :
+ Titolo :Il Fatto Quotidiano4	Editore del giornale :Il Fatto Quotidiano	Ricavo totale :dei giornali :30.0
+Riepigolo Giornale :
+ Titolo :La gazzetta del profeta	Editore del giornale :Hoepli	Ricavo totale :dei giornali :17.0
+Riepigolo Giornale :
+ Titolo :giornale da inserire	Editore del giornale :editore ins prova	Ricavo totale :dei giornali :245.0

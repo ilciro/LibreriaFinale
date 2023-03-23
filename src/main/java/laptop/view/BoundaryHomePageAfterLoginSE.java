@@ -115,7 +115,7 @@ public class BoundaryHomePageAfterLoginSE {
 
 	
 	@FXML
-	private void logout() throws IOException,  SecurityException, IllegalArgumentException, LogoutException 
+	private void logout() throws IOException,  SecurityException, IllegalArgumentException 
 	{
 		
 		if (ControllerHomePageAfterLogin.logout())

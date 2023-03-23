@@ -340,7 +340,7 @@ class TestLaptop3 {
 	void testDispRivista() throws SQLException
 	{
 		r.setId(1);
-		assertNotNull(rD.getDisp(r));
+		assertEquals(0,rD.getDisp(r));
 	}
 	@Test
 	void testGetTitoloRivista()
@@ -359,7 +359,7 @@ class TestLaptop3 {
 		UsersDao.aggiornaTempDesc(tu1);
 		tu1.setPasswordT("Frossi185");
 		UsersDao.aggiornaTempPass(tu1);
-		assertNotNull(tu1.getId());
+		assertEquals(7,tu1.getId());
 		
 		
 		
@@ -373,7 +373,7 @@ class TestLaptop3 {
 	void testIdLibro() throws SQLException
 	{
 		l.setCodIsbn("8867231553");
-		assertNotNull(lD.retId(l));
+		assertEquals(8,lD.retId(l));
 	}
 	@Test
 	void testAggiornaCopieVendute() throws SQLException

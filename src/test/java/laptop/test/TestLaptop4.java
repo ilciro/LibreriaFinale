@@ -138,7 +138,7 @@ class TestLaptop4 {
 	void testID()
 	{
 		dB.setIdB(5);
-		assertEquals(dB.getIdB(),5);
+		assertEquals(5,dB.getIdB());
 	}
 	@ParameterizedTest
 	@ValueSource(strings= {"titolo1","titolo2"})
@@ -270,7 +270,7 @@ class TestLaptop4 {
 		visB.setMetodoPB("cc");
 		visB.setNegozioSelezionatoB(true);
 		visB.setTitoloB("prova");
-		assertNotNull(visB.getIdB());
+		assertEquals(5,visB.getIdB());
 	}
 	@Test
 	void testReportUtenti() throws IOException, SQLException

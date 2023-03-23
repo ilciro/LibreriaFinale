@@ -120,7 +120,7 @@ public class BoundaryCompravendita implements Initializable {
 	private void procedi() throws IOException, SQLException {
 		String i = entryText.getText();
 		
-		java.util.logging.Logger.getLogger("entry get text ").log(Level.INFO, "entry get text ", entryText.getText());
+		
 		if(i==null || i.equals(""))
 		{
 			try {
@@ -139,7 +139,7 @@ public class BoundaryCompravendita implements Initializable {
 			vis.setId(Integer.parseInt(i));
 			
 		}
-		java.util.logging.Logger.getLogger("vis in compravendita boundary ").log(Level.INFO, "vis vale ", vis.getId());
+		
 
 			Stage stage;
 			Parent root;
