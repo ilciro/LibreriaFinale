@@ -10,7 +10,7 @@ public class ControllerSystemState {
 	 private boolean isLogged ;
 	 private boolean isSearch;
 	 private boolean isPickup;
-	 private static ControllerSystemState instance=new ControllerSystemState() ;
+	 private static final ControllerSystemState instance=new ControllerSystemState() ;
 	 private float spesaT;// usato per avere importo totale 
 	 private int quantita; //usato per avere quantita oggetto che compro
 	 private String metodoP; //usato per vedere se contanti o cc
