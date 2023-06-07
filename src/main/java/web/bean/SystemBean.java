@@ -8,7 +8,7 @@ public class SystemBean {
 		 private boolean isLoggedB ;
 		 private boolean isSearchB;
 		 private boolean isPickupB;
-		 private static SystemBean instanceB=new SystemBean() ;
+		 private static final SystemBean instanceB=new SystemBean() ;
 		 private float spesaTB;// usato per avere importo totale 
 		 private int quantitaB; //usato per avere quantita oggetto che compro
 		 private String metodoPB; //usato per vedere se contanti o cc

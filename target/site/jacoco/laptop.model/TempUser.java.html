@@ -85,62 +85,57 @@ public class TempUser {
 	private LocalDate dataDiNascitaT;
 	private String r;
 
-	//istanza per il patter singleton
-	private static TempUser userInstance ;
+<span class="fc" id="L88">	private static final TempUser userInstance = new TempUser();</span>
 
 	private TempUser() {
 
 	}
 
 	public static TempUser getInstance() {
-<span class="fc bfc" id="L96" title="All 2 branches covered.">		if (userInstance == null)</span>
-		{
-<span class="fc" id="L98">			userInstance = new TempUser();</span>
-<span class="fc" id="L99">			return userInstance; </span>
-		}
-<span class="fc" id="L101">		return userInstance;</span>
+		
+<span class="fc" id="L96">		return userInstance;</span>
 	} 
 
 	
 public String getIdRuolo()  {
 		
-<span class="fc" id="L107">		return r;</span>
+<span class="fc" id="L102">		return r;</span>
 	}
 
 
 
 	public void setIdRuolo(String ruolo) {
 
-<span class="pc bpc" id="L114" title="3 of 8 branches missed.">		 switch (ruolo){</span>
+<span class="pc bpc" id="L109" title="3 of 8 branches missed.">		 switch (ruolo){</span>
 			case &quot;ADMINT&quot;:
-<span class="fc" id="L116">				r = RuoliT.ADMINT.toString();</span>
-<span class="fc" id="L117">				break;				</span>
+<span class="fc" id="L111">				r = RuoliT.ADMINT.toString();</span>
+<span class="fc" id="L112">				break;				</span>
 			case &quot;EDITORET&quot;:
-<span class="fc" id="L119">				r = RuoliT.EDITORET.toString();</span>
-<span class="fc" id="L120">				break;</span>
+<span class="fc" id="L114">				r = RuoliT.EDITORET.toString();</span>
+<span class="fc" id="L115">				break;</span>
 			case &quot;SCRITTORET&quot;:
-<span class="fc" id="L122">				r = RuoliT.SCRITTORET.toString();</span>
-<span class="fc" id="L123">				break;</span>
+<span class="fc" id="L117">				r = RuoliT.SCRITTORET.toString();</span>
+<span class="fc" id="L118">				break;</span>
 			case &quot;UTENTET&quot;:
-<span class="fc" id="L125">				r = RuoliT.UTENTET.toString();</span>
-<span class="fc" id="L126">				break;	</span>
+<span class="fc" id="L120">				r = RuoliT.UTENTET.toString();</span>
+<span class="fc" id="L121">				break;	</span>
 			case &quot;WT&quot;:
-<span class="nc" id="L128">				r = RuoliT.SCRITTORET.toString();</span>
-<span class="nc" id="L129">				break;</span>
+<span class="nc" id="L123">				r = RuoliT.SCRITTORET.toString();</span>
+<span class="nc" id="L124">				break;</span>
 			case &quot;ET&quot;:
-<span class="nc" id="L131">				r = RuoliT.EDITORET.toString();</span>
-<span class="nc" id="L132">				break;	</span>
+<span class="nc" id="L126">				r = RuoliT.EDITORET.toString();</span>
+<span class="nc" id="L127">				break;	</span>
 			case &quot;AT&quot;:
-<span class="nc" id="L134">				r = RuoliT.ADMINT.toString();</span>
-<span class="nc" id="L135">				break;</span>
+<span class="nc" id="L129">				r = RuoliT.ADMINT.toString();</span>
+<span class="nc" id="L130">				break;</span>
 				
 			default:
-<span class="fc" id="L138">				r= RuoliT.UTENTET.toString();</span>
+<span class="fc" id="L133">				r= RuoliT.UTENTET.toString();</span>
 				break;
 			}
 		
 
-<span class="fc" id="L143">	}</span>
+<span class="fc" id="L138">	}</span>
 
 
 	

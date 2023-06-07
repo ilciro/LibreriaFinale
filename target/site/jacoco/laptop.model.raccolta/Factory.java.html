@@ -117,7 +117,8 @@ public class Factory {
 <span class="nc" id="L117">					java.util.logging.Logger.getLogger(&quot;report libro&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta .&quot;,e);</span>
 
 				}
-<span class="nc" id="L120">				return null;</span>
+				//crefdvc rds
+<span class="nc" id="L121">				return null;</span>
 		}
 	}
 	
@@ -133,32 +134,32 @@ public class Factory {
 	public Raccolta creaLibro(String[] info,LocalDate dataPubb,String recensione,int id,String desc,String []infoCosti)
 	{
 
-<span class="nc" id="L136">		return new Libro(info,dataPubb,recensione,id,desc,infoCosti);</span>
+<span class="nc" id="L137">		return new Libro(info,dataPubb,recensione,id,desc,infoCosti);</span>
 	}
 	
 	public Raccolta creaGiornale(String[] info,LocalDate dataPubb,int nrCopie, int disponibilita, float prezzo, int id)
 	{
-<span class="nc" id="L141">		return new Giornale(info,dataPubb,nrCopie,disponibilita,prezzo,id);</span>
+<span class="nc" id="L142">		return new Giornale(info,dataPubb,nrCopie,disponibilita,prezzo,id);</span>
 	}
 	public Raccolta creaRivista(String [] info,	String descrizione, LocalDate dataPubb2, int disp, float prezzo, int copieRim,int id)
 	{
-<span class="nc" id="L145">		return new Rivista(info,descrizione, dataPubb2,disp,prezzo,copieRim,id);</span>
+<span class="nc" id="L146">		return new Rivista(info,descrizione, dataPubb2,disp,prezzo,copieRim,id);</span>
 	}
 		
 	
 	public Factory()
-<span class="fc" id="L150">	{</span>
-<span class="fc" id="L151">		mp=new MatchParam();</span>
-<span class="fc" id="L152">		l=new Libro();</span>
-<span class="fc" id="L153">		g=new Giornale();</span>
-<span class="fc" id="L154">		r=new Rivista();</span>
-<span class="fc" id="L155">	}</span>
+<span class="fc" id="L151">	{</span>
+<span class="fc" id="L152">		mp=new MatchParam();</span>
+<span class="fc" id="L153">		l=new Libro();</span>
+<span class="fc" id="L154">		g=new Giornale();</span>
+<span class="fc" id="L155">		r=new Rivista();</span>
+<span class="fc" id="L156">	}</span>
 	public String getTipologiaO() {
-<span class="nc" id="L157">		return tipologiaO;</span>
+<span class="nc" id="L158">		return tipologiaO;</span>
 	}
 	public void setTipologiaO(String tipologiaO) {
-<span class="nc" id="L160">		this.tipologiaO = tipologiaO;</span>
-<span class="nc" id="L161">	}</span>
+<span class="nc" id="L161">		this.tipologiaO = tipologiaO;</span>
+<span class="nc" id="L162">	}</span>
 	
 }
 

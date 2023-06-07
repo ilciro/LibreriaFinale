@@ -29,19 +29,14 @@ public class User {
 	private LocalDate dataDiNascita;
 	private String r;
 	
-	//istanza per il patter singleton
-	private static User userInstance ;
+	private static final User userInstance = new User();
 
 	private User() {
 
 	}
 
 	public static User getInstance() {
-		if (userInstance == null)
-		{
-			userInstance = new User();
-			return userInstance; 
-		}
+		
 		return userInstance;
 	} 
 

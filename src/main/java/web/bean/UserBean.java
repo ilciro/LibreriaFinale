@@ -28,19 +28,14 @@ public class UserBean {
 	private String mexB;
 	private String listaUtentiB;
 	
-	//istanza per il patter singleton
-	private static UserBean userInstanceB ;
+	private static final UserBean userInstanceB = new UserBean();
 
 	private UserBean() {
 
 	}
 
 	public static UserBean getInstanceB() {
-		if (userInstanceB == null)
-		{
-			userInstanceB = new UserBean();
-			return userInstanceB; 
-		}
+		
 		return userInstanceB;
 	} 
 

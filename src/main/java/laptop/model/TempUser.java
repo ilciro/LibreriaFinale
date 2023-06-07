@@ -85,19 +85,14 @@ public class TempUser {
 	private LocalDate dataDiNascitaT;
 	private String r;
 
-	//istanza per il patter singleton
-	private static TempUser userInstance ;
+	private static final TempUser userInstance = new TempUser();
 
 	private TempUser() {
 
 	}
 
 	public static TempUser getInstance() {
-		if (userInstance == null)
-		{
-			userInstance = new TempUser();
-			return userInstance; 
-		}
+		
 		return userInstance;
 	} 
 

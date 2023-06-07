@@ -11,9 +11,9 @@ LibreriaMaven Maven Webapp,laptop.model,CartaDiCredito,22,118,0,0,11,38,6,17,6,1
 LibreriaMaven Maven Webapp,laptop.model,Fattura,18,62,0,0,3,26,2,13,2,13
 LibreriaMaven Maven Webapp,laptop.model,Negozio,8,50,0,0,1,20,1,10,1,10
 LibreriaMaven Maven Webapp,laptop.model,User.Ruoli,0,27,0,0,0,5,0,1,0,1
-LibreriaMaven Maven Webapp,laptop.model,User,10,110,0,10,1,43,1,25,1,17
+LibreriaMaven Maven Webapp,laptop.model,User,10,107,0,8,1,41,1,25,1,18
 LibreriaMaven Maven Webapp,laptop.model,TempUser.RuoliT,0,27,0,0,0,5,0,1,0,1
-LibreriaMaven Maven Webapp,laptop.model,TempUser,25,95,3,7,7,37,4,22,1,17
+LibreriaMaven Maven Webapp,laptop.model,TempUser,25,92,3,5,7,35,4,22,1,18
 LibreriaMaven Maven Webapp,laptop.model,Pagamento,20,93,0,0,3,38,2,16,2,16
 LibreriaMaven Maven Webapp,laptop.model.raccolta,Factory,52,258,1,15,10,41,6,14,5,6
 LibreriaMaven Maven Webapp,laptop.model.raccolta,MatchParam,0,70,0,0,0,18,0,3,0,3
@@ -24,7 +24,7 @@ LibreriaMaven Maven Webapp,laptop.model.raccolta,CategorieLibro,0,183,0,0,0,10,0
 LibreriaMaven Maven Webapp,laptop.model.raccolta,Rivista,3,282,1,14,1,99,1,41,0,28
 LibreriaMaven Maven Webapp,web.bean,SystemBean,47,48,1,1,18,22,14,12,13,12
 LibreriaMaven Maven Webapp,web.bean,RivistaBean,58,135,0,0,22,53,18,14,18,14
-LibreriaMaven Maven Webapp,web.bean,UserBean,48,76,4,6,18,31,13,16,9,12
+LibreriaMaven Maven Webapp,web.bean,UserBean,48,73,4,4,18,29,13,16,9,13
 LibreriaMaven Maven Webapp,web.bean,DownloadBean,7,17,0,0,3,7,2,5,2,5
 LibreriaMaven Maven Webapp,web.bean,LibroBean,151,224,20,10,58,88,37,30,17,21
 LibreriaMaven Maven Webapp,web.bean,AcquistaBean,7,24,0,0,3,10,2,7,2,7
