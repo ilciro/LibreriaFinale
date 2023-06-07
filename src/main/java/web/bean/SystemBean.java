@@ -103,10 +103,7 @@ public class SystemBean {
 		 
 		 public static SystemBean getIstance()
 		 {
-			 if (instanceB == null) 
-			 {
-				 return new SystemBean();
-			 }
+			 
 		 return instanceB;
 		 }
 
