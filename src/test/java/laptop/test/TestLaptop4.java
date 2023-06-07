@@ -2,12 +2,16 @@ package laptop.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -24,6 +28,7 @@ import laptop.model.Negozio;
 import laptop.model.Pagamento;
 
 import laptop.model.raccolta.Rivista;
+import laptop.utilities.ConnToDb;
 import web.bean.AcquistaBean;
 import web.bean.CartaCreditoBean;
 import web.bean.DownloadBean;
@@ -362,4 +367,16 @@ class TestLaptop4 {
 		UserBean.getInstanceB().setNomeB("franco");
 		assertTrue(UsersDao.logout());
 	}
+	@AfterAll
+	static void creaDB() throws FileNotFoundException, ClassNotFoundException, SQLException
+	{
+		int row=0;
+		try(Connection conn=ConnToDb.generalConnection();
+				PreparedStatement prepQ=conn.prepareStatement("drop schema ispw"))
+		{
+			row=prepQ.executeUpdate();
+		}
+		assertEquals(11,row);
+	}
+	
 }

@@ -38,10 +38,7 @@ public class ControllerSystemState {
 	 
 	 public static ControllerSystemState getIstance()
 	 {
-		 if (instance == null) 
-		 {
-			 return new ControllerSystemState();
-		 }
+		 
 	 return instance;
 	 }
 

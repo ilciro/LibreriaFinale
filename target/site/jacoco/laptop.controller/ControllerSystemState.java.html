@@ -38,68 +38,65 @@ public class ControllerSystemState {
 	 
 	 public static ControllerSystemState getIstance()
 	 {
-<span class="pc bpc" id="L41" title="1 of 2 branches missed.">		 if (instance == null) </span>
-		 {
-<span class="nc" id="L43">			 return new ControllerSystemState();</span>
-		 }
-<span class="fc" id="L45">	 return instance;</span>
+		 
+<span class="fc" id="L42">	 return instance;</span>
 	 }
 
 	public int getId() {
-<span class="fc" id="L49">		return id;</span>
+<span class="fc" id="L46">		return id;</span>
 	}
 
 	public void setId(int id) {
-<span class="fc" id="L53">		this.id = id;</span>
-<span class="fc" id="L54">	}</span>
+<span class="fc" id="L50">		this.id = id;</span>
+<span class="fc" id="L51">	}</span>
 	public void setTypeAsBook()
 	{
-<span class="fc" id="L57">		this.type = &quot;libro&quot;;</span>
-<span class="fc" id="L58">	}</span>
+<span class="fc" id="L54">		this.type = &quot;libro&quot;;</span>
+<span class="fc" id="L55">	}</span>
 	public void setTypeAsMagazine()
 	{
-<span class="fc" id="L61">		this.type = &quot;rivista&quot;;</span>
-<span class="fc" id="L62">	}</span>
+<span class="fc" id="L58">		this.type = &quot;rivista&quot;;</span>
+<span class="fc" id="L59">	}</span>
 	public void setTypeAsDaily()
 	{
-<span class="fc" id="L65">		this.type = &quot;giornale&quot;;</span>
-<span class="fc" id="L66">	}</span>
+<span class="fc" id="L62">		this.type = &quot;giornale&quot;;</span>
+<span class="fc" id="L63">	}</span>
 	public String getType()
 	{
-<span class="fc" id="L69">		return type;</span>
+<span class="fc" id="L66">		return type;</span>
 	}
 
 	public boolean getIsLogged() {
-<span class="fc" id="L73">		return isLogged;</span>
+<span class="fc" id="L70">		return isLogged;</span>
 	}
 
 	public void setIsLogged(boolean isLogged) {
-<span class="fc" id="L77">		this.isLogged = isLogged;</span>
-<span class="fc" id="L78">	}</span>
+<span class="fc" id="L74">		this.isLogged = isLogged;</span>
+<span class="fc" id="L75">	}</span>
 	
 	public boolean getIsSearch() {
-<span class="nc" id="L81">		return isSearch;</span>
+<span class="nc" id="L78">		return isSearch;</span>
 	}
 
 	public void setIsSearch(boolean isSearch) {
-<span class="fc" id="L85">		this.isSearch = isSearch;</span>
-<span class="fc" id="L86">	}</span>
+<span class="fc" id="L82">		this.isSearch = isSearch;</span>
+<span class="fc" id="L83">	}</span>
 
 	public boolean getIsPickup() {
-<span class="nc" id="L89">		return isPickup;</span>
+<span class="nc" id="L86">		return isPickup;</span>
 	}
 
 	public void setPickup(boolean isPickup) {
-<span class="nc" id="L93">		this.isPickup = isPickup;</span>
-<span class="nc" id="L94">	}</span>
+<span class="nc" id="L90">		this.isPickup = isPickup;</span>
+<span class="nc" id="L91">	}</span>
 
 	public String getMetodoP() {
-<span class="fc" id="L97">		return metodoP;</span>
+<span class="fc" id="L94">		return metodoP;</span>
 	}
 
 	public void setMetodoP(String metodoP) {
-<span class="fc" id="L101">		this.metodoP = metodoP;</span>
-<span class="fc" id="L102">	}</span>
+<span class="fc" id="L98">		this.metodoP = metodoP;</span>
+<span class="fc" id="L99">	}</span>
 
 	
 	
