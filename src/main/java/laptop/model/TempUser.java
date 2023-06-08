@@ -84,16 +84,17 @@ public class TempUser {
 	private String descrizioneT;
 	private LocalDate dataDiNascitaT;
 	private String r;
- 
-	private TempUser(){}
 
-   	private static class TempUser {
-        	private static final TempUser INSTANCE = new TempUser();
-   	 }
+	private static final TempUser userInstance = new TempUser();
 
-    public static TempUser getInstance() {
-        return TempUser.INSTANCE;
-    }
+	private TempUser() {
+
+	}
+
+	public static TempUser getInstance() {
+		
+		return userInstance;
+	} 
 
 	
 public String getIdRuolo()  {
