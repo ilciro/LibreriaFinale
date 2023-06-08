@@ -5,7 +5,7 @@ package laptop.controller;
 
 public class ControllerSystemState {
 	
-	 private static final ControllerSystemState INSTANCE = new ControllerSystemState();
+	 private static  ControllerSystemState INSTANCE ;
 	 private int id;
 	 private String type;
 	 private boolean isLogged ;
@@ -19,7 +19,9 @@ public class ControllerSystemState {
 
 	
 
-	    public static ControllerSystemState getInstance() {
+	    public static synchronized ControllerSystemState getInstance() {
+	    	if(INSTANCE==null)
+	    		INSTANCE=new ControllerSystemState();
 	        return ControllerSystemState.INSTANCE;
 	    }
 	 
