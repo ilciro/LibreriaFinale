@@ -10,7 +10,7 @@ public class ControllerSystemState {
 	 private boolean isLogged ;
 	 private boolean isSearch;
 	 private boolean isPickup;
-	 private static final ControllerSystemState instance=new ControllerSystemState() ;
+	 //private static final ControllerSystemState instance=new ControllerSystemState() ;
 	 private float spesaT;// usato per avere importo totale 
 	 private int quantita; //usato per avere quantita oggetto che compro
 	 private String metodoP; //usato per vedere se contanti o cc
@@ -31,16 +31,26 @@ public class ControllerSystemState {
 		this.spesaT = spesaT;
 	}
 
-	private ControllerSystemState()
-	 {
+	//private ControllerSystemState()
+	 //{
 		 
-	 }
+	 //}
 	 
-	 public static ControllerSystemState getIstance()
-	 {
+	 //public static ControllerSystemState getIstance()
+	 //{
 		 
-	 return instance;
-	 }
+	 //return instance;
+	 //}
+	
+	private ControllerSystemState(){}
+	
+	private static class ControllerSystemState()
+	{
+		 private static final ControllerSystemState INSTANCE = new ControllerSystemState();
+	}
+	public static ControllerSystemState getInstance() {
+        return ControllerSystemState.INSTANCE;
+   	 }
 
 	public int getId() {
 		return id;
