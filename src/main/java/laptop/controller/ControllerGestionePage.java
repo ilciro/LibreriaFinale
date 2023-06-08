@@ -22,17 +22,17 @@ public class ControllerGestionePage {
 	private Rivista r;
 	
 	public void cancella(int id) throws  SQLException {
-		if(ControllerSystemState.getIstance().getType().equals("libro"))
+		if(ControllerSystemState.getInstance().getType().equals("libro"))
 		{
 			l.setId(id);
 			lD.cancella(l);
 		}
-		else if(ControllerSystemState.getIstance().getType().equals("giornale"))
+		else if(ControllerSystemState.getInstance().getType().equals("giornale"))
 		{
 			g.setId(id);
 			gD.cancella(g);
 		}
-		else if(ControllerSystemState.getIstance().getType().equals("rivista"))
+		else if(ControllerSystemState.getInstance().getType().equals("rivista"))
 		{
 			r.setId(id);
 			rD.cancella(r);
@@ -63,15 +63,15 @@ public class ControllerGestionePage {
 	public String settaHeader()
 	{
 		String s=null;
-		if(ControllerSystemState.getIstance().getType().equals("libro"))
+		if(ControllerSystemState.getInstance().getType().equals("libro"))
 		{
 			s="Benvenuto nella schermata dei libri";
 		}
-		else if(ControllerSystemState.getIstance().getType().equals("giornale"))
+		else if(ControllerSystemState.getInstance().getType().equals("giornale"))
 		{
 			s="Benvenuto nella schermata dei giornali";
 		}
-		else if(ControllerSystemState.getIstance().getType().equals("rivista"))
+		else if(ControllerSystemState.getInstance().getType().equals("rivista"))
 		{
 			s="Benvenuto nella schermata dele riviste";
 		}

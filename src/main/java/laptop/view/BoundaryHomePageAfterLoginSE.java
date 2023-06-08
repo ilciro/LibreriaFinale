@@ -48,7 +48,7 @@ public class BoundaryHomePageAfterLoginSE {
 	@FXML
 	private Button buttonGestione;
 	
-	private ControllerSystemState vis = ControllerSystemState.getIstance() ;
+	private ControllerSystemState vis = ControllerSystemState.getInstance() ;
 	protected Scene scene;
 	private static String compravendita="compravendita.fxml";
 	

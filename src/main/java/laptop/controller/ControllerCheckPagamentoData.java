@@ -12,7 +12,7 @@ import laptop.model.raccolta.Libro;
 import laptop.model.raccolta.Rivista;
 
 public class ControllerCheckPagamentoData {
-	private ControllerSystemState vis=ControllerSystemState.getIstance();
+	private ControllerSystemState vis=ControllerSystemState.getInstance();
 	private Libro l;
 	private Giornale g;
 	private Rivista r;

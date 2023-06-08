@@ -57,7 +57,7 @@ public class BoundaryGestionePage implements Initializable {
 	@FXML
 	private TextField idL;
 	private ControllerGestionePage cGP;
-	private ControllerSystemState vis=ControllerSystemState.getIstance();
+	private ControllerSystemState vis=ControllerSystemState.getInstance();
 	protected Scene scene;
 	protected int identity;
 	

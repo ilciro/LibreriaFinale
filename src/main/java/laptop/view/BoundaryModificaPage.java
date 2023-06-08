@@ -117,7 +117,7 @@ public class BoundaryModificaPage implements Initializable {
 	private Label labelCopie;
 
 	private ControllerModifPage cMP;
-	private ControllerSystemState vis= ControllerSystemState.getIstance();
+	private ControllerSystemState vis= ControllerSystemState.getInstance();
 	protected float prezzo ;
 	protected int copie;
 	protected Scene scene;

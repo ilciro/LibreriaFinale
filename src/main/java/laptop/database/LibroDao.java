@@ -27,7 +27,7 @@ public class LibroDao  {
 	private  int q; // quantita'
 	
 	private boolean state=false;
-	private ControllerSystemState vis=ControllerSystemState.getIstance();
+	private ControllerSystemState vis=ControllerSystemState.getInstance();
 
 	private static final String LIBRO = "libro";
 	private static final String ECCEZIONE="ECCEZIONE generata:";

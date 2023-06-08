@@ -20,7 +20,7 @@ import laptop.model.raccolta.Rivista;
 
 public class ControllerDownload {
 	private String nrOrdine;
-	private ControllerSystemState vis=ControllerSystemState.getIstance();
+	private ControllerSystemState vis=ControllerSystemState.getInstance();
 	private ContrassegnoDao cDao;
 	private PagamentoDao pDao;
 	private LibroDao lD;

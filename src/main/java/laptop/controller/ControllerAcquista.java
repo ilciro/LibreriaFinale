@@ -24,7 +24,7 @@ public class ControllerAcquista {
 	private Libro l;
 	private Giornale g;
 	private Rivista r;
-	private static ControllerSystemState vis = ControllerSystemState.getIstance() ;
+	private static ControllerSystemState vis = ControllerSystemState.getInstance() ;
 	private String name;
 	private int disp;
 	private float costo;//aggiunto per costo (vedere metodo in fondo ((getCosto()))

@@ -18,7 +18,7 @@ public class ControllerPagamentoCC {
 	private String appoggio = "";
 	private CartaDiCredito cc;
 	private PagamentoDao pDao;
-	private ControllerSystemState vis= ControllerSystemState.getIstance();
+	private ControllerSystemState vis= ControllerSystemState.getInstance();
 	
 	private boolean state=false;
 	

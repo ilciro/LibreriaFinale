@@ -54,7 +54,7 @@ class TestLaptop1 {
 	private Libro l=new Libro();
 	private Giornale g=new Giornale();
 	private Rivista r=new Rivista();
-	private static ControllerSystemState vis = ControllerSystemState.getIstance() ;
+	private static ControllerSystemState vis = ControllerSystemState.getInstance() ;
 	private ControllerAcquista cA=new ControllerAcquista();
 	private ControllerAggiungiPage cAP=new ControllerAggiungiPage();
 	private String[] info=new String[7];
@@ -495,7 +495,7 @@ class TestLaptop1 {
 
 	@Test
 	void testCheckDataGM() throws SQLException {
-		ControllerSystemState.getIstance().setId(1);
+		ControllerSystemState.getInstance().setId(1);
 		cambio[0]="cambio giornale";
 		cambio[1]="quotidinao";
 		cambio[2]="cambio ediitore";
@@ -533,7 +533,7 @@ class TestLaptop1 {
 		infoCosti[3]="1";
 		infoCosti[4]=String.valueOf((float)2.45);
 		infoCosti[5]="50";
-		ControllerSystemState.getIstance().setId(18);
+		ControllerSystemState.getInstance().setId(18);
 		//vedere qui
 		cMP.checkDataL(info, "aggiorno libro","provo ad aggiornare", LocalDate.of(2023,1,5), infoCosti);
 	}

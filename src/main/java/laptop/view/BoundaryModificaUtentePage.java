@@ -92,7 +92,7 @@ public class BoundaryModificaUtentePage implements Initializable {
 	private void aggiorna() throws SQLException, IOException, ParseException
 	{
 		//buttonM
-		User.getInstance().setId(ControllerSystemState.getIstance().getId());
+		User.getInstance().setId(ControllerSystemState.getInstance().getId());
 		User.getInstance().setDescrizione(descTA.getText());
 		
 		Date sqlDate = null;

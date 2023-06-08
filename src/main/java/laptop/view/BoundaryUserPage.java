@@ -51,7 +51,7 @@ public class BoundaryUserPage implements Initializable {
 	private ControllerCancellaUser cCU;
 
 	
-	private ControllerSystemState vis=ControllerSystemState.getIstance();
+	private ControllerSystemState vis=ControllerSystemState.getInstance();
 	protected Scene scene ;
 	
 	protected int max = 0;

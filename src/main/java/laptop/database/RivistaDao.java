@@ -32,7 +32,7 @@ public class RivistaDao {
 	private boolean state=false;
 	private String riv="SELECT * from RIVISTA;";
 
-	private ControllerSystemState vis=ControllerSystemState.getIstance();
+	private ControllerSystemState vis=ControllerSystemState.getInstance();
 	private static final String RIVISTA="rivista";
 
 	private static String eccezione="eccezione generata:";

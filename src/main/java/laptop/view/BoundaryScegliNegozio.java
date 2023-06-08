@@ -145,7 +145,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		        if ((result.isPresent()) && (result.get() == ButtonType.OK))
 		        	
 		        {
-		        	if(ControllerSystemState.getIstance().getIsLogged())	
+		        	if(ControllerSystemState.getInstance().getIsLogged())	
 					{
 		            	Stage stage;
 		                Parent root;
@@ -202,7 +202,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		        if ((result.isPresent()) && (result.get() == ButtonType.OK))
 		        	
 		        {
-		        	if(ControllerSystemState.getIstance().getIsLogged())	
+		        	if(ControllerSystemState.getInstance().getIsLogged())	
 					{
 		            	Stage stage;
 		                Parent root;
@@ -258,7 +258,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		        if ((result.isPresent()) && (result.get() == ButtonType.OK))
 		        	
 		        {
-		        	if(ControllerSystemState.getIstance().getIsLogged())	
+		        	if(ControllerSystemState.getInstance().getIsLogged())	
 					{
 		            	Stage stage;
 		                Parent root;
@@ -315,7 +315,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		        if ((result.isPresent()) && (result.get() == ButtonType.OK))
 		        	
 		        {
-		        	if(ControllerSystemState.getIstance().getIsLogged())	
+		        	if(ControllerSystemState.getInstance().getIsLogged())	
 					{
 		            	Stage stage;
 		                Parent root;

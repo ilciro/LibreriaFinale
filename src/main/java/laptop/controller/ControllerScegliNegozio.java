@@ -18,7 +18,7 @@ public class ControllerScegliNegozio {
 	}
 
 	private Negozio n;
-	private ControllerSystemState vis = ControllerSystemState.getIstance() ;
+	private ControllerSystemState vis = ControllerSystemState.getInstance() ;
 
 	
 	public ControllerScegliNegozio()

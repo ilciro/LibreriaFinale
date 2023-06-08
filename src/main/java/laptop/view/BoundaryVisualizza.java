@@ -83,7 +83,7 @@ public class BoundaryVisualizza implements Initializable {
 	
 	private ControllerVisualizza cV;
 	protected int i;
-	private ControllerSystemState vis = ControllerSystemState.getIstance() ;
+	private ControllerSystemState vis = ControllerSystemState.getInstance() ;
 	private static String indisponibile="not found";
 
 	

@@ -33,7 +33,7 @@ public class GiornaleDao {
 	
 
 	private boolean state=false;
-	private ControllerSystemState vis=ControllerSystemState.getIstance();
+	private ControllerSystemState vis=ControllerSystemState.getInstance();
 	private static final String GIORNALE = "giornale";
 	private static String eccezione="eccezione generata:";
 

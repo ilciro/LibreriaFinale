@@ -21,7 +21,7 @@ public class ControllerVisualizza {
 	private GiornaleDao gD;
 	
 	
-	private ControllerSystemState vis = ControllerSystemState.getIstance() ;
+	private ControllerSystemState vis = ControllerSystemState.getInstance() ;
 	
 	public ControllerVisualizza()
 	{

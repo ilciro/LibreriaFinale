@@ -32,7 +32,7 @@ public class ControllerLogin {
 				UsersDao.pickData(user);
 				java.util.logging.Logger.getLogger("Test log").log(Level.INFO, "loggato come {0}", r);
 
-				ControllerSystemState.getIstance().setIsLogged(true);
+				ControllerSystemState.getInstance().setIsLogged(true);
 				 esito = true;
 			}
 			 else {

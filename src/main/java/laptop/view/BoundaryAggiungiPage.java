@@ -104,7 +104,7 @@ public class BoundaryAggiungiPage implements Initializable {
 	@FXML
 	private void conferma() throws SQLException
 	{
-		if(ControllerSystemState.getIstance().getType().equals("libro"))
+		if(ControllerSystemState.getInstance().getType().equals("libro"))
 		{
 		
 		String t=titoloT.getText();
@@ -146,7 +146,7 @@ public class BoundaryAggiungiPage implements Initializable {
 		
 		cAP.checkData(infoGen,r,desc,d,infoCostoDisp);
 		}
-		else if(ControllerSystemState.getIstance().getType().equals("giornale"))
+		else if(ControllerSystemState.getInstance().getType().equals("giornale"))
 		{
 			String title=titoloT.getText();
 			String type="Quotidiano";
@@ -179,7 +179,7 @@ public class BoundaryAggiungiPage implements Initializable {
 			
 			
 		}
-		else if(ControllerSystemState.getIstance().getType().equals("rivista"))
+		else if(ControllerSystemState.getInstance().getType().equals("rivista"))
 		{
 			int dispo;
 			String t=titoloT.getText();
@@ -228,7 +228,7 @@ public class BoundaryAggiungiPage implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		cAP=new ControllerAggiungiPage();
-		if(ControllerSystemState.getIstance().getType().equals("libro"))
+		if(ControllerSystemState.getInstance().getType().equals("libro"))
 		{
 		
 		categoriaList.setItems(items);
@@ -262,7 +262,7 @@ public class BoundaryAggiungiPage implements Initializable {
 		items.add("SCIENZE");
 		items.add("TECNOLOGIA_MEDICINA");
 		}
-		else if(ControllerSystemState.getIstance().getType().equals("rivista"))
+		else if(ControllerSystemState.getInstance().getType().equals("rivista"))
 		{
 			categoriaList.setItems(items);
 			items.add("SETTIMANALE");

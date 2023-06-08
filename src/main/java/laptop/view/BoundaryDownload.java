@@ -43,7 +43,7 @@ public class BoundaryDownload implements Initializable {
 	private Button buttonA;
 
 	private ControllerDownload cD;
-	private ControllerSystemState vis = ControllerSystemState.getIstance() ;
+	private ControllerSystemState vis = ControllerSystemState.getInstance() ;
 	protected Alert a;
 	protected Scene scene;
 

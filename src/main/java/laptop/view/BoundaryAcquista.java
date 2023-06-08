@@ -65,7 +65,7 @@ public class BoundaryAcquista implements Initializable {
 
 	protected Scene scene;
 	private ControllerAcquista cA;
-	private ControllerSystemState vis = ControllerSystemState.getIstance() ;
+	private ControllerSystemState vis = ControllerSystemState.getInstance() ;
 
 	
 	

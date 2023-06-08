@@ -41,7 +41,7 @@ import laptop.model.raccolta.Libro;
 
 class TestLaptop2 {
 	
-	private ControllerSystemState vis=ControllerSystemState.getIstance();
+	private ControllerSystemState vis=ControllerSystemState.getInstance();
 	private ControllerPagamentoCC cPCC=new ControllerPagamentoCC();
 	private ControllerPassword cP=new ControllerPassword();
 	private ControllerRegistraUtente cRU=new ControllerRegistraUtente();

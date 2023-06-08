@@ -60,7 +60,7 @@ public class BoundaryCompravendita implements Initializable {
 	private Button buttonI;
 
 	private ControllerCompravendita cCV;
-	private ControllerSystemState vis = ControllerSystemState.getIstance() ;
+	private ControllerSystemState vis = ControllerSystemState.getInstance() ;
 	protected Scene scene;
 	private static String titoloS="titolo";
 	private static String editoreS="editore";
@@ -158,11 +158,11 @@ public class BoundaryCompravendita implements Initializable {
 	@FXML
 	private void vediLista() throws SQLException {
 		//vedere if anche qui
-		if(ControllerSystemState.getIstance().getType().equals("libro"))
+		if(ControllerSystemState.getInstance().getType().equals("libro"))
 			table.setItems(cCV.getLibri());
-		else if(ControllerSystemState.getIstance().getType().equals("giornale"))
+		else if(ControllerSystemState.getInstance().getType().equals("giornale"))
 			table.setItems(cCV.getGiornali());
-		else if(ControllerSystemState.getIstance().getType().equals("rivista"))
+		else if(ControllerSystemState.getInstance().getType().equals("rivista"))
 			table.setItems(cCV.getRiviste());
 
 	}
@@ -176,7 +176,7 @@ public class BoundaryCompravendita implements Initializable {
 		buttonV.setText(cCV.popolaBottoneV());
 		buttonA.setText(cCV.popolaBottoneA());
 		
-		if(ControllerSystemState.getIstance().getType().equals("libro"))
+		if(ControllerSystemState.getInstance().getType().equals("libro"))
 		{
 			header.setText(cCV.ritornaMessaggio());
 			titolo.setCellValueFactory(new PropertyValueFactory<>(titoloS));
@@ -187,7 +187,7 @@ public class BoundaryCompravendita implements Initializable {
 			idLibro.setCellValueFactory(new PropertyValueFactory<>("id"));
 			
 		}
-		else if(ControllerSystemState.getIstance().getType().equals("giornale"))
+		else if(ControllerSystemState.getInstance().getType().equals("giornale"))
 		{
 			header.setText(cCV.ritornaMessaggio());
 			titolo.setCellValueFactory(new PropertyValueFactory<>(titoloS));
@@ -197,7 +197,7 @@ public class BoundaryCompravendita implements Initializable {
 			prezzo.setCellValueFactory(new PropertyValueFactory<>(prezzoS));
 			idLibro.setCellValueFactory(new PropertyValueFactory<>("id"));
 		}
-		else if(ControllerSystemState.getIstance().getType().equals("rivista"))
+		else if(ControllerSystemState.getInstance().getType().equals("rivista"))
 		{
 			header.setText(cCV.ritornaMessaggio());
 			titolo.setCellValueFactory(new PropertyValueFactory<>(titoloS));

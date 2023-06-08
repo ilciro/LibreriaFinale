@@ -30,7 +30,7 @@ public class BoundaryRaccoltaPage implements Initializable {
 	@FXML
 	private Button buttonI;
 	private ControllerReportRaccolta cRR;
-	private ControllerSystemState vis=ControllerSystemState.getIstance();
+	private ControllerSystemState vis=ControllerSystemState.getInstance();
 	protected Scene scene;	
 	private static String gestione="paginaGestione.fxml";
 	

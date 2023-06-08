@@ -44,7 +44,7 @@ class TestLaptop3 {
 	private ControllerCancellaUser cCU=new ControllerCancellaUser();
 	private LibroDao lD=new LibroDao();
 	private Libro l=new Libro();
-	private ControllerSystemState vis=ControllerSystemState.getIstance();
+	private ControllerSystemState vis=ControllerSystemState.getInstance();
 	
 
 	@ParameterizedTest

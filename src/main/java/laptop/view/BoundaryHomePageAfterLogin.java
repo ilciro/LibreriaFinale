@@ -53,8 +53,8 @@ private static String compravendita="compravendita.fxml";
 
 @FXML
 private void getListaGiornali() throws IOException {
-	ControllerSystemState.getIstance().setIsSearch(false);
-	ControllerSystemState.getIstance().setTypeAsDaily();
+	ControllerSystemState.getInstance().setIsSearch(false);
+	ControllerSystemState.getInstance().setTypeAsDaily();
 	Stage stage;
 	Parent root;
 	stage = (Stage) buttonL.getScene().getWindow();
@@ -68,8 +68,8 @@ private void getListaGiornali() throws IOException {
 
 @FXML
 private void getListaRiviste() throws IOException {
-	ControllerSystemState.getIstance().setIsSearch(false);
-	ControllerSystemState.getIstance().setTypeAsMagazine();
+	ControllerSystemState.getInstance().setIsSearch(false);
+	ControllerSystemState.getInstance().setTypeAsMagazine();
 	Stage stage;
 	Parent root;
 	stage = (Stage) buttonL.getScene().getWindow();
@@ -83,8 +83,8 @@ private void getListaRiviste() throws IOException {
 
 @FXML
 private void getListaLibri() throws IOException {
-	ControllerSystemState.getIstance().setIsSearch(false);
-	ControllerSystemState.getIstance().setTypeAsBook();
+	ControllerSystemState.getInstance().setIsSearch(false);
+	ControllerSystemState.getInstance().setTypeAsBook();
 	Stage stage;
 	Parent root;
 	stage = (Stage) buttonL.getScene().getWindow();
@@ -143,7 +143,7 @@ private void logout() throws IOException, LogoutException
 
 @FXML
 private void cerca() throws IOException {
-	ControllerSystemState.getIstance().setIsSearch(true);
+	ControllerSystemState.getInstance().setIsSearch(true);
 	Stage stage;
 	Parent root;
 	stage = (Stage) buttonC.getScene().getWindow();

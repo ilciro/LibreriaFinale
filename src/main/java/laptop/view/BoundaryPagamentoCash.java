@@ -56,7 +56,7 @@ public class BoundaryPagamentoCash implements Initializable{
 	protected String com;
 	
 	protected Scene scene;
-	private static ControllerSystemState vis = ControllerSystemState.getIstance();
+	private static ControllerSystemState vis = ControllerSystemState.getInstance();
 
 	@FXML
 	private void procediCash() throws IOException {

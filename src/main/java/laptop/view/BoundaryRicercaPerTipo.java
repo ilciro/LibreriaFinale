@@ -43,7 +43,7 @@ public class BoundaryRicercaPerTipo implements Initializable {
 	private void torna() throws IOException
 	{
 		
-		if(ControllerSystemState.getIstance().getIsLogged()) {
+		if(ControllerSystemState.getInstance().getIsLogged()) {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonB.getScene().getWindow();
@@ -66,7 +66,7 @@ public class BoundaryRicercaPerTipo implements Initializable {
 	@FXML
 	private void cercaL() throws IOException
 	{
-		ControllerSystemState.getIstance().setTypeAsBook();
+		ControllerSystemState.getInstance().setTypeAsBook();
 
 		if(cRPT.setRicercaL())
 		{
