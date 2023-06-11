@@ -1,5 +1,6 @@
 package laptop.controller;
 
+
 // this is singelton battona 
 // know evreything about the system
 
@@ -19,10 +20,12 @@ public class ControllerSystemState {
 
 	
 
-	    public static synchronized ControllerSystemState getInstance() {
-	    	if(instance==null)
-	    		instance=new ControllerSystemState();
-	        return ControllerSystemState.instance;
+	 static {
+	        instance = new ControllerSystemState();
+	    }
+
+	    public static ControllerSystemState getInstance() {
+	        return instance;
 	    }
 	 
 	 public int getQuantita() {
