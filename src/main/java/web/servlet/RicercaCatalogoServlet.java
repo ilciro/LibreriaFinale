@@ -35,7 +35,7 @@ public class RicercaCatalogoServlet extends HttpServlet {
 		String cercaB=req.getParameter("cercaB");
 		String visualizza=req.getParameter("visualizzaB");
 		String indietro=req.getParameter("buttonI");
-		String type=SystemBean.getIstance().getTypeB();
+		String type=SystemBean.getInstance().getTypeB();
 		
 		try {
 		if(cercaB!=null && cercaB.equals("cerca"))

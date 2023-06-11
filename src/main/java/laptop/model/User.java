@@ -29,16 +29,19 @@ public class User {
 	private LocalDate dataDiNascita;
 	private String r;
 	
-	private static final User userInstance = new User();
+	private static User userInstance = null;
 
-	private User() {
+    private User() {}
 
-	}
-
-	public static User getInstance() {
-		
-		return userInstance;
-	} 
+    public static User getInstance() {
+        if (userInstance == null) {
+          
+        	userInstance = new User();
+                }
+       
+        return userInstance;
+    }
+	
 
 	public int getId() {
 		return id;

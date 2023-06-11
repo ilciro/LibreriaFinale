@@ -29,12 +29,12 @@ public class GestioneOggettoServlet extends HttpServlet {
 	{
 		super();
 		try {
-		if (SystemBean.getIstance().getTypeB().equals(libro))
+		if (SystemBean.getInstance().getTypeB().equals(libro))
 			mOB.setMiaListaB(lD.getLibri());
 			
-		if(SystemBean.getIstance().getTypeB().equals(giornale))
+		if(SystemBean.getInstance().getTypeB().equals(giornale))
 			mOB.setMiaListaB(gD.getGiornali());
-		if(SystemBean.getIstance().getTypeB().equals(rivista))
+		if(SystemBean.getInstance().getTypeB().equals(rivista))
 			mOB.setMiaListaB(rD.getRiviste());
 		} catch (SQLException e) {
 			java.util.logging.Logger.getLogger("costruttore ").log(Level.INFO, "eccezione nel costruttore {0}.",e.toString());
@@ -70,19 +70,19 @@ public class GestioneOggettoServlet extends HttpServlet {
 		String cancella=req.getParameter("buttonCanc");
 		String indietro=req.getParameter("buttonI");
 		
-		String type=SystemBean.getIstance().getTypeB();
+		String type=SystemBean.getInstance().getTypeB();
 		
 		try {
 		if(genera!=null && genera.equals("genera lista"))
 		{
 			req.setAttribute("beanMOB",mOB);
-			req.setAttribute("beanS",SystemBean.getIstance());
+			req.setAttribute("beanS",SystemBean.getInstance());
 			RequestDispatcher view = getServletContext().getRequestDispatcher("/gestioneOggetto.jsp"); 
 			view.forward(req,resp);
 		}
 		if(aggiungi!=null && aggiungi.equals("inserisci"))
 		{
-			req.setAttribute("bean1",SystemBean.getIstance());
+			req.setAttribute("bean1",SystemBean.getInstance());
 
 			RequestDispatcher view=getServletContext().getRequestDispatcher("/aggiungiOggettoPage.jsp");
 			view.forward(req, resp);
@@ -129,19 +129,19 @@ public class GestioneOggettoServlet extends HttpServlet {
 			if(type.equals(libro))
 			{
 				lB.setIdB(Integer.parseInt(id));
-				SystemBean.getIstance().setIdB(lB.getIdB());
+				SystemBean.getInstance().setIdB(lB.getIdB());
 				l.setId(lB.getIdB());
 			}
 			else if(type.equals( giornale))
 			{
 				gB.setIdB(Integer.parseInt(id));
-				SystemBean.getIstance().setIdB(gB.getIdB());
+				SystemBean.getInstance().setIdB(gB.getIdB());
 				g.setId(gB.getIdB());
 			}	
 			else if(type.equals(rivista))
 			{
 				rB.setIdB(Integer.parseInt(id));
-				SystemBean.getIstance().setIdB(rB.getIdB());
+				SystemBean.getInstance().setIdB(rB.getIdB());
 				r.setId(rB.getIdB());
 			
 			}

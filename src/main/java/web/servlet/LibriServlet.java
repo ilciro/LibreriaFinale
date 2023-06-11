@@ -62,10 +62,10 @@ public class LibriServlet extends HttpServlet {
 					lB.setIdB(Integer.parseInt(id));
 					l.setId(lB.getIdB());
 					lB.setTitoloB(lD.getTitolo(l));
-					SystemBean.getIstance().setIdB(lB.getIdB());
-					SystemBean.getIstance().setTitoloB(lB.getTitoloB());
+					SystemBean.getInstance().setIdB(lB.getIdB());
+					SystemBean.getInstance().setTitoloB(lB.getTitoloB());
 					req.setAttribute(beanL,lB);
-					req.setAttribute("bean1",SystemBean.getIstance());
+					req.setAttribute("bean1",SystemBean.getInstance());
 				
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/acquista.jsp"); 
 					view.forward(req,resp);

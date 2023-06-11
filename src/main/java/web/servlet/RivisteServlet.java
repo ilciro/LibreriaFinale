@@ -72,10 +72,10 @@ public class RivisteServlet extends HttpServlet {
 					rB.setIdB(Integer.parseInt(id));
 					r.setId(rB.getIdB());
 					rB.setTitoloB(rD.getTitolo(r));
-					SystemBean.getIstance().setIdB(rB.getIdB());
-					SystemBean.getIstance().setTitoloB(rB.getTitoloB());
+					SystemBean.getInstance().setIdB(rB.getIdB());
+					SystemBean.getInstance().setTitoloB(rB.getTitoloB());
 					req.setAttribute("beanL",rB);
-					req.setAttribute("bean1",SystemBean.getIstance());
+					req.setAttribute("bean1",SystemBean.getInstance());
 				
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/acquista.jsp"); 
 					view.forward(req,resp);

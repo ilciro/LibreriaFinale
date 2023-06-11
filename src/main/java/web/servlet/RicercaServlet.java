@@ -28,28 +28,28 @@ public class RicercaServlet extends HttpServlet {
 		String buttonI=req.getParameter("buttonI");
 		if(buttonL!=null && buttonL.equals("libri"))
 		{
-			SystemBean.getIstance().setTypeAsBook();
-			req.setAttribute(beanS,SystemBean.getIstance());
+			SystemBean.getInstance().setTypeAsBook();
+			req.setAttribute(beanS,SystemBean.getInstance());
 			RequestDispatcher view=getServletContext().getRequestDispatcher(ricercaInCatalogo);
 			view.forward(req, resp);
 		}
 		if(buttonG!=null && buttonG.equals("giornali"))
 		{
-			SystemBean.getIstance().setTypeAsDaily();
-			req.setAttribute(beanS,SystemBean.getIstance());
+			SystemBean.getInstance().setTypeAsDaily();
+			req.setAttribute(beanS,SystemBean.getInstance());
 			RequestDispatcher view=getServletContext().getRequestDispatcher(ricercaInCatalogo);
 			view.forward(req, resp);
 		}
 		if(buttonR!=null && buttonR.equals("riviste"))
 		{
-			SystemBean.getIstance().setTypeAsMagazine();
-			req.setAttribute(beanS,SystemBean.getIstance());
+			SystemBean.getInstance().setTypeAsMagazine();
+			req.setAttribute(beanS,SystemBean.getInstance());
 			RequestDispatcher view=getServletContext().getRequestDispatcher(ricercaInCatalogo);
 			view.forward(req, resp);
 		}
 		if(buttonI!=null && buttonI.equals("indietro"))
 		{
-			if(SystemBean.getIstance().isLoggedB())
+			if(SystemBean.getInstance().isLoggedB())
 			{
 				RequestDispatcher view=getServletContext().getRequestDispatcher("/scrittore.jsp");
 				view.forward(req, resp);

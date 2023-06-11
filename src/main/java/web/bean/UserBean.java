@@ -28,17 +28,19 @@ public class UserBean {
 	private String mexB;
 	private String listaUtentiB;
 	
-	private static final UserBean userInstanceB = new UserBean();
+	private static UserBean userInstance = null;
 
-	private UserBean() {
+    private UserBean() {}
 
-	}
-
-	public static UserBean getInstanceB() {
-		
-		return userInstanceB;
-	} 
-
+    public static UserBean getInstance() {
+        if (userInstance == null) {
+          
+        	userInstance = new UserBean();
+                }
+       
+        return userInstance;
+    }
+	
 	
 
 	public int getIdB() {

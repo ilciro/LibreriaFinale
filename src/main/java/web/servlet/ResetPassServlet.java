@@ -53,16 +53,16 @@ public class ResetPassServlet extends HttpServlet {
 	public boolean aggiornaPass(String email,String vecchiaP,String nuovaP) throws SQLException
 	{
 		boolean status=false;
-		UserBean.getInstanceB().setEmailB(email);
-		UserBean.getInstanceB().setPasswordB(vecchiaP);
-		if(UserBean.getInstanceB().getPasswordB().equals(vecchiaP) && (nuovaP.length()>=8 || !email.equals("") ) )
+		UserBean.getInstance().setEmailB(email);
+		UserBean.getInstance().setPasswordB(vecchiaP);
+		if(UserBean.getInstance().getPasswordB().equals(vecchiaP) && (nuovaP.length()>=8 || !email.equals("") ) )
 		{
 			
-			UserBean.getInstanceB().setPasswordB(nuovaP);
+			UserBean.getInstance().setPasswordB(nuovaP);
 
-				if(checkUser(UserBean.getInstanceB()) == 1)
+				if(checkUser(UserBean.getInstance()) == 1)
 				{
-					status=checkResetpass(UserBean.getInstanceB(), nuovaP,email);
+					status=checkResetpass(UserBean.getInstance(), nuovaP,email);
 				}
 				
 				

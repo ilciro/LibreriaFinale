@@ -29,20 +29,20 @@ public class IndexServlet1 extends HttpServlet {
 		String ric=req.getParameter("buttonRic");
 		if(l!=null && l.equals("libri"))
 		{
-			SystemBean.getIstance().setTypeAsBook();
+			SystemBean.getInstance().setTypeAsBook();
 
 			 RequestDispatcher view = getServletContext().getRequestDispatcher("/libri.jsp"); 
 				view.forward(req,resp); 
 		}
 		if( g!=null && g.equals("giornali"))
 		{
-				SystemBean.getIstance().setTypeAsDaily();
+				SystemBean.getInstance().setTypeAsDaily();
 				 RequestDispatcher view = getServletContext().getRequestDispatcher("/giornali.jsp"); 
 					view.forward(req,resp); 	
 		}
 		if(r!=null && r.equals("riviste"))
 		{
-			SystemBean.getIstance().setTypeAsMagazine();
+			SystemBean.getInstance().setTypeAsMagazine();
 			 RequestDispatcher view = getServletContext().getRequestDispatcher("/riviste.jsp"); 
 				view.forward(req,resp); 	
 		}

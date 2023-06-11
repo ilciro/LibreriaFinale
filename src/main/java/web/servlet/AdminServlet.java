@@ -44,7 +44,7 @@ public class AdminServlet extends HttpServlet {
 		if(logout!=null &&logout.equals("logout"))
 		{
 			logout();
-				if(!SystemBean.getIstance().isLoggedB())
+				if(!SystemBean.getInstance().isLoggedB())
 				{
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp"); 
 					view.forward(req,resp);
@@ -60,7 +60,7 @@ public class AdminServlet extends HttpServlet {
 	public static boolean logout() throws LogoutException 
 	{	
 		
-		String n = UserBean.getInstanceB().getNomeB();
+		String n = UserBean.getInstance().getNomeB();
 		java.util.logging.Logger.getLogger("Test logout").log(Level.INFO, "stai sloggando come {0}" ,n);
 		
 		if (n==null)
@@ -69,17 +69,17 @@ public class AdminServlet extends HttpServlet {
 
 		}
 		else {
-			 UserBean.getInstanceB().setIdB(-1);
-			 UserBean.getInstanceB().setNomeB(null);
-			 UserBean.getInstanceB().setCognomeB(null);
-			 UserBean.getInstanceB().setDataDiNascitaB(null);
-			 UserBean.getInstanceB().setDescrizioneB(null);
-			 UserBean.getInstanceB().setEmailB(null);
-			 UserBean.getInstanceB().setPasswordB(null);
+			 UserBean.getInstance().setIdB(-1);
+			 UserBean.getInstance().setNomeB(null);
+			 UserBean.getInstance().setCognomeB(null);
+			 UserBean.getInstance().setDataDiNascitaB(null);
+			 UserBean.getInstance().setDescrizioneB(null);
+			 UserBean.getInstance().setEmailB(null);
+			 UserBean.getInstance().setPasswordB(null);
 		
 		
-		java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, "stai sloggando {0}", UserBean.getInstanceB().getEmailB());
-			SystemBean.getIstance().setLoggedB(false);
+		java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, "stai sloggando {0}", UserBean.getInstance().getEmailB());
+			SystemBean.getInstance().setLoggedB(false);
 			return true;
 		}
 

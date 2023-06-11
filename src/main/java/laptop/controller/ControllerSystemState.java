@@ -4,9 +4,9 @@ package laptop.controller;
 // this is singelton battona 
 // know evreything about the system
 
+
 public class ControllerSystemState {
 	
-	 private static  ControllerSystemState instance ;
 	 private int id;
 	 private String type;
 	 private boolean isLogged ;
@@ -16,18 +16,18 @@ public class ControllerSystemState {
 	 private int quantita; //usato per avere quantita oggetto che compro
 	 private String metodoP; //usato per vedere se contanti o cc
 	 
-	 private ControllerSystemState(){}
+	 private static ControllerSystemState instance = null;
 
-	
-
-	 static {
-	        instance = new ControllerSystemState();
-	    }
+	    private ControllerSystemState() {}
 
 	    public static ControllerSystemState getInstance() {
+	        if (instance == null) {
+	          
+	        	instance = new ControllerSystemState();
+	                }
+	       
 	        return instance;
 	    }
-	 
 	 public int getQuantita() {
 		return quantita;
 	}

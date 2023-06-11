@@ -1,5 +1,6 @@
 package web.bean;
 
+
 public class SystemBean {
 
 		
@@ -8,13 +9,26 @@ public class SystemBean {
 		 private boolean isLoggedB ;
 		 private boolean isSearchB;
 		 private boolean isPickupB;
-		 private static final SystemBean instanceB=new SystemBean() ;
 		 private float spesaTB;// usato per avere importo totale 
 		 private int quantitaB; //usato per avere quantita oggetto che compro
 		 private String metodoPB; //usato per vedere se contanti o cc
 		 private boolean negozioSelezionatoB;// per vedere se download o negozio
 		 private String titoloB;
 		 
+		 
+		 private static SystemBean userInstance = null;
+
+		    private SystemBean() {}
+
+		    public static SystemBean getInstance() {
+		        if (userInstance == null) {
+		          
+		        	userInstance = new SystemBean();
+		                }
+		       
+		        return userInstance;
+		    }
+			
 		 
 		public int getIdB() {
 			return idB;
@@ -96,16 +110,7 @@ public class SystemBean {
 			this.titoloB = titoloB;
 		}
 
-		private SystemBean()
-		 {
-			 
-		 }
-		 
-		 public static SystemBean getIstance()
-		 {
-			 
-		 return instanceB;
-		 }
+		
 
 		public void setTypeAsBook() {
 			this.typeB="libro";

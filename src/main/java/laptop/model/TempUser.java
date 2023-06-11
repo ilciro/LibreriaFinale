@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 
 
+
 public class TempUser {
 	enum RuoliT {
 		ADMINT,
@@ -85,16 +86,20 @@ public class TempUser {
 	private LocalDate dataDiNascitaT;
 	private String r;
 
-	private static final TempUser userInstance = new TempUser();
+	
+	private static TempUser userInstance = null;
 
-	private TempUser() {
+    private TempUser() {}
 
-	}
-
-	public static TempUser getInstance() {
-		
-		return userInstance;
-	} 
+    public static TempUser getInstance() {
+        if (userInstance == null) {
+          
+        	userInstance = new TempUser();
+                }
+       
+        return userInstance;
+    }
+	
 
 	
 public String getIdRuolo()  {

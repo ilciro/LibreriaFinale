@@ -34,19 +34,19 @@ public class ModificaUtenteServlet extends HttpServlet{
 		try {
 			if(genera!=null &&genera.equals("prendi valori"))
 			{
-				User.getInstance().setId(SystemBean.getIstance().getIdB());
+				User.getInstance().setId(SystemBean.getInstance().getIdB());
 				UsersDao.getTempUserSingolo(TempUser.getInstance());
 				
 				
-				UserBean.getInstanceB().setIdRuolo(TempUser.getInstance().getIdRuolo());
-				UserBean.getInstanceB().setNomeB(TempUser.getInstance().getNomeT());
-				UserBean.getInstanceB().setCognomeB(User.getInstance().getCognome());
-				UserBean.getInstanceB().setEmailB(User.getInstance().getEmail());
-				UserBean.getInstanceB().setPasswordB(TempUser.getInstance().getPasswordT());
-				UserBean.getInstanceB().setDescrizioneB(TempUser.getInstance().getDescrizioneT());
-				UserBean.getInstanceB().setDataDiNascitaB(TempUser.getInstance().getDataDiNascitaT());
+				UserBean.getInstance().setIdRuolo(TempUser.getInstance().getIdRuolo());
+				UserBean.getInstance().setNomeB(TempUser.getInstance().getNomeT());
+				UserBean.getInstance().setCognomeB(User.getInstance().getCognome());
+				UserBean.getInstance().setEmailB(User.getInstance().getEmail());
+				UserBean.getInstance().setPasswordB(TempUser.getInstance().getPasswordT());
+				UserBean.getInstance().setDescrizioneB(TempUser.getInstance().getDescrizioneT());
+				UserBean.getInstance().setDataDiNascitaB(TempUser.getInstance().getDataDiNascitaT());
 				
-				req.setAttribute("beanUb",UserBean.getInstanceB());
+				req.setAttribute("beanUb",UserBean.getInstance());
 				RequestDispatcher view=getServletContext().getRequestDispatcher("/modificaUtente.jsp");
 				view.forward(req, resp);
 				
@@ -61,13 +61,13 @@ public class ModificaUtenteServlet extends HttpServlet{
 				String descN=req.getParameter("descNL");
 				String dataN=req.getParameter("dataNL");//cast
 				
-				UserBean.getInstanceB().setIdB(SystemBean.getIstance().getIdB());
-				UserBean.getInstanceB().setIdRuolo(ruoloN);
-				UserBean.getInstanceB().setNomeB(nomeN);
-				UserBean.getInstanceB().setCognomeB(cognomeN);
-				UserBean.getInstanceB().setEmailB(emailN);
-				UserBean.getInstanceB().setPasswordB(passN);
-				UserBean.getInstanceB().setDescrizioneB(descN);
+				UserBean.getInstance().setIdB(SystemBean.getInstance().getIdB());
+				UserBean.getInstance().setIdRuolo(ruoloN);
+				UserBean.getInstance().setNomeB(nomeN);
+				UserBean.getInstance().setCognomeB(cognomeN);
+				UserBean.getInstance().setEmailB(emailN);
+				UserBean.getInstance().setPasswordB(passN);
+				UserBean.getInstance().setDescrizioneB(descN);
 				java.util.Date utilDate;
 			     java.sql.Date sqlDate;
 				SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
@@ -76,16 +76,16 @@ public class ModificaUtenteServlet extends HttpServlet{
 		         utilDate = format.parse(dataN);
 		        sqlDate = new java.sql.Date(utilDate.getTime());
 		        
-		        UserBean.getInstanceB().setDataDiNascitaB(sqlDate.toLocalDate());
+		        UserBean.getInstance().setDataDiNascitaB(sqlDate.toLocalDate());
 		        
-		        User.getInstance().setId(UserBean.getInstanceB().getIdB());
-		        User.getInstance().setId(UserBean.getInstanceB().getIdB());
-		        User.getInstance().setNome(UserBean.getInstanceB().getNomeB());
-		        User.getInstance().setCognome(UserBean.getInstanceB().getCognomeB());
-		        User.getInstance().setEmail(UserBean.getInstanceB().getEmailB());
-		        User.getInstance().setPassword(UserBean.getInstanceB().getPasswordB());
-		        User.getInstance().setDescrizione(UserBean.getInstanceB().getDescrizioneB());
-		        User.getInstance().setDataDiNascita(UserBean.getInstanceB().getDataDiNascitaB());
+		        User.getInstance().setId(UserBean.getInstance().getIdB());
+		        User.getInstance().setId(UserBean.getInstance().getIdB());
+		        User.getInstance().setNome(UserBean.getInstance().getNomeB());
+		        User.getInstance().setCognome(UserBean.getInstance().getCognomeB());
+		        User.getInstance().setEmail(UserBean.getInstance().getEmailB());
+		        User.getInstance().setPassword(UserBean.getInstance().getPasswordB());
+		        User.getInstance().setDescrizione(UserBean.getInstance().getDescrizioneB());
+		        User.getInstance().setDataDiNascita(UserBean.getInstance().getDataDiNascitaB());
 		        
 		        if(UsersDao.aggiornaUtente(User.getInstance())!=null)
 		        {
@@ -93,8 +93,8 @@ public class ModificaUtenteServlet extends HttpServlet{
 					view.forward(req, resp);
 		        }
 		        else {
-		        	UserBean.getInstanceB().setMexB("Aggiornamento NON andato a buon fine");
-		        	req.setAttribute("beanUb", UserBean.getInstanceB());
+		        	UserBean.getInstance().setMexB("Aggiornamento NON andato a buon fine");
+		        	req.setAttribute("beanUb", UserBean.getInstance());
 		        	RequestDispatcher view=getServletContext().getRequestDispatcher("/modificaUtente.jsp");
 					view.forward(req, resp);
 		        }

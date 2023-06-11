@@ -56,11 +56,11 @@ public class FatturaServlet extends HttpServlet{
 			f.setCognome(fB.getCognomeB());
 			f.setVia(fB.getIndirizzoB());
 			f.setCom(fB.getComunicazioniB());
-			f.setAmmontare(SystemBean.getIstance().getSpesaTB());
+			f.setAmmontare(SystemBean.getInstance().getSpesaTB());
 			
 			pB.setIdB(0);
-			pB.setMetodoB(SystemBean.getIstance().getMetodoPB());
-			pB.setAmmontareB(SystemBean.getIstance().getSpesaTB());
+			pB.setMetodoB(SystemBean.getInstance().getMetodoPB());
+			pB.setAmmontareB(SystemBean.getInstance().getSpesaTB());
 			pB.setEsitoB(0);
 			pB.setNomeUtenteB(fB.getNomeB());
 			pB.setTipoB(lB.getcategoriaB());
@@ -79,13 +79,13 @@ public class FatturaServlet extends HttpServlet{
 				java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
 			}
 		
-			if(SystemBean.getIstance().isNegozioSelezionatoB())
+			if(SystemBean.getInstance().isNegozioSelezionatoB())
 			{
 				RequestDispatcher view = getServletContext().getRequestDispatcher("/negozi.jsp"); 
 				view.forward(req,resp);
 			}
 			else {
-				req.setAttribute("bean1",SystemBean.getIstance());
+				req.setAttribute("bean1",SystemBean.getInstance());
 			RequestDispatcher view = getServletContext().getRequestDispatcher("/download.jsp"); 
 			view.forward(req,resp);
 			}

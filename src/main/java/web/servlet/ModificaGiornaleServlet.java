@@ -39,7 +39,7 @@ public class ModificaGiornaleServlet extends HttpServlet {
 		
 		try {
 			
-			gB.setIdB(SystemBean.getIstance().getIdB());
+			gB.setIdB(SystemBean.getInstance().getIdB());
 			g.setId(gB.getIdB());
 			
 				mOB.setMiaListaB(gD.getGiornaleSingolo());

@@ -38,7 +38,7 @@ public class InserisciOggettoServlet extends HttpServlet {
 		String annulla=req.getParameter("annullaB");
 		String genera=req.getParameter("generaL");
 		
-		String type=SystemBean.getIstance().getTypeB();
+		String type=SystemBean.getInstance().getTypeB();
 		try {
 			if(genera!=null && genera.equals("prendi lista"))
 			{

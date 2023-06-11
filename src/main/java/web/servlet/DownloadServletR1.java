@@ -25,7 +25,7 @@ import com.itextpdf.text.DocumentException;
 public class DownloadServletR1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static DownloadBean dB=new DownloadBean();
-	private static SystemBean sB=SystemBean.getIstance();
+	private static SystemBean sB=SystemBean.getInstance();
 	private static Rivista r=new Rivista();
 	private static PagamentoDao pD=new PagamentoDao();
 	private static RivistaDao  rD=new RivistaDao();

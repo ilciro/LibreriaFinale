@@ -67,12 +67,12 @@ public class GiornaliServlet extends HttpServlet{
 					gB.setIdB(idO);
 					gior.setId(gB.getIdB());
 					gB.setTitoloB(gD.getTitolo(gior));
-					SystemBean.getIstance().setIdB(gB.getIdB());					
-					SystemBean.getIstance().setTitoloB(gB.getTitoloB());
+					SystemBean.getInstance().setIdB(gB.getIdB());					
+					SystemBean.getInstance().setTitoloB(gB.getTitoloB());
 				
 					
 					req.setAttribute("beanG",gB);
-					req.setAttribute("bean1",SystemBean.getIstance());
+					req.setAttribute("bean1",SystemBean.getInstance());
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/acquista.jsp"); 
 					view.forward(req,resp);
 				}

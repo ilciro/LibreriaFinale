@@ -37,7 +37,7 @@ public class ModificaRivistaServlet extends HttpServlet{
 		String annulla=req.getParameter("buttonA");
 		
 		try {
-			rB.setIdB(SystemBean.getIstance().getIdB());
+			rB.setIdB(SystemBean.getInstance().getIdB());
 			r.setId(rB.getIdB());
 			mOB.setMiaListaB(rD.getRivistaSingolo());
 			

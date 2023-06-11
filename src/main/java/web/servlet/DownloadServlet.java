@@ -28,7 +28,7 @@ public class DownloadServlet extends HttpServlet{
 	 */
 	private static final long serialVersionUID = 1L;
 	private static DownloadBean dB=new DownloadBean();
-	private static SystemBean sB=SystemBean.getIstance();
+	private static SystemBean sB=SystemBean.getInstance();
 	private static Libro l=new Libro();
 	private static PagamentoDao pD=new PagamentoDao();
 	private static LibroDao lD=new LibroDao();

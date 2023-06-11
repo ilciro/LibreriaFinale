@@ -69,9 +69,9 @@ class TestLaptop4 {
 	private Rivista r=new Rivista();
 	private RivistaDao rD=new RivistaDao();
 	private RivistaBean rivB=new RivistaBean();
-	private SystemBean visB=SystemBean.getIstance();
+	private SystemBean visB=SystemBean.getInstance();
 	private TextAreaBean tAB=new TextAreaBean();
-	private UserBean uB=UserBean.getInstanceB();
+	private UserBean uB=UserBean.getInstance();
 	
 	
 	
@@ -364,7 +364,7 @@ class TestLaptop4 {
 	@Test 
 	void testLogout() throws LogoutException
 	{
-		UserBean.getInstanceB().setNomeB("franco");
+		UserBean.getInstance().setNomeB("franco");
 		assertTrue(UsersDao.logout());
 	}
 	@AfterAll

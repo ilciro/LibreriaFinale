@@ -34,7 +34,7 @@ public class GestioneUtenteServlet extends HttpServlet {
 		try {
 			if(genera!=null && genera.equals("genera lista"))
 			{
-				req.setAttribute("beanUB",UserBean.getInstanceB());
+				req.setAttribute("beanUB",UserBean.getInstance());
 				RequestDispatcher view=getServletContext().getRequestDispatcher("/gestioneUtente.jsp");
 				view.forward(req, resp);
 			}
@@ -45,8 +45,8 @@ public class GestioneUtenteServlet extends HttpServlet {
 			}
 			if(modifica!=null && modifica.equals("modifica"))
 			{
-				SystemBean.getIstance().setIdB(Integer.parseInt(id));
-				req.setAttribute("beanS", SystemBean.getIstance());
+				SystemBean.getInstance().setIdB(Integer.parseInt(id));
+				req.setAttribute("beanS", SystemBean.getInstance());
 				RequestDispatcher view=getServletContext().getRequestDispatcher("/modificaUtente.jsp");
 				view.forward(req, resp);
 			}
@@ -59,8 +59,8 @@ public class GestioneUtenteServlet extends HttpServlet {
 					view.forward(req, resp);
 				}
 				else {
-					UserBean.getInstanceB().setMexB("cancellazione NON andata a buon fine");
-					req.setAttribute("beanUb", UserBean.getInstanceB());
+					UserBean.getInstance().setMexB("cancellazione NON andata a buon fine");
+					req.setAttribute("beanUb", UserBean.getInstance());
 					RequestDispatcher view=getServletContext().getRequestDispatcher("/modificaUtente.jsp");
 					view.forward(req, resp);
 				}

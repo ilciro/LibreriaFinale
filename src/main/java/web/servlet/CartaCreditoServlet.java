@@ -71,7 +71,7 @@ public class CartaCreditoServlet extends HttpServlet {
 			
 			ccB.setDataScadB(new SimpleDateFormat("yyyy/mm/dd").parse(scad));
 			ccB.setCivB(civ);
-			ccB.setPrezzoTransazioneB(SystemBean.getIstance().getSpesaTB());
+			ccB.setPrezzoTransazioneB(SystemBean.getInstance().getSpesaTB());
 			
 			if(controllaPag(scad, ccB.getNumeroCCB(), ccB.getCivB()))
 			{
@@ -92,7 +92,7 @@ public class CartaCreditoServlet extends HttpServlet {
 					   
 			    
 			    
-					aggiungiCartaDB(ccB.getNomeB(), ccB.getCognomeB(), ccB.getNumeroCCB(), sqlDate, ccB.getCivB(), SystemBean.getIstance().getSpesaTB());
+					aggiungiCartaDB(ccB.getNomeB(), ccB.getCognomeB(), ccB.getNumeroCCB(), sqlDate, ccB.getCivB(), SystemBean.getInstance().getSpesaTB());
 				
 					//inserisco nel db
 					
@@ -103,19 +103,19 @@ public class CartaCreditoServlet extends HttpServlet {
 					cc.setAmmontare(1000.0);
 					cc.setScadenza(sqlDate);
 					cc.setNomeUser(ccB.getNomeB());
-					cc.setPrezzoTransazine(SystemBean.getIstance().getSpesaTB());
+					cc.setPrezzoTransazine(SystemBean.getInstance().getSpesaTB());
 					
 					insCC(cc);
 					
-					if(SystemBean.getIstance().isNegozioSelezionatoB())
+					if(SystemBean.getInstance().isNegozioSelezionatoB())
 					{
-						req.setAttribute("bean1",SystemBean.getIstance());
+						req.setAttribute("bean1",SystemBean.getInstance());
 
 						RequestDispatcher view = getServletContext().getRequestDispatcher("/negozi.jsp"); 
 						view.forward(req,resp);
 					}
 					else {
-						req.setAttribute("bean1",SystemBean.getIstance());
+						req.setAttribute("bean1",SystemBean.getInstance());
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/download.jsp"); 
 					view.forward(req,resp);
 					}
@@ -196,21 +196,21 @@ public class CartaCreditoServlet extends HttpServlet {
 		cc.setScadenza(data);
 		cc.setCiv(civ);
 		cc.setPrezzoTransazine(prezzo);
-		cc.setPrezzoTransazine(SystemBean.getIstance().getSpesaTB());
+		cc.setPrezzoTransazine(SystemBean.getInstance().getSpesaTB());
 		
 			
 			insCC(cc);
 						
 			Pagamento p;
-			 p=new Pagamento(0,"cc",0,cc.getNomeUser(),SystemBean.getIstance().getSpesaTB(),null);
+			 p=new Pagamento(0,"cc",0,cc.getNomeUser(),SystemBean.getInstance().getSpesaTB(),null);
 				p.setMetodo("cc");
 				p.setNomeUtente(cc.getNomeUser());
-				String tipo=SystemBean.getIstance().getTypeB();
+				String tipo=SystemBean.getInstance().getTypeB();
 				if(tipo.equals("libro"))
 				{
 					//prenod spesa da vis
-					l.setId(SystemBean.getIstance().getIdB());
-					p.setAmmontare(SystemBean.getIstance().getSpesaTB());
+					l.setId(SystemBean.getInstance().getIdB());
+					p.setAmmontare(SystemBean.getInstance().getSpesaTB());
 					p.setId(l.getId());
 					p.setTipo(lB.getcategoriaB());
 				}
@@ -218,8 +218,8 @@ public class CartaCreditoServlet extends HttpServlet {
 				if(tipo.equals("giornale"))
 				{
 					//prenod spesa da vis
-					g.setId(SystemBean.getIstance().getIdB());
-					p.setAmmontare(SystemBean.getIstance().getSpesaTB());
+					g.setId(SystemBean.getInstance().getIdB());
+					p.setAmmontare(SystemBean.getInstance().getSpesaTB());
 					p.setId(g.getId());
 					p.setTipo(gB.getTipologiaB());
 					
@@ -228,8 +228,8 @@ public class CartaCreditoServlet extends HttpServlet {
 				if(tipo.equals("rivista"))
 				{
 					//prenod spesa da vis
-					r.setId(SystemBean.getIstance().getIdB());
-					p.setAmmontare(SystemBean.getIstance().getSpesaTB());
+					r.setId(SystemBean.getInstance().getIdB());
+					p.setAmmontare(SystemBean.getInstance().getSpesaTB());
 					p.setId(r.getId());
 					p.setTipo(rD.retTip(r));
 					
