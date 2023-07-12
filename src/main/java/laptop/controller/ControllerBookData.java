@@ -27,7 +27,6 @@ public class ControllerBookData {
 	}
 	public ControllerBookData()
 	{
-		//inserisco commento
 		l=new Libro();
 	}
 }
