@@ -781,7 +781,7 @@ public class UsersDao {
 	public static boolean logout() throws LogoutException 
 	{	
 		
-<span class="fc" id="L784">		String n = UserBean.getInstanceB().getNomeB();</span>
+<span class="fc" id="L784">		String n = UserBean.getInstance().getNomeB();</span>
 <span class="fc" id="L785">		java.util.logging.Logger.getLogger(&quot;Test logout&quot;).log(Level.INFO, &quot;stai sloggando come {0}&quot; ,n);</span>
 		
 <span class="pc bpc" id="L787" title="1 of 2 branches missed.">		if (n==null)</span>
@@ -790,17 +790,17 @@ public class UsersDao {
 
 		}
 		else {
-<span class="fc" id="L793">			 UserBean.getInstanceB().setIdB(-1);</span>
-<span class="fc" id="L794">			 UserBean.getInstanceB().setNomeB(null);</span>
-<span class="fc" id="L795">			 UserBean.getInstanceB().setCognomeB(null);</span>
-<span class="fc" id="L796">			 UserBean.getInstanceB().setDataDiNascitaB(null);</span>
-<span class="fc" id="L797">			 UserBean.getInstanceB().setDescrizioneB(null);</span>
-<span class="fc" id="L798">			 UserBean.getInstanceB().setEmailB(null);</span>
-<span class="fc" id="L799">			 UserBean.getInstanceB().setPasswordB(null);</span>
+<span class="fc" id="L793">			 UserBean.getInstance().setIdB(-1);</span>
+<span class="fc" id="L794">			 UserBean.getInstance().setNomeB(null);</span>
+<span class="fc" id="L795">			 UserBean.getInstance().setCognomeB(null);</span>
+<span class="fc" id="L796">			 UserBean.getInstance().setDataDiNascitaB(null);</span>
+<span class="fc" id="L797">			 UserBean.getInstance().setDescrizioneB(null);</span>
+<span class="fc" id="L798">			 UserBean.getInstance().setEmailB(null);</span>
+<span class="fc" id="L799">			 UserBean.getInstance().setPasswordB(null);</span>
 		
 		
-<span class="fc" id="L802">		java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, &quot;stai sloggando {0}&quot;, UserBean.getInstanceB().getEmailB());</span>
-<span class="fc" id="L803">			SystemBean.getIstance().setLoggedB(false);</span>
+<span class="fc" id="L802">		java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, &quot;stai sloggando {0}&quot;, UserBean.getInstance().getEmailB());</span>
+<span class="fc" id="L803">			SystemBean.getInstance().setLoggedB(false);</span>
 <span class="fc" id="L804">			return true;</span>
 		}
 

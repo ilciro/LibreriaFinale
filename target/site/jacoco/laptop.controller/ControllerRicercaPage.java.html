@@ -19,24 +19,24 @@ public class ControllerRicercaPage {
 <span class="fc" id="L19">		lD = new LibroDao();</span>
 <span class="fc" id="L20">		gD = new GiornaleDao();</span>
 <span class="fc" id="L21">		rD =new RivistaDao();</span>
-<span class="fc" id="L22">		ControllerSystemState.getIstance().setIsSearch(true);</span>
+<span class="fc" id="L22">		ControllerSystemState.getInstance().setIsSearch(true);</span>
 		
 <span class="fc" id="L24">	}</span>
 	
 	public ObservableList&lt;Raccolta&gt; cercaPerTipo (String s) throws SQLException
 	{
 <span class="fc" id="L28">		ObservableList&lt;Raccolta&gt; r = null;</span>
-<span class="fc bfc" id="L29" title="All 2 branches covered.">		if(ControllerSystemState.getIstance().getType().equals(&quot;libro&quot;))</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">		if(ControllerSystemState.getInstance().getType().equals(&quot;libro&quot;))</span>
 		{
 			//serach in libro dao
 <span class="fc" id="L32">			r= lD.getLibriByName(s);</span>
 		}
-<span class="fc bfc" id="L34" title="All 2 branches covered.">		 if(ControllerSystemState.getIstance().getType().equals(&quot;giornale&quot;))</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">		 if(ControllerSystemState.getInstance().getType().equals(&quot;giornale&quot;))</span>
 		{
 			//search in giornale dao
 <span class="fc" id="L37">			r=  gD.getGiornaliByName(s);</span>
 		}
-<span class="fc bfc" id="L39" title="All 2 branches covered.">		 if(ControllerSystemState.getIstance().getType().equals(&quot;rivista&quot;))</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">		 if(ControllerSystemState.getInstance().getType().equals(&quot;rivista&quot;))</span>
 		{
 			//search in rivista dao
 <span class="fc" id="L42">			r= rD.getRivisteByName(s);</span>
@@ -48,7 +48,7 @@ public class ControllerRicercaPage {
 	
 	public String returnType()
 	{
-<span class="nc" id="L51">		return ControllerSystemState.getIstance().getType();</span>
+<span class="nc" id="L51">		return ControllerSystemState.getInstance().getType();</span>
 	}
 	
 	

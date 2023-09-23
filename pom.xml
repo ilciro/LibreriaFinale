@@ -72,7 +72,7 @@
         <dependency>
 	    <groupId>org.openjfx</groupId>
 	    <artifactId>javafx-controls</artifactId>
-	    <version>${java.version}</version>
+	    <version>11</version>
 	    <type>pom</type>
 		</dependency>
 	  <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-fxml -->
@@ -157,9 +157,11 @@
              	<groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
+
                  <configuration>
           <skipTests>true</skipTests>
         </configuration>
+
             </plugin>
            
             <plugin>
@@ -240,6 +242,12 @@
                     </execution>
                 </executions>
 </plugin>
+          <plugin>
+              <groupId>org.apache.tomcat.maven</groupId>
+              <artifactId>tomcat7-maven-plugin</artifactId>
+              <version>2.2</version>
+          </plugin>
+
       </plugins>
   </build>
 </project>

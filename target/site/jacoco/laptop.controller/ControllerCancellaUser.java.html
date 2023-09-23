@@ -10,7 +10,7 @@ public class ControllerCancellaUser {
 	
 	public boolean cancellaUser() throws SQLException
 	{
-<span class="fc" id="L13">		User.getInstance().setId(ControllerSystemState.getIstance().getId());</span>
+<span class="fc" id="L13">		User.getInstance().setId(ControllerSystemState.getInstance().getId());</span>
 <span class="fc" id="L14">		return UsersDao.deleteUser(User.getInstance());</span>
 	}
 	public ControllerCancellaUser()

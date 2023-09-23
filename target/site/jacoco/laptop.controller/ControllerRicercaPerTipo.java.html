@@ -7,7 +7,7 @@ import java.util.logging.Level;
 
 public class ControllerRicercaPerTipo {
 
-<span class="fc" id="L10">	private ControllerSystemState vis=ControllerSystemState.getIstance();</span>
+<span class="fc" id="L10">	private ControllerSystemState vis=ControllerSystemState.getInstance();</span>
 <span class="fc" id="L11">	private boolean state=false;</span>
 	
 	public ControllerRicercaPerTipo() 
@@ -25,15 +25,15 @@ public class ControllerRicercaPerTipo {
 	}
 	public boolean setRicercaG()
 	{
-<span class="fc" id="L28">		ControllerSystemState.getIstance().setTypeAsDaily();</span>
-<span class="pc bpc" id="L29" title="1 of 2 branches missed.">		if (ControllerSystemState.getIstance().getType().equals(&quot;giornale&quot;))</span>
+<span class="fc" id="L28">		ControllerSystemState.getInstance().setTypeAsDaily();</span>
+<span class="pc bpc" id="L29" title="1 of 2 branches missed.">		if (ControllerSystemState.getInstance().getType().equals(&quot;giornale&quot;))</span>
 <span class="fc" id="L30">			state= true;</span>
 <span class="fc" id="L31">		return state;</span>
 	}
 	public boolean setRicercaR()
 	{
-<span class="fc" id="L35">		ControllerSystemState.getIstance().setTypeAsMagazine();</span>
-<span class="pc bpc" id="L36" title="1 of 2 branches missed.">		if (ControllerSystemState.getIstance().getType().equals(&quot;rivista&quot;))</span>
+<span class="fc" id="L35">		ControllerSystemState.getInstance().setTypeAsMagazine();</span>
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">		if (ControllerSystemState.getInstance().getType().equals(&quot;rivista&quot;))</span>
 <span class="fc" id="L37">			state= true;</span>
 <span class="fc" id="L38">		return state;</span>
 	}

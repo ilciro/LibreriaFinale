@@ -29,99 +29,102 @@ public class User {
 	private LocalDate dataDiNascita;
 	private String r;
 	
-<span class="fc" id="L32">	private static final User userInstance = new User();</span>
+<span class="fc" id="L32">	private static User userInstance = null;</span>
 
-	private User() {
+    private User() {}
 
-	}
-
-	public static User getInstance() {
-		
-<span class="fc" id="L40">		return userInstance;</span>
-	} 
+    public static User getInstance() {
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        if (userInstance == null) {</span>
+          
+<span class="fc" id="L39">        	userInstance = new User();</span>
+                }
+       
+<span class="fc" id="L42">        return userInstance;</span>
+    }
+	
 
 	public int getId() {
-<span class="fc" id="L44">		return id;</span>
+<span class="fc" id="L47">		return id;</span>
 	}
 	public void setId(int id) {
-<span class="fc" id="L47">		this.id = id;</span>
-<span class="fc" id="L48">	}</span>
+<span class="fc" id="L50">		this.id = id;</span>
+<span class="fc" id="L51">	}</span>
 	public String getNome() {
-<span class="fc" id="L50">		return nome;</span>
+<span class="fc" id="L53">		return nome;</span>
 	}
 	public void setNome(String nome) {
-<span class="fc" id="L53">		this.nome = nome;</span>
-<span class="fc" id="L54">	}</span>
+<span class="fc" id="L56">		this.nome = nome;</span>
+<span class="fc" id="L57">	}</span>
 	public String getCognome() {
-<span class="fc" id="L56">		return cognome;</span>
+<span class="fc" id="L59">		return cognome;</span>
 	}
 	public void setCognome(String cognome) {
-<span class="fc" id="L59">		this.cognome = cognome;</span>
-<span class="fc" id="L60">	}</span>
+<span class="fc" id="L62">		this.cognome = cognome;</span>
+<span class="fc" id="L63">	}</span>
 	public String getEmail() {
-<span class="fc" id="L62">		return email;</span>
+<span class="fc" id="L65">		return email;</span>
 	}
 	public void setEmail(String email) {
-<span class="fc" id="L65">		this.email = email;</span>
-<span class="fc" id="L66">	}</span>
+<span class="fc" id="L68">		this.email = email;</span>
+<span class="fc" id="L69">	}</span>
 	public String getPassword() {
-<span class="fc" id="L68">		return password;</span>
+<span class="fc" id="L71">		return password;</span>
 	}
 	public void setPassword(String password) {
-<span class="fc" id="L71">		this.password = password;</span>
-<span class="fc" id="L72">	}</span>
+<span class="fc" id="L74">		this.password = password;</span>
+<span class="fc" id="L75">	}</span>
 	public String getDescrizione() {
-<span class="fc" id="L74">		return descrizione;</span>
+<span class="fc" id="L77">		return descrizione;</span>
 	}
 	public void setDescrizione(String descrizione) {
-<span class="fc" id="L77">		this.descrizione = descrizione;</span>
-<span class="fc" id="L78">	}</span>
+<span class="fc" id="L80">		this.descrizione = descrizione;</span>
+<span class="fc" id="L81">	}</span>
 	public LocalDate getDataDiNascita() {
-<span class="fc" id="L80">		return dataDiNascita;</span>
+<span class="fc" id="L83">		return dataDiNascita;</span>
 	}
 	public void setDataDiNascita(LocalDate dataDiNascita) {
-<span class="fc" id="L83">		this.dataDiNascita = dataDiNascita;</span>
-<span class="fc" id="L84">	}</span>
+<span class="fc" id="L86">		this.dataDiNascita = dataDiNascita;</span>
+<span class="fc" id="L87">	}</span>
 	
 	public String getIdRuolo()  {
 		
-<span class="fc" id="L88">		return r;</span>
+<span class="fc" id="L91">		return r;</span>
 	}
 
 
 
 	public void setIdRuolo(String ruolo) {
 
-<span class="fc bfc" id="L95" title="All 8 branches covered.">		 switch (ruolo){</span>
+<span class="fc bfc" id="L98" title="All 8 branches covered.">		 switch (ruolo){</span>
 			case &quot;ADMIN&quot;:
-<span class="fc" id="L97">				r = Ruoli.ADMIN.toString();</span>
-<span class="fc" id="L98">				break;				</span>
+<span class="fc" id="L100">				r = Ruoli.ADMIN.toString();</span>
+<span class="fc" id="L101">				break;				</span>
 			case &quot;EDITORE&quot;:
-<span class="fc" id="L100">				r = Ruoli.EDITORE.toString();</span>
-<span class="fc" id="L101">				break;</span>
-			case &quot;SCRITTORE&quot;:
-<span class="fc" id="L103">				r = Ruoli.SCRITTORE.toString();</span>
+<span class="fc" id="L103">				r = Ruoli.EDITORE.toString();</span>
 <span class="fc" id="L104">				break;</span>
+			case &quot;SCRITTORE&quot;:
+<span class="fc" id="L106">				r = Ruoli.SCRITTORE.toString();</span>
+<span class="fc" id="L107">				break;</span>
 			case &quot;UTENTE&quot;:
-<span class="fc" id="L106">				r = Ruoli.UTENTE.toString();</span>
-<span class="fc" id="L107">				break;	</span>
+<span class="fc" id="L109">				r = Ruoli.UTENTE.toString();</span>
+<span class="fc" id="L110">				break;	</span>
 			case &quot;W&quot;:
-<span class="fc" id="L109">				r = Ruoli.SCRITTORE.toString();</span>
-<span class="fc" id="L110">				break;</span>
+<span class="fc" id="L112">				r = Ruoli.SCRITTORE.toString();</span>
+<span class="fc" id="L113">				break;</span>
 			case &quot;E&quot;:
-<span class="fc" id="L112">				r = Ruoli.EDITORE.toString();</span>
-<span class="fc" id="L113">				break;	</span>
+<span class="fc" id="L115">				r = Ruoli.EDITORE.toString();</span>
+<span class="fc" id="L116">				break;	</span>
 			case &quot;A&quot;:
-<span class="fc" id="L115">				r = Ruoli.ADMIN.toString();</span>
-<span class="fc" id="L116">				break;</span>
+<span class="fc" id="L118">				r = Ruoli.ADMIN.toString();</span>
+<span class="fc" id="L119">				break;</span>
 				
 			default:
-<span class="fc" id="L119">				r= Ruoli.UTENTE.toString();</span>
+<span class="fc" id="L122">				r= Ruoli.UTENTE.toString();</span>
 				break;
 			}
 		
 
-<span class="fc" id="L124">	}</span>
+<span class="fc" id="L127">	}</span>
 
 
 

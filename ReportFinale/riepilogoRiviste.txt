@@ -1,12 +1,5 @@
-Rivista :
- Titolo :cambio rivista	Editore rivista :cambio editore	Ricavo totale :delle riviste235.99998
-Rivista :
- Titolo :Focus Junior	Editore rivista :Bao Publishing	Ricavo totale :delle riviste4.0
-Rivista :
- Titolo :Tv Sorrisi e canzoni	Editore rivista :Bao Publishing	Ricavo totale :delle riviste0.0
-Rivista :
- Titolo :Rivista A	Editore rivista :Bao Publishing	Ricavo totale :delle riviste242.0
-Rivista :
- Titolo :ins rivista prova	Editore rivista :editore ins rivi	Ricavo totale :delle riviste6.25
-Rivista :
- Titolo :null	Editore rivista :null	Ricavo totale :delle riviste6.25
+Titolo :cambio rivista	Editore :cambio editore	Ricavo totale :235.99998	pubblicato il : 2023-05-11
+Titolo :Focus Junior	Editore :Bao Publishing	Ricavo totale :4.0	pubblicato il : 2021-01-21
+Titolo :Tv Sorrisi e canzoni	Editore :Bao Publishing	Ricavo totale :0.0	pubblicato il : 2021-02-02
+Titolo :Rivista A	Editore :Bao Publishing	Ricavo totale :242.0	pubblicato il : 1970-01-01
+Titolo :ins rivista prova	Editore :editore ins rivi	Ricavo totale :6.25	pubblicato il : 2022-11-12

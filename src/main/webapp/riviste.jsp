@@ -52,16 +52,16 @@ id
 <tr>
 
 
-<td>${ lista.getTitoloB() }</td>
-<td>${ lista.getTipologiaB() }</td>
-<td>${ lista.getAutoreB() }</td>
-<td>${ lista.getLinguaB() }</td>
-<td>${ lista.getEditoreB() }</td>
-<td>${ lista.getDataPubbB()}</td>
-<td>${ lista.getDispB() }</td>
-<td>${ lista.getPrezzoB() }</td>
-<td>${ lista.getCopieRimB() }</td>
-<td>${ lista.getIdB()}</td>
+<td>${ lista.getTitolo() }</td>
+<td>${ lista.getTipologia() }</td>
+<td>${ lista.getAutore() }</td>
+<td>${ lista.getLingua() }</td>
+<td>${ lista.getEditore() }</td>
+<td>${ lista.getDataPubb()}</td>
+<td>${ lista.getDisp() }</td>
+<td>${ lista.getPrezzo() }</td>
+<td>${ lista.getCopieRim() }</td>
+<td>${ lista.getId()}</td>
 
 </tr>
 </c:forEach>

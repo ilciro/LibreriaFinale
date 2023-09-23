@@ -367,16 +367,6 @@ class TestLaptop4 {
 		UserBean.getInstance().setNomeB("franco");
 		assertTrue(UsersDao.logout());
 	}
-	@AfterAll
-	static void creaDB() throws FileNotFoundException, ClassNotFoundException, SQLException
-	{
-		int row=0;
-		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement("drop schema ispw"))
-		{
-			row=prepQ.executeUpdate();
-		}
-		assertEquals(11,row);
-	}
+
 	
 }
