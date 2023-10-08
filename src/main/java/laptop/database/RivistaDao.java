@@ -85,7 +85,7 @@ public class RivistaDao {
 		float prezzo=(float) 0.0;
 		query="select * from rivista where id=?";
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareCall(query);)
+				PreparedStatement prepQ=conn.prepareCall(query))
 		{
 			prepQ.setInt(1, r.getId());
 			ResultSet rs=prepQ.executeQuery();
@@ -204,7 +204,7 @@ public class RivistaDao {
 		query="select *from rivista where id=?";
 
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			
 		prepQ.setInt(1, r.getId());
@@ -231,7 +231,7 @@ public class RivistaDao {
 		query="select id from rivista where titolo=?";
 		
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setString(1, r.getTitolo());
 			ResultSet rs=prepQ.executeQuery();
@@ -254,7 +254,7 @@ public class RivistaDao {
 		String categoria=null;
 		query="select tipologia from rivista where titolo=? or id=?";
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setString(1, r.getTitolo());
 			prepQ.setInt(2, r.getId());
@@ -277,7 +277,7 @@ public class RivistaDao {
 		String name=null;
 		query="select titolo from rivista where id=?";
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1,r.getId());
 			ResultSet rs=prepQ.executeQuery();
@@ -299,7 +299,7 @@ public class RivistaDao {
 		query="select disp from rivista where id=?";
 		
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, r.getId());
 			ResultSet rs=prepQ.executeQuery();
@@ -328,7 +328,7 @@ public class RivistaDao {
         
 		query="select copieRimanenti from rivista where id=?";
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			
 			prepQ.setInt(1, r.getId());
@@ -386,7 +386,7 @@ public class RivistaDao {
 
 		query=riv;
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			
 		
@@ -424,7 +424,7 @@ public class RivistaDao {
 			 			+ "`copieRimanenti`)"
 			 			+ "VALUES (?,?,?,?,?,?,?,?,?,?)";
 				try(Connection conn=ConnToDb.generalConnection();
-						PreparedStatement prepQ=conn.prepareStatement(query);)
+						PreparedStatement prepQ=conn.prepareStatement(query))
 				{
 				prepQ.setString(1,r.getTitolo()); 
 				prepQ.setString(2,r.getTipologia());
@@ -460,7 +460,7 @@ public class RivistaDao {
 		 int row=0;
 		 query="delete from rivista where id=?";
 		 try(Connection conn=ConnToDb.generalConnection();
-				 PreparedStatement prepQ=conn.prepareStatement(query);)
+				 PreparedStatement prepQ=conn.prepareStatement(query))
 		 {
 			 prepQ.setInt(1, r.getId());
 			 row=prepQ.executeUpdate();
@@ -477,7 +477,7 @@ public class RivistaDao {
 
 		query="SELECT * from RIVISTA where id=?";
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, r.getId());
 			ResultSet rs=prepQ.executeQuery();
@@ -519,7 +519,7 @@ public class RivistaDao {
 		 			+ "`copieRimanenti` =? WHERE `id` =?";
 		 		
 		 	try(Connection conn=ConnToDb.generalConnection();
-		 			PreparedStatement prepQ=conn.prepareStatement(query);)
+		 			PreparedStatement prepQ=conn.prepareStatement(query))
 		 	{
 			
 			prepQ.setString(1,r.getTitolo());
@@ -552,7 +552,7 @@ public class RivistaDao {
 		        
 		        try (BufferedWriter b=new BufferedWriter (w)){
 		        	try(Connection conn=ConnToDb.generalConnection();
-		        			PreparedStatement prepQ=conn.prepareStatement(query);)
+		        			PreparedStatement prepQ=conn.prepareStatement(query))
 		        	{
 		        		
 		        		ResultSet rs=prepQ.executeQuery();

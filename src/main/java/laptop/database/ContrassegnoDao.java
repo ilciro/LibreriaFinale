@@ -11,7 +11,7 @@ import laptop.model.Fattura;
 
 public class ContrassegnoDao {
 	
-	private static String eccezione="eccezione ottenuta:";
+	private  static  final String ECCEZIONE="eccezione ottenuta:";
 	private String query;
 
 	
@@ -22,7 +22,7 @@ public class ContrassegnoDao {
 		query="insert into fattura values (?,?,?,?,?,?)";
 		 		
  		try(Connection conn=ConnToDb.generalConnection();
- 			PreparedStatement prepQ=conn.prepareStatement(query);){
+ 			PreparedStatement prepQ=conn.prepareStatement(query)){
  			
  			prepQ.setString(1, f.getNome());
  			prepQ.setString(2, f.getCognome());
@@ -35,7 +35,7 @@ public class ContrassegnoDao {
  			 
  		}catch(SQLException e)
  		{
- 			java.util.logging.Logger.getLogger("insert fattura").log(Level.INFO, eccezione, e);
+ 			java.util.logging.Logger.getLogger("insert fattura").log(Level.INFO, ECCEZIONE, e);
  		}
        
 		 
@@ -63,7 +63,7 @@ public class ContrassegnoDao {
 			
 		 }catch(SQLException e)
 		 {
-			 java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, eccezione, e);
+			 java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
 		 }
 
 		
@@ -76,10 +76,10 @@ public class ContrassegnoDao {
 	public boolean annullaOrdineF(int idC) throws SQLException
 	{
 		boolean state=false;
-		int row=0;
+		int row;
 		String query1="delete from fattura where id=?";
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query1);)
+				PreparedStatement prepQ=conn.prepareStatement(query1))
 		{
 			prepQ.setInt(1,idC);
 			row=prepQ.executeUpdate();
@@ -87,7 +87,7 @@ public class ContrassegnoDao {
 				state=true;
 		}catch(SQLException e)
 		{
-			java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, eccezione, e);
+			java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
 		}
 			
 			return state;

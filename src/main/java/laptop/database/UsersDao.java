@@ -26,7 +26,7 @@ public class UsersDao {
 	private static int max;
 	private static String r;
 	private static boolean state=false;
-	private static String eccezione="errore in mysql :";
+	private static final String ECCEZIONE="errore in mysql :";
 	private static int row=0;
 
 
@@ -50,7 +50,7 @@ public class UsersDao {
 				+ "(?,?,?,?,?)";
 		
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				
 			
@@ -64,7 +64,7 @@ public class UsersDao {
 				state= true;
 			}catch(SQLException e)
 			{
-				java.util.logging.Logger.getLogger("createUser").log(Level.INFO, eccezione, e);
+				java.util.logging.Logger.getLogger("createUser").log(Level.INFO, ECCEZIONE, e);
 
 			}
 			
@@ -91,7 +91,7 @@ public class UsersDao {
 				+ "VALUES (?,?,?,?,?,?,?)";
 		
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 
 		{
 			
@@ -112,7 +112,7 @@ public class UsersDao {
 
 		}catch(SQLException e)
 		{
-			java.util.logging.Logger.getLogger("create temp User").log(Level.INFO, eccezione, e);
+			java.util.logging.Logger.getLogger("create temp User").log(Level.INFO, ECCEZIONE, e);
 
 		}
 		
@@ -133,7 +133,7 @@ public class UsersDao {
 
 			query="SELECT idUser FROM ispw.users where Email =?";
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				
 			prepQ.setString(1, u.getEmail());
@@ -147,7 +147,7 @@ public class UsersDao {
 			}
 			}catch(SQLException e)
 			{
-				java.util.logging.Logger.getLogger("check user").log(Level.INFO, eccezione, e);
+				java.util.logging.Logger.getLogger("check user").log(Level.INFO, ECCEZIONE, e);
 
 			}
 			
@@ -184,7 +184,7 @@ public class UsersDao {
 				}
 			}catch(SQLException e)
 			{
-				java.util.logging.Logger.getLogger("check temp user").log(Level.INFO, eccezione, e);
+				java.util.logging.Logger.getLogger("check temp user").log(Level.INFO, ECCEZIONE, e);
 
 			}
 			
@@ -200,7 +200,7 @@ public class UsersDao {
 			
 			query="SELECT idRuolo FROM ispw.users where Email = ?";
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				prepQ.setString(1, u.getEmail());
 			
@@ -213,7 +213,7 @@ public class UsersDao {
 			
 			}catch(SQLException e)
 			{
-				java.util.logging.Logger.getLogger("get ruolo user").log(Level.INFO, eccezione, e);
+				java.util.logging.Logger.getLogger("get ruolo user").log(Level.INFO, ECCEZIONE, e);
 
 			}
 		u.setIdRuolo(r);
@@ -228,7 +228,7 @@ public class UsersDao {
 
 				query="Update ispw.users SET pwd = ?  where Email = ?";
 				try(Connection conn=ConnToDb.generalConnection();
-						PreparedStatement prepQ=conn.prepareStatement(query);)
+						PreparedStatement prepQ=conn.prepareStatement(query))
 				{
 		
 			
@@ -240,7 +240,7 @@ public class UsersDao {
 			
 				}catch(SQLException e)
 				{
-					java.util.logging.Logger.getLogger("check reset pwd").log(Level.INFO, eccezione, e);
+					java.util.logging.Logger.getLogger("check reset pwd").log(Level.INFO, ECCEZIONE, e);
 
 				}
 		
@@ -266,7 +266,7 @@ public class UsersDao {
 		String ruolo=user.getIdRuolo();
 		query="DELETE FROM ispw.users WHERE Email = ? or idUser=?";
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 		
 		
@@ -280,7 +280,7 @@ public class UsersDao {
 
 		}catch(SQLException e)
 		{
-			java.util.logging.Logger.getLogger("delete user").log(Level.INFO, eccezione, e);
+			java.util.logging.Logger.getLogger("delete user").log(Level.INFO, ECCEZIONE, e);
 
 		}
 			
@@ -303,7 +303,7 @@ public class UsersDao {
 			
 			query="DELETE FROM ispw.users WHERE Email = ?";
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 			
 			prepQ.setString(1,email);
@@ -313,7 +313,7 @@ public class UsersDao {
 			
 			}catch(SQLException e)
 			{
-				java.util.logging.Logger.getLogger("delete user").log(Level.INFO, eccezione, e);
+				java.util.logging.Logger.getLogger("delete user").log(Level.INFO, ECCEZIONE, e);
 
 			}
 			java.util.logging.Logger.getLogger("delete user okr").log(Level.INFO, "user deleted ");
@@ -330,7 +330,7 @@ public class UsersDao {
 		
 			query="SELECT idRuolo,nome,cognome,Email,descrizione,dataDiNascita from ispw.users where Email=?";
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				prepQ.setString(1, u.getEmail());
 			
@@ -350,11 +350,11 @@ public class UsersDao {
 			}
 			}catch(SQLException e)
 			{
-				java.util.logging.Logger.getLogger("pick data ").log(Level.INFO, eccezione, e);
+				java.util.logging.Logger.getLogger("pick data ").log(Level.INFO, ECCEZIONE, e);
 
 			}
 
-			java.util.logging.Logger.getLogger("pick user data email").log(Level.INFO, eccezione, u.getEmail());
+			java.util.logging.Logger.getLogger("pick user data email").log(Level.INFO, ECCEZIONE, u.getEmail());
 
 
 			
@@ -374,14 +374,14 @@ public class UsersDao {
 			query="UPDATE ispw.users set Nome=? where Email=?";
 			
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				prepQ.setString(1, u.getNome());
 				prepQ.setString(2, u.getEmail());
 				prepQ.executeUpdate();
 			}catch(SQLException e)
 			{
-				java.util.logging.Logger.getLogger("aggiorna nome user").log(Level.INFO, eccezione, e);
+				java.util.logging.Logger.getLogger("aggiorna nome user").log(Level.INFO, ECCEZIONE, e);
 
 			}
 
@@ -401,7 +401,7 @@ public class UsersDao {
 			
 			query="UPDATE ispw.users set Cognome=? where Email=?";
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 
 
@@ -414,7 +414,7 @@ public class UsersDao {
 
 			}catch(SQLException e)
 			{
-				java.util.logging.Logger.getLogger("aggiorna cognome").log(Level.INFO, eccezione, e);
+				java.util.logging.Logger.getLogger("aggiorna cognome").log(Level.INFO, ECCEZIONE, e);
 
 			}
 
@@ -432,7 +432,7 @@ public class UsersDao {
 			u.setEmail(m);
 			
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 
 			
@@ -441,7 +441,7 @@ public class UsersDao {
 			prepQ.executeUpdate();  
 			}catch(SQLException e)
 			{
-				java.util.logging.Logger.getLogger("aggiorna email user").log(Level.INFO, eccezione, e);
+				java.util.logging.Logger.getLogger("aggiorna email user").log(Level.INFO, ECCEZIONE, e);
 
 			}
 
@@ -458,7 +458,7 @@ public class UsersDao {
 			
 			query="UPDATE ispw.users set pwd=? where Email=?";
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 
 
@@ -469,7 +469,7 @@ public class UsersDao {
 			prepQ.executeUpdate();  	
 			}catch(SQLException e)
 			{
-				java.util.logging.Logger.getLogger("aggiornaPass").log(Level.INFO, eccezione, e);
+				java.util.logging.Logger.getLogger("aggiornaPass").log(Level.INFO, ECCEZIONE, e);
 
 			}
 
@@ -481,7 +481,7 @@ public class UsersDao {
 					
 			query="UPDATE ispw.users set descrizione=? where Email=?";
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 
 
@@ -493,7 +493,7 @@ public class UsersDao {
 
 			}catch(SQLException e)
 			{
-				java.util.logging.Logger.getLogger("aggiorna desc").log(Level.INFO, eccezione, e);
+				java.util.logging.Logger.getLogger("aggiorna desc").log(Level.INFO, ECCEZIONE, e);
 
 			}
 		return u;
@@ -511,7 +511,7 @@ public class UsersDao {
 			
 			query="UPDATE users set Nome=? where Email=?";
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 
 			prepQ.setString(1,uT.getNomeT() );
@@ -520,7 +520,7 @@ public class UsersDao {
 
 			}catch(SQLException e)
 			{
-				java.util.logging.Logger.getLogger("aggiorna temp nome").log(Level.INFO, eccezione, e);
+				java.util.logging.Logger.getLogger("aggiorna temp nome").log(Level.INFO, ECCEZIONE, e);
 
 			}
 		return uT;
@@ -538,7 +538,7 @@ public class UsersDao {
 			
 			query="UPDATE ispw.users set pwd=? where Email=?";
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 
 
@@ -550,7 +550,7 @@ public class UsersDao {
 
 			}catch(SQLException e)
 			{
-				java.util.logging.Logger.getLogger("aggiorna pass temp user").log(Level.INFO, eccezione, e);
+				java.util.logging.Logger.getLogger("aggiorna pass temp user").log(Level.INFO, ECCEZIONE, e);
 
 			}
 
@@ -561,7 +561,7 @@ public class UsersDao {
 					
 			query="UPDATE ispw.users set descrizione=? where Email=?";
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 
 
@@ -572,7 +572,7 @@ public class UsersDao {
 
 			}catch(SQLException e)
 			{
-				java.util.logging.Logger.getLogger("aggiorna email temp user").log(Level.INFO, eccezione, e);
+				java.util.logging.Logger.getLogger("aggiorna email temp user").log(Level.INFO, ECCEZIONE, e);
 			}
 
 		return uT;
@@ -582,7 +582,7 @@ public class UsersDao {
 		query="UPDATE ispw.users set DataDiNascita=? where Email=?";
 
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 
 			
@@ -593,7 +593,7 @@ public class UsersDao {
 
 		}catch(SQLException e)
 		{
-			java.util.logging.Logger.getLogger("aggiorna data temp user").log(Level.INFO, eccezione, e);
+			java.util.logging.Logger.getLogger("aggiorna data temp user").log(Level.INFO, ECCEZIONE, e);
 
 		}
 		// errore
@@ -610,7 +610,7 @@ public class UsersDao {
 		try (BufferedWriter b=new BufferedWriter (w)) {
 
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				
 			ResultSet rs=prepQ.executeQuery();
@@ -648,7 +648,7 @@ public class UsersDao {
 		
 		query="SELECT * FROM ispw.users where idUser = ?";
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			
 		prepQ.setInt(1, uT.getId());
@@ -669,7 +669,7 @@ public class UsersDao {
 		}
 		}catch(SQLException e)
 		{
-			java.util.logging.Logger.getLogger("get single temp user").log(Level.INFO, eccezione, e);
+			java.util.logging.Logger.getLogger("get single temp user").log(Level.INFO, ECCEZIONE, e);
 
 		}
 
@@ -684,7 +684,7 @@ public class UsersDao {
 			query="UPDATE ispw.users set idRuolo=?,Nome=?,Cognome=?,Email=?,pwd=?,descrizione=?,DataDiNascita=? where idUser=?";
 
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 
 
@@ -705,7 +705,7 @@ public class UsersDao {
 
 			}catch(SQLException e)
 			{
-				java.util.logging.Logger.getLogger("aggiorna utente").log(Level.INFO, eccezione, e);
+				java.util.logging.Logger.getLogger("aggiorna utente").log(Level.INFO, ECCEZIONE, e);
 
 			}
 
@@ -717,7 +717,7 @@ public class UsersDao {
 		query="select max(idUser) as idMax from ispw.users";
 	
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 		
 			ResultSet rs=prepQ.executeQuery();
@@ -727,7 +727,7 @@ public class UsersDao {
 		}
 		}catch(SQLException e)
 		{
-			java.util.logging.Logger.getLogger("get max id user").log(Level.INFO, eccezione, e);
+			java.util.logging.Logger.getLogger("get max id user").log(Level.INFO, ECCEZIONE, e);
 
 		}
 		return max;
@@ -743,7 +743,7 @@ public class UsersDao {
 		 query="select * from users";
 		StringBuilder s=new StringBuilder();
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			ResultSet rs=prepQ.executeQuery();
 			while(rs.next())

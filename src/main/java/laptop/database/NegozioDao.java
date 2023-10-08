@@ -15,7 +15,7 @@ import javafx.collections.ObservableList;
 public class NegozioDao {
 	
 	private String query;
-	private static String eccezione="eccezione ottenuta:";
+	private static final String ECCEZIONE="eccezione ottenuta:";
 	
 	
     
@@ -30,7 +30,7 @@ public class NegozioDao {
 				
 
 			 try(Connection conn= ConnToDb.generalConnection();
-			 PreparedStatement prepQ=conn.prepareStatement(query);)
+			 PreparedStatement prepQ=conn.prepareStatement(query))
 			 {
 	 			ResultSet rs=prepQ.executeQuery();
 			
@@ -41,7 +41,7 @@ public class NegozioDao {
 				}
 			 }catch(SQLException e)
 			 {
-			java.util.logging.Logger.getLogger("get negozi").log(Level.INFO, eccezione, e);
+			java.util.logging.Logger.getLogger("get negozi").log(Level.INFO, ECCEZIONE, e);
 			 }
 		
 		return listOfNegozi;
@@ -55,7 +55,7 @@ public class NegozioDao {
 		
 			
 				try(Connection conn= ConnToDb.generalConnection();
-				 PreparedStatement prepQ=conn.prepareStatement(query);)
+				 PreparedStatement prepQ=conn.prepareStatement(query))
 				{
 				
 					prepQ.setBoolean(1, i);
@@ -63,7 +63,7 @@ public class NegozioDao {
 					prepQ.executeUpdate();
 				}catch(SQLException e)
 				{
-					java.util.logging.Logger.getLogger("set open").log(Level.INFO, eccezione, e);
+					java.util.logging.Logger.getLogger("set open").log(Level.INFO, ECCEZIONE, e);
 				}
 					
 			
@@ -100,7 +100,7 @@ public class NegozioDao {
 		boolean state=false;
 		query="select isOpen from negozio where nome=?";
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareCall(query);)
+				PreparedStatement prepQ=conn.prepareCall(query))
 		{
 			prepQ.setString(1, shop.getNome());
 			ResultSet rs=prepQ.executeQuery();
@@ -112,7 +112,7 @@ public class NegozioDao {
 			}
 		}catch(SQLException e)
 		{
-			java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, eccezione, e);
+			java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
 		}
 			 
 			
@@ -129,7 +129,7 @@ public class NegozioDao {
 		int disp;
 		
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setString(1, shop.getNome());
 			ResultSet rs=prepQ.executeQuery();
@@ -144,7 +144,7 @@ public class NegozioDao {
 			
 		}catch(SQLException e)
 		{
-			java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, eccezione, e);
+			java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
 		}
 			
 		return state;

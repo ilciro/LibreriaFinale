@@ -17,7 +17,7 @@ public class CartaCreditoDao {
 	private  String n;
 	private  String cog;
 	private String query;
-	private static String eccezione="eccezione ottenuta :";
+	private static final String ECCEZIONE="eccezione ottenuta :";
 	
 
 
@@ -29,7 +29,7 @@ public class CartaCreditoDao {
 		ObservableList<CartaDiCredito> catalogo=FXCollections.observableArrayList();
 
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setString(1, nome);
 			ResultSet rs=prepQ.executeQuery();
@@ -46,7 +46,7 @@ public class CartaCreditoDao {
 			}
 		}catch(SQLException e)
 		{
-						java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, eccezione, e);
+						java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
 		}
 			
 	
@@ -63,7 +63,7 @@ public class CartaCreditoDao {
 				 
 		
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				prepQ.setString(1,cc.getNomeUser());
 				prepQ.setString(2, cc.getCognomeUser());
@@ -95,7 +95,7 @@ public class CartaCreditoDao {
 
 		
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);){
+					PreparedStatement prepQ=conn.prepareStatement(query)){
 				prepQ.setString(1, cc.getNumeroCC());
 				ResultSet rs=prepQ.executeQuery();
 

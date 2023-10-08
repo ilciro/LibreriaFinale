@@ -50,7 +50,7 @@ public class GiornaleDao {
 		query="select * from giornale where id=?";
 		
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, g.getId());
 			ResultSet rs=prepQ.executeQuery();
@@ -99,7 +99,7 @@ public class GiornaleDao {
 		query="select id from giornale where titolo=?";
 		
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setString(1, g.getTitolo());
 			ResultSet rs=prepQ.executeQuery();
@@ -156,7 +156,7 @@ public class GiornaleDao {
 		query="select * from giornale where id=?";
 		
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, g.getId());
 			ResultSet rs=prepQ.executeQuery();
@@ -189,7 +189,7 @@ public class GiornaleDao {
 		query="select tipologia from giornale where titolo=? or id=?";
 		
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setString(1, g.getTitolo());
 			prepQ.setInt(2, g.getId());
@@ -213,7 +213,7 @@ public class GiornaleDao {
 		String name = "";
 		query="select titolo from giornale where id=?";
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1,g.getId());
 			ResultSet rs=prepQ.executeQuery();
@@ -236,7 +236,7 @@ public class GiornaleDao {
 
 		query="select disp from giornale where id=?";
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, g.getId());
 			ResultSet rs=prepQ.executeQuery();
@@ -312,7 +312,7 @@ public class GiornaleDao {
 		query="select * from giornale";
 		
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			
 			ResultSet rs=prepQ.executeQuery();
@@ -352,7 +352,7 @@ public class GiornaleDao {
 					+ "VALUES"
 					+ "(?,?,?,?,?,?,?,?)";
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 			
 			prepQ.setString(1,g.getTitolo()); 
@@ -384,7 +384,7 @@ public class GiornaleDao {
 		int row=0;
 		query="delete from giornale where id=?";
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, g.getId());
 			row=prepQ.executeUpdate();
@@ -405,7 +405,7 @@ public class GiornaleDao {
 		ObservableList<Giornale> catalogo=FXCollections.observableArrayList();
 		query="SELECT * FROM ispw.giornale where id=?";
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, g.getId());
 			ResultSet rs=prepQ.executeQuery();
@@ -438,7 +438,7 @@ public class GiornaleDao {
 		query="select * from giornale where titolo=? or editore=?";
 		
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setString(1,s);
 			prepQ.setString(2, s);
@@ -484,7 +484,7 @@ public class GiornaleDao {
 					+ "`prezzo` = ?"
 					+ "WHERE `id` = ? or id=?";
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 			prepQ.setString(1,g.getTitolo());
 			prepQ.setString(2,g.getTipologia());
@@ -517,7 +517,7 @@ public class GiornaleDao {
 		w=new FileWriter("ReportFinale\\riepilogoGiornali.txt");
 		   try (BufferedWriter b=new BufferedWriter (w)){
 			   try(Connection conn=ConnToDb.generalConnection();
-					   PreparedStatement prepQ=conn.prepareStatement(query);)
+					   PreparedStatement prepQ=conn.prepareStatement(query))
 			   {
 				  
 				   ResultSet rs=prepQ.executeQuery();
@@ -566,7 +566,7 @@ public class GiornaleDao {
 		query="update ispw.giornale set copiRim= ? where titolo= ? or id=?";
 		
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				prepQ.setInt(1, rim);
 				prepQ.setString(2,g.getTitolo());
@@ -587,7 +587,7 @@ public class GiornaleDao {
 		String t="";
 		 query="select titolo from giornale where id=? or id=?";
 		 try(Connection conn=ConnToDb.generalConnection();
-				 PreparedStatement prepQ=conn.prepareStatement(query);)
+				 PreparedStatement prepQ=conn.prepareStatement(query))
 		 {
 			 prepQ.setInt(1, g.getId());
 			 prepQ.setInt(2, vis.getId());
@@ -610,7 +610,7 @@ public class GiornaleDao {
 		int row=0;
 		query="update giornale set dataPubblicazione=? where id=? or id=?  ";
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setDate(1, sqlDate);
 			prepQ.setInt(2, g.getId());

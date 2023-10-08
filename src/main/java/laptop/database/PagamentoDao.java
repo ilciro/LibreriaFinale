@@ -14,7 +14,7 @@ import javafx.collections.ObservableList;
 
 public class PagamentoDao {
 	private String query;
-	private static String eccezione="eccezione ottenuta:";
+	private static final String ECCEZIONE="eccezione ottenuta:";
 
 	
 
@@ -32,7 +32,7 @@ public class PagamentoDao {
 		query="INSERT INTO ispw.pagamento(metodo,esito,nomeUtente,spesaTotale,eMail,tipoAcquisto,idProd) values (?,?,?,?,?,?,?)";
 
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			
 			
@@ -46,7 +46,7 @@ public class PagamentoDao {
 			prepQ.executeUpdate();
 		}catch(SQLException e)
 		{
-						java.util.logging.Logger.getLogger("insert pagamento").log(Level.INFO, eccezione, e);
+						java.util.logging.Logger.getLogger("insert pagamento").log(Level.INFO, ECCEZIONE, e);
 		}
 		
 		
@@ -58,7 +58,7 @@ public class PagamentoDao {
 			ObservableList<Pagamento> catalogo=FXCollections.observableArrayList();
 			query="SELECT id_op,metodo,esito,nomeUtente,spesaTotale,tipoAcquisto,idProd from ispw.pagamento where eMail=?";
 			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
+					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				prepQ.setString(1, User.getInstance().getEmail());
 				ResultSet rs=prepQ.executeQuery();
@@ -71,7 +71,7 @@ public class PagamentoDao {
 			}
 			}catch(SQLException e)
 			{
-							java.util.logging.Logger.getLogger("lista pagamenti").log(Level.INFO, eccezione, e);
+							java.util.logging.Logger.getLogger("lista pagamenti").log(Level.INFO, ECCEZIONE, e);
 			}
 		
 		return catalogo;
@@ -86,7 +86,7 @@ public class PagamentoDao {
 		int id=0;
 		query="select count(*) as massimoP from pagamento";
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			ResultSet rs=prepQ.executeQuery();
 			while ( rs.next() ) {
@@ -95,7 +95,7 @@ public class PagamentoDao {
 			}
 		}catch(SQLException e)
 		{
-						java.util.logging.Logger.getLogger("ultimo ordine").log(Level.INFO, eccezione, e);
+						java.util.logging.Logger.getLogger("ultimo ordine").log(Level.INFO, ECCEZIONE, e);
 		}
 				
 		return id;
@@ -108,7 +108,7 @@ public class PagamentoDao {
 		int row=0;
 		String query2="delete from pagamento where id_op=?";
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query2);)
+				PreparedStatement prepQ=conn.prepareStatement(query2))
 		{
 			prepQ.setInt(1,idC);
 			row=prepQ.executeUpdate();
@@ -116,7 +116,7 @@ public class PagamentoDao {
 				state=true;
 		}catch(SQLException e)
 		{
-						java.util.logging.Logger.getLogger("annulla ordine").log(Level.INFO, eccezione, e);
+						java.util.logging.Logger.getLogger("annulla ordine").log(Level.INFO, ECCEZIONE, e);
 		}
 			
 			return state;
