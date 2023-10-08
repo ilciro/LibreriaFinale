@@ -2,16 +2,13 @@ package laptop.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -28,7 +25,6 @@ import laptop.model.Negozio;
 import laptop.model.Pagamento;
 
 import laptop.model.raccolta.Rivista;
-import laptop.utilities.ConnToDb;
 import web.bean.AcquistaBean;
 import web.bean.CartaCreditoBean;
 import web.bean.DownloadBean;
@@ -50,7 +46,7 @@ class TestLaptop4 {
 	private AcquistaBean aB=new AcquistaBean();
 	private CartaCreditoBean ccB=new CartaCreditoBean();
 	private java.sql.Date dataS= new java.sql.Date(Calendar.getInstance().getTime().getTime());
-	private CartaDiCredito cc1=new CartaDiCredito(3,"8541-8596-5552-9858",(double)3000.0,(double)200,dataS,"pippo",(float)156.3);
+	private CartaDiCredito cc1=new CartaDiCredito(3,"8541-8596-5552-9858",3000.0,200,dataS,"pippo",(float)156.3);
 	private CartaDiCredito cc2=new CartaDiCredito("pippo","pluto","1452-9958-7485-2222",new Date(),"852",(float)125.36);
 	private CartaCreditoDao cDao=new CartaCreditoDao();
 	private DownloadBean dB=new DownloadBean();

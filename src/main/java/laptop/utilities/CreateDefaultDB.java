@@ -9,16 +9,16 @@ import java.util.logging.Level;
 public class CreateDefaultDB 
 {
 
-	private static String creaEditore="Create table if not exists EDITORE("
+	private static final String  CREAEDITORE="Create table if not exists EDITORE("
 			+ "idEditor int primary key not null auto_increment,"
 			+ "idUser int, casaEditrice VARCHAR (200), "
 			+ "FOREIGN KEY (idUser) REFERENCES USERS(idUser));";
-	private static String creaScrittore="Create table  if not exists SCRITTORI("
+	private static final String CREASCRITTORE="Create table  if not exists SCRITTORI("
 			+ "idScrittore int primary key not null auto_increment,"
 			+ "idUser int, editoreAssociato int, "
 			+ "FOREIGN KEY (editoreAssociato) REFERENCES EDITORE(idEditor) ,"
 			+ "FOREIGN KEY (idUser) REFERENCES USERS(idUser) );";
-	private static String creaGiornale="Create table if not exists GIORNALE("
+	private static final String CREAGIORNALE="Create table if not exists GIORNALE("
 			+ "titolo VARCHAR(200),tipologia Varchar(60),"
 			+ "lingua varchar(10),"
 			+ "editore varchar(200) ,"
@@ -27,7 +27,7 @@ public class CreateDefaultDB
 			+ "disp int,"
 			+ "prezzo float,"
 			+ "id int primary key not null auto_increment);";
-	private static String creaRivista="Create table if not exists RIVISTA("
+	private static final String CREARIVISTA="Create table if not exists RIVISTA("
 			+ "titolo VARCHAR(200),tipologia Varchar(60),"
 			+ "autore varchar(200), lingua varchar(10),"
 			+ "editore varchar(200) ,"
@@ -36,23 +36,23 @@ public class CreateDefaultDB
 			+ "prezzo float,"
 			+ "copieRimanenti int,"
 			+ "id int primary key not null auto_increment);";
-	private static String creaCartaCredito="Create table if not exists cartacredito ( "
+	private static final String CREACARTACREDITO="Create table if not exists cartacredito ( "
 			+ "nomeP VARCHAR(10),cognomeP  Varchar(20),"
 			+ "codiceCarta varchar(20),"
 			+ "scad date ,"
 			+ "codicePin varchar(5) ,"
 			+ "ammontare float );";
-	private static String creaFattura="Create table if not exists FATTURA("
+	private static final String CREAFATTURA="Create table if not exists FATTURA("
 			+ "nome varchar(10),cognome varchar(10),"
 			+ "via varchar(50),"
 			+ "comunicazoni text,"
 			+ "id int auto_increment not null  primary key,"
 			+ "ammontare float);";
-	private static String creaAmministratore="Create table  if not exists AMMINISTRATORE("
+	private static final String CREAAMMINISTRATORE="Create table  if not exists AMMINISTRATORE("
 			+ "idAdmin int primary key not null auto_increment,"
 			+ "idUser int,"
 			+ "FOREIGN KEY (idUser) REFERENCES USERS(idUser));";
-	private static String creaLibro="Create table  if not exists LIBRO("
+	private static final String CREALIBRO="Create table  if not exists LIBRO("
 			+ "titolo VARCHAR(200), numeroPagine int,"
 			+ "Cod_isbn varchar(10) not null unique,"
 			+ "editore varchar(200),"
@@ -62,7 +62,7 @@ public class CreateDefaultDB
 			+ "disp int, prezzo float,"
 			+ "copieRimanenti int,"
 			+ "idProd int primary key auto_increment);";
-	private static String creaPagamento="create table if not exists pagamento("
+	private static final String CREAPAGAMENTO="create table if not exists pagamento("
 			+ "id_op int primary key auto_increment,"
 			+ "metodo varchar(10),esito int ,"
 			+ "nomeUtente varchar(10),spesaTotale float,"
@@ -111,15 +111,15 @@ public class CreateDefaultDB
 				}
 				try(Statement st=ConnToDb.conn.createStatement())
 				{
-					st.execute(creaEditore);
-					st.execute(creaAmministratore);
-					st.execute(creaCartaCredito);
-					st.execute(creaFattura);
-					st.execute(creaGiornale);
-					st.execute(creaLibro);
-					st.execute(creaPagamento);
-					st.execute(creaRivista);
-					st.execute(creaScrittore);
+					st.execute(CREAEDITORE);
+					st.execute(CREAAMMINISTRATORE);
+					st.execute(CREACARTACREDITO);
+					st.execute(CREAFATTURA);
+					st.execute(CREAGIORNALE);
+					st.execute(CREALIBRO);
+					st.execute(CREAPAGAMENTO);
+					st.execute(CREARIVISTA);
+					st.execute(CREASCRITTORE);
 				}
 				
 				try(Statement st=ConnToDb.conn.createStatement())
