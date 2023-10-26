@@ -1,6 +1,8 @@
 package laptop.model;
 
 
+import laptop.exception.SetterException;
+
 public class Fattura {
 
 	private String nome;
@@ -28,37 +30,79 @@ public class Fattura {
 	public String getNome() {
 		return nome;
 	}
-	public void setNome(String nome) {
+	public void setNome(String nome) throws SetterException {
+		if(nome=="")
+		{
+			if (nome.equals("")|| nome.equals(null))
+			{
+				throw new SetterException("name incorrect");
+			}
+		}
+
 		this.nome = nome;
 	}
 	public String getCognome() {
 		return cognome;
 	}
-	public void setCognome(String cognome) {
+	public void setCognome(String cognome) throws SetterException {
+		if(cognome=="")
+		{
+			if (cognome.equals("")|| cognome.equals(null))
+			{
+				throw new SetterException("surname incorrect");
+			}
+		}
 		this.cognome = cognome;
 	}
 	public String getVia() {
 		return via;
 	}
-	public void setVia(String via) {
+	public void setVia(String via) throws SetterException {
+		if(via=="")
+		{
+			if (via.equals("")|| via.equals(null))
+			{
+				throw new SetterException("name incorrect");
+			}
+		}
 		this.via = via;
 	}
 	public String getCom() {
 		return com;
 	}
-	public void setCom(String com) {
+	public void setCom(String com) throws SetterException {
+		if(com=="")
+		{
+			if (com.equals("")|| com.equals(null))
+			{
+				throw new SetterException("name incorrect");
+			}
+		}
 		this.com = com;
 	}
 	public String getNumero() {
 		return numero;
 	}
-	public void setNumero(String numero) {
+	public void setNumero(String numero) throws SetterException {
+		if(numero=="")
+		{
+			if (numero.equals("")|| numero.equals(null))
+			{
+				throw new SetterException("number incorrect");
+			}
+		}
 		this.numero = numero;
 	}
 	public float getAmmontare() {
 		return ammontare;
 	}
-	public void setAmmontare(float ammontare) {
+	public void setAmmontare(float ammontare) throws SetterException {
+		if((ammontare<=0f) || ammontare>3000f)
+		{
+
+				throw new SetterException("price  incorrect");
+
+		}
 		this.ammontare = ammontare;
 	}
 

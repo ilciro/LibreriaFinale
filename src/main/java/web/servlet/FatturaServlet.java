@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
+import laptop.exception.SetterException;
 import web.bean.FatturaBean;
 import web.bean.LibroBean;
 import web.bean.PagamentoBean;
@@ -51,13 +52,17 @@ public class FatturaServlet extends HttpServlet{
 			fB.setCognomeB(cognome);
 			fB.setIndirizzoB(indirizzo);
 			fB.setComunicazioniB(com);
-			
-			f.setNome(fB.getNomeB());
-			f.setCognome(fB.getCognomeB());
-			f.setVia(fB.getIndirizzoB());
-			f.setCom(fB.getComunicazioniB());
-			f.setAmmontare(SystemBean.getInstance().getSpesaTB());
-			
+			try {
+				f.setNome(fB.getNomeB());
+				f.setCognome(fB.getCognomeB());
+				f.setVia(fB.getIndirizzoB());
+				f.setCom(fB.getComunicazioniB());
+				f.setAmmontare(SystemBean.getInstance().getSpesaTB());
+			}catch (SetterException e)
+			{
+				e.getMessage();
+			}
+
 			pB.setIdB(0);
 			pB.setMetodoB(SystemBean.getInstance().getMetodoPB());
 			pB.setAmmontareB(SystemBean.getInstance().getSpesaTB());
