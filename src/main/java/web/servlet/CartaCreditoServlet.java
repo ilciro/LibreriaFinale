@@ -137,7 +137,9 @@ public class CartaCreditoServlet extends HttpServlet {
 		
 	} catch (ParseException |SQLException  e) {
 		java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
-	}
+	} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 	
 	private boolean controllaPag(String d, String c,String civ) {
@@ -187,7 +189,7 @@ public class CartaCreditoServlet extends HttpServlet {
 	}
 	
 	public void aggiungiCartaDB(String n, String c, String cod, java.sql.Date data, String civ, float prezzo)
-			throws SQLException {
+			throws Exception {
 		
 		
 		cc.setNomeUser(n);

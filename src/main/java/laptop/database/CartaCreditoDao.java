@@ -109,8 +109,10 @@ public class CartaCreditoDao {
 				cc.setNomeUser(n);
 				cc.setCognomeUser(cog);
 				cc.setNumeroCC(cod);
-			}	
-			return cc;
+			} catch (Exception e) {
+				throw new RuntimeException(e);
+			}
+		return cc;
 
 	}
 

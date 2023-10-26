@@ -8,6 +8,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
+import laptop.exception.SetterException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -71,7 +72,7 @@ class TestLaptop2 {
 	}
 
 	@Test
-	void testAggiungiCartaDBL() throws SQLException {
+	void testAggiungiCartaDBL() throws SQLException, SetterException {
 		vis.setSpesaT((float)125.6);
 		vis.setTypeAsBook();
 		java.sql.Date data=Date.valueOf("2025-11-11");
@@ -79,7 +80,7 @@ class TestLaptop2 {
 		assertNotNull(data);
 	}
 	@Test
-	void testAggiungiCartaDBG() throws SQLException {
+	void testAggiungiCartaDBG() throws SQLException, SetterException {
 		vis.setSpesaT((float)35.4);
 		vis.setTypeAsDaily();
 		java.sql.Date data=Date.valueOf("2026-06-11");
@@ -87,7 +88,7 @@ class TestLaptop2 {
 		assertNotNull(data);
 	}
 	@Test
-	void testAggiungiCartaDBR() throws SQLException {
+	void testAggiungiCartaDBR() throws SQLException, SetterException {
 		vis.setSpesaT((float)14.9);
 		vis.setTypeAsMagazine();
 		java.sql.Date data=Date.valueOf("2028-02-22");
@@ -101,7 +102,7 @@ class TestLaptop2 {
 	}
 
 	@Test
-	void testTornaDalDb() throws SQLException {
+	void testTornaDalDb() throws Exception {
 		assertNotNull(cPCC.tornaDalDb("2552-8544-5256-3361"));
 	}
 
