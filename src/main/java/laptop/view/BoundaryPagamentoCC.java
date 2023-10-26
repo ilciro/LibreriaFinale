@@ -28,6 +28,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import laptop.controller.ControllerPagamentoCC;
 import laptop.controller.ControllerSystemState;
+import laptop.exception.IdException;
 import laptop.exception.SetterException;
 import laptop.model.CartaDiCredito;
 
@@ -87,7 +88,7 @@ public class BoundaryPagamentoCC implements Initializable {
 	private static ControllerSystemState vis = ControllerSystemState.getInstance();
 
 	@FXML
-	private void procediCC() throws IOException, SQLException {
+	private void procediCC() throws IOException, SQLException, SetterException, IdException {
 		vis.setMetodoP("cCredito");
 
 		String cod = codiceTF.getText();
@@ -167,7 +168,7 @@ public class BoundaryPagamentoCC implements Initializable {
 	}
 
 	@FXML
-	public void registraCC() throws java.text.ParseException, SQLException, SetterException {
+	public void registraCC() throws java.text.ParseException, SQLException, SetterException, IdException {
 		
 
 		String nome = nomeTF.getText();
@@ -229,8 +230,7 @@ public class BoundaryPagamentoCC implements Initializable {
 	}
 
 	@FXML
-	private void prova() throws Exception
-	{
+	private void prova() throws Exception {
 		nomeTF.setText(cPCC.tornaDalDb(tableCC.getSelectionModel().getSelectedItem().getNumeroCC()).getNomeUser());
 		cognomeTF.setText(cPCC.tornaDalDb(tableCC.getSelectionModel().getSelectedItem().getNumeroCC()).getCognomeUser());
 		codiceTF.setText(cPCC.tornaDalDb(tableCC.getSelectionModel().getSelectedItem().getNumeroCC()).getNumeroCC());

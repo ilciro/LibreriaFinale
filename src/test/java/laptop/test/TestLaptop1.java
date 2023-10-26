@@ -11,7 +11,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 
-
+import laptop.exception.IdException;
+import laptop.exception.SetterException;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -539,7 +540,7 @@ class TestLaptop1 {
 	}
 	
 	@Test
-	void testControllaL() throws SQLException {
+	void testControllaL() throws SQLException, SetterException, IdException {
 		vis.setTypeAsBook();
 		vis.setId(1);
 		vis.setSpesaT((float)11.25);
@@ -547,7 +548,7 @@ class TestLaptop1 {
 		assertEquals(1,vis.getId());
 	}
 	@Test
-	void testControllaG() throws SQLException {
+	void testControllaG() throws SQLException, SetterException, IdException {
 		vis.setTypeAsDaily();
 		vis.setId(1);
 		vis.setSpesaT((float)5.50);
@@ -556,7 +557,7 @@ class TestLaptop1 {
 
 	}
 	@Test
-	void testControllaR() throws SQLException {
+	void testControllaR() throws SQLException, SetterException, IdException {
 		vis.setId(3);
 		vis.setTypeAsMagazine();
 		vis.setSpesaT((float)6.25);

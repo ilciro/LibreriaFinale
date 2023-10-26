@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
+import laptop.exception.IdException;
 import laptop.exception.SetterException;
 import web.bean.FatturaBean;
 import web.bean.LibroBean;
@@ -58,10 +59,7 @@ public class FatturaServlet extends HttpServlet{
 				f.setVia(fB.getIndirizzoB());
 				f.setCom(fB.getComunicazioniB());
 				f.setAmmontare(SystemBean.getInstance().getSpesaTB());
-			}catch (SetterException e)
-			{
-				e.getMessage();
-			}
+
 
 			pB.setIdB(0);
 			pB.setMetodoB(SystemBean.getInstance().getMetodoPB());
@@ -77,11 +75,11 @@ public class FatturaServlet extends HttpServlet{
 			p.setNomeUtente(pB.getNomeUtenteB());
 			p.setTipo(pB.getTipoB());
 			
-			try {
+
 				fD.inserisciFattura(f);
 				pD.inserisciPagamento(p);
-			} catch (SQLException e) {
-				java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+			} catch (SQLException | SetterException | IdException e) {
+				java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.getMessage());
 			}
 		
 			if(SystemBean.getInstance().isNegozioSelezionatoB())

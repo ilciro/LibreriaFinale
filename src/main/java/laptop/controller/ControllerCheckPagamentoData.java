@@ -6,6 +6,8 @@ import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
 import laptop.database.PagamentoDao;
 import laptop.database.RivistaDao;
+import laptop.exception.IdException;
+import laptop.exception.SetterException;
 import laptop.model.Pagamento;
 import laptop.model.raccolta.Giornale;
 import laptop.model.raccolta.Libro;
@@ -21,8 +23,7 @@ public class ControllerCheckPagamentoData {
 	private GiornaleDao gD;
 	private RivistaDao rD;
 	private PagamentoDao pagD;
-	public void checkPagamentoData(String nome) throws SQLException
-	{
+	public void checkPagamentoData(String nome) throws SQLException, SetterException, IdException {
 		String tipo=vis.getType();
 		
 		Pagamento p;

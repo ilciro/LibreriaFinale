@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
+import laptop.exception.SetterException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -192,8 +193,7 @@ class TestLaptop4 {
 		assertNotNull(mOB.getMiaListaB());
 	}
 	@Test
-	void testCreaNegozio()
-	{
+	void testCreaNegozio() throws SetterException {
 		n.setNome("Negozio E");
 		n.setIsOpen(true);
 		n.setIsValid(true);
