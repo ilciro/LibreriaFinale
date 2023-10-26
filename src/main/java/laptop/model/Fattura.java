@@ -11,6 +11,7 @@ public class Fattura {
 	private String com;
 	private String numero;
 	private float ammontare;
+	private static final String ISNUMBER= "-?\\d+(\\.\\d+)?";
 	
 	public Fattura() {
 		super();
@@ -31,13 +32,10 @@ public class Fattura {
 		return nome;
 	}
 	public void setNome(String nome) throws SetterException {
-		if(nome=="")
-		{
-			if (nome.equals("")|| nome.equals(null))
-			{
+		if (nome.equals(ISNUMBER)) {
 				throw new SetterException("name incorrect");
 			}
-		}
+
 
 		this.nome = nome;
 	}
@@ -45,12 +43,11 @@ public class Fattura {
 		return cognome;
 	}
 	public void setCognome(String cognome) throws SetterException {
-		if(cognome=="")
+		if(cognome.equals(ISNUMBER))
 		{
-			if (cognome.equals("")|| cognome.equals(null))
-			{
+
 				throw new SetterException("surname incorrect");
-			}
+
 		}
 		this.cognome = cognome;
 	}
@@ -58,12 +55,11 @@ public class Fattura {
 		return via;
 	}
 	public void setVia(String via) throws SetterException {
-		if(via=="")
+		if(via.equals(ISNUMBER))
 		{
-			if (via.equals("")|| via.equals(null))
-			{
-				throw new SetterException("name incorrect");
-			}
+
+				throw new SetterException("via incorrect");
+
 		}
 		this.via = via;
 	}
@@ -71,12 +67,11 @@ public class Fattura {
 		return com;
 	}
 	public void setCom(String com) throws SetterException {
-		if(com=="")
+		if(com.equals(ISNUMBER))
 		{
-			if (com.equals("")|| com.equals(null))
-			{
-				throw new SetterException("name incorrect");
-			}
+
+				throw new SetterException("comunications incorrect");
+
 		}
 		this.com = com;
 	}
@@ -84,12 +79,10 @@ public class Fattura {
 		return numero;
 	}
 	public void setNumero(String numero) throws SetterException {
-		if(numero=="")
+		if(numero.equals(ISNUMBER))
 		{
-			if (numero.equals("")|| numero.equals(null))
-			{
 				throw new SetterException("number incorrect");
-			}
+
 		}
 		this.numero = numero;
 	}
