@@ -21,6 +21,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import laptop.controller.ControllerAcquista;
 import laptop.controller.ControllerSystemState;
+import laptop.exception.AcquistaException;
+import laptop.exception.IdException;
 
 public class BoundaryAcquista implements Initializable {
 	@FXML
@@ -149,58 +151,27 @@ public class BoundaryAcquista implements Initializable {
 	
 
 	@FXML
-	private void importo() throws IOException, SQLException, NumberFormatException {
+	private void importo() throws  SQLException, NumberFormatException, IdException, AcquistaException {
 		
 		if (!nome.getText().equals("")) {
 			buttonCC.setDisable(false);
 			buttonCash.setDisable(false);
 
-			String scelta = cA.getType();
+
+
+
+			float x = cA.totale1(vis.getType(),labelT.getText(), Integer.parseInt(dispLabel.getText()),Integer.parseInt(quantita.getText()));
+			costo.setText(String.valueOf(x));
+			float tot;
+			tot = x * (Float.parseFloat(quantita.getText()));
+			totale.setText(String.valueOf( tot));
+
+			cA.inserisciAmmontare(vis.getType(),Integer.parseInt(quantita.getText()));
+			vis.setSpesaT(tot);
+			vis.setQuantita(Integer.parseInt(quantita.getText()));
 			
 			// qui mettere un controllo dal db oer il tipo di prodotto scelto usando l'istanza visualizza
-			if (scelta.equals("libro")) {
-				
-				
-				float x = cA.totale(nome.getText(), Integer.parseInt(dispLabel.getText()),Integer.parseInt(quantita.getText()));
-				costo.setText(String.valueOf(x));
-				float tot;
-				tot = x * (Float.parseFloat(quantita.getText()));
-				totale.setText(String.valueOf( tot));
-				cA.inserisciAmmontareL(Integer.parseInt(quantita.getText()));
-				vis.setSpesaT(tot);
-				vis.setQuantita(Integer.parseInt(quantita.getText()));
-				
-				
-				
 
-			} else if (scelta.equals("giornale")) {
-				float y = cA.totaleG(nome.getText(), Integer.parseInt(dispLabel.getText()),Integer.parseInt(quantita.getText()));
-				costo.setText(String.valueOf(y));
-				float tot1;
-				tot1 = y * (Float.parseFloat(quantita.getText()));
-				totale.setText(String.valueOf(tot1));
-				cA.inserisciAmmontareG(Integer.parseInt(quantita.getText()));
-				vis.setSpesaT(tot1);
-				vis.setQuantita(Integer.parseInt(quantita.getText()));
-
-
-			} else if (scelta.equals("rivista")) {
-				float z = cA.totaleR(nome.getText(),Integer.parseInt(dispLabel.getText()), Integer.parseInt(quantita.getText()));
-				costo.setText(String.valueOf(z));
-				float tot2;
-				tot2 = z * (Float.parseFloat(quantita.getText()));
-				totale.setText(String.valueOf(tot2));
-				cA.inserisciAmmontareR(Integer.parseInt(quantita.getText()));
-				vis.setSpesaT(tot2);
-				vis.setQuantita(Integer.parseInt(quantita.getText()));
-
-
-
-				
-
-			} else {
-				throw new IOException();
-			}
 
 		}
 		
@@ -242,16 +213,17 @@ public class BoundaryAcquista implements Initializable {
 		
 			try {
 			nome.setText(cA.getNomeById());
-			dispLabel.setText(String.valueOf(cA.getDisp()));
+
+
+
+			dispLabel.setText(String.valueOf(cA.getDisp(vis.getType())));
 		
 				costo.setText(String.valueOf(cA.getCosto()));
-			} catch (SQLException  e) {
-				java.util.logging.Logger.getLogger("Test initialize").log(Level.SEVERE," eccezione ottenuta {0}.",e.toString());
+			} catch (SQLException | IdException e) {
+				java.util.logging.Logger.getLogger("Test initialize").log(Level.SEVERE, " eccezione ottenuta {0}.", e.toString());
 
-				} 
-		
-		
-		
+			}
+
 
 	}
 

@@ -1,12 +1,14 @@
 package laptop.model;
 
 
+
 public class Negozio {
 	
 	private String nome;
 	private String via;
 	private Boolean isValid;
-	private Boolean isOpen;	
+	private Boolean isOpen;
+
 	
 	public Negozio(String nome, String via, Boolean isValid, Boolean isOpen) {
 		super();
@@ -36,12 +38,14 @@ public class Negozio {
 		return isValid;
 	}
 	public void setIsValid(Boolean isValid) {
+
 		this.isValid = isValid;
 	}
 	public Boolean getIsOpen() {
 		return isOpen;
 	}
-	public void setIsOpen(Boolean isOpen) {
+	public void setIsOpen(Boolean isOpen)  {
+
 		this.isOpen = isOpen;
 	}
 

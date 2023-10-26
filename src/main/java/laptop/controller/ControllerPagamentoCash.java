@@ -3,7 +3,7 @@ package laptop.controller;
 import java.sql.SQLException;
 
 import laptop.database.ContrassegnoDao;
-import laptop.exception.SetterException;
+import laptop.exception.IdException;
 import laptop.model.Fattura;
 
 
@@ -15,7 +15,7 @@ public class ControllerPagamentoCash {
 	
 	
 
-	public void controlla(String nome, String cognome, String via, String com) throws SQLException, SetterException {
+	public void controlla(String nome, String cognome, String via, String com) throws SQLException, IdException {
 		
 			
 			float spesa=vis.getSpesaT();

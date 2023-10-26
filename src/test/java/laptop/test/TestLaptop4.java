@@ -192,8 +192,7 @@ class TestLaptop4 {
 		assertNotNull(mOB.getMiaListaB());
 	}
 	@Test
-	void testCreaNegozio()
-	{
+	void testCreaNegozio()  {
 		n.setNome("Negozio E");
 		n.setIsOpen(true);
 		n.setIsValid(true);

@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.time.LocalDate;
 
+import laptop.exception.IdException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -49,7 +50,7 @@ class TestLaptop3 {
 
 	@ParameterizedTest
 	@ValueSource(strings={"cash","cCredito"})
-	void testInserisciPagamento(String strings) throws SQLException {
+	void testInserisciPagamento(String strings) throws SQLException,  IdException {
 		
 		p=new Pagamento();
 		p.setTipo(strings);

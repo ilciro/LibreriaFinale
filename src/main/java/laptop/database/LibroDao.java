@@ -318,16 +318,17 @@ public class LibroDao  {
 	
 	public int getQuantita(Libro l) throws SQLException
 	{
-		query="select copieRimanenti from libro where idProd=?";
+		query="select * from libro where idProd=?";
+
 		
 		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareCall(query);)
+				PreparedStatement prepQ=conn.prepareStatement(query);)
 		{
 			prepQ.setInt(1, l.getId());
 			ResultSet rs=prepQ.executeQuery();
 		
 			while (rs.next()) {
-					q = rs.getInt(1);
+					q = rs.getInt("copieRimanenti");
 				}
 
 			}catch(SQLException e)
@@ -335,7 +336,7 @@ public class LibroDao  {
 			java.util.logging.Logger.getLogger("quantita l").log(Level.INFO, ECCEZIONE, e);
 		}
 			
-		
+
 
 		
 

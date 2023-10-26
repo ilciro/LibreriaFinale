@@ -1,6 +1,9 @@
 package laptop.model;
 
 
+import laptop.exception.IdException;
+
+
 public class Pagamento {
 
 	private int id;
@@ -10,9 +13,11 @@ public class Pagamento {
 	private float ammontare;
 	private String tipo;
 	private int idOggetto;
-	
-	
-	
+
+
+
+
+
 	public Pagamento(int id, String metodo, int esito, String nomeUtente, float ammontare, String tipo) {
 		super();
 		this.id = id;
@@ -25,37 +30,47 @@ public class Pagamento {
 	public int getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(int id) throws IdException {
+
+		if (id<0)
+		{
+			throw new IdException("id incorrect");
+		}
 		this.id = id;
 	}
 	public String getMetodo() {
 		return metodo;
 	}
-	public void setMetodo(String metodo) {
+	public void setMetodo(String metodo)
+    {
 		this.metodo = metodo;
 	}
 	public int getEsito() {
 		return esito;
 	}
-	public void setEsito(int esito) {
+	public void setEsito(int esito)  {
+
 		this.esito = esito;
 	}
 	public String getNomeUtente() {
 		return nomeUtente;
 	}
 	public void setNomeUtente(String nomeUtente) {
+
 		this.nomeUtente = nomeUtente;
 	}
 	public float getAmmontare() {
 		return ammontare;
 	}
-	public void setAmmontare(float ammontare) {
+	public void setAmmontare(float ammontare)  {
+
 		this.ammontare = ammontare;
 	}
 	public String getTipo() {
 		return tipo;
 	}
 	public void setTipo(String tipo) {
+
 		this.tipo = tipo;
 	}
 	

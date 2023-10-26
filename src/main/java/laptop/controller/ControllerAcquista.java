@@ -1,12 +1,13 @@
 package laptop.controller;
 
 import java.sql.SQLException;
-import java.util.logging.Level;
+
 
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
 
 import laptop.database.RivistaDao;
+import laptop.exception.AcquistaException;
 import laptop.exception.IdException;
 import laptop.model.raccolta.Giornale;
 import laptop.model.raccolta.Libro;
@@ -29,60 +30,60 @@ public class ControllerAcquista {
 	private int disp;
 	private float costo;//aggiunto per costo (vedere metodo in fondo ((getCosto()))
 	private int rimanenza = 0;//usato per vedee nr copie 
-	private static String stringaErrore="errore nella quantita desiderata .";
-	private static final String LIBRO = "libro";  
+	private static final String LIBRO = "libro";
 	private static final String RIVISTA="rivista";
 	private static final String GIORNALE="giornale";
-	private static String erroreId="id < 0";
-	
 
 	
-	public float totale(String titolo,int nrCopie, int quantita) throws SQLException {
-		
-			l.setTitolo(titolo);
-			l.setNrCopie(nrCopie);
-			vis.setQuantita(quantita);
-		
-			
-			float x = lD.getCosto(l);
-			
-			
-			lD.aggiornaDisponibilita(l);
-			
-			
 
-			
-		
+	public float totale1 (String type,String titolo,int disp,int quantita) throws SQLException, IdException {
+		float x=0f;
+		switch (type)
+		{
+			case LIBRO:
+			{
+				l.setTitolo(titolo);
+				l.setNrCopie(quantita);
+				vis.setQuantita(quantita);
+				 x = lD.getCosto(l);
+				lD.aggiornaDisponibilita(l);
+				break;
+			}
+			case GIORNALE:
+			{
+				g.setTitolo(titolo);
+				g.setId(vis.getId());
+				g.setCopieRimanenti(quantita);
+				vis.setQuantita(disp);
+				x = gD.getCosto(g);
+				gD.aggiornaDisponibilita(g);
+				break;
+			}
+			case RIVISTA:
+			{
+				r.setTitolo(titolo);
+				r.setId(vis.getId());
+				r.setCopieRim(quantita);
+				vis.setQuantita(disp);
+				x= rD.getCosto(r);
+				rD.aggiornaDisponibilita(r);
+				break;
+			}
+			default :checkID(vis.getId());
+		}
 		return x;
 	}
-
-	public float totaleG(String titolo,int nrCopie, int disp) throws SQLException {
-		
-		
-		g.setTitolo(titolo);
-		g.setId(vis.getId());
-		g.setCopieRimanenti(nrCopie);
-		vis.setQuantita(disp);
-		float y = gD.getCosto(g);
-		gD.aggiornaDisponibilita(g);
-		return y;
-
+	private boolean checkID(int id) throws IdException {
+		boolean status=false;
+		if(id <=0 || id>30)
+		{
+			throw  new IdException("wrong id");
+		}
+		status=true;
+		return status;
 	}
 
-	public float totaleR(String titolo, int nRC,int disp) throws SQLException {
-		
-		
-		r.setTitolo(titolo);
-		r.setId(vis.getId());
-		r.setCopieRim(nRC);
-		vis.setQuantita(disp);
-		float z= rD.getCosto(r);
-		rD.aggiornaDisponibilita(r);
-			
-		
-		return z;
 
-	}
 
 	public ControllerAcquista()    {
 		lD = new LibroDao();
@@ -134,54 +135,35 @@ public class ControllerAcquista {
 		r.setTitolo(text);	
 		return rD.retTip(r);
 	}
-	
-	public void inserisciAmmontareL(int i) throws SQLException
-	{
-		l.setId(vis.getId());
-		
-		
-			rimanenza=lD.getQuantita(l);
-		
-		if(rimanenza-i<0)
-		 {
-			java.util.logging.Logger.getLogger("get tipo R").log(Level.INFO, stringaErrore,new IdException(erroreId));
 
-
-		}
-		
-		
-	}
-	
-	public void inserisciAmmontareG(int i) throws SQLException 
-	{
-		g.setId(vis.getId());
-		rimanenza=gD.getQuantita(g);
-		if(rimanenza-i<0)
-		
+	public void inserisciAmmontare(String type,int i) throws SQLException, AcquistaException {
+		switch(type)
 		{
-			java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, stringaErrore,new IdException(erroreId));
+			case LIBRO:
+				l.setId(vis.getId());
+				rimanenza=lD.getQuantita(l);
+				break;
+			case GIORNALE:
+				g.setId(vis.getId());
+				rimanenza=gD.getQuantita(g);
+				break;
+			case RIVISTA:
+				r.setId(vis.getId());
+				rimanenza=rD.getQuantita(r);
+				break;
+			default: checkRimanenza(rimanenza,i);
+
 
 		}
-
-
-			
-		
 	}
 
-	public void inserisciAmmontareR(int i) throws SQLException
-	{
-		r.setId(vis.getId());
-		rimanenza=rD.getQuantita(r);
-		if(rimanenza-i<0)
+	private void checkRimanenza(int quantita,int i) throws AcquistaException {
+		if(quantita-i<0)
 		{
-			java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, stringaErrore,new IdException(erroreId));
-
+			throw new AcquistaException("rimanenza <0");
 		}
-
-		
-
 	}
-	
+
 	public String getType()
 	{
 		
@@ -211,28 +193,29 @@ public class ControllerAcquista {
 		return name ;
 	}
 	
-	public int getDisp() throws SQLException
-	{
-		int id = vis.getId();
-		String type =vis.getType();
-		if(type.equals(LIBRO))
+	public int getDisp(String type) throws SQLException, IdException {
+
+		switch (type)
 		{
-		
-			l.setId(id);
-			disp = lD.getQuantita(l);
+			case LIBRO:
+				l.setId(vis.getId());
+				disp=lD.getQuantita(l);
+				break;
+			case GIORNALE:
+				g.setId(vis.getId());
+				disp=gD.getQuantita(g);
+				break;
+			case RIVISTA:
+				r.setId(vis.getId());
+				disp=rD.getQuantita(r);
+				break;
+			default:checkID(vis.getId());
+			return disp;
+
 		}
-		 if(type.equals(GIORNALE)) {
-			g.setId(id);
-			disp = gD.getQuantita(g);
-			
-		}
-		 if(type.equals(RIVISTA))
-		{
-			r.setId(id);
-			disp = rD.getQuantita(r);
-			
-		}
-		return disp ;
+
+
+		return disp;
 	}
 	/*
 	 * metodo aggiunto per stampare appena carica la schermata anche il costo di 

@@ -1,6 +1,6 @@
 package laptop.model;
 
-import laptop.exception.SetterException;
+
 
 import java.sql.Date;
 import java.util.Objects;
@@ -50,74 +50,50 @@ public class CartaDiCredito {
 	public int getTipo() {
 		return tipo;
 	}
-	public void setTipo(int tipo) throws SetterException {
+	public void setTipo(int tipo)  {
 
-		if(tipo <=0 )
-		{
-			throw new SetterException(" type of card invalid");
-		}
 		this.tipo = tipo;
 	}
 	public String getNumeroCC() {
 		return numeroCC;
 	}
-	public void setNumeroCC(String numeroCC) throws SetterException {
-		if (numeroCC.equals("") )
-		{
-			throw new SetterException(" type of card invalid");
+	public void setNumeroCC(String numeroCC)  {
 
-		}
 		this.numeroCC = numeroCC;
 	}
 	public double getLimite() {
 		return limite;
 	}
-	public void setLimite(double limite) throws SetterException {
-		if (limite > 3000f)
-		{
-			throw new SetterException("limit over 3000.0");
-		}
+	public void setLimite(double limite)  {
+
 		this.limite = limite;
 	}
 	public double getAmmontare() {
 		return ammontare;
 	}
-	public void setAmmontare(double ammontare) throws SetterException {
-		if (ammontare<1f || ammontare >3000f)
-		{
-			throw new SetterException(" spending over 3000f");
-		}
+	public void setAmmontare(double ammontare)  {
+
 		this.ammontare = ammontare;
 	}
 	public java.util.Date getScadenza() {
 		return scadenza;
 	}
-	public void setScadenza(Date scadenza) throws SetterException {
-		if (null == scadenza)
-		{
-			throw new SetterException(" wrong date");
+	public void setScadenza(Date scadenza)  {
 
-		}
 		this.scadenza = scadenza;
 	}
 	public String getNomeUser() {
 		return nomeUser;
 	}
-	public void setNomeUser(String nomeUser) throws SetterException {
-		if (nomeUser.equals(""))
-		{
-			throw new SetterException("name incorrect");
-		}
+	public void setNomeUser(String nomeUser)  {
+
 		this.nomeUser = nomeUser;
 	}
 	public float getPrezzoTransazine() {
 		return prezzoTransazine;
 	}
-	public void setPrezzoTransazine(float prezzoTransazine) throws SetterException {
-		if((prezzoTransazine<0f )|| prezzoTransazine>3000f)
-		{
-			throw new SetterException("price too high");
-		}
+	public void setPrezzoTransazine(float prezzoTransazine)  {
+
 		this.prezzoTransazine = prezzoTransazine;
 	}
 
@@ -125,11 +101,8 @@ public class CartaDiCredito {
 		return cognomeUser;
 	}
 
-	public void setCognomeUser(String cognomeUser) throws SetterException {
-		if (cognomeUser.equals(""))
-		{
-			throw new SetterException("surname incorrect");
-		}
+	public void setCognomeUser(String cognomeUser)  {
+
 		this.cognomeUser = cognomeUser;
 	}
 
@@ -137,12 +110,8 @@ public class CartaDiCredito {
 		return civ;
 	}
 
-	public void setCiv(String civ) throws SetterException {
-		if((Objects.equals(civ, ""))|| civ.length()!=3)
-		{
-				throw new SetterException("civ incorrect");
+	public void setCiv(String civ) {
 
-		}
 		this.civ = civ;
 	}
 

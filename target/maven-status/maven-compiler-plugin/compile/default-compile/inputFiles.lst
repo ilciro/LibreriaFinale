@@ -54,6 +54,7 @@ C:\Users\ilciro\IdeaProjects\LibreriaFinale\src\main\java\laptop\view\BoundaryHo
 C:\Users\ilciro\IdeaProjects\LibreriaFinale\src\main\java\web\bean\RivistaBean.java
 C:\Users\ilciro\IdeaProjects\LibreriaFinale\src\main\java\laptop\controller\ControllerScegliNegozio.java
 C:\Users\ilciro\IdeaProjects\LibreriaFinale\src\main\java\laptop\controller\ControllerReportRaccolta.java
+C:\Users\ilciro\IdeaProjects\LibreriaFinale\src\main\java\laptop\exception\AcquistaException.java
 C:\Users\ilciro\IdeaProjects\LibreriaFinale\src\main\java\web\servlet\AcquistaServlet.java
 C:\Users\ilciro\IdeaProjects\LibreriaFinale\src\main\java\web\servlet\ModificaLibroServlet.java
 C:\Users\ilciro\IdeaProjects\LibreriaFinale\src\main\java\web\servlet\LoginServlet.java

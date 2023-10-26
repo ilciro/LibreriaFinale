@@ -6,6 +6,7 @@ import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
 import laptop.database.PagamentoDao;
 import laptop.database.RivistaDao;
+import laptop.exception.IdException;
 import laptop.model.Pagamento;
 import laptop.model.raccolta.Giornale;
 import laptop.model.raccolta.Libro;
@@ -21,8 +22,7 @@ public class ControllerCheckPagamentoData {
 	private GiornaleDao gD;
 	private RivistaDao rD;
 	private PagamentoDao pagD;
-	public void checkPagamentoData(String nome) throws SQLException
-	{
+	public void checkPagamentoData(String nome) throws SQLException, IdException {
 		String tipo=vis.getType();
 		
 		Pagamento p;
@@ -78,5 +78,16 @@ public class ControllerCheckPagamentoData {
 		pagD=new PagamentoDao();
 		
 	}
+	private boolean checkID(int id) throws IdException {
+		boolean status=true;
+
+		if (id<=0 || id>25)
+		{
+			status=false;
+			throw new IdException("id not correct");
+		}
+		return status;
+	}
+
 
 }

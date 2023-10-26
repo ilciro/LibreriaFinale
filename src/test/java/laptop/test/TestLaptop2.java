@@ -8,7 +8,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-import laptop.exception.SetterException;
+import laptop.exception.IdException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -72,7 +72,7 @@ class TestLaptop2 {
 	}
 
 	@Test
-	void testAggiungiCartaDBL() throws SQLException, SetterException {
+	void testAggiungiCartaDBL() throws SQLException, IdException {
 		vis.setSpesaT((float)125.6);
 		vis.setTypeAsBook();
 		java.sql.Date data=Date.valueOf("2025-11-11");
@@ -80,7 +80,7 @@ class TestLaptop2 {
 		assertNotNull(data);
 	}
 	@Test
-	void testAggiungiCartaDBG() throws SQLException, SetterException {
+	void testAggiungiCartaDBG() throws SQLException, IdException {
 		vis.setSpesaT((float)35.4);
 		vis.setTypeAsDaily();
 		java.sql.Date data=Date.valueOf("2026-06-11");
@@ -88,7 +88,7 @@ class TestLaptop2 {
 		assertNotNull(data);
 	}
 	@Test
-	void testAggiungiCartaDBR() throws SQLException, SetterException {
+	void testAggiungiCartaDBR() throws SQLException, IdException {
 		vis.setSpesaT((float)14.9);
 		vis.setTypeAsMagazine();
 		java.sql.Date data=Date.valueOf("2028-02-22");
@@ -107,7 +107,7 @@ class TestLaptop2 {
 	}
 
 	@Test
-	void testPagamentoCCL() throws SQLException {
+	void testPagamentoCCL() throws SQLException, IdException {
 		vis.setTypeAsBook();
 		vis.setSpesaT((float)125.6);
 		vis.setId(1);
@@ -115,7 +115,7 @@ class TestLaptop2 {
 		assertNotEquals(0,vis.getId());
 	}
 	@Test
-	void testPagamentoCCG() throws SQLException {
+	void testPagamentoCCG() throws SQLException, IdException {
 		vis.setTypeAsDaily();
 		vis.setSpesaT((float)35.4);
 		vis.setId(1);
@@ -123,7 +123,7 @@ class TestLaptop2 {
 		assertNotEquals(0,vis.getId());
 	}
 	@Test
-	void testPagamentoCCR() throws SQLException {
+	void testPagamentoCCR() throws SQLException, IdException {
 		vis.setTypeAsMagazine();
 		vis.setSpesaT((float)14.9);
 		vis.setId(1);
@@ -317,13 +317,13 @@ class TestLaptop2 {
 		
 	}
 	@Test
-	void testGetNome() {
+	void testGetNome()  {
 		fattura2.setNome("topolino");
 		assertEquals("topolino",fattura2.getNome());
 	}
 
 	@Test
-	void testGetCognome() {
+	void testGetCognome()  {
 		fattura2.setCognome("paperino");
 		assertEquals("paperino",fattura2.getCognome());
 		
@@ -527,19 +527,19 @@ class TestLaptop2 {
 	}
 
 	@Test
-	void testGetNomeN() {
+	void testGetNomeN()  {
 		n1.setNome("Negozio E");
 		assertEquals("Negozio E",n1.getNome());
 	}
 
 	@Test
-	void testGetViaN() {
+	void testGetViaN()  {
 		n1.setVia("via papaveri 15");
 		assertEquals("via papaveri 15",n1.getVia());
 	}
 
 	@Test
-	void testGetIsValid() {
+	void testGetIsValid()  {
 		n1.setIsValid(false);
 		assertNotEquals(true,n1.getIsValid());
 	}

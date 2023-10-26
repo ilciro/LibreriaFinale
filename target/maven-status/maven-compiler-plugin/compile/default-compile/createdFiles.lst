@@ -109,6 +109,7 @@ web\servlet\DownloadServletG1.class
 laptop\view\BoundaryAcquista.class
 web\servlet\ModificaLibroServlet.class
 laptop\controller\ControllerHomePageAfterLogin.class
+laptop\exception\AcquistaException.class
 web\servlet\GiornaliServlet.class
 laptop\view\Main.class
 laptop\controller\ControllerReportPage.class

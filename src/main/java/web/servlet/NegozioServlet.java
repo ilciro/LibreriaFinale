@@ -38,12 +38,14 @@ public class NegozioServlet extends HttpServlet {
 		if(neg1!=null && neg1.equals("Negozio A"))
 		{
 			nB.setNomeB("Negozio A");
-			
-			n.setNome(nB.getNomeB());
-			n.setIsOpen(nD.checkOpen(n));
-			n.setIsValid(nD.checkRitiro(n));
-			nB.setAperturaB(n.getIsOpen());
-			nB.setDisponibileB(n.getIsValid());
+
+
+				n.setNome(nB.getNomeB());
+				n.setIsOpen(nD.checkOpen(n));
+				n.setIsValid(nD.checkRitiro(n));
+				nB.setAperturaB(n.getIsOpen());
+				nB.setDisponibileB(n.getIsValid());
+
 			
 			checkDisp(n,req,resp);
 			
@@ -52,11 +54,13 @@ public class NegozioServlet extends HttpServlet {
 		if(neg2!=null && neg2.equals("Negozio B"))
 		{
 			nB.setNomeB("Negozio B");
-			n.setNome(nB.getNomeB());
-			n.setIsOpen(nD.checkOpen(n));
-			n.setIsValid(nD.checkRitiro(n));
-			nB.setAperturaB(n.getIsOpen());
-			nB.setDisponibileB(n.getIsValid());
+
+				n.setNome(nB.getNomeB());
+				n.setIsOpen(nD.checkOpen(n));
+				n.setIsValid(nD.checkRitiro(n));
+				nB.setAperturaB(n.getIsOpen());
+				nB.setDisponibileB(n.getIsValid());
+
 			
 			checkDisp(n,req,resp);
 
@@ -65,11 +69,13 @@ public class NegozioServlet extends HttpServlet {
 		if(neg3!=null && neg3.equals("Negozio C"))
 		{
 			nB.setNomeB("Negozio C");
-			n.setNome(nB.getNomeB());
-			n.setIsOpen(nD.checkOpen(n));
-			n.setIsValid(nD.checkRitiro(n));
-			nB.setAperturaB(n.getIsOpen());
-			nB.setDisponibileB(n.getIsValid());
+
+				n.setNome(nB.getNomeB());
+				n.setIsOpen(nD.checkOpen(n));
+				n.setIsValid(nD.checkRitiro(n));
+				nB.setAperturaB(n.getIsOpen());
+				nB.setDisponibileB(n.getIsValid());
+
 			
 			checkDisp(n,req,resp);
 
@@ -78,10 +84,12 @@ public class NegozioServlet extends HttpServlet {
 		if(neg4!=null && neg4.equals("Negozio D"))
 		{
 			nB.setNomeB("Negozio D");
-			n.setNome(nB.getNomeB());
-			n.setIsOpen(nD.checkOpen(n));
-			n.setIsValid(nD.checkRitiro(n));
-			nB.setAperturaB(n.getIsOpen());
+
+				n.setNome(nB.getNomeB());
+				n.setIsOpen(nD.checkOpen(n));
+				n.setIsValid(nD.checkRitiro(n));
+				nB.setAperturaB(n.getIsOpen());
+
 			nB.setDisponibileB(n.getIsValid());
 			
 			checkDisp(n,req,resp);
@@ -95,8 +103,8 @@ public class NegozioServlet extends HttpServlet {
 			RequestDispatcher view = getServletContext().getRequestDispatcher("/negozi.jsp"); 
 			view.forward(req,resp);
 		}
-		} catch (SQLException e) {
-			java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+		} catch (SQLException e ) {
+			java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.getMessage());
 
 		}
 		

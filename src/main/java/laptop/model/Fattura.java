@@ -1,7 +1,6 @@
 package laptop.model;
 
 
-import laptop.exception.SetterException;
 
 public class Fattura {
 
@@ -11,8 +10,7 @@ public class Fattura {
 	private String com;
 	private String numero;
 	private float ammontare;
-	private static final String ISNUMBER= "-?\\d+(\\.\\d+)?";
-	
+
 	public Fattura() {
 		super();
  
@@ -31,71 +29,41 @@ public class Fattura {
 	public String getNome() {
 		return nome;
 	}
-	public void setNome(String nome) throws SetterException {
-		if (nome.equals(ISNUMBER)) {
-				throw new SetterException("name incorrect");
-			}
-
-
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	public String getCognome() {
 		return cognome;
 	}
-	public void setCognome(String cognome) throws SetterException {
-		if(cognome.equals(ISNUMBER))
-		{
+	public void setCognome(String cognome) {
 
-				throw new SetterException("surname incorrect");
-
-		}
 		this.cognome = cognome;
 	}
 	public String getVia() {
 		return via;
 	}
-	public void setVia(String via) throws SetterException {
-		if(via.equals(ISNUMBER))
-		{
+	public void setVia(String via)  {
 
-				throw new SetterException("via incorrect");
-
-		}
 		this.via = via;
 	}
 	public String getCom() {
 		return com;
 	}
-	public void setCom(String com) throws SetterException {
-		if(com.equals(ISNUMBER))
-		{
+	public void setCom(String com) {
 
-				throw new SetterException("comunications incorrect");
 
-		}
 		this.com = com;
 	}
 	public String getNumero() {
 		return numero;
 	}
-	public void setNumero(String numero) throws SetterException {
-		if(numero.equals(ISNUMBER))
-		{
-				throw new SetterException("number incorrect");
-
-		}
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 	public float getAmmontare() {
 		return ammontare;
 	}
-	public void setAmmontare(float ammontare) throws SetterException {
-		if((ammontare<=0f) || ammontare>3000f)
-		{
-
-				throw new SetterException("price  incorrect");
-
-		}
+	public void setAmmontare(float ammontare) {
 		this.ammontare = ammontare;
 	}
 

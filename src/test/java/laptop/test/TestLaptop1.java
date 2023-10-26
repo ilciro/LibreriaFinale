@@ -11,7 +11,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 
-
+import laptop.exception.IdException;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -134,30 +134,36 @@ class TestLaptop1 {
 	}
 	
 	@Test
-	void testTotale() throws SQLException {
+	void testTotale() throws SQLException, IdException {
 		l.setTitolo("Apocalypse town: Cronache dalla fine della civilta' urbana");
 		l.setNrCopie(200);
 		vis.setQuantita(5);
 		vis.setId(1);
-		assertEquals(0,cA.totale(l.getTitolo(), l.getNrCopie(), vis.getQuantita()));
+		vis.setTypeAsBook();
+		l.setDisponibilita(1);
+		assertEquals(0,cA.totale1(vis.getType(),l.getTitolo(), l.getDisponibilita(), vis.getQuantita()));
 	}
 
 	@Test
-	void testTotaleG() throws SQLException {
+	void testTotaleG() throws SQLException ,IdException {
 		g.setTitolo("La Republica1");
 		vis.setId(3);
 		g.setCopieRimanenti(50);
 		vis.setQuantita(3);
-		assertNotEquals(0,cA.totaleG(g.getTitolo(), g.getCopieRimanenti(), vis.getQuantita()));
+		vis.setTypeAsDaily();
+		g.setDisponibilita(1);
+		assertNotEquals(0,cA.totale1(vis.getType(),g.getTitolo(),g.getDisponibilita(), vis.getQuantita()));
 	}
 
 	@Test
-	void testTotaleR() throws SQLException {
+	void testTotaleR() throws SQLException, IdException {
 		r.setTitolo("Rivista B");
 		vis.setId(5);
 		r.setCopieRim(30);
 		vis.setQuantita(2);
-		assertNotEquals(0,cA.totaleR(r.getTitolo(), r.getCopieRim(),vis.getQuantita()));
+		vis.setTypeAsMagazine();
+		r.setDisp(1);
+		assertNotEquals(0,cA.totale1(vis.getType(),r.getTitolo(),r.getDisp(),vis.getQuantita()));
 	}
 	
 	@Test
@@ -539,7 +545,7 @@ class TestLaptop1 {
 	}
 	
 	@Test
-	void testControllaL() throws SQLException {
+	void testControllaL() throws SQLException,  IdException {
 		vis.setTypeAsBook();
 		vis.setId(1);
 		vis.setSpesaT((float)11.25);
@@ -547,7 +553,7 @@ class TestLaptop1 {
 		assertEquals(1,vis.getId());
 	}
 	@Test
-	void testControllaG() throws SQLException {
+	void testControllaG() throws SQLException,  IdException {
 		vis.setTypeAsDaily();
 		vis.setId(1);
 		vis.setSpesaT((float)5.50);
@@ -556,7 +562,7 @@ class TestLaptop1 {
 
 	}
 	@Test
-	void testControllaR() throws SQLException {
+	void testControllaR() throws SQLException,  IdException {
 		vis.setId(3);
 		vis.setTypeAsMagazine();
 		vis.setSpesaT((float)6.25);
