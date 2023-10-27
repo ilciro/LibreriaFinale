@@ -1,6 +1,0 @@
-
-g	java:S112k"FDefine and throw a dedicated exception instead of using a generic one.(·ÅñÌüÿÿÿÿ8©˜¦å¶1
-’
-java:S1130Q"uRemove the declaration of thrown exception 'laptop.exception.IdException', as it cannot be thrown from method's body.( Ğ›µ8·†ç¶1
-—
-java:S1130r"uRemove the declaration of thrown exception 'laptop.exception.IdException', as it cannot be thrown from method's body.(¸„¤…şÿÿÿÿ8Ø‡ç¶1

@@ -12,15 +12,15 @@
     <plugins>
       <plugin>
         <artifactId>maven-clean-plugin</artifactId>
-        <version>3.1.0</version>
+        <version>3.3.1</version>
       </plugin>
       <plugin>
         <artifactId>maven-resources-plugin</artifactId>
-        <version>3.1.0</version>
+        <version>3.3.1</version>
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
+        <version>3.11.0</version>
         <configuration />
       </plugin>
       <plugin>
@@ -32,7 +32,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-install-plugin</artifactId>
-        <version>3.0.0-M1</version>
+        <version>3.1.1</version>
       </plugin>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
@@ -171,7 +171,7 @@
     <maven.clean>3.1.0</maven.clean>
     <junit>5.9.1</junit>
     <sonar.language>java</sonar.language>
-    <java.version>11</java.version>
+    <java.version>17</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <jacoco.version>0.8.8</jacoco.version>
     <maven.compiler>3.8.1</maven.compiler>
