@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
 import laptop.database.RivistaDao;
+import laptop.exception.IdException;
 import laptop.model.User;
 import laptop.model.raccolta.Giornale;
 import laptop.model.raccolta.Libro;
@@ -17,48 +18,38 @@ import laptop.model.raccolta.Rivista;
 public class ControllerCompravendita {
 	//insrt comment
 	private LibroDao lD;
-	private User u=User.getInstance();
+	private User u = User.getInstance();
 	private GiornaleDao gD;
 	private Giornale g;
 	private Libro l;
 	private Rivista r;
 	private RivistaDao rD;
-	private boolean status=false;
-	private static String libro="libro";
-	private static String rivista="rivista";
-	private static String giornale="giornale";
-	
+	private boolean status = false;
+	private static String libro = "libro";
+	private static String rivista = "rivista";
+	private static String giornale = "giornale";
 
 
+	public boolean disponibilita(String type, String i) throws SQLException, IdException {
+		switch (type)
+		{
+			case "libro":
 
-	public  boolean disponibilitaLibro(String i ) throws SQLException {
-	
-		
-		
-		
-			 l.setId(Integer.parseInt(i));
-			 status=lD.checkDisp(l);
-			 return status;
-				
-	}
-	
-	public  boolean disponibilitaGiornale(String i ) throws SQLException {
-		
-			 
-			 g.setId(Integer.parseInt(i));
-			 status=gD.checkDisp(g);
-			 return status;
-				
-	}
-	
-public  boolean disponibilitaRivista(String i ) throws SQLException {
-		
-	
-	
-			 r.setId(Integer.parseInt(i));
-			 status=rD.checkDisp(r);
-			 return status;
-				
+				l.setId(Integer.parseInt(i));
+				status=lD.checkDisp(l);
+				break;
+			case "giornale":
+				g.setId(Integer.parseInt(i));
+				status=gD.checkDisp(g);
+				break;
+			case "rivista":
+				r.setId(Integer.parseInt(i));
+				status=rD.checkDisp(r);
+				break;
+			default: checkID(Integer.parseInt(i));
+
+		}
+		return status;
 	}
 
 	public ControllerCompravendita() {
@@ -68,6 +59,13 @@ public  boolean disponibilitaRivista(String i ) throws SQLException {
 		r=new Rivista();
 		l=new Libro();
 		rD=new RivistaDao();
+	}
+
+	private void checkID(int id) throws IdException {
+		if(id<=0)
+		{
+			throw new IdException("id not correct");
+		}
 	}
 
 	

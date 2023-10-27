@@ -62,14 +62,14 @@ public class BoundaryCompravendita implements Initializable {
 	private ControllerCompravendita cCV;
 	private ControllerSystemState vis = ControllerSystemState.getInstance() ;
 	protected Scene scene;
-	private static String titoloS="titolo";
-	private static String editoreS="editore";
-	private static String prezzoS="prezzo";
+	private static final String TITOLOS="titolo";
+	private static final String EDITORES="editore";
+	private static final String PREZZOS="prezzo";
 
 
 
 	@FXML
-	private void verifica() throws  IOException, SQLException {
+	private void verifica() throws IOException, SQLException, IdException {
 		
 			String i = entryText.getText();
 			
@@ -90,7 +90,7 @@ public class BoundaryCompravendita implements Initializable {
 			
 			
 			
-			if( cCV.disponibilitaLibro(i) || cCV.disponibilitaGiornale(i) || cCV.disponibilitaRivista(i))
+			if( cCV.disponibilita(vis.getType(),i) )
 			{
 				
 				vis.setId(Integer.parseInt(i));
@@ -117,21 +117,12 @@ public class BoundaryCompravendita implements Initializable {
 	}
 
 	@FXML
-	private void procedi() throws IOException, SQLException {
+	private void procedi() throws IOException, SQLException, IdException {
 		String i = entryText.getText();
 		
 		
-		if(i==null || i.equals(""))
-		{
-			try {
-				throw new IdException("id null or empty");
-				
-			}catch(IdException idE)
-			{
-				java.util.logging.Logger.getLogger("Test pagacc").log(Level.SEVERE,"\n eccezione ottenuta {0}",idE.toString());
-			}
-		}	
-		if( cCV.disponibilitaLibro(i) || cCV.disponibilitaGiornale(i) || cCV.disponibilitaRivista(i))
+
+		if( cCV.disponibilita(vis.getType(),i) )
 		{
 			
 		
@@ -179,32 +170,32 @@ public class BoundaryCompravendita implements Initializable {
 		if(ControllerSystemState.getInstance().getType().equals("libro"))
 		{
 			header.setText(cCV.ritornaMessaggio());
-			titolo.setCellValueFactory(new PropertyValueFactory<>(titoloS));
-			editore.setCellValueFactory(new PropertyValueFactory<>(editoreS));
+			titolo.setCellValueFactory(new PropertyValueFactory<>(TITOLOS));
+			editore.setCellValueFactory(new PropertyValueFactory<>(EDITORES));
 			autore.setCellValueFactory(new PropertyValueFactory<>("autore"));
 			categoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
-			prezzo.setCellValueFactory(new PropertyValueFactory<>(prezzoS));
+			prezzo.setCellValueFactory(new PropertyValueFactory<>(PREZZOS));
 			idLibro.setCellValueFactory(new PropertyValueFactory<>("id"));
 			
 		}
 		else if(ControllerSystemState.getInstance().getType().equals("giornale"))
 		{
 			header.setText(cCV.ritornaMessaggio());
-			titolo.setCellValueFactory(new PropertyValueFactory<>(titoloS));
-			editore.setCellValueFactory(new PropertyValueFactory<>(editoreS));
+			titolo.setCellValueFactory(new PropertyValueFactory<>(TITOLOS));
+			editore.setCellValueFactory(new PropertyValueFactory<>(EDITORES));
 			autore.setCellValueFactory(null);
 			categoria.setCellValueFactory(null);
-			prezzo.setCellValueFactory(new PropertyValueFactory<>(prezzoS));
+			prezzo.setCellValueFactory(new PropertyValueFactory<>(PREZZOS));
 			idLibro.setCellValueFactory(new PropertyValueFactory<>("id"));
 		}
 		else if(ControllerSystemState.getInstance().getType().equals("rivista"))
 		{
 			header.setText(cCV.ritornaMessaggio());
-			titolo.setCellValueFactory(new PropertyValueFactory<>(titoloS));
-			editore.setCellValueFactory(new PropertyValueFactory<>(editoreS));
+			titolo.setCellValueFactory(new PropertyValueFactory<>(TITOLOS));
+			editore.setCellValueFactory(new PropertyValueFactory<>(EDITORES));
 			autore.setCellValueFactory(new PropertyValueFactory<>("autore"));
 			categoria.setCellValueFactory(null);
-			prezzo.setCellValueFactory(new PropertyValueFactory<>(prezzoS));
+			prezzo.setCellValueFactory(new PropertyValueFactory<>(PREZZOS));
 			idLibro.setCellValueFactory(new PropertyValueFactory<>("id"));
 		}
 		

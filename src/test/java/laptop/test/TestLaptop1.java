@@ -189,26 +189,23 @@ class TestLaptop1 {
 		assertNotNull(cA.getNomeById());
 	}
 	@Test 
-	void testGetDispL() throws SQLException
-	{
+	void testGetDispL() throws SQLException, IdException {
 		vis.setTypeAsBook();
 		vis.setId(1);
 		
-		assertNotEquals(0,cA.getDisp());
+		assertNotEquals(0,cA.getDisp(vis.getType()));
 	}
 	@Test 
-	void testGetDispG() throws SQLException
-	{
+	void testGetDispG() throws SQLException, IdException {
 		vis.setTypeAsDaily();
 		vis.setId(1);
-		assertEquals(0,cA.getDisp());
+		assertEquals(0,cA.getDisp(vis.getType()));
 	}
 	@Test 
-	void testGetDispR() throws SQLException
-	{
+	void testGetDispR() throws SQLException, IdException {
 		vis.setTypeAsMagazine();
 		vis.setId(1);
-		assertNotEquals(0,cA.getDisp());
+		assertNotEquals(0,cA.getDisp(vis.getType()));
 	}
 	@Test 
 	void testGetCostoL() throws SQLException
@@ -287,18 +284,21 @@ class TestLaptop1 {
 	}
 
 	@Test
-	void testDisponibilitaLibro() throws SQLException {
-		assertTrue(cC.disponibilitaLibro("1"));
+	void testDisponibilitaLibro() throws SQLException, IdException {
+		vis.setTypeAsBook();
+		assertTrue(cC.disponibilita(vis.getType(), "1"));
 	}
 
 	@Test
-	void testDisponibilitaGiornale() throws SQLException {
-		assertFalse(cC.disponibilitaGiornale("1"));
+	void testDisponibilitaGiornale() throws SQLException, IdException {
+		vis.setTypeAsDaily();
+		assertFalse(cC.disponibilita(vis.getType(),"1"));
 	}
 
 	@Test
-	void testDisponibilitaRivista() throws SQLException {
-		assertTrue(cC.disponibilitaRivista("1"));
+	void testDisponibilitaRivista() throws SQLException, IdException {
+		vis.setTypeAsMagazine();
+		assertTrue(cC.disponibilita(vis.getType(),"1"));
 	}
 
 	@Test
@@ -328,22 +328,25 @@ class TestLaptop1 {
 	@ValueSource(ints= {1,2,3,4,5,6})
 	void testScaricaLibro(int ints) throws DocumentException, IOException, URISyntaxException {
 		vis.setId(ints);
-		cD.scaricaLibro();
+		vis.setTypeAsBook();
+		cD.scarica(vis.getType());
 		assertEquals(ints,vis.getId());
 	}
 	
 	@ParameterizedTest
 	@ValueSource(ints= {1,2,3,4,5,6})
-	void testScaricaGiornale(int ints) throws IOException, DocumentException {
+	void testScaricaGiornale(int ints) throws IOException, DocumentException, URISyntaxException {
+		vis.setTypeAsDaily();
 		vis.setId(ints);
-		cD.scaricaGiornale();
+		cD.scarica(vis.getType());
 		assertEquals(ints,vis.getId());
 	}
 	@ParameterizedTest
 	@ValueSource(ints= {1,2,3,4,5,6})
-	void testScaricaRivista(int ints) throws DocumentException, IOException {
+	void testScaricaRivista(int ints) throws DocumentException, IOException, URISyntaxException {
+		vis.setTypeAsMagazine();
 		vis.setId(ints);
-		cD.scaricaRivista();
+		cD.scarica(vis.getType());
 		assertEquals(ints,vis.getId());
 	}
 	@Test

@@ -62,7 +62,7 @@ public class BoundaryDownload implements Initializable {
 				java.util.logging.Logger.getLogger("scarica").log(Level.INFO," all ok...");
 
 	            //passo 0 per evitare il NullPointer
-            	cD.scaricaLibro();
+            	cD.scarica(vis.getType());
 	            Stage stage;
 				Parent root;
 				stage = (Stage) buttonA.getScene().getWindow();

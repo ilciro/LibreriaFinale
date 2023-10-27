@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 
 import laptop.exception.IdException;
-import laptop.exception.SetterException;
 import web.bean.FatturaBean;
 import web.bean.LibroBean;
 import web.bean.PagamentoBean;
@@ -78,7 +77,7 @@ public class FatturaServlet extends HttpServlet{
 
 				fD.inserisciFattura(f);
 				pD.inserisciPagamento(p);
-			} catch (SQLException | SetterException | IdException e) {
+			} catch (SQLException  | IdException e) {
 				java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.getMessage());
 			}
 		

@@ -30,12 +30,7 @@ public class ControllerDownload {
 	private Rivista r;	
 	private  Libro l;
 	
-	public void scaricaLibro() throws DocumentException, IOException, URISyntaxException {
-		l.setId(vis.getId());		
-		l.scarica();		
-		
-		l.leggi(vis.getId());
-	}
+
 	
 	
 	
@@ -103,19 +98,37 @@ public class ControllerDownload {
 		rD=new RivistaDao();
 	}
 
-	public void scaricaGiornale() throws IOException, DocumentException {
-		g.setId(vis.getId());		
-		g.scarica();		
-		g.leggi(vis.getId());
-		
+	public void scarica(String type) throws DocumentException, IOException, URISyntaxException {
+		switch (type)
+		{
+			case "libro":
+			{
+				l.setId(vis.getId());
+				l.scarica();
+				l.leggi(vis.getId());
+				break;
+			}
+			case "giornale":
+			{
+				g.setId(vis.getId());
+				g.scarica();
+				g.leggi(vis.getId());
+				break;
+			}
+			case "rivista":
+			{
+				r.setId(vis.getId());
+				r.scarica();
+				r.leggi(vis.getId());
+				break;
+			}
+			default:break;
+		}
 	}
 
-	public void scaricaRivista() throws DocumentException, IOException {
-		r.setId(vis.getId());
-		r.scarica();
-		r.leggi(vis.getId());
-		
-	}
+
+
+
 
 
 

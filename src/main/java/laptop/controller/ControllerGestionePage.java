@@ -38,7 +38,9 @@ public class ControllerGestionePage {
 			rD.cancella(r);
 		}
 	}
-	
+
+
+
 	public ObservableList<Raccolta> getRivistaS() throws SQLException {
 		return rD.getRivistaSingolo();
 	}

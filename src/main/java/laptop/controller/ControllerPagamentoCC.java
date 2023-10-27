@@ -10,7 +10,6 @@ import laptop.database.CartaCreditoDao;
 import laptop.database.PagamentoDao;
 
 import laptop.exception.IdException;
-import laptop.exception.SetterException;
 import laptop.model.CartaDiCredito;
 import laptop.model.Pagamento;
 
@@ -78,7 +77,7 @@ public class ControllerPagamentoCC {
 	}
 
 	public void aggiungiCartaDB(String n, String c, String cod, java.sql.Date data, String civ, float prezzo)
-			throws SQLException, SetterException, IdException {
+			throws SQLException, IdException {
 		
 		
 		
@@ -99,19 +98,19 @@ public class ControllerPagamentoCC {
 
 	}
 
-	public ObservableList<CartaDiCredito> ritornaElencoCC(String nomeU) throws SQLException {
+	public ObservableList<CartaDiCredito> ritornaElencoCC(String nomeU)  {
 		
 		return cDao.getCarteCredito(nomeU);
 	}
 	
-	public CartaDiCredito tornaDalDb(String codiceCarta) throws Exception
+	public CartaDiCredito tornaDalDb(String codiceCarta)
 	{
 		cc=new CartaDiCredito();
 		cc.setNumeroCC(codiceCarta);
 		return cDao.popolaDati(cc);
 	}
 
-	public void pagamentoCC(String nome) throws SQLException, SetterException, IdException {
+	public void pagamentoCC(String nome) throws SQLException, IdException {
 		Pagamento p;
 		p=new Pagamento(0,"cartaCredito", 0,nome,0, null);
 			
