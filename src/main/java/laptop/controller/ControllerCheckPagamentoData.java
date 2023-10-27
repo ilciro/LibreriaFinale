@@ -38,32 +38,35 @@ public class ControllerCheckPagamentoData {
 		
 		
 		pagD.inserisciPagamento(p);
-		if(tipo.equals("libro"))
-		{
-			//prenod spesa da vis
-			l.setId(vis.getId());
-			p.setAmmontare(vis.getSpesaT());
-			p.setId(l.getId());
-			p.setTipo(lD.retTip(l));
+
+		switch (tipo){
+			case "libro":
+			{
+				l.setId(vis.getId());
+				p.setAmmontare(vis.getSpesaT());
+				p.setId(l.getId());
+				p.setTipo(lD.retTip(l));
+				break;
+			}
+			case "giornale" :
+			{
+				g.setId(vis.getId());
+				p.setAmmontare(vis.getSpesaT());
+				p.setId(g.getId());
+				p.setTipo(gD.retTip(g));
+				break;
+			}
+			case "rivista":
+			{
+				r.setId(vis.getId());
+				p.setAmmontare(vis.getSpesaT());
+				p.setId(r.getId());
+				p.setTipo(rD.retTip(r));
+				break;
+			}
+			default: checkID(vis.getId());
 		}
-		if(tipo.equals("giornale"))
-		{
-			//prenod spesa da vis
-			g.setId(vis.getId());
-			p.setAmmontare(vis.getSpesaT());
-			p.setId(g.getId());
-			p.setTipo(gD.retTip(g));
-			
-		}
-		if(tipo.equals("rivista"))
-		{
-			//prenod spesa da vis
-			r.setId(vis.getId());
-			p.setAmmontare(vis.getSpesaT());
-			p.setId(r.getId());
-			p.setTipo(rD.retTip(r));
-			
-		}
+
 		
 		
 	}
@@ -78,15 +81,14 @@ public class ControllerCheckPagamentoData {
 		pagD=new PagamentoDao();
 		
 	}
-	private boolean checkID(int id) throws IdException {
-		boolean status=true;
+	private void checkID(int id) throws IdException {
 
 		if (id<=0 || id>25)
 		{
-			status=false;
+
 			throw new IdException("id not correct");
 		}
-		return status;
+
 	}
 
 

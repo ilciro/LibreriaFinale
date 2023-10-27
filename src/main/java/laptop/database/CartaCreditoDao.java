@@ -21,7 +21,7 @@ public class CartaCreditoDao {
 	
 
 
-	public ObservableList<CartaDiCredito> getCarteCredito(String nome) throws SQLException 
+	public ObservableList<CartaDiCredito> getCarteCredito(String nome)
 	{
 		String cod;
 		query="select nomeP,cognomeP,codiceCarta from cartacredito where nomeP=?";
@@ -56,7 +56,7 @@ public class CartaCreditoDao {
 	}	
 
 	
-	public void insCC(CartaDiCredito cc) throws SQLException
+	public void insCC(CartaDiCredito cc)
 	{
 
 		query="insert into cartacredito (nomeP,cognomeP,codiceCarta,scad,codicePin,ammontare)  values(?,?,?,?,?,?)";
@@ -83,7 +83,7 @@ public class CartaCreditoDao {
 	}
 
 	
-	public CartaDiCredito  popolaDati(CartaDiCredito cc) throws SQLException
+	public CartaDiCredito  popolaDati(CartaDiCredito cc)
 	{
 		String cod;
 
@@ -109,8 +109,9 @@ public class CartaCreditoDao {
 				cc.setNomeUser(n);
 				cc.setCognomeUser(cog);
 				cc.setNumeroCC(cod);
-			} catch (Exception e) {
-				throw new RuntimeException(e);
+			} catch (SQLException e) {
+				java.util.logging.Logger.getLogger("report libro").log(Level.SEVERE,"\n eccezione ottenuta .",e);
+
 			}
 		return cc;
 
