@@ -108,7 +108,7 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
-      <version>5.9.1</version>
+      <version>5.9.2</version>
       <scope>test</scope>
       <exclusions>
         <exclusion>
@@ -128,7 +128,7 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.9.1</version>
+      <version>5.9.2</version>
       <scope>test</scope>
       <exclusions>
         <exclusion>
@@ -144,7 +144,7 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-params</artifactId>
-      <version>5.9.1</version>
+      <version>5.9.2</version>
       <scope>test</scope>
       <exclusions>
         <exclusion>
@@ -156,21 +156,21 @@
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
-      <version>11</version>
+      <version>17</version>
       <type>pom</type>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.tomcat</groupId>
       <artifactId>tomcat-catalina</artifactId>
-      <version>10.1.4</version>
+      <version>10.1.7</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
   <properties>
     <maven.compiler.release>${java.version}</maven.compiler.release>
     <maven.clean>3.1.0</maven.clean>
-    <junit>5.9.1</junit>
+    <junit>5.9.2</junit>
     <sonar.language>java</sonar.language>
     <java.version>17</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -185,7 +185,7 @@
     <maven.resources>3.1.0</maven.resources>
     <maven.war>3.2.0</maven.war>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <sonar.coverage.jacoco.xmlReportPaths>../app-it/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    <sonar.coverage.jacoco.xmlReportPaths>../app-project-name/target/jacoco-report/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     <maven.surefire>3.0.0-M5</maven.surefire>
   </properties>
 </project>

@@ -145,7 +145,8 @@ public class Factory {
 	{
 		return new Rivista(info,descrizione, dataPubb2,disp,prezzo,copieRim,id);
 	}
-		
+
+
 	
 	public Factory()
 	{

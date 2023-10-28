@@ -131,8 +131,12 @@ public class CreateDefaultDB
 							+ ")");
 				}
 				
-				java.util.logging.Logger.getLogger("Test create db").log(Level.INFO, "Connesso a mysql workbench, ma non ho torvato il database 'ispw'\n"
-						+ "Database creato "+ "tabelle create" +"\n");
+				java.util.logging.Logger.getLogger("Test create db").log(Level.INFO, """ 
+				Connesso a mysql workbench
+				ma non ho torvato il database ispw
+				--> Database creato
+				----> tabelle create
+				""");
 				
 				
 				if (PopulateDefaultDb.populateDefaultDb()) {

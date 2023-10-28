@@ -18,7 +18,8 @@ public class ConnToDb
 	private static boolean status=false;
 	private static String errore="Errore in mysql..........\\n";
 	private static String driv="driver";
-	
+
+
 
 	public static  boolean initailConnection()
 	{

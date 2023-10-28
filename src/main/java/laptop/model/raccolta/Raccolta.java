@@ -9,6 +9,5 @@ public interface Raccolta {
 
 	void scarica() throws DocumentException, IOException;//stampo messsaggio libro scaricato 
 	void leggi(int i) throws IOException, DocumentException, URISyntaxException;
-	
 
 }

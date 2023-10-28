@@ -210,17 +210,20 @@ public class Rivista implements Raccolta  {
 		     			PdfWriter.getInstance(document, new FileOutputStream(rBR.getString("path")));
 		     			document.open();	
 
-		     			document.add(new Paragraph("Rivista/Magazine not avalaible"
-		     			+"\n"+"Nam ultricies efficitur magna, sit amet luctus magna luctus volutpat."
-		     			+"\n"+" Pellentesque facilisis lacinia mi, nec posuere justo pharetra non."
-		     			+"\n"+ " Nulla vel risus sit amet risus aliquam auctor."
-		     			+"\n"+ " Nunc viverra felis sit amet nulla faucibus, sed euismod neque lacinia."
-		     			+"\n"+ " Integer pharetra sapien sed odio mattis, sed efficitur justo blandit. "
-		     			+"\n"+ "Praesent in quam non neque hendrerit pulvinar ut quis tortor. "
-		     			+"\n"+ "Maecenas nec convallis nunc. "
-		     			+"\n"+ "Donec ultricies malesuada mauris ac accumsan. "
-		     			+"\n"+ "Vestibulum auctor est ac laoreet egestas. "
-		     			+"\n"+ "Nam malesuada in massa eu venenatis."));
+		     			document.add(new Paragraph("""
+						Rivista/Magazine not avalaible
+						Nam ultricies efficitur magna, sit amet luctus magna luctus volutpat
+						Pellentesque facilisis lacinia mi, nec posuere justo pharetra non:
+						Nulla vel risus sit amet risus aliquam auctor.
+						Nunc viverra felis sit amet nulla faucibus, sed euismod neque lacinia.
+						Integer pharetra sapien sed odio mattis, sed efficitur justo blandit.
+						Praesent in quam non neque hendrerit pulvinar ut quis tortor.
+						Maecenas nec convallis nunc.
+						Donec ultricies malesuada mauris ac accumsan.
+						Vestibulum auctor est ac laoreet egestas.
+						Nam malesuada in massa eu venenatis.
+						"""));
+
 		     			document.close();
 		
 		

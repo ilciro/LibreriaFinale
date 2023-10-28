@@ -157,26 +157,27 @@ public class Giornale implements Raccolta{
 		
 		
 		
-		
 		 ResourceBundle rBG=ResourceBundle.getBundle("configurations/downloadConfigurationGiornale");
-		
-		    		 
-		  			document = new Document();
-		     			PdfWriter.getInstance(document, new FileOutputStream(rBG.getString("path")));
-		     			document.open();	
 
-		     			document.add(new Paragraph("Giornale/Daily not avalaible"
-		     					+"\n"+"Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-		     					+ "\n"+"Integer et semper purus, non finibus augue. "
-		     					+ "\n"+"Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
-		     					+ "\n"+"Praesent et tincidunt eros. Nunc malesuada ipsum non leo scelerisque molestie. "
-		     					+ "\n"+"Sed sit amet finibus nulla, id ultrices diam. Vestibulum mollis ante eros, vitae accumsan ex lacinia nec."
-		     					+"\n"+ " Sed tellus eros, tincidunt eu odio ac, tempor viverra libero."
-		     					+ "\n"+" Maecenas id arcu laoreet, tristique felis sit amet, blandit nulla. "
-		     					+"\n"+ "Phasellus suscipit sed est ut molestie. Maecenas consequat elit diam, eu semper erat porta nec. "
-		     					+"\n"+ "Etiam ullamcorper neque vitae mollis cursus."));
-		     			document.close();
-		
+
+		 document = new Document();
+		 PdfWriter.getInstance(document, new FileOutputStream(rBG.getString("path")));
+		 document.open();
+
+			document.add(new Paragraph("""
+					Giornale/Daily not avalaible.
+					Integer et semper purus,non finibus augue
+					Interpellates habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+					Praesent et tincidunt eros.Nunc malesuada ipsum non leo scelerisque molestie.
+					Sed sit amet finibus nulla id ultrices diam.Vestibulum mollis ante eros,vitae accumsan ex lacinia nec.
+					Sed tellus eros, tincidunt eu odio ac, tempor viverra libero.Maecenas id arcu laoreet, tristique felis sit amet,blandit nulla.
+					Maecenas id arcu laoreet, tristique felis sit amet,blandit nulla.Phasellus suscipit sed est ut molestie.
+					Maecenas consequat elit diam, eu semper erat porta nec.Etiam ullamcorper neque vitae mollis cursus.
+					"""));
+			document.close();
+
+
+
 
 	}
 

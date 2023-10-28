@@ -24,7 +24,7 @@
 
 
  
- 	 <junit>5.9.1</junit>
+ 	 <junit>5.9.2</junit>
     <!-- Plugin versions -->
     <maven.shade>3.2.2</maven.shade>
     <maven.clean>3.1.0</maven.clean>
@@ -39,7 +39,7 @@
 	<jacoco.version>0.8.8</jacoco.version>
     <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
     <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-    <sonar.coverage.jacoco.xmlReportPaths>../target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    <sonar.coverage.jacoco.xmlReportPaths> ../app-project-name/target/jacoco-report/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     <sonar.language>java</sonar.language>
   
     
@@ -66,32 +66,32 @@
         <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-params</artifactId>
-        <version>5.9.1</version>
+        <version>5.9.2</version>
         <scope>test</scope>
         </dependency>
         <dependency>
 	    <groupId>org.openjfx</groupId>
 	    <artifactId>javafx-controls</artifactId>
-	    <version>11</version>
+	    <version>17</version>
 	    <type>pom</type>
 		</dependency>
 	  <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-fxml -->
 		<dependency>
     	<groupId>org.openjfx</groupId>
     	<artifactId>javafx-fxml</artifactId>
-    	<version>11</version>
+    	<version>17</version>
 		</dependency>
 	<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 	    <dependency>
     	<groupId>org.mybatis</groupId>
     	<artifactId>mybatis</artifactId>
-   		<version>3.5.11</version>
+   		<version>3.5.13</version>
 		</dependency>
 	<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
 		<dependency>
     	<groupId>com.mysql</groupId>
     	<artifactId>mysql-connector-j</artifactId>
-    	<version>8.0.31</version>
+    	<version>8.0.32</version>
 		</dependency>
 
 
@@ -111,19 +111,19 @@
 		<dependency>
     	<groupId>org.seleniumhq.selenium</groupId>
     	<artifactId>selenium-java</artifactId>
-   		<version>4.6.0</version>
+   		<version>4.8.1</version>
 		</dependency>
 	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
 		<dependency>
     	<groupId>org.seleniumhq.selenium</groupId>
     	<artifactId>selenium-chrome-driver</artifactId>
-    	<version>4.6.0</version>
+    	<version>4.8.1</version>
 		</dependency>
 	<!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-catalina -->
 		<dependency>
    		<groupId>org.apache.tomcat</groupId>
     	<artifactId>tomcat-catalina</artifactId>
-    	<version>10.1.4</version>
+    	<version>10.1.7</version>
     	<scope>provided</scope>
   		</dependency>
 	
