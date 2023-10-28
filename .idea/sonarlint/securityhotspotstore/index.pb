@@ -112,8 +112,6 @@ G.idea/sonarlint/issuestore/6/e/6ecd6000a7b6f4a2884412ff19f74193ed089648,3\8\38
 w
 G.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0,f\0\f0e0f9cec86fe4b939ae22be5264c758801eb28f
 w
-G.idea/sonarlint/issuestore/d/d/ddace31d3e1b1a6447ec9b1252effd6f7d6f8148,5\d\5d2e88b71be30b6b0ea95cf05f459b6f07ceb441
-w
 G.idea/sonarlint/issuestore/1/4/14785c3a86712ced8f37cf4eb22549961fcc139a,e\1\e178facce89629464519757cc7d4a6e43f12f724
 w
 G.idea/sonarlint/issuestore/1/0/10a03f31c4dce92cb371e761ce9429428bb6c176,0\3\030ed2ccb712537825891dfda283154162e458a8
@@ -151,8 +149,6 @@ G.idea/sonarlint/issuestore/b/4/b4a0b63ce8560bbc5de0f9995c20cc861dc2adb3,b\0\b0
 Q.idea/sonarlint/securityhotspotstore/4/5/459bf81e1e66dd2591186a312e730e61a179e44c,0\a\0a56eb8553e59648b0494809fd1606ce9d183e2c
 Å
 Q.idea/sonarlint/securityhotspotstore/d/d/dd7b3350c29c49497756c7f32c69a3bed18b1cba,b\3\b31df9b2b9cdd37f5ca3f5303feabf564eeaaf4e
-Å
-Q.idea/sonarlint/securityhotspotstore/d/d/ddace31d3e1b1a6447ec9b1252effd6f7d6f8148,0\c\0c91a55fff03296a978be2a5cf20478ed3c86fe0
 Å
 Q.idea/sonarlint/securityhotspotstore/9/e/9eeeca0e7d05a191bf5a492fdce26631a51c6ad4,7\b\7b2fc945c9faeb93190d4c711d6c6578abcb3f79
 Å
@@ -231,3 +227,5 @@ k
 ;src/main/java/laptop/controller/ControllerGestionePage.java,4\7\47b0bc02c9558f8f6931c4ace3e283fa248c5682
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+J
+dependency-reduced-pom.xml,8\a\8a88dfd5af6f2db5a5431581b56e901f5f143d92

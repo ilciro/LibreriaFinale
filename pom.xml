@@ -138,15 +138,18 @@
    
       <plugins>
        <plugin>
-                <artifactId>maven-clean-plugin</artifactId>
+           <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-clean-plugin</artifactId>
                 <version>3.3.1</version>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.3.1</version>
                
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
@@ -158,13 +161,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
 
-                 <configuration>
-          <skipTests>true</skipTests>
-        </configuration>
+
 
             </plugin>
            
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-install-plugin</artifactId>
                 <version>3.1.1</version>
             </plugin>
