@@ -149,12 +149,8 @@ public class BoundaryCompravendita implements Initializable {
 	@FXML
 	private void vediLista() throws SQLException {
 		//vedere if anche qui
-		if(ControllerSystemState.getInstance().getType().equals("libro"))
-			table.setItems(cCV.getLibri());
-		else if(ControllerSystemState.getInstance().getType().equals("giornale"))
-			table.setItems(cCV.getGiornali());
-		else if(ControllerSystemState.getInstance().getType().equals("rivista"))
-			table.setItems(cCV.getRiviste());
+		table.setItems(cCV.getLista(ControllerSystemState.getInstance().getType()));
+
 
 	}
 

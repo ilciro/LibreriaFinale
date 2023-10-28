@@ -67,19 +67,7 @@ public class BoundaryGestionePage implements Initializable {
 	@FXML
 	private void genera() throws SQLException  
 	{
-		if(vis.getType().equals("libro"))
-		{
-			table.setItems(cGP.getLibroS());
-		}
-		else if(vis.getType().equals("giornale"))
-		{
-			table.setItems(cGP.getGiornaleS());
-		}
-		else if(vis.getType().equals("rivista"))
-		{
-			table.setItems(cGP.getRivistaS());
-		}
-		
+		cGP.getLista(vis.getType());
 		
 	}
 	@FXML

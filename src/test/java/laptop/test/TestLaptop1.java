@@ -303,18 +303,18 @@ class TestLaptop1 {
 
 	@Test
 	void testGetLibri() throws SQLException {
-		assertNotNull(cC.getLibri());
+		assertNotNull(cC.getLista("libro"));
 	}
 
 	@Test
 	void testGetGiornali() throws SQLException {
 		
-		assertNotNull(cC.getGiornali());
+		assertNotNull(cC.getLista("giornale"));
 	}
 
 	@Test
 	void testGetRiviste() throws SQLException {
-		assertNotNull(cC.getRiviste());
+		assertNotNull(cC.getLista("rivista"));
 	}
 
 	@ParameterizedTest
@@ -437,17 +437,17 @@ class TestLaptop1 {
 
 	@Test
 	void testGetRivistaS() throws SQLException {
-		assertNotNull(cGP.getRivistaS());
+		assertNotNull(cGP.getLista("rivista"));
 	}
 
 	@Test
 	void testGetLibroS() throws SQLException {
-		assertNotNull(cGP.getLibroS());
+		assertNotNull(cGP.getLista("libro"));
 	}
 
 	@Test
 	void testGetGiornaleS() throws SQLException {
-		assertNotNull(cGP.getGiornaleS());
+		assertNotNull(cGP.getLista("giornale"));
 	}
 
 	@Test

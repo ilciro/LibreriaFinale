@@ -2,6 +2,7 @@ package laptop.controller;
 
 import java.sql.SQLException;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
@@ -68,17 +69,39 @@ public class ControllerCompravendita {
 		}
 	}
 
-	
+	public ObservableList<Raccolta> getLista(String type) throws SQLException{
+		ObservableList<Raccolta> catalogo= FXCollections.observableArrayList();
+		switch (type)
+		{
+			case "libro":
+				catalogo.add((Raccolta) lD.getLibri());
+				break;
+			case "giornale":
+				catalogo.add((Raccolta) gD.getGiornali());
+				break;
+			case "rivista":
+				catalogo.add((Raccolta) rD.getRiviste());
+				break;
+			default:
+				return null;
+
+		}
+		return catalogo;
+
+	}
+
+	/*
 	public ObservableList<Raccolta> getLibri() throws SQLException {
 		return lD.getLibri();
 	}
+
 	public ObservableList<Raccolta> getGiornali() throws SQLException {
 		return gD.getGiornali();
 	}
 	public ObservableList<Raccolta> getRiviste() throws SQLException {
 		return rD.getRiviste();
 	}
-	
+	*/
 	
 	/*
 	 * Metodo udato per tornare tipo utente in base a se � loggato o no

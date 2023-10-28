@@ -2,6 +2,7 @@ package laptop.controller;
 
 import java.sql.SQLException;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
@@ -20,38 +21,41 @@ public class ControllerGestionePage {
 	private Libro l;
 	private Giornale g;
 	private Rivista r;
-	
-	public void cancella(int id) throws  SQLException {
-		if(ControllerSystemState.getInstance().getType().equals("libro"))
-		{
+
+	public void cancella(int id) throws SQLException {
+		if (ControllerSystemState.getInstance().getType().equals("libro")) {
 			l.setId(id);
 			lD.cancella(l);
-		}
-		else if(ControllerSystemState.getInstance().getType().equals("giornale"))
-		{
+		} else if (ControllerSystemState.getInstance().getType().equals("giornale")) {
 			g.setId(id);
 			gD.cancella(g);
-		}
-		else if(ControllerSystemState.getInstance().getType().equals("rivista"))
-		{
+		} else if (ControllerSystemState.getInstance().getType().equals("rivista")) {
 			r.setId(id);
 			rD.cancella(r);
 		}
 	}
 
 
+	public ObservableList<Raccolta> getLista(String type) throws SQLException {
+		ObservableList<Raccolta> catalogo = FXCollections.observableArrayList();
+		switch (type) {
+			case "libro":
+				catalogo.add((Raccolta) lD.getLibroSingolo());
+				break;
+			case "giornale":
+				catalogo.add((Raccolta) gD.getGiornaleSingolo());
+				break;
+			case "rivista":
+				catalogo.add((Raccolta) rD.getRivistaSingolo());
+				break;
+			default:
+				return null;
 
-	public ObservableList<Raccolta> getRivistaS() throws SQLException {
-		return rD.getRivistaSingolo();
+		}
+		return catalogo;
 	}
-	
-	public ObservableList<Raccolta> getLibroS() throws SQLException {
-		return lD.getLibroSingolo();
-	}
-	
-	public ObservableList<Raccolta> getGiornaleS() throws SQLException {
-		return gD.getGiornaleSingolo();
-	}
+
+
 	
 	public ControllerGestionePage()
 	{

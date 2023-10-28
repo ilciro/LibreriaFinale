@@ -5,19 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="pulizia v7 : String block v2">
-      <change beforePath="$PROJECT_DIR$/.idea/ant.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ant.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReportFinale/riepilogoGiornali.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ReportFinale/riepilogoGiornali.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReportFinale/riepilogoLibro.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ReportFinale/riepilogoLibro.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReportFinale/riepilogoRiviste.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ReportFinale/riepilogoRiviste.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReportFinale/riepilogoUtenti.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ReportFinale/riepilogoUtenti.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libriPerSito/riepilogoGiornali.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/riepilogoGiornali.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libriPerSito/riepilogoLibro.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/riepilogoLibro.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libriPerSito/riepilogoRiviste.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/riepilogoRiviste.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libriPerSito/riepilogoUtenti.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/riepilogoUtenti.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/file.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerCompravendita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerCompravendita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerGestionePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerGestionePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerReportPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerReportPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryCompravendita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryCompravendita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryGestionePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryGestionePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryReportPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryReportPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestLaptop1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestLaptop1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
