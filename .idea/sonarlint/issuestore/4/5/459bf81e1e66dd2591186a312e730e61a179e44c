@@ -1,0 +1,6 @@
+
+h	java:S112è"FDefine and throw a dedicated exception instead of using a generic one.(æÚûÛúÿÿÿÿ8ˆ¹¾¹·1
+Œ
+java:S1130Õ"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(‚ì¿Ö8ƒº¾¹·1
+
+java:S1130è"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(æÚûÛúÿÿÿÿ8ˆº¾¹·1

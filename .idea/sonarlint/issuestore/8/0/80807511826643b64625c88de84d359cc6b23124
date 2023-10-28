@@ -1,0 +1,11 @@
+
+
+java:S1130;"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(ๆ’ึþ8่พนท1
+
+java:S1130^"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(ฌ€ิ์๙ÿÿÿÿ8พนท1
+P
+java:S1128"3Remove this unused import 'java.io.BufferedReader'.(€้ฒล8พนท1
+Q
+java:S1128"/Remove this unused import 'java.io.FileReader'.(ยกขไþÿÿÿÿ8พนท1
+Q
+java:S1128	"4Remove this unused import 'java.util.logging.Level'.(…ตÛถ8 พนท1

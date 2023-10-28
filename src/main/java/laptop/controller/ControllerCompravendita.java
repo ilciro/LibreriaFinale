@@ -34,16 +34,16 @@ public class ControllerCompravendita {
 	public boolean disponibilita(String type, String i) throws SQLException, IdException {
 		switch (type)
 		{
-			case "libro":
+			case LIBRO:
 
 				l.setId(Integer.parseInt(i));
 				status=lD.checkDisp(l);
 				break;
-			case "giornale":
+			case GIORNALE:
 				g.setId(Integer.parseInt(i));
 				status=gD.checkDisp(g);
 				break;
-			case "rivista":
+			case RIVISTA:
 				r.setId(Integer.parseInt(i));
 				status=rD.checkDisp(r);
 				break;
@@ -73,13 +73,13 @@ public class ControllerCompravendita {
 		ObservableList<Raccolta> catalogo= FXCollections.observableArrayList();
 		switch (type)
 		{
-			case "libro":
+			case LIBRO:
 				catalogo.add((Raccolta) lD.getLibri());
 				break;
-			case "giornale":
+			case GIORNALE:
 				catalogo.add((Raccolta) gD.getGiornali());
 				break;
-			case "rivista":
+			case RIVISTA:
 				catalogo.add((Raccolta) rD.getRiviste());
 				break;
 			default:
