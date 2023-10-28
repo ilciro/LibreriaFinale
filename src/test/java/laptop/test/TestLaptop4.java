@@ -2,13 +2,18 @@ package laptop.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.io.IOException;
+import java.io.*;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.logging.Level;
 
+import laptop.utilities.ConnToDb;
+import org.apache.ibatis.jdbc.ScriptRunner;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -361,6 +366,22 @@ class TestLaptop4 {
 	{
 		UserBean.getInstance().setNomeB("franco");
 		assertTrue(UsersDao.logout());
+	}
+	@AfterAll
+	static void ripristinaDB() throws FileNotFoundException {
+
+		 Connection conn;
+		 ScriptRunner sr;
+
+		java.util.logging.Logger.getLogger("Test ripristina db").log(Level.INFO,"---------Chiamo stored truncate---------\n\n");
+
+		conn= ConnToDb.generalConnection();
+		sr = new ScriptRunner(conn);
+		sr.setSendFullScript(true);
+		Reader reader = new BufferedReader(new FileReader("FileSql/dropSchema.sql"));
+		//Running the script
+		sr.runScript(reader);
+
 	}
 
 	
