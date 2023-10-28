@@ -26,9 +26,9 @@ public class ControllerCompravendita {
 	private Rivista r;
 	private RivistaDao rD;
 	private boolean status = false;
-	private static String libro = "libro";
-	private static String rivista = "rivista";
-	private static String giornale = "giornale";
+	private static final String LIBRO = "libro";
+	private static final String RIVISTA = "rivista";
+	private static final String GIORNALE = "giornale";
 
 
 	public boolean disponibilita(String type, String i) throws SQLException, IdException {
@@ -83,25 +83,14 @@ public class ControllerCompravendita {
 				catalogo.add((Raccolta) rD.getRiviste());
 				break;
 			default:
-				return null;
+				return catalogo;
 
 		}
 		return catalogo;
 
 	}
 
-	/*
-	public ObservableList<Raccolta> getLibri() throws SQLException {
-		return lD.getLibri();
-	}
 
-	public ObservableList<Raccolta> getGiornali() throws SQLException {
-		return gD.getGiornali();
-	}
-	public ObservableList<Raccolta> getRiviste() throws SQLException {
-		return rD.getRiviste();
-	}
-	*/
 	
 	/*
 	 * Metodo udato per tornare tipo utente in base a se � loggato o no
@@ -120,33 +109,33 @@ public class ControllerCompravendita {
 	public String ritornaMessaggio()
 	{
 		String s=null;
-		if(ControllerSystemState.getInstance().getType().equals(libro))
+		if(ControllerSystemState.getInstance().getType().equals(LIBRO))
 			s="Benvenuto... ecco la lista dei libri nel nostro catalogo...";
-		else if(ControllerSystemState.getInstance().getType().equals(giornale))
+		else if(ControllerSystemState.getInstance().getType().equals(GIORNALE))
 			s="Benvenuto... ecco la lista dei giornali nel nostro catalogo...";
-		else if(ControllerSystemState.getInstance().getType().equals(rivista))
+		else if(ControllerSystemState.getInstance().getType().equals(RIVISTA))
 			s="Benvenuto... ecco la lista dele riviste nel nostro catalogo...";
 		return s;
 	}
 	public String popolaBottoneV()
 	{
 		String s=null;
-		if(ControllerSystemState.getInstance().getType().equals(libro))
+		if(ControllerSystemState.getInstance().getType().equals(LIBRO))
 			s="Mostra Libro";
-		else if(ControllerSystemState.getInstance().getType().equals(giornale))
+		else if(ControllerSystemState.getInstance().getType().equals(GIORNALE))
 			s="Mostra Giornale";
-		else if(ControllerSystemState.getInstance().getType().equals(rivista))
+		else if(ControllerSystemState.getInstance().getType().equals(RIVISTA))
 			s="Mostra Rivista";
 		return s;
 	}
 	public String popolaBottoneA()
 	{
 		String s=null;
-		if(ControllerSystemState.getInstance().getType().equals(libro))
+		if(ControllerSystemState.getInstance().getType().equals(LIBRO))
 			s="Acquista Libro";
-		else if(ControllerSystemState.getInstance().getType().equals(giornale))
+		else if(ControllerSystemState.getInstance().getType().equals(GIORNALE))
 			s="Acquista Giornale";
-		else if(ControllerSystemState.getInstance().getType().equals(rivista))
+		else if(ControllerSystemState.getInstance().getType().equals(RIVISTA))
 			s="Acquista Rivista";
 		return s;
 	}
