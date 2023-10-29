@@ -2,6 +2,7 @@
 
 import java.sql.SQLException;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
@@ -20,64 +21,70 @@ public class ControllerGestionePage {
 	private Libro l;
 	private Giornale g;
 	private Rivista r;
-	
-	public void cancella(int id) throws  SQLException {
-<span class="fc bfc" id="L25" title="All 2 branches covered.">		if(ControllerSystemState.getInstance().getType().equals(&quot;libro&quot;))</span>
-		{
-<span class="fc" id="L27">			l.setId(id);</span>
-<span class="fc" id="L28">			lD.cancella(l);</span>
+	private static final String LIBRO=&quot;libro&quot;;
+	private static final String GIORNALE=&quot;giornale&quot;;
+	private static final String RIVISTA=&quot;rivista&quot;;
+
+	public void cancella(int id) throws SQLException {
+<span class="fc bfc" id="L29" title="All 2 branches covered.">		if (ControllerSystemState.getInstance().getType().equals(LIBRO)) {</span>
+<span class="fc" id="L30">			l.setId(id);</span>
+<span class="fc" id="L31">			lD.cancella(l);</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">		} else if (ControllerSystemState.getInstance().getType().equals(GIORNALE)) {</span>
+<span class="fc" id="L33">			g.setId(id);</span>
+<span class="fc" id="L34">			gD.cancella(g);</span>
+<span class="pc bpc" id="L35" title="1 of 2 branches missed.">		} else if (ControllerSystemState.getInstance().getType().equals(RIVISTA)) {</span>
+<span class="fc" id="L36">			r.setId(id);</span>
+<span class="fc" id="L37">			rD.cancella(r);</span>
 		}
-<span class="fc bfc" id="L30" title="All 2 branches covered.">		else if(ControllerSystemState.getInstance().getType().equals(&quot;giornale&quot;))</span>
-		{
-<span class="fc" id="L32">			g.setId(id);</span>
-<span class="fc" id="L33">			gD.cancella(g);</span>
-		}
-<span class="pc bpc" id="L35" title="1 of 2 branches missed.">		else if(ControllerSystemState.getInstance().getType().equals(&quot;rivista&quot;))</span>
-		{
-<span class="fc" id="L37">			r.setId(id);</span>
-<span class="fc" id="L38">			rD.cancella(r);</span>
-		}
-<span class="fc" id="L40">	}</span>
+<span class="fc" id="L39">	}</span>
 
 
+	public ObservableList&lt;Raccolta&gt; getLista(String type) throws SQLException {
+<span class="fc" id="L43">		ObservableList&lt;Raccolta&gt; catalogo = FXCollections.observableArrayList();</span>
+<span class="pc bpc" id="L44" title="1 of 4 branches missed.">		switch (type) {</span>
+			case LIBRO:
+<span class="fc" id="L46">				catalogo.addAll(lD.getLibroSingolo());</span>
+<span class="fc" id="L47">				break;</span>
+			case GIORNALE:
+<span class="fc" id="L49">				catalogo.addAll( gD.getGiornaleSingolo());</span>
+<span class="fc" id="L50">				break;</span>
+			case RIVISTA:
+<span class="fc" id="L52">				catalogo.addAll( rD.getRivistaSingolo());</span>
+<span class="fc" id="L53">				break;</span>
+			default:
+<span class="nc" id="L55">				return catalogo;</span>
 
-	public ObservableList&lt;Raccolta&gt; getRivistaS() throws SQLException {
-<span class="fc" id="L45">		return rD.getRivistaSingolo();</span>
+		}
+<span class="fc" id="L58">		return catalogo;</span>
 	}
-	
-	public ObservableList&lt;Raccolta&gt; getLibroS() throws SQLException {
-<span class="fc" id="L49">		return lD.getLibroSingolo();</span>
-	}
-	
-	public ObservableList&lt;Raccolta&gt; getGiornaleS() throws SQLException {
-<span class="fc" id="L53">		return gD.getGiornaleSingolo();</span>
-	}
+
+
 	
 	public ControllerGestionePage()
-<span class="fc" id="L57">	{</span>
-<span class="fc" id="L58">		rD=new RivistaDao();</span>
-<span class="fc" id="L59">		gD=new GiornaleDao();</span>
-<span class="fc" id="L60">		lD=new LibroDao();</span>
-<span class="fc" id="L61">		l=new Libro();</span>
-<span class="fc" id="L62">		g=new Giornale();</span>
-<span class="fc" id="L63">		r=new Rivista();</span>
-<span class="fc" id="L64">	}</span>
+<span class="fc" id="L64">	{</span>
+<span class="fc" id="L65">		rD=new RivistaDao();</span>
+<span class="fc" id="L66">		gD=new GiornaleDao();</span>
+<span class="fc" id="L67">		lD=new LibroDao();</span>
+<span class="fc" id="L68">		l=new Libro();</span>
+<span class="fc" id="L69">		g=new Giornale();</span>
+<span class="fc" id="L70">		r=new Rivista();</span>
+<span class="fc" id="L71">	}</span>
 	public String settaHeader()
 	{
-<span class="nc" id="L67">		String s=null;</span>
-<span class="nc bnc" id="L68" title="All 2 branches missed.">		if(ControllerSystemState.getInstance().getType().equals(&quot;libro&quot;))</span>
+<span class="nc" id="L74">		String s=null;</span>
+<span class="nc bnc" id="L75" title="All 2 branches missed.">		if(ControllerSystemState.getInstance().getType().equals(LIBRO))</span>
 		{
-<span class="nc" id="L70">			s=&quot;Benvenuto nella schermata dei libri&quot;;</span>
+<span class="nc" id="L77">			s=&quot;Benvenuto nella schermata dei libri&quot;;</span>
 		}
-<span class="nc bnc" id="L72" title="All 2 branches missed.">		else if(ControllerSystemState.getInstance().getType().equals(&quot;giornale&quot;))</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">		else if(ControllerSystemState.getInstance().getType().equals(GIORNALE))</span>
 		{
-<span class="nc" id="L74">			s=&quot;Benvenuto nella schermata dei giornali&quot;;</span>
+<span class="nc" id="L81">			s=&quot;Benvenuto nella schermata dei giornali&quot;;</span>
 		}
-<span class="nc bnc" id="L76" title="All 2 branches missed.">		else if(ControllerSystemState.getInstance().getType().equals(&quot;rivista&quot;))</span>
+<span class="nc bnc" id="L83" title="All 2 branches missed.">		else if(ControllerSystemState.getInstance().getType().equals(RIVISTA))</span>
 		{
-<span class="nc" id="L78">			s=&quot;Benvenuto nella schermata dele riviste&quot;;</span>
+<span class="nc" id="L85">			s=&quot;Benvenuto nella schermata dele riviste&quot;;</span>
 		}
-<span class="nc" id="L80">		return s;</span>
+<span class="nc" id="L87">		return s;</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

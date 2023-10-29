@@ -2,6 +2,7 @@
 
 import java.sql.SQLException;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
@@ -18,67 +19,78 @@ import laptop.model.raccolta.Rivista;
 public class ControllerCompravendita {
 	//insrt comment
 	private LibroDao lD;
-<span class="fc" id="L21">	private User u = User.getInstance();</span>
+<span class="fc" id="L22">	private User u = User.getInstance();</span>
 	private GiornaleDao gD;
 	private Giornale g;
 	private Libro l;
 	private Rivista r;
 	private RivistaDao rD;
-<span class="fc" id="L27">	private boolean status = false;</span>
-<span class="fc" id="L28">	private static String libro = &quot;libro&quot;;</span>
-<span class="fc" id="L29">	private static String rivista = &quot;rivista&quot;;</span>
-<span class="fc" id="L30">	private static String giornale = &quot;giornale&quot;;</span>
+<span class="fc" id="L28">	private boolean status = false;</span>
+	private static final String LIBRO = &quot;libro&quot;;
+	private static final String RIVISTA = &quot;rivista&quot;;
+	private static final String GIORNALE = &quot;giornale&quot;;
 
 
 	public boolean disponibilita(String type, String i) throws SQLException, IdException {
-<span class="pc bpc" id="L34" title="1 of 4 branches missed.">		switch (type)</span>
+<span class="pc bpc" id="L35" title="1 of 4 branches missed.">		switch (type)</span>
 		{
-			case &quot;libro&quot;:
+			case LIBRO:
 
-<span class="fc" id="L38">				l.setId(Integer.parseInt(i));</span>
-<span class="fc" id="L39">				status=lD.checkDisp(l);</span>
-<span class="fc" id="L40">				break;</span>
-			case &quot;giornale&quot;:
-<span class="fc" id="L42">				g.setId(Integer.parseInt(i));</span>
-<span class="fc" id="L43">				status=gD.checkDisp(g);</span>
-<span class="fc" id="L44">				break;</span>
-			case &quot;rivista&quot;:
-<span class="fc" id="L46">				r.setId(Integer.parseInt(i));</span>
-<span class="fc" id="L47">				status=rD.checkDisp(r);</span>
-<span class="fc" id="L48">				break;</span>
-<span class="nc" id="L49">			default: checkID(Integer.parseInt(i));</span>
+<span class="fc" id="L39">				l.setId(Integer.parseInt(i));</span>
+<span class="fc" id="L40">				status=lD.checkDisp(l);</span>
+<span class="fc" id="L41">				break;</span>
+			case GIORNALE:
+<span class="fc" id="L43">				g.setId(Integer.parseInt(i));</span>
+<span class="fc" id="L44">				status=gD.checkDisp(g);</span>
+<span class="fc" id="L45">				break;</span>
+			case RIVISTA:
+<span class="fc" id="L47">				r.setId(Integer.parseInt(i));</span>
+<span class="fc" id="L48">				status=rD.checkDisp(r);</span>
+<span class="fc" id="L49">				break;</span>
+<span class="nc" id="L50">			default: checkID(Integer.parseInt(i));</span>
 
 		}
-<span class="fc" id="L52">		return status;</span>
+<span class="fc" id="L53">		return status;</span>
 	}
 
-<span class="fc" id="L55">	public ControllerCompravendita() {</span>
-<span class="fc" id="L56">		lD = new LibroDao();</span>
-<span class="fc" id="L57">		gD=new GiornaleDao();</span>
-<span class="fc" id="L58">		g=new Giornale();</span>
-<span class="fc" id="L59">		r=new Rivista();</span>
-<span class="fc" id="L60">		l=new Libro();</span>
-<span class="fc" id="L61">		rD=new RivistaDao();</span>
-<span class="fc" id="L62">	}</span>
+<span class="fc" id="L56">	public ControllerCompravendita() {</span>
+<span class="fc" id="L57">		lD = new LibroDao();</span>
+<span class="fc" id="L58">		gD=new GiornaleDao();</span>
+<span class="fc" id="L59">		g=new Giornale();</span>
+<span class="fc" id="L60">		r=new Rivista();</span>
+<span class="fc" id="L61">		l=new Libro();</span>
+<span class="fc" id="L62">		rD=new RivistaDao();</span>
+<span class="fc" id="L63">	}</span>
 
 	private void checkID(int id) throws IdException {
-<span class="nc bnc" id="L65" title="All 2 branches missed.">		if(id&lt;=0)</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">		if(id&lt;=0)</span>
 		{
-<span class="nc" id="L67">			throw new IdException(&quot;id not correct&quot;);</span>
+<span class="nc" id="L68">			throw new IdException(&quot;id not correct&quot;);</span>
 		}
-<span class="nc" id="L69">	}</span>
+<span class="nc" id="L70">	}</span>
 
-	
-	public ObservableList&lt;Raccolta&gt; getLibri() throws SQLException {
-<span class="fc" id="L73">		return lD.getLibri();</span>
+	public ObservableList&lt;Raccolta&gt; getLista(String type) throws SQLException {
+<span class="fc" id="L73">		ObservableList&lt;Raccolta&gt; catalogo = FXCollections.observableArrayList();</span>
+<span class="pc bpc" id="L74" title="1 of 4 branches missed.">		switch (type) {</span>
+			case LIBRO:
+<span class="fc" id="L76">				catalogo.addAll(lD.getLibri());</span>
+<span class="fc" id="L77">				break;</span>
+			case GIORNALE:
+<span class="fc" id="L79">				catalogo.addAll(gD.getGiornali());</span>
+<span class="fc" id="L80">				break;</span>
+			case RIVISTA:
+<span class="fc" id="L82">				catalogo.addAll(rD.getRiviste());</span>
+<span class="fc" id="L83">				break;</span>
+			default:
+				break;
+
+
+		}
+
+<span class="fc" id="L90">	return catalogo;</span>
 	}
-	public ObservableList&lt;Raccolta&gt; getGiornali() throws SQLException {
-<span class="fc" id="L76">		return gD.getGiornali();</span>
-	}
-	public ObservableList&lt;Raccolta&gt; getRiviste() throws SQLException {
-<span class="fc" id="L79">		return rD.getRiviste();</span>
-	}
-	
+
+
 	
 	/*
 	 * Metodo udato per tornare tipo utente in base a se � loggato o no
@@ -86,47 +98,15 @@ public class ControllerCompravendita {
 	 */
 	public String retTipoUser()
 	{
-<span class="nc" id="L89">		return u.getIdRuolo();</span>
+<span class="nc" id="L101">		return u.getIdRuolo();</span>
 	}
 	//usato nel caso se non � loggato-&gt; &quot;utente&quot;
 	public void setTipoUser(String ruolo)
 	{
-<span class="nc" id="L94">		u.setIdRuolo(ruolo);	</span>
-<span class="nc" id="L95">	}</span>
+<span class="nc" id="L106">		u.setIdRuolo(ruolo);	</span>
+<span class="nc" id="L107">	}</span>
 
-	public String ritornaMessaggio()
-	{
-<span class="fc" id="L99">		String s=null;</span>
-<span class="pc bpc" id="L100" title="1 of 2 branches missed.">		if(ControllerSystemState.getInstance().getType().equals(libro))</span>
-<span class="fc" id="L101">			s=&quot;Benvenuto... ecco la lista dei libri nel nostro catalogo...&quot;;</span>
-<span class="nc bnc" id="L102" title="All 2 branches missed.">		else if(ControllerSystemState.getInstance().getType().equals(giornale))</span>
-<span class="nc" id="L103">			s=&quot;Benvenuto... ecco la lista dei giornali nel nostro catalogo...&quot;;</span>
-<span class="nc bnc" id="L104" title="All 2 branches missed.">		else if(ControllerSystemState.getInstance().getType().equals(rivista))</span>
-<span class="nc" id="L105">			s=&quot;Benvenuto... ecco la lista dele riviste nel nostro catalogo...&quot;;</span>
-<span class="fc" id="L106">		return s;</span>
-	}
-	public String popolaBottoneV()
-	{
-<span class="fc" id="L110">		String s=null;</span>
-<span class="pc bpc" id="L111" title="1 of 2 branches missed.">		if(ControllerSystemState.getInstance().getType().equals(libro))</span>
-<span class="fc" id="L112">			s=&quot;Mostra Libro&quot;;</span>
-<span class="nc bnc" id="L113" title="All 2 branches missed.">		else if(ControllerSystemState.getInstance().getType().equals(giornale))</span>
-<span class="nc" id="L114">			s=&quot;Mostra Giornale&quot;;</span>
-<span class="nc bnc" id="L115" title="All 2 branches missed.">		else if(ControllerSystemState.getInstance().getType().equals(rivista))</span>
-<span class="nc" id="L116">			s=&quot;Mostra Rivista&quot;;</span>
-<span class="fc" id="L117">		return s;</span>
-	}
-	public String popolaBottoneA()
-	{
-<span class="fc" id="L121">		String s=null;</span>
-<span class="pc bpc" id="L122" title="1 of 2 branches missed.">		if(ControllerSystemState.getInstance().getType().equals(libro))</span>
-<span class="fc" id="L123">			s=&quot;Acquista Libro&quot;;</span>
-<span class="nc bnc" id="L124" title="All 2 branches missed.">		else if(ControllerSystemState.getInstance().getType().equals(giornale))</span>
-<span class="nc" id="L125">			s=&quot;Acquista Giornale&quot;;</span>
-<span class="nc bnc" id="L126" title="All 2 branches missed.">		else if(ControllerSystemState.getInstance().getType().equals(rivista))</span>
-<span class="nc" id="L127">			s=&quot;Acquista Rivista&quot;;</span>
-<span class="fc" id="L128">		return s;</span>
-	}
+
 
 
 

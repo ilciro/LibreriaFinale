@@ -7,7 +7,7 @@ import java.util.logging.Level;
 
 public class ControllerRicercaPerTipo {
 
-<span class="fc" id="L10">	private ControllerSystemState vis=ControllerSystemState.getInstance();</span>
+
 <span class="fc" id="L11">	private boolean state=false;</span>
 	
 	public ControllerRicercaPerTipo() 
@@ -16,26 +16,23 @@ public class ControllerRicercaPerTipo {
 
 <span class="fc" id="L17">	}</span>
 	
-	public boolean setRicercaL()
+
+	public boolean setRicerca(String type)
 	{
-		
-<span class="pc bpc" id="L22" title="1 of 2 branches missed.">		if (vis.getType().equals(&quot;libro&quot;))</span>
-<span class="fc" id="L23">			state=true;</span>
-<span class="fc" id="L24">		return state;</span>
-	}
-	public boolean setRicercaG()
-	{
-<span class="fc" id="L28">		ControllerSystemState.getInstance().setTypeAsDaily();</span>
-<span class="pc bpc" id="L29" title="1 of 2 branches missed.">		if (ControllerSystemState.getInstance().getType().equals(&quot;giornale&quot;))</span>
-<span class="fc" id="L30">			state= true;</span>
-<span class="fc" id="L31">		return state;</span>
-	}
-	public boolean setRicercaR()
-	{
-<span class="fc" id="L35">		ControllerSystemState.getInstance().setTypeAsMagazine();</span>
-<span class="pc bpc" id="L36" title="1 of 2 branches missed.">		if (ControllerSystemState.getInstance().getType().equals(&quot;rivista&quot;))</span>
-<span class="fc" id="L37">			state= true;</span>
-<span class="fc" id="L38">		return state;</span>
+<span class="pc bpc" id="L22" title="1 of 4 branches missed.">		switch (type){</span>
+			case &quot;libro&quot;:
+<span class="fc" id="L24">				state=true;</span>
+<span class="fc" id="L25">				break;</span>
+			case &quot;giornale&quot;:
+<span class="fc" id="L27">				state=true;</span>
+<span class="fc" id="L28">				break;</span>
+			case &quot;rivista&quot;:
+<span class="fc" id="L30">				state=true;</span>
+<span class="fc" id="L31">				break;</span>
+<span class="nc" id="L32">			default:return state;</span>
+
+		}
+<span class="fc" id="L35">		return state;</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -43,13 +43,13 @@ public class ControllerGestionePage {
 		ObservableList<Raccolta> catalogo = FXCollections.observableArrayList();
 		switch (type) {
 			case LIBRO:
-				catalogo.add((Raccolta) lD.getLibroSingolo());
+				catalogo.addAll(lD.getLibroSingolo());
 				break;
 			case GIORNALE:
-				catalogo.add((Raccolta) gD.getGiornaleSingolo());
+				catalogo.addAll( gD.getGiornaleSingolo());
 				break;
 			case RIVISTA:
-				catalogo.add((Raccolta) rD.getRivistaSingolo());
+				catalogo.addAll( rD.getRivistaSingolo());
 				break;
 			default:
 				return catalogo;

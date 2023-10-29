@@ -65,6 +65,9 @@ public class BoundaryCompravendita implements Initializable {
 	private static final String TITOLOS="titolo";
 	private static final String EDITORES="editore";
 	private static final String PREZZOS="prezzo";
+	private static final String LIBRO="libro";
+	private static final String GIORNALE="giornale";
+	private static final String RIVISTA="rivista";
 
 
 
@@ -149,9 +152,43 @@ public class BoundaryCompravendita implements Initializable {
 	@FXML
 	private void vediLista() throws SQLException {
 		//vedere if anche qui
-		table.setItems(cCV.getLista(ControllerSystemState.getInstance().getType()));
 
+				table.setItems(cCV.getLista(vis.getType()));
 
+	}
+
+	private String ritornaMessaggio()
+	{
+		String s=null;
+		if(ControllerSystemState.getInstance().getType().equals(LIBRO))
+			s="Benvenuto... ecco la lista dei libri nel nostro catalogo...";
+		else if(ControllerSystemState.getInstance().getType().equals(GIORNALE))
+			s="Benvenuto... ecco la lista dei giornali nel nostro catalogo...";
+		else if(ControllerSystemState.getInstance().getType().equals(RIVISTA))
+			s="Benvenuto... ecco la lista dele riviste nel nostro catalogo...";
+		return s;
+	}
+	private String popolaBottoneV()
+	{
+		String s=null;
+		if(ControllerSystemState.getInstance().getType().equals(LIBRO))
+			s="Mostra Libro";
+		else if(ControllerSystemState.getInstance().getType().equals(GIORNALE))
+			s="Mostra Giornale";
+		else if(ControllerSystemState.getInstance().getType().equals(RIVISTA))
+			s="Mostra Rivista";
+		return s;
+	}
+	private String popolaBottoneA()
+	{
+		String s=null;
+		if(ControllerSystemState.getInstance().getType().equals(LIBRO))
+			s="Acquista Libro";
+		else if(ControllerSystemState.getInstance().getType().equals(GIORNALE))
+			s="Acquista Giornale";
+		else if(ControllerSystemState.getInstance().getType().equals(RIVISTA))
+			s="Acquista Rivista";
+		return s;
 	}
 
 
@@ -160,12 +197,12 @@ public class BoundaryCompravendita implements Initializable {
 		
 		cCV = new ControllerCompravendita();
 		
-		buttonV.setText(cCV.popolaBottoneV());
-		buttonA.setText(cCV.popolaBottoneA());
+		buttonV.setText(popolaBottoneV());
+		buttonA.setText(popolaBottoneA());
 		
-		if(ControllerSystemState.getInstance().getType().equals("libro"))
+		if(ControllerSystemState.getInstance().getType().equals(LIBRO))
 		{
-			header.setText(cCV.ritornaMessaggio());
+			header.setText(ritornaMessaggio());
 			titolo.setCellValueFactory(new PropertyValueFactory<>(TITOLOS));
 			editore.setCellValueFactory(new PropertyValueFactory<>(EDITORES));
 			autore.setCellValueFactory(new PropertyValueFactory<>("autore"));
@@ -174,9 +211,9 @@ public class BoundaryCompravendita implements Initializable {
 			idLibro.setCellValueFactory(new PropertyValueFactory<>("id"));
 			
 		}
-		else if(ControllerSystemState.getInstance().getType().equals("giornale"))
+		else if(ControllerSystemState.getInstance().getType().equals(GIORNALE))
 		{
-			header.setText(cCV.ritornaMessaggio());
+			header.setText(ritornaMessaggio());
 			titolo.setCellValueFactory(new PropertyValueFactory<>(TITOLOS));
 			editore.setCellValueFactory(new PropertyValueFactory<>(EDITORES));
 			autore.setCellValueFactory(null);
@@ -184,9 +221,9 @@ public class BoundaryCompravendita implements Initializable {
 			prezzo.setCellValueFactory(new PropertyValueFactory<>(PREZZOS));
 			idLibro.setCellValueFactory(new PropertyValueFactory<>("id"));
 		}
-		else if(ControllerSystemState.getInstance().getType().equals("rivista"))
+		else if(ControllerSystemState.getInstance().getType().equals(RIVISTA))
 		{
-			header.setText(cCV.ritornaMessaggio());
+			header.setText(ritornaMessaggio());
 			titolo.setCellValueFactory(new PropertyValueFactory<>(TITOLOS));
 			editore.setCellValueFactory(new PropertyValueFactory<>(EDITORES));
 			autore.setCellValueFactory(new PropertyValueFactory<>("autore"));

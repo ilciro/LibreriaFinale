@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ControllerReportPage.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.controller</a> &gt; <span class="el_source">ControllerReportPage.java</span></div><h1>ControllerReportPage.java</h1><pre class="source lang-java linenums">package laptop.controller;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.logging.Level;
 
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
@@ -12,33 +16,226 @@ public class ControllerReportPage {
 	private LibroDao lD;
 	private GiornaleDao gD;
 	private RivistaDao rD;
+<span class="fc" id="L19">	protected String fileLibro = &quot;ReportFinale\\riepilogoLibro.txt&quot;;</span>
+<span class="fc" id="L20">	protected String fileGiornale =&quot;ReportFinale\\riepilogoGiornali.txt&quot;;</span>
+<span class="fc" id="L21">	protected String fileRiviste = &quot;ReportFinale\\riepilogoRiviste.txt&quot;;</span>
+<span class="fc" id="L22">	protected String fileUtenti = &quot;ReportFinale\\riepilogoUtenti.txt&quot;;</span>
+<span class="fc" id="L23">	private static String eccezione=&quot;eccezione ottenuta :.&quot;;</span>
 	
 	public void generaReportLibri () throws IOException, SQLException
 	{
-<span class="fc" id="L18">		lD.generaReport();</span>
+<span class="fc" id="L27">		lD.generaReport();</span>
 		
-<span class="fc" id="L20">	}</span>
+<span class="fc" id="L29">	}</span>
 	
 	public ControllerReportPage()
-<span class="fc" id="L23">	{</span>
-<span class="fc" id="L24">		lD=new LibroDao();</span>
-<span class="fc" id="L25">		rD=new RivistaDao();</span>
-<span class="fc" id="L26">		gD=new GiornaleDao();</span>
-<span class="fc" id="L27">	}</span>
+<span class="fc" id="L32">	{</span>
+<span class="fc" id="L33">		lD=new LibroDao();</span>
+<span class="fc" id="L34">		rD=new RivistaDao();</span>
+<span class="fc" id="L35">		gD=new GiornaleDao();</span>
+<span class="fc" id="L36">	}</span>
 	public void getUtenti() throws IOException, SQLException  {
-<span class="fc" id="L29">		 UsersDao.getListaUtenti();</span>
-<span class="fc" id="L30">	}</span>
+<span class="fc" id="L38">		 UsersDao.getListaUtenti();</span>
+<span class="fc" id="L39">	}</span>
 
 	public void generaReportRiviste () throws IOException, SQLException
 	{
-<span class="fc" id="L34">		rD.generaReport();</span>
+<span class="fc" id="L43">		rD.generaReport();</span>
 		
-<span class="fc" id="L36">	}</span>
+<span class="fc" id="L45">	}</span>
 	public void generaReportGiornali () throws IOException, SQLException 
 	{
-<span class="fc" id="L39">		gD.generaReport();</span>
+<span class="fc" id="L48">		gD.generaReport();</span>
 		
-<span class="fc" id="L41">	}</span>
+<span class="fc" id="L50">	}</span>
+	public String reportTotale()
+	{
+<span class="nc" id="L53">		String line=&quot;&quot;;</span>
+<span class="nc" id="L54">		StringBuilder builder=new StringBuilder();</span>
+
+
+
+
+<span class="nc" id="L59">		try (BufferedReader readerL = new BufferedReader(new FileReader(fileLibro)))</span>
+		{
+
+
+<span class="nc bnc" id="L63" title="All 2 branches missed.">			while( (line = readerL.readLine()) != null)</span>
+			{
+<span class="nc" id="L65">				builder.append(line);</span>
+<span class="nc" id="L66">				builder.append(&quot;\n&quot;);</span>
+
+
+
+			}
+		}
+<span class="nc" id="L72">		catch(IOException | NullPointerException e)</span>
+		{
+<span class="nc" id="L74">			java.util.logging.Logger.getLogger(&quot;report libro&quot;).log(Level.SEVERE,eccezione,e);</span>
+
+<span class="nc" id="L76">		}</span>
+
+<span class="nc" id="L78">		try (BufferedReader readerG = new BufferedReader(new FileReader(fileGiornale)))</span>
+		{
+
+
+<span class="nc bnc" id="L82" title="All 2 branches missed.">			while( (line = readerG.readLine()) != null)</span>
+			{
+<span class="nc" id="L84">				builder.append(line);</span>
+<span class="nc" id="L85">				builder.append(&quot;\n&quot;);</span>
+
+
+			}
+		}
+<span class="nc" id="L90">		catch(IOException | NullPointerException e)</span>
+		{
+<span class="nc" id="L92">			java.util.logging.Logger.getLogger(&quot;report giornale&quot;).log(Level.SEVERE,eccezione,e);</span>
+
+<span class="nc" id="L94">		}</span>
+
+<span class="nc" id="L96">		try (BufferedReader readerR = new BufferedReader(new FileReader(fileRiviste)))</span>
+		{
+
+
+<span class="nc bnc" id="L100" title="All 2 branches missed.">			while( (line = readerR.readLine()) != null)</span>
+			{
+<span class="nc" id="L102">				builder.append(line);</span>
+<span class="nc" id="L103">				builder.append(&quot;\n&quot;);</span>
+
+
+			}
+		}
+<span class="nc" id="L108">		catch(IOException | NullPointerException e)</span>
+		{
+<span class="nc" id="L110">			java.util.logging.Logger.getLogger(&quot;report rivista&quot;).log(Level.SEVERE,eccezione,e);</span>
+
+<span class="nc" id="L112">		}</span>
+<span class="nc" id="L113">		try (BufferedReader readerU = new BufferedReader(new FileReader(fileUtenti)))</span>
+		{
+
+
+<span class="nc bnc" id="L117" title="All 2 branches missed.">			while( (line = readerU.readLine()) != null)</span>
+			{
+<span class="nc" id="L119">				builder.append(line);</span>
+<span class="nc" id="L120">				builder.append(&quot;\n&quot;);</span>
+
+
+
+			}
+		}
+<span class="nc" id="L126">		catch(IOException | NullPointerException e)</span>
+		{
+<span class="nc" id="L128">			java.util.logging.Logger.getLogger(&quot;report utenti&quot;).log(Level.SEVERE,eccezione,e);</span>
+
+<span class="nc" id="L130">		}</span>
+
+<span class="nc" id="L132">	return builder.toString();</span>
+
+	}
+	public String reportLibri() throws IOException {
+
+<span class="nc" id="L137">		String line=&quot;&quot;;</span>
+<span class="nc" id="L138">		StringBuilder builder=new StringBuilder();</span>
+
+
+
+<span class="nc" id="L142">		try(BufferedReader reader = new BufferedReader(new FileReader(fileLibro)))</span>
+		{
+<span class="nc bnc" id="L144" title="All 2 branches missed.">			while((line=reader.readLine())!=null)</span>
+			{
+<span class="nc" id="L146">				builder.append(line);</span>
+<span class="nc" id="L147">				builder.append(&quot;\n&quot;);</span>
+
+			}
+		}
+<span class="nc" id="L151">		return builder.toString();</span>
+	}
+	public String reportRaccolta() throws IOException {
+<span class="nc" id="L154">		String line=&quot;&quot;;</span>
+<span class="nc" id="L155">		String line1=&quot;&quot;;</span>
+<span class="nc" id="L156">		String line2=&quot;&quot;;</span>
+<span class="nc" id="L157">		StringBuilder builder=new StringBuilder();</span>
+
+
+
+<span class="nc" id="L161">		try(BufferedReader readerL = new BufferedReader(new FileReader(fileLibro))) {</span>
+<span class="nc bnc" id="L162" title="All 2 branches missed.">			while((line=readerL.readLine())!=null)</span>
+			{
+<span class="nc" id="L164">				builder.append(line);</span>
+<span class="nc" id="L165">				builder.append(&quot;\n&quot;);</span>
+
+			}
+
+		}
+<span class="nc" id="L170">		catch(IOException e)</span>
+		{
+
+<span class="nc" id="L173">			java.util.logging.Logger.getLogger(&quot;report libro&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta .&quot;,e);</span>
+
+<span class="nc" id="L175">		}</span>
+
+
+
+<span class="nc" id="L179">		try(BufferedReader readerG = new BufferedReader(new FileReader(fileGiornale)))</span>
+		{
+<span class="nc bnc" id="L181" title="All 2 branches missed.">			while((line1=readerG.readLine())!=null)</span>
+			{
+<span class="nc" id="L183">				builder.append(line1);</span>
+<span class="nc" id="L184">				builder.append(&quot;\n&quot;);</span>
+
+			}
+		}
+
+<span class="nc" id="L189">		try(BufferedReader readerR = new BufferedReader(new FileReader(fileRiviste)))</span>
+		{
+<span class="nc bnc" id="L191" title="All 2 branches missed.">			while((line2=readerR.readLine())!=null)</span>
+			{
+<span class="nc" id="L193">				builder.append(line2);</span>
+<span class="nc" id="L194">				builder.append(&quot;\n&quot;);</span>
+
+			}
+		}
+<span class="nc" id="L198">		return builder.toString();</span>
+	}
+	public String reportGiornali()
+	{
+<span class="nc" id="L202">		String line=&quot;&quot;;</span>
+<span class="nc" id="L203">		StringBuilder builder=new StringBuilder();</span>
+
+
+<span class="nc" id="L206">		try(BufferedReader reader = new BufferedReader(new FileReader(fileGiornale)))</span>
+		{
+<span class="nc bnc" id="L208" title="All 2 branches missed.">			while((line=reader.readLine())!=null)</span>
+			{
+<span class="nc" id="L210">				builder.append(line);</span>
+<span class="nc" id="L211">				builder.append(&quot;\n&quot;);</span>
+
+			}
+<span class="nc" id="L214">		}catch(IOException e)</span>
+		{
+<span class="nc" id="L216">			java.util.logging.Logger.getLogger(&quot;report giornale&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta .&quot;,e);</span>
+
+<span class="nc" id="L218">		}</span>
+<span class="nc" id="L219">		return builder.toString();</span>
+	}
+	public String reportRiviste() throws IOException {
+<span class="nc" id="L222">		String line2=&quot;&quot;;</span>
+<span class="nc" id="L223">		StringBuilder builder=new StringBuilder();</span>
+
+
+
+
+<span class="nc" id="L228">		try(BufferedReader readerR = new BufferedReader(new FileReader(fileRiviste)))</span>
+		{
+<span class="nc bnc" id="L230" title="All 2 branches missed.">			while((line2=readerR.readLine())!=null)</span>
+			{
+<span class="nc" id="L232">				builder.append(line2);</span>
+<span class="nc" id="L233">				builder.append(&quot;\n&quot;);</span>
+
+			}
+		}
+<span class="nc" id="L237">		return builder.toString();</span>
+	}
 	
 
 }

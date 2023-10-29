@@ -26,29 +26,31 @@ public class ControllerRicercaPage {
 	public ObservableList&lt;Raccolta&gt; cercaPerTipo (String s) throws SQLException
 	{
 <span class="fc" id="L28">		ObservableList&lt;Raccolta&gt; r = null;</span>
-<span class="fc bfc" id="L29" title="All 2 branches covered.">		if(ControllerSystemState.getInstance().getType().equals(&quot;libro&quot;))</span>
+
+<span class="pc bpc" id="L30" title="1 of 4 branches missed.">		switch(ControllerSystemState.getInstance().getType())</span>
 		{
-			//serach in libro dao
-<span class="fc" id="L32">			r= lD.getLibriByName(s);</span>
+			case &quot;libro&quot;:
+<span class="fc" id="L33">				r= lD.getLibriByName(s);</span>
+<span class="fc" id="L34">				break;</span>
+			case &quot;giornale&quot;:
+<span class="fc" id="L36">				r=gD.getGiornaliByName(s);</span>
+<span class="fc" id="L37">				break;</span>
+			case &quot;rivista&quot;:
+<span class="fc" id="L39">				r=rD.getRivisteByName(s);</span>
+<span class="fc" id="L40">				break;</span>
+<span class="nc" id="L41">			default:return r;</span>
+
 		}
-<span class="fc bfc" id="L34" title="All 2 branches covered.">		 if(ControllerSystemState.getInstance().getType().equals(&quot;giornale&quot;))</span>
-		{
-			//search in giornale dao
-<span class="fc" id="L37">			r=  gD.getGiornaliByName(s);</span>
-		}
-<span class="fc bfc" id="L39" title="All 2 branches covered.">		 if(ControllerSystemState.getInstance().getType().equals(&quot;rivista&quot;))</span>
-		{
-			//search in rivista dao
-<span class="fc" id="L42">			r= rD.getRivisteByName(s);</span>
-		}
+
+
 		
-<span class="fc" id="L45">		return r;</span>
+<span class="fc" id="L47">		return r;</span>
 		
 	}
 	
 	public String returnType()
 	{
-<span class="nc" id="L51">		return ControllerSystemState.getInstance().getType();</span>
+<span class="nc" id="L53">		return ControllerSystemState.getInstance().getType();</span>
 	}
 	
 	

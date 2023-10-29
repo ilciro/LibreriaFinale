@@ -69,25 +69,25 @@ public class ControllerCompravendita {
 		}
 	}
 
-	public ObservableList<Raccolta> getLista(String type) throws SQLException{
-		ObservableList<Raccolta> catalogo= FXCollections.observableArrayList();
-		switch (type)
-		{
+	public ObservableList<Raccolta> getLista(String type) throws SQLException {
+		ObservableList<Raccolta> catalogo = FXCollections.observableArrayList();
+		switch (type) {
 			case LIBRO:
-				catalogo.add((Raccolta) lD.getLibri());
+				catalogo.addAll(lD.getLibri());
 				break;
 			case GIORNALE:
-				catalogo.add((Raccolta) gD.getGiornali());
+				catalogo.addAll(gD.getGiornali());
 				break;
 			case RIVISTA:
-				catalogo.add((Raccolta) rD.getRiviste());
+				catalogo.addAll(rD.getRiviste());
 				break;
 			default:
-				return catalogo;
+				break;
+
 
 		}
-		return catalogo;
 
+	return catalogo;
 	}
 
 
@@ -106,39 +106,7 @@ public class ControllerCompravendita {
 		u.setIdRuolo(ruolo);	
 	}
 
-	public String ritornaMessaggio()
-	{
-		String s=null;
-		if(ControllerSystemState.getInstance().getType().equals(LIBRO))
-			s="Benvenuto... ecco la lista dei libri nel nostro catalogo...";
-		else if(ControllerSystemState.getInstance().getType().equals(GIORNALE))
-			s="Benvenuto... ecco la lista dei giornali nel nostro catalogo...";
-		else if(ControllerSystemState.getInstance().getType().equals(RIVISTA))
-			s="Benvenuto... ecco la lista dele riviste nel nostro catalogo...";
-		return s;
-	}
-	public String popolaBottoneV()
-	{
-		String s=null;
-		if(ControllerSystemState.getInstance().getType().equals(LIBRO))
-			s="Mostra Libro";
-		else if(ControllerSystemState.getInstance().getType().equals(GIORNALE))
-			s="Mostra Giornale";
-		else if(ControllerSystemState.getInstance().getType().equals(RIVISTA))
-			s="Mostra Rivista";
-		return s;
-	}
-	public String popolaBottoneA()
-	{
-		String s=null;
-		if(ControllerSystemState.getInstance().getType().equals(LIBRO))
-			s="Acquista Libro";
-		else if(ControllerSystemState.getInstance().getType().equals(GIORNALE))
-			s="Acquista Giornale";
-		else if(ControllerSystemState.getInstance().getType().equals(RIVISTA))
-			s="Acquista Rivista";
-		return s;
-	}
+
 
 
 

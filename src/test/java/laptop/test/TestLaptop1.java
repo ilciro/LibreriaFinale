@@ -301,20 +301,10 @@ class TestLaptop1 {
 		assertTrue(cC.disponibilita(vis.getType(),"1"));
 	}
 
-	@Test
-	void testGetLibri() throws SQLException {
-		assertNotNull(cC.getLista("libro"));
-	}
-
-	@Test
-	void testGetGiornali() throws SQLException {
-		
-		assertNotNull(cC.getLista("giornale"));
-	}
-
-	@Test
-	void testGetRiviste() throws SQLException {
-		assertNotNull(cC.getLista("rivista"));
+	@ParameterizedTest
+	@ValueSource(strings = {"libro","giornale","rivista"})
+	void testGetLista(String strings) throws SQLException {
+		assertNotNull(cC.getLista(strings));
 	}
 
 	@ParameterizedTest
@@ -573,28 +563,7 @@ class TestLaptop1 {
 		assertEquals(3,vis.getId());
 		
 	}
-	@Test
-	void testRitornaMessaggio()
-	{
-		vis.setTypeAsBook();
-		String s=cC.ritornaMessaggio();
-		assertEquals("Benvenuto... ecco la lista dei libri nel nostro catalogo...",s);
-	}
-	@Test
-	void testPopolaBottoneV()
-	{
-		vis.setTypeAsBook();
-		String s=cC.popolaBottoneV();
-		assertEquals("Mostra Libro",s);
-	}
-	@Test
-	void testPopolaBottoneA()
-	{
-		vis.setTypeAsBook();
-		String s=cC.popolaBottoneA();
-		assertEquals("Acquista Libro",s);
-	}
-	
+
 	
 
 }

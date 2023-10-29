@@ -97,44 +97,6 @@ public class ControllerAcquista {
 
 	}
 
-	public int getIdL(String text) throws SQLException {
-		l.setCodIsbn(text);
-		return lD.retId(l);
-		
-		
-	}
-	
-	public String getTipL(String text) throws SQLException
-	{
-		l.setId(Integer.parseInt(text));
-		return lD.retTip(l);
-	}
-	
-	public int getIdG(String text) throws SQLException  {
-		g.setTitolo(text);
-		return gD.retId( g);
-		
-		
-	}
-	
-	public String getTipG(String text) throws SQLException 
-	{
-		g.setTitolo(text);	
-		return gD.retTip(g);
-	}
-	
-	public int getIdR(String text) throws SQLException {
-		r.setTitolo(text);
-		return rD.retId( r);
-		
-		
-	}
-	
-	public String getTipR(String text) throws SQLException
-	{
-		r.setTitolo(text);	
-		return rD.retTip(r);
-	}
 
 	public void inserisciAmmontare(String type,int i) throws SQLException, AcquistaException {
 		switch(type)
