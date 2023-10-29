@@ -608,7 +608,15 @@ class TestLaptop2 {
 		assertNotNull(gD.getTitolo(g));
 		
 	}
-	
+	@Test
+	void reportTotale()
+	{
+		assertNotNull(cRP.reportTotale());
+	}
+	@Test
+	void reportRaccolta() throws IOException {
+		assertNotNull(cRP.reportRaccolta());
+	}
 
 
 	
