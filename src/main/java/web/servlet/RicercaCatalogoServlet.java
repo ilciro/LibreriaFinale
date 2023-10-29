@@ -27,7 +27,10 @@ public class RicercaCatalogoServlet extends HttpServlet {
 	private static LibroDao lD=new LibroDao();
 	private static RivistaDao rD=new RivistaDao();
 	private static GiornaleDao gD=new GiornaleDao();
-	private static String beanRicerca="beanRicerca";
+	private static final String BEANRICERCA="beanRicerca";
+	private static final String LIBRO="libro";
+	private static final String GIORNALE= "giornale";
+	private static final String RIVISTA="rivista";
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -42,17 +45,17 @@ public class RicercaCatalogoServlet extends HttpServlet {
 		{
 			switch(type)
 			{
-			case "libro":
+				case LIBRO:
 				rB.setListaB(lD.getLibriByName(titolo));
-				req.setAttribute(beanRicerca,rB);
+				req.setAttribute(BEANRICERCA,rB);
 				break;
-			case "giornale":
+				case GIORNALE:
 				rB.setListaB(gD.getGiornaliByName(titolo));
-				req.setAttribute(beanRicerca,rB);				
+				req.setAttribute(BEANRICERCA,rB);
 				break;
-			case "rivista":
+				case RIVISTA:
 				rB.setListaB(rD.getRivistaSingolo());
-				req.setAttribute(beanRicerca, rB);
+				req.setAttribute(BEANRICERCA, rB);
 				break;
 				default:break;
 				
@@ -70,15 +73,15 @@ public class RicercaCatalogoServlet extends HttpServlet {
 			RequestDispatcher view;
 			switch(type)
 			{
-			case "libro":
+				case LIBRO:
 				 view=getServletContext().getRequestDispatcher("/libri.jsp");
 				view.forward(req, resp);
 				break;
-			case "giornale":
+				case GIORNALE:
 				 view=getServletContext().getRequestDispatcher("/giornali.jsp");
 				view.forward(req, resp);	
 				break;
-			case "rivista":
+				case RIVISTA:
 				 view=getServletContext().getRequestDispatcher("/riviste.jsp");
 				view.forward(req, resp);
 				break;

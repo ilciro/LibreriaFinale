@@ -68,7 +68,7 @@ public class BoundaryRicercaPerTipo implements Initializable {
 	{
 		ControllerSystemState.getInstance().setTypeAsBook();
 
-		if(cRPT.setRicercaL())
+		if(cRPT.setRicerca(ControllerSystemState.getInstance().getType()))
 		{
 			Stage stage;
 			Parent root;
@@ -90,7 +90,7 @@ public class BoundaryRicercaPerTipo implements Initializable {
 	@FXML
 	private void cercaG() throws IOException
 	{
-		if(cRPT.setRicercaG())
+		if(cRPT.setRicerca(ControllerSystemState.getInstance().getType()))
 		{
 			Stage stage;
 			Parent root;
@@ -112,7 +112,7 @@ public class BoundaryRicercaPerTipo implements Initializable {
 	@FXML 
 	private void cercaR() throws IOException
 	{
-		if(cRPT.setRicercaR())
+		if(cRPT.setRicerca(ControllerSystemState.getInstance().getType()))
 		{
 			Stage stage;
 			Parent root;

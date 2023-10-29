@@ -37,31 +37,37 @@ public class AcquistaServlet extends HttpServlet {
 	private static Giornale g=new Giornale();
 	private static GiornaleDao gD=new GiornaleDao();
 	private static String bean1="bean1";
+	private static final String LIBRO="libro";
+	private static final String GIORNALE="giornale";
+	private static final String RIVISTA="rivista";
 
 	public AcquistaServlet()
 	{
 		super();
-		if(SystemBean.getInstance().getTypeB().equals("libro"))
+		String type=SystemBean.getInstance().getTypeB();
+		switch (type)
 		{
-			lB.setIdB(SystemBean.getInstance().getIdB());
-			l.setId(lB.getIdB());
-			aB.setTitoloB(lD.getTitolo(l));
-			
-		}
-		if(SystemBean.getInstance().getTypeB().equals("giornale"))
-		{
-			gB.setIdB(SystemBean.getInstance().getIdB());
-			g.setId(gB.getIdB());
-			aB.setTitoloB(gD.getTitolo(g));
+			case  LIBRO:
+				lB.setIdB(SystemBean.getInstance().getIdB());
+				l.setId(lB.getIdB());
+				aB.setTitoloB(lD.getTitolo(l));
+				break;
+			case  GIORNALE:
+
+				gB.setIdB(SystemBean.getInstance().getIdB());
+				g.setId(gB.getIdB());
+				aB.setTitoloB(gD.getTitolo(g));
+				break;
+			case  RIVISTA:
+				rB.setIdB(SystemBean.getInstance().getIdB());
+				r.setId(rB.getIdB());
+				aB.setTitoloB(rD.getTitolo(r));
+				break;
+			default: break;
+
 
 		}
-		if(SystemBean.getInstance().getTypeB().equals("rivista"))
-		{
-			rB.setIdB(SystemBean.getInstance().getIdB());
-			r.setId(rB.getIdB());
-			aB.setTitoloB(rD.getTitolo(r));
 
-		}
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -82,7 +88,7 @@ public class AcquistaServlet extends HttpServlet {
 		{
 			switch(type)
 			{
-				case"libro":
+				case LIBRO:
 				{
 					
 							costo=Integer.parseInt(q)*lD.getCosto(l);							
@@ -94,7 +100,7 @@ public class AcquistaServlet extends HttpServlet {
 						
 					break;
 				}
-				case "giornale":
+				case  GIORNALE:
 				{
 					
 						costo=Integer.parseInt(q)*gD.getCosto(g);
@@ -105,7 +111,7 @@ public class AcquistaServlet extends HttpServlet {
 					
 					break;
 				}
-				case "rivista":
+				case  RIVISTA:
 				{
 				
 						costo=Integer.parseInt(q)*rD.getCosto(r);

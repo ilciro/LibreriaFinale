@@ -7,7 +7,7 @@ import java.util.logging.Level;
 
 public class ControllerRicercaPerTipo {
 
-	private ControllerSystemState vis=ControllerSystemState.getInstance();
+
 	private boolean state=false;
 	
 	public ControllerRicercaPerTipo() 
@@ -16,25 +16,22 @@ public class ControllerRicercaPerTipo {
 
 	}
 	
-	public boolean setRicercaL()
+
+	public boolean setRicerca(String type)
 	{
-		
-		if (vis.getType().equals("libro"))
-			state=true;
-		return state;
-	}
-	public boolean setRicercaG()
-	{
-		ControllerSystemState.getInstance().setTypeAsDaily();
-		if (ControllerSystemState.getInstance().getType().equals("giornale"))
-			state= true;
-		return state;
-	}
-	public boolean setRicercaR()
-	{
-		ControllerSystemState.getInstance().setTypeAsMagazine();
-		if (ControllerSystemState.getInstance().getType().equals("rivista"))
-			state= true;
+		switch (type){
+			case "libro":
+				state=true;
+				break;
+			case "giornale":
+				state=true;
+				break;
+			case "rivista":
+				state=true;
+				break;
+			default:return state;
+
+		}
 		return state;
 	}
 }

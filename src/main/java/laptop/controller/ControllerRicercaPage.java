@@ -26,21 +26,23 @@ public class ControllerRicercaPage {
 	public ObservableList<Raccolta> cercaPerTipo (String s) throws SQLException
 	{
 		ObservableList<Raccolta> r = null;
-		if(ControllerSystemState.getInstance().getType().equals("libro"))
+
+		switch(ControllerSystemState.getInstance().getType())
 		{
-			//serach in libro dao
-			r= lD.getLibriByName(s);
+			case "libro":
+				r= lD.getLibriByName(s);
+				break;
+			case "giornale":
+				r=gD.getGiornaliByName(s);
+				break;
+			case "rivista":
+				r=rD.getRivisteByName(s);
+				break;
+			default:return r;
+
 		}
-		 if(ControllerSystemState.getInstance().getType().equals("giornale"))
-		{
-			//search in giornale dao
-			r=  gD.getGiornaliByName(s);
-		}
-		 if(ControllerSystemState.getInstance().getType().equals("rivista"))
-		{
-			//search in rivista dao
-			r= rD.getRivisteByName(s);
-		}
+
+
 		
 		return r;
 		

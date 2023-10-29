@@ -45,38 +45,38 @@ public class LoginServlet extends HttpServlet {
 				
 				
 				String ruolo=UsersDao.getRuolo(User.getInstance());
-				
-				if(ruolo.equalsIgnoreCase("a"))
+				switch (ruolo)
 				{
-					SystemBean.getInstance().setLoggedB(true);
-					req.setAttribute(beanUb,UserBean.getInstance());
-					req.setAttribute(beanS,SystemBean.getInstance() );
-					RequestDispatcher view = getServletContext().getRequestDispatcher("/admin.jsp"); 
-					view.forward(req,resp);
-				}
-				else if(ruolo.equalsIgnoreCase("u"))
-				{
-					SystemBean.getInstance().setLoggedB(true);
-					req.setAttribute(beanUb,UserBean.getInstance());
-					req.setAttribute(beanS,SystemBean.getInstance() );
-					RequestDispatcher view = getServletContext().getRequestDispatcher("/utente.jsp"); 
-					view.forward(req,resp);
-				}
-				else if(ruolo.equalsIgnoreCase("w"))
-				{
-					SystemBean.getInstance().setLoggedB(true);
-					req.setAttribute(beanUb,UserBean.getInstance());
-					req.setAttribute(beanS,SystemBean.getInstance() );
-					RequestDispatcher view = getServletContext().getRequestDispatcher("/scrittore.jsp"); 
-					view.forward(req,resp);
-				}
-				else if(ruolo.equalsIgnoreCase("e"))
-				{
-					SystemBean.getInstance().setLoggedB(true);
-					req.setAttribute(beanUb,UserBean.getInstance());
-					req.setAttribute(beanS,SystemBean.getInstance() );
-					RequestDispatcher view = getServletContext().getRequestDispatcher("/editore.jsp"); 
-					view.forward(req,resp);
+					case "a":
+						SystemBean.getInstance().setLoggedB(true);
+						req.setAttribute(beanUb,UserBean.getInstance());
+						req.setAttribute(beanS,SystemBean.getInstance() );
+						RequestDispatcher view = getServletContext().getRequestDispatcher("/admin.jsp");
+						view.forward(req,resp);
+						break;
+					case "u":
+						SystemBean.getInstance().setLoggedB(true);
+						req.setAttribute(beanUb,UserBean.getInstance());
+						req.setAttribute(beanS,SystemBean.getInstance() );
+						 view = getServletContext().getRequestDispatcher("/utente.jsp");
+						view.forward(req,resp);
+						break;
+					case "w":
+						SystemBean.getInstance().setLoggedB(true);
+						req.setAttribute(beanUb,UserBean.getInstance());
+						req.setAttribute(beanS,SystemBean.getInstance() );
+						 view = getServletContext().getRequestDispatcher("/scrittore.jsp");
+						view.forward(req,resp);
+						break;
+					case "e":
+						SystemBean.getInstance().setLoggedB(true);
+						req.setAttribute(beanUb,UserBean.getInstance());
+						req.setAttribute(beanS,SystemBean.getInstance() );
+						 view = getServletContext().getRequestDispatcher("/editore.jsp");
+						view.forward(req,resp);
+						break;
+					default:break;
+
 				}
 				
 			}

@@ -190,19 +190,19 @@ class TestLaptop2 {
 	@Test
 	void testSetRicercaL() {
 		vis.setTypeAsBook();
-		assertTrue(cRT.setRicercaL());
+		assertTrue(cRT.setRicerca(vis.getType()));
 	}
 
 	@Test
 	void testSetRicercaG() {
 		vis.setTypeAsDaily();
-		assertTrue(cRT.setRicercaG());
+		assertTrue(cRT.setRicerca(vis.getType()));
 	}
 
 	@Test
 	void testSetRicercaR() {
 		vis.setTypeAsMagazine();
-		assertTrue(cRT.setRicercaR());
+		assertTrue(cRT.setRicerca(vis.getType()));
 	}
 	@Test
 	void testGetNegozi() throws SQLException {

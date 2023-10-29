@@ -28,14 +28,24 @@ public class GestioneOggettoServlet extends HttpServlet {
 	public GestioneOggettoServlet()
 	{
 		super();
+		String type=SystemBean.getInstance().getTypeB();
+
 		try {
-		if (SystemBean.getInstance().getTypeB().equals(libro))
-			mOB.setMiaListaB(lD.getLibri());
-			
-		if(SystemBean.getInstance().getTypeB().equals(giornale))
-			mOB.setMiaListaB(gD.getGiornali());
-		if(SystemBean.getInstance().getTypeB().equals(rivista))
-			mOB.setMiaListaB(rD.getRiviste());
+			switch (type)
+			{
+				case LIBRO :
+					mOB.setMiaListaB(lD.getLibri());
+					break;
+				case GIORNALE:
+					mOB.setMiaListaB(gD.getGiornali());
+					break;
+				case RIVISTA:
+					mOB.setMiaListaB(rD.getRiviste());
+					break;
+				default: break;
+
+			}
+
 		} catch (SQLException e) {
 			java.util.logging.Logger.getLogger("costruttore ").log(Level.INFO, "eccezione nel costruttore {0}.",e.toString());
 
@@ -56,9 +66,9 @@ public class GestioneOggettoServlet extends HttpServlet {
 	private static LibroDao lD=new LibroDao();
 	private static RivistaDao rD=new RivistaDao();
 	private static GiornaleDao gD=new GiornaleDao();
-	private static String libro="libro";
-	private static String rivista="rivista";
-	private static String giornale ="giornale";
+	private static final String LIBRO="libro";
+	private static final String RIVISTA="rivista";
+	private static final String GIORNALE ="giornale";
 	
 
 	@Override
@@ -126,25 +136,28 @@ public class GestioneOggettoServlet extends HttpServlet {
 	{
 		if(!"".equals(id))
 		{
-			if(type.equals(libro))
+
+			switch (type)
 			{
-				lB.setIdB(Integer.parseInt(id));
-				SystemBean.getInstance().setIdB(lB.getIdB());
-				l.setId(lB.getIdB());
+				case LIBRO:
+
+					lB.setIdB(Integer.parseInt(id));
+					SystemBean.getInstance().setIdB(lB.getIdB());
+					l.setId(lB.getIdB());
+					break;
+				case GIORNALE:
+					gB.setIdB(Integer.parseInt(id));
+					SystemBean.getInstance().setIdB(gB.getIdB());
+					g.setId(gB.getIdB());
+					break;
+				case RIVISTA:
+					rB.setIdB(Integer.parseInt(id));
+					SystemBean.getInstance().setIdB(rB.getIdB());
+					r.setId(rB.getIdB());
+					break;
+				default:break;
 			}
-			else if(type.equals( giornale))
-			{
-				gB.setIdB(Integer.parseInt(id));
-				SystemBean.getInstance().setIdB(gB.getIdB());
-				g.setId(gB.getIdB());
-			}	
-			else if(type.equals(rivista))
-			{
-				rB.setIdB(Integer.parseInt(id));
-				SystemBean.getInstance().setIdB(rB.getIdB());
-				r.setId(rB.getIdB());
-			
-			}
+
 		}
 	}
 	//used for checkData before delete
@@ -152,25 +165,28 @@ public class GestioneOggettoServlet extends HttpServlet {
 	{
 		if(!"".equals(id))
 		{
-			if(type.equals(libro))
+			switch (type)
 			{
-				lB.setIdB(Integer.parseInt(type));
-				l.setId(lB.getIdB());
-				lD.cancella(l);
+				case LIBRO:
+					lB.setIdB(Integer.parseInt(type));
+					l.setId(lB.getIdB());
+					lD.cancella(l);
+					break;
+				case GIORNALE:
+					gB.setIdB(Integer.parseInt(id));
+					g.setId(gB.getIdB());
+					gD.cancella(g);
+					break;
+				case RIVISTA:
+					rB.setIdB(Integer.parseInt(id));
+					r.setId(rB.getIdB());
+					rD.cancella(r);
+					break;
+				default:break;
 			}
-			else if(type.equals(giornale))
-			{
-				gB.setIdB(Integer.parseInt(id));
-				g.setId(gB.getIdB());
-				gD.cancella(g);
-			}
-			else if(type.equals(rivista))
-			{
-			
-				rB.setIdB(Integer.parseInt(id));
-				r.setId(rB.getIdB());
-				rD.cancella(r);
-			}
+
+
+
 		}
 	}
 }
