@@ -8,31 +8,31 @@ import java.util.logging.Level;
 public class ControllerRicercaPerTipo {
 
 
-<span class="fc" id="L11">	private boolean state=false;</span>
+<span class="nc" id="L11">	private boolean state=false;</span>
 	
 	public ControllerRicercaPerTipo() 
-<span class="fc" id="L14">	{</span>
-<span class="fc" id="L15">		java.util.logging.Logger.getLogger(&quot;Test Costruttore&quot;).log(Level.INFO,&quot;Costruttore ControllerRicercaPerTipo&quot;);</span>
+<span class="nc" id="L14">	{</span>
+<span class="nc" id="L15">		java.util.logging.Logger.getLogger(&quot;Test Costruttore&quot;).log(Level.INFO,&quot;Costruttore ControllerRicercaPerTipo&quot;);</span>
 
-<span class="fc" id="L17">	}</span>
+<span class="nc" id="L17">	}</span>
 	
 
 	public boolean setRicerca(String type)
 	{
-<span class="pc bpc" id="L22" title="1 of 4 branches missed.">		switch (type){</span>
+<span class="nc bnc" id="L22" title="All 4 branches missed.">		switch (type){</span>
 			case &quot;libro&quot;:
-<span class="fc" id="L24">				state=true;</span>
-<span class="fc" id="L25">				break;</span>
+<span class="nc" id="L24">				state=true;</span>
+<span class="nc" id="L25">				break;</span>
 			case &quot;giornale&quot;:
-<span class="fc" id="L27">				state=true;</span>
-<span class="fc" id="L28">				break;</span>
+<span class="nc" id="L27">				state=true;</span>
+<span class="nc" id="L28">				break;</span>
 			case &quot;rivista&quot;:
-<span class="fc" id="L30">				state=true;</span>
-<span class="fc" id="L31">				break;</span>
+<span class="nc" id="L30">				state=true;</span>
+<span class="nc" id="L31">				break;</span>
 <span class="nc" id="L32">			default:return state;</span>
 
 		}
-<span class="fc" id="L35">		return state;</span>
+<span class="nc" id="L35">		return state;</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

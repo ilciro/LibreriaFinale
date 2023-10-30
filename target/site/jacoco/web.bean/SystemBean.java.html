@@ -16,27 +16,27 @@ public class SystemBean {
 		 private String titoloB;
 		 
 		 
-<span class="fc" id="L19">		 private static SystemBean userInstance = null;</span>
+<span class="nc" id="L19">		 private static SystemBean userInstance = null;</span>
 
 		    private SystemBean() {}
 
 		    public static SystemBean getInstance() {
-<span class="fc bfc" id="L24" title="All 2 branches covered.">		        if (userInstance == null) {</span>
+<span class="nc bnc" id="L24" title="All 2 branches missed.">		        if (userInstance == null) {</span>
 		          
-<span class="fc" id="L26">		        	userInstance = new SystemBean();</span>
+<span class="nc" id="L26">		        	userInstance = new SystemBean();</span>
 		                }
 		       
-<span class="fc" id="L29">		        return userInstance;</span>
+<span class="nc" id="L29">		        return userInstance;</span>
 		    }
 			
 		 
 		public int getIdB() {
-<span class="fc" id="L34">			return idB;</span>
+<span class="nc" id="L34">			return idB;</span>
 		}
 
 		public void setIdB(int idB) {
-<span class="fc" id="L38">			this.idB = idB;</span>
-<span class="fc" id="L39">		}</span>
+<span class="nc" id="L38">			this.idB = idB;</span>
+<span class="nc" id="L39">		}</span>
 
 		public String getTypeB() {
 <span class="nc" id="L42">			return typeB;</span>
@@ -51,8 +51,8 @@ public class SystemBean {
 		}
 
 		public void setLoggedB(boolean isLoggedB) {
-<span class="fc" id="L54">			this.isLoggedB = isLoggedB;</span>
-<span class="fc" id="L55">		}</span>
+<span class="nc" id="L54">			this.isLoggedB = isLoggedB;</span>
+<span class="nc" id="L55">		}</span>
 
 		public boolean isSearchB() {
 <span class="nc" id="L58">			return isSearchB;</span>
@@ -67,55 +67,55 @@ public class SystemBean {
 		}
 
 		public void setPickupB(boolean isPickupB) {
-<span class="fc" id="L70">			this.isPickupB = isPickupB;</span>
-<span class="fc" id="L71">		}</span>
+<span class="nc" id="L70">			this.isPickupB = isPickupB;</span>
+<span class="nc" id="L71">		}</span>
 
 		public float getSpesaTB() {
 <span class="nc" id="L74">			return spesaTB;</span>
 		}
 
 		public void setSpesaTB(float spesaTB) {
-<span class="fc" id="L78">			this.spesaTB = spesaTB;</span>
-<span class="fc" id="L79">		}</span>
+<span class="nc" id="L78">			this.spesaTB = spesaTB;</span>
+<span class="nc" id="L79">		}</span>
 
 		public int getQuantitaB() {
 <span class="nc" id="L82">			return quantitaB;</span>
 		}
 
 		public void setQuantitaB(int quantitaB) {
-<span class="fc" id="L86">			this.quantitaB = quantitaB;</span>
-<span class="fc" id="L87">		}</span>
+<span class="nc" id="L86">			this.quantitaB = quantitaB;</span>
+<span class="nc" id="L87">		}</span>
 
 		public String getMetodoPB() {
 <span class="nc" id="L90">			return metodoPB;</span>
 		}
 
 		public void setMetodoPB(String metodoPB) {
-<span class="fc" id="L94">			this.metodoPB = metodoPB;</span>
-<span class="fc" id="L95">		}</span>
+<span class="nc" id="L94">			this.metodoPB = metodoPB;</span>
+<span class="nc" id="L95">		}</span>
 
 		public boolean isNegozioSelezionatoB() {
 <span class="nc" id="L98">			return negozioSelezionatoB;</span>
 		}
 
 		public void setNegozioSelezionatoB(boolean negozioSelezionatoB) {
-<span class="fc" id="L102">			this.negozioSelezionatoB = negozioSelezionatoB;</span>
-<span class="fc" id="L103">		}</span>
+<span class="nc" id="L102">			this.negozioSelezionatoB = negozioSelezionatoB;</span>
+<span class="nc" id="L103">		}</span>
 
 		public String getTitoloB() {
 <span class="nc" id="L106">			return titoloB;</span>
 		}
 
 		public void setTitoloB(String titoloB) {
-<span class="fc" id="L110">			this.titoloB = titoloB;</span>
-<span class="fc" id="L111">		}</span>
+<span class="nc" id="L110">			this.titoloB = titoloB;</span>
+<span class="nc" id="L111">		}</span>
 
 		
 
 		public void setTypeAsBook() {
-<span class="fc" id="L116">			this.typeB=&quot;libro&quot;;</span>
+<span class="nc" id="L116">			this.typeB=&quot;libro&quot;;</span>
 			
-<span class="fc" id="L118">		}</span>
+<span class="nc" id="L118">		}</span>
 
 		public void setTypeAsDaily() {
 <span class="nc" id="L121">			this.typeB=&quot;giornale&quot;;</span>

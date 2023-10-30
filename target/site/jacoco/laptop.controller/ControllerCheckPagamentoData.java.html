@@ -23,53 +23,53 @@ public class ControllerCheckPagamentoData {
 	private RivistaDao rD;
 	private PagamentoDao pagD;
 	public void checkPagamentoData(String nome) throws SQLException, IdException {
-<span class="fc" id="L26">		String tipo=vis.getType();</span>
+<span class="nc" id="L26">		String tipo=vis.getType();</span>
 		
 		Pagamento p;
 		
-<span class="fc" id="L30">		p=new Pagamento(0,&quot;&quot;, 0, &quot;utGene&quot;,0, null);</span>
+<span class="nc" id="L30">		p=new Pagamento(0,&quot;&quot;, 0, &quot;utGene&quot;,0, null);</span>
 			
 		//inserire qui
-<span class="fc" id="L33">		p.setMetodo(&quot;cash&quot;);</span>
-<span class="fc" id="L34">		p.setNomeUtente(nome);</span>
+<span class="nc" id="L33">		p.setMetodo(&quot;cash&quot;);</span>
+<span class="nc" id="L34">		p.setNomeUtente(nome);</span>
 		
-<span class="fc" id="L36">		p.setId(vis.getId());</span>
+<span class="nc" id="L36">		p.setId(vis.getId());</span>
 		
 		
 		
-<span class="fc" id="L40">		pagD.inserisciPagamento(p);</span>
+<span class="nc" id="L40">		pagD.inserisciPagamento(p);</span>
 
-<span class="pc bpc" id="L42" title="1 of 4 branches missed.">		switch (tipo){</span>
+<span class="nc bnc" id="L42" title="All 4 branches missed.">		switch (tipo){</span>
 			case &quot;libro&quot;:
 			{
-<span class="fc" id="L45">				l.setId(vis.getId());</span>
-<span class="fc" id="L46">				p.setAmmontare(vis.getSpesaT());</span>
-<span class="fc" id="L47">				p.setId(l.getId());</span>
-<span class="fc" id="L48">				p.setTipo(lD.retTip(l));</span>
-<span class="fc" id="L49">				break;</span>
+<span class="nc" id="L45">				l.setId(vis.getId());</span>
+<span class="nc" id="L46">				p.setAmmontare(vis.getSpesaT());</span>
+<span class="nc" id="L47">				p.setId(l.getId());</span>
+<span class="nc" id="L48">				p.setTipo(lD.retTip(l));</span>
+<span class="nc" id="L49">				break;</span>
 			}
 			case &quot;giornale&quot; :
 			{
-<span class="fc" id="L53">				g.setId(vis.getId());</span>
-<span class="fc" id="L54">				p.setAmmontare(vis.getSpesaT());</span>
-<span class="fc" id="L55">				p.setId(g.getId());</span>
-<span class="fc" id="L56">				p.setTipo(gD.retTip(g));</span>
-<span class="fc" id="L57">				break;</span>
+<span class="nc" id="L53">				g.setId(vis.getId());</span>
+<span class="nc" id="L54">				p.setAmmontare(vis.getSpesaT());</span>
+<span class="nc" id="L55">				p.setId(g.getId());</span>
+<span class="nc" id="L56">				p.setTipo(gD.retTip(g));</span>
+<span class="nc" id="L57">				break;</span>
 			}
 			case &quot;rivista&quot;:
 			{
-<span class="fc" id="L61">				r.setId(vis.getId());</span>
-<span class="fc" id="L62">				p.setAmmontare(vis.getSpesaT());</span>
-<span class="fc" id="L63">				p.setId(r.getId());</span>
-<span class="fc" id="L64">				p.setTipo(rD.retTip(r));</span>
-<span class="fc" id="L65">				break;</span>
+<span class="nc" id="L61">				r.setId(vis.getId());</span>
+<span class="nc" id="L62">				p.setAmmontare(vis.getSpesaT());</span>
+<span class="nc" id="L63">				p.setId(r.getId());</span>
+<span class="nc" id="L64">				p.setTipo(rD.retTip(r));</span>
+<span class="nc" id="L65">				break;</span>
 			}
 <span class="nc" id="L67">			default: checkID(vis.getId());</span>
 		}
 
 		
 		
-<span class="fc" id="L72">	}</span>
+<span class="nc" id="L72">	}</span>
 	public ControllerCheckPagamentoData()
 <span class="fc" id="L74">	{</span>
 <span class="fc" id="L75">		l=new Libro();</span>

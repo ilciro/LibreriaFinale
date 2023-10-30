@@ -135,49 +135,49 @@ public class ControllerAcquista {
 	public String getNomeById() throws SQLException
 	{
 		
-<span class="fc" id="L138">		int id = vis.getId();</span>
-<span class="fc" id="L139">		String type =vis.getType();</span>
-<span class="fc bfc" id="L140" title="All 2 branches covered.">		if(type.equals(LIBRO))</span>
+<span class="nc" id="L138">		int id = vis.getId();</span>
+<span class="nc" id="L139">		String type =vis.getType();</span>
+<span class="nc bnc" id="L140" title="All 2 branches missed.">		if(type.equals(LIBRO))</span>
 		{
-<span class="fc" id="L142">			l.setId(id);</span>
-<span class="fc" id="L143">			name = lD.getNome(l);</span>
+<span class="nc" id="L142">			l.setId(id);</span>
+<span class="nc" id="L143">			name = lD.getNome(l);</span>
 		}
-<span class="fc bfc" id="L145" title="All 2 branches covered.">		else if(type.equals(GIORNALE)) {</span>
-<span class="fc" id="L146">			g.setId(id);</span>
-<span class="fc" id="L147">			name = gD.getNome(g);</span>
+<span class="nc bnc" id="L145" title="All 2 branches missed.">		else if(type.equals(GIORNALE)) {</span>
+<span class="nc" id="L146">			g.setId(id);</span>
+<span class="nc" id="L147">			name = gD.getNome(g);</span>
 		}
-<span class="pc bpc" id="L149" title="1 of 2 branches missed.">		else if(type.equals(RIVISTA))</span>
+<span class="nc bnc" id="L149" title="All 2 branches missed.">		else if(type.equals(RIVISTA))</span>
 		{
-<span class="fc" id="L151">			r.setId(id);</span>
-<span class="fc" id="L152">			name = rD.getNome(r);</span>
+<span class="nc" id="L151">			r.setId(id);</span>
+<span class="nc" id="L152">			name = rD.getNome(r);</span>
 			
 		}
-<span class="fc" id="L155">		return name ;</span>
+<span class="nc" id="L155">		return name ;</span>
 	}
 	
 	public int getDisp(String type) throws SQLException, IdException {
 
-<span class="pc bpc" id="L160" title="1 of 4 branches missed.">		switch (type)</span>
+<span class="nc bnc" id="L160" title="All 4 branches missed.">		switch (type)</span>
 		{
 			case LIBRO:
-<span class="fc" id="L163">				l.setId(vis.getId());</span>
-<span class="fc" id="L164">				disp=lD.getQuantita(l);</span>
-<span class="fc" id="L165">				break;</span>
+<span class="nc" id="L163">				l.setId(vis.getId());</span>
+<span class="nc" id="L164">				disp=lD.getQuantita(l);</span>
+<span class="nc" id="L165">				break;</span>
 			case GIORNALE:
-<span class="fc" id="L167">				g.setId(vis.getId());</span>
-<span class="fc" id="L168">				disp=gD.getQuantita(g);</span>
-<span class="fc" id="L169">				break;</span>
+<span class="nc" id="L167">				g.setId(vis.getId());</span>
+<span class="nc" id="L168">				disp=gD.getQuantita(g);</span>
+<span class="nc" id="L169">				break;</span>
 			case RIVISTA:
-<span class="fc" id="L171">				r.setId(vis.getId());</span>
-<span class="fc" id="L172">				disp=rD.getQuantita(r);</span>
-<span class="fc" id="L173">				break;</span>
+<span class="nc" id="L171">				r.setId(vis.getId());</span>
+<span class="nc" id="L172">				disp=rD.getQuantita(r);</span>
+<span class="nc" id="L173">				break;</span>
 <span class="nc" id="L174">			default:checkID(vis.getId());</span>
 <span class="nc" id="L175">			return disp;</span>
 
 		}
 
 
-<span class="fc" id="L180">		return disp;</span>
+<span class="nc" id="L180">		return disp;</span>
 	}
 	/*
 	 * metodo aggiunto per stampare appena carica la schermata anche il costo di 
@@ -186,28 +186,28 @@ public class ControllerAcquista {
 	 
 	public float 	getCosto() throws SQLException
 	{
-<span class="fc" id="L189">		String type=vis.getType();</span>
-<span class="fc" id="L190">		int id = vis.getId();</span>
+<span class="nc" id="L189">		String type=vis.getType();</span>
+<span class="nc" id="L190">		int id = vis.getId();</span>
 
-<span class="fc bfc" id="L192" title="All 2 branches covered.">		if(type.equalsIgnoreCase(LIBRO))</span>
+<span class="nc bnc" id="L192" title="All 2 branches missed.">		if(type.equalsIgnoreCase(LIBRO))</span>
 		{
-<span class="fc" id="L194">			l.setId(id);</span>
-<span class="fc" id="L195">			costo=lD.getCosto(l);</span>
+<span class="nc" id="L194">			l.setId(id);</span>
+<span class="nc" id="L195">			costo=lD.getCosto(l);</span>
 
 		}
-<span class="fc bfc" id="L198" title="All 2 branches covered.">		 if(type.equalsIgnoreCase(GIORNALE))</span>
+<span class="nc bnc" id="L198" title="All 2 branches missed.">		 if(type.equalsIgnoreCase(GIORNALE))</span>
 		{
-<span class="fc" id="L200">			g.setId(id);</span>
-<span class="fc" id="L201">			costo=gD.getCosto(g);</span>
+<span class="nc" id="L200">			g.setId(id);</span>
+<span class="nc" id="L201">			costo=gD.getCosto(g);</span>
 			
 		}
-<span class="fc bfc" id="L204" title="All 2 branches covered.">		 if(type.equalsIgnoreCase(RIVISTA))</span>
+<span class="nc bnc" id="L204" title="All 2 branches missed.">		 if(type.equalsIgnoreCase(RIVISTA))</span>
 		{
-<span class="fc" id="L206">			r.setId(id);</span>
-<span class="fc" id="L207">			costo=rD.getCosto(r);</span>
+<span class="nc" id="L206">			r.setId(id);</span>
+<span class="nc" id="L207">			costo=rD.getCosto(r);</span>
 
 		}
-<span class="fc" id="L210">		return costo;</span>
+<span class="nc" id="L210">		return costo;</span>
 
 		
 	}

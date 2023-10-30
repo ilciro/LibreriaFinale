@@ -98,16 +98,16 @@ public class Libro implements Raccolta {
 <span class="fc" id="L98">		this.lingua = lingua;</span>
 <span class="fc" id="L99">	}</span>
 	public void setCategoria(String categoria) {
-<span class="pc bpc" id="L101" title="20 of 30 branches missed.">		switch (categoria){</span>
+<span class="pc bpc" id="L101" title="29 of 30 branches missed.">		switch (categoria){</span>
 		case &quot;ADOLESCENTI_RAGAZZI&quot;: 
-<span class="fc" id="L103">			this.categoria = CategorieLibro.ADOLESCENTI_RAGAZZI.toString();  </span>
-<span class="fc" id="L104">			break;</span>
+<span class="nc" id="L103">			this.categoria = CategorieLibro.ADOLESCENTI_RAGAZZI.toString();  </span>
+<span class="nc" id="L104">			break;</span>
 		case &quot;ARTE&quot;: 
-<span class="fc" id="L106">			this.categoria = CategorieLibro.ARTE.toString();  </span>
-<span class="fc" id="L107">			break;</span>
+<span class="nc" id="L106">			this.categoria = CategorieLibro.ARTE.toString();  </span>
+<span class="nc" id="L107">			break;</span>
 		case &quot;CINEMA_FOTOGRAFIA&quot; : 
-<span class="fc" id="L109">			this.categoria = CategorieLibro.CINEMA_FOTOGRAFIA.toString();  </span>
-<span class="fc" id="L110">			break;</span>
+<span class="nc" id="L109">			this.categoria = CategorieLibro.CINEMA_FOTOGRAFIA.toString();  </span>
+<span class="nc" id="L110">			break;</span>
 		case &quot;BIOGRAFIE&quot; : 
 <span class="nc" id="L112">			this.categoria = CategorieLibro.BIOGRAFIE.toString();  </span>
 <span class="nc" id="L113">			break;</span>
@@ -124,8 +124,8 @@ public class Libro implements Raccolta {
 <span class="nc" id="L124">			this.categoria = CategorieLibro.DIZINARI_OPERE.toString();  </span>
 <span class="nc" id="L125">			break;</span>
 		case &quot;ECONOMIA&quot; : 
-<span class="fc" id="L127">			this.categoria = CategorieLibro.ECONOMIA.toString();  </span>
-<span class="fc" id="L128">			break;</span>
+<span class="nc" id="L127">			this.categoria = CategorieLibro.ECONOMIA.toString();  </span>
+<span class="nc" id="L128">			break;</span>
 		case &quot;FAMIGLIA&quot; : 
 <span class="nc" id="L130">			this.categoria = CategorieLibro.FAMIGLIA.toString();  </span>
 <span class="nc" id="L131">			break;</span>
@@ -148,11 +148,11 @@ public class Libro implements Raccolta {
 <span class="nc" id="L148">			this.categoria = CategorieLibro.HUMOR.toString();  </span>
 <span class="nc" id="L149">			break;</span>
 		case &quot;INFORMATICA&quot; : 
-<span class="fc" id="L151">			this.categoria = CategorieLibro.INFORMATICA.toString();  </span>
-<span class="fc" id="L152">			break;		</span>
+<span class="nc" id="L151">			this.categoria = CategorieLibro.INFORMATICA.toString();  </span>
+<span class="nc" id="L152">			break;		</span>
 		case &quot;WEB_DIGITAL_MEDIA&quot; : 
-<span class="fc" id="L154">			this.categoria = CategorieLibro.WEB_DIGITAL_MEDIA.toString();  </span>
-<span class="fc" id="L155">			break;		</span>
+<span class="nc" id="L154">			this.categoria = CategorieLibro.WEB_DIGITAL_MEDIA.toString();  </span>
+<span class="nc" id="L155">			break;		</span>
 		case &quot;LETTERATURA_NARRATIVA&quot; : 
 <span class="nc" id="L157">			this.categoria = CategorieLibro.LETTERATURA_NARRATIVA.toString();  </span>
 <span class="nc" id="L158">			break;		</span>
@@ -169,26 +169,26 @@ public class Libro implements Raccolta {
 <span class="nc" id="L169">			this.categoria = CategorieLibro.RICETTARI_GENERALI.toString();  </span>
 <span class="nc" id="L170">			break;	</span>
 		case &quot;LINGUISTICA_SCRITTURA&quot; : 
-<span class="fc" id="L172">			this.categoria = CategorieLibro.LINGUISTICA_SCRITTURA.toString();  </span>
-<span class="fc" id="L173">			break;</span>
+<span class="nc" id="L172">			this.categoria = CategorieLibro.LINGUISTICA_SCRITTURA.toString();  </span>
+<span class="nc" id="L173">			break;</span>
 		case &quot;POLITICA&quot; : 
-<span class="fc" id="L175">			this.categoria = CategorieLibro.POLITICA.toString();  </span>
-<span class="fc" id="L176">			break;</span>
+<span class="nc" id="L175">			this.categoria = CategorieLibro.POLITICA.toString();  </span>
+<span class="nc" id="L176">			break;</span>
 		case &quot;RELIGIONE&quot; : 
 <span class="nc" id="L178">			this.categoria = CategorieLibro.RELIGIONE.toString();  </span>
 <span class="nc" id="L179">			break;</span>
 		case &quot;ROMANZI_ROSA&quot; : 
-<span class="fc" id="L181">			this.categoria = CategorieLibro.ROMANZI_ROSA.toString();  </span>
-<span class="fc" id="L182">			break;		</span>
+<span class="nc" id="L181">			this.categoria = CategorieLibro.ROMANZI_ROSA.toString();  </span>
+<span class="nc" id="L182">			break;		</span>
 		case &quot;SCIENZE&quot; : 
 <span class="nc" id="L184">			this.categoria = CategorieLibro.SCIENZE.toString();  </span>
 <span class="nc" id="L185">			break;		</span>
 		case &quot;TECNOLOGIA_MEDICINA&quot; : 
-<span class="fc" id="L187">			this.categoria = CategorieLibro.TECNOLOGIA_MEDICINA.toString();  </span>
-<span class="fc" id="L188">			break;</span>
+<span class="nc" id="L187">			this.categoria = CategorieLibro.TECNOLOGIA_MEDICINA.toString();  </span>
+<span class="nc" id="L188">			break;</span>
 		
 		default :
-<span class="nc" id="L191">			this.categoria = null;</span>
+<span class="fc" id="L191">			this.categoria = null;</span>
 			break;
 		}
 <span class="fc" id="L194">	}</span>

@@ -96,23 +96,23 @@ public class GiornaleDao {
 <span class="fc" id="L96">	}</span>
 	
 	public  int retId(Giornale g) throws SQLException  {
-<span class="fc" id="L99">		query=&quot;select id from giornale where titolo=?&quot;;</span>
+<span class="nc" id="L99">		query=&quot;select id from giornale where titolo=?&quot;;</span>
 		
-<span class="fc" id="L101">		try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="fc" id="L102">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="nc" id="L101">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="nc" id="L102">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
-<span class="fc" id="L104">			prepQ.setString(1, g.getTitolo());</span>
-<span class="fc" id="L105">			ResultSet rs=prepQ.executeQuery();</span>
-<span class="fc bfc" id="L106" title="All 2 branches covered.">			while ( rs.next() ) {</span>
-<span class="fc" id="L107">				id=rs.getInt(&quot;id&quot;);</span>
+<span class="nc" id="L104">			prepQ.setString(1, g.getTitolo());</span>
+<span class="nc" id="L105">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="nc bnc" id="L106" title="All 2 branches missed.">			while ( rs.next() ) {</span>
+<span class="nc" id="L107">				id=rs.getInt(&quot;id&quot;);</span>
 
 			}
 <span class="nc" id="L110">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L112">			java.util.logging.Logger.getLogger(&quot;id girnoale&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L113">		}</span>
+<span class="nc" id="L113">		}</span>
 
-<span class="fc" id="L115">		return id;</span>
+<span class="nc" id="L115">		return id;</span>
 
 
 
@@ -153,19 +153,19 @@ public class GiornaleDao {
 	public  Giornale getGiornale(Giornale g) throws SQLException  
 	{
 
-<span class="fc" id="L156">		query=&quot;select * from giornale where id=?&quot;;</span>
+<span class="nc" id="L156">		query=&quot;select * from giornale where id=?&quot;;</span>
 		
-<span class="fc" id="L158">		try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="fc" id="L159">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="nc" id="L158">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="nc" id="L159">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
-<span class="fc" id="L161">			prepQ.setInt(1, g.getId());</span>
-<span class="fc" id="L162">			ResultSet rs=prepQ.executeQuery();</span>
-<span class="fc bfc" id="L163" title="All 2 branches covered.">			while (rs.next())</span>
+<span class="nc" id="L161">			prepQ.setInt(1, g.getId());</span>
+<span class="nc" id="L162">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="nc bnc" id="L163" title="All 2 branches missed.">			while (rs.next())</span>
 			{
 
-<span class="fc" id="L166">				f.createRaccoltaFinale1(GIORNALE, rs.getString(1),rs.getString(2), null,rs.getString(3),rs.getString(4),null);</span>
-<span class="fc" id="L167">				f.createRaccoltaFinale2(GIORNALE,0,null,0,rs.getInt(7),rs.getFloat(8),rs.getInt(6));</span>
-<span class="fc" id="L168">				g=(Giornale) (f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), null, null,rs.getInt(9)));</span>
+<span class="nc" id="L166">				f.createRaccoltaFinale1(GIORNALE, rs.getString(1),rs.getString(2), null,rs.getString(3),rs.getString(4),null);</span>
+<span class="nc" id="L167">				f.createRaccoltaFinale2(GIORNALE,0,null,0,rs.getInt(7),rs.getFloat(8),rs.getInt(6));</span>
+<span class="nc" id="L168">				g=(Giornale) (f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), null, null,rs.getInt(9)));</span>
 	
 			
 			}
@@ -173,8 +173,8 @@ public class GiornaleDao {
 <span class="nc" id="L173">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L175">			java.util.logging.Logger.getLogger(&quot;get giornale&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L176">		}</span>
-<span class="fc" id="L177">		return g;</span>
+<span class="nc" id="L176">		}</span>
+<span class="nc" id="L177">		return g;</span>
 
 	}
 	public GiornaleDao()
@@ -186,123 +186,123 @@ public class GiornaleDao {
 
 	public  String retTip(Giornale g) throws SQLException  {
 		
-<span class="fc" id="L189">		query=&quot;select tipologia from giornale where titolo=? or id=?&quot;;</span>
+<span class="nc" id="L189">		query=&quot;select tipologia from giornale where titolo=? or id=?&quot;;</span>
 		
-<span class="fc" id="L191">		try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="fc" id="L192">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="nc" id="L191">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="nc" id="L192">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
-<span class="fc" id="L194">			prepQ.setString(1, g.getTitolo());</span>
-<span class="fc" id="L195">			prepQ.setInt(2, g.getId());</span>
-<span class="fc" id="L196">			ResultSet rs=prepQ.executeQuery();</span>
-<span class="fc bfc" id="L197" title="All 2 branches covered.">			while ( rs.next() ) {</span>
-<span class="fc" id="L198">				categoria=rs.getString(&quot;tipologia&quot;);</span>
+<span class="nc" id="L194">			prepQ.setString(1, g.getTitolo());</span>
+<span class="nc" id="L195">			prepQ.setInt(2, g.getId());</span>
+<span class="nc" id="L196">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="nc bnc" id="L197" title="All 2 branches missed.">			while ( rs.next() ) {</span>
+<span class="nc" id="L198">				categoria=rs.getString(&quot;tipologia&quot;);</span>
 
 			}
 <span class="nc" id="L201">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L203">			java.util.logging.Logger.getLogger(&quot;ret tipo&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L204">		}</span>
+<span class="nc" id="L204">		}</span>
 		
-<span class="fc" id="L206">		return categoria;</span>
+<span class="nc" id="L206">		return categoria;</span>
 
 
 	}
 
 	public  String getNome(Giornale g) throws SQLException  
 	{
-<span class="fc" id="L213">		String name = &quot;&quot;;</span>
-<span class="fc" id="L214">		query=&quot;select titolo from giornale where id=?&quot;;</span>
-<span class="fc" id="L215">		try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="fc" id="L216">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="nc" id="L213">		String name = &quot;&quot;;</span>
+<span class="nc" id="L214">		query=&quot;select titolo from giornale where id=?&quot;;</span>
+<span class="nc" id="L215">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="nc" id="L216">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
-<span class="fc" id="L218">			prepQ.setInt(1,g.getId());</span>
-<span class="fc" id="L219">			ResultSet rs=prepQ.executeQuery();</span>
-<span class="fc bfc" id="L220" title="All 2 branches covered.">			while (rs.next())</span>
+<span class="nc" id="L218">			prepQ.setInt(1,g.getId());</span>
+<span class="nc" id="L219">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="nc bnc" id="L220" title="All 2 branches missed.">			while (rs.next())</span>
 			{
-<span class="fc" id="L222">				name = rs.getString(1);</span>
+<span class="nc" id="L222">				name = rs.getString(1);</span>
 			}
 			
 			
 <span class="nc" id="L226">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L228">			java.util.logging.Logger.getLogger(&quot;nome giornale&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L229">		}</span>
+<span class="nc" id="L229">		}</span>
 			
-<span class="fc" id="L231">		return name;</span>
+<span class="nc" id="L231">		return name;</span>
 	}
 
 	public  int getDisp(Giornale g) throws SQLException 
 	{
 
-<span class="fc" id="L237">		query=&quot;select disp from giornale where id=?&quot;;</span>
-<span class="fc" id="L238">		try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="fc" id="L239">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="nc" id="L237">		query=&quot;select disp from giornale where id=?&quot;;</span>
+<span class="nc" id="L238">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="nc" id="L239">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
-<span class="fc" id="L241">			prepQ.setInt(1, g.getId());</span>
-<span class="fc" id="L242">			ResultSet rs=prepQ.executeQuery();</span>
-<span class="fc bfc" id="L243" title="All 2 branches covered.">			while (rs.next())</span>
+<span class="nc" id="L241">			prepQ.setInt(1, g.getId());</span>
+<span class="nc" id="L242">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="nc bnc" id="L243" title="All 2 branches missed.">			while (rs.next())</span>
 				{
 				
-<span class="fc" id="L246">				disp = rs.getInt(1);</span>
+<span class="nc" id="L246">				disp = rs.getInt(1);</span>
 				
 				
 			}
 <span class="nc" id="L250">		}catch(SQLException e) {</span>
 <span class="nc" id="L251">			java.util.logging.Logger.getLogger(&quot;get disp g&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L252">		}</span>
+<span class="nc" id="L252">		}</span>
 	
 	
-<span class="fc" id="L255">		return disp;</span>
+<span class="nc" id="L255">		return disp;</span>
 	}
 
 	public  int getQuantita(Giornale g) throws SQLException  
 	{
 		
 
-<span class="fc" id="L262">		query=&quot;select copiRim from giornale where id=?&quot;;</span>
-<span class="fc" id="L263">		try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="fc" id="L264">				PreparedStatement prepQ=conn.prepareStatement(query);</span>
+<span class="nc" id="L262">		query=&quot;select copiRim from giornale where id=?&quot;;</span>
+<span class="nc" id="L263">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="nc" id="L264">				PreparedStatement prepQ=conn.prepareStatement(query);</span>
 				)
 		{
 			
-<span class="fc" id="L268">			prepQ.setInt(1, g.getId());</span>
-<span class="fc" id="L269">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="nc" id="L268">			prepQ.setInt(1, g.getId());</span>
+<span class="nc" id="L269">			ResultSet rs=prepQ.executeQuery();</span>
 			
-<span class="fc bfc" id="L271" title="All 2 branches covered.">				while (rs.next()) {</span>
-<span class="fc" id="L272">					q = rs.getInt(&quot;copiRim&quot;);</span>
+<span class="nc bnc" id="L271" title="All 2 branches missed.">				while (rs.next()) {</span>
+<span class="nc" id="L272">					q = rs.getInt(&quot;copiRim&quot;);</span>
 				}			
 <span class="nc" id="L274">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L276">			java.util.logging.Logger.getLogger(&quot;get quantita g&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L277">		}</span>
+<span class="nc" id="L277">		}</span>
 
-<span class="fc" id="L279">		return q;</span>
+<span class="nc" id="L279">		return q;</span>
 	}
 
 	public  boolean checkDisp(Giornale g) throws SQLException  
 	{
-<span class="fc" id="L284">		query=&quot;select disp from ispw.giornale where id=?&quot;;</span>
-<span class="fc" id="L285">			try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="fc" id="L286">					PreparedStatement prepQ=conn.prepareStatement(query);</span>
+<span class="nc" id="L284">		query=&quot;select disp from ispw.giornale where id=?&quot;;</span>
+<span class="nc" id="L285">			try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="nc" id="L286">					PreparedStatement prepQ=conn.prepareStatement(query);</span>
 					)
 		
 			{
-<span class="fc" id="L290">			prepQ.setInt(1, g.getId());</span>
-<span class="fc" id="L291">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="nc" id="L290">			prepQ.setInt(1, g.getId());</span>
+<span class="nc" id="L291">			ResultSet rs=prepQ.executeQuery();</span>
 
-<span class="fc bfc" id="L293" title="All 2 branches covered.">			while(rs.next())</span>
+<span class="nc bnc" id="L293" title="All 2 branches missed.">			while(rs.next())</span>
 			{
-<span class="fc" id="L295">				disp = rs.getInt(1);</span>
-<span class="pc bpc" id="L296" title="1 of 2 branches missed.">				if (disp &gt;= 1)</span>
+<span class="nc" id="L295">				disp = rs.getInt(1);</span>
+<span class="nc bnc" id="L296" title="All 2 branches missed.">				if (disp &gt;= 1)</span>
 <span class="nc" id="L297">					state=true;</span>
-<span class="fc" id="L298">				java.util.logging.Logger.getLogger(&quot;Controlla Disponibilita&quot;).log(Level.INFO, &quot;giornale Trovato&quot;);</span>
+<span class="nc" id="L298">				java.util.logging.Logger.getLogger(&quot;Controlla Disponibilita&quot;).log(Level.INFO, &quot;giornale Trovato&quot;);</span>
 			}
 <span class="nc" id="L300">			}catch(SQLException e)</span>
 			{
 <span class="nc" id="L302">				java.util.logging.Logger.getLogger(&quot;Controlla disp&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L303">			}</span>
+<span class="nc" id="L303">			}</span>
 			
-<span class="fc" id="L305">	 	return state;</span>
+<span class="nc" id="L305">	 	return state;</span>
 	}
 
 	public  ObservableList&lt;Raccolta&gt; getGiornaleSingolo() throws SQLException   {
@@ -381,24 +381,24 @@ public class GiornaleDao {
 
 
 	public  void cancella(Giornale g) throws SQLException  {
-<span class="fc" id="L384">		int row=0;</span>
-<span class="fc" id="L385">		query=&quot;delete from giornale where id=?&quot;;</span>
-<span class="fc" id="L386">		try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="fc" id="L387">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="nc" id="L384">		int row=0;</span>
+<span class="nc" id="L385">		query=&quot;delete from giornale where id=?&quot;;</span>
+<span class="nc" id="L386">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="nc" id="L387">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
-<span class="fc" id="L389">			prepQ.setInt(1, g.getId());</span>
-<span class="fc" id="L390">			row=prepQ.executeUpdate();</span>
+<span class="nc" id="L389">			prepQ.setInt(1, g.getId());</span>
+<span class="nc" id="L390">			row=prepQ.executeUpdate();</span>
 			
 <span class="nc" id="L392">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L394">						java.util.logging.Logger.getLogger(&quot;cancella&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L395">		}</span>
-<span class="fc" id="L396">		java.util.logging.Logger.getLogger(&quot;cancella g&quot;).log(Level.INFO,&quot;\n rows affcted {0}&quot;,row);</span>
+<span class="nc" id="L395">		}</span>
+<span class="nc" id="L396">		java.util.logging.Logger.getLogger(&quot;cancella g&quot;).log(Level.INFO,&quot;\n rows affcted {0}&quot;,row);</span>
 
 
 
 
-<span class="fc" id="L401">	}</span>
+<span class="nc" id="L401">	}</span>
 
 	public ObservableList&lt;Giornale&gt; getGiornaliSingoloById(Giornale g) throws SQLException    {
 
@@ -513,16 +513,16 @@ public class GiornaleDao {
 	public   void generaReport() throws IOException, SQLException
 	{
 		FileWriter w;
-<span class="fc" id="L516">		query=&quot;select titolo,editore,copiRim,prezzo as totale  from ispw.giornale&quot;;</span>
-<span class="fc" id="L517">		w=new FileWriter(&quot;ReportFinale\\riepilogoGiornali.txt&quot;);</span>
-<span class="fc" id="L518">		   try (BufferedWriter b=new BufferedWriter (w)){</span>
-<span class="fc" id="L519">			   try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="fc" id="L520">					   PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="nc" id="L516">		query=&quot;select titolo,editore,copiRim,prezzo as totale  from ispw.giornale&quot;;</span>
+<span class="nc" id="L517">		w=new FileWriter(&quot;ReportFinale\\riepilogoGiornali.txt&quot;);</span>
+<span class="nc" id="L518">		   try (BufferedWriter b=new BufferedWriter (w)){</span>
+<span class="nc" id="L519">			   try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="nc" id="L520">					   PreparedStatement prepQ=conn.prepareStatement(query))</span>
 			   {
 				  
-<span class="fc" id="L523">				   ResultSet rs=prepQ.executeQuery();</span>
+<span class="nc" id="L523">				   ResultSet rs=prepQ.executeQuery();</span>
 
-<span class="fc bfc" id="L525" title="All 2 branches covered.">			while(rs.next())</span>
+<span class="nc bnc" id="L525" title="All 2 branches missed.">			while(rs.next())</span>
 			{
 
 
@@ -530,12 +530,12 @@ public class GiornaleDao {
 				
 
 
-<span class="fc" id="L533">				b.write(&quot;Titolo :&quot;+rs.getString(1)+&quot;\t&quot;+&quot;Editore :&quot;+rs.getString(2)+&quot;\t&quot;+&quot;Ricavo totale :&quot; +rs.getInt(3)*rs.getFloat(4)+&quot;\n&quot;);</span>
+<span class="nc" id="L533">				b.write(&quot;Titolo :&quot;+rs.getString(1)+&quot;\t&quot;+&quot;Editore :&quot;+rs.getString(2)+&quot;\t&quot;+&quot;Ricavo totale :&quot; +rs.getInt(3)*rs.getFloat(4)+&quot;\n&quot;);</span>
 
 
 
 
-<span class="fc" id="L538">				b.flush();</span>
+<span class="nc" id="L538">				b.flush();</span>
 
 
 			}
@@ -545,7 +545,7 @@ public class GiornaleDao {
 <span class="nc" id="L545">			}catch(SQLException e)</span>
 			   {
 <span class="nc" id="L547">							java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L548">			   }</span>
+<span class="nc" id="L548">			   }</span>
 
 
 
@@ -554,55 +554,55 @@ public class GiornaleDao {
 		
 
 
-<span class="fc" id="L557">	}</span>
+<span class="nc" id="L557">	}</span>
 
 
 	public void incrementaDisponibilita(Giornale g) throws SQLException {
-<span class="fc" id="L561">		int d=vis.getQuantita();</span>
-<span class="fc" id="L562">		int i=g.getCopieRimanenti();</span>
+<span class="nc" id="L561">		int d=vis.getQuantita();</span>
+<span class="nc" id="L562">		int i=g.getCopieRimanenti();</span>
 		
-<span class="fc" id="L564">		int rim=i+d;</span>
+<span class="nc" id="L564">		int rim=i+d;</span>
 		
-<span class="fc" id="L566">		query=&quot;update ispw.giornale set copiRim= ? where titolo= ? or id=?&quot;;</span>
+<span class="nc" id="L566">		query=&quot;update ispw.giornale set copiRim= ? where titolo= ? or id=?&quot;;</span>
 		
-<span class="fc" id="L568">			try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="fc" id="L569">					PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="nc" id="L568">			try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="nc" id="L569">					PreparedStatement prepQ=conn.prepareStatement(query))</span>
 			{
-<span class="fc" id="L571">				prepQ.setInt(1, rim);</span>
-<span class="fc" id="L572">				prepQ.setString(2,g.getTitolo());</span>
-<span class="fc" id="L573">				prepQ.setInt(3,g.getId());</span>
-<span class="fc" id="L574">				prepQ.executeUpdate();</span>
+<span class="nc" id="L571">				prepQ.setInt(1, rim);</span>
+<span class="nc" id="L572">				prepQ.setString(2,g.getTitolo());</span>
+<span class="nc" id="L573">				prepQ.setInt(3,g.getId());</span>
+<span class="nc" id="L574">				prepQ.executeUpdate();</span>
 				
 <span class="nc" id="L576">			}catch(SQLException e)</span>
 			{
 <span class="nc" id="L578">				java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L579">			}</span>
+<span class="nc" id="L579">			}</span>
 
 		
-<span class="fc" id="L582">	}</span>
+<span class="nc" id="L582">	}</span>
 
 	
 	public String getTitolo(Giornale g) 
 	{
-<span class="fc" id="L587">		String t=&quot;&quot;;</span>
-<span class="fc" id="L588">		 query=&quot;select titolo from giornale where id=? or id=?&quot;;</span>
-<span class="fc" id="L589">		 try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="fc" id="L590">				 PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="nc" id="L587">		String t=&quot;&quot;;</span>
+<span class="nc" id="L588">		 query=&quot;select titolo from giornale where id=? or id=?&quot;;</span>
+<span class="nc" id="L589">		 try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="nc" id="L590">				 PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		 {
-<span class="fc" id="L592">			 prepQ.setInt(1, g.getId());</span>
-<span class="fc" id="L593">			 prepQ.setInt(2, vis.getId());</span>
-<span class="fc" id="L594">			 ResultSet rs=prepQ.executeQuery();</span>
-<span class="pc bpc" id="L595" title="1 of 2 branches missed.">			 if(rs.next())</span>
+<span class="nc" id="L592">			 prepQ.setInt(1, g.getId());</span>
+<span class="nc" id="L593">			 prepQ.setInt(2, vis.getId());</span>
+<span class="nc" id="L594">			 ResultSet rs=prepQ.executeQuery();</span>
+<span class="nc bnc" id="L595" title="All 2 branches missed.">			 if(rs.next())</span>
 			 {
-<span class="fc" id="L597">				 t=rs.getString(&quot;titolo&quot;);</span>
+<span class="nc" id="L597">				 t=rs.getString(&quot;titolo&quot;);</span>
 			 }
 <span class="nc" id="L599">		 }catch(SQLException e)</span>
 		 {
 <span class="nc" id="L601">				java.util.logging.Logger.getLogger(&quot;titolo giornale&quot;).log(Level.INFO, &quot;titolo aggiornati {0}.&quot;,e.toString());</span>
-<span class="fc" id="L602">		 }</span>
+<span class="nc" id="L602">		 }</span>
 		 
 		
-<span class="fc" id="L605">		 return t;</span>
+<span class="nc" id="L605">		 return t;</span>
 		
 	}
 

@@ -2,16 +2,22 @@ package laptop.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.net.URISyntaxException;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Calendar;
-import java.util.Date;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
 
 
+
+import laptop.controller.*;
 import laptop.exception.IdException;
+import laptop.utilities.ConnToDb;
+import org.apache.ibatis.jdbc.ScriptRunner;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -19,21 +25,8 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import com.itextpdf.text.DocumentException;
 
-import laptop.controller.ControllerAcquista;
-import laptop.controller.ControllerAggiungiPage;
-import laptop.controller.ControllerCompravendita;
-import laptop.controller.ControllerDownload;
-import laptop.controller.ControllerGestionePage;
-import laptop.controller.ControllerHomePageAfterLogin;
-import laptop.controller.ControllerHomePageAfterLoginSE;
-import laptop.controller.ControllerLogin;
-import laptop.controller.ControllerModifPage;
-import laptop.controller.ControllerModificaUtente;
-import laptop.controller.ControllerPagamentoCash;
-import laptop.controller.ControllerSystemState;
 import laptop.database.ContrassegnoDao;
 import laptop.database.PagamentoDao;
-import laptop.exception.LogoutException;
 import laptop.model.CartaDiCredito;
 import laptop.model.Fattura;
 import laptop.model.Pagamento;
@@ -45,11 +38,30 @@ import laptop.utilities.CreateDefaultDB;
 
 class TestLaptop1 {
 
-	
-	
+
+	private  final ResourceBundle rBPagamento=ResourceBundle.getBundle("configurations/pagamento");
+	private  final  ResourceBundle rBPagamentoInfo=ResourceBundle.getBundle("configurations/pagamentoInfo");
+
+	private  final ResourceBundle rBFattura=ResourceBundle.getBundle("configurations/fattura");
+	private  final ResourceBundle rBPagamentoEsito = ResourceBundle.getBundle("configurations/pagamentoEsito");
+
+	private final ResourceBundle rBLibroDAInserire = ResourceBundle.getBundle("configurations/libroDaInserire");
+
+	private final ResourceBundle rBGiornaleDAInserire=ResourceBundle.getBundle("configurations/giornaleDaInserire");
+	private final ResourceBundle rBRivistaDAInserire=ResourceBundle.getBundle("configurations/rivistaDaInserire");
+
+	private final ResourceBundle rBModificaLibro=ResourceBundle.getBundle("configurations/libroDaModificare");
+
+	private final ResourceBundle rBModificaGiornale=ResourceBundle.getBundle("configurations/giornaleDaModificare");
+
+	private final ResourceBundle rBModificaRivista=ResourceBundle.getBundle("configurations/rivistaDaModificare");
+
+	private final ResourceBundle rBSettaOggetto=ResourceBundle.getBundle("configurations/settaOggetto");
+
+
 	private java.sql.Date dataS= new java.sql.Date(Calendar.getInstance().getTime().getTime());
-	private CartaDiCredito cc1=new CartaDiCredito(3,"8541-8596-5552-9858",(double)3000.0,(double)200,dataS,"pippo",(float)156.3);
-	private CartaDiCredito cc2=new CartaDiCredito("pippo","pluto","1452-9958-7485-2222",new Date(),"852",(float)125.36);
+	private static  CartaDiCredito cc1=new CartaDiCredito();
+	private static CartaDiCredito cc2=new CartaDiCredito();
 	private ContrassegnoDao cDao=new ContrassegnoDao();
 	private Libro l=new Libro();
 	private Giornale g=new Giornale();
@@ -71,249 +83,178 @@ class TestLaptop1 {
 	private String[] cambioR=new String[5];
 	private String[] infoCosti=new String[6];
 	private ControllerPagamentoCash cPC = new ControllerPagamentoCash();
+	private ControllerRicercaPage cRicP=new ControllerRicercaPage();
+
+	private static Fattura f=new Fattura();
+	private static Fattura f1=new Fattura();
+
+	private static Pagamento p=new Pagamento();
+	private static Pagamento p2=new Pagamento();
+	//used for check which test is running
+
+
+
 	
 
 
 	
 
 	@BeforeAll
-	static void creaDB() throws FileNotFoundException, ClassNotFoundException, SQLException
+	static void creaDB() throws FileNotFoundException, SQLException
 	{
 		CreateDefaultDB.createDefaultDB();
+
+
 	}
-	
 	@Test
-	void testGetTipo() {
-		assertEquals(3,cc1.getTipo());
-		
+	void testInizializzazioneOggetti()  {
+		String titoloTest="inizializzazione oggetti";
+		cc1.setTipo(Integer.parseInt(rBPagamento.getString("tipo")));
+		cc1.setNumeroCC(rBPagamento.getString("numero"));
+		cc1.setLimite(Double.parseDouble(rBPagamento.getString("limite")));
+		cc1.setAmmontare(Double.parseDouble(rBPagamento.getString("ammontare")));
+		cc1.setScadenza(dataS);
+		cc1.setNomeUser(rBPagamento.getString("nomeUser"));
+		cc1.setPrezzoTransazine(Float.parseFloat(rBPagamento.getString("prezzoTransazione")));
+
+		cc2.setNomeUser(rBPagamentoInfo.getString("nome"));
+		cc2.setCognomeUser(rBPagamentoInfo.getString("cognome"));
+		cc2.setNumeroCC(rBPagamentoInfo.getString("codice"));
+		cc2.setCiv(rBPagamentoInfo.getString("civ"));
+		cc2.setScadenza(dataS);
+		cc2.setAmmontare(Float.parseFloat(rBPagamentoInfo.getString("ammontare")));
+
+
+
+
+		assertEquals("inizializzazione oggetti",titoloTest);
+
+	}
+	@Test
+	void testCheckInsertLibro() throws SQLException {
+		info[0]=rBLibroDAInserire.getString("info[0]");
+		info[1]=rBLibroDAInserire.getString("info[1]");
+		info[2]=rBLibroDAInserire.getString("info[2]");
+		info[3]=rBLibroDAInserire.getString("info[3]");
+		info[4]=rBLibroDAInserire.getString("info[4]");
+		info[5]=rBLibroDAInserire.getString("info[5]");
+		info[6]=rBLibroDAInserire.getString("info[6]");
+		infoGen[0]=String.valueOf(100);
+		infoGen[1]=rBLibroDAInserire.getString("infoGen[1]");
+		infoGen[2]=rBLibroDAInserire.getString("infoGen[2]");
+		infoGen[3]=rBLibroDAInserire.getString("infoGen[3]");
+		infoGen[4]=rBLibroDAInserire.getString("infoGen[4]");
+		infoGen[5]=rBLibroDAInserire.getString("infoGen[5]");
+
+		l.setCategoria(rBLibroDAInserire.getString("info[1]"));
+		l.setDataPubb(dataS.toLocalDate());
+		l.setRecensione(rBLibroDAInserire.getString("recensione"));
+		l.setDesc(rBLibroDAInserire.getString("descrizione"));
+
+
+		assertTrue(cAP.checkData(info, l.getRecensione(), l.getDesc(), l.getDataPubb(), infoGen));
+
+	}
+	@Test
+	void testCheckInsertGiornale() throws SQLException {
+		g.setTitolo(rBGiornaleDAInserire.getString("titolo"));
+		g.setTipologia(rBGiornaleDAInserire.getString("tipologia"));
+		g.setLingua(rBGiornaleDAInserire.getString("lingua"));
+		g.setEditore(rBGiornaleDAInserire.getString("editore"));
+		g.setDataPubb(LocalDate.of(2022, 12,12));
+		g.setCopieRimanenti(Integer.parseInt(rBGiornaleDAInserire.getString("copieRimanenti")));
+		g.setDisponibilita(Integer.parseInt(rBGiornaleDAInserire.getString("disponibilita")));
+		g.setPrezzo(Float.parseFloat(rBGiornaleDAInserire.getString("prezzo")));
+		assertTrue(cAP.checkDataG(g));
+	}
+	@Test
+	void testCheckInsertRivista() throws SQLException {
+		info[0]=rBRivistaDAInserire.getString("info[0]");
+		info[1]=rBRivistaDAInserire.getString("info[1]");
+		info[2]=rBRivistaDAInserire.getString("info[2]");
+		info[3]=rBRivistaDAInserire.getString("info[3]");
+		info[4]=rBRivistaDAInserire.getString("info[4]");
+		r.setDescrizione(rBRivistaDAInserire.getString("descrizione"));
+		r.setDataPubb(LocalDate.of(2022, 11,12));
+		r.setDisp(Integer.parseInt(rBRivistaDAInserire.getString("disponibilita")));
+		r.setPrezzo(Float.parseFloat(rBRivistaDAInserire.getString("prezzo")));
+		r.setCopieRim(Integer.parseInt(rBRivistaDAInserire.getString("copieRimanenti")));
+		assertTrue(cAP.checkDataR(info, r.getDataPubb(), r.getDisp(),r.getPrezzo() , r.getCopieRim(), r.getDescrizione()));
+
+	}
+	@Test
+	void testModificaL() throws NullPointerException, SQLException {
+		ControllerSystemState.getInstance().setId(18);
+		info[0]=rBModificaLibro.getString("info[0]");
+		info[2]=rBModificaLibro.getString("info[2]");
+		info[3]=rBModificaLibro.getString("info[3]");
+		info[4]=rBModificaLibro.getString("info[4]");
+		info[5]=rBModificaLibro.getString("info[5]");
+
+		infoCosti[0]="100";
+		infoCosti[1]=rBModificaLibro.getString("infoCosti[1]");
+		infoCosti[3]="1";
+		infoCosti[4]=String.valueOf((float)2.45);
+		infoCosti[5]="50";
+
+		//vedere qui
+		cMP.checkDataL(info, "aggiorno libro","provo ad aggiornare", LocalDate.of(2023,1,5), infoCosti);
 	}
 
 	@Test
-	void testGetNumeroCC() {
-		assertNotNull(cc2.getNumeroCC());
+	void testModificaGiornale() throws SQLException {
+		vis.setId(1);
+		cambio[0]=rBModificaGiornale.getString("cambio[0]");
+		cambio[1]=rBModificaGiornale.getString("cambio[1]");
+		cambio[2]=rBModificaGiornale.getString("cambio[2]");
+		cambio[3]=rBModificaGiornale.getString("cambio[3]");
+		cMP.checkDataG(cambio,LocalDate.of(2022, 11,20), 0, (float)1.25, 10);
+
 	}
 
 	@Test
-	void testGetLimite() {
-		assertEquals((float)3000.0 , cc1.getLimite());
+	void testModificaRivista() throws SQLException {
+		cambioR[0]=rBModificaRivista.getString("cambioR[0]");
+		cambioR[1]=rBModificaRivista.getString("cambioR[1]");
+		cambioR[2]=rBModificaRivista.getString("cambioR[2]");
+		cambioR[3]=rBModificaRivista.getString("cambioR[3]");
+		cambioR[4]=rBModificaRivista.getString("cambioR[4]");
+		cMP.checkDataR(cambioR, LocalDate.of(2023, 5,11), 0, (float)2.36, 100, 1, "rivista cambiata2");
 	}
 
-	@Test
-	void testGetAmmontare() {
-		assertNotEquals(0,cc2.getAmmontare());
-	}
-
-	@Test
-	void testGetScadenza() {
-		assertNotNull(cc1.getScadenza());
-	}
-
-	@Test
-	void testGetNomeUser() {
-		assertEquals("pippo",cc2.getNomeUser());
-	}
-
-	@Test
-	void testGetPrezzoTransazine() {
-		assertNotEquals(0,cc1.getPrezzoTransazine());
-	}
-
-	@Test
-	void testGetCognomeUser() {
-		assertNotNull(cc2.getCognomeUser());
-	}
-
-	@Test
-	void testGetCiv() {
-		assertNotNull(cc2.getCiv());
-	}
-	
-	@Test
-	void testAnnullaOrdine() throws SQLException {
-		assertFalse(cDao.annullaOrdineF(2));
-	}
-	
 	@Test
 	void testTotale() throws SQLException, IdException {
-		l.setTitolo("Apocalypse town: Cronache dalla fine della civilta' urbana");
-		l.setNrCopie(200);
-		vis.setQuantita(5);
-		vis.setId(1);
+		l.setTitolo(rBSettaOggetto.getString("titoloL"));
+		l.setNrCopie(Integer.parseInt(rBSettaOggetto.getString("copieL")));
+		vis.setQuantita(3);
+		vis.setId(Integer.parseInt(rBSettaOggetto.getString("idL")));
 		vis.setTypeAsBook();
-		l.setDisponibilita(1);
+		l.setDisponibilita(Integer.parseInt(rBSettaOggetto.getString("disponibilita")));
 		assertEquals(0,cA.totale1(vis.getType(),l.getTitolo(), l.getDisponibilita(), vis.getQuantita()));
 	}
 
 	@Test
 	void testTotaleG() throws SQLException ,IdException {
-		g.setTitolo("La Republica1");
+		g.setTitolo(rBSettaOggetto.getString("titoloG"));
 		vis.setId(3);
-		g.setCopieRimanenti(50);
-		vis.setQuantita(3);
+		g.setCopieRimanenti(Integer.parseInt(rBSettaOggetto.getString("copieRimanenti")));
+		vis.setQuantita(5);
 		vis.setTypeAsDaily();
-		g.setDisponibilita(1);
+		g.setDisponibilita(Integer.parseInt(rBSettaOggetto.getString("disponibilita")));
 		assertNotEquals(0,cA.totale1(vis.getType(),g.getTitolo(),g.getDisponibilita(), vis.getQuantita()));
 	}
 
 	@Test
 	void testTotaleR() throws SQLException, IdException {
-		r.setTitolo("Rivista B");
-		vis.setId(5);
-		r.setCopieRim(30);
-		vis.setQuantita(2);
+		r.setTitolo(rBSettaOggetto.getString("titoloR"));
+		vis.setId(Integer.parseInt(rBSettaOggetto.getString("idR")));
+		r.setCopieRim(Integer.parseInt(rBSettaOggetto.getString("copieRimanenti")));
+		vis.setQuantita(Integer.parseInt(rBSettaOggetto.getString("quantitaR")));
 		vis.setTypeAsMagazine();
-		r.setDisp(1);
+		r.setDisp(Integer.parseInt(rBSettaOggetto.getString("disponibilita")));
 		assertNotEquals(0,cA.totale1(vis.getType(),r.getTitolo(),r.getDisp(),vis.getQuantita()));
 	}
-	
-	@Test
-	void testGetNomeById() throws SQLException
-	{
-		
-		vis.setTypeAsBook();
-		vis.setId(2);
-		assertNotNull(cA.getNomeById());
-	}
-	@Test
-	void testGetNomeByIdG() throws SQLException
-	{
-		vis.setTypeAsDaily();
-		vis.setId(2);
-		assertNotNull(cA.getNomeById());
-	}
-	@Test
-	void testGetNomeByIdR() throws SQLException
-	{
-		vis.setTypeAsMagazine();
-		vis.setId(2);
-		assertNotNull(cA.getNomeById());
-	}
-	@Test 
-	void testGetDispL() throws SQLException, IdException {
-		vis.setTypeAsBook();
-		vis.setId(1);
-		
-		assertNotEquals(0,cA.getDisp(vis.getType()));
-	}
-	@Test 
-	void testGetDispG() throws SQLException, IdException {
-		vis.setTypeAsDaily();
-		vis.setId(1);
-		assertEquals(0,cA.getDisp(vis.getType()));
-	}
-	@Test 
-	void testGetDispR() throws SQLException, IdException {
-		vis.setTypeAsMagazine();
-		vis.setId(1);
-		assertNotEquals(0,cA.getDisp(vis.getType()));
-	}
-	@Test 
-	void testGetCostoL() throws SQLException
-	{
-		vis.setTypeAsBook();
-		l.setId(1);
-		assertNotEquals(0,cA.getCosto());
-	}
-	@Test 
-	void testGetCostoG() throws SQLException
-	{
-		vis.setTypeAsDaily();
-		g.setId(1);
-		vis.setId(g.getId());
-		assertNotEquals(0,cA.getCosto());
-	}
-	@Test 
-	void testGetCostoR() throws SQLException
-	{
-		vis.setTypeAsMagazine();
-		r.setId(1);
-		assertNotEquals(0,cA.getCosto());
-	}
-	@Test
-	void testCheckData() throws SQLException {
-		info[0]="titolo ins prova";
-		info[1]="ARTE";
-		info[2]="autore ins prova";
-		info[3]="ita";
-		info[4]="editore ins prova";
-		info[5]="ARTE";
-		info[6]="provo ad inserire un libro";
-		infoGen[0]=String.valueOf(100);
-		infoGen[1]="15263452";
-		infoGen[2]=String.valueOf(84);
-		infoGen[3]=String.valueOf(1);
-		infoGen[4]=String.valueOf((float)2.25);
-		infoGen[5]=String.valueOf(100);
-		
-		l.setDataPubb(LocalDate.now());
-		l.setRecensione("provo ad inserire un libro");
-		l.setDesc("libro da inserire");
-		
-		
-		assertTrue(cAP.checkData(info, l.getRecensione(), l.getDesc(), l.getDataPubb(), infoGen));
-		
-	}
 
-	@Test
-	void testCheckDataG() throws SQLException {
-		g.setTitolo("giornale da inserire");
-		g.setTipologia("quotidiano");
-		g.setLingua("ita");
-		g.setEditore("editore ins prova");
-		g.setDataPubb(LocalDate.of(2022, 12,12));
-		g.setCopieRimanenti(100);
-		g.setDisponibilita(0);
-		g.setPrezzo((float)2.45);
-		assertTrue(cAP.checkDataG(g));
-	}
-
-	@Test
-	void testCheckDataR() throws SQLException {
-		info[0]="ins rivista prova";
-		info[1]="SETTIMANALE";
-		info[2]="autore ins rivi";
-		info[3]="ita";
-		info[4]="editore ins rivi";
-		r.setDescrizione("aaa");
-		r.setDataPubb(LocalDate.of(2022, 11,12));
-		r.setDisp(0);
-		r.setPrezzo((float)1.25);
-		r.setCopieRim(5);
-		assertTrue(cAP.checkDataR(info, r.getDataPubb(), r.getDisp(),r.getPrezzo() , r.getCopieRim(), r.getDescrizione()));
-	
-	}
-
-	@Test
-	void testDisponibilitaLibro() throws SQLException, IdException {
-		vis.setTypeAsBook();
-		assertTrue(cC.disponibilita(vis.getType(), "1"));
-	}
-
-	@Test
-	void testDisponibilitaGiornale() throws SQLException, IdException {
-		vis.setTypeAsDaily();
-		assertFalse(cC.disponibilita(vis.getType(),"1"));
-	}
-
-	@Test
-	void testDisponibilitaRivista() throws SQLException, IdException {
-		vis.setTypeAsMagazine();
-		assertTrue(cC.disponibilita(vis.getType(),"1"));
-	}
-
-	@ParameterizedTest
-	@ValueSource(strings = {"libro","giornale","rivista"})
-	void testGetLista(String strings) throws SQLException {
-		assertNotNull(cC.getLista(strings));
-	}
-
-	@ParameterizedTest
-	@ValueSource(strings= {"ADMIN","EDITORE","SCRITTORE"})
-	void testRetTipoUser(String strings) {
-		User.getInstance().setIdRuolo(strings);
-		assertEquals(strings,User.getInstance().getIdRuolo());
-	}
-	
 	@ParameterizedTest
 	@ValueSource(ints= {1,2,3,4,5,6})
 	void testScaricaLibro(int ints) throws DocumentException, IOException, URISyntaxException {
@@ -322,7 +263,7 @@ class TestLaptop1 {
 		cD.scarica(vis.getType());
 		assertEquals(ints,vis.getId());
 	}
-	
+
 	@ParameterizedTest
 	@ValueSource(ints= {1,2,3,4,5,6})
 	void testScaricaGiornale(int ints) throws IOException, DocumentException, URISyntaxException {
@@ -339,151 +280,83 @@ class TestLaptop1 {
 		cD.scarica(vis.getType());
 		assertEquals(ints,vis.getId());
 	}
+
 	@Test
-	void testAnnullaOrdineL() throws SQLException
-	{
+	void testAnnullaOrdineL() throws SQLException, IdException {
 		vis.setTypeAsBook();
 		vis.setMetodoP("cash");
-		Fattura f=new Fattura("pippo","pluto","via paperopoli 12","","1",(float)16.3);
-		Fattura f1=new Fattura("pippo","pluto","via paperopoli 12","","2",(float)18.5);
-		
+
+		f.setNome(rBFattura.getString("nome1"));
+		f.setCognome(rBFattura.getString("cognome1"));
+		f.setVia(rBFattura.getString("via"));
+		f.setCom(rBFattura.getString("comunicazioni1"));
+		f.setNumero(rBFattura.getString("numeroF1"));
+		f.setAmmontare(Float.parseFloat(rBFattura.getString("ammontare1")));
+
+		f1.setNome(rBFattura.getString("nome1"));
+		f1.setCognome(rBFattura.getString("cognome1"));
+		f1.setVia(rBFattura.getString("via"));
+		f1.setCom(rBFattura.getString("comunicazioni2"));
+		f1.setNumero(rBFattura.getString("numeroF2"));
+		f1.setAmmontare(Float.parseFloat(rBFattura.getString("ammontare2")));
 		cDao.inserisciFattura(f);
 		cDao.inserisciFattura(f1);
 
-		Pagamento p=new Pagamento(1, "cash", 0, "pippo", (float)16.3, "cash");
-		Pagamento p1=new Pagamento(2, "cash", 0, "pippo", (float)18.5, "cash");
+		p.setId(Integer.parseInt(rBPagamentoEsito.getString("id1")));
+		p.setMetodo(rBPagamentoEsito.getString("metodo"));
+		p.setEsito(Integer.parseInt(rBPagamentoEsito.getString("esito")));
+		p.setNomeUtente(rBPagamentoEsito.getString("nomeUtente"));
+		p.setAmmontare(Float.parseFloat(rBPagamentoEsito.getString("spesa1")));
+		p.setTipo(rBPagamentoEsito.getString("tipo"));
 
+		p2.setId(Integer.parseInt(rBPagamentoEsito.getString("id2")));
+		p2.setMetodo(rBPagamentoEsito.getString("metodo"));
+		p2.setEsito(Integer.parseInt(rBPagamentoEsito.getString("esito")));
+		p2.setNomeUtente(rBPagamentoEsito.getString("nomeUtente"));
+		p2.setAmmontare(Float.parseFloat(rBPagamentoEsito.getString("spesa2")));
+		p2.setTipo(rBPagamentoEsito.getString("tipo"));
 
 		pD.inserisciPagamento(p);
-		pD.inserisciPagamento(p1);
-		
+		pD.inserisciPagamento(p2);
+
 		cD.annullaOrdine();
 		assertEquals("cash",vis.getMetodoP());
 	}
-	@Test
-	void testAnnullaOrdineG() throws SQLException
-	{
-		vis.setTypeAsDaily();
-		vis.setMetodoP("cash");
-		Fattura f=new Fattura("pippo","pluto","via paperopoli 12","","1",(float)16.3);
-		Fattura f1=new Fattura("pippo","pluto","via paperopoli 12","","2",(float)18.5);
-		
-		cDao.inserisciFattura(f);
-		cDao.inserisciFattura(f1);
 
-		Pagamento p=new Pagamento(1, "cash", 0, "pippo", (float)16.3, "cash");
-		Pagamento p1=new Pagamento(2, "cash", 0, "pippo", (float)18.5, "cash");
-
-
-		pD.inserisciPagamento(p);
-		pD.inserisciPagamento(p1);
-		
-		cD.annullaOrdine();
-		assertEquals("cash",vis.getMetodoP());
-	}
-	@Test
-	void testAnnullaOrdineR() throws SQLException
-	{
-		vis.setTypeAsMagazine();
-		vis.setMetodoP("cCredito");
-		
-		
-
-		Pagamento p=new Pagamento(1, "cc", 0, "pippo", (float)16.3, "cash");
-		Pagamento p1=new Pagamento(2, "cc", 0, "pippo", (float)18.5, "cash");
-
-
-		pD.inserisciPagamento(p);
-		pD.inserisciPagamento(p1);
-		
-		cD.annullaOrdine();
-		assertEquals("cCredito",vis.getMetodoP());
+	@ParameterizedTest
+	@ValueSource(strings ={"libro","rivista","giornale"})
+	void testGetRivista(String strings) throws SQLException {
+		assertNotNull(cGP.getLista(strings));
 	}
 
-	@Test
-	void testCancellaL() throws SQLException {
-		vis.setId(20);
+	@ParameterizedTest
+	@ValueSource(strings= {"Zerocalcare","In cucina con ciccio"})
+	void testCercaPerTipoL(String strings) throws SQLException {
 		vis.setTypeAsBook();
-		cGP.cancella(vis.getId());
-		assertEquals(20,vis.getId());
-		
+		assertNotNull(cRicP.cercaPerTipo(strings));
 	}
-	@Test
-	void testCancellaG() throws SQLException {
-		vis.setId(11);
+	@ParameterizedTest
+	@ValueSource(strings= {"Il Fatto Quotidiano","La Republica"})
+	void testCercaPerTipoG(String strings) throws SQLException {
 		vis.setTypeAsDaily();
-		cGP.cancella(vis.getId());
-		assertEquals(11,vis.getId());
-		
+		assertNotNull(cRicP.cercaPerTipo(strings));
 	}
-	@Test
-	void testCancellaR() throws SQLException {
-		vis.setId(5);
+
+	@ParameterizedTest
+	@ValueSource(strings= {"Focus","Rivista A"})
+	void testCercaPerTipoR(String strings) throws SQLException {
 		vis.setTypeAsMagazine();
-		cGP.cancella(vis.getId());
-		assertEquals(5,vis.getId());
-		
+		assertNotNull(cRicP.cercaPerTipo(strings));
 	}
 
-	@Test
-	void testGetRivistaS() throws SQLException {
-		assertNotNull(cGP.getLista("rivista"));
-	}
 
-	@Test
-	void testGetLibroS() throws SQLException {
-		assertNotNull(cGP.getLista("libro"));
-	}
-
-	@Test
-	void testGetGiornaleS() throws SQLException {
-		assertNotNull(cGP.getLista("giornale"));
-	}
-
-	@Test
-	void testLogout() throws LogoutException {
-		u.setNome("Zerocalcare");
-		assertTrue(ControllerHomePageAfterLogin.logout());
-		
-	}
-	
-	@Test
-	void testLogoutSE() throws LogoutException {
-		u.setNome("Bao Publishing");
-		assertTrue(ControllerHomePageAfterLoginSE.logout());
-		
+	@ParameterizedTest
+	@ValueSource(strings = {"libro","giornale","rivista"})
+	void testGetLista(String strings) throws SQLException {
+		assertNotNull(cC.getLista(strings));
 	}
 	@Test
-	void testControlla() throws SQLException {
-		
-		assertTrue(cL.controlla("zerocalcare@gmail.com", "Zerocalcare21"));
-	}
-
-	@Test
-	void testGetRuoloTempUSer() throws SQLException  {
-			assertEquals("W",cL.getRuoloTempUSer("zerocalcare@gmail.com"));
-	}
-	@Test
-	void testPrendi() throws SQLException {
-		u.setEmail("giannni@gmail.com");
-		assertNotNull(cMU.prendi());
-	}
-
-	@Test
-	void testAggiorna() throws SQLException
-	{
-		assertTrue(cMU.aggiorna("g", "c","emailProva@gmail.com","provaPass","descProva",LocalDate.of(1952, 6,6) ,"giannni@gmail.com"));
-	}
-	
-
-	@Test
-	void testAggiornaTot() throws SQLException {
-		u.setId(2);
-		assertTrue(cMU.aggiornaTot("gianni","morandi" ,"gMorandi@gmail.com","71Giannone" ,"un mito" ,LocalDate.of(1952, 6,7),"A"));
-	}
-	
-	@Test
-	void testGetLibriById() throws SQLException {
+	void testGetOggettById() throws SQLException {
 		assertNotNull(cMP.getLibriById(1));
 	}
 
@@ -492,78 +365,32 @@ class TestLaptop1 {
 		assertNotNull(cMP.getGiornaliById(2));
 	}
 
-	@Test
-	void testCheckDataGM() throws SQLException {
-		ControllerSystemState.getInstance().setId(1);
-		cambio[0]="cambio giornale";
-		cambio[1]="quotidinao";
-		cambio[2]="cambio ediitore";
-		cambio[3]="italiano";
-		cMP.checkDataG(cambio,LocalDate.of(2022, 11,20), 0, (float)1.25, 10);
-		
-	}
+
 
 	@Test
 	void testGetRivistaById() throws SQLException {
 		assertNotNull(cMP.getRivistaById(5));
 	}
 
-	
-	@Test
-	void testCheckDataRM() throws SQLException {
-		cambioR[0]="cambio rivista";
-		cambioR[1]="MENSILE";
-		cambioR[2]="cambio autore";
-		cambioR[3]="ita";
-		cambioR[4]="cambio editore";
-		cMP.checkDataR(cambioR, LocalDate.of(2023, 5,11), 0, (float)2.36, 100, 1, "rivista cambiata2");
-	}
 
-	@Test
-	void testCheckDataL() throws NullPointerException, SQLException {
-		info[0]="cambio libro";
-		info[2]="cambio autore";
-		info[3]="italiano";
-		info[4]="cambio editore";
-		info[5]="TECNOLOGIA_MEDICINA";
-		
-		infoCosti[0]="100";
-		infoCosti[1]="12345674";
-		infoCosti[3]="1";
-		infoCosti[4]=String.valueOf((float)2.45);
-		infoCosti[5]="50";
-		ControllerSystemState.getInstance().setId(18);
-		//vedere qui
-		cMP.checkDataL(info, "aggiorno libro","provo ad aggiornare", LocalDate.of(2023,1,5), infoCosti);
-	}
-	
-	@Test
-	void testControllaL() throws SQLException,  IdException {
-		vis.setTypeAsBook();
-		vis.setId(1);
-		vis.setSpesaT((float)11.25);
-		cPC.controlla("pippo","pluto","via paperopoli 12","");
-		assertEquals(1,vis.getId());
-	}
-	@Test
-	void testControllaG() throws SQLException,  IdException {
-		vis.setTypeAsDaily();
-		vis.setId(1);
-		vis.setSpesaT((float)5.50);
-		cPC.controlla("franco","rossi", "via rossi 8","dopo le 12");
-		assertEquals(1,vis.getId());
+	@AfterAll
+	static void ripristinaDB() throws FileNotFoundException {
+
+		Connection conn;
+		ScriptRunner sr;
+
+		java.util.logging.Logger.getLogger("Test ripristina db").log(Level.INFO,"---------Chiamo stored truncate---------\n\n");
+
+		conn= ConnToDb.generalConnection();
+		sr = new ScriptRunner(conn);
+		sr.setSendFullScript(true);
+		Reader reader = new BufferedReader(new FileReader("FileSql/dropSchema.sql"));
+		//Running the script
+		sr.runScript(reader);
 
 	}
-	@Test
-	void testControllaR() throws SQLException,  IdException {
-		vis.setId(3);
-		vis.setTypeAsMagazine();
-		vis.setSpesaT((float)6.25);
-		cPC.controlla("franco","rossi", "via rossi 8","dopo le 12");
-		assertEquals(3,vis.getId());
-		
-	}
 
-	
+
+
 
 }
