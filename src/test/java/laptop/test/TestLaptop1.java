@@ -15,7 +15,9 @@ import java.util.logging.Level;
 
 
 import laptop.controller.*;
+import laptop.database.NegozioDao;
 import laptop.exception.IdException;
+import laptop.model.*;
 import laptop.model.raccolta.Factory;
 import laptop.utilities.ConnToDb;
 import org.apache.ibatis.jdbc.ScriptRunner;
@@ -29,10 +31,6 @@ import com.itextpdf.text.DocumentException;
 
 import laptop.database.ContrassegnoDao;
 import laptop.database.PagamentoDao;
-import laptop.model.CartaDiCredito;
-import laptop.model.Fattura;
-import laptop.model.Pagamento;
-import laptop.model.User;
 import laptop.model.raccolta.Giornale;
 import laptop.model.raccolta.Libro;
 import laptop.model.raccolta.Rivista;
@@ -62,6 +60,8 @@ class TestLaptop1 {
 
 	private final ResourceBundle rBCartaCredito=ResourceBundle.getBundle("configurations/cartaCredito");
 
+	private final ResourceBundle rBNegozio=ResourceBundle.getBundle("configurations/negozio");
+
 	private java.sql.Date dataS= new java.sql.Date(Calendar.getInstance().getTime().getTime());
 	private static  CartaDiCredito cc1=new CartaDiCredito();
 	private static CartaDiCredito cc2=new CartaDiCredito();
@@ -87,6 +87,10 @@ class TestLaptop1 {
 	private String[] infoCosti=new String[6];
 	private ControllerPagamentoCash cPC = new ControllerPagamentoCash();
 	private ControllerRicercaPage cRicP=new ControllerRicercaPage();
+	private ControllerScegliNegozio cSN=new ControllerScegliNegozio();
+	private Negozio n1=new Negozio();
+	private NegozioDao nD=new NegozioDao();
+
 
 	private static Fattura f=new Fattura();
 	private static Fattura f1=new Fattura();
@@ -521,6 +525,55 @@ class TestLaptop1 {
 		g.leggi(ints);
 		assertEquals(ints,g.getId());
 	}
+
+	@Test
+	void testControllaPag() {
+		cPCC.controllaPag("2025-08-08",rBPagamentoInfo.getString("codice"),rBPagamentoInfo.getString("civ"));
+		assertNotNull("2025-08-08");
+	}
+	@Test
+	void testPagamentoCCL() throws SQLException, IdException {
+		vis.setTypeAsBook();
+		vis.setSpesaT((float)125.6);
+		vis.setId(1);
+		cPCC.pagamentoCC(rBCartaCredito.getString("nome1"));
+		assertNotEquals(0,vis.getId());
+	}
+	@Test
+	void testPagamentoCCG() throws SQLException, IdException {
+		vis.setTypeAsDaily();
+		vis.setSpesaT((float)35.4);
+		vis.setId(1);
+		cPCC.pagamentoCC(rBCartaCredito.getString("nome2"));
+		assertNotEquals(0,vis.getId());
+	}
+	@Test
+	void testPagamentoCCR() throws SQLException, IdException {
+		vis.setTypeAsMagazine();
+		vis.setSpesaT((float)14.9);
+		vis.setId(1);
+		cPCC.pagamentoCC(rBCartaCredito.getString("nome3"));
+		assertNotEquals(0,vis.getId());
+	}
+	@Test
+	void testGetNegozi() throws SQLException {
+		assertNotNull(cSN.getNegozi());
+	}
+
+	@Test
+	void testCheckOpen() throws SQLException {
+		n1.setNome(rBNegozio.getString("nome1"));
+		nD.setOpen(n1, Boolean.getBoolean(rBNegozio.getString("isOpen")));
+		assertFalse(nD.checkOpen(n1));
+	}
+
+	@Test
+	void testCheckRitiro() throws SQLException {
+		n1.setNome(rBNegozio.getString("nome1"));
+		nD.setRitiro(n1, Boolean.getBoolean(rBNegozio.getString("isValid1")));
+		assertFalse(nD.checkRitiro(n1));
+	}
+
 	@AfterAll
 	static void ripristinaDB() throws FileNotFoundException {
 

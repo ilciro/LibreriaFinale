@@ -42,7 +42,8 @@ public class ControllerPagamentoCC {
 		  giorno = Integer.parseInt((String) appoggio.subSequence(8, 10));
 		
 		if (anno > 2020 && (mese >= 1 && mese <= 12) && (giorno >= 1 && giorno <= 31) && c.length() <= 20 && civ.length()==3 ) {
-			
+
+
 				
 					 verifica= c.split("-");
 					

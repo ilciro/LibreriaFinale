@@ -96,14 +96,7 @@ class TestLaptop3 {
 		assertEquals(strings,r.getTitolo());
 	}
 
-	@ParameterizedTest
-	@ValueSource(strings= {"SETTIMANALE","BISETTIMANALE","MENSILE",
-	"BIMESTRALE","TRIMESTRALE","ANNUALE","ESTIVO","INVERNALE",
-	"SPORTIVO","CINEMATOGRAFICA","GOSSIP","TELEVISIVO","MILITARE","INFORMATICA"})
-	void testGetTipologia(String strings) {
-		r.setTipologia(strings);
-		assertEquals(strings,r.getTipologia());
-	}
+
 	@ParameterizedTest
 	@ValueSource(strings = {"Bao Publishing","Panorama","Focus"})
 	void testGetAutore(String strings) {

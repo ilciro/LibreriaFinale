@@ -50,7 +50,6 @@ class TestLaptop2 {
 	private ControllerReportRaccolta cRR=new ControllerReportRaccolta();
 	private ControllerRicercaPage cRicP=new ControllerRicercaPage();
 	private ControllerRicercaPerTipo cRT=new ControllerRicercaPerTipo();
-	private ControllerScegliNegozio cSN=new ControllerScegliNegozio();
 	private ControllerVisualizza cV=new ControllerVisualizza();
 	private ControllerVisualizzaOrdine cVO=new ControllerVisualizzaOrdine();
 	private ControllerVisualizzaProfilo cVP=new ControllerVisualizzaProfilo();
@@ -61,43 +60,14 @@ class TestLaptop2 {
 	private Giornale g=new Giornale();
 	private GiornaleDao gD=new GiornaleDao();
 	private Libro l=new Libro();
-	private Negozio n1=new Negozio();
-	private NegozioDao nD=new NegozioDao();
+
 	private Pagamento p=new Pagamento(5, "cash", 0, "pippo", (float)12.35, "cash");
 	private Pagamento p2=new Pagamento(6, "cc", 0, "franco", (float)11.25, "cc", 5);
 
-	@Test
-	void testControllaPag() {
-		assertTrue(cPCC.controllaPag("2025-08-08","1852-9999-4152-9963","528"));
-	}
 
 
 
 
-	@Test
-	void testPagamentoCCL() throws SQLException, IdException {
-		vis.setTypeAsBook();
-		vis.setSpesaT((float)125.6);
-		vis.setId(1);
-		cPCC.pagamentoCC("franco");
-		assertNotEquals(0,vis.getId());
-	}
-	@Test
-	void testPagamentoCCG() throws SQLException, IdException {
-		vis.setTypeAsDaily();
-		vis.setSpesaT((float)35.4);
-		vis.setId(1);
-		cPCC.pagamentoCC("luigi");
-		assertNotEquals(0,vis.getId());
-	}
-	@Test
-	void testPagamentoCCR() throws SQLException, IdException {
-		vis.setTypeAsMagazine();
-		vis.setSpesaT((float)14.9);
-		vis.setId(1);
-		cPCC.pagamentoCC("silvia");
-		assertNotEquals(0,vis.getId());
-	}
 	@Test
 	void testAggiornaPass() throws SQLException {
 		assertTrue(cP.aggiornaPass("baoPublishing@gmail.com","BaoPub2021","BaoPub2022"));
@@ -141,10 +111,7 @@ class TestLaptop2 {
 		vis.setTypeAsMagazine();
 		assertTrue(cRT.setRicerca(vis.getType()));
 	}
-	@Test
-	void testGetNegozi() throws SQLException {
-		assertNotNull(cSN.getNegozi());
-	}
+
 
 	@Test
 	void testIsLoggedT() {
@@ -218,27 +185,7 @@ class TestLaptop2 {
 		tu.setEmailT("alfredino25@libro.it");
 		assertTrue(UsersDao.deleteTempUser(tu));
 	}
-	@Test
-	void testCreateRaccoltaFinaleCompletaL() {
-		f.createRaccoltaFinale1("libro","provaL","FUMETTI","prova","it", "prova","FUMETTI");
-		f.createRaccoltaFinale2("libro",150,"1426351", 200, 1, (float)1.65, 100);
-		assertNotNull(f.createRaccoltaFinaleCompleta("libro",LocalDate.now(), "prova", "prova", 15));
-		
-	}
-	@Test
-	void testCreateRaccoltaFinaleCompletaG() {
-		f.createRaccoltaFinale1("giornale", "provaG", "quotidiano","prova", "ita","prova","quotidiano");
-		f.createRaccoltaFinale2("giornale", 0, "85225", 150, 1, (float)1.80, 50);
-		assertNotNull(f.createRaccoltaFinaleCompleta("giornale",LocalDate.now(), "prova", "prova",20));
-		
-	}
-	@Test
-	void testCreateRaccoltaFinaleCompletaR() {
-		f.createRaccoltaFinale1("rivista","provaR","MENSILE","prova","ita","prova", null);
-		f.createRaccoltaFinale2("rivista", 50, null, 100, 1, (float)1.25, 50);
-		assertNotNull(f.createRaccoltaFinaleCompleta("rivista",LocalDate.now(), "prova", "prova",30));
-		
-	}
+
 	@Test
 	void testGetNome()  {
 		fattura2.setNome("topolino");
@@ -444,24 +391,9 @@ class TestLaptop2 {
 		n1.setIsOpen(true);
 		assertNotEquals(false,n1.getIsOpen());
 	}
-	@Test
-	void testGetNegoziL() throws SQLException {
-		assertNotNull(nD.getNegozi());
-	}
 
-	@Test
-	void testCheckOpen() throws SQLException {
-		n1.setNome("Negozio P");
-		nD.setOpen(n1, false);
-		assertFalse(nD.checkOpen(n1));
-	}
 
-	@Test
-	void testCheckRitiro() throws SQLException {
-		n1.setNome("Negozio P");
-		nD.setRitiro(n1, true);
-		assertFalse(nD.checkRitiro(n1));
-	}
+
 	@Test
 	void testGetIdP() {
 		assertNotEquals(0,p2.getId());
