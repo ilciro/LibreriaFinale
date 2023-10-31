@@ -16,15 +16,15 @@ import laptop.model.Pagamento;
 
 public class ControllerPagamentoCC {
 	private CartaCreditoDao cDao;
-<span class="nc" id="L19">	private String appoggio = &quot;&quot;;</span>
+<span class="fc" id="L19">	private String appoggio = &quot;&quot;;</span>
 	private CartaDiCredito cc;
 	private PagamentoDao pDao;
-<span class="nc" id="L22">	private ControllerSystemState vis= ControllerSystemState.getInstance();</span>
+<span class="fc" id="L22">	private ControllerSystemState vis= ControllerSystemState.getInstance();</span>
 	
-<span class="nc" id="L24">	private boolean state=false;</span>
+<span class="fc" id="L24">	private boolean state=false;</span>
 	
 	
-<span class="nc" id="L27">	private int cont=0;</span>
+<span class="fc" id="L27">	private int cont=0;</span>
 	private ControllerCheckPagamentoData cCPD;
 
 	public boolean controllaPag(String d, String c,String civ) {
@@ -66,48 +66,48 @@ public class ControllerPagamentoCC {
 
 	}
 
-<span class="nc" id="L69">	public ControllerPagamentoCC() {</span>
+<span class="fc" id="L69">	public ControllerPagamentoCC() {</span>
 		
-<span class="nc" id="L71">		cDao = new CartaCreditoDao();</span>
+<span class="fc" id="L71">		cDao = new CartaCreditoDao();</span>
 		
-<span class="nc" id="L73">		pDao=new PagamentoDao();</span>
+<span class="fc" id="L73">		pDao=new PagamentoDao();</span>
 		
-<span class="nc" id="L75">		cCPD=new ControllerCheckPagamentoData();</span>
+<span class="fc" id="L75">		cCPD=new ControllerCheckPagamentoData();</span>
 		
-<span class="nc" id="L77">	}</span>
+<span class="fc" id="L77">	}</span>
 
 	public void aggiungiCartaDB(String n, String c, String cod, java.sql.Date data, String civ, float prezzo)
 			throws SQLException, IdException {
 		
 		
 		
-<span class="nc" id="L84">			cc = new CartaDiCredito(n, c, cod,  data, civ, prezzo);</span>
+<span class="fc" id="L84">			cc = new CartaDiCredito(n, c, cod,  data, civ, prezzo);</span>
 						
-<span class="nc" id="L86">			cc.setPrezzoTransazine(vis.getSpesaT());</span>
-<span class="nc" id="L87">			cDao.insCC(cc);</span>
+<span class="fc" id="L86">			cc.setPrezzoTransazine(vis.getSpesaT());</span>
+<span class="fc" id="L87">			cDao.insCC(cc);</span>
 						
 			Pagamento p;
-<span class="nc" id="L90">			 p=new Pagamento(0,&quot;cc&quot;,0,cc.getNomeUser(),vis.getSpesaT(),null);</span>
-<span class="nc" id="L91">				p.setMetodo(&quot;cc&quot;);</span>
-<span class="nc" id="L92">				p.setNomeUtente(cc.getNomeUser());</span>
-<span class="nc" id="L93">				cCPD.checkPagamentoData(n);</span>
+<span class="fc" id="L90">			 p=new Pagamento(0,&quot;cc&quot;,0,cc.getNomeUser(),vis.getSpesaT(),null);</span>
+<span class="fc" id="L91">				p.setMetodo(&quot;cc&quot;);</span>
+<span class="fc" id="L92">				p.setNomeUtente(cc.getNomeUser());</span>
+<span class="fc" id="L93">				cCPD.checkPagamentoData(n);</span>
 								
-<span class="nc" id="L95">				pDao.inserisciPagamento(p);</span>
+<span class="fc" id="L95">				pDao.inserisciPagamento(p);</span>
 		
 		
 
-<span class="nc" id="L99">	}</span>
+<span class="fc" id="L99">	}</span>
 
 	public ObservableList&lt;CartaDiCredito&gt; ritornaElencoCC(String nomeU)  {
 		
-<span class="nc" id="L103">		return cDao.getCarteCredito(nomeU);</span>
+<span class="fc" id="L103">		return cDao.getCarteCredito(nomeU);</span>
 	}
 	
 	public CartaDiCredito tornaDalDb(String codiceCarta)
 	{
-<span class="nc" id="L108">		cc=new CartaDiCredito();</span>
-<span class="nc" id="L109">		cc.setNumeroCC(codiceCarta);</span>
-<span class="nc" id="L110">		return cDao.popolaDati(cc);</span>
+<span class="fc" id="L108">		cc=new CartaDiCredito();</span>
+<span class="fc" id="L109">		cc.setNumeroCC(codiceCarta);</span>
+<span class="fc" id="L110">		return cDao.popolaDati(cc);</span>
 	}
 
 	public void pagamentoCC(String nome) throws SQLException, IdException {

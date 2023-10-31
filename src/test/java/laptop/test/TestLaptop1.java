@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.io.*;
 import java.net.URISyntaxException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Calendar;
@@ -15,6 +16,7 @@ import java.util.logging.Level;
 
 import laptop.controller.*;
 import laptop.exception.IdException;
+import laptop.model.raccolta.Factory;
 import laptop.utilities.ConnToDb;
 import org.apache.ibatis.jdbc.ScriptRunner;
 import org.junit.jupiter.api.AfterAll;
@@ -58,6 +60,7 @@ class TestLaptop1 {
 
 	private final ResourceBundle rBSettaOggetto=ResourceBundle.getBundle("configurations/settaOggetto");
 
+	private final ResourceBundle rBCartaCredito=ResourceBundle.getBundle("configurations/cartaCredito");
 
 	private java.sql.Date dataS= new java.sql.Date(Calendar.getInstance().getTime().getTime());
 	private static  CartaDiCredito cc1=new CartaDiCredito();
@@ -90,14 +93,18 @@ class TestLaptop1 {
 
 	private static Pagamento p=new Pagamento();
 	private static Pagamento p2=new Pagamento();
-	//used for check which test is running
+	private ControllerPagamentoCC cPCC=new ControllerPagamentoCC();
+	private ControllerReportPage cRP=new ControllerReportPage();
+	private ControllerVisualizza cV=new ControllerVisualizza();
+	private Factory factory=new Factory();
 
 
 
-	
 
 
-	
+
+
+
 
 	@BeforeAll
 	static void creaDB() throws FileNotFoundException, SQLException
@@ -372,7 +379,148 @@ class TestLaptop1 {
 		assertNotNull(cMP.getRivistaById(5));
 	}
 
+	@Test
+	void testAggiungiCartaDBL() throws SQLException, IdException {
+		vis.setSpesaT((float)125.6);
+		vis.setTypeAsBook();
+		java.sql.Date data= Date.valueOf("2025-11-11");
+		cPCC.aggiungiCartaDB(rBCartaCredito.getString("nome1"),rBCartaCredito.getString("cognome1"),rBCartaCredito.getString("codice1"), data, rBCartaCredito.getString("civ1"), Float.parseFloat(rBCartaCredito.getString("prezzo")));
+		assertNotNull(data);
+	}
+	@Test
+	void testAggiungiCartaDBG() throws SQLException, IdException {
+		vis.setSpesaT((float)35.4);
+		vis.setTypeAsDaily();
+		java.sql.Date data=Date.valueOf("2026-06-11");
+		cPCC.aggiungiCartaDB(rBCartaCredito.getString("nome2"),rBCartaCredito.getString("cognome2"),rBCartaCredito.getString("codice2"), data, rBCartaCredito.getString("civ2"), Float.parseFloat(rBCartaCredito.getString("prezzo2")));
+		assertNotNull(data);
+	}
+	@Test
+	void testAggiungiCartaDBR() throws SQLException, IdException {
+		vis.setSpesaT((float)14.9);
+		vis.setTypeAsMagazine();
+		java.sql.Date data=Date.valueOf("2028-02-22");
+		cPCC.aggiungiCartaDB(rBCartaCredito.getString("nome3"),rBCartaCredito.getString("cognome3"),rBCartaCredito.getString("codice3"), data, rBCartaCredito.getString("civ3"), Float.parseFloat(rBCartaCredito.getString("prezzo3")));
+		assertNotNull(data);
+	}
+	@Test
+	void testGeneraReportLibri() throws IOException, SQLException {
+		String report="report libri";
+		cRP.generaReportLibri();
+		assertEquals("report libri",report);
+	}
+	@Test
+	void testGeneraReportGiornali() throws IOException, SQLException {
+		String report="report giornali";
+		cRP.generaReportGiornali();
+		assertEquals("report giornali",report);
 
+
+	}
+	@Test
+	void testGeneraReportRiviste() throws IOException, SQLException {
+		String report="report riviste";
+		cRP.generaReportRiviste();
+		assertEquals("report riviste",report);
+
+
+	}
+
+	@ParameterizedTest
+	@ValueSource(ints = {1,2,3,4,5,6,7,8,9,10})
+	void testGetDataL(int ints) throws SQLException {
+		assertNotNull(cV.getDataL(ints));
+	}
+	@ParameterizedTest
+	@ValueSource(ints = {1,2,3,4,5,6})
+	void testGetDataG(int ints) throws SQLException {
+		assertNotNull(cV.getDataG(ints));
+	}
+	@ParameterizedTest
+	@ValueSource(ints = {1,2,3,4,5})
+	void testGetDataR(int ints) throws SQLException {
+		assertNotNull(cV.getDataR(ints));
+	}
+
+	@Test
+	void testCreateRaccoltaFinaleCompletaL() {
+		factory.createRaccoltaFinale1(rBSettaOggetto.getString("tipologia1"),rBSettaOggetto.getString("titolo1"),rBSettaOggetto.getString("categoria1"),rBSettaOggetto.getString("autore1"),rBSettaOggetto.getString("lingua1"), rBSettaOggetto.getString("editore1"),rBSettaOggetto.getString("categoria1"));
+		factory.createRaccoltaFinale2(rBSettaOggetto.getString("tipologia1"),Integer.parseInt(rBSettaOggetto.getString("numPag1")),rBSettaOggetto.getString("isbn"), Integer.parseInt(rBSettaOggetto.getString("numPag1")), Integer.parseInt(rBSettaOggetto.getString("disp1")), Float.parseFloat(rBSettaOggetto.getString("prezzo1")), Integer.parseInt(rBSettaOggetto.getString("nrCopie")));
+		assertNotNull(factory.createRaccoltaFinaleCompleta(rBSettaOggetto.getString("tipologia1"),LocalDate.now(), rBSettaOggetto.getString("recensione1"), rBSettaOggetto.getString("descrizione1"), Integer.parseInt(rBSettaOggetto.getString("id"))));
+
+
+	}
+	@Test
+	void testCreateRaccoltaFinaleCompletaG() {
+		factory.createRaccoltaFinale1(rBSettaOggetto.getString("tipologia2"), rBSettaOggetto.getString("tipologia2"), rBSettaOggetto.getString("titolo2"),rBSettaOggetto.getString("autore2"), rBSettaOggetto.getString("lingua2"),rBSettaOggetto.getString("editore2"),rBSettaOggetto.getString("categoria2"));
+		factory.createRaccoltaFinale2(rBSettaOggetto.getString("tipologia2"), Integer.parseInt(rBSettaOggetto.getString("numPag2")), rBSettaOggetto.getString("isbn2"), Integer.parseInt(rBSettaOggetto.getString("copieRim2")), Integer.parseInt(rBSettaOggetto.getString("disp2")), Float.parseFloat(rBSettaOggetto.getString("prezzo2")), Integer.parseInt(rBSettaOggetto.getString("copieRim2")));
+		assertNotNull(factory.createRaccoltaFinaleCompleta(rBSettaOggetto.getString("tipologia2"),LocalDate.now(), rBSettaOggetto.getString("recensione2"), rBSettaOggetto.getString("descrizione2"),Integer.parseInt(rBSettaOggetto.getString("id2"))));
+
+	}
+	@Test
+	void testCreateRaccoltaFinaleCompletaR() {
+		factory.createRaccoltaFinale1(rBSettaOggetto.getString("tipologia3"),rBSettaOggetto.getString("titolo3"),rBSettaOggetto.getString("tipologia"),rBSettaOggetto.getString("autore3"),rBSettaOggetto.getString("lingua3"),rBSettaOggetto.getString("editore3"), null);
+		factory.createRaccoltaFinale2(rBSettaOggetto.getString("tipologia3"), Integer.parseInt(rBSettaOggetto.getString("numPag3")), null, Integer.parseInt(rBSettaOggetto.getString("copieRim3")), Integer.parseInt(rBSettaOggetto.getString("disp3")), Float.parseFloat(rBSettaOggetto.getString("prezzo3")), Integer.parseInt(rBSettaOggetto.getString("copieRim3")));
+		assertNotNull(factory.createRaccoltaFinaleCompleta(rBSettaOggetto.getString("tipologia3"),LocalDate.now(), rBSettaOggetto.getString("recensione3"), rBSettaOggetto.getString("descrizione3"),Integer.parseInt(rBSettaOggetto.getString("id3"))));
+
+	}
+
+	@ParameterizedTest
+	@ValueSource(strings= {"LINGUISTICA_SCRITTURA","ADOLESCENTI_RAGAZZI","CINEMA_FOTOGRAFIA",
+			"ECONOMIA" ,"INFORMATICA","WEB_DIGITAL_MEDIA","POLITICA" ,"ROMANZI_ROSA"})
+	void testGetCategoria(String strings) {
+		l.setCategoria(strings);
+		assertEquals(strings,l.getCategoria());
+	}
+	@ParameterizedTest
+	@ValueSource(strings= {"SETTIMANALE","BISETTIMANALE","MENSILE",
+			"BIMESTRALE","TRIMESTRALE","ANNUALE","ESTIVO","INVERNALE",
+			"SPORTIVO","CINEMATOGRAFICA","GOSSIP","TELEVISIVO","MILITARE","INFORMATICA"})
+	void testGetTipologia(String strings) {
+		r.setTipologia(strings);
+		assertEquals(strings,r.getTipologia());
+	}
+	@Test
+	void testRitornaElencoCC() throws SQLException {
+		assertNotNull(cPCC.ritornaElencoCC(rBCartaCredito.getString("nome2")));
+	}
+
+	@Test
+	void testTornaDalDb() throws Exception {
+		assertNotNull(cPCC.tornaDalDb(rBCartaCredito.getString("codice2")));
+	}
+	@Test
+	void reportTotale()
+	{
+		assertNotNull(cRP.reportTotale());
+	}
+	@Test
+	void reportRaccolta() throws IOException {
+		assertNotNull(cRP.reportRaccolta());
+	}
+	@ParameterizedTest
+	@ValueSource(ints= {1,2,3,4,5,6,7,8,9,10})
+	void testGetId(int ints) {
+		g.setId(ints);
+		assertEquals(ints,g.getId());
+	}
+
+	@ParameterizedTest
+	@ValueSource(ints= {1,2,3,4,5,6,7,8,9,10})
+	void testScarica(int ints) throws DocumentException, IOException
+	{
+		g.setId(ints);
+		g.scarica();
+		assertEquals(ints,g.getId());
+	}
+	@ParameterizedTest
+	@ValueSource(ints= {1,2,3,4,5,6,7,8,9,10})
+	void testLeggi(int ints) throws IOException, DocumentException
+	{
+		g.setId(ints);
+		g.leggi(ints);
+		assertEquals(ints,g.getId());
+	}
 	@AfterAll
 	static void ripristinaDB() throws FileNotFoundException {
 

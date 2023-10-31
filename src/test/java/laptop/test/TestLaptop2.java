@@ -71,40 +71,8 @@ class TestLaptop2 {
 		assertTrue(cPCC.controllaPag("2025-08-08","1852-9999-4152-9963","528"));
 	}
 
-	@Test
-	void testAggiungiCartaDBL() throws SQLException, IdException {
-		vis.setSpesaT((float)125.6);
-		vis.setTypeAsBook();
-		java.sql.Date data=Date.valueOf("2025-11-11");
-		cPCC.aggiungiCartaDB("franco","rossi","1852-8444-5256-3361", data, "185", (float)3000.0);
-		assertNotNull(data);
-	}
-	@Test
-	void testAggiungiCartaDBG() throws SQLException, IdException {
-		vis.setSpesaT((float)35.4);
-		vis.setTypeAsDaily();
-		java.sql.Date data=Date.valueOf("2026-06-11");
-		cPCC.aggiungiCartaDB("luigi","neri","2552-8544-5256-3361", data, "263", (float)2500.0);
-		assertNotNull(data);
-	}
-	@Test
-	void testAggiungiCartaDBR() throws SQLException, IdException {
-		vis.setSpesaT((float)14.9);
-		vis.setTypeAsMagazine();
-		java.sql.Date data=Date.valueOf("2028-02-22");
-		cPCC.aggiungiCartaDB("silvia","gialli","0442-8544-2556-3311", data, "145", (float)5000.0);
-		assertNotNull(data);
-	}
 
-	@Test
-	void testRitornaElencoCC() throws SQLException {
-		assertNotNull(cPCC.ritornaElencoCC("luigi"));
-	}
 
-	@Test
-	void testTornaDalDb() throws Exception {
-		assertNotNull(cPCC.tornaDalDb("2552-8544-5256-3361"));
-	}
 
 	@Test
 	void testPagamentoCCL() throws SQLException, IdException {
@@ -138,11 +106,7 @@ class TestLaptop2 {
 	void testRegistra() throws SQLException {
 		assertTrue(cRU.registra("nuovoUtenteN", "nuovoUtenteC", "nuovoUtente@gmail.com", "nuovo152","nuovo152",LocalDate.of(1985, 02,24)));
 	}
-	@Test
-	void testGeneraReportLibri() throws IOException, SQLException {
-		cRP.generaReportLibri();
-		assertNotNull("ReportFinale\\riepilogoLibro.txt");
-	}
+
 
 	@Test
 	void testGetUtenti() throws IOException, SQLException {
@@ -150,17 +114,8 @@ class TestLaptop2 {
 		assertNotNull("ReportFinale\\riepilogoUtenti.txt");
 	}
 
-	@Test
-	void testGeneraReportRiviste() throws IOException, SQLException {
-		cRP.generaReportRiviste();
-		assertNotNull("ReportFinale\\riepilogoRiviste.txt");
-	}
 
-	@Test
-	void testGeneraReportGiornali() throws IOException, SQLException {
-		cRP.generaReportGiornali();
-		assertNotNull("ReportFinale\\riepilogoGiornali.txt");
-	}
+
 	@ParameterizedTest
 	@ValueSource(strings = { "UTENTE","ADMIN","SCRITTORE","EDITORE"})
 	void testGetTipo(String strings) {
@@ -168,25 +123,7 @@ class TestLaptop2 {
 		assertEquals(strings,cRR.getTipo());
 	}
 	
-	@ParameterizedTest
-	@ValueSource(strings= {"Zerocalcare","In cucina con ciccio"})
-	void testCercaPerTipoL(String strings) throws SQLException {
-		vis.setTypeAsBook();
-		assertNotNull(cRicP.cercaPerTipo(strings));
-	}
-	@ParameterizedTest
-	@ValueSource(strings= {"Il Fatto Quotidiano","La Republica"})
-	void testCercaPerTipoG(String strings) throws SQLException {
-		vis.setTypeAsDaily();
-		assertNotNull(cRicP.cercaPerTipo(strings));
-	}
-	
-	@ParameterizedTest
-	@ValueSource(strings= {"Focus","Rivista A"})
-	void testCercaPerTipoR(String strings) throws SQLException {
-		vis.setTypeAsMagazine();
-		assertNotNull(cRicP.cercaPerTipo(strings));
-	}
+
 	@Test
 	void testSetRicercaL() {
 		vis.setTypeAsBook();
@@ -219,21 +156,7 @@ class TestLaptop2 {
 		vis.setIsLogged(false);
 		assertFalse(cSN.isLogged());
 	}
-	@ParameterizedTest
-	@ValueSource(ints = {1,2,3,4,5,6,7,8,9,10})
-	void testGetDataL(int ints) throws SQLException {
-		assertNotNull(cV.getDataL(ints));
-	}
-	@ParameterizedTest
-	@ValueSource(ints = {1,2,3,4,5,6})
-	void testGetDataG(int ints) throws SQLException {
-		assertNotNull(cV.getDataG(ints));
-	}
-	@ParameterizedTest
-	@ValueSource(ints = {1,2,3,4,5})
-	void testGetDataR(int ints) throws SQLException {
-		assertNotNull(cV.getDataR(ints));
-	}
+
 	@Test
 	void testGetDati() throws SQLException {
 		User.getInstance().setEmail(null);
@@ -398,29 +321,7 @@ class TestLaptop2 {
 		assertNotEquals(0,g.getPrezzo());
 	}
 
-	@ParameterizedTest
-	@ValueSource(ints= {1,2,3,4,5,6,7,8,9,10})
-	void testGetId(int ints) {
-		g.setId(ints);
-		assertEquals(ints,g.getId());
-	}
 
-	@ParameterizedTest
-	@ValueSource(ints= {1,2,3,4,5,6,7,8,9,10})
-	void testScarica(int ints) throws DocumentException, IOException
-	{
-		g.setId(ints);
-		g.scarica();
-		assertEquals(ints,g.getId());
-	}
-	@ParameterizedTest
-	@ValueSource(ints= {1,2,3,4,5,6,7,8,9,10})
-	void testLeggi(int ints) throws IOException, DocumentException
-	{
-		g.setId(ints);
-		g.leggi(ints);
-		assertEquals(ints,g.getId());
-	}
 	@Test
 	void testRetId() throws SQLException {
 		g.setTitolo("La gazzetta del profeta");
@@ -503,13 +404,7 @@ class TestLaptop2 {
 		l.setId(25);
 		assertNotEquals(0,l.getId());
 	}
-	@ParameterizedTest
-	@ValueSource(strings= {"LINGUISTICA_SCRITTURA","ADOLESCENTI_RAGAZZI","CINEMA_FOTOGRAFIA",
-			"ECONOMIA" ,"INFORMATICA","WEB_DIGITAL_MEDIA","POLITICA" ,"ROMANZI_ROSA"})
-	void testGetCategoria(String strings) {
-		l.setCategoria(strings);
-		assertEquals(strings,l.getCategoria());
-	}
+
   
 	@Test
 	void testGetNumeroPagine() {
@@ -608,15 +503,7 @@ class TestLaptop2 {
 		assertNotNull(gD.getTitolo(g));
 		
 	}
-	@Test
-	void reportTotale()
-	{
-		assertNotNull(cRP.reportTotale());
-	}
-	@Test
-	void reportRaccolta() throws IOException {
-		assertNotNull(cRP.reportRaccolta());
-	}
+
 
 
 	
