@@ -6,7 +6,7 @@ jobs:
       - checkout
       - sonarcloud/scan
 orbs:
-
+#changed version@1.4.0 ti 2.0.0 java17 enabled support
   sonarcloud: sonarsource/sonarcloud@2.0.0
 version: 2.1
 workflows:
