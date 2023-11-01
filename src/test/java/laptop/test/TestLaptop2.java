@@ -1,43 +1,31 @@
-/*package laptop.test;
+package laptop.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.sql.Date;
+import java.io.*;
+import java.sql.Connection;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.time.LocalDate;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
 
+import laptop.controller.*;
+import laptop.database.PagamentoDao;
 import laptop.exception.IdException;
+import laptop.model.Pagamento;
+import laptop.utilities.ConnToDb;
+import org.apache.ibatis.jdbc.ScriptRunner;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import com.itextpdf.text.DocumentException;
 
-import laptop.controller.ControllerPagamentoCC;
-import laptop.controller.ControllerPassword;
-import laptop.controller.ControllerRegistraUtente;
-import laptop.controller.ControllerReportPage;
-import laptop.controller.ControllerReportRaccolta;
-import laptop.controller.ControllerRicercaPage;
-import laptop.controller.ControllerRicercaPerTipo;
-import laptop.controller.ControllerScegliNegozio;
-import laptop.controller.ControllerSystemState;
-import laptop.controller.ControllerVisualizza;
-import laptop.controller.ControllerVisualizzaOrdine;
-import laptop.controller.ControllerVisualizzaProfilo;
-import laptop.database.GiornaleDao;
-import laptop.database.NegozioDao;
 import laptop.database.UsersDao;
-import laptop.model.Fattura;
-import laptop.model.Negozio;
-import laptop.model.Pagamento;
+
 import laptop.model.TempUser;
 import laptop.model.User;
-import laptop.model.raccolta.Factory;
-import laptop.model.raccolta.Giornale;
-import laptop.model.raccolta.Libro;
 
 
 class TestLaptop2 {
@@ -53,16 +41,17 @@ class TestLaptop2 {
 	private ControllerVisualizza cV=new ControllerVisualizza();
 	private ControllerVisualizzaOrdine cVO=new ControllerVisualizzaOrdine();
 	private ControllerVisualizzaProfilo cVP=new ControllerVisualizzaProfilo();
-	private TempUser tu=TempUser.getInstance();
-	private Factory f=new Factory();
-	private Fattura fattura1=new Fattura("pippo","pluto","via paperopoli 12","dopo le 12","14",(float)15.6);
-	private Fattura fattura2=new Fattura();
-	private Giornale g=new Giornale();
-	private GiornaleDao gD=new GiornaleDao();
-	private Libro l=new Libro();
+	private static TempUser tu=TempUser.getInstance();
 
-	private Pagamento p=new Pagamento(5, "cash", 0, "pippo", (float)12.35, "cash");
-	private Pagamento p2=new Pagamento(6, "cc", 0, "franco", (float)11.25, "cc", 5);
+    private final ResourceBundle rBUtente=ResourceBundle.getBundle("configurations/utente");
+	private Pagamento p;
+	private PagamentoDao pD=new PagamentoDao();
+	private static User u= User.getInstance();
+
+	private ControllerUserPage cUP=new ControllerUserPage();
+	private ControllerAggiungiUtente cAU=new ControllerAggiungiUtente();
+	private ControllerModificaUtente cMU=new ControllerModificaUtente();
+	private ControllerCancellaUser cCU=new ControllerCancellaUser();
 
 
 
@@ -70,11 +59,11 @@ class TestLaptop2 {
 
 	@Test
 	void testAggiornaPass() throws SQLException {
-		assertTrue(cP.aggiornaPass("baoPublishing@gmail.com","BaoPub2021","BaoPub2022"));
+		assertTrue(cP.aggiornaPass(rBUtente.getString("email"), rBUtente.getString("vecchiaP"), rBUtente.getString("nuovaP")));
 	}
 	@Test
 	void testRegistra() throws SQLException {
-		assertTrue(cRU.registra("nuovoUtenteN", "nuovoUtenteC", "nuovoUtente@gmail.com", "nuovo152","nuovo152",LocalDate.of(1985, 02,24)));
+		assertTrue(cRU.registra(rBUtente.getString("nuovoN"), rBUtente.getString("nuovoC"), rBUtente.getString("nuovoE"), rBUtente.getString("nuovoP"),rBUtente.getString("nuovoP"),LocalDate.of(Integer.parseInt(rBUtente.getString("annoN")), Integer.parseInt(rBUtente.getString("meseN")),Integer.parseInt(rBUtente.getString("giornoN")))));
 	}
 
 
@@ -113,16 +102,7 @@ class TestLaptop2 {
 	}
 
 
-	@Test
-	void testIsLoggedT() {
-		vis.setIsLogged(true);
-		assertTrue(cSN.isLogged());
-	}
-	@Test
-	void testIsLoggedF() {
-		vis.setIsLogged(false);
-		assertFalse(cSN.isLogged());
-	}
+
 
 	@Test
 	void testGetDati() throws SQLException {
@@ -131,32 +111,51 @@ class TestLaptop2 {
 	}
 	@Test
 	void testGetCredenziali() throws SQLException {
-		User.getInstance().setEmail("baoPublishing@gmail.com");
+		User.getInstance().setEmail(rBUtente.getString("email"));
 		assertNotNull(cVP.getCredenziali());
 		
 	}
 	@Test
 	void testCancellaUtente() throws SQLException {
-		User.getInstance().setEmail("baoPublishing@gmail.com");
+		User.getInstance().setEmail(rBUtente.getString("email"));
 		assertTrue(cVP.cancellaUtente());
 	}
 	@Test
 	void testCreateUser2() throws SQLException {
-		tu.setIdRuolo("E");
-		tu.setNomeT("tempUser nome");
-		tu.setCognomeT("tempUser cognome");
-		tu.setEmailT("tempUser@libero.it");
-		tu.setPasswordT("userTemp963");
-		tu.setDescrizioneT("provo ad inserire un tempUser");
-		tu.setDataDiNascitaT(LocalDate.of(1988, 5,12));
+		tu.setIdRuolo(rBUtente.getString("tempUerRuolo"));
+		tu.setNomeT(rBUtente.getString("tempUserNome"));
+		tu.setCognomeT(rBUtente.getString("tempUserCognome"));
+		tu.setEmailT(rBUtente.getString("tempUserEmail"));
+		tu.setPasswordT(rBUtente.getString("tempUserPass"));
+		tu.setDescrizioneT(rBUtente.getString("tempUserDesc"));
+		tu.setDataDiNascitaT(LocalDate.of(Integer.parseInt(rBUtente.getString("tempUserAnno")),Integer.parseInt(rBUtente.getString("tempUserMese")),Integer.parseInt(rBUtente.getString("tempUserGiorno"))));
 		assertTrue(UsersDao.createUser2(tu));
 		
 	}
 
 	@Test
-	void testAggiornaTempNome() throws SQLException {
-		tu.setNomeT("alfredo");
-		assertNotNull(UsersDao.aggiornaTempNome(tu));
+	void testGetUtentiLista() throws IOException, SQLException
+	{
+		String mex="prendo lista Utenti";
+		cUP.getUtenti();
+		assertEquals("prendo lista Utenti",mex);
+	}
+	@Test
+	void testCheckData() throws ParseException, SQLException
+	{
+		assertTrue(cAU.checkData(rBUtente.getString("nomeProvaU"),rBUtente.getString("cognomeProvaU") ,rBUtente.getString("emailProvaU"),rBUtente.getString("passProvaU"),rBUtente.getString("dataProvaU")));
+	}
+	@Test
+	void testAggiornaTotale() throws SQLException
+	{
+		User.getInstance().setId(Integer.parseInt(rBUtente.getString("idU")));
+		assertTrue(cMU.aggiornaTot(rBUtente.getString("nomeU"), rBUtente.getString("cognomeU") ,rBUtente.getString("emailU"),rBUtente.getString("passU"), rBUtente.getString("descU"), LocalDate.of(Integer.parseInt(rBUtente.getString("annoU")), Integer.parseInt(rBUtente.getString("meseU")),Integer.parseInt(rBUtente.getString("giornoU"))),rBUtente.getString("ruoloU")));
+	}
+	@Test
+	void testCancellaUser() throws SQLException
+	{
+		User.getInstance().setId(Integer.parseInt(rBUtente.getString("idU")));
+		assertTrue(cCU.cancellaUser());
 	}
 
 	
@@ -182,262 +181,105 @@ class TestLaptop2 {
 	@Test
 	void testDeleteTempUser() throws SQLException
 	{
-		tu.setEmailT("alfredino25@libro.it");
+		tu.setEmailT(rBUtente.getString("tempUserEmailToDelete"));
 		assertTrue(UsersDao.deleteTempUser(tu));
 	}
 
-	@Test
-	void testGetNome()  {
-		fattura2.setNome("topolino");
-		assertEquals("topolino",fattura2.getNome());
-	}
 
-	@Test
-	void testGetCognome()  {
-		fattura2.setCognome("paperino");
-		assertEquals("paperino",fattura2.getCognome());
-		
-	}
-
-	@Test
-	void testGetVia() {
-		assertNotNull(fattura1.getVia());
-	}
-
-	@Test
-	void testGetCom() {
-		assertNotNull(fattura1.getCom());
-	}
-
-	@Test
-	void testGetNumero() {
-		assertNotEquals("0",fattura1.getNumero());
-	}
-
-	@Test
-	void testGetAmmontare() {
-		assertNotEquals(0,fattura1.getAmmontare());
-	}
-	
 	@ParameterizedTest
-	@ValueSource(strings = {"La Republica1","La Republica2","Il Fatto Quotidiano4","Il Fatto Quotidiano5","La gazzetta del profeta"})
-	void testGetTitolo(String strings) {
-		g.setTitolo(strings);
-		assertEquals(strings,g.getTitolo());
-	}
+	@ValueSource(strings={"cash","cCredito"})
+	void testInserisciPagamento(String strings) throws SQLException, IdException {
 
-	@Test
-	void testGetTipologia() {
-		g.setTipologia("Quotidiano");
-		assertEquals("Quotidiano",g.getTipologia());
-	}
+		p=new Pagamento();
+		p.setTipo(strings);
+		p.setEsito(0);
 
-	@Test
-	void testGetLingua() {
-		g.setLingua("ita");
-		assertEquals("ita",g.getLingua());
-	}
+		p.setNomeUtente(rBUtente.getString("nomeUtente"));
+		p.setAmmontare((float) 1.36);
 
-	@Test
-	void testGetEditore() {
-		g.setEditore("prova");
-		assertEquals("prova",g.getEditore());
-	}
+		User.getInstance().setEmail(rBUtente.getString("emailUtente"));
 
-	@Test
-	void testGetDataPubb() {
-		g.setDataPubb(LocalDate.now());
-		assertNotNull(g.getDataPubb());
-	}
+		p.setTipo("libro");
 
-	@Test
-	void testGetCopieRimanenti() {
-		g.setCopieRimanenti(105);
-		assertEquals(105,g.getCopieRimanenti());
-	}
-
-	@Test
-	void testGetDisponibilita() {
-		g.setDisponibilita(0);
-		assertEquals(0,g.getDisponibilita());
-	}
-
-	@Test
-	void testGetPrezzo() {
-		g.setPrezzo((float)1.36);
-		assertNotEquals(0,g.getPrezzo());
-	}
+		p.setId(0);
 
 
-	@Test
-	void testRetId() throws SQLException {
-		g.setTitolo("La gazzetta del profeta");
-		assertEquals(12,gD.retId(g));
-	}
+		pD.inserisciPagamento(p);
 
-	@Test
-	void testGetDisp() throws SQLException {
-		g.setId(12);
-		assertEquals(1,gD.getDisp(g));
-	}
-	@Test
-	void testGetTitolo() {
-		l.setTitolo("prova");
-		assertEquals("prova",l.getTitolo());
-	}
+		assertNotNull(p);
 
-	@Test
-	void testGetCodIsbn() {
-		l.setCodIsbn("123456");
-		assertEquals("123456",l.getCodIsbn());
-	}
-
-	@Test
-	void testGetEditoreL() {
-		l.setEditore("prova");
-		assertEquals("prova",l.getEditore());
-	}
-
-	@Test
-	void testGetAutore() {
-		l.setAutore("prova");
-		assertEquals("prova",l.getAutore());
-	}
-
-	@Test
-	void testGetLinguaL() {
-		l.setLingua("ita");
-		assertEquals("ita",l.getLingua());
-	}
-
-	
-
-	@Test
-	void testGetDataPubbL() {
-		l.setDataPubb(LocalDate.now());
-		assertNotNull(l.getDataPubb());
-	}
-
-	@Test
-	void testGetRecensione() {
-		l.setRecensione("prova");
-		assertEquals("prova",l.getRecensione());
-	}
-
-	@Test
-	void testGetNrCopie() {
-		l.setNrCopie(100);
-		assertNotEquals(0,l.getNrCopie());
-		}
-
-	@Test
-	void testGetDesc() {
-		l.setDesc("prova");
-		assertEquals("prova",l.getDesc());
-	}
-
-	@Test
-	void testGetDisponibilitLa() {
-		l.setDisponibilita(1);
-		assertEquals(1,l.getDisponibilita());
 	}
 	@Test
-	void testGetPrezzoL() {
-		l.setPrezzo((float)1.25);
-		assertNotEquals(0,l.getPrezzo());
+	void testGetPagamenti() throws SQLException {
+		User.getInstance().setEmail(rBUtente.getString("emailUtente"));
+		assertNotNull(pD.getPagamenti());
 	}
-	@Test
-	void testGetId() {
-		l.setId(25);
-		assertNotEquals(0,l.getId());
-	}
-
-  
-	@Test
-	void testGetNumeroPagine() {
-		l.setNumeroPagine(150);
-		assertEquals(150,l.getNumeroPagine());
-	}
-	
 	@ParameterizedTest
-	@ValueSource(ints= {1,5,6,7})
-	void testLeggiL(int ints) throws IOException, DocumentException, URISyntaxException
-	{
-		l.setId(ints);
-		l.leggi(ints);
-		assertEquals(ints,l.getId());
+	@ValueSource(strings= {"ADMINT","EDITORET","SCRITTORET"})
+	void testGetIdRuolo(String strings) {
+		tu.setIdRuolo(strings);
+		assertEquals(strings,tu.getIdRuolo());
 	}
-
-	@Test
-	void testGetNomeN()  {
-		n1.setNome("Negozio E");
-		assertEquals("Negozio E",n1.getNome());
+	@ParameterizedTest
+	@ValueSource(strings={"ADMIN","EDITORE","SCRITTORE"})
+	void testGetIdRuoloU(String strings) {
+		u.setIdRuolo(strings);
+		assertEquals(strings,u.getIdRuolo());
 	}
+    @Test
+    void testGetIdRuoloF() {
+        tu.setIdRuolo("FT");
+        assertEquals("UTENTET",tu.getIdRuolo());
+    }
+    @Test
+    void testGetInstanceU() {
+        assertNotNull(u);
+    }
 
-	@Test
-	void testGetViaN()  {
-		n1.setVia("via papaveri 15");
-		assertEquals("via papaveri 15",n1.getVia());
-	}
+    @Test
+    void testCambioTemUser() throws IOException, SQLException
+    {
 
-	@Test
-	void testGetIsValid()  {
-		n1.setIsValid(false);
-		assertNotEquals(true,n1.getIsValid());
-	}
-
-	@Test
-	void testGetIsOpen() {
-		n1.setIsOpen(true);
-		assertNotEquals(false,n1.getIsOpen());
-	}
-
-
-
-	@Test
-	void testGetIdP() {
-		assertNotEquals(0,p2.getId());
-	}
-
-	@Test
-	void testGetMetodo() {
-		assertEquals("cash",p.getMetodo());
-	}
-
-	@Test
-	void testGetEsito() {
-		assertEquals(0,p.getEsito());
-	}
-
-	@Test
-	void testGetNomeUtente() {
-		assertNotNull(p2.getNomeUtente());
-	}
-
-	@Test
-	void testGetAmmontareP() {
-		assertNotEquals(0,p.getAmmontare());
-	}
-
-	@Test
-	void testGetTipo() {
-		assertEquals("cc",p2.getTipo());
-	}
-	@Test
-	void testGetIdOggetto() {
-		assertNotEquals(0,p2.getId());
-	}
-	@Test 
-	void testGiornaleId()
-	{
-		vis.setId(5);
-		g.setId(1);
-		assertNotNull(gD.getTitolo(g));
-		
-	}
+        TempUser tu1=TempUser.getInstance();
+        tu.setId(Integer.parseInt(rBUtente.getString("tempUserId")));
+        tu1=UsersDao.getTempUserSingolo(tu);
+        tu1.setDescrizioneT(rBUtente.getString("tempDesc"));
+        UsersDao.aggiornaTempDesc(tu1);
+        tu1.setPasswordT(rBUtente.getString("tempPass"));
+        UsersDao.aggiornaTempPass(tu1);
+        assertEquals(7,tu1.getId());
 
 
 
-	
+    }
+    @Test
+    void testListaUsers() throws SQLException
+    {
+        assertNotNull(UsersDao.getUserList());
+    }
+
+	@AfterAll
+    static void ripristinaDB() throws FileNotFoundException {
+
+        Connection conn;
+        ScriptRunner sr;
+
+        java.util.logging.Logger.getLogger("Test ripristina db").log(Level.INFO,"---------Chiamo stored truncate---------\n\n");
+
+        conn= ConnToDb.generalConnection();
+        sr = new ScriptRunner(conn);
+        sr.setSendFullScript(true);
+        Reader reader = new BufferedReader(new FileReader("FileSql/dropSchema.sql"));
+        //Running the script
+        sr.runScript(reader);
+
+    }
+
+
+
+
+
+
+
+
 }
-*/

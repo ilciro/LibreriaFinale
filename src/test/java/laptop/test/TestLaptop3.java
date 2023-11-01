@@ -39,44 +39,14 @@ class TestLaptop3 {
 	private RivistaDao rD=new RivistaDao();
 	private TempUser tu=TempUser.getInstance();
 	private User u=User.getInstance();
-	private ControllerUserPage cUP=new ControllerUserPage();
-	private ControllerAggiungiUtente cAU=new ControllerAggiungiUtente();
-	private ControllerModificaUtente cMU=new ControllerModificaUtente();
-	private ControllerCancellaUser cCU=new ControllerCancellaUser();
+
 	private LibroDao lD=new LibroDao();
 	private Libro l=new Libro();
 	private ControllerSystemState vis=ControllerSystemState.getInstance();
 	
 
-	@ParameterizedTest
-	@ValueSource(strings={"cash","cCredito"})
-	void testInserisciPagamento(String strings) throws SQLException,  IdException {
-		
-		p=new Pagamento();
-		p.setTipo(strings);
-		p.setEsito(0);
-		
-		p.setNomeUtente("franco");
-		p.setAmmontare((float) 1.36);
-		
-		User.getInstance().setEmail("franco.rossi@gmail.com");
-		
-		p.setTipo("libro");
-		
-		p.setId(0);
-		
-		
-		pD.inserisciPagamento(p);
-		
-		assertNotNull(p);
-		
-	}
 
-	@Test
-	void testGetPagamenti() throws SQLException {
-		User.getInstance().setEmail("franco.rossi@gmail.com");
-		assertNotNull(pD.getPagamenti());
-	}
+
 
 	@Test
 	void testRetUltimoOrdine() throws SQLException {
@@ -238,22 +208,9 @@ class TestLaptop3 {
 		tu.setDataDiNascitaT(LocalDate.now());
 		assertNotNull(tu.getDataDiNascitaT());
 	}
-	@ParameterizedTest
-	@ValueSource(strings= {"ADMINT","EDITORET","SCRITTORET"})
-	void testGetIdRuolo(String strings) {
-		tu.setIdRuolo(strings);
-		assertEquals(strings,tu.getIdRuolo());
-	}
+
 	
-	@Test
-	void testGetIdRuoloF() {
-		tu.setIdRuolo("FT");
-		assertEquals("UTENTET",tu.getIdRuolo());
-		}
-	@Test
-	void testGetInstanceU() {
-		assertNotNull(u);
-	}
+
 
 	@Test
 	void testGetIdU() {
@@ -293,43 +250,13 @@ class TestLaptop3 {
 		assertNotNull(u.getDataDiNascita());
 	}
 
-	@ParameterizedTest
-	@ValueSource(strings={"ADMIN","EDITORE","SCRITTORE"})
-	void testGetIdRuoloU(String strings) {
-		u.setIdRuolo(strings);
-		assertEquals(strings,u.getIdRuolo());
-	}
-	
+
 	@Test
 	void testGetIdRuoloFU() {
 		u.setIdRuolo("F");
 		assertEquals("UTENTE",u.getIdRuolo());
 		}
-	@Test
-	void testGetUtenti() throws IOException, SQLException
-	{
-		String mex="prendo lista Utenti";
-		cUP.getUtenti();
-		assertEquals("prendo lista Utenti",mex);
-	}
-	@Test
-	void testCheckData() throws ParseException, SQLException
-	{
-		assertTrue(cAU.checkData("nome prova","cognome prova" ,"emailProva@gmail.com","prova452","1985/08/11"));
-	}
-	@Test
-	void testAggiornaTotale() throws SQLException
-	{
-		User.getInstance().setId(5);
-		User.getInstance().setDescrizione("utente aggiornato");
-		assertTrue(cMU.aggiornaTot("nomeU","cognomeU" ,"nomeCognomeU@gmail.com","nome52", User.getInstance().getDescrizione(), LocalDate.of(1963, 8,11),"EDITORE"));
-	}
-	@Test
-	void testCancellaUser() throws SQLException
-	{
-		User.getInstance().setId(5);
-		assertTrue(cCU.cancellaUser());
-	}
+
 	@Test
 	void testDispRivista() throws SQLException
 	{
@@ -342,27 +269,7 @@ class TestLaptop3 {
 		r.setId(5);
 		assertNotNull(rD.getTitolo(r));
 	}
-	@Test
-	void testCambioTemUser() throws IOException, SQLException
-	{
-		
-		TempUser tu1=TempUser.getInstance();
-		tu.setId(7);
-		tu1=UsersDao.getTempUserSingolo(tu);
-		tu1.setDescrizioneT("utente comune");
-		UsersDao.aggiornaTempDesc(tu1);
-		tu1.setPasswordT("Frossi185");
-		UsersDao.aggiornaTempPass(tu1);
-		assertEquals(7,tu1.getId());
-		
-		
-		
-	}
-	@Test
-	void testListaUsers() throws SQLException
-	{
-		assertNotNull(UsersDao.getUserList());
-	}
+
 	@Test
 	void testIdLibro() throws SQLException
 	{

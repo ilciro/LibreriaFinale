@@ -1,11 +1,10 @@
 jobs:
   build:
     docker:
-      - image:  cimg/openjdk:21.0.0-node #'node:16.14.0'
+      - image: 'node:16.14.0'
     steps:
       - checkout
       - sonarcloud/scan
-      - run: node --version
 orbs:
 
   sonarcloud: sonarsource/sonarcloud@1.1.0
