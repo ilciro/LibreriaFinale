@@ -6,11 +6,11 @@ import java.time.LocalDate;
 
 public class UserBean {
 	
-<span class="nc" id="L9">	enum Ruoli {</span>
-<span class="nc" id="L10">		ADMIN,</span>
-<span class="nc" id="L11">		UTENTE,</span>
-<span class="nc" id="L12">		SCRITTORE,</span>
-<span class="nc" id="L13">		EDITORE;</span>
+<span class="fc" id="L9">	enum Ruoli {</span>
+<span class="fc" id="L10">		ADMIN,</span>
+<span class="fc" id="L11">		UTENTE,</span>
+<span class="fc" id="L12">		SCRITTORE,</span>
+<span class="fc" id="L13">		EDITORE;</span>
  }
 	
 	
@@ -28,17 +28,17 @@ public class UserBean {
 	private String mexB;
 	private String listaUtentiB;
 	
-<span class="nc" id="L31">	private static UserBean userInstance = null;</span>
+<span class="fc" id="L31">	private static UserBean userInstance = null;</span>
 
     private UserBean() {}
 
     public static UserBean getInstance() {
-<span class="nc bnc" id="L36" title="All 2 branches missed.">        if (userInstance == null) {</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (userInstance == null) {</span>
           
-<span class="nc" id="L38">        	userInstance = new UserBean();</span>
+<span class="fc" id="L38">        	userInstance = new UserBean();</span>
                 }
        
-<span class="nc" id="L41">        return userInstance;</span>
+<span class="fc" id="L41">        return userInstance;</span>
     }
 	
 	
@@ -48,59 +48,59 @@ public class UserBean {
 	}
 
 	public void setIdB(int idB) {
-<span class="nc" id="L51">		this.idB = idB;</span>
-<span class="nc" id="L52">	}</span>
+<span class="fc" id="L51">		this.idB = idB;</span>
+<span class="fc" id="L52">	}</span>
 
 	public String getNomeB() {
-<span class="nc" id="L55">		return nomeB;</span>
+<span class="fc" id="L55">		return nomeB;</span>
 	}
 
 	public void setNomeB(String nomeB) {
-<span class="nc" id="L59">		this.nomeB = nomeB;</span>
-<span class="nc" id="L60">	}</span>
+<span class="fc" id="L59">		this.nomeB = nomeB;</span>
+<span class="fc" id="L60">	}</span>
 
 	public String getCognomeB() {
 <span class="nc" id="L63">		return cognomeB;</span>
 	}
 
 	public void setCognomeB(String cognomeB) {
-<span class="nc" id="L67">		this.cognomeB = cognomeB;</span>
-<span class="nc" id="L68">	}</span>
+<span class="fc" id="L67">		this.cognomeB = cognomeB;</span>
+<span class="fc" id="L68">	}</span>
 
 	public String getEmailB() {
-<span class="nc" id="L71">		return emailB;</span>
+<span class="fc" id="L71">		return emailB;</span>
 	}
 
 	public void setEmailB(String emailB) {
-<span class="nc" id="L75">		this.emailB = emailB;</span>
-<span class="nc" id="L76">	}</span>
+<span class="fc" id="L75">		this.emailB = emailB;</span>
+<span class="fc" id="L76">	}</span>
 
 	public String getPasswordB() {
 <span class="nc" id="L79">		return passwordB;</span>
 	}
 
 	public void setPasswordB(String passwordB) {
-<span class="nc" id="L83">		this.passwordB = passwordB;</span>
-<span class="nc" id="L84">	}</span>
+<span class="fc" id="L83">		this.passwordB = passwordB;</span>
+<span class="fc" id="L84">	}</span>
 
 	public String getDescrizioneB() {
 <span class="nc" id="L87">		return descrizioneB;</span>
 	}
 
 	public void setDescrizioneB(String descrizioneB) {
-<span class="nc" id="L91">		this.descrizioneB = descrizioneB;</span>
-<span class="nc" id="L92">	}</span>
+<span class="fc" id="L91">		this.descrizioneB = descrizioneB;</span>
+<span class="fc" id="L92">	}</span>
 
 	public LocalDate getDataDiNascitaB() {
 <span class="nc" id="L95">		return dataDiNascitaB;</span>
 	}
 
 	public void setDataDiNascitaB(LocalDate dataDiNascitaB) {
-<span class="nc" id="L99">		this.dataDiNascitaB = dataDiNascitaB;</span>
-<span class="nc" id="L100">	}</span>
+<span class="fc" id="L99">		this.dataDiNascitaB = dataDiNascitaB;</span>
+<span class="fc" id="L100">	}</span>
 
 	public String getrB() {
-<span class="nc" id="L103">		return rB;</span>
+<span class="fc" id="L103">		return rB;</span>
 	}
 
 	
@@ -123,19 +123,19 @@ public class UserBean {
 
 	public void setIdRuolo(String ruolo) {
 
-<span class="nc bnc" id="L126" title="All 8 branches missed.">		 switch (ruolo){</span>
+<span class="pc bpc" id="L126" title="4 of 8 branches missed.">		 switch (ruolo){</span>
 			case &quot;ADMIN&quot;:
-<span class="nc" id="L128">				rB= Ruoli.ADMIN.toString();</span>
-<span class="nc" id="L129">				break;				</span>
+<span class="fc" id="L128">				rB= Ruoli.ADMIN.toString();</span>
+<span class="fc" id="L129">				break;				</span>
 			case &quot;EDITORE&quot;:
-<span class="nc" id="L131">				rB= Ruoli.EDITORE.toString();</span>
-<span class="nc" id="L132">				break;</span>
+<span class="fc" id="L131">				rB= Ruoli.EDITORE.toString();</span>
+<span class="fc" id="L132">				break;</span>
 			case &quot;SCRITTORE&quot;:
-<span class="nc" id="L134">				rB= Ruoli.SCRITTORE.toString();</span>
-<span class="nc" id="L135">				break;</span>
+<span class="fc" id="L134">				rB= Ruoli.SCRITTORE.toString();</span>
+<span class="fc" id="L135">				break;</span>
 			case &quot;UTENTE&quot;:
-<span class="nc" id="L137">				rB= Ruoli.UTENTE.toString();</span>
-<span class="nc" id="L138">				break;	</span>
+<span class="fc" id="L137">				rB= Ruoli.UTENTE.toString();</span>
+<span class="fc" id="L138">				break;	</span>
 			case &quot;W&quot;:
 <span class="nc" id="L140">				rB= Ruoli.SCRITTORE.toString();</span>
 <span class="nc" id="L141">				break;</span>
@@ -152,7 +152,7 @@ public class UserBean {
 			}
 		
 
-<span class="nc" id="L155">	}</span>
+<span class="fc" id="L155">	}</span>
 
 	
 

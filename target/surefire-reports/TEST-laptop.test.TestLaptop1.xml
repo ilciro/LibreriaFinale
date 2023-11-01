@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="laptop.test.TestLaptop1" time="45.218" tests="137" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="laptop.test.TestLaptop1" time="23.118" tests="137" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IT"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.8.101-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\ilciro\AppData\Local\Temp\surefire16517977923259268737\surefirebooter11146672697861054983.jar C:\Users\ilciro\AppData\Local\Temp\surefire16517977923259268737 2023-11-01T17-05-40_677-jvmRun1 surefire7868371391767145201tmp surefire_03068566295238726049tmp"/>
+    <property name="sun.java.command" value="C:\Users\ilciro\AppData\Local\Temp\surefire2318883766892888920\surefirebooter10871949787817532517.jar C:\Users\ilciro\AppData\Local\Temp\surefire2318883766892888920 2023-11-01T18-48-39_512-jvmRun1 surefire2168889182878550383tmp surefire_014909623155755951574tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\ilciro\IdeaProjects\LibreriaFinale\target\test-classes;C:\Users\ilciro\IdeaProjects\LibreriaFinale\target\classes;C:\Users\ilciro\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.2\junit-jupiter-api-5.9.2.jar;C:\Users\ilciro\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\ilciro\.m2\repository\org\junit\platform\junit-platform-commons\1.9.2\junit-platform-commons-1.9.2.jar;C:\Users\ilciro\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\ilciro\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.2\junit-jupiter-engine-5.9.2.jar;C:\Users\ilciro\.m2\repository\org\junit\platform\junit-platform-engine\1.9.2\junit-platform-engine-1.9.2.jar;C:\Users\ilciro\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.2\junit-jupiter-params-5.9.2.jar;C:\Users\ilciro\.m2\repository\org\openjfx\javafx-controls\17\javafx-controls-17-win.jar;C:\Users\ilciro\.m2\repository\org\openjfx\javafx-graphics\17\javafx-graphics-17.jar;C:\Users\ilciro\.m2\repository\org\openjfx\javafx-graphics\17\javafx-graphics-17-win.jar;C:\Users\ilciro\.m2\repository\org\openjfx\javafx-base\17\javafx-base-17.jar;C:\Users\ilciro\.m2\repository\org\openjfx\javafx-base\17\javafx-base-17-win.jar;C:\Users\ilciro\.m2\repository\org\openjfx\javafx-fxml\17\javafx-fxml-17.jar;C:\Users\ilciro\.m2\repository\org\openjfx\javafx-fxml\17\javafx-fxml-17-win.jar;C:\Users\ilciro\.m2\repository\org\openjfx\javafx-controls\17\javafx-controls-17.jar;C:\Users\ilciro\.m2\repository\org\mybatis\mybatis\3.5.13\mybatis-3.5.13.jar;C:\Users\ilciro\.m2\repository\com\mysql\mysql-connector-j\8.0.32\mysql-connector-j-8.0.32.jar;C:\Users\ilciro\.m2\repository\com\google\protobuf\protobuf-java\3.21.9\protobuf-java-3.21.9.jar;C:\Users\ilciro\.m2\repository\com\itextpdf\itextpdf\5.5.13.3\itextpdf-5.5.13.3.jar;C:\Users\ilciro\.m2\repository\org\glassfish\web\jakarta.servlet.jsp.jstl\2.0.0\jakarta.servlet.jsp.jstl-2.0.0.jar;C:\Users\ilciro\.m2\repository\jakarta\servlet\jsp\jstl\jakarta.servlet.jsp.jstl-api\2.0.0\jakarta.servlet.jsp.jstl-api-2.0.0.jar;C:\Users\ilciro\.m2\repository\jakarta\servlet\jakarta.servlet-api\5.0.0\jakarta.servlet-api-5.0.0.jar;C:\Users\ilciro\.m2\repository\jakarta\el\jakarta.el-api\4.0.0\jakarta.el-api-4.0.0.jar;C:\Users\ilciro\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\3.0.0\jakarta.xml.bind-api-3.0.0.jar;C:\Users\ilciro\.m2\repository\com\sun\activation\jakarta.activation\2.0.0\jakarta.activation-2.0.0.jar;C:\Users\ilciro\.m2\repository\org\seleniumhq\selenium\selenium-java\4.8.1\selenium-java-4.8.1.jar;C:\Users\ilciro\.m2\repository\org\seleniumhq\selenium\selenium-api\4.8.1\selenium-api-4.8.1.jar;C:\Users\ilciro\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v108\4.8.1\selenium-devtools-v108-4.8.1.jar;C:\Users\ilciro\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v109\4.8.1\selenium-devtools-v109-4.8.1.jar;C:\Users\ilciro\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v110\4.8.1\selenium-devtools-v110-4.8.1.jar;C:\Users\ilciro\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.8.1\selenium-devtools-v85-4.8.1.jar;C:\Users\ilciro\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.8.1\selenium-edge-driver-4.8.1.jar;C:\Users\ilciro\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.8.1\selenium-firefox-driver-4.8.1.jar;C:\Users\ilciro\.m2\repository\org\seleniumhq\selenium\selenium-http\4.8.1\selenium-http-4.8.1.jar;C:\Users\ilciro\.m2\repository\dev\failsafe\failsafe\3.3.0\failsafe-3.3.0.jar;C:\Users\ilciro\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.8.1\selenium-ie-driver-4.8.1.jar;C:\Users\ilciro\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.8.1\selenium-remote-driver-4.8.1.jar;C:\Users\ilciro\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\ilciro\.m2\repository\io\netty\netty-buffer\4.1.87.Final\netty-buffer-4.1.87.Final.jar;C:\Users\ilciro\.m2\repository\io\netty\netty-codec-http\4.1.87.Final\netty-codec-http-4.1.87.Final.jar;C:\Users\ilciro\.m2\repository\io\netty\netty-codec\4.1.87.Final\netty-codec-4.1.87.Final.jar;C:\Users\ilciro\.m2\repository\io\netty\netty-handler\4.1.87.Final\netty-handler-4.1.87.Final.jar;C:\Users\ilciro\.m2\repository\io\netty\netty-common\4.1.87.Final\netty-common-4.1.87.Final.jar;C:\Users\ilciro\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.87.Final\netty-transport-classes-epoll-4.1.87.Final.jar;C:\Users\ilciro\.m2\repository\io\netty\netty-transport-classes-kqueue\4.1.87.Final\netty-transport-classes-kqueue-4.1.87.Final.jar;C:\Users\ilciro\.m2\repository\io\netty\netty-transport-native-epoll\4.1.87.Final\netty-transport-native-epoll-4.1.87.Final.jar;C:\Users\ilciro\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.87.Final\netty-transport-native-kqueue-4.1.87.Final.jar;C:\Users\ilciro\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.87.Final\netty-transport-native-unix-common-4.1.87.Final.jar;C:\Users\ilciro\.m2\repository\io\netty\netty-transport\4.1.87.Final\netty-transport-4.1.87.Final.jar;C:\Users\ilciro\.m2\repository\io\netty\netty-resolver\4.1.87.Final\netty-resolver-4.1.87.Final.jar;C:\Users\ilciro\.m2\repository\io\opentelemetry\opentelemetry-api\1.22.0\opentelemetry-api-1.22.0.jar;C:\Users\ilciro\.m2\repository\io\opentelemetry\opentelemetry-context\1.22.0\opentelemetry-context-1.22.0.jar;C:\Users\ilciro\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.22.0\opentelemetry-exporter-logging-1.22.0.jar;C:\Users\ilciro\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.22.0\opentelemetry-sdk-metrics-1.22.0.jar;C:\Users\ilciro\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.22.0-alpha\opentelemetry-sdk-logs-1.22.0-alpha.jar;C:\Users\ilciro\.m2\repository\io\opentelemetry\opentelemetry-api-logs\1.22.0-alpha\opentelemetry-api-logs-1.22.0-alpha.jar;C:\Users\ilciro\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.22.0\opentelemetry-sdk-common-1.22.0.jar;C:\Users\ilciro\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.22.0\opentelemetry-sdk-extension-autoconfigure-spi-1.22.0.jar;C:\Users\ilciro\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.22.0-alpha\opentelemetry-sdk-extension-autoconfigure-1.22.0-alpha.jar;C:\Users\ilciro\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.22.0\opentelemetry-sdk-trace-1.22.0.jar;C:\Users\ilciro\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.22.0\opentelemetry-sdk-1.22.0.jar;C:\Users\ilciro\.m2\repository\io\opentelemetry\opentelemetry-semconv\1.22.0-alpha\opentelemetry-semconv-1.22.0-alpha.jar;C:\Users\ilciro\.m2\repository\io\ous\jtoml\2.0.0\jtoml-2.0.0.jar;C:\Users\ilciro\.m2\repository\net\bytebuddy\byte-buddy\1.12.22\byte-buddy-1.12.22.jar;C:\Users\ilciro\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\ilciro\.m2\repository\org\asynchttpclient\async-http-client\2.12.3\async-http-client-2.12.3.jar;C:\Users\ilciro\.m2\repository\org\asynchttpclient\async-http-client-netty-utils\2.12.3\async-http-client-netty-utils-2.12.3.jar;C:\Users\ilciro\.m2\repository\io\netty\netty-codec-socks\4.1.60.Final\netty-codec-socks-4.1.60.Final.jar;C:\Users\ilciro\.m2\repository\io\netty\netty-handler-proxy\4.1.60.Final\netty-handler-proxy-4.1.60.Final.jar;C:\Users\ilciro\.m2\repository\io\netty\netty-transport-native-epoll\4.1.60.Final\netty-transport-native-epoll-4.1.60.Final-linux-x86_64.jar;C:\Users\ilciro\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.60.Final\netty-transport-native-kqueue-4.1.60.Final-osx-x86_64.jar;C:\Users\ilciro\.m2\repository\org\reactivestreams\reactive-streams\1.0.3\reactive-streams-1.0.3.jar;C:\Users\ilciro\.m2\repository\com\typesafe\netty\netty-reactive-streams\2.0.4\netty-reactive-streams-2.0.4.jar;C:\Users\ilciro\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\ilciro\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.8.1\selenium-manager-4.8.1.jar;C:\Users\ilciro\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.8.1\selenium-safari-driver-4.8.1.jar;C:\Users\ilciro\.m2\repository\org\seleniumhq\selenium\selenium-support\4.8.1\selenium-support-4.8.1.jar;C:\Users\ilciro\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.8.1\selenium-chrome-driver-4.8.1.jar;C:\Users\ilciro\.m2\repository\com\google\auto\service\auto-service-annotations\1.0.1\auto-service-annotations-1.0.1.jar;C:\Users\ilciro\.m2\repository\com\google\auto\service\auto-service\1.0.1\auto-service-1.0.1.jar;C:\Users\ilciro\.m2\repository\com\google\auto\auto-common\1.2\auto-common-1.2.jar;C:\Users\ilciro\.m2\repository\com\google\guava\guava\31.1-jre\guava-31.1-jre.jar;C:\Users\ilciro\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\ilciro\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\ilciro\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\ilciro\.m2\repository\org\checkerframework\checker-qual\3.12.0\checker-qual-3.12.0.jar;C:\Users\ilciro\.m2\repository\com\google\errorprone\error_prone_annotations\2.11.0\error_prone_annotations-2.11.0.jar;C:\Users\ilciro\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\ilciro\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.8.1\selenium-chromium-driver-4.8.1.jar;C:\Users\ilciro\.m2\repository\org\seleniumhq\selenium\selenium-json\4.8.1\selenium-json-4.8.1.jar;C:\Users\ilciro\.m2\repository\org\apache\tomcat\tomcat-catalina\10.1.7\tomcat-catalina-10.1.7.jar;C:\Users\ilciro\.m2\repository\org\apache\tomcat\tomcat-servlet-api\10.1.7\tomcat-servlet-api-10.1.7.jar;C:\Users\ilciro\.m2\repository\org\apache\tomcat\tomcat-jsp-api\10.1.7\tomcat-jsp-api-10.1.7.jar;C:\Users\ilciro\.m2\repository\org\apache\tomcat\tomcat-el-api\10.1.7\tomcat-el-api-10.1.7.jar;C:\Users\ilciro\.m2\repository\org\apache\tomcat\tomcat-juli\10.1.7\tomcat-juli-10.1.7.jar;C:\Users\ilciro\.m2\repository\org\apache\tomcat\tomcat-annotations-api\10.1.7\tomcat-annotations-api-10.1.7.jar;C:\Users\ilciro\.m2\repository\org\apache\tomcat\tomcat-api\10.1.7\tomcat-api-10.1.7.jar;C:\Users\ilciro\.m2\repository\org\apache\tomcat\tomcat-jni\10.1.7\tomcat-jni-10.1.7.jar;C:\Users\ilciro\.m2\repository\org\apache\tomcat\tomcat-coyote\10.1.7\tomcat-coyote-10.1.7.jar;C:\Users\ilciro\.m2\repository\org\apache\tomcat\tomcat-util\10.1.7\tomcat-util-10.1.7.jar;C:\Users\ilciro\.m2\repository\org\apache\tomcat\tomcat-util-scan\10.1.7\tomcat-util-scan-10.1.7.jar;C:\Users\ilciro\.m2\repository\org\apache\tomcat\tomcat-jaspic-api\10.1.7\tomcat-jaspic-api-10.1.7.jar;C:\Users\ilciro\.m2\repository\org\sonarsource\scanner\maven\sonar-maven-plugin\3.10.0.2594\sonar-maven-plugin-3.10.0.2594.jar;C:\Users\ilciro\.m2\repository\org\codehaus\plexus\plexus-sec-dispatcher\2.0\plexus-sec-dispatcher-2.0.jar;C:\Users\ilciro\.m2\repository\org\codehaus\plexus\plexus-utils\3.4.1\plexus-utils-3.4.1.jar;C:\Users\ilciro\.m2\repository\org\codehaus\plexus\plexus-cipher\2.0\plexus-cipher-2.0.jar;C:\Users\ilciro\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar;C:\Users\ilciro\.m2\repository\org\sonarsource\scanner\api\sonar-scanner-api\2.16.3.1081\sonar-scanner-api-2.16.3.1081.jar;C:\Users\ilciro\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\ilciro\AppData\Local\Temp\surefire16517977923259268737\surefirebooter11146672697861054983.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\ilciro\AppData\Local\Temp\surefire2318883766892888920\surefirebooter10871949787817532517.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.8.1+1"/>
@@ -59,7 +59,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testGetRivistaById" classname="laptop.test.TestLaptop1" time="2.314">
+  <testcase name="testGetRivistaById" classname="laptop.test.TestLaptop1" time="0.676">
     <system-out><![CDATA[INSERT INTO `ispw`.`libro`
 (`titolo`,`numeroPagine`,`Cod_isbn`,`editore`,`autore`,`lingua`,`categoria`,
 `dataPubblicazione`,`recensione`,`copieVendute`,`breveDescrizione`,`disp`,
@@ -173,15 +173,15 @@ VALUES
 
 
 ]]></system-out>
-    <system-err><![CDATA[nov 01, 2023 5:05:52 PM laptop.utilities.ConnToDb initailConnection
+    <system-err><![CDATA[nov 01, 2023 6:48:45 PM laptop.utilities.ConnToDb initailConnection
 INFORMAZIONI: Connesso initial.....
 
-nov 01, 2023 5:05:52 PM laptop.utilities.ConnToDb initailConnection
+nov 01, 2023 6:48:45 PM laptop.utilities.ConnToDb initailConnection
 INFORMAZIONI: Connesso initial.....
 
-nov 01, 2023 5:05:52 PM laptop.utilities.ConnToDb connection
+nov 01, 2023 6:48:45 PM laptop.utilities.ConnToDb connection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:05:52 PM laptop.utilities.ConnToDb connection
+nov 01, 2023 6:48:45 PM laptop.utilities.ConnToDb connection
 INFORMAZIONI: Errore in mysql..........\n
 java.sql.SQLSyntaxErrorException: Unknown database 'ispw'
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
@@ -257,1206 +257,1206 @@ java.sql.SQLSyntaxErrorException: Unknown database 'ispw'
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
 
-nov 01, 2023 5:05:55 PM laptop.utilities.CreateDefaultDB createDefaultDB
+nov 01, 2023 6:48:48 PM laptop.utilities.CreateDefaultDB createDefaultDB
 INFORMAZIONI: Connesso a mysql workbench
 ma non ho torvato il database ispw
 --> Database creato
 ----> tabelle create
 
-nov 01, 2023 5:05:55 PM laptop.utilities.PopulateDefaultDb createLibri
+nov 01, 2023 6:48:48 PM laptop.utilities.PopulateDefaultDb createLibri
 INFORMAZIONI: ---------Chiamo stored insLibri---------
 
 
-nov 01, 2023 5:05:55 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:48 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:05:55 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:49 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:05:56 PM laptop.utilities.PopulateDefaultDb createGiornale
+nov 01, 2023 6:48:49 PM laptop.utilities.PopulateDefaultDb createGiornale
 INFORMAZIONI: ---------Chiamo stored insGiornali---------
 
 
-nov 01, 2023 5:05:56 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:49 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:05:56 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:49 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:05:56 PM laptop.utilities.PopulateDefaultDb createRivista
+nov 01, 2023 6:48:49 PM laptop.utilities.PopulateDefaultDb createRivista
 INFORMAZIONI: ---------Chiamo stored insRiviste---------
 
 
-nov 01, 2023 5:05:56 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:49 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:05:56 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:49 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:05:56 PM laptop.utilities.PopulateDefaultDb createUser
+nov 01, 2023 6:48:49 PM laptop.utilities.PopulateDefaultDb createUser
 INFORMAZIONI: ---------Chiamo stored insUsers---------
 
 
-nov 01, 2023 5:05:56 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:49 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:05:56 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:49 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:05:56 PM laptop.utilities.PopulateDefaultDb createNegozio
+nov 01, 2023 6:48:49 PM laptop.utilities.PopulateDefaultDb createNegozio
 INFORMAZIONI: ---------Chiamo stored insNegozi---------
 
 
-nov 01, 2023 5:05:56 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:49 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:05:56 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:49 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:05:56 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:49 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:05:56 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:49 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:05:56 PM laptop.utilities.PopulateDefaultDb daiPrivilegi
+nov 01, 2023 6:48:49 PM laptop.utilities.PopulateDefaultDb daiPrivilegi
 INFORMAZIONI: Dai privilegi generali
-nov 01, 2023 5:05:56 PM laptop.utilities.CreateDefaultDB createDefaultDB
+nov 01, 2023 6:48:49 PM laptop.utilities.CreateDefaultDB createDefaultDB
 INFORMAZIONI: tabella popolata valori default
-nov 01, 2023 5:05:56 PM laptop.utilities.CreateDefaultDB createDefaultDB
+nov 01, 2023 6:48:49 PM laptop.utilities.CreateDefaultDB createDefaultDB
 INFORMAZIONI: trovato db e connesso.. buon proseguimento
-nov 01, 2023 5:05:56 PM laptop.controller.ControllerModificaUtente <init>
+nov 01, 2023 6:48:49 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:05:57 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:49 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:05:57 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:50 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="reportRaccolta" classname="laptop.test.TestLaptop1" time="0.106">
-    <system-err><![CDATA[nov 01, 2023 5:05:59 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="reportRaccolta" classname="laptop.test.TestLaptop1" time="0.008">
+    <system-err><![CDATA[nov 01, 2023 6:48:50 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScaricaLibro(int)[1]" classname="laptop.test.TestLaptop1" time="9.619">
-    <system-err><![CDATA[nov 01, 2023 5:05:59 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScaricaLibro(int)[1]" classname="laptop.test.TestLaptop1" time="2.011">
+    <system-err><![CDATA[nov 01, 2023 6:48:51 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScaricaLibro(int)[2]" classname="laptop.test.TestLaptop1" time="1.956">
-    <system-err><![CDATA[nov 01, 2023 5:06:10 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScaricaLibro(int)[2]" classname="laptop.test.TestLaptop1" time="0.832">
+    <system-err><![CDATA[nov 01, 2023 6:48:53 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScaricaLibro(int)[3]" classname="laptop.test.TestLaptop1" time="0.742">
-    <system-err><![CDATA[nov 01, 2023 5:06:11 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScaricaLibro(int)[3]" classname="laptop.test.TestLaptop1" time="0.783">
+    <system-err><![CDATA[nov 01, 2023 6:48:53 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScaricaLibro(int)[4]" classname="laptop.test.TestLaptop1" time="0.22">
-    <system-err><![CDATA[nov 01, 2023 5:06:12 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScaricaLibro(int)[4]" classname="laptop.test.TestLaptop1" time="0.613">
+    <system-err><![CDATA[nov 01, 2023 6:48:54 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScaricaLibro(int)[5]" classname="laptop.test.TestLaptop1" time="0.224">
-    <system-err><![CDATA[nov 01, 2023 5:06:12 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScaricaLibro(int)[5]" classname="laptop.test.TestLaptop1" time="0.436">
+    <system-err><![CDATA[nov 01, 2023 6:48:55 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScaricaLibro(int)[6]" classname="laptop.test.TestLaptop1" time="0.44">
-    <system-err><![CDATA[nov 01, 2023 5:06:13 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScaricaLibro(int)[6]" classname="laptop.test.TestLaptop1" time="0.491">
+    <system-err><![CDATA[nov 01, 2023 6:48:55 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetCategoria(String)[1]" classname="laptop.test.TestLaptop1" time="0.361">
-    <system-err><![CDATA[nov 01, 2023 5:06:13 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetCategoria(String)[1]" classname="laptop.test.TestLaptop1" time="0.009">
+    <system-err><![CDATA[nov 01, 2023 6:48:56 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetCategoria(String)[2]" classname="laptop.test.TestLaptop1" time="0.009">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetCategoria(String)[2]" classname="laptop.test.TestLaptop1" time="0.003">
+    <system-err><![CDATA[nov 01, 2023 6:48:56 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetCategoria(String)[3]" classname="laptop.test.TestLaptop1" time="0.007">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetCategoria(String)[3]" classname="laptop.test.TestLaptop1" time="0.004">
+    <system-err><![CDATA[nov 01, 2023 6:48:56 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetCategoria(String)[4]" classname="laptop.test.TestLaptop1" time="0.008">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetCategoria(String)[4]" classname="laptop.test.TestLaptop1" time="0.004">
+    <system-err><![CDATA[nov 01, 2023 6:48:56 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetCategoria(String)[5]" classname="laptop.test.TestLaptop1" time="0.006">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetCategoria(String)[5]" classname="laptop.test.TestLaptop1" time="0.001">
+    <system-err><![CDATA[nov 01, 2023 6:48:56 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetCategoria(String)[6]" classname="laptop.test.TestLaptop1" time="0.003">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetCategoria(String)[6]" classname="laptop.test.TestLaptop1" time="0.005">
+    <system-err><![CDATA[nov 01, 2023 6:48:56 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetCategoria(String)[7]" classname="laptop.test.TestLaptop1" time="0.003">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetCategoria(String)[7]" classname="laptop.test.TestLaptop1" time="0.002">
+    <system-err><![CDATA[nov 01, 2023 6:48:56 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetCategoria(String)[8]" classname="laptop.test.TestLaptop1" time="0.015">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetCategoria(String)[8]" classname="laptop.test.TestLaptop1" time="0.004">
+    <system-err><![CDATA[nov 01, 2023 6:48:56 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataG(int)[1]" classname="laptop.test.TestLaptop1" time="0.061">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataG(int)[1]" classname="laptop.test.TestLaptop1" time="0.134">
+    <system-err><![CDATA[nov 01, 2023 6:48:56 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:56 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:56 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataG(int)[2]" classname="laptop.test.TestLaptop1" time="0.059">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataG(int)[2]" classname="laptop.test.TestLaptop1" time="0.089">
+    <system-err><![CDATA[nov 01, 2023 6:48:56 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:56 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:56 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataG(int)[3]" classname="laptop.test.TestLaptop1" time="0.053">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataG(int)[3]" classname="laptop.test.TestLaptop1" time="0.089">
+    <system-err><![CDATA[nov 01, 2023 6:48:56 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:56 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:56 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataG(int)[4]" classname="laptop.test.TestLaptop1" time="0.059">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataG(int)[4]" classname="laptop.test.TestLaptop1" time="0.103">
+    <system-err><![CDATA[nov 01, 2023 6:48:56 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:56 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:56 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataG(int)[5]" classname="laptop.test.TestLaptop1" time="0.057">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataG(int)[5]" classname="laptop.test.TestLaptop1" time="0.086">
+    <system-err><![CDATA[nov 01, 2023 6:48:56 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:56 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:56 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataG(int)[6]" classname="laptop.test.TestLaptop1" time="0.06">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataG(int)[6]" classname="laptop.test.TestLaptop1" time="0.065">
+    <system-err><![CDATA[nov 01, 2023 6:48:56 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:56 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:56 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataL(int)[1]" classname="laptop.test.TestLaptop1" time="0.045">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataL(int)[1]" classname="laptop.test.TestLaptop1" time="0.082">
+    <system-err><![CDATA[nov 01, 2023 6:48:57 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataL(int)[2]" classname="laptop.test.TestLaptop1" time="0.055">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataL(int)[2]" classname="laptop.test.TestLaptop1" time="0.064">
+    <system-err><![CDATA[nov 01, 2023 6:48:57 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataL(int)[3]" classname="laptop.test.TestLaptop1" time="0.046">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataL(int)[3]" classname="laptop.test.TestLaptop1" time="0.059">
+    <system-err><![CDATA[nov 01, 2023 6:48:57 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataL(int)[4]" classname="laptop.test.TestLaptop1" time="0.11">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataL(int)[4]" classname="laptop.test.TestLaptop1" time="0.058">
+    <system-err><![CDATA[nov 01, 2023 6:48:57 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataL(int)[5]" classname="laptop.test.TestLaptop1" time="0.059">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataL(int)[5]" classname="laptop.test.TestLaptop1" time="0.062">
+    <system-err><![CDATA[nov 01, 2023 6:48:57 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataL(int)[6]" classname="laptop.test.TestLaptop1" time="0.048">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataL(int)[6]" classname="laptop.test.TestLaptop1" time="0.062">
+    <system-err><![CDATA[nov 01, 2023 6:48:57 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataL(int)[7]" classname="laptop.test.TestLaptop1" time="0.045">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataL(int)[7]" classname="laptop.test.TestLaptop1" time="0.062">
+    <system-err><![CDATA[nov 01, 2023 6:48:57 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataL(int)[8]" classname="laptop.test.TestLaptop1" time="0.066">
-    <system-err><![CDATA[nov 01, 2023 5:06:14 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataL(int)[8]" classname="laptop.test.TestLaptop1" time="0.052">
+    <system-err><![CDATA[nov 01, 2023 6:48:57 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:14 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataL(int)[9]" classname="laptop.test.TestLaptop1" time="0.074">
-    <system-err><![CDATA[nov 01, 2023 5:06:15 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataL(int)[9]" classname="laptop.test.TestLaptop1" time="0.05">
+    <system-err><![CDATA[nov 01, 2023 6:48:57 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataL(int)[10]" classname="laptop.test.TestLaptop1" time="0.046">
-    <system-err><![CDATA[nov 01, 2023 5:06:15 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataL(int)[10]" classname="laptop.test.TestLaptop1" time="0.057">
+    <system-err><![CDATA[nov 01, 2023 6:48:57 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataR(int)[1]" classname="laptop.test.TestLaptop1" time="0.045">
-    <system-err><![CDATA[nov 01, 2023 5:06:15 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataR(int)[1]" classname="laptop.test.TestLaptop1" time="0.104">
+    <system-err><![CDATA[nov 01, 2023 6:48:57 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
   <testcase name="testGetDataR(int)[2]" classname="laptop.test.TestLaptop1" time="0.07">
-    <system-err><![CDATA[nov 01, 2023 5:06:15 PM laptop.controller.ControllerModificaUtente <init>
+    <system-err><![CDATA[nov 01, 2023 6:48:57 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataR(int)[3]" classname="laptop.test.TestLaptop1" time="0.047">
-    <system-err><![CDATA[nov 01, 2023 5:06:15 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataR(int)[3]" classname="laptop.test.TestLaptop1" time="0.054">
+    <system-err><![CDATA[nov 01, 2023 6:48:57 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataR(int)[4]" classname="laptop.test.TestLaptop1" time="0.042">
-    <system-err><![CDATA[nov 01, 2023 5:06:15 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataR(int)[4]" classname="laptop.test.TestLaptop1" time="0.04">
+    <system-err><![CDATA[nov 01, 2023 6:48:57 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetDataR(int)[5]" classname="laptop.test.TestLaptop1" time="0.042">
-    <system-err><![CDATA[nov 01, 2023 5:06:15 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetDataR(int)[5]" classname="laptop.test.TestLaptop1" time="0.04">
+    <system-err><![CDATA[nov 01, 2023 6:48:57 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetLista(String)[1]" classname="laptop.test.TestLaptop1" time="0.053">
-    <system-err><![CDATA[nov 01, 2023 5:06:15 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetLista(String)[1]" classname="laptop.test.TestLaptop1" time="0.07">
+    <system-err><![CDATA[nov 01, 2023 6:48:57 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:57 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:58 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetLista(String)[2]" classname="laptop.test.TestLaptop1" time="0.042">
-    <system-err><![CDATA[nov 01, 2023 5:06:15 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetLista(String)[2]" classname="laptop.test.TestLaptop1" time="0.057">
+    <system-err><![CDATA[nov 01, 2023 6:48:58 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:58 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:58 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetLista(String)[3]" classname="laptop.test.TestLaptop1" time="0.048">
-    <system-err><![CDATA[nov 01, 2023 5:06:15 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetLista(String)[3]" classname="laptop.test.TestLaptop1" time="0.049">
+    <system-err><![CDATA[nov 01, 2023 6:48:58 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:58 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:58 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testTotaleG" classname="laptop.test.TestLaptop1" time="0.674">
-    <system-err><![CDATA[nov 01, 2023 5:06:15 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testTotaleG" classname="laptop.test.TestLaptop1" time="0.201">
+    <system-err><![CDATA[nov 01, 2023 6:48:58 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:58 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:58 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:58 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:15 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:58 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testTotaleR" classname="laptop.test.TestLaptop1" time="0.407">
-    <system-err><![CDATA[nov 01, 2023 5:06:16 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testTotaleR" classname="laptop.test.TestLaptop1" time="0.313">
+    <system-err><![CDATA[nov 01, 2023 6:48:58 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:16 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:58 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:16 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:58 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:16 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:58 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:16 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:58 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testAggiungiCartaDBG" classname="laptop.test.TestLaptop1" time="0.885">
-    <system-err><![CDATA[nov 01, 2023 5:06:16 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testAggiungiCartaDBG" classname="laptop.test.TestLaptop1" time="0.608">
+    <system-err><![CDATA[nov 01, 2023 6:48:58 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:16 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:58 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:16 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:58 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:17 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:58 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:17 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:58 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:17 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:17 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:17 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:17 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testAggiungiCartaDBL" classname="laptop.test.TestLaptop1" time="0.344">
-    <system-err><![CDATA[nov 01, 2023 5:06:17 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testAggiungiCartaDBL" classname="laptop.test.TestLaptop1" time="0.343">
+    <system-err><![CDATA[nov 01, 2023 6:48:59 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:17 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:17 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:17 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:17 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:17 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:17 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:17 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:17 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testAggiungiCartaDBR" classname="laptop.test.TestLaptop1" time="0.354">
-    <system-err><![CDATA[nov 01, 2023 5:06:17 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testAggiungiCartaDBR" classname="laptop.test.TestLaptop1" time="0.297">
+    <system-err><![CDATA[nov 01, 2023 6:48:59 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:17 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:17 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:18 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:18 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:18 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:18 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:18 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:18 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testModificaL" classname="laptop.test.TestLaptop1" time="0.188">
-    <system-err><![CDATA[nov 01, 2023 5:06:18 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testModificaL" classname="laptop.test.TestLaptop1" time="0.152">
+    <system-err><![CDATA[nov 01, 2023 6:48:59 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:18 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:48:59 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:18 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:00 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:18 PM laptop.database.LibroDao aggiornaLibro
+nov 01, 2023 6:49:00 PM laptop.database.LibroDao aggiornaLibro
 INFORMAZIONI: row affected 1
 ]]></system-err>
   </testcase>
-  <testcase name="testGetId(int)[1]" classname="laptop.test.TestLaptop1" time="0.004">
-    <system-err><![CDATA[nov 01, 2023 5:06:18 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetId(int)[1]" classname="laptop.test.TestLaptop1" time="0.003">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetId(int)[2]" classname="laptop.test.TestLaptop1" time="0.004">
-    <system-err><![CDATA[nov 01, 2023 5:06:18 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetId(int)[2]" classname="laptop.test.TestLaptop1" time="0.003">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetId(int)[3]" classname="laptop.test.TestLaptop1" time="0.004">
-    <system-err><![CDATA[nov 01, 2023 5:06:18 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetId(int)[3]" classname="laptop.test.TestLaptop1" time="0.001">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetId(int)[4]" classname="laptop.test.TestLaptop1" time="0.003">
-    <system-err><![CDATA[nov 01, 2023 5:06:18 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetId(int)[4]" classname="laptop.test.TestLaptop1" time="0.001">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetId(int)[5]" classname="laptop.test.TestLaptop1" time="0.008">
-    <system-err><![CDATA[nov 01, 2023 5:06:18 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetId(int)[5]" classname="laptop.test.TestLaptop1" time="0.002">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetId(int)[6]" classname="laptop.test.TestLaptop1" time="0.008">
-    <system-err><![CDATA[nov 01, 2023 5:06:18 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetId(int)[6]" classname="laptop.test.TestLaptop1" time="0.026">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetId(int)[7]" classname="laptop.test.TestLaptop1" time="0.003">
-    <system-err><![CDATA[nov 01, 2023 5:06:18 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetId(int)[7]" classname="laptop.test.TestLaptop1" time="0.009">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
   <testcase name="testGetId(int)[8]" classname="laptop.test.TestLaptop1" time="0.002">
-    <system-err><![CDATA[nov 01, 2023 5:06:18 PM laptop.controller.ControllerModificaUtente <init>
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetId(int)[9]" classname="laptop.test.TestLaptop1" time="0.005">
-    <system-err><![CDATA[nov 01, 2023 5:06:18 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetId(int)[9]" classname="laptop.test.TestLaptop1" time="0.001">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetId(int)[10]" classname="laptop.test.TestLaptop1" time="0.003">
-    <system-err><![CDATA[nov 01, 2023 5:06:18 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetId(int)[10]" classname="laptop.test.TestLaptop1" time="0.001">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testLeggi(int)[1]" classname="laptop.test.TestLaptop1" time="3.879">
-    <system-err><![CDATA[nov 01, 2023 5:06:18 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testLeggi(int)[1]" classname="laptop.test.TestLaptop1" time="0.328">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testLeggi(int)[2]" classname="laptop.test.TestLaptop1" time="0.008">
-    <system-err><![CDATA[nov 01, 2023 5:06:22 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testLeggi(int)[2]" classname="laptop.test.TestLaptop1" time="0.017">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testLeggi(int)[3]" classname="laptop.test.TestLaptop1" time="0.015">
-    <system-err><![CDATA[nov 01, 2023 5:06:22 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testLeggi(int)[3]" classname="laptop.test.TestLaptop1" time="0.013">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testLeggi(int)[4]" classname="laptop.test.TestLaptop1" time="0.011">
-    <system-err><![CDATA[nov 01, 2023 5:06:22 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testLeggi(int)[4]" classname="laptop.test.TestLaptop1" time="0.01">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testLeggi(int)[5]" classname="laptop.test.TestLaptop1" time="0.006">
-    <system-err><![CDATA[nov 01, 2023 5:06:22 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testLeggi(int)[5]" classname="laptop.test.TestLaptop1" time="0.01">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testLeggi(int)[6]" classname="laptop.test.TestLaptop1" time="0.008">
-    <system-err><![CDATA[nov 01, 2023 5:06:22 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testLeggi(int)[6]" classname="laptop.test.TestLaptop1" time="0.009">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testLeggi(int)[7]" classname="laptop.test.TestLaptop1" time="0.006">
-    <system-err><![CDATA[nov 01, 2023 5:06:22 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testLeggi(int)[7]" classname="laptop.test.TestLaptop1" time="0.01">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testLeggi(int)[8]" classname="laptop.test.TestLaptop1" time="0.007">
-    <system-err><![CDATA[nov 01, 2023 5:06:22 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testLeggi(int)[8]" classname="laptop.test.TestLaptop1" time="0.01">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testLeggi(int)[9]" classname="laptop.test.TestLaptop1" time="0.007">
-    <system-err><![CDATA[nov 01, 2023 5:06:22 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testLeggi(int)[9]" classname="laptop.test.TestLaptop1" time="0.009">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
   <testcase name="testLeggi(int)[10]" classname="laptop.test.TestLaptop1" time="0.006">
-    <system-err><![CDATA[nov 01, 2023 5:06:22 PM laptop.controller.ControllerModificaUtente <init>
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testCercaPerTipoG(String)[1]" classname="laptop.test.TestLaptop1" time="0.031">
-    <system-err><![CDATA[nov 01, 2023 5:06:22 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testCercaPerTipoG(String)[1]" classname="laptop.test.TestLaptop1" time="0.045">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:22 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:00 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:22 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:00 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testCercaPerTipoG(String)[2]" classname="laptop.test.TestLaptop1" time="0.029">
-    <system-err><![CDATA[nov 01, 2023 5:06:22 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testCercaPerTipoG(String)[2]" classname="laptop.test.TestLaptop1" time="0.045">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:22 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:00 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:22 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:00 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testCercaPerTipoL(String)[1]" classname="laptop.test.TestLaptop1" time="0.029">
-    <system-err><![CDATA[nov 01, 2023 5:06:22 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testCercaPerTipoL(String)[1]" classname="laptop.test.TestLaptop1" time="0.045">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:22 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:00 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:22 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:00 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testCercaPerTipoL(String)[2]" classname="laptop.test.TestLaptop1" time="0.034">
-    <system-err><![CDATA[nov 01, 2023 5:06:22 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testCercaPerTipoL(String)[2]" classname="laptop.test.TestLaptop1" time="0.046">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:22 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:00 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:22 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:00 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testCercaPerTipoR(String)[1]" classname="laptop.test.TestLaptop1" time="0.025">
-    <system-err><![CDATA[nov 01, 2023 5:06:22 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testCercaPerTipoR(String)[1]" classname="laptop.test.TestLaptop1" time="0.036">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:22 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:00 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:22 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:00 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testCercaPerTipoR(String)[2]" classname="laptop.test.TestLaptop1" time="0.025">
-    <system-err><![CDATA[nov 01, 2023 5:06:22 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testCercaPerTipoR(String)[2]" classname="laptop.test.TestLaptop1" time="0.042">
+    <system-err><![CDATA[nov 01, 2023 6:49:00 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:22 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:00 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:22 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:01 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testControllaPag" classname="laptop.test.TestLaptop1" time="0.002">
-    <system-err><![CDATA[nov 01, 2023 5:06:22 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testControllaPag" classname="laptop.test.TestLaptop1" time="0.001">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetGiornaliById" classname="laptop.test.TestLaptop1" time="0.029">
-    <system-err><![CDATA[nov 01, 2023 5:06:22 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetGiornaliById" classname="laptop.test.TestLaptop1" time="0.053">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:22 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:01 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:22 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:01 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:22 PM laptop.database.GiornaleDao getGiornaliSingoloById
-INFORMAZIONI: catalogo [laptop.model.raccolta.Giornale@17fb5184]
+nov 01, 2023 6:49:01 PM laptop.database.GiornaleDao getGiornaliSingoloById
+INFORMAZIONI: catalogo [laptop.model.raccolta.Giornale@126d8659]
 ]]></system-err>
   </testcase>
-  <testcase name="testModificaGiornale" classname="laptop.test.TestLaptop1" time="0.478">
-    <system-err><![CDATA[nov 01, 2023 5:06:22 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testModificaGiornale" classname="laptop.test.TestLaptop1" time="0.113">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:22 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:01 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:22 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:01 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:23 PM laptop.database.GiornaleDao aggiornaGiornale
+nov 01, 2023 6:49:01 PM laptop.database.GiornaleDao aggiornaGiornale
 INFORMAZIONI:  rows aggiornalte 1
 ]]></system-err>
   </testcase>
-  <testcase name="testCheckInsertRivista" classname="laptop.test.TestLaptop1" time="0.394">
-    <system-err><![CDATA[nov 01, 2023 5:06:23 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testCheckInsertRivista" classname="laptop.test.TestLaptop1" time="0.105">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:23 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:01 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:23 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:01 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetTipologia(String)[1]" classname="laptop.test.TestLaptop1" time="0.003">
-    <system-err><![CDATA[nov 01, 2023 5:06:23 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetTipologia(String)[1]" classname="laptop.test.TestLaptop1" time="0.002">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetTipologia(String)[2]" classname="laptop.test.TestLaptop1" time="0.003">
-    <system-err><![CDATA[nov 01, 2023 5:06:23 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetTipologia(String)[2]" classname="laptop.test.TestLaptop1" time="0.001">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetTipologia(String)[3]" classname="laptop.test.TestLaptop1" time="0.001">
-    <system-err><![CDATA[nov 01, 2023 5:06:23 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetTipologia(String)[3]" classname="laptop.test.TestLaptop1" time="0.002">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetTipologia(String)[4]" classname="laptop.test.TestLaptop1" time="0.002">
-    <system-err><![CDATA[nov 01, 2023 5:06:23 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetTipologia(String)[4]" classname="laptop.test.TestLaptop1" time="0.001">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetTipologia(String)[5]" classname="laptop.test.TestLaptop1" time="0.006">
-    <system-err><![CDATA[nov 01, 2023 5:06:23 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetTipologia(String)[5]" classname="laptop.test.TestLaptop1" time="0.001">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
   <testcase name="testGetTipologia(String)[6]" classname="laptop.test.TestLaptop1" time="0.001">
-    <system-err><![CDATA[nov 01, 2023 5:06:23 PM laptop.controller.ControllerModificaUtente <init>
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetTipologia(String)[7]" classname="laptop.test.TestLaptop1" time="0.003">
-    <system-err><![CDATA[nov 01, 2023 5:06:23 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetTipologia(String)[7]" classname="laptop.test.TestLaptop1" time="0.004">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetTipologia(String)[8]" classname="laptop.test.TestLaptop1" time="0.002">
-    <system-err><![CDATA[nov 01, 2023 5:06:23 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetTipologia(String)[8]" classname="laptop.test.TestLaptop1" time="0.003">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetTipologia(String)[9]" classname="laptop.test.TestLaptop1" time="0.002">
-    <system-err><![CDATA[nov 01, 2023 5:06:23 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetTipologia(String)[9]" classname="laptop.test.TestLaptop1" time="0.034">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetTipologia(String)[10]" classname="laptop.test.TestLaptop1" time="0.004">
-    <system-err><![CDATA[nov 01, 2023 5:06:23 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetTipologia(String)[10]" classname="laptop.test.TestLaptop1" time="0.003">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetTipologia(String)[11]" classname="laptop.test.TestLaptop1" time="0.001">
-    <system-err><![CDATA[nov 01, 2023 5:06:23 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetTipologia(String)[11]" classname="laptop.test.TestLaptop1" time="0.003">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
   <testcase name="testGetTipologia(String)[12]" classname="laptop.test.TestLaptop1" time="0.002">
-    <system-err><![CDATA[nov 01, 2023 5:06:23 PM laptop.controller.ControllerModificaUtente <init>
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetTipologia(String)[13]" classname="laptop.test.TestLaptop1" time="0.001">
-    <system-err><![CDATA[nov 01, 2023 5:06:23 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetTipologia(String)[13]" classname="laptop.test.TestLaptop1" time="0.004">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetTipologia(String)[14]" classname="laptop.test.TestLaptop1" time="0.001">
-    <system-err><![CDATA[nov 01, 2023 5:06:23 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetTipologia(String)[14]" classname="laptop.test.TestLaptop1" time="0.003">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testCheckInsertGiornale" classname="laptop.test.TestLaptop1" time="0.32">
-    <system-err><![CDATA[nov 01, 2023 5:06:23 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testCheckInsertGiornale" classname="laptop.test.TestLaptop1" time="0.194">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:23 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:01 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:23 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:01 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testCheckRitiro" classname="laptop.test.TestLaptop1" time="0.079">
-    <system-err><![CDATA[nov 01, 2023 5:06:24 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testCheckRitiro" classname="laptop.test.TestLaptop1" time="0.074">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:24 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:01 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:24 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:01 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:24 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:01 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:24 PM laptop.utilities.ConnToDb generalConnection
-INFORMAZIONI: Connesso standard ........
-
-]]></system-err>
-  </testcase>
-  <testcase name="testGeneraReportLibri" classname="laptop.test.TestLaptop1" time="0.067">
-    <system-err><![CDATA[nov 01, 2023 5:06:24 PM laptop.controller.ControllerModificaUtente <init>
-INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:24 PM laptop.utilities.ConnToDb generalConnection
-INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:24 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:01 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="reportTotale" classname="laptop.test.TestLaptop1" time="0.112">
-    <system-err><![CDATA[nov 01, 2023 5:06:24 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGeneraReportLibri" classname="laptop.test.TestLaptop1" time="0.11">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+nov 01, 2023 6:49:01 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+nov 01, 2023 6:49:01 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="reportTotale" classname="laptop.test.TestLaptop1" time="0.01">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScaricaRivista(int)[1]" classname="laptop.test.TestLaptop1" time="0.032">
-    <system-err><![CDATA[nov 01, 2023 5:06:24 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScaricaRivista(int)[1]" classname="laptop.test.TestLaptop1" time="0.168">
+    <system-err><![CDATA[nov 01, 2023 6:49:01 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScaricaRivista(int)[2]" classname="laptop.test.TestLaptop1" time="0.027">
-    <system-err><![CDATA[nov 01, 2023 5:06:24 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScaricaRivista(int)[2]" classname="laptop.test.TestLaptop1" time="0.047">
+    <system-err><![CDATA[nov 01, 2023 6:49:02 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScaricaRivista(int)[3]" classname="laptop.test.TestLaptop1" time="0.023">
-    <system-err><![CDATA[nov 01, 2023 5:06:24 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScaricaRivista(int)[3]" classname="laptop.test.TestLaptop1" time="0.026">
+    <system-err><![CDATA[nov 01, 2023 6:49:02 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScaricaRivista(int)[4]" classname="laptop.test.TestLaptop1" time="0.019">
-    <system-err><![CDATA[nov 01, 2023 5:06:24 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScaricaRivista(int)[4]" classname="laptop.test.TestLaptop1" time="0.042">
+    <system-err><![CDATA[nov 01, 2023 6:49:02 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScaricaRivista(int)[5]" classname="laptop.test.TestLaptop1" time="0.018">
-    <system-err><![CDATA[nov 01, 2023 5:06:24 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScaricaRivista(int)[5]" classname="laptop.test.TestLaptop1" time="0.031">
+    <system-err><![CDATA[nov 01, 2023 6:49:02 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
   <testcase name="testScaricaRivista(int)[6]" classname="laptop.test.TestLaptop1" time="0.022">
-    <system-err><![CDATA[nov 01, 2023 5:06:24 PM laptop.controller.ControllerModificaUtente <init>
+    <system-err><![CDATA[nov 01, 2023 6:49:02 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testAnnullaOrdineL" classname="laptop.test.TestLaptop1" time="4.155">
-    <system-err><![CDATA[nov 01, 2023 5:06:24 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testAnnullaOrdineL" classname="laptop.test.TestLaptop1" time="1.575">
+    <system-err><![CDATA[nov 01, 2023 6:49:02 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:24 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:02 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:24 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:02 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:24 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:02 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:24 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:02 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:25 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:02 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:25 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:02 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:26 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:03 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:26 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:03 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:26 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:03 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:26 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:03 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:26 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:03 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:26 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:03 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:27 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:03 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:27 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:03 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:27 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:03 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:27 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:03 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:28 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:03 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:28 PM laptop.utilities.ConnToDb generalConnection
-INFORMAZIONI: Connesso standard ........
-
-]]></system-err>
-  </testcase>
-  <testcase name="testCheckOpen" classname="laptop.test.TestLaptop1" time="0.071">
-    <system-err><![CDATA[nov 01, 2023 5:06:28 PM laptop.controller.ControllerModificaUtente <init>
-INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:28 PM laptop.utilities.ConnToDb generalConnection
-INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:28 PM laptop.utilities.ConnToDb generalConnection
-INFORMAZIONI: Connesso standard ........
-
-nov 01, 2023 5:06:28 PM laptop.utilities.ConnToDb generalConnection
-INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:28 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:03 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetNegozi" classname="laptop.test.TestLaptop1" time="0.03">
-    <system-err><![CDATA[nov 01, 2023 5:06:28 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testCheckOpen" classname="laptop.test.TestLaptop1" time="0.09">
+    <system-err><![CDATA[nov 01, 2023 6:49:03 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:28 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:03 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:28 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:03 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+nov 01, 2023 6:49:03 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+nov 01, 2023 6:49:04 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testPagamentoCCG" classname="laptop.test.TestLaptop1" time="0.991">
-    <system-err><![CDATA[nov 01, 2023 5:06:28 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetNegozi" classname="laptop.test.TestLaptop1" time="0.033">
+    <system-err><![CDATA[nov 01, 2023 6:49:04 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:28 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:04 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:28 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:04 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:29 PM laptop.utilities.ConnToDb generalConnection
+]]></system-err>
+  </testcase>
+  <testcase name="testPagamentoCCG" classname="laptop.test.TestLaptop1" time="0.61">
+    <system-err><![CDATA[nov 01, 2023 6:49:04 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+nov 01, 2023 6:49:04 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:29 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:04 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:29 PM laptop.controller.ControllerPagamentoCC pagamentoCC
+nov 01, 2023 6:49:04 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+nov 01, 2023 6:49:04 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+nov 01, 2023 6:49:04 PM laptop.controller.ControllerPagamentoCC pagamentoCC
 INFORMAZIONI: info 0.0null0
-nov 01, 2023 5:06:29 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:04 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:29 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:04 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testPagamentoCCL" classname="laptop.test.TestLaptop1" time="0.669">
-    <system-err><![CDATA[nov 01, 2023 5:06:29 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testPagamentoCCL" classname="laptop.test.TestLaptop1" time="0.491">
+    <system-err><![CDATA[nov 01, 2023 6:49:04 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:29 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:04 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:29 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:04 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:30 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:04 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:30 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:04 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:30 PM laptop.controller.ControllerPagamentoCC pagamentoCC
+nov 01, 2023 6:49:04 PM laptop.controller.ControllerPagamentoCC pagamentoCC
 INFORMAZIONI: info 0.0null0
-nov 01, 2023 5:06:30 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:04 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:30 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:05 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testPagamentoCCR" classname="laptop.test.TestLaptop1" time="0.719">
-    <system-err><![CDATA[nov 01, 2023 5:06:30 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testPagamentoCCR" classname="laptop.test.TestLaptop1" time="0.63">
+    <system-err><![CDATA[nov 01, 2023 6:49:05 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:30 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:05 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:30 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:05 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:30 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:05 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:30 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:05 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:30 PM laptop.controller.ControllerPagamentoCC pagamentoCC
+nov 01, 2023 6:49:05 PM laptop.controller.ControllerPagamentoCC pagamentoCC
 INFORMAZIONI: info 0.0null0
-nov 01, 2023 5:06:30 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:05 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:30 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:05 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testScarica(int)[1]" classname="laptop.test.TestLaptop1" time="0.062">
-    <system-err><![CDATA[nov 01, 2023 5:06:31 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScarica(int)[1]" classname="laptop.test.TestLaptop1" time="0.03">
+    <system-err><![CDATA[nov 01, 2023 6:49:05 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScarica(int)[2]" classname="laptop.test.TestLaptop1" time="0.036">
-    <system-err><![CDATA[nov 01, 2023 5:06:31 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScarica(int)[2]" classname="laptop.test.TestLaptop1" time="0.029">
+    <system-err><![CDATA[nov 01, 2023 6:49:05 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScarica(int)[3]" classname="laptop.test.TestLaptop1" time="0.038">
-    <system-err><![CDATA[nov 01, 2023 5:06:31 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScarica(int)[3]" classname="laptop.test.TestLaptop1" time="0.043">
+    <system-err><![CDATA[nov 01, 2023 6:49:05 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScarica(int)[4]" classname="laptop.test.TestLaptop1" time="0.023">
-    <system-err><![CDATA[nov 01, 2023 5:06:31 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScarica(int)[4]" classname="laptop.test.TestLaptop1" time="0.016">
+    <system-err><![CDATA[nov 01, 2023 6:49:05 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScarica(int)[5]" classname="laptop.test.TestLaptop1" time="0.033">
-    <system-err><![CDATA[nov 01, 2023 5:06:31 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScarica(int)[5]" classname="laptop.test.TestLaptop1" time="0.016">
+    <system-err><![CDATA[nov 01, 2023 6:49:05 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScarica(int)[6]" classname="laptop.test.TestLaptop1" time="0.027">
-    <system-err><![CDATA[nov 01, 2023 5:06:31 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScarica(int)[6]" classname="laptop.test.TestLaptop1" time="0.016">
+    <system-err><![CDATA[nov 01, 2023 6:49:05 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScarica(int)[7]" classname="laptop.test.TestLaptop1" time="0.021">
-    <system-err><![CDATA[nov 01, 2023 5:06:31 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScarica(int)[7]" classname="laptop.test.TestLaptop1" time="0.016">
+    <system-err><![CDATA[nov 01, 2023 6:49:05 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScarica(int)[8]" classname="laptop.test.TestLaptop1" time="0.041">
-    <system-err><![CDATA[nov 01, 2023 5:06:31 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScarica(int)[8]" classname="laptop.test.TestLaptop1" time="0.019">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScarica(int)[9]" classname="laptop.test.TestLaptop1" time="0.018">
-    <system-err><![CDATA[nov 01, 2023 5:06:31 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScarica(int)[9]" classname="laptop.test.TestLaptop1" time="0.021">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScarica(int)[10]" classname="laptop.test.TestLaptop1" time="0.022">
-    <system-err><![CDATA[nov 01, 2023 5:06:31 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScarica(int)[10]" classname="laptop.test.TestLaptop1" time="0.019">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testGetRivista(String)[1]" classname="laptop.test.TestLaptop1" time="0.045">
-    <system-err><![CDATA[nov 01, 2023 5:06:31 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetRivista(String)[1]" classname="laptop.test.TestLaptop1" time="0.049">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:31 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:31 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:31 PM laptop.database.LibroDao getLibroSingolo
-INFORMAZIONI: ctalogo [laptop.model.raccolta.Libro@56a72887, laptop.model.raccolta.Libro@3c8dea0b, laptop.model.raccolta.Libro@4b9beefe, laptop.model.raccolta.Libro@4cddc036, laptop.model.raccolta.Libro@23d12a3a, laptop.model.raccolta.Libro@70df41f9, laptop.model.raccolta.Libro@64a7ad02, laptop.model.raccolta.Libro@46590dd0, laptop.model.raccolta.Libro@6c737fdb, laptop.model.raccolta.Libro@66a93b25, laptop.model.raccolta.Libro@3f3f554f, laptop.model.raccolta.Libro@3186f8f5, laptop.model.raccolta.Libro@467cd4b9, laptop.model.raccolta.Libro@69a3bf40, laptop.model.raccolta.Libro@2c731a16, laptop.model.raccolta.Libro@2a341e3d, laptop.model.raccolta.Libro@a4dcede, laptop.model.raccolta.Libro@7ee02968, laptop.model.raccolta.Libro@4a773f08]
+nov 01, 2023 6:49:06 PM laptop.database.LibroDao getLibroSingolo
+INFORMAZIONI: ctalogo [laptop.model.raccolta.Libro@3ba96967, laptop.model.raccolta.Libro@5764d421, laptop.model.raccolta.Libro@1237cade, laptop.model.raccolta.Libro@70d7a49b, laptop.model.raccolta.Libro@4509b7, laptop.model.raccolta.Libro@71f10042, laptop.model.raccolta.Libro@5dbc4598, laptop.model.raccolta.Libro@1002d1c8, laptop.model.raccolta.Libro@38a27ace, laptop.model.raccolta.Libro@41289e88, laptop.model.raccolta.Libro@7e8783b0, laptop.model.raccolta.Libro@788d9139, laptop.model.raccolta.Libro@53d2f0ec, laptop.model.raccolta.Libro@560be8c0, laptop.model.raccolta.Libro@14d36bb2, laptop.model.raccolta.Libro@432448, laptop.model.raccolta.Libro@4452e13c, laptop.model.raccolta.Libro@4d964c9e, laptop.model.raccolta.Libro@42172065]
 ]]></system-err>
   </testcase>
-  <testcase name="testGetRivista(String)[2]" classname="laptop.test.TestLaptop1" time="0.056">
-    <system-err><![CDATA[nov 01, 2023 5:06:31 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetRivista(String)[2]" classname="laptop.test.TestLaptop1" time="0.038">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:31 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:31 PM laptop.utilities.ConnToDb generalConnection
-INFORMAZIONI: Connesso standard ........
-
-]]></system-err>
-  </testcase>
-  <testcase name="testGetRivista(String)[3]" classname="laptop.test.TestLaptop1" time="0.051">
-    <system-err><![CDATA[nov 01, 2023 5:06:31 PM laptop.controller.ControllerModificaUtente <init>
-INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:31 PM laptop.utilities.ConnToDb generalConnection
-INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:31 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testModificaRivista" classname="laptop.test.TestLaptop1" time="0.198">
-    <system-err><![CDATA[nov 01, 2023 5:06:31 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetRivista(String)[3]" classname="laptop.test.TestLaptop1" time="0.03">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:31 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:31 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:31 PM laptop.database.RivistaDao aggiornaRivista
+]]></system-err>
+  </testcase>
+  <testcase name="testModificaRivista" classname="laptop.test.TestLaptop1" time="0.143">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+nov 01, 2023 6:49:06 PM laptop.database.RivistaDao aggiornaRivista
 INFORMAZIONI: rows afffected1
 ]]></system-err>
   </testcase>
-  <testcase name="testGeneraReportGiornali" classname="laptop.test.TestLaptop1" time="0.05">
-    <system-err><![CDATA[nov 01, 2023 5:06:31 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGeneraReportGiornali" classname="laptop.test.TestLaptop1" time="0.081">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:31 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:32 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
   <testcase name="testInizializzazioneOggetti" classname="laptop.test.TestLaptop1" time="0.001">
-    <system-err><![CDATA[nov 01, 2023 5:06:32 PM laptop.controller.ControllerModificaUtente <init>
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testCreateRaccoltaFinaleCompletaG" classname="laptop.test.TestLaptop1" time="0.008">
-    <system-err><![CDATA[nov 01, 2023 5:06:32 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testCreateRaccoltaFinaleCompletaG" classname="laptop.test.TestLaptop1" time="0.001">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testCreateRaccoltaFinaleCompletaL" classname="laptop.test.TestLaptop1" time="0.002">
-    <system-err><![CDATA[nov 01, 2023 5:06:32 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testCreateRaccoltaFinaleCompletaL" classname="laptop.test.TestLaptop1" time="0.001">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testCreateRaccoltaFinaleCompletaR" classname="laptop.test.TestLaptop1" time="0.002">
-    <system-err><![CDATA[nov 01, 2023 5:06:32 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testCreateRaccoltaFinaleCompletaR" classname="laptop.test.TestLaptop1" time="0.001">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testTotale" classname="laptop.test.TestLaptop1" time="0.077">
-    <system-err><![CDATA[nov 01, 2023 5:06:32 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testTotale" classname="laptop.test.TestLaptop1" time="0.062">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:32 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:32 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:32 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:32 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testGetOggettById" classname="laptop.test.TestLaptop1" time="0.044">
-    <system-err><![CDATA[nov 01, 2023 5:06:32 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGetOggettById" classname="laptop.test.TestLaptop1" time="0.022">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:32 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:32 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
-nov 01, 2023 5:06:32 PM laptop.database.LibroDao getLibriSingoloById
+nov 01, 2023 6:49:06 PM laptop.database.LibroDao getLibriSingoloById
 INFORMAZIONI: catalogo trovato
 ]]></system-err>
   </testcase>
-  <testcase name="testGeneraReportRiviste" classname="laptop.test.TestLaptop1" time="0.102">
-    <system-err><![CDATA[nov 01, 2023 5:06:32 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testGeneraReportRiviste" classname="laptop.test.TestLaptop1" time="0.035">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:32 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:32 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testCheckInsertLibro" classname="laptop.test.TestLaptop1" time="0.302">
-    <system-err><![CDATA[nov 01, 2023 5:06:32 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testCheckInsertLibro" classname="laptop.test.TestLaptop1" time="0.074">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:32 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:32 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testScaricaGiornale(int)[1]" classname="laptop.test.TestLaptop1" time="0.11">
-    <system-err><![CDATA[nov 01, 2023 5:06:32 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScaricaGiornale(int)[1]" classname="laptop.test.TestLaptop1" time="0.021">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScaricaGiornale(int)[2]" classname="laptop.test.TestLaptop1" time="0.036">
-    <system-err><![CDATA[nov 01, 2023 5:06:32 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScaricaGiornale(int)[2]" classname="laptop.test.TestLaptop1" time="0.018">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScaricaGiornale(int)[3]" classname="laptop.test.TestLaptop1" time="0.025">
-    <system-err><![CDATA[nov 01, 2023 5:06:32 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScaricaGiornale(int)[3]" classname="laptop.test.TestLaptop1" time="0.015">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScaricaGiornale(int)[4]" classname="laptop.test.TestLaptop1" time="0.026">
-    <system-err><![CDATA[nov 01, 2023 5:06:32 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScaricaGiornale(int)[4]" classname="laptop.test.TestLaptop1" time="0.017">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScaricaGiornale(int)[5]" classname="laptop.test.TestLaptop1" time="0.034">
-    <system-err><![CDATA[nov 01, 2023 5:06:32 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScaricaGiornale(int)[5]" classname="laptop.test.TestLaptop1" time="0.018">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testScaricaGiornale(int)[6]" classname="laptop.test.TestLaptop1" time="0.048">
-    <system-err><![CDATA[nov 01, 2023 5:06:32 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testScaricaGiornale(int)[6]" classname="laptop.test.TestLaptop1" time="0.017">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
 ]]></system-err>
   </testcase>
-  <testcase name="testTornaDalDb" classname="laptop.test.TestLaptop1" time="0.043">
-    <system-err><![CDATA[nov 01, 2023 5:06:32 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testTornaDalDb" classname="laptop.test.TestLaptop1" time="0.031">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:32 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:32 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>
   </testcase>
-  <testcase name="testRitornaElencoCC" classname="laptop.test.TestLaptop1" time="0.032">
-    <system-err><![CDATA[nov 01, 2023 5:06:32 PM laptop.controller.ControllerModificaUtente <init>
+  <testcase name="testRitornaElencoCC" classname="laptop.test.TestLaptop1" time="0.03">
+    <system-err><![CDATA[nov 01, 2023 6:49:06 PM laptop.controller.ControllerModificaUtente <init>
 INFORMAZIONI: Costruttore ControllerModificaUtente
-nov 01, 2023 5:06:32 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Tentativo di conessione al server..........\\n
-nov 01, 2023 5:06:32 PM laptop.utilities.ConnToDb generalConnection
+nov 01, 2023 6:49:06 PM laptop.utilities.ConnToDb generalConnection
 INFORMAZIONI: Connesso standard ........
 
 ]]></system-err>

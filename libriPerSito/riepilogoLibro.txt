@@ -5,7 +5,7 @@
  Titolo :Sulla vertia'	Ricavo totale :164.0
  Titolo :Erasgon Vol 1	Ricavo totale :480000.0
  Titolo :Scritti inediti di linguistica generale	Ricavo totale :0.0
- Titolo :Alchimia e kabbalah	Ricavo totale :3536.0
+ Titolo :Alchimia e kabbalah	Ricavo totale :1700.0
  Titolo :EXCEL le 10 cose che devi conoscere del foglio elettronico	Ricavo totale :399.59998
  Titolo : Dungeons & Dragons - 5a Edizione - Manuale del Giocatore	Ricavo totale :1035000.0
  Titolo :Grammatica italiana	Ricavo totale :2750.0
@@ -17,3 +17,4 @@
  Titolo :Tecniche proibite di persuasione, manipolazione e influenza utilizzando schemi di linguaggio e tecniche di PNL	Ricavo totale :15400.0
  Titolo :cambio libro	Ricavo totale :122.5
  Titolo :In cucina con ciccio	Ricavo totale :16.5
+ Titolo :"titolo ins prova"	Ricavo totale :225.0

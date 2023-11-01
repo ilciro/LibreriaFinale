@@ -16,17 +16,17 @@ public class SystemBean {
 		 private String titoloB;
 		 
 		 
-<span class="nc" id="L19">		 private static SystemBean userInstance = null;</span>
+<span class="fc" id="L19">		 private static SystemBean userInstance = null;</span>
 
 		    private SystemBean() {}
 
 		    public static SystemBean getInstance() {
-<span class="nc bnc" id="L24" title="All 2 branches missed.">		        if (userInstance == null) {</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">		        if (userInstance == null) {</span>
 		          
-<span class="nc" id="L26">		        	userInstance = new SystemBean();</span>
+<span class="fc" id="L26">		        	userInstance = new SystemBean();</span>
 		                }
 		       
-<span class="nc" id="L29">		        return userInstance;</span>
+<span class="fc" id="L29">		        return userInstance;</span>
 		    }
 			
 		 
@@ -51,8 +51,8 @@ public class SystemBean {
 		}
 
 		public void setLoggedB(boolean isLoggedB) {
-<span class="nc" id="L54">			this.isLoggedB = isLoggedB;</span>
-<span class="nc" id="L55">		}</span>
+<span class="fc" id="L54">			this.isLoggedB = isLoggedB;</span>
+<span class="fc" id="L55">		}</span>
 
 		public boolean isSearchB() {
 <span class="nc" id="L58">			return isSearchB;</span>

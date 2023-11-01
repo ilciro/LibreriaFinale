@@ -1,9 +1,9 @@
 Riepigolo Giornale :
- Titolo :cambio giornale	Editore del giornale :cambio ediitore	Ricavo totale :dei giornali :12.5
+ Titolo :"ambio giornale	Editore del giornale :cambio editore"	Ricavo totale :dei giornali :12.5
 Riepigolo Giornale :
- Titolo :La Republica2	Editore del giornale :La Republica	Ricavo totale :dei giornali :3.0
+ Titolo :La Republica2	Editore del giornale :La Republica	Ricavo totale :dei giornali :0.0
 Riepigolo Giornale :
- Titolo :La Republica3	Editore del giornale :La Republica	Ricavo totale :dei giornali :4.0
+ Titolo :La Republica3	Editore del giornale :La Republica	Ricavo totale :dei giornali :8.0
 Riepigolo Giornale :
  Titolo :La Republica4	Editore del giornale :La Republica	Ricavo totale :dei giornali :28.0
 Riepigolo Giornale :
@@ -18,6 +18,8 @@ Riepigolo Giornale :
  Titolo :Il Fatto Quotidiano3	Editore del giornale :Il Fatto Quotidiano	Ricavo totale :dei giornali :0.0
 Riepigolo Giornale :
  Titolo :Il Fatto Quotidiano4	Editore del giornale :Il Fatto Quotidiano	Ricavo totale :dei giornali :30.0
+Riepigolo Giornale :
+ Titolo :Il Fatto Quotidiano5	Editore del giornale :Il Fatto Quotidiano	Ricavo totale :dei giornali :32.0
 Riepigolo Giornale :
  Titolo :La gazzetta del profeta	Editore del giornale :Hoepli	Ricavo totale :dei giornali :17.0
 Riepigolo Giornale :
