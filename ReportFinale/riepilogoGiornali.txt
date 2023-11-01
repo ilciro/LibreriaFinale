@@ -1,5 +1,3 @@
-Titolo :"ambio giornale	Editore :cambio editore"	Ricavo totale :12.5
-Titolo :La Republica2	Editore :La Republica	Ricavo totale :0.0
 Titolo :La Republica3	Editore :La Republica	Ricavo totale :8.0
 Titolo :La Republica4	Editore :La Republica	Ricavo totale :28.0
 Titolo :La Republica5	Editore :La Republica	Ricavo totale :20.0

@@ -1,12 +1,13 @@
 package laptop.controller;
 
+
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.UUID;
 
-import com.itextpdf.text.DocumentException;
 
+import com.itextpdf.text.DocumentException;
 import laptop.database.ContrassegnoDao;
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
@@ -85,20 +86,7 @@ public class ControllerDownload {
 		
 		
 	}
-
-	public ControllerDownload() {
-		this.setNrOrdine(UUID.randomUUID().toString());
-		l = new Libro();
-		cDao=new ContrassegnoDao();
-		pDao=new PagamentoDao();
-		lD=new LibroDao();
-		g=new Giornale();
-		gD=new GiornaleDao();
-		r=new Rivista();
-		rD=new RivistaDao();
-	}
-
-	public void scarica(String type) throws DocumentException, IOException, URISyntaxException {
+	public void scarica(String type) throws  IOException, URISyntaxException,  DocumentException {
 		switch (type)
 		{
 			case "libro":
@@ -125,6 +113,21 @@ public class ControllerDownload {
 			default:break;
 		}
 	}
+
+
+	public ControllerDownload() {
+		this.setNrOrdine(UUID.randomUUID().toString());
+		l = new Libro();
+		cDao=new ContrassegnoDao();
+		pDao=new PagamentoDao();
+		lD=new LibroDao();
+		g=new Giornale();
+		gD=new GiornaleDao();
+		r=new Rivista();
+		rD=new RivistaDao();
+	}
+
+
 
 
 

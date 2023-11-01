@@ -27,12 +27,13 @@ public class ControllerAcquista {
 	private Rivista r;
 	private static ControllerSystemState vis = ControllerSystemState.getInstance() ;
 	private String name;
-	private int disp;
+
 	private float costo;//aggiunto per costo (vedere metodo in fondo ((getCosto()))
 	private int rimanenza = 0;//usato per vedee nr copie 
 	private static final String LIBRO = "libro";
 	private static final String RIVISTA="rivista";
 	private static final String GIORNALE="giornale";
+	private int disp;
 
 	
 
@@ -126,12 +127,6 @@ public class ControllerAcquista {
 		}
 	}
 
-	public String getType()
-	{
-		
-		return vis.getType();
-	}
-
 	public String getNomeById() throws SQLException
 	{
 		
@@ -154,31 +149,7 @@ public class ControllerAcquista {
 		}
 		return name ;
 	}
-	
-	public int getDisp(String type) throws SQLException, IdException {
 
-		switch (type)
-		{
-			case LIBRO:
-				l.setId(vis.getId());
-				disp=lD.getQuantita(l);
-				break;
-			case GIORNALE:
-				g.setId(vis.getId());
-				disp=gD.getQuantita(g);
-				break;
-			case RIVISTA:
-				r.setId(vis.getId());
-				disp=rD.getQuantita(r);
-				break;
-			default:checkID(vis.getId());
-			return disp;
-
-		}
-
-
-		return disp;
-	}
 	/*
 	 * metodo aggiunto per stampare appena carica la schermata anche il costo di 
 	 * ogni singolo elemento(giornale,rivista o lbro)
@@ -211,6 +182,29 @@ public class ControllerAcquista {
 
 		
 	}
-	
-	
+	public int getDisp(String type) throws SQLException, IdException {
+
+		switch (type)
+		{
+			case LIBRO:
+				l.setId(vis.getId());
+				disp=lD.getQuantita(l);
+				break;
+			case GIORNALE:
+				g.setId(vis.getId());
+				disp=gD.getQuantita(g);
+				break;
+			case RIVISTA:
+				r.setId(vis.getId());
+				disp=rD.getQuantita(r);
+				break;
+			default:checkID(vis.getId());
+				return disp;
+
+		}
+		return disp;
 	}
+
+
+
+}

@@ -3,20 +3,17 @@ package laptop.test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.*;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
 
 import laptop.controller.*;
 import laptop.database.PagamentoDao;
 import laptop.exception.IdException;
+import laptop.exception.LogoutException;
 import laptop.model.Pagamento;
-import laptop.utilities.ConnToDb;
-import org.apache.ibatis.jdbc.ScriptRunner;
-import org.junit.jupiter.api.AfterAll;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -53,6 +50,7 @@ class TestLaptop2 {
 	private ControllerModificaUtente cMU=new ControllerModificaUtente();
 	private ControllerCancellaUser cCU=new ControllerCancellaUser();
 
+	private ControllerLogin cL=new ControllerLogin();
 
 
 
@@ -258,6 +256,31 @@ class TestLaptop2 {
         assertNotNull(UsersDao.getUserList());
     }
 
+	//added this
+	@Test
+	void logoutAfterLogin()
+	{
+		u.setNome(rBUtente.getString("nomeUtente"));
+		assertTrue(ControllerHomePageAfterLogin.logout());
+	}
+	@Test
+	void logoutAfterLoginSE() throws LogoutException {
+		u.setNome(rBUtente.getString("userLogout"));
+		assertTrue(ControllerHomePageAfterLoginSE.logout());
+	}
+	@Test
+	void login() throws SQLException {
+		assertFalse(cL.controlla(rBUtente.getString("userLogin"),rBUtente.getString("userLogin")));
+	}
+	@Test
+	void getRuoloTempUSer() throws SQLException {
+		assertNotNull(cL.getRuoloTempUSer(rBUtente.getString("email")));
+	}
+	@Test
+	void modificaUtente() throws SQLException {
+		cMU.aggiorna(rBUtente.getString("nomeU"), rBUtente.getString("cognomeU") ,rBUtente.getString("emailU"),rBUtente.getString("passU"), rBUtente.getString("descU"), LocalDate.of(Integer.parseInt(rBUtente.getString("annoU")), Integer.parseInt(rBUtente.getString("meseU")),Integer.parseInt(rBUtente.getString("giornoU"))),rBUtente.getString("emailU"));
+
+	}
 
 
 

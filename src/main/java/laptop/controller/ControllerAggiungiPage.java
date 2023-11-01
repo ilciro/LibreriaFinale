@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 
 import laptop.database.GiornaleDao;
+
 import laptop.database.LibroDao;
 import laptop.database.RivistaDao;
 import laptop.model.raccolta.Giornale;
@@ -12,37 +13,19 @@ import laptop.model.raccolta.Rivista;
 
 
 public class ControllerAggiungiPage {
-	private LibroDao lD;
+
 	private GiornaleDao gD;
 	private boolean status = false;
 	private Rivista r;
 	private RivistaDao rD;
+	private LibroDao lD;
 	private ControllerBookData cBD;
+
 	
 	//funzione di aggiunta dei libri
 	//e verifica dei dati inseriti 
 	
-	public boolean checkData(String[] info,String recensione,String descrizione,LocalDate data,String[] infoCosti) throws SQLException
-	{
 
-		
-		if( infoCosti[1].length()>10 || data==null )
-		{
-			return status;
-
-		}
-		else
-		{
-		
-		
-		
-		
-		status =lD.creaLibrio(cBD.checkBookData(info, recensione, descrizione, data, infoCosti));
-		
-		return status;
-		}
-	}
-	
 	public boolean checkDataG(Giornale g) throws SQLException 
 	{
 		if(g.getDataPubb()==null )
@@ -85,15 +68,36 @@ public class ControllerAggiungiPage {
 		return status;
 	}
 
+	public boolean checkData(String[] info,String recensione,String descrizione,LocalDate data,String[] infoCosti) throws SQLException
+	{
+
+
+		if( infoCosti[1].length()>10 || data==null )
+		{
+			return status;
+
+		}
+		else
+		{
+
+
+
+
+			status =lD.creaLibrio(cBD.checkBookData(info, recensione, descrizione, data, infoCosti));
+
+			return status;
+		}
+	}
 	// qui chiamo la funzione del dao
 	
 	public ControllerAggiungiPage()
 	{
-		lD=new LibroDao();
 		gD=new GiornaleDao();
 		r=new Rivista();
 		rD=new RivistaDao();
+		lD=new LibroDao();
 		cBD=new ControllerBookData();
+
 	}
 
 }

@@ -349,18 +349,18 @@ public class RivistaDao {
 	public boolean checkDisp(Rivista r) throws SQLException
 	{
 		
-<span class="nc" id="L352">			query=&quot;select disp from rivista where id=?&quot;;</span>
+<span class="fc" id="L352">			query=&quot;select disp from rivista where id=?&quot;;</span>
 			
-<span class="nc" id="L354">			try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="nc" id="L355">					PreparedStatement prepQ=conn.prepareStatement(query);</span>
+<span class="fc" id="L354">			try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L355">					PreparedStatement prepQ=conn.prepareStatement(query);</span>
 					)
 
 			{
 				
-<span class="nc" id="L360">				prepQ.setInt(1, r.getId());</span>
+<span class="fc" id="L360">				prepQ.setInt(1, r.getId());</span>
 			
-<span class="nc" id="L362">				ResultSet rs=prepQ.executeQuery();</span>
-<span class="nc bnc" id="L363" title="All 2 branches missed.">			while(rs.next())</span>
+<span class="fc" id="L362">				ResultSet rs=prepQ.executeQuery();</span>
+<span class="pc bpc" id="L363" title="1 of 2 branches missed.">			while(rs.next())</span>
 			{
 <span class="nc" id="L365">				disp = rs.getInt(1);</span>
 <span class="nc bnc" id="L366" title="All 2 branches missed.">				if (disp == 1)</span>
@@ -375,9 +375,9 @@ public class RivistaDao {
 <span class="nc" id="L375">			}catch(SQLException e)</span>
 			{
 <span class="nc" id="L377">				java.util.logging.Logger.getLogger(&quot;disp ecc&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="nc" id="L378">			}</span>
+<span class="fc" id="L378">			}</span>
 			
-<span class="nc" id="L380">	 	return state;</span>
+<span class="fc" id="L380">	 	return state;</span>
 	
 	}
 
@@ -457,20 +457,20 @@ public class RivistaDao {
 
 	public void cancella(Rivista r) throws SQLException {
 
-<span class="nc" id="L460">		 int row=0;</span>
-<span class="nc" id="L461">		 query=&quot;delete from rivista where id=?&quot;;</span>
-<span class="nc" id="L462">		 try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="nc" id="L463">				 PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="fc" id="L460">		 int row=0;</span>
+<span class="fc" id="L461">		 query=&quot;delete from rivista where id=?&quot;;</span>
+<span class="fc" id="L462">		 try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L463">				 PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		 {
-<span class="nc" id="L465">			 prepQ.setInt(1, r.getId());</span>
-<span class="nc" id="L466">			 row=prepQ.executeUpdate();</span>
+<span class="fc" id="L465">			 prepQ.setInt(1, r.getId());</span>
+<span class="fc" id="L466">			 row=prepQ.executeUpdate();</span>
 <span class="nc" id="L467">		 }catch(SQLException e)</span>
 		 {
 <span class="nc" id="L469">			 java.util.logging.Logger.getLogger(&quot;cancella r&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="nc" id="L470">		 }</span>
-<span class="nc" id="L471">		 java.util.logging.Logger.getLogger(&quot;rivista cancellata&quot;).log(Level.INFO, &quot;row delected{0}&quot;,row);</span>
+<span class="fc" id="L470">		 }</span>
+<span class="fc" id="L471">		 java.util.logging.Logger.getLogger(&quot;rivista cancellata&quot;).log(Level.INFO, &quot;row delected{0}&quot;,row);</span>
 
-<span class="nc" id="L473">	}</span>
+<span class="fc" id="L473">	}</span>
 
 	public ObservableList&lt;Rivista&gt; getRivistaSingoloById(Rivista r) throws SQLException {
 <span class="fc" id="L476">		ObservableList&lt;Rivista&gt; catalogo=FXCollections.observableArrayList();</span>

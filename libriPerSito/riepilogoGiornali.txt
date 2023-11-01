@@ -1,8 +1,4 @@
 Riepigolo Giornale :
- Titolo :"ambio giornale	Editore del giornale :cambio editore"	Ricavo totale :dei giornali :12.5
-Riepigolo Giornale :
- Titolo :La Republica2	Editore del giornale :La Republica	Ricavo totale :dei giornali :0.0
-Riepigolo Giornale :
  Titolo :La Republica3	Editore del giornale :La Republica	Ricavo totale :dei giornali :8.0
 Riepigolo Giornale :
  Titolo :La Republica4	Editore del giornale :La Republica	Ricavo totale :dei giornali :28.0

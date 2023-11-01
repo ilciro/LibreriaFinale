@@ -281,16 +281,16 @@ public class GiornaleDao {
 
 	public  boolean checkDisp(Giornale g) throws SQLException  
 	{
-<span class="nc" id="L284">		query=&quot;select disp from ispw.giornale where id=?&quot;;</span>
-<span class="nc" id="L285">			try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="nc" id="L286">					PreparedStatement prepQ=conn.prepareStatement(query);</span>
+<span class="fc" id="L284">		query=&quot;select disp from ispw.giornale where id=?&quot;;</span>
+<span class="fc" id="L285">			try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L286">					PreparedStatement prepQ=conn.prepareStatement(query);</span>
 					)
 		
 			{
-<span class="nc" id="L290">			prepQ.setInt(1, g.getId());</span>
-<span class="nc" id="L291">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc" id="L290">			prepQ.setInt(1, g.getId());</span>
+<span class="fc" id="L291">			ResultSet rs=prepQ.executeQuery();</span>
 
-<span class="nc bnc" id="L293" title="All 2 branches missed.">			while(rs.next())</span>
+<span class="pc bpc" id="L293" title="1 of 2 branches missed.">			while(rs.next())</span>
 			{
 <span class="nc" id="L295">				disp = rs.getInt(1);</span>
 <span class="nc bnc" id="L296" title="All 2 branches missed.">				if (disp &gt;= 1)</span>
@@ -300,9 +300,9 @@ public class GiornaleDao {
 <span class="nc" id="L300">			}catch(SQLException e)</span>
 			{
 <span class="nc" id="L302">				java.util.logging.Logger.getLogger(&quot;Controlla disp&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="nc" id="L303">			}</span>
+<span class="fc" id="L303">			}</span>
 			
-<span class="nc" id="L305">	 	return state;</span>
+<span class="fc" id="L305">	 	return state;</span>
 	}
 
 	public  ObservableList&lt;Raccolta&gt; getGiornaleSingolo() throws SQLException   {
@@ -381,24 +381,24 @@ public class GiornaleDao {
 
 
 	public  void cancella(Giornale g) throws SQLException  {
-<span class="nc" id="L384">		int row=0;</span>
-<span class="nc" id="L385">		query=&quot;delete from giornale where id=?&quot;;</span>
-<span class="nc" id="L386">		try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="nc" id="L387">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="fc" id="L384">		int row=0;</span>
+<span class="fc" id="L385">		query=&quot;delete from giornale where id=?&quot;;</span>
+<span class="fc" id="L386">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L387">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
-<span class="nc" id="L389">			prepQ.setInt(1, g.getId());</span>
-<span class="nc" id="L390">			row=prepQ.executeUpdate();</span>
+<span class="fc" id="L389">			prepQ.setInt(1, g.getId());</span>
+<span class="fc" id="L390">			row=prepQ.executeUpdate();</span>
 			
 <span class="nc" id="L392">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L394">						java.util.logging.Logger.getLogger(&quot;cancella&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="nc" id="L395">		}</span>
-<span class="nc" id="L396">		java.util.logging.Logger.getLogger(&quot;cancella g&quot;).log(Level.INFO,&quot;\n rows affcted {0}&quot;,row);</span>
+<span class="fc" id="L395">		}</span>
+<span class="fc" id="L396">		java.util.logging.Logger.getLogger(&quot;cancella g&quot;).log(Level.INFO,&quot;\n rows affcted {0}&quot;,row);</span>
 
 
 
 
-<span class="nc" id="L401">	}</span>
+<span class="fc" id="L401">	}</span>
 
 	public ObservableList&lt;Giornale&gt; getGiornaliSingoloById(Giornale g) throws SQLException    {
 

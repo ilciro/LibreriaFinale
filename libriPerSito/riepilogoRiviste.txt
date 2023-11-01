@@ -1,8 +1,4 @@
 Rivista :
- Titolo :"cambio rivista";	Editore rivista :"cambio editore";	Ricavo totale :delle riviste235.99998
-Rivista :
- Titolo :Focus Junior	Editore rivista :Bao Publishing	Ricavo totale :delle riviste2468.0
-Rivista :
  Titolo :Tv Sorrisi e canzoni	Editore rivista :Bao Publishing	Ricavo totale :delle riviste0.0
 Rivista :
  Titolo :Rivista A	Editore rivista :Bao Publishing	Ricavo totale :delle riviste242.0

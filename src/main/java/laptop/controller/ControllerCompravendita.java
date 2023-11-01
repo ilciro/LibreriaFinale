@@ -31,27 +31,7 @@ public class ControllerCompravendita {
 	private static final String GIORNALE = "giornale";
 
 
-	public boolean disponibilita(String type, String i) throws SQLException, IdException {
-		switch (type)
-		{
-			case LIBRO:
 
-				l.setId(Integer.parseInt(i));
-				status=lD.checkDisp(l);
-				break;
-			case GIORNALE:
-				g.setId(Integer.parseInt(i));
-				status=gD.checkDisp(g);
-				break;
-			case RIVISTA:
-				r.setId(Integer.parseInt(i));
-				status=rD.checkDisp(r);
-				break;
-			default: checkID(Integer.parseInt(i));
-
-		}
-		return status;
-	}
 
 	public ControllerCompravendita() {
 		lD = new LibroDao();
@@ -90,6 +70,27 @@ public class ControllerCompravendita {
 	return catalogo;
 	}
 
+	public boolean disponibilita(String type, String i) throws SQLException, IdException {
+		switch (type)
+		{
+			case LIBRO:
+
+				l.setId(Integer.parseInt(i));
+				status=lD.checkDisp(l);
+				break;
+			case GIORNALE:
+				g.setId(Integer.parseInt(i));
+				status=gD.checkDisp(g);
+				break;
+			case RIVISTA:
+				r.setId(Integer.parseInt(i));
+				status=rD.checkDisp(r);
+				break;
+			default: checkID(Integer.parseInt(i));
+
+		}
+		return status;
+	}
 
 	
 	/*

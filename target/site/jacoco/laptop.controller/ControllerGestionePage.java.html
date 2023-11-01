@@ -26,17 +26,17 @@ public class ControllerGestionePage {
 	private static final String RIVISTA=&quot;rivista&quot;;
 
 	public void cancella(int id) throws SQLException {
-<span class="nc bnc" id="L29" title="All 2 branches missed.">		if (ControllerSystemState.getInstance().getType().equals(LIBRO)) {</span>
-<span class="nc" id="L30">			l.setId(id);</span>
-<span class="nc" id="L31">			lD.cancella(l);</span>
-<span class="nc bnc" id="L32" title="All 2 branches missed.">		} else if (ControllerSystemState.getInstance().getType().equals(GIORNALE)) {</span>
-<span class="nc" id="L33">			g.setId(id);</span>
-<span class="nc" id="L34">			gD.cancella(g);</span>
-<span class="nc bnc" id="L35" title="All 2 branches missed.">		} else if (ControllerSystemState.getInstance().getType().equals(RIVISTA)) {</span>
-<span class="nc" id="L36">			r.setId(id);</span>
-<span class="nc" id="L37">			rD.cancella(r);</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">		if (ControllerSystemState.getInstance().getType().equals(LIBRO)) {</span>
+<span class="fc" id="L30">			l.setId(id);</span>
+<span class="fc" id="L31">			lD.cancella(l);</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">		} else if (ControllerSystemState.getInstance().getType().equals(GIORNALE)) {</span>
+<span class="fc" id="L33">			g.setId(id);</span>
+<span class="fc" id="L34">			gD.cancella(g);</span>
+<span class="pc bpc" id="L35" title="1 of 2 branches missed.">		} else if (ControllerSystemState.getInstance().getType().equals(RIVISTA)) {</span>
+<span class="fc" id="L36">			r.setId(id);</span>
+<span class="fc" id="L37">			rD.cancella(r);</span>
 		}
-<span class="nc" id="L39">	}</span>
+<span class="fc" id="L39">	}</span>
 
 
 	public ObservableList&lt;Raccolta&gt; getLista(String type) throws SQLException {

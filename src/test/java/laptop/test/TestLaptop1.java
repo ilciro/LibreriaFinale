@@ -4,13 +4,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.*;
 import java.net.URISyntaxException;
-import java.sql.Connection;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
 
 
 
@@ -19,9 +17,6 @@ import laptop.database.NegozioDao;
 import laptop.exception.IdException;
 import laptop.model.*;
 import laptop.model.raccolta.Factory;
-import laptop.utilities.ConnToDb;
-import org.apache.ibatis.jdbc.ScriptRunner;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -574,5 +569,32 @@ class TestLaptop1 {
 		assertFalse(nD.checkRitiro(n1));
 	}
 
+	//added this
+	@ParameterizedTest
+	@ValueSource(ints={1,2,3,4,5,6,7})
+	void cancellaL(int ints) throws SQLException {
+		vis.setTypeAsBook();
+		cGP.cancella(ints);
+		assertNotEquals(0,ints);
+	}
+	@ParameterizedTest
+	@ValueSource(ints={1,2})
+	void cancellaG(int ints) throws SQLException {
+		vis.setTypeAsDaily();
+		cGP.cancella(ints);
+		assertNotEquals(0,ints);
+	}
+	@ParameterizedTest
+	@ValueSource(ints={1,2})
+	void cancellaR(int ints) throws SQLException {
+		vis.setTypeAsMagazine();
+		cGP.cancella(ints);
+		assertNotEquals(0,ints);
+	}
+	@ParameterizedTest
+	@ValueSource(strings={"libro","giornale","rivista"})
+	void controllaDisp(String strings) throws SQLException, IdException {
+		assertFalse(cC.disponibilita(strings,"1"));
+	}
 
 }
