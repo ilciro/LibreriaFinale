@@ -55,8 +55,6 @@ Z
 *src/test/java/laptop/test/TestLaptop2.java,1\4\14785c3a86712ced8f37cf4eb22549961fcc139a
 Z
 *src/test/java/laptop/test/TestLaptop3.java,c\6\c62a87d821793ae6fe165f58d544a04c81b4eae0
-Z
-*src/test/java/laptop/test/TestLaptop4.java,0\8\08a9e447ba7da2503f09aaaa8465d443a7c3a21a
 Y
 )src/main/java/laptop/model/Pagamento.java,4\9\495f95506fad3c278a2483c662649e11f2353703
 k
@@ -94,8 +92,6 @@ Q.idea/sonarlint/securityhotspotstore/9/e/9e960597aafe0b33b8b6dbb9fe71166fc606a2
 Å
 Q.idea/sonarlint/securityhotspotstore/e/1/e114cbfece914a5f620f3303619ca0e93b6c28ec,e\5\e50f43bbbf7a0d0e05e4eea48518b0aa27720c6b
 Å
-Q.idea/sonarlint/securityhotspotstore/0/8/08a9e447ba7da2503f09aaaa8465d443a7c3a21a,7\a\7ab0ec02f301f108c0e699a28b7cc0d6d815e58c
-Å
 Q.idea/sonarlint/securityhotspotstore/9/8/981fe94c26b7a8d490f3b654ac34eca2aafaed62,d\d\dde8d56e47c2d2b4447c6d3648b64b584ed2906c
 Å
 Q.idea/sonarlint/securityhotspotstore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e,9\0\909762385fc6eb20f922a91c6865741308b57f2c
@@ -103,8 +99,6 @@ Q.idea/sonarlint/securityhotspotstore/8/8/88a9255124c95bdc913197c120a8d560edc59c
 Q.idea/sonarlint/securityhotspotstore/0/9/096e5a02539799ae3a46811fdb9b0ec14ef7133e,1\e\1e019066441ee8f9d85bd1d65f24eb5ea5efa9c8
 Å
 Q.idea/sonarlint/securityhotspotstore/b/4/b4a0b63ce8560bbc5de0f9995c20cc861dc2adb3,6\b\6bc361fab678f74f7da63b229ace2fc9d3130980
-w
-G.idea/sonarlint/issuestore/0/8/08a9e447ba7da2503f09aaaa8465d443a7c3a21a,1\0\1018b4b75dab2d574550a783e1d8b6c9515fee08
 w
 G.idea/sonarlint/issuestore/4/f/4fdc4cd1be6592059cbf0a76af0d8212dd9f9285,8\5\853ccd8c992717c1854d42a68989de23493d7a25
 w
