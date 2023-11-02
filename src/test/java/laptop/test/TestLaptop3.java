@@ -388,6 +388,7 @@ class TestLaptop3 {
 		UserBean.getInstance().setNomeB(rBUtente.getString("nomeUtente"));
 		assertTrue(UsersDao.logout());
 	}
+
 	@AfterAll
 	static void ripristinaDB() throws FileNotFoundException {
 
@@ -404,6 +405,8 @@ class TestLaptop3 {
 		sr.runScript(reader);
 
 	}
+
+
 
 	
 }

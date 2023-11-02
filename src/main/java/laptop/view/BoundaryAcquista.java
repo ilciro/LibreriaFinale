@@ -218,7 +218,7 @@ public class BoundaryAcquista implements Initializable {
 
 			dispLabel.setText(String.valueOf(cA.getDisp(vis.getType())));
 		
-				costo.setText(String.valueOf(cA.getCosto()));
+				costo.setText(String.valueOf(cA.getCosto(vis.getType())));
 			} catch (SQLException | IdException e) {
 				java.util.logging.Logger.getLogger("Test initialize").log(Level.SEVERE, " eccezione ottenuta {0}.", e.toString());
 

@@ -2,7 +2,7 @@
 INSERT INTO `ispw`.`giornale`
 (`titolo`,`tipologia`,`lingua`,`editore`,`dataPubblicazione`,`copiRim`,`disp`,`prezzo`)
 VALUES
-("La Republica1","Quotidiano","Italiano","La Republica","2021-01-31",0,0,2.0),
+("La Republica1","Quotidiano","Italiano","La Republica","2021-01-31",5,1,2.0),
 ("La Republica2","Quotidiano","Italiano","La Republica","2021-01-30",0,0,3.0),
 ("La Republica3","Quotidiano","Italiano","La Republica","2021-02-01",10,1,2.0),
 ("La Republica4","Quotidiano","Italiano","La Republica","2021-02-02",14,1,2.0),

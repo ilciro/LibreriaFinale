@@ -259,24 +259,24 @@ public class GiornaleDao {
 	{
 		
 
-<span class="nc" id="L262">		query=&quot;select copiRim from giornale where id=?&quot;;</span>
-<span class="nc" id="L263">		try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="nc" id="L264">				PreparedStatement prepQ=conn.prepareStatement(query);</span>
+<span class="fc" id="L262">		query=&quot;select copiRim from giornale where id=?&quot;;</span>
+<span class="fc" id="L263">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L264">				PreparedStatement prepQ=conn.prepareStatement(query);</span>
 				)
 		{
 			
-<span class="nc" id="L268">			prepQ.setInt(1, g.getId());</span>
-<span class="nc" id="L269">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc" id="L268">			prepQ.setInt(1, g.getId());</span>
+<span class="fc" id="L269">			ResultSet rs=prepQ.executeQuery();</span>
 			
-<span class="nc bnc" id="L271" title="All 2 branches missed.">				while (rs.next()) {</span>
-<span class="nc" id="L272">					q = rs.getInt(&quot;copiRim&quot;);</span>
+<span class="fc bfc" id="L271" title="All 2 branches covered.">				while (rs.next()) {</span>
+<span class="fc" id="L272">					q = rs.getInt(&quot;copiRim&quot;);</span>
 				}			
 <span class="nc" id="L274">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L276">			java.util.logging.Logger.getLogger(&quot;get quantita g&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="nc" id="L277">		}</span>
+<span class="fc" id="L277">		}</span>
 
-<span class="nc" id="L279">		return q;</span>
+<span class="fc" id="L279">		return q;</span>
 	}
 
 	public  boolean checkDisp(Giornale g) throws SQLException  

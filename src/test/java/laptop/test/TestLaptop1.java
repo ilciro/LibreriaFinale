@@ -14,6 +14,7 @@ import java.util.ResourceBundle;
 
 import laptop.controller.*;
 import laptop.database.NegozioDao;
+import laptop.exception.AcquistaException;
 import laptop.exception.IdException;
 import laptop.model.*;
 import laptop.model.raccolta.Factory;
@@ -595,6 +596,35 @@ class TestLaptop1 {
 	@ValueSource(strings={"libro","giornale","rivista"})
 	void controllaDisp(String strings) throws SQLException, IdException {
 		assertFalse(cC.disponibilita(strings,"1"));
+	}
+	@Test
+	void reportL() throws IOException {
+		assertNotNull(cRP.reportLibri());
+	}
+	@Test
+	void reportG() throws IOException {
+		assertNotNull(cRP.reportGiornali());
+	}
+
+	@ParameterizedTest
+	@ValueSource(strings={"libro","giornale","rivista"})
+	void testAmmontare(String strings) throws AcquistaException, SQLException, IdException {
+
+		cA.inserisciAmmontare(strings,3);
+		assertNotNull(strings);
+	}
+
+
+	@ParameterizedTest
+	@ValueSource(strings={"libro","rivista","giornale"})
+	void testGetDisp(String strings) throws SQLException, IdException {
+		assertNotEquals(0,cA.getDisp(strings));
+	}
+	@ParameterizedTest
+	@ValueSource(strings={"libro","rivista","giornale"})
+	void testGetCosto(String strings) throws SQLException, IdException {
+		cA.getCosto(strings);
+		assertNotNull(strings);
 	}
 
 }

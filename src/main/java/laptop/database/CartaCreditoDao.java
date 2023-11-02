@@ -72,7 +72,7 @@ public class CartaCreditoDao {
 				prepQ.setString(5,cc.getCiv());
 				//in alternativa vis.getSpesa
 				prepQ.setFloat(6, cc.getPrezzoTransazine());
-				prepQ.executeUpdate();
+				prepQ.executeLargeUpdate();
 			}catch(SQLException e)
 			{
 				java.util.logging.Logger.getLogger("report libro").log(Level.SEVERE,"\n eccezione ottenuta .",e);

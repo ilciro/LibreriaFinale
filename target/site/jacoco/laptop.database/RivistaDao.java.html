@@ -326,24 +326,24 @@ public class RivistaDao {
 	public int getQuantita(Rivista r) throws SQLException
 	{
         
-<span class="nc" id="L329">		query=&quot;select copieRimanenti from rivista where id=?&quot;;</span>
-<span class="nc" id="L330">		try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="nc" id="L331">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="fc" id="L329">		query=&quot;select copieRimanenti from rivista where id=?&quot;;</span>
+<span class="fc" id="L330">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L331">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
 			
-<span class="nc" id="L334">			prepQ.setInt(1, r.getId());</span>
-<span class="nc" id="L335">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc" id="L334">			prepQ.setInt(1, r.getId());</span>
+<span class="fc" id="L335">			ResultSet rs=prepQ.executeQuery();</span>
 			
-<span class="nc bnc" id="L337" title="All 2 branches missed.">				while (rs.next()) {</span>
-<span class="nc" id="L338">					q = rs.getInt(1);</span>
+<span class="fc bfc" id="L337" title="All 2 branches covered.">				while (rs.next()) {</span>
+<span class="fc" id="L338">					q = rs.getInt(1);</span>
 				}			
 			
 <span class="nc" id="L341">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L343">			java.util.logging.Logger.getLogger(&quot;quantita r&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="nc" id="L344">		}</span>
+<span class="fc" id="L344">		}</span>
 
-<span class="nc" id="L346">		return q;</span>
+<span class="fc" id="L346">		return q;</span>
 	}
 
 	public boolean checkDisp(Rivista r) throws SQLException

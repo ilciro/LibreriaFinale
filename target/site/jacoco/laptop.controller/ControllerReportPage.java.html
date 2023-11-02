@@ -133,21 +133,21 @@ public class ControllerReportPage {
 	}
 	public String reportLibri() throws IOException {
 
-<span class="nc" id="L136">		String line=&quot;&quot;;</span>
-<span class="nc" id="L137">		StringBuilder builder=new StringBuilder();</span>
+<span class="fc" id="L136">		String line=&quot;&quot;;</span>
+<span class="fc" id="L137">		StringBuilder builder=new StringBuilder();</span>
 
 
 
-<span class="nc" id="L141">		try(BufferedReader reader = new BufferedReader(new FileReader(fileLibro)))</span>
+<span class="fc" id="L141">		try(BufferedReader reader = new BufferedReader(new FileReader(fileLibro)))</span>
 		{
-<span class="nc bnc" id="L143" title="All 2 branches missed.">			while((line=reader.readLine())!=null)</span>
+<span class="fc bfc" id="L143" title="All 2 branches covered.">			while((line=reader.readLine())!=null)</span>
 			{
-<span class="nc" id="L145">				builder.append(line);</span>
-<span class="nc" id="L146">				builder.append(&quot;\n&quot;);</span>
+<span class="fc" id="L145">				builder.append(line);</span>
+<span class="fc" id="L146">				builder.append(&quot;\n&quot;);</span>
 
 			}
 		}
-<span class="nc" id="L150">		return builder.toString();</span>
+<span class="fc" id="L150">		return builder.toString();</span>
 	}
 	public String reportRaccolta() throws IOException {
 <span class="fc" id="L153">		String line=&quot;&quot;;</span>
@@ -198,24 +198,24 @@ public class ControllerReportPage {
 	}
 	public String reportGiornali()
 	{
-<span class="nc" id="L201">		String line=&quot;&quot;;</span>
-<span class="nc" id="L202">		StringBuilder builder=new StringBuilder();</span>
+<span class="fc" id="L201">		String line=&quot;&quot;;</span>
+<span class="fc" id="L202">		StringBuilder builder=new StringBuilder();</span>
 
 
-<span class="nc" id="L205">		try(BufferedReader reader = new BufferedReader(new FileReader(fileGiornale)))</span>
+<span class="fc" id="L205">		try(BufferedReader reader = new BufferedReader(new FileReader(fileGiornale)))</span>
 		{
-<span class="nc bnc" id="L207" title="All 2 branches missed.">			while((line=reader.readLine())!=null)</span>
+<span class="fc bfc" id="L207" title="All 2 branches covered.">			while((line=reader.readLine())!=null)</span>
 			{
-<span class="nc" id="L209">				builder.append(line);</span>
-<span class="nc" id="L210">				builder.append(&quot;\n&quot;);</span>
+<span class="fc" id="L209">				builder.append(line);</span>
+<span class="fc" id="L210">				builder.append(&quot;\n&quot;);</span>
 
 			}
 <span class="nc" id="L213">		}catch(IOException e)</span>
 		{
 <span class="nc" id="L215">			java.util.logging.Logger.getLogger(&quot;report giornale&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta .&quot;,e);</span>
 
-<span class="nc" id="L217">		}</span>
-<span class="nc" id="L218">		return builder.toString();</span>
+<span class="fc" id="L217">		}</span>
+<span class="fc" id="L218">		return builder.toString();</span>
 	}
 	public String reportRiviste() throws IOException {
 <span class="nc" id="L221">		String line2=&quot;&quot;;</span>

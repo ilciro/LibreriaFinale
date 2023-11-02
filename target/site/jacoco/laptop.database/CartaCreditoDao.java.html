@@ -72,7 +72,7 @@ import javafx.collections.ObservableList;
 <span class="fc" id="L72">				prepQ.setString(5,cc.getCiv());</span>
 				//in alternativa vis.getSpesa
 <span class="fc" id="L74">				prepQ.setFloat(6, cc.getPrezzoTransazine());</span>
-<span class="fc" id="L75">				prepQ.executeUpdate();</span>
+<span class="fc" id="L75">				prepQ.executeLargeUpdate();</span>
 <span class="fc" id="L76">			}catch(SQLException e)</span>
 			{
 <span class="fc" id="L78">				java.util.logging.Logger.getLogger(&quot;report libro&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta .&quot;,e);</span>

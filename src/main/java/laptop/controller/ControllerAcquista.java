@@ -3,6 +3,7 @@ package laptop.controller;
 import java.sql.SQLException;
 
 
+
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
 
@@ -29,7 +30,7 @@ public class ControllerAcquista {
 	private String name;
 
 	private float costo;//aggiunto per costo (vedere metodo in fondo ((getCosto()))
-	private int rimanenza = 0;//usato per vedee nr copie 
+
 	private static final String LIBRO = "libro";
 	private static final String RIVISTA="rivista";
 	private static final String GIORNALE="giornale";
@@ -38,11 +39,12 @@ public class ControllerAcquista {
 	
 
 	public float totale1 (String type,String titolo,int disp,int quantita) throws SQLException, IdException {
-		float x=0f;
+		float x;
 		switch (type)
 		{
 			case LIBRO:
 			{
+				checkID(vis.getId());
 				l.setTitolo(titolo);
 				l.setNrCopie(quantita);
 				vis.setQuantita(quantita);
@@ -52,6 +54,7 @@ public class ControllerAcquista {
 			}
 			case GIORNALE:
 			{
+				checkID(vis.getId());
 				g.setTitolo(titolo);
 				g.setId(vis.getId());
 				g.setCopieRimanenti(quantita);
@@ -62,6 +65,7 @@ public class ControllerAcquista {
 			}
 			case RIVISTA:
 			{
+				checkID(vis.getId());
 				r.setTitolo(titolo);
 				r.setId(vis.getId());
 				r.setCopieRim(quantita);
@@ -70,7 +74,8 @@ public class ControllerAcquista {
 				rD.aggiornaDisponibilita(r);
 				break;
 			}
-			default :checkID(vis.getId());
+			default : throw new IdException("id incorrect");
+
 		}
 		return x;
 	}
@@ -99,22 +104,30 @@ public class ControllerAcquista {
 	}
 
 
-	public void inserisciAmmontare(String type,int i) throws SQLException, AcquistaException {
+	public void inserisciAmmontare(String type,int i) throws SQLException, AcquistaException, IdException {
+		int rimanenza;
+		vis.setId(i);
 		switch(type)
 		{
 			case LIBRO:
+
 				l.setId(vis.getId());
 				rimanenza=lD.getQuantita(l);
+				checkRimanenza(rimanenza,i);
 				break;
 			case GIORNALE:
+
 				g.setId(vis.getId());
 				rimanenza=gD.getQuantita(g);
+				checkRimanenza(rimanenza,i);
 				break;
 			case RIVISTA:
+
 				r.setId(vis.getId());
 				rimanenza=rD.getQuantita(r);
+				checkRimanenza(rimanenza,i);
 				break;
-			default: checkRimanenza(rimanenza,i);
+			default: throw new IdException("incorrect id");
 
 
 		}
@@ -155,29 +168,29 @@ public class ControllerAcquista {
 	 * ogni singolo elemento(giornale,rivista o lbro)
 	 */
 	 
-	public float 	getCosto() throws SQLException
-	{
-		String type=vis.getType();
+	public float getCosto(String type) throws SQLException, IdException {
+
 		int id = vis.getId();
-
-		if(type.equalsIgnoreCase(LIBRO))
+		checkID(id);
+		switch (type)
 		{
-			l.setId(id);
-			costo=lD.getCosto(l);
+			case LIBRO :
+				l.setId(id);
+				costo=lD.getCosto(l);
+				break;
+			case GIORNALE:
+				g.setId(id);
+				costo=gD.getCosto(g);
+				break;
+			case RIVISTA:
+				r.setId(id);
+				costo=rD.getCosto(r);
+				break;
+			default: return costo;
+		}
 
-		}
-		 if(type.equalsIgnoreCase(GIORNALE))
-		{
-			g.setId(id);
-			costo=gD.getCosto(g);
-			
-		}
-		 if(type.equalsIgnoreCase(RIVISTA))
-		{
-			r.setId(id);
-			costo=rD.getCosto(r);
 
-		}
+
 		return costo;
 
 		
