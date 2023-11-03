@@ -143,12 +143,12 @@ public class ControllerAcquista {
 	public String getNomeById() throws SQLException
 	{
 		
-<span class="nc" id="L146">		int id = vis.getId();</span>
-<span class="nc" id="L147">		String type =vis.getType();</span>
-<span class="nc bnc" id="L148" title="All 2 branches missed.">		if(type.equals(LIBRO))</span>
+<span class="fc" id="L146">		int id = vis.getId();</span>
+<span class="fc" id="L147">		String type =vis.getType();</span>
+<span class="pc bpc" id="L148" title="1 of 2 branches missed.">		if(type.equals(LIBRO))</span>
 		{
-<span class="nc" id="L150">			l.setId(id);</span>
-<span class="nc" id="L151">			name = lD.getNome(l);</span>
+<span class="fc" id="L150">			l.setId(id);</span>
+<span class="fc" id="L151">			name = lD.getNome(l);</span>
 		}
 <span class="nc bnc" id="L153" title="All 2 branches missed.">		else if(type.equals(GIORNALE)) {</span>
 <span class="nc" id="L154">			g.setId(id);</span>
@@ -160,7 +160,7 @@ public class ControllerAcquista {
 <span class="nc" id="L160">			name = rD.getNome(r);</span>
 			
 		}
-<span class="nc" id="L163">		return name ;</span>
+<span class="fc" id="L163">		return name ;</span>
 	}
 
 	/*

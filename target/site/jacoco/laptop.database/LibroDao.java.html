@@ -383,22 +383,22 @@ public class LibroDao  {
 	 
 	public String getNome(Libro l) throws SQLException
 	{
-<span class="nc" id="L386">		String name=null;</span>
-<span class="nc" id="L387">		query=&quot;select titolo from libro where idProd=?&quot;;</span>
-<span class="nc" id="L388">		try(Connection conn=ConnToDb.generalConnection();</span>
-<span class="nc" id="L389">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+<span class="fc" id="L386">		String name=null;</span>
+<span class="fc" id="L387">		query=&quot;select titolo from libro where idProd=?&quot;;</span>
+<span class="fc" id="L388">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L389">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
 		{
-<span class="nc" id="L391">			prepQ.setInt(1, l.getId());</span>
-<span class="nc" id="L392">			ResultSet rs=prepQ.executeQuery();</span>
-<span class="nc bnc" id="L393" title="All 2 branches missed.">			while (rs.next())</span>
+<span class="fc" id="L391">			prepQ.setInt(1, l.getId());</span>
+<span class="fc" id="L392">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L393" title="All 2 branches covered.">			while (rs.next())</span>
 		{
-<span class="nc" id="L395">			name = rs.getString(1);</span>
+<span class="fc" id="L395">			name = rs.getString(1);</span>
 		}
 <span class="nc" id="L397">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L399">			java.util.logging.Logger.getLogger(&quot;nome l&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="nc" id="L400">		}</span>
-<span class="nc" id="L401">		return name;</span>
+<span class="fc" id="L400">		}</span>
+<span class="fc" id="L401">		return name;</span>
 	}
 
 	public ObservableList&lt;Raccolta&gt; getLibroSingolo() throws SQLException

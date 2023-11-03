@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 
 
 import laptop.controller.*;
-import laptop.database.NegozioDao;
+import laptop.database.*;
 import laptop.exception.AcquistaException;
 import laptop.exception.IdException;
 import laptop.model.*;
@@ -25,8 +25,6 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import com.itextpdf.text.DocumentException;
 
-import laptop.database.ContrassegnoDao;
-import laptop.database.PagamentoDao;
 import laptop.model.raccolta.Giornale;
 import laptop.model.raccolta.Libro;
 import laptop.model.raccolta.Rivista;
@@ -86,6 +84,8 @@ class TestLaptop1 {
 	private ControllerScegliNegozio cSN=new ControllerScegliNegozio();
 	private Negozio n1=new Negozio();
 	private NegozioDao nD=new NegozioDao();
+	private RivistaDao rD=new RivistaDao();
+	private GiornaleDao gD=new GiornaleDao();
 
 
 	private static Fattura f=new Fattura();
@@ -626,5 +626,39 @@ class TestLaptop1 {
 		cA.getCosto(strings);
 		assertNotNull(strings);
 	}
+	@Test
+	void testGetNomeById() throws SQLException {
+		vis.setId(1);
+		vis.setTypeAsBook();
+		assertNotNull(cA.getNomeById());
 
+	}
+	@Test
+	void testSetDescrizione() throws SQLException {
+		Rivista r=new Rivista();
+		r.setTitolo("Focus");
+		rD.getDesc(r);
+		int id=rD.retId(r);
+		r.setId(id);
+		String nome=rD.getNome(r);
+		int disp=rD.getDisp(r);
+		String titolo=rD.getTitolo(r);
+		assertNotEquals(0,r.getId());
+	}
+	@Test
+	void testRetId() throws SQLException {
+		Giornale g=new Giornale();
+		g.setTitolo("La Republica1");
+		int id=gD.retId(g);
+		String titolo=gD.getTitolo(g);
+		String nome=gD.getNome(g);
+		int disp=gD.getDisp(g);
+		assertNotEquals(0,id);
+	}
+	@Test
+	void testControlla() throws SQLException, IdException {
+		vis.setSpesaT(25.6f);
+		cPC.controlla(rBFattura.getString("nome1"),rBFattura.getString("cognome1"),rBFattura.getString("via"),rBFattura.getString("comunicazioni1"));
+		assertNotEquals(0,vis.getSpesaT());
+	}
 }
