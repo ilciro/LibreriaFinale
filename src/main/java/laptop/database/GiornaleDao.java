@@ -290,7 +290,7 @@ public class GiornaleDao {
 			prepQ.setInt(1, g.getId());
 			ResultSet rs=prepQ.executeQuery();
 
-			while(rs.next())
+			if(rs.next())
 			{
 				disp = rs.getInt(1);
 				if (disp >= 1)

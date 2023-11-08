@@ -290,7 +290,7 @@ public class GiornaleDao {
 <span class="fc" id="L290">			prepQ.setInt(1, g.getId());</span>
 <span class="fc" id="L291">			ResultSet rs=prepQ.executeQuery();</span>
 
-<span class="pc bpc" id="L293" title="1 of 2 branches missed.">			while(rs.next())</span>
+<span class="pc bpc" id="L293" title="1 of 2 branches missed.">			if(rs.next())</span>
 			{
 <span class="nc" id="L295">				disp = rs.getInt(1);</span>
 <span class="nc bnc" id="L296" title="All 2 branches missed.">				if (disp &gt;= 1)</span>

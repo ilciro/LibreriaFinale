@@ -21,7 +21,7 @@ import laptop.utilities.ConnToDb;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class RivistaDao {
+public class 	RivistaDao {
 	
 	private  Factory f;
 	
@@ -303,7 +303,7 @@ public class RivistaDao {
 		{
 			prepQ.setInt(1, r.getId());
 			ResultSet rs=prepQ.executeQuery();
-			while(rs.next())
+			if(rs.next())
 				{
 					disp = rs.getInt("disp");
 
@@ -360,7 +360,7 @@ public class RivistaDao {
 				prepQ.setInt(1, r.getId());
 			
 				ResultSet rs=prepQ.executeQuery();
-			while(rs.next())
+			if(rs.next())
 			{
 				disp = rs.getInt(1);
 				if (disp == 1)

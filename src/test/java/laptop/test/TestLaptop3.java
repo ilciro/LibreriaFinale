@@ -59,6 +59,8 @@ class TestLaptop3 {
     private final ResourceBundle rBInsertRivista=ResourceBundle.getBundle("configurations/rivistaDAInserire");
     private final ResourceBundle rBUtente=ResourceBundle.getBundle("configurations/utente");
 	private final ResourceBundle rBInsetLibro = ResourceBundle.getBundle("configurations/libroDaInserire");
+	private final ResourceBundle rBCartaCredito = ResourceBundle.getBundle("configurations/cartaCredito");
+
 	private AcquistaBean aB=new AcquistaBean();
 	private CartaCreditoBean ccB=new CartaCreditoBean();
 	private java.sql.Date dataS= new java.sql.Date(Calendar.getInstance().getTime().getTime());
@@ -109,6 +111,17 @@ class TestLaptop3 {
 	{
 		aB.setPrezzoB(floats);
 		assertEquals(aB.getPrezzoB(),floats);
+	}
+	@Test
+	void testCartaCreditoBeanSetter()
+	{
+		ccB.setNomeB(cDao.getCarteCredito(rBCartaCredito.getString("nome2")).get(0).getNomeUser());
+		ccB.setCognomeB(cDao.getCarteCredito(rBCartaCredito.getString("nome2")).get(0).getCognomeUser());
+		ccB.setNumeroCCB(cDao.getCarteCredito(rBCartaCredito.getString("nome2")).get(0).getNumeroCC());
+		ccB.setDataScadB(cDao.getCarteCredito(rBCartaCredito.getString("nome2")).get(0).getScadenza());
+		ccB.setCivB(cDao.getCarteCredito(rBCartaCredito.getString("nome2")).get(0).getCiv());
+		assertNotNull(ccB.getNomeB());
+
 	}
     /*
 	@Test

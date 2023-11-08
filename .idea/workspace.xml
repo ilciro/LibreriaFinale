@@ -19,6 +19,8 @@
       <change beforePath="$PROJECT_DIR$/libriPerSito/riepilogoRiviste.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/riepilogoRiviste.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libriPerSito/riepilogoUtenti.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/riepilogoUtenti.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/UsersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/UsersDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/bean/UserBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/bean/UserBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/AdminServlet.java" afterDir="false" />
@@ -37,10 +39,16 @@
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/homePage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/utente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/utenti.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestLaptop1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestLaptop1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestLaptop3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestLaptop3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestLaptop4.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven.war" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/Search-icon-13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/acquista.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/adminPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/aggiungiOggettoPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/aggiungiUtente.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/bsoRegister.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/compravendita.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/booksPath.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/cartaCredito.properties" beforeDir="false" />
@@ -322,9 +330,75 @@
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/slf4j-api-1.7.30.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/sonar-maven-plugin-3.10.0.2594.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/sonar-scanner-api-2.16.3.1081.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/acquista.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/admin.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/aggiungiOggettoPage.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/cartaCredito.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/acquista.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/admin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/aggiungiOggetto.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/aggiungiUtente.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/cartaCredito.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/download.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/editore.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/fattura.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/gestioneOggetto.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/gestioneUtente.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/giornali.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/libri.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/modificaOggetto.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/modificaUtente.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/negozio.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/profilo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/raccolta.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/register.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/report.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/resetPassword.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/ricerca.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/ricercaInCatalogo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/riviste.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/scrittore.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/utenti.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/download.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/editore.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/fattura.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/gestioneOggetto.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/gestioneUtente.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/giornali.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/immagini/Profile-PNG-High-Quality-Image-180x180.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/immagini/Search-icon-13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/immagini/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/immagini/icons8-logout-rounded-48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/immagini/libro.png_860.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/immagini/newspaper-284-542534.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/immagini/password-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/immagini/pngtree-shop-png-image_1699051.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/immagini/register-button-png-26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/immagini/registraz_ok.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/immagini/una-rivista_318-1607.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/immagini/vector-users-icon-png_302626.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/inserisciUtente.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/libri.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/modificaOggettoPage.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/modificaUtente.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/negozi.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/profilo.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/raccolta.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/registrazione.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/report.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/resetPassword.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/ricerca.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/ricercaInCatalogo.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/riviste.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/scrittore.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/utente.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/GiornaleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/GiornaleDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/RivistaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/RivistaDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/UsersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/UsersDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/web/bean/UserBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/bean/UserBean.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/AdminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/AdminServlet.class" afterDir="false" />
@@ -529,6 +603,7 @@
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestLaptop3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestLaptop3.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestLaptop4.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/laptop/test/TestLaptop1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/laptop/test/TestLaptop1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/laptop/test/TestLaptop3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/laptop/test/TestLaptop3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/laptop/test/TestLaptop4.class" beforeDir="false" />
     </list>

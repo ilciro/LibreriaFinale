@@ -86,6 +86,7 @@ class TestLaptop1 {
 	private NegozioDao nD=new NegozioDao();
 	private RivistaDao rD=new RivistaDao();
 	private GiornaleDao gD=new GiornaleDao();
+	private LibroDao lD=new LibroDao();
 
 
 	private static Fattura f=new Fattura();
@@ -661,4 +662,10 @@ class TestLaptop1 {
 		cPC.controlla(rBFattura.getString("nome1"),rBFattura.getString("cognome1"),rBFattura.getString("via"),rBFattura.getString("comunicazioni1"));
 		assertNotEquals(0,vis.getSpesaT());
 	}
+	@Test
+	void testGetLibrySongoloById() throws SQLException {
+		l.setId(1);
+		assertNotNull(lD.getLibriSingoloById(l));
+	}
+
 }
