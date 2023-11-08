@@ -81,7 +81,7 @@ public class ProfiloServlet extends HttpServlet{
 		}
 		if(indietro!=null && indietro.equals("indietro"))
 		{
-			RequestDispatcher view = getServletContext().getRequestDispatcher("/utente.jsp"); 
+			RequestDispatcher view = getServletContext().getRequestDispatcher("/utenti.jsp");
 			view.forward(req,resp);
 		}
 		}catch(SQLException e)

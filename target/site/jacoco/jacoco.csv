@@ -4,7 +4,7 @@ LibreriaMaven Maven Webapp,laptop.database,RivistaDao,249,1017,6,30,68,233,7,34,
 LibreriaMaven Maven Webapp,laptop.database,PagamentoDao,28,157,1,5,8,44,1,7,0,5
 LibreriaMaven Maven Webapp,laptop.database,NegozioDao,48,151,6,4,14,45,4,7,0,6
 LibreriaMaven Maven Webapp,laptop.database,GiornaleDao,245,892,6,24,67,204,7,30,2,20
-LibreriaMaven Maven Webapp,laptop.database,UsersDao,255,901,10,18,77,260,12,28,3,23
+LibreriaMaven Maven Webapp,laptop.database,UsersDao,250,857,9,17,76,247,11,27,3,22
 LibreriaMaven Maven Webapp,laptop.database,CartaCreditoDao,14,168,0,4,4,45,0,6,0,4
 LibreriaMaven Maven Webapp,laptop.database,LibroDao,341,917,8,20,83,201,9,27,4,18
 LibreriaMaven Maven Webapp,laptop.model,CartaDiCredito,35,105,0,0,13,36,5,18,5,18
@@ -22,9 +22,9 @@ LibreriaMaven Maven Webapp,laptop.model.raccolta,CategorieRivista,0,87,0,0,0,5,0
 LibreriaMaven Maven Webapp,laptop.model.raccolta,Libro,112,360,21,13,45,115,23,46,2,36
 LibreriaMaven Maven Webapp,laptop.model.raccolta,CategorieLibro,0,183,0,0,0,10,0,1,0,1
 LibreriaMaven Maven Webapp,laptop.model.raccolta,Rivista,0,285,0,15,0,100,0,42,0,28
-LibreriaMaven Maven Webapp,web.bean,SystemBean,78,15,0,2,34,6,22,4,22,3
+LibreriaMaven Maven Webapp,web.bean,SystemBean,82,11,0,2,36,4,23,3,23,2
 LibreriaMaven Maven Webapp,web.bean,RivistaBean,58,135,0,0,22,53,18,14,18,14
-LibreriaMaven Maven Webapp,web.bean,UserBean,48,77,4,6,18,31,13,17,9,13
+LibreriaMaven Maven Webapp,web.bean,UserBean,40,70,1,6,15,28,12,15,11,11
 LibreriaMaven Maven Webapp,web.bean,DownloadBean,21,3,0,0,9,1,6,1,6,1
 LibreriaMaven Maven Webapp,web.bean,LibroBean,240,135,21,9,88,58,38,29,17,21
 LibreriaMaven Maven Webapp,web.bean,AcquistaBean,14,17,0,0,6,7,4,5,4,5

@@ -57,7 +57,7 @@ public class ServletEditore extends HttpServlet {
 			RequestDispatcher view=getServletContext().getRequestDispatcher("/ricerca.jsp");
 			view.forward(req, resp);
 		}
-		if(logoutB!=null && logoutB.equals("logout") &&(UsersDao.logout()))
+		if(logoutB!=null && logoutB.equals("logout"))
 				{
 					RequestDispatcher view=getServletContext().getRequestDispatcher("/index.jsp");
 					view.forward(req, resp);
@@ -73,7 +73,7 @@ public class ServletEditore extends HttpServlet {
 		
 	
 		
-	} catch (LogoutException | ServletException | IOException e) {
+	} catch ( ServletException | IOException e) {
 		java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post .",e);
 
 	}

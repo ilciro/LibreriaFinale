@@ -380,12 +380,7 @@ class TestLaptop3 {
 		uB.setIdRuolo(strings);
 		assertEquals(uB.getrB(),strings);
 	}
-	@Test 
-	void testLogout() throws LogoutException
-	{
-		UserBean.getInstance().setNomeB(rBUtente.getString("nomeUtente"));
-		assertTrue(UsersDao.logout());
-	}
+
 	/*
 	@AfterAll
 	static void ripristinaDB() throws FileNotFoundException {

@@ -124,28 +124,18 @@ public class UserBean {
 	public void setIdRuolo(String ruolo) {
 
 		 switch (ruolo){
-			case "ADMIN":
+			case "ADMIN","A":
 				rB= Ruoli.ADMIN.toString();
 				break;				
-			case "EDITORE":
+			case "EDITORE","E":
 				rB= Ruoli.EDITORE.toString();
 				break;
-			case "SCRITTORE":
+			case "SCRITTORE","W":
 				rB= Ruoli.SCRITTORE.toString();
 				break;
-			case "UTENTE":
+			case "UTENTE","U":
 				rB= Ruoli.UTENTE.toString();
-				break;	
-			case "W":
-				rB= Ruoli.SCRITTORE.toString();
 				break;
-			case "E":
-				rB= Ruoli.EDITORE.toString();
-				break;	
-			case "A":
-				rB= Ruoli.ADMIN.toString();
-				break;
-				
 			default:
 				rB= Ruoli.UTENTE.toString();
 				break;

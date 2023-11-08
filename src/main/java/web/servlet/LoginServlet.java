@@ -59,7 +59,7 @@ public class LoginServlet extends HttpServlet {
 						SystemBean.getInstance().setLoggedB(true);
 						req.setAttribute(beanUb,UserBean.getInstance());
 						req.setAttribute(beanS,SystemBean.getInstance() );
-						 view = getServletContext().getRequestDispatcher("/utente.jsp");
+						 view = getServletContext().getRequestDispatcher("/utenti.jsp");
 						view.forward(req,resp);
 						break;
 					case "W" , "w":

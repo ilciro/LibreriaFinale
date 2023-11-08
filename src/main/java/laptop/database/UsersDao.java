@@ -778,33 +778,7 @@ public class UsersDao {
 		return s.toString();
 	}
 	
-	public static boolean logout() throws LogoutException 
-	{	
-		
-		String n = UserBean.getInstance().getNomeB();
-		java.util.logging.Logger.getLogger("Test logout").log(Level.INFO, "stai sloggando come {0}" ,n);
-		
-		if (n==null)
-		{
-			throw new LogoutException("Errore Logout");
 
-		}
-		else {
-			 UserBean.getInstance().setIdB(-1);
-			 UserBean.getInstance().setNomeB(null);
-			 UserBean.getInstance().setCognomeB(null);
-			 UserBean.getInstance().setDataDiNascitaB(null);
-			 UserBean.getInstance().setDescrizioneB(null);
-			 UserBean.getInstance().setEmailB(null);
-			 UserBean.getInstance().setPasswordB(null);
-		
-		
-		java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, "stai sloggando {0}", UserBean.getInstance().getEmailB());
-			SystemBean.getInstance().setLoggedB(false);
-			return true;
-		}
-
-	}
 	
 
 }

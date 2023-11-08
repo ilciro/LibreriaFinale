@@ -3,6 +3,7 @@ package web.servlet;
 import java.io.IOException;
 import java.util.logging.Level;
 
+
 import laptop.exception.LogoutException;
 import web.bean.SystemBean;
 import web.bean.UserBean;
@@ -39,29 +40,39 @@ public class AdminServlet extends HttpServlet {
 				view.forward(req, resp);
 			}
 			if (logout != null && logout.equals("logout")) {
-				String n = UserBean.getInstance().getNomeB();
+				String email = UserBean.getInstance().getEmailB();
 
-				if (n == null) {
+
+				if (email == null) {
+					RequestDispatcher view = getServletContext().getRequestDispatcher("/admin.jsp");
+					view.forward(req, resp);
 					throw new LogoutException("Errore Logout");
 
+
+
 				} else {
-					UserBean.getInstance().setIdB(-1);
-					UserBean.getInstance().setNomeB(null);
-					UserBean.getInstance().setCognomeB(null);
-					UserBean.getInstance().setDataDiNascitaB(null);
-					UserBean.getInstance().setDescrizioneB(null);
-					UserBean.getInstance().setEmailB(null);
-					UserBean.getInstance().setPasswordB(null);
+
+							UserBean.getInstance().setIdB(-1);
+							UserBean.getInstance().setNomeB(null);
+							UserBean.getInstance().setCognomeB(null);
+							UserBean.getInstance().setDataDiNascitaB(null);
+							UserBean.getInstance().setDescrizioneB(null);
+							UserBean.getInstance().setEmailB(null);
+							UserBean.getInstance().setPasswordB(null);
 
 
-					java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, "stai sloggando {0}", UserBean.getInstance().getEmailB());
-					SystemBean.getInstance().setLoggedB(false);
+							java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, "stai sloggando {0}", UserBean.getInstance().getEmailB());
+							SystemBean.getInstance().setLoggedB(false);
 
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp");
 					view.forward(req, resp);
 
+
+
 				}
-			}
+
+				}
+
 
 		} catch (LogoutException | ServletException | IOException e) {
 			java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post .", e);

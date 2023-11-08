@@ -9,8 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import laptop.database.UsersDao;
-import laptop.exception.LogoutException;
+
 
 @WebServlet("/ServletScrittore")
 
@@ -59,7 +58,7 @@ public class ServletScrittore extends HttpServlet {
 			view.forward(req, resp);
 		}
 		
-		if(logoutB!=null && logoutB.equals("logout") &&(UsersDao.logout()))
+		if(logoutB!=null && logoutB.equals("logout") )
 				{
 					RequestDispatcher view=getServletContext().getRequestDispatcher("/index.jsp");
 					view.forward(req, resp);
@@ -72,7 +71,7 @@ public class ServletScrittore extends HttpServlet {
 		}
 		
 		
-	} catch ( ServletException | IOException |LogoutException e) {
+	} catch ( ServletException | IOException  e) {
 		java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post .",e);
 
 	

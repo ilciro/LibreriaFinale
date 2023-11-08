@@ -48,11 +48,11 @@ public class UserBean {
 	}
 
 	public void setIdB(int idB) {
-<span class="fc" id="L51">		this.idB = idB;</span>
-<span class="fc" id="L52">	}</span>
+<span class="nc" id="L51">		this.idB = idB;</span>
+<span class="nc" id="L52">	}</span>
 
 	public String getNomeB() {
-<span class="fc" id="L55">		return nomeB;</span>
+<span class="nc" id="L55">		return nomeB;</span>
 	}
 
 	public void setNomeB(String nomeB) {
@@ -123,36 +123,26 @@ public class UserBean {
 
 	public void setIdRuolo(String ruolo) {
 
-<span class="pc bpc" id="L126" title="4 of 8 branches missed.">		 switch (ruolo){</span>
-			case &quot;ADMIN&quot;:
+<span class="pc bpc" id="L126" title="1 of 5 branches missed.">		 switch (ruolo){</span>
+			case &quot;ADMIN&quot;,&quot;A&quot;:
 <span class="fc" id="L128">				rB= Ruoli.ADMIN.toString();</span>
 <span class="fc" id="L129">				break;				</span>
-			case &quot;EDITORE&quot;:
+			case &quot;EDITORE&quot;,&quot;E&quot;:
 <span class="fc" id="L131">				rB= Ruoli.EDITORE.toString();</span>
 <span class="fc" id="L132">				break;</span>
-			case &quot;SCRITTORE&quot;:
+			case &quot;SCRITTORE&quot;,&quot;W&quot;:
 <span class="fc" id="L134">				rB= Ruoli.SCRITTORE.toString();</span>
 <span class="fc" id="L135">				break;</span>
-			case &quot;UTENTE&quot;:
+			case &quot;UTENTE&quot;,&quot;U&quot;:
 <span class="fc" id="L137">				rB= Ruoli.UTENTE.toString();</span>
-<span class="fc" id="L138">				break;	</span>
-			case &quot;W&quot;:
-<span class="nc" id="L140">				rB= Ruoli.SCRITTORE.toString();</span>
-<span class="nc" id="L141">				break;</span>
-			case &quot;E&quot;:
-<span class="nc" id="L143">				rB= Ruoli.EDITORE.toString();</span>
-<span class="nc" id="L144">				break;	</span>
-			case &quot;A&quot;:
-<span class="nc" id="L146">				rB= Ruoli.ADMIN.toString();</span>
-<span class="nc" id="L147">				break;</span>
-				
+<span class="fc" id="L138">				break;</span>
 			default:
-<span class="nc" id="L150">				rB= Ruoli.UTENTE.toString();</span>
+<span class="nc" id="L140">				rB= Ruoli.UTENTE.toString();</span>
 				break;
 			}
 		
 
-<span class="fc" id="L155">	}</span>
+<span class="fc" id="L145">	}</span>
 
 	
 
