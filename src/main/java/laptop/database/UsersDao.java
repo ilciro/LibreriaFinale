@@ -10,9 +10,7 @@ import java.time.LocalDate;
 
 import java.util.logging.Level;
 
-import laptop.exception.LogoutException;
-import web.bean.SystemBean;
-import web.bean.UserBean;
+
 import laptop.utilities.ConnToDb;
 import laptop.model.TempUser;
 import laptop.model.User;

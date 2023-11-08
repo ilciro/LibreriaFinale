@@ -164,7 +164,7 @@ class TestLaptop2 {
 		assertNotEquals(0,UsersDao.maxIdUSer());
 	}
 	@ParameterizedTest
-	@ValueSource(strings={"baoPublishing@gmail.com","giannni@gmail.com"} )
+	@ValueSource(strings={"francoRossi12@gmail.com","giannni@gmail.com"} )
 	void testCheckTempUser(String strings) throws SQLException
 	{
 		tu.setEmailT(strings);

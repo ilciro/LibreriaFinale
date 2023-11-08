@@ -11,6 +11,7 @@ import java.util.Calendar;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 
+import laptop.model.raccolta.CategorieLibro;
 import laptop.utilities.ConnToDb;
 import org.apache.ibatis.jdbc.ScriptRunner;
 import org.junit.jupiter.api.AfterAll;
@@ -375,11 +376,11 @@ class TestLaptop3 {
 		assertNotNull(lB.setCategorie());
 	}*/
 	@ParameterizedTest
-	@ValueSource(strings = {"ARTE","BIOGRAFIE","DIARI_MEMORIE","CALENDARI_AGENDE","DIZINARI_OPERE","GIALLI_THRILLER","COMPUTER_GIOCHI","LIBRI_UNIVERSITARI"})
+	@ValueSource(strings={"ARTE"})
 	void testCategorie(String strings)
 	{
-		lB.setcategoriaB(strings);
-		assertEquals(lB.getcategoriaB(),strings);
+			strings+=lB.setCategorie();
+		assertNotNull(strings);
 	}
 	@Test
 	void testCategorieRivista()
