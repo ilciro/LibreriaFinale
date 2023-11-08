@@ -57,7 +57,7 @@ public class RaccoltaServlet extends HttpServlet {
 				logout();
 				if(!SystemBean.getInstance().isLoggedB())
 				{
-					RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp"); 
+					RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp");
 					view.forward(req,resp);
 				}
 			

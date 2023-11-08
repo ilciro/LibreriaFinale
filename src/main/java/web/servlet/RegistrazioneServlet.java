@@ -76,14 +76,14 @@ public class RegistrazioneServlet extends HttpServlet {
 							view.forward(req,resp);
 							}
 					else {
-						RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp"); 
+						RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp");
 						view.forward(req,resp);
 					}
 			
 		}
 		if(indietro!=null && indietro.equals("indietro"))
 		{
-			RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp"); 
+			RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp");
 			view.forward(req,resp);
 		}
 	}catch(SQLException | ParseException|NullPointerException e)

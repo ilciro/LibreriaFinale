@@ -1,14 +1,18 @@
 package web.servlet;
 
+
 import java.io.IOException;
+
 
 import web.bean.SystemBean;
 import jakarta.servlet.RequestDispatcher;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 
 @WebServlet("/IndexServlet1")
 public class IndexServlet1 extends HttpServlet {
@@ -18,15 +22,23 @@ public class IndexServlet1 extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1L;
 
+
+
+
+
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		
+
+
+
+
 		String l=req.getParameter("buttonL");
 		String g=req.getParameter("buttonG");
 		String r=req.getParameter("buttonR");
 		String log=req.getParameter("buttonLogin");
 		String ric=req.getParameter("buttonRic");
+
 		if(l!=null && l.equals("libri"))
 		{
 			SystemBean.getInstance().setTypeAsBook();
@@ -56,6 +68,7 @@ public class IndexServlet1 extends HttpServlet {
 			RequestDispatcher view = getServletContext().getRequestDispatcher("/ricerca.jsp"); 
 			view.forward(req,resp); 	
 		}
+
 	}
 
 }

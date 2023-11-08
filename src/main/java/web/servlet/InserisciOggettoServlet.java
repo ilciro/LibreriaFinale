@@ -32,6 +32,7 @@ public class InserisciOggettoServlet extends HttpServlet {
 	private static ModificaOggettoBean mOB=new ModificaOggettoBean();
 	private static LibroDao lD=new LibroDao();
 
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String conferma=req.getParameter("confermaB");

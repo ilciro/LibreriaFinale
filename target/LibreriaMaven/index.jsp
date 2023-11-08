@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Index page</title>
-<link rel="stylesheet" href="css//index.css">
+<link rel="stylesheet" href="css//homePage.css">
 </head>
 <body>
 
@@ -74,8 +74,13 @@ ricerca
 <td>
 <input type="submit" name="buttonRic" id="buttonRic" value="ricerca" class="ricerca">
 </td>
+
+
 </tr>
 </table>
+
+
+
 
 </form>
 

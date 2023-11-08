@@ -21,67 +21,53 @@ public class AdminServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String report=req.getParameter("reportB");
-		String raccolta=req.getParameter("raccoltaB");
-		String utente=req.getParameter("utentiB");
-		String logout=req.getParameter("logoutB");
+		String report = req.getParameter("reportB");
+		String raccolta = req.getParameter("raccoltaB");
+		String utente = req.getParameter("utentiB");
+		String logout = req.getParameter("logoutB");
 		try {
-		if(report!=null && report.equals("report"))
-		{
-			RequestDispatcher view = getServletContext().getRequestDispatcher("/report.jsp"); 
-			view.forward(req,resp);
-		}
-		if(raccolta!=null && raccolta.equals("raccolta"))
-		{
-			RequestDispatcher view = getServletContext().getRequestDispatcher("/raccolta.jsp"); 
-			view.forward(req,resp);
-		}
-		if(utente!=null && utente.equals("utenti"))
-		{
-			RequestDispatcher view = getServletContext().getRequestDispatcher("/utenti.jsp"); 
-			view.forward(req,resp);
-		}
-		if(logout!=null &&logout.equals("logout"))
-		{
-			logout();
-				if(!SystemBean.getInstance().isLoggedB())
-				{
-					RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp"); 
-					view.forward(req,resp);
+			if (report != null && report.equals("report")) {
+				RequestDispatcher view = getServletContext().getRequestDispatcher("/report.jsp");
+				view.forward(req, resp);
+			}
+			if (raccolta != null && raccolta.equals("raccolta")) {
+				RequestDispatcher view = getServletContext().getRequestDispatcher("/raccolta.jsp");
+				view.forward(req, resp);
+			}
+			if (utente != null && utente.equals("utenti")) {
+				RequestDispatcher view = getServletContext().getRequestDispatcher("/utenti.jsp");
+				view.forward(req, resp);
+			}
+			if (logout != null && logout.equals("logout")) {
+				String n = UserBean.getInstance().getNomeB();
+
+				if (n == null) {
+					throw new LogoutException("Errore Logout");
+
+				} else {
+					UserBean.getInstance().setIdB(-1);
+					UserBean.getInstance().setNomeB(null);
+					UserBean.getInstance().setCognomeB(null);
+					UserBean.getInstance().setDataDiNascitaB(null);
+					UserBean.getInstance().setDescrizioneB(null);
+					UserBean.getInstance().setEmailB(null);
+					UserBean.getInstance().setPasswordB(null);
+
+
+					java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, "stai sloggando {0}", UserBean.getInstance().getEmailB());
+					SystemBean.getInstance().setLoggedB(false);
+
+					RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp");
+					view.forward(req, resp);
+
 				}
-			
-		}
-	} catch (LogoutException | ServletException | IOException e) {
-		java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post .",e);
+			}
 
-	}
-	}
-	
-	public static boolean logout() throws LogoutException 
-	{	
-		
-		String n = UserBean.getInstance().getNomeB();
-		java.util.logging.Logger.getLogger("Test logout").log(Level.INFO, "stai sloggando come {0}" ,n);
-		
-		if (n==null)
-		{
-			throw new LogoutException("Errore Logout");
+		} catch (LogoutException | ServletException | IOException e) {
+			java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post .", e);
 
 		}
-		else {
-			 UserBean.getInstance().setIdB(-1);
-			 UserBean.getInstance().setNomeB(null);
-			 UserBean.getInstance().setCognomeB(null);
-			 UserBean.getInstance().setDataDiNascitaB(null);
-			 UserBean.getInstance().setDescrizioneB(null);
-			 UserBean.getInstance().setEmailB(null);
-			 UserBean.getInstance().setPasswordB(null);
-		
-		
-		java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, "stai sloggando {0}", UserBean.getInstance().getEmailB());
-			SystemBean.getInstance().setLoggedB(false);
-			return true;
-		}
+
 
 	}
 

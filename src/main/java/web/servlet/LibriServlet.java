@@ -75,7 +75,7 @@ public class LibriServlet extends HttpServlet {
 			}
 			if(a!=null && a.equals("indietro"))
 			{
-				RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp"); 
+				RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp");
 				view.forward(req,resp);
 			}
 			

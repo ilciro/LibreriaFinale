@@ -5,142 +5,92 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="pulizia v7 : String block v2">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/8/08a9e447ba7da2503f09aaaa8465d443a7c3a21a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/0/1018b4b75dab2d574550a783e1d8b6c9515fee08" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/4/14785c3a86712ced8f37cf4eb22549961fcc139a" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/4/14785c3a86712ced8f37cf4eb22549961fcc139a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/4/34f3c6ac7e5a8e5f58a4ac758c8049d45e56d7d6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/4/34f3c6ac7e5a8e5f58a4ac758c8049d45e56d7d6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/a/7ab0ec02f301f108c0e699a28b7cc0d6d815e58c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/8/08a9e447ba7da2503f09aaaa8465d443a7c3a21a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/0/1018b4b75dab2d574550a783e1d8b6c9515fee08" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/a/7ab0ec02f301f108c0e699a28b7cc0d6d815e58c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/c/bcb2e196d895c56c33c54dbde3224112c3a32571" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/c/bcb2e196d895c56c33c54dbde3224112c3a32571" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileSql/storedInsRiviste.sql" beforeDir="false" afterPath="$PROJECT_DIR$/FileSql/storedInsRiviste.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileSql/stroredInsGiornali.sql" beforeDir="false" afterPath="$PROJECT_DIR$/FileSql/stroredInsGiornali.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibreriaMaven.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LibreriaMaven.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReportFinale/riepilogoGiornali.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ReportFinale/riepilogoGiornali.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReportFinale/riepilogoLibro.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ReportFinale/riepilogoLibro.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReportFinale/riepilogoRiviste.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ReportFinale/riepilogoRiviste.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReportFinale/riepilogoUtenti.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ReportFinale/riepilogoUtenti.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libriPerSito/riepilogoGiornali.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/riepilogoGiornali.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libriPerSito/riepilogoLibro.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/riepilogoLibro.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libriPerSito/riepilogoRiviste.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/riepilogoRiviste.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libriPerSito/riepilogoUtenti.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/riepilogoUtenti.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerAcquista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerAcquista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerAggiungiPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerAggiungiPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerCompravendita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerCompravendita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerDownload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerDownload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerGestionePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerGestionePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerPagamentoCC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerPagamentoCC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerReportPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerReportPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/CartaCreditoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/CartaCreditoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryAcquista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryAcquista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryAggiungiPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryAggiungiPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryCompravendita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryCompravendita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestLaptop1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestLaptop1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestLaptop2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestLaptop2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/AdminServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/GiornaliServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/GiornaliServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/IndexServlet1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/IndexServlet1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/InserisciOggettoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/InserisciOggettoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/LibriServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/LibriServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/ProfiloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/ProfiloServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/RaccoltaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/RaccoltaServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/RegistrazioneServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/RegistrazioneServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/ResetPassServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/ResetPassServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/RivisteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/RivisteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/homePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestLaptop3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestLaptop3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestLaptop4.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerAcquista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerAcquista.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerAggiungiPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerAggiungiPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerCompravendita.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerCompravendita.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerDownload.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerDownload.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerGestionePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerGestionePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerPagamentoCC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerPagamentoCC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerReportPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerReportPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/CartaCreditoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/CartaCreditoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryAcquista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryAcquista.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryCompravendita.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryCompravendita.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerAcquista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerAcquista.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerAggiungiPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerAggiungiPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerCompravendita.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerCompravendita.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerDownload.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerDownload.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerGestionePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerGestionePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerPagamentoCC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerPagamentoCC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerReportPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerReportPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/CartaCreditoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/CartaCreditoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryAcquista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryAcquista.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryCompravendita.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryCompravendita.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/AdminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/AdminServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/IndexServlet1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/IndexServlet1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/InserisciOggettoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/InserisciOggettoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/AdminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/AdminServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/IndexServlet1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/IndexServlet1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/InserisciOggettoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/InserisciOggettoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/LoginServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/original-LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-LibreriaMaven.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/prettify.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/prettify.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/prettify.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/prettify.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/report.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/report.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/sort.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/sort.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAcquista.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAcquista.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAcquista.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAcquista.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAggiungiPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAggiungiPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAggiungiPage.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAggiungiPage.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAggiungiUtente.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAggiungiUtente.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerBookData.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerBookData.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerCancellaUser.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerCancellaUser.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerCheckPagamentoData.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerCheckPagamentoData.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerCompravendita.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerCompravendita.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerCompravendita.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerCompravendita.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerDownload.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerDownload.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerDownload.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerDownload.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerGestionePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerGestionePage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerGestionePage.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerGestionePage.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerHomePageAfterLogin.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerHomePageAfterLogin.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerHomePageAfterLoginSE.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerHomePageAfterLoginSE.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerLogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerLogin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerLogin.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerLogin.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerModifPage.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerModifPage.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerModificaUtente.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerModificaUtente.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerModificaUtente.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerModificaUtente.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerPagamentoCC.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerPagamentoCC.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerPagamentoCC.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerPagamentoCC.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerPagamentoCash.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerPagamentoCash.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerPagamentoCash.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerPagamentoCash.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerPassword.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerPassword.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerRegistraUtente.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerRegistraUtente.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerReportPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerReportPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerReportPage.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerReportPage.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerReportRaccolta.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerReportRaccolta.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerRicercaPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerRicercaPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerRicercaPage.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerRicercaPage.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerRicercaPerTipo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerRicercaPerTipo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerRicercaPerTipo.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerRicercaPerTipo.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerScegliNegozio.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerScegliNegozio.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerScegliNegozio.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerScegliNegozio.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerSystemState.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerSystemState.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerSystemState.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerSystemState.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerUserPage.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerUserPage.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerVisualizza.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerVisualizza.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerVisualizzaOrdine.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerVisualizzaOrdine.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerVisualizzaProfilo.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerVisualizzaProfilo.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/index.source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/CartaCreditoDao.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/CartaCreditoDao.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/CartaCreditoDao.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/CartaCreditoDao.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/ContrassegnoDao.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/ContrassegnoDao.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/ContrassegnoDao.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/ContrassegnoDao.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/GiornaleDao.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/GiornaleDao.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/GiornaleDao.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/GiornaleDao.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/LibroDao.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/LibroDao.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/LibroDao.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/LibroDao.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/NegozioDao.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/NegozioDao.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/PagamentoDao.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/PagamentoDao.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/RivistaDao.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/RivistaDao.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/RivistaDao.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/RivistaDao.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/UsersDao.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/UsersDao.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/UsersDao.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/UsersDao.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/index.source.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.exception/AcquistaException.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.exception/AcquistaException.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.exception/IdException.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.exception/IdException.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.exception/LogoutException.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.exception/LogoutException.java.html" afterDir="false" />
@@ -148,51 +98,32 @@
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/CategorieRivista.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/CategorieRivista.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Factory.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Factory.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Giornale.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Giornale.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Libro.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Libro.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Libro.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Libro.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/MatchParam.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/MatchParam.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Rivista.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Rivista.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Rivista.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Rivista.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/index.source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/CartaDiCredito.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/CartaDiCredito.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/CartaDiCredito.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/CartaDiCredito.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/Fattura.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/Fattura.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/Fattura.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/Fattura.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/Negozio.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/Negozio.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/Pagamento.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/Pagamento.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/Pagamento.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/Pagamento.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/TempUser.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/TempUser.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/User.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/User.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/User.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/User.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/index.source.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.utilities/ConnToDb.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.utilities/ConnToDb.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.utilities/CreateDefaultDB.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.utilities/CreateDefaultDB.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.utilities/PopulateDefaultDb.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.utilities/PopulateDefaultDb.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/AcquistaBean.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/AcquistaBean.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/AcquistaBean.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/AcquistaBean.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/CartaCreditoBean.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/CartaCreditoBean.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/CartaCreditoBean.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/CartaCreditoBean.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/DownloadBean.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/DownloadBean.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/DownloadBean.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/DownloadBean.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/FatturaBean.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/FatturaBean.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/GiornaleBean.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/GiornaleBean.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/GiornaleBean.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/GiornaleBean.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/LibroBean.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/LibroBean.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/LibroBean.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/LibroBean.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/ModificaOggettoBean.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/ModificaOggettoBean.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/NegozioBean.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/NegozioBean.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/NegozioBean.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/NegozioBean.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/PagamentoBean.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/PagamentoBean.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/RicercaBean.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/RicercaBean.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/RivistaBean.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/RivistaBean.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/SystemBean.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/SystemBean.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/SystemBean.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/SystemBean.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/TextAreaBean.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/TextAreaBean.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/UserBean.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/UserBean.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/index.source.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestLaptop1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestLaptop1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestLaptop2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestLaptop2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestLaptop3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestLaptop3.xml" afterDir="false" />
@@ -202,8 +133,6 @@
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestLaptop3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestLaptop3.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestLaptop4.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/file.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/laptop/test/TestLaptop1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/laptop/test/TestLaptop1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/laptop/test/TestLaptop2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/laptop/test/TestLaptop2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/laptop/test/TestLaptop3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/laptop/test/TestLaptop3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/laptop/test/TestLaptop4.class" beforeDir="false" />
     </list>
@@ -214,6 +143,13 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -246,11 +182,11 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/Eclipse Adoptium&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ilciro/IdeaProjects/LibreriaFinale&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
 }</component>
   <component name="RunManager">

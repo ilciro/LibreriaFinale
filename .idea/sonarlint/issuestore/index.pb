@@ -644,3 +644,7 @@ H
 sonar-project.properties,2\5\2538046035efb77ecc44e1fd2eec1e2641594d4c
 [
 +src/main/java/web/servlet/LoginServlet.java,b\c\bcb2e196d895c56c33c54dbde3224112c3a32571
+P
+ src/main/webapp/css/homePage.css,4\4\44e3ef9d880f8c7d839534aa67840ceb77a70883
+`
+0src/main/java/web/servlet/InitializeServlet.java,4\2\42cc5b5a1a4e487435abecc634a98f8963eabeea

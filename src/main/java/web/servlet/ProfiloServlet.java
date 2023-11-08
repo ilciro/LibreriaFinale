@@ -68,7 +68,7 @@ public class ProfiloServlet extends HttpServlet{
 			User.getInstance().setEmail(UserBean.getInstance().getEmailB());
 			if(UsersDao.deleteUser(User.getInstance()))
 			{
-				RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp"); 
+				RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp");
 				view.forward(req,resp);
 			}
 			else {

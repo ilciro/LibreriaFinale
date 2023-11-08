@@ -8,12 +8,10 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 
 import laptop.utilities.ConnToDb;
-import net.bytebuddy.description.field.FieldDescription;
 import org.apache.ibatis.jdbc.ScriptRunner;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
@@ -388,12 +386,12 @@ class TestLaptop3 {
 		UserBean.getInstance().setNomeB(rBUtente.getString("nomeUtente"));
 		assertTrue(UsersDao.logout());
 	}
-
+	/*
 	@AfterAll
 	static void ripristinaDB() throws FileNotFoundException {
 
-		 Connection conn;
-		 ScriptRunner sr;
+		Connection conn;
+		ScriptRunner sr;
 
 		java.util.logging.Logger.getLogger("Test ripristina db").log(Level.INFO,"---------Chiamo stored truncate---------\n\n");
 
@@ -408,5 +406,7 @@ class TestLaptop3 {
 
 
 
-	
+	 */
+
+
 }

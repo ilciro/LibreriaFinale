@@ -34,7 +34,7 @@ public class ResetPassServlet extends HttpServlet {
 		try {
 		if(invia!=null && invia.equals("reset pass") && aggiornaPass(email,vecchiaPass,nuovaPass))
 				{
-					RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp"); 
+					RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp");
 					view.forward(req,resp);
 				}
 			
