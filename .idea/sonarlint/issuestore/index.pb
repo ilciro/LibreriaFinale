@@ -646,3 +646,5 @@ P
  src/main/webapp/css/homePage.css,4\4\44e3ef9d880f8c7d839534aa67840ceb77a70883
 `
 0src/main/java/web/servlet/InitializeServlet.java,4\2\42cc5b5a1a4e487435abecc634a98f8963eabeea
+X
+(src/test/java/laptop/test/TestLibro.java,6\f\6feea8928951adc2b6fc98aea05fc0888fa81cbe

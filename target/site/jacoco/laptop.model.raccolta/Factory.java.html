@@ -46,7 +46,7 @@ public class Factory {
 	
 	public void createRaccoltaFinale1(String tipologiaO,String titolo,String tipologia,String autore,String lingua,String editore,String categoria) 
 	{
-<span class="pc bpc" id="L49" title="1 of 2 branches missed.">		if(tipologiaO.equals(LIBRO))</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">		if(tipologiaO.equals(LIBRO))</span>
 		{
 <span class="fc" id="L51">				l.setInfoGenerali(createRaccolta1(titolo, tipologia, autore, lingua, editore, categoria,autore));</span>
 		}
@@ -56,16 +56,16 @@ public class Factory {
 <span class="nc" id="L56">				g.setInfoGenerali(createRaccolta1(titolo, tipologia, null, lingua, editore, null,null));</span>
 
 		}
-<span class="pc bpc" id="L59" title="1 of 2 branches missed.">		if(tipologiaO.equals(RIVISTA))</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">		if(tipologiaO.equals(RIVISTA))</span>
 		{
-<span class="nc" id="L61">				r.setInfoGenerali(createRaccolta1(titolo, tipologia, autore, lingua, editore, categoria,null));</span>
+<span class="fc" id="L61">				r.setInfoGenerali(createRaccolta1(titolo, tipologia, autore, lingua, editore, categoria,null));</span>
 		}
 		
 <span class="fc" id="L64">	}</span>
 	
 	public void createRaccoltaFinale2(String tipologiaO,int numPag,String isbn,int nrCopie,int disp,float prezzo,int copieRim) 
 	{
-<span class="pc bpc" id="L68" title="1 of 2 branches missed.">		if(tipologiaO.equals(LIBRO))	</span>
+<span class="fc bfc" id="L68" title="All 2 branches covered.">		if(tipologiaO.equals(LIBRO))	</span>
 		{
 <span class="fc" id="L70">				l.setInfoCostiDisp(createRaccolta2(numPag, isbn,nrCopie,disp,prezzo,copieRim));</span>
 				
@@ -78,11 +78,11 @@ public class Factory {
 			
 			
 			}	
-<span class="pc bpc" id="L81" title="1 of 2 branches missed.">		 if (tipologiaO.equals(RIVISTA))</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">		 if (tipologiaO.equals(RIVISTA))</span>
 		{
-<span class="nc" id="L83">			r.setDisp(disp);</span>
-<span class="nc" id="L84">			r.setPrezzo(prezzo);</span>
-<span class="nc" id="L85">			r.setCopieRim(copieRim);</span>
+<span class="fc" id="L83">			r.setDisp(disp);</span>
+<span class="fc" id="L84">			r.setPrezzo(prezzo);</span>
+<span class="fc" id="L85">			r.setCopieRim(copieRim);</span>
 		}
 <span class="fc" id="L87">	}</span>
 	
@@ -90,7 +90,7 @@ public class Factory {
 	
 	public Raccolta createRaccoltaFinaleCompleta(String tipologiaO,LocalDate dataPubb,String recensione,String descrizione,int id) 
 	{
-<span class="pc bpc" id="L93" title="3 of 4 branches missed.">		switch(tipologiaO)</span>
+<span class="pc bpc" id="L93" title="2 of 4 branches missed.">		switch(tipologiaO)</span>
 		{
 			case LIBRO:
 <span class="fc" id="L96">				l.setDataPubb(dataPubb);</span>
@@ -103,10 +103,10 @@ public class Factory {
 <span class="nc" id="L103">				g.setId(id);</span>
 <span class="nc" id="L104">				return new Giornale(g.getInfoGenerali(),g.getDataPubb(),g.getCopieRimanenti(),g.getDisponibilita(),g.getPrezzo(),g.getId());</span>
 			case RIVISTA:
-<span class="nc" id="L106">				r.setDataPubb(dataPubb);</span>
-<span class="nc" id="L107">				r.setId(id);</span>
-<span class="nc" id="L108">				r.setDescrizione(descrizione);</span>
-<span class="nc" id="L109">				return new Rivista(r.getInfoGenerali(), r.getDescrizione(), r.getDataPubb(),r.getDisp(),r.getPrezzo() ,r.getCopieRim(),r.getId());</span>
+<span class="fc" id="L106">				r.setDataPubb(dataPubb);</span>
+<span class="fc" id="L107">				r.setId(id);</span>
+<span class="fc" id="L108">				r.setDescrizione(descrizione);</span>
+<span class="fc" id="L109">				return new Rivista(r.getInfoGenerali(), r.getDescrizione(), r.getDataPubb(),r.getDisp(),r.getPrezzo() ,r.getCopieRim(),r.getId());</span>
 		
 			default:
 				try {

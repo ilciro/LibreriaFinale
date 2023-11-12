@@ -40,7 +40,7 @@ public class ControllerAcquista {
 
 	public float totale1 (String type,String titolo,int disp,int quantita) throws SQLException, IdException {
 		float x;
-<span class="pc bpc" id="L43" title="3 of 4 branches missed.">		switch (type)</span>
+<span class="pc bpc" id="L43" title="2 of 4 branches missed.">		switch (type)</span>
 		{
 			case LIBRO:
 			{
@@ -65,14 +65,14 @@ public class ControllerAcquista {
 			}
 			case RIVISTA:
 			{
-<span class="nc" id="L68">				checkID(vis.getId());</span>
-<span class="nc" id="L69">				r.setTitolo(titolo);</span>
-<span class="nc" id="L70">				r.setId(vis.getId());</span>
-<span class="nc" id="L71">				r.setCopieRim(quantita);</span>
-<span class="nc" id="L72">				vis.setQuantita(disp);</span>
-<span class="nc" id="L73">				x= rD.getCosto(r);</span>
-<span class="nc" id="L74">				rD.aggiornaDisponibilita(r);</span>
-<span class="nc" id="L75">				break;</span>
+<span class="fc" id="L68">				checkID(vis.getId());</span>
+<span class="fc" id="L69">				r.setTitolo(titolo);</span>
+<span class="fc" id="L70">				r.setId(vis.getId());</span>
+<span class="fc" id="L71">				r.setCopieRim(quantita);</span>
+<span class="fc" id="L72">				vis.setQuantita(disp);</span>
+<span class="fc" id="L73">				x= rD.getCosto(r);</span>
+<span class="fc" id="L74">				rD.aggiornaDisponibilita(r);</span>
+<span class="fc" id="L75">				break;</span>
 			}
 <span class="nc" id="L77">			default : throw new IdException(&quot;id incorrect&quot;);</span>
 

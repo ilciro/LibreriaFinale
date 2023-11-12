@@ -80,9 +80,6 @@ public class ControllerAggiungiPage {
 		else
 		{
 
-
-
-
 			status =lD.creaLibrio(cBD.checkBookData(info, recensione, descrizione, data, infoCosti));
 
 			return status;

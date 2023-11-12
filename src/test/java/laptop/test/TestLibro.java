@@ -72,6 +72,12 @@ class TestLibro {
     private ContrassegnoDao cDao=new ContrassegnoDao();
     private PagamentoDao pD=new PagamentoDao();
 
+    @Test
+    void testCancellaL() throws SQLException {
+        vis.setTypeAsBook();
+        cGP.cancella(10);
+        assertEquals("libro",vis.getType());
+    }
 
     @Test
     void testCategorieL()
@@ -241,12 +247,7 @@ class TestLibro {
         cPCC.pagamentoCC(rBCartaCredito.getString("nome1"));
         assertNotEquals(0,vis.getId());
     }
-    @Test
-    void testCancellaL() throws SQLException {
-        vis.setTypeAsBook();
-        cGP.cancella(20);
-        assertEquals("libro",vis.getType());
-    }
+
     @Test
     void testGetLibrySongoloById() throws SQLException {
         l.setId(1);

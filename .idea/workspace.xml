@@ -23,6 +23,7 @@
       <change beforePath="$PROJECT_DIR$/libriPerSito/riepilogoRiviste.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/riepilogoRiviste.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libriPerSito/riepilogoUtenti.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/riepilogoUtenti.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerAggiungiPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerAggiungiPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/UsersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/UsersDao.java" afterDir="false" />
@@ -48,6 +49,7 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestLaptop3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestLaptop3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestLaptop4.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerAggiungiPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerAggiungiPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GiornaleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GiornaleDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/RivistaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/RivistaDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/UsersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/UsersDao.class" afterDir="false" />
@@ -62,6 +64,7 @@
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/utente.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerAggiungiPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerAggiungiPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/GiornaleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/GiornaleDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/RivistaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/RivistaDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/UsersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/UsersDao.class" afterDir="false" />
@@ -89,7 +92,6 @@
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAcquista.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAcquista.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAcquista.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAcquista.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAggiungiPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAggiungiPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAggiungiPage.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAggiungiPage.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAggiungiUtente.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAggiungiUtente.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAggiungiUtente.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerAggiungiUtente.java.html" afterDir="false" />
@@ -100,7 +102,6 @@
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerCheckPagamentoData.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerCheckPagamentoData.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerCompravendita.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerCompravendita.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerCompravendita.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerCompravendita.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerDownload.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerDownload.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerDownload.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerDownload.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerGestionePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerGestionePage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerGestionePage.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerGestionePage.java.html" afterDir="false" />
@@ -165,7 +166,6 @@
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.exception/IdException.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.exception/IdException.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.exception/LogoutException.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.exception/LogoutException.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/CategorieLibro.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/CategorieLibro.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/CategorieRivista.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/CategorieRivista.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/CategorieRivista.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/CategorieRivista.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Factory.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Factory.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Factory.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Factory.java.html" afterDir="false" />
