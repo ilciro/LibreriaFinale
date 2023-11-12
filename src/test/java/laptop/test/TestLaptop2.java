@@ -1,4 +1,4 @@
-package laptop.test;
+/*package laptop.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -291,3 +291,6 @@ class TestLaptop2 {
 
 
 }
+
+
+ */

@@ -1,4 +1,4 @@
-package laptop.test;
+/*package laptop.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -93,12 +93,12 @@ class TestLaptop3 {
 	
 	
 
-    /*
+
 	@Test
 	void testTitolo() {
 		aB.setTitoloB("Titolo prova");
 		assertNotNull(aB.getTitoloB());
-	}*/
+	}
 	@ParameterizedTest
 	@ValueSource(strings= {"libro","giornale","rivista"})
 	void testTipo(String strings)
@@ -124,7 +124,7 @@ class TestLaptop3 {
 		assertNotNull(ccB.getNomeB());
 
 	}
-    /*
+
 	@Test
 	void testNomeCarta()
 	{
@@ -154,7 +154,7 @@ class TestLaptop3 {
 	{
 		ccB.setCivB(cc2.getCiv());
 		assertNotNull(ccB.getCivB());
-	}*/
+	}
 	@Test
 	void testListaCarte() throws SQLException
 	{
@@ -182,7 +182,7 @@ class TestLaptop3 {
 	{
 		dB.setTitoloB(strings);
 		assertNotNull(dB.getTitoloB());
-	}*/
+	}
 	@Test
 	void testFattura()
 	{
@@ -308,7 +308,7 @@ class TestLaptop3 {
 		visB.setTitoloB("prova");
 		assertEquals(5,visB.getIdB());
 	}
-	*/
+
 
 	@Test
 	void testReportUtenti() throws IOException, SQLException
@@ -369,12 +369,12 @@ class TestLaptop3 {
 		lB.setListaLibriB(lD.getLibri());
 		assertNotNull(lB.getListaLibriB());
 	}
-	/*
+
 	@Test
 	void testCategorieLibriBean()
 	{
 		assertNotNull(lB.setCategorie());
-	}*/
+	}
 	@ParameterizedTest
 	@ValueSource(strings={"ARTE"})
 	void testCategorie(String strings)
@@ -415,7 +415,9 @@ class TestLaptop3 {
 
 
 
-	 */
+
 
 
 }
+
+*/

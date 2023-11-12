@@ -10,7 +10,7 @@ import laptop.model.Fattura;
 public class ControllerPagamentoCash {
 	private ContrassegnoDao cD;
 	private Fattura f;
-<span class="fc" id="L13">	private ControllerSystemState vis= ControllerSystemState.getInstance();</span>
+<span class="nc" id="L13">	private ControllerSystemState vis= ControllerSystemState.getInstance();</span>
 	private ControllerCheckPagamentoData cCPD;
 	
 	
@@ -18,38 +18,38 @@ public class ControllerPagamentoCash {
 	public void controlla(String nome, String cognome, String via, String com) throws SQLException, IdException {
 		
 			
-<span class="fc" id="L21">			float spesa=vis.getSpesaT();</span>
+<span class="nc" id="L21">			float spesa=vis.getSpesaT();</span>
 
 			//fino a qui va
 			
-<span class="fc" id="L25">			f.setNome(nome);</span>
-<span class="fc" id="L26">			f.setCognome(cognome);</span>
-<span class="fc" id="L27">			f.setVia(via);</span>
-<span class="fc" id="L28">			f.setCom(com);</span>
-<span class="fc" id="L29">			f.setAmmontare(spesa);</span>
+<span class="nc" id="L25">			f.setNome(nome);</span>
+<span class="nc" id="L26">			f.setCognome(cognome);</span>
+<span class="nc" id="L27">			f.setVia(via);</span>
+<span class="nc" id="L28">			f.setCom(com);</span>
+<span class="nc" id="L29">			f.setAmmontare(spesa);</span>
 			
 	 		
 
 					
 			
-<span class="fc" id="L35">			cD.inserisciFattura(f);</span>
+<span class="nc" id="L35">			cD.inserisciFattura(f);</span>
 			
 			
-<span class="fc" id="L38">			cCPD.checkPagamentoData(nome);</span>
+<span class="nc" id="L38">			cCPD.checkPagamentoData(nome);</span>
 			
 			
 			
 			
 			
-<span class="fc" id="L44">	}</span>
+<span class="nc" id="L44">	}</span>
 
-<span class="fc" id="L46">	public ControllerPagamentoCash()  {</span>
-<span class="fc" id="L47">		cD = new ContrassegnoDao();</span>
-<span class="fc" id="L48">		f = new Fattura();</span>
-<span class="fc" id="L49">		cCPD=new ControllerCheckPagamentoData();</span>
+<span class="nc" id="L46">	public ControllerPagamentoCash()  {</span>
+<span class="nc" id="L47">		cD = new ContrassegnoDao();</span>
+<span class="nc" id="L48">		f = new Fattura();</span>
+<span class="nc" id="L49">		cCPD=new ControllerCheckPagamentoData();</span>
 		
 		
-<span class="fc" id="L52">	}</span>
+<span class="nc" id="L52">	}</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

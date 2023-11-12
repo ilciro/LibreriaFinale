@@ -33,15 +33,15 @@ public class ControllerPagamentoCC {
 		 int anno;
 		 int mese;
 		 int giorno;
-<span class="fc" id="L36">		String[] verifica=null;</span>
+<span class="nc" id="L36">		String[] verifica=null;</span>
 
 
-<span class="fc" id="L39">		appoggio = appoggio + d;</span>
-<span class="fc" id="L40">		  anno = Integer.parseInt((String) appoggio.subSequence(0, 4));</span>
-<span class="fc" id="L41">		  mese = Integer.parseInt((String) appoggio.subSequence(5, 7));</span>
-<span class="fc" id="L42">		  giorno = Integer.parseInt((String) appoggio.subSequence(8, 10));</span>
+<span class="nc" id="L39">		appoggio = appoggio + d;</span>
+<span class="nc" id="L40">		  anno = Integer.parseInt((String) appoggio.subSequence(0, 4));</span>
+<span class="nc" id="L41">		  mese = Integer.parseInt((String) appoggio.subSequence(5, 7));</span>
+<span class="nc" id="L42">		  giorno = Integer.parseInt((String) appoggio.subSequence(8, 10));</span>
 		
-<span class="pc bpc" id="L44" title="8 of 14 branches missed.">		if (anno &gt; 2020 &amp;&amp; (mese &gt;= 1 &amp;&amp; mese &lt;= 12) &amp;&amp; (giorno &gt;= 1 &amp;&amp; giorno &lt;= 31) &amp;&amp; c.length() &lt;= 20 &amp;&amp; civ.length()==3 ) {</span>
+<span class="nc bnc" id="L44" title="All 14 branches missed.">		if (anno &gt; 2020 &amp;&amp; (mese &gt;= 1 &amp;&amp; mese &lt;= 12) &amp;&amp; (giorno &gt;= 1 &amp;&amp; giorno &lt;= 31) &amp;&amp; c.length() &lt;= 20 &amp;&amp; civ.length()==3 ) {</span>
 
 
 				
@@ -63,7 +63,7 @@ public class ControllerPagamentoCC {
 		} 
 		
 		
-<span class="fc" id="L66">		return state;</span>
+<span class="nc" id="L66">		return state;</span>
 
 	}
 
@@ -101,14 +101,14 @@ public class ControllerPagamentoCC {
 
 	public ObservableList&lt;CartaDiCredito&gt; ritornaElencoCC(String nomeU)  {
 		
-<span class="fc" id="L104">		return cDao.getCarteCredito(nomeU);</span>
+<span class="nc" id="L104">		return cDao.getCarteCredito(nomeU);</span>
 	}
 	
 	public CartaDiCredito tornaDalDb(String codiceCarta)
 	{
-<span class="fc" id="L109">		cc=new CartaDiCredito();</span>
-<span class="fc" id="L110">		cc.setNumeroCC(codiceCarta);</span>
-<span class="fc" id="L111">		return cDao.popolaDati(cc);</span>
+<span class="nc" id="L109">		cc=new CartaDiCredito();</span>
+<span class="nc" id="L110">		cc.setNumeroCC(codiceCarta);</span>
+<span class="nc" id="L111">		return cDao.popolaDati(cc);</span>
 	}
 
 	public void pagamentoCC(String nome) throws SQLException, IdException {
