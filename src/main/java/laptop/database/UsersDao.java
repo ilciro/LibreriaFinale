@@ -22,7 +22,6 @@ public class UsersDao {
 	
 	private static String query ;
 	private static int max;
-	private static String r;
 	private static boolean state=false;
 	private static final String ECCEZIONE="errore in mysql :";
 	private static int row=0;
@@ -149,7 +148,6 @@ public class UsersDao {
 
 			}
 			
-			java.util.logging.Logger.getLogger("check user id").log(Level.INFO, "idUser {0}",u.getEmail());
 
 
 		return status ;
@@ -192,10 +190,7 @@ public class UsersDao {
 	public static String getRuolo (User u) throws SQLException
 	{
 
-		
-		
-			
-			
+		String r = "";
 			query="SELECT idRuolo FROM ispw.users where Email = ?";
 			try(Connection conn=ConnToDb.generalConnection();
 					PreparedStatement prepQ=conn.prepareStatement(query))
@@ -205,7 +200,7 @@ public class UsersDao {
 				ResultSet rs = prepQ.executeQuery();
 				while(rs.next())
 				{
-					r =rs.getString("idRuolo");
+					 r =rs.getString("idRuolo");
 	
 				}
 			
@@ -215,7 +210,8 @@ public class UsersDao {
 
 			}
 		u.setIdRuolo(r);
-		
+
+
 		return r;
 
 	}
@@ -250,7 +246,7 @@ public class UsersDao {
 	
 	public static TempUser findUser(TempUser u)
 	{
-		r = TempUser.getInstance().getIdRuolo();
+		String r= TempUser.getInstance().getIdRuolo();
 		u.setIdRuolo(r);
 		return u;
 
@@ -324,9 +320,9 @@ public class UsersDao {
 	// e poi il controller lo specializza nelle 4 classi 
 	public static User pickData(User u) throws SQLException
 	{
+
 		
-		
-			query="SELECT idRuolo,nome,cognome,Email,descrizione,dataDiNascita from ispw.users where Email=?";
+			query="SELECT idRuolo,Nome,Cognome,Email,descrizione,dataDiNascita from ispw.users where Email=?";
 			try(Connection conn=ConnToDb.generalConnection();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
@@ -335,28 +331,29 @@ public class UsersDao {
 			ResultSet rs = prepQ.executeQuery();
 			while(rs.next())
 			{
-				// setto i vari dati 
-				u.setIdRuolo(rs.getString(1));
-				u.setNome(rs.getString(2));
-				u.setCognome(rs.getString(3));
-				u.setEmail(rs.getString(4));
-				u.setDescrizione(rs.getString(5));
-				u.setDataDiNascita(rs.getDate(6).toLocalDate());
+
+
+				// setto i vari dati
+
+				u.setIdRuolo(rs.getString("idRuolo"));
+				u.setNome(rs.getString("Nome"));
+				u.setCognome(rs.getString("Cognome"));
+				u.setDescrizione(rs.getString("descrizione"));
+				u.setDataDiNascita(rs.getDate("DataDiNascita").toLocalDate());
+
 
 
 
 			}
 			}catch(SQLException e)
 			{
-				java.util.logging.Logger.getLogger("pick data ").log(Level.INFO, ECCEZIONE, e);
+				java.util.logging.Logger.getLogger("pick data exception ").log(Level.SEVERE, "errore nel pick data {0}", e.toString());
+
 
 			}
 
-			java.util.logging.Logger.getLogger("pick user data email").log(Level.INFO, ECCEZIONE, u.getEmail());
 
 
-			
-		
 		// errore
 		return u;
 	}
@@ -677,29 +674,35 @@ public class UsersDao {
 	public static User aggiornaUtente(User u) throws SQLException
 	{
 
-		
-			
-			query="UPDATE ispw.users set idRuolo=?,Nome=?,Cognome=?,Email=?,pwd=?,descrizione=?,DataDiNascita=? where idUser=?";
 
-			try(Connection conn=ConnToDb.generalConnection();
+
+			query="UPDATE users set idRuolo=? , Nome=? , Cognome=? , Email=? , pwd=? , descrizione=? , DataDiNascita=? where idUser=?";
+
+
+		try(Connection conn=ConnToDb.generalConnection();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 
 
 
-			// setto i vari dati 
-			prepQ.setString(1,u.getIdRuolo().substring(0,1));
-			prepQ.setString(2,u.getNome() );
-			prepQ.setString(3, u.getCognome());
-			prepQ.setString(4, u.getEmail());
-			prepQ.setString(5,u.getPassword());
-			prepQ.setString(6, u.getDescrizione());
-			prepQ.setString(7,u.getDataDiNascita().toString());
-			prepQ.setInt(8, u.getId());
+
+				// setto i vari dati
 
 
 
-			prepQ.executeUpdate();
+				prepQ.setString(1,u.getIdRuolo().substring(0,1));
+
+				prepQ.setString(2,u.getNome() );
+				prepQ.setString(3, u.getCognome());
+				prepQ.setString(4, u.getEmail());
+				prepQ.setString(5,u.getPassword());
+				prepQ.setString(6, u.getDescrizione());
+				prepQ.setString(7,u.getDataDiNascita().toString());
+				prepQ.setInt(8,u.getId());
+
+
+
+				prepQ.executeUpdate();
 
 			}catch(SQLException e)
 			{

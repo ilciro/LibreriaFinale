@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: laptop.test.TestGiornale
 -------------------------------------------------------------------------------
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.278 s - in laptop.test.TestGiornale
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.532 s - in laptop.test.TestGiornale

@@ -76,13 +76,6 @@ class TestLaptop1 {
 
 
 
-	@BeforeAll
-	static void creaDB() throws FileNotFoundException, SQLException
-	{
-		CreateDefaultDB.createDefaultDB();
-
-
-	}
 
 
 

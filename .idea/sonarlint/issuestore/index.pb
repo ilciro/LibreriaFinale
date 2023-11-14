@@ -648,3 +648,13 @@ P
 0src/main/java/web/servlet/InitializeServlet.java,4\2\42cc5b5a1a4e487435abecc634a98f8963eabeea
 X
 (src/test/java/laptop/test/TestLibro.java,6\f\6feea8928951adc2b6fc98aea05fc0888fa81cbe
+Z
+*src/test/java/laptop/test/TestRivista.java,7\4\7482e660cd74455b186895720b6eeeb30aba3164
+[
++src/test/java/laptop/test/TestGiornale.java,e\5\e5ad8eeb4e5b01d215f4b5b6915cf1876eb13bb8
+Z
+*src/test/java/laptop/test/TestNegozio.java,0\3\03107f0e6df978b6890f503c7ee670b2f156040d
+_
+/src/test/java/laptop/test/TestCartaCredito.java,8\b\8ba79eb0d5e740f020e9232a580f019bb8f9f5ba
+W
+'src/test/java/laptop/test/TestUser.java,7\6\76c798e23652bc229383c4f6763c5793997d8d0b

@@ -3,7 +3,9 @@ package laptop.test;
 import com.itextpdf.text.DocumentException;
 import laptop.controller.*;
 import laptop.database.GiornaleDao;
+import laptop.exception.IdException;
 import laptop.model.raccolta.Giornale;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -20,6 +22,8 @@ class TestGiornale {
     private final ResourceBundle rBGiornaleDAInserire=ResourceBundle.getBundle("configurations/giornaleDaInserire");
 
     private final ResourceBundle rBModificaGiornale=ResourceBundle.getBundle("configurations/giornaleDaModificare");
+    private  final ResourceBundle rBFattura=ResourceBundle.getBundle("configurations/fattura");
+
     private Giornale g=new Giornale();
     private GiornaleDao gD=new GiornaleDao();
 
@@ -35,6 +39,11 @@ class TestGiornale {
     private ControllerReportPage cRP =new ControllerReportPage();
     private ControllerVisualizza cV=new ControllerVisualizza();
     private ControllerGestionePage cGP=new ControllerGestionePage();
+    private ControllerCompravendita cC=new ControllerCompravendita();
+    private ControllerPagamentoCash cPCash=new ControllerPagamentoCash();
+
+
+
 
     @Test
     void testCheckInsertGiornale() throws SQLException {
@@ -68,6 +77,23 @@ class TestGiornale {
         int disp=gD.getDisp(g);
         assertNotEquals(0,id);
     }
+    @Test
+    void testGetLista() throws SQLException {
+        vis.setTypeAsDaily();
+        assertNotNull(cC.getLista(vis.getType()));
+    }
+    @Test
+    void testDisponibilita() throws SQLException, IdException {
+        vis.setTypeAsDaily();
+        assertTrue(cC.disponibilita(vis.getType(),"3"));
+    }
+    @Test
+    void testControlla() {
+
+        assertDoesNotThrow(()->cPCash.controlla(rBFattura.getString("nome1"), rBFattura.getString("cognome1"),rBFattura.getString("via"),rBFattura.getString("comunicazioni1")));
+
+    }
+
 
 
 
@@ -81,3 +107,5 @@ class TestGiornale {
         assertEquals(ints,vis.getId());
     }
 }
+
+

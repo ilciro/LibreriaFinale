@@ -46,12 +46,9 @@ public class ControllerLogin {
 	
 	public String getRuoloTempUSer(String email) throws SQLException
 	{
-		String ruolo;
+
 		user.setEmail(email);
-		 ruolo= UsersDao.getRuolo(user);
-		 if(ruolo.equals("") )
-			 throw new SQLException();
-		 return ruolo;
+		 return UsersDao.getRuolo(user);
 		
 	}
 		

@@ -396,22 +396,7 @@ class TestLaptop3 {
 	}
 
 	/*
-	@AfterAll
-	static void ripristinaDB() throws FileNotFoundException {
 
-		Connection conn;
-		ScriptRunner sr;
-
-		java.util.logging.Logger.getLogger("Test ripristina db").log(Level.INFO,"---------Chiamo stored truncate---------\n\n");
-
-		conn= ConnToDb.generalConnection();
-		sr = new ScriptRunner(conn);
-		sr.setSendFullScript(true);
-		Reader reader = new BufferedReader(new FileReader("FileSql/dropSchema.sql"));
-		//Running the script
-		sr.runScript(reader);
-
-	}
 
 
 

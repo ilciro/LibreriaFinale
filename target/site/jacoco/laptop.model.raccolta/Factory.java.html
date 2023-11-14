@@ -50,10 +50,10 @@ public class Factory {
 		{
 <span class="fc" id="L51">				l.setInfoGenerali(createRaccolta1(titolo, tipologia, autore, lingua, editore, categoria,autore));</span>
 		}
-<span class="pc bpc" id="L53" title="1 of 2 branches missed.">		if(tipologiaO.equals(GIORNALE))</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">		if(tipologiaO.equals(GIORNALE))</span>
 		{
 
-<span class="nc" id="L56">				g.setInfoGenerali(createRaccolta1(titolo, tipologia, null, lingua, editore, null,null));</span>
+<span class="fc" id="L56">				g.setInfoGenerali(createRaccolta1(titolo, tipologia, null, lingua, editore, null,null));</span>
 
 		}
 <span class="fc bfc" id="L59" title="All 2 branches covered.">		if(tipologiaO.equals(RIVISTA))</span>
@@ -70,11 +70,11 @@ public class Factory {
 <span class="fc" id="L70">				l.setInfoCostiDisp(createRaccolta2(numPag, isbn,nrCopie,disp,prezzo,copieRim));</span>
 				
 		}
-<span class="pc bpc" id="L73" title="1 of 2 branches missed.">		if (tipologiaO.equals(GIORNALE))</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">		if (tipologiaO.equals(GIORNALE))</span>
 			{
-<span class="nc" id="L75">			g.setDisponibilita(disp);</span>
-<span class="nc" id="L76">			g.setPrezzo(prezzo);</span>
-<span class="nc" id="L77">			g.setCopieRimanenti(copieRim);</span>
+<span class="fc" id="L75">			g.setDisponibilita(disp);</span>
+<span class="fc" id="L76">			g.setPrezzo(prezzo);</span>
+<span class="fc" id="L77">			g.setCopieRimanenti(copieRim);</span>
 			
 			
 			}	
@@ -90,7 +90,7 @@ public class Factory {
 	
 	public Raccolta createRaccoltaFinaleCompleta(String tipologiaO,LocalDate dataPubb,String recensione,String descrizione,int id) 
 	{
-<span class="pc bpc" id="L93" title="2 of 4 branches missed.">		switch(tipologiaO)</span>
+<span class="pc bpc" id="L93" title="1 of 4 branches missed.">		switch(tipologiaO)</span>
 		{
 			case LIBRO:
 <span class="fc" id="L96">				l.setDataPubb(dataPubb);</span>
@@ -99,9 +99,9 @@ public class Factory {
 <span class="fc" id="L99">				l.setId(id);</span>
 <span class="fc" id="L100">				return  new Libro(l.getInfoGenerali(),l.getDataPubb(),l.getRecensione(),l.getId(),l.getDesc(),l.getInfoCostiDisp());</span>
 			case GIORNALE:
-<span class="nc" id="L102">				g.setDataPubb(dataPubb);</span>
-<span class="nc" id="L103">				g.setId(id);</span>
-<span class="nc" id="L104">				return new Giornale(g.getInfoGenerali(),g.getDataPubb(),g.getCopieRimanenti(),g.getDisponibilita(),g.getPrezzo(),g.getId());</span>
+<span class="fc" id="L102">				g.setDataPubb(dataPubb);</span>
+<span class="fc" id="L103">				g.setId(id);</span>
+<span class="fc" id="L104">				return new Giornale(g.getInfoGenerali(),g.getDataPubb(),g.getCopieRimanenti(),g.getDisponibilita(),g.getPrezzo(),g.getId());</span>
 			case RIVISTA:
 <span class="fc" id="L106">				r.setDataPubb(dataPubb);</span>
 <span class="fc" id="L107">				r.setId(id);</span>

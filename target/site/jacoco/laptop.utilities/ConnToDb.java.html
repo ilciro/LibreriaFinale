@@ -24,53 +24,53 @@ public class ConnToDb
 	public static  boolean initailConnection()
 	{
 
-<span class="nc" id="L27">		ResourceBundle rB=ResourceBundle.getBundle(&quot;configurations/configInitial&quot;);</span>
+<span class="fc" id="L27">		ResourceBundle rB=ResourceBundle.getBundle(&quot;configurations/configInitial&quot;);</span>
 		
 		
-<span class="nc" id="L30">		String driver=rB.getString(driv);</span>
-<span class="nc" id="L31">		String user=rB.getString(&quot;user&quot;);</span>
-<span class="nc" id="L32">		String pwd=rB.getString(&quot;pwd&quot;);</span>
-<span class="nc" id="L33">		String url=rB.getString(&quot;url&quot;);</span>
+<span class="fc" id="L30">		String driver=rB.getString(driv);</span>
+<span class="fc" id="L31">		String user=rB.getString(&quot;user&quot;);</span>
+<span class="fc" id="L32">		String pwd=rB.getString(&quot;pwd&quot;);</span>
+<span class="fc" id="L33">		String url=rB.getString(&quot;url&quot;);</span>
 		
 		
 		
 		
 		try
 		{
-<span class="nc" id="L40">			Class.forName(driver);</span>
+<span class="fc" id="L40">			Class.forName(driver);</span>
 
-<span class="nc" id="L42">			conn = DriverManager.getConnection(url,user,pwd);</span>
-<span class="nc" id="L43">			java.util.logging.Logger.getLogger(&quot;Test InitialConnection&quot;).log(Level.INFO, &quot;Connesso initial.....\n&quot;);</span>
+<span class="fc" id="L42">			conn = DriverManager.getConnection(url,user,pwd);</span>
+<span class="fc" id="L43">			java.util.logging.Logger.getLogger(&quot;Test InitialConnection&quot;).log(Level.INFO, &quot;Connesso initial.....\n&quot;);</span>
 
-<span class="nc" id="L45">			status= true;</span>
+<span class="fc" id="L45">			status= true;</span>
 
 		} 
 <span class="nc" id="L48">		catch (SQLException | ClassNotFoundException  e1)</span>
 		{
 <span class="nc" id="L50">			java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, &quot;errore in mysql&quot;, e1);</span>
 
-<span class="nc" id="L52">		} </span>
+<span class="fc" id="L52">		} </span>
 		
-<span class="nc" id="L54">		return status;</span>
+<span class="fc" id="L54">		return status;</span>
 	}
 
 	public static boolean connection() throws SQLException {
 		
-<span class="nc" id="L59">		boolean status=false;</span>
-<span class="nc" id="L60">		ResourceBundle rB=ResourceBundle.getBundle(&quot;configurations/configDb&quot;);</span>
-<span class="nc" id="L61">		String driver=rB.getString(driv);</span>
-<span class="nc" id="L62">		String user=rB.getString(&quot;user&quot;);</span>
-<span class="nc" id="L63">		String pwd=rB.getString(&quot;pwd&quot;);</span>
-<span class="nc" id="L64">		String url=rB.getString(&quot;url&quot;);</span>
+<span class="fc" id="L59">		boolean status=false;</span>
+<span class="fc" id="L60">		ResourceBundle rB=ResourceBundle.getBundle(&quot;configurations/configDb&quot;);</span>
+<span class="fc" id="L61">		String driver=rB.getString(driv);</span>
+<span class="fc" id="L62">		String user=rB.getString(&quot;user&quot;);</span>
+<span class="fc" id="L63">		String pwd=rB.getString(&quot;pwd&quot;);</span>
+<span class="fc" id="L64">		String url=rB.getString(&quot;url&quot;);</span>
 
 		try 
 		{
-<span class="nc bnc" id="L68" title="All 2 branches missed.">			if(initailConnection()) </span>
+<span class="pc bpc" id="L68" title="1 of 2 branches missed.">			if(initailConnection()) </span>
 			{
 				//actuac DB project
 
-<span class="nc" id="L72">				 Class.forName(driver);</span>
-<span class="nc" id="L73">				 java.util.logging.Logger.getLogger(&quot;Test connection&quot;).log(Level.INFO, connessione);</span>
+<span class="fc" id="L72">				 Class.forName(driver);</span>
+<span class="fc" id="L73">				 java.util.logging.Logger.getLogger(&quot;Test connection&quot;).log(Level.INFO, connessione);</span>
 				
 				
 
@@ -82,14 +82,14 @@ public class ConnToDb
 			}
 			
 		} 
-<span class="nc" id="L85">		catch (SQLException | ClassNotFoundException  e1) </span>
+<span class="fc" id="L85">		catch (SQLException | ClassNotFoundException  e1) </span>
 		{
-<span class="nc" id="L87">			java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, errore, e1);</span>
+<span class="fc" id="L87">			java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, errore, e1);</span>
 
 <span class="nc" id="L89">		} </span>
 		
 
-<span class="nc" id="L92">		return status;</span>
+<span class="fc" id="L92">		return status;</span>
 	}
 	
 	public static Connection generalConnection()

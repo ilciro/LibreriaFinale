@@ -5,11 +5,12 @@ import laptop.controller.*;
 import laptop.database.RivistaDao;
 import laptop.exception.IdException;
 import laptop.model.raccolta.Rivista;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URISyntaxException;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -24,6 +25,7 @@ class TestRivista {
     private final ResourceBundle rBRivistaDAInserire=ResourceBundle.getBundle("configurations/rivistaDaInserire");
     private final ResourceBundle rBSettaOggetto=ResourceBundle.getBundle("configurations/settaOggetto");
     private final ResourceBundle rBCartaCredito=ResourceBundle.getBundle("configurations/cartaCredito");
+    private  final ResourceBundle rBFattura=ResourceBundle.getBundle("configurations/fattura");
 
 
 
@@ -35,6 +37,8 @@ class TestRivista {
     private ControllerDownload cD=new ControllerDownload();
     private ControllerModifPage cMP=new ControllerModifPage();
     private ControllerPagamentoCC cPCC=new ControllerPagamentoCC();
+    private ControllerCompravendita cC=new ControllerCompravendita();
+    private ControllerPagamentoCash cPCash=new ControllerPagamentoCash();
 
 
 
@@ -104,6 +108,16 @@ class TestRivista {
         String titolo=rD.getTitolo(r);
         assertNotEquals(0,r.getId());
     }
+    @Test
+    void testGetLista() throws SQLException {
+        vis.setTypeAsMagazine();
+        assertNotNull(cC.getLista(vis.getType()));
+    }
+    @Test
+    void testDisponibilita() throws SQLException, IdException {
+        vis.setTypeAsMagazine();
+        assertTrue(cC.disponibilita(vis.getType(),"1"));
+    }
 
     @ParameterizedTest
     @ValueSource(ints= {1,2,3,4,5,6})
@@ -113,5 +127,11 @@ class TestRivista {
         cD.scarica(vis.getType());
         assertEquals(ints,vis.getId());
     }
+    @Test
+    void testControlla() {
+        assertDoesNotThrow(()->cPCash.controlla(rBFattura.getString("nome1"), rBFattura.getString("cognome1"),rBFattura.getString("via"),rBFattura.getString("comunicazioni1")));
+
+    }
+
 
 }

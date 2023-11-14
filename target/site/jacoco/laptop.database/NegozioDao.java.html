@@ -12,7 +12,7 @@ import laptop.utilities.ConnToDb;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-<span class="nc" id="L15">public class NegozioDao {</span>
+<span class="fc" id="L15">public class NegozioDao {</span>
 	
 	private String query;
 	private static final String ECCEZIONE=&quot;eccezione ottenuta:&quot;;
@@ -24,27 +24,27 @@ import javafx.collections.ObservableList;
 		Negozio shop; 
 		
 		 ObservableList&lt;Negozio&gt; listOfNegozi;
-<span class="nc" id="L27">		listOfNegozi=FXCollections.observableArrayList();</span>
+<span class="fc" id="L27">		listOfNegozi=FXCollections.observableArrayList();</span>
 
-<span class="nc" id="L29">		query=&quot;SELECT  nome,via,isValid,isOpen from negozio&quot;;</span>
+<span class="fc" id="L29">		query=&quot;SELECT  nome,via,isValid,isOpen from negozio&quot;;</span>
 				
 
-<span class="nc" id="L32">			 try(Connection conn= ConnToDb.generalConnection();</span>
-<span class="nc" id="L33">			 PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="fc" id="L32">			 try(Connection conn= ConnToDb.generalConnection();</span>
+<span class="fc" id="L33">			 PreparedStatement prepQ=conn.prepareStatement(query))</span>
 			 {
-<span class="nc" id="L35">	 			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc" id="L35">	 			ResultSet rs=prepQ.executeQuery();</span>
 			
-<span class="nc bnc" id="L37" title="All 2 branches missed.">				while (rs.next())</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">				while (rs.next())</span>
 				{
-<span class="nc" id="L39">					shop = new Negozio(rs.getString(1),rs.getString(2),rs.getBoolean(3),rs.getBoolean(4));</span>
-<span class="nc" id="L40">					listOfNegozi.add(shop);</span>
+<span class="fc" id="L39">					shop = new Negozio(rs.getString(1),rs.getString(2),rs.getBoolean(3),rs.getBoolean(4));</span>
+<span class="fc" id="L40">					listOfNegozi.add(shop);</span>
 				}
 <span class="nc" id="L42">			 }catch(SQLException e)</span>
 			 {
 <span class="nc" id="L44">			java.util.logging.Logger.getLogger(&quot;get negozi&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="nc" id="L45">			 }</span>
+<span class="fc" id="L45">			 }</span>
 		
-<span class="nc" id="L47">		return listOfNegozi;</span>
+<span class="fc" id="L47">		return listOfNegozi;</span>
 	}
 	
 	public Boolean setOpen(Negozio shop, boolean i) throws SQLException 

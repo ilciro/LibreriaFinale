@@ -52,6 +52,9 @@ class TestLibro {
     private ControllerVisualizza cV=new ControllerVisualizza();
     private ControllerGestionePage cGP=new ControllerGestionePage();
 
+    private ControllerCompravendita cC=new ControllerCompravendita();
+    private ControllerPagamentoCash cPCash=new ControllerPagamentoCash();
+
 
 
 
@@ -253,6 +256,22 @@ class TestLibro {
         l.setId(1);
         assertNotNull(lD.getLibriSingoloById(l));
     }
+    @Test
+    void testGetLista() throws SQLException {
+        vis.setTypeAsBook();
+        assertNotNull(cC.getLista(vis.getType()));
+    }
+    @Test
+    void testDisponibilita() throws SQLException, IdException {
+        vis.setTypeAsBook();
+        assertTrue(cC.disponibilita(vis.getType(),"1"));
+    }
+    @Test
+    void testControlla() {
+        assertDoesNotThrow(()->cPCash.controlla(rBFattura.getString("nome1"), rBFattura.getString("cognome1"),rBFattura.getString("via"),rBFattura.getString("comunicazioni1")));
+
+    }
+
     @ParameterizedTest
     @ValueSource(ints= {1,2,3,4,5,6})
     void testScaricaLibro(int ints) throws DocumentException, IOException, URISyntaxException {
@@ -265,3 +284,5 @@ class TestLibro {
 
 
 }
+
+

@@ -49,66 +49,15 @@ public class ControllerReportPage {
 	}
 	public String reportTotale()
 	{
-		String line="";
+
 		StringBuilder builder=new StringBuilder();
+		String line="";
 
 
 
 
-		try (BufferedReader readerL = new BufferedReader(new FileReader(fileLibro)))
-		{
 
 
-			while( (line = readerL.readLine()) != null)
-			{
-				builder.append(line);
-				builder.append("\n");
-
-
-
-			}
-		}
-		catch(IOException | NullPointerException e)
-		{
-			java.util.logging.Logger.getLogger("report libro").log(Level.SEVERE,eccezione,e);
-
-		}
-
-		try (BufferedReader readerG = new BufferedReader(new FileReader(fileGiornale)))
-		{
-
-
-			while( (line = readerG.readLine()) != null)
-			{
-				builder.append(line);
-				builder.append("\n");
-
-
-			}
-		}
-		catch(IOException | NullPointerException e)
-		{
-			java.util.logging.Logger.getLogger("report giornale").log(Level.SEVERE,eccezione,e);
-
-		}
-
-		try (BufferedReader readerR = new BufferedReader(new FileReader(fileRiviste)))
-		{
-
-
-			while( (line = readerR.readLine()) != null)
-			{
-				builder.append(line);
-				builder.append("\n");
-
-
-			}
-		}
-		catch(IOException | NullPointerException e)
-		{
-			java.util.logging.Logger.getLogger("report rivista").log(Level.SEVERE,eccezione,e);
-
-		}
 		try (BufferedReader readerU = new BufferedReader(new FileReader(fileUtenti)))
 		{
 
@@ -121,6 +70,9 @@ public class ControllerReportPage {
 
 
 			}
+			builder.append(reportLibri());
+			builder.append(reportGiornali());
+			builder.append(reportRiviste());
 		}
 		catch(IOException | NullPointerException e)
 		{
