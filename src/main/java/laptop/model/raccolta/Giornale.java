@@ -25,7 +25,7 @@ public class Giornale implements Raccolta{
 	private int disponibilita;
 	private float prezzo;
 	private int id;
-	private static final String urlL="/home/daniele/Scrivania/libriScaricati";
+	private static final String URLL="/home/daniele/Scrivania/libriScaricati";
 
 	private String[] infoGenerali=new String[5];
 
@@ -133,16 +133,15 @@ public class Giornale implements Raccolta{
 	public void scarica() throws IOException {
 		Desktop desktop;
 		File dirToOpen;
-		File file;
+
+		File file = new File(URLL);
 
 
-		file = new File(urlL);
-		file.mkdir();
 
 
 		desktop = Desktop.getDesktop();
 		
-			dirToOpen = new File(urlL);
+			dirToOpen = new File(URLL);
 
 			desktop.open(dirToOpen);
 
@@ -154,7 +153,7 @@ public class Giornale implements Raccolta{
 
 	@Override
 	public void leggi(int i) throws DocumentException, IOException {
-		Document document=null;
+		Document document;
 		
 		
 		
@@ -162,7 +161,7 @@ public class Giornale implements Raccolta{
 
 
 		 document = new Document();
-		 PdfWriter.getInstance(document, new FileOutputStream(rBG.getString("path")));
+		 PdfWriter.getInstance(document, new FileOutputStream(rBG.getString("pathL")));
 		 document.open();
 
 			document.add(new Paragraph("""

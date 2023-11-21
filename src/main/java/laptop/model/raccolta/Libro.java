@@ -38,7 +38,7 @@ public class Libro implements Raccolta {
 
 	private int id;
 
-	private static final String urlL="/home/daniele/Scrivania/libriScaricati";
+	private static final String URL="/home/daniele/Scrivania/libriScaricati";
 
 	public Libro() {	
 
@@ -229,13 +229,13 @@ public class Libro implements Raccolta {
 		File file;
 
 
-		file = new File(urlL);
+		file = new File(URL);
 		file.mkdir();
 
 
 		desktop = Desktop.getDesktop();
 		
-			dirToOpen = new File(urlL);
+			dirToOpen = new File(URL);
 
 			desktop.open(dirToOpen);
 		
