@@ -1,4 +1,4 @@
-INSERT INTO `ispw`.`users`
+INSERT INTO `ISPW`.`USERS`
 (`idRuolo`,`Nome`,`Cognome`,`Email`,`pwd`,`DataDiNascita`)
 VALUES
 ("A","admin","admin","admin@admin.com","Admin871","1980-10-26"),

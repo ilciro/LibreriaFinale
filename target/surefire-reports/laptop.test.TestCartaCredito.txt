@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: laptop.test.TestCartaCredito
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.335 s - in laptop.test.TestCartaCredito
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.453 s - in laptop.test.TestCartaCredito

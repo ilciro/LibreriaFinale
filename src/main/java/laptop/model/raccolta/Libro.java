@@ -38,6 +38,7 @@ public class Libro implements Raccolta {
 
 	private int id;
 	private String url="C:\\libriScaricati";
+	private final String urlL="/home/daniele/Scrivania/libriScaricati";
 
 	public Libro() {	
 
@@ -228,13 +229,13 @@ public class Libro implements Raccolta {
 		File file;
 
 
-		file = new File(url);
+		file = new File(urlL);
 		file.mkdir();
 
 
 		desktop = Desktop.getDesktop();
 		
-			dirToOpen = new File(url);
+			dirToOpen = new File(urlL);
 
 			desktop.open(dirToOpen);
 		
@@ -262,9 +263,9 @@ public class Libro implements Raccolta {
 		    		 if(i==dimensione)
 		    	  {
 		    		  document = new Document();
-		     			PdfWriter.getInstance(document, new FileOutputStream(rBD.getString("path"+i)));
+		     			PdfWriter.getInstance(document, new FileOutputStream(rBD.getString("path"+i+"L")));
 		     			document.open();	   		
-		  			file=new File(rB.getString("path"+i));
+		  			file=new File(rB.getString("path"+i+"L"));
 		  			Desktop.getDesktop().open(file);
 		    	  }
 		    	  

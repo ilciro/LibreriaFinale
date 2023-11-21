@@ -1,7 +1,7 @@
 package laptop.test;
 
 import laptop.controller.ControllerPagamentoCC;
-import laptop.utilities.CreateDefaultDB;
+import laptop.utilities.ConnToDb;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -18,10 +18,9 @@ class TestCartaCredito {
 
     private ControllerPagamentoCC cPCC=new ControllerPagamentoCC();
     @BeforeAll
-    static void creaDB() throws FileNotFoundException, SQLException
+    static void creaDB() throws FileNotFoundException
     {
-        CreateDefaultDB.createDefaultDB();
-
+        ConnToDb.creaPopolaDb();
 
     }
 
@@ -30,6 +29,7 @@ class TestCartaCredito {
     {
         assertTrue(cPCC.controllaPag("2028-08-11",rBPagamentoInfo.getString("codice"),rBPagamentoInfo.getString("civ")));
     }
+
     @Test
     void testRitornaElencoCC()
     {
@@ -40,4 +40,6 @@ class TestCartaCredito {
     {
         assertNotNull(cPCC.tornaDalDb(rBPagamento.getString("numero")));
     }
+
+ 
 }

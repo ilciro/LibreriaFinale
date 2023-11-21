@@ -1,5 +1,5 @@
 
-INSERT INTO `ispw`.`giornale`
+INSERT INTO `ISPW`.`GIORNALE`
 (`titolo`,`tipologia`,`lingua`,`editore`,`dataPubblicazione`,`copiRim`,`disp`,`prezzo`)
 VALUES
 ("La Republica1","Quotidiano","Italiano","La Republica","2021-01-31",5,1,2.0),

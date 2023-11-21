@@ -44,8 +44,8 @@ public class 	RivistaDao {
 	
 	public void getDesc(Rivista r) throws SQLException
 	{
-		query="select * from rivista where titolo=?";
-		try(Connection conn=ConnToDb.generalConnection();
+		query="select * from RIVISTA where titolo=?";
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);
 				)
 		{
@@ -83,8 +83,8 @@ public class 	RivistaDao {
 	public float getCosto(Rivista r) throws SQLException
 	{
 		float prezzo=(float) 0.0;
-		query="select * from rivista where id=?";
-		try(Connection conn=ConnToDb.generalConnection();
+		query="select * from RIVISTA where id=?";
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareCall(query))
 		{
 			prepQ.setInt(1, r.getId());
@@ -112,9 +112,9 @@ public class 	RivistaDao {
 		int rim=i-d;
 		
 		
-		query="update ispw.rivista set copieRimanenti= ? where  id=?";
+		query="update RIVISTA set copieRimanenti= ? where  id=?";
 		
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, rim);
@@ -139,7 +139,7 @@ public class 	RivistaDao {
 		ObservableList<Raccolta> catalogo=FXCollections.observableArrayList();
 		 
 		query=riv;
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);
 				ResultSet rs=prepQ.executeQuery())
 		{
@@ -170,8 +170,8 @@ public class 	RivistaDao {
 		
 		ObservableList<Raccolta> catalogo=FXCollections.observableArrayList();
 		
-		query="select * from rivista where titolo=? or autore=?";
-		try(Connection conn=ConnToDb.generalConnection();
+		query="select * from RIVISTA where titolo=? or autore=?";
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);
 				)
 		{
@@ -201,9 +201,9 @@ public class 	RivistaDao {
 
 	public Rivista getRivista(Rivista r) throws SQLException
 	{
-		query="select *from rivista where id=?";
+		query="select * from RIVISTA where id=?";
 
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			
@@ -228,9 +228,9 @@ public class 	RivistaDao {
 	}
 	
 	public int retId(Rivista r) throws SQLException {
-		query="select id from rivista where titolo=?";
+		query="select id from RIVISTA where titolo=?";
 		
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setString(1, r.getTitolo());
@@ -252,8 +252,8 @@ public class 	RivistaDao {
 	public String retTip(Rivista r) throws SQLException {
 		
 		String categoria=null;
-		query="select tipologia from rivista where titolo=? or id=?";
-		try(Connection conn=ConnToDb.generalConnection();
+		query="select tipologia from RIVISTA where titolo=? or id=?";
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setString(1, r.getTitolo());
@@ -275,8 +275,8 @@ public class 	RivistaDao {
 	public String getNome(Rivista r) throws SQLException
 	{
 		String name=null;
-		query="select titolo from rivista where id=?";
-		try(Connection conn=ConnToDb.generalConnection();
+		query="select titolo from RIVISTA where id=?";
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1,r.getId());
@@ -296,9 +296,9 @@ public class 	RivistaDao {
 	public int getDisp(Rivista r) throws SQLException
 	{
 		 disp = 0;
-		query="select disp from rivista where id=?";
+		query="select disp from RIVISTA where id=?";
 		
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, r.getId());
@@ -326,8 +326,8 @@ public class 	RivistaDao {
 	public int getQuantita(Rivista r) throws SQLException
 	{
         
-		query="select copieRimanenti from rivista where id=?";
-		try(Connection conn=ConnToDb.generalConnection();
+		query="select copieRimanenti from RIVISTA where id=?";
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			
@@ -349,9 +349,9 @@ public class 	RivistaDao {
 	public boolean checkDisp(Rivista r) throws SQLException
 	{
 		
-			query="select disp from rivista where id=?";
+			query="select disp from RIVISTA where id=?";
 			
-			try(Connection conn=ConnToDb.generalConnection();
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query);
 					)
 
@@ -385,7 +385,7 @@ public class 	RivistaDao {
 		ObservableList<Raccolta> catalogo=FXCollections.observableArrayList();
 
 		query=riv;
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			
@@ -411,7 +411,7 @@ public class 	RivistaDao {
     	
     		
 				
-				query= "INSERT INTO `ispw`.`rivista`"
+				query= "INSERT INTO `RIVISTA`"
 			 			+ "(`titolo`,"
 			 			+ "`tipologia`,"
 			 			+ "`autore`,"
@@ -423,7 +423,7 @@ public class 	RivistaDao {
 			 			+ "`prezzo`,"
 			 			+ "`copieRimanenti`)"
 			 			+ "VALUES (?,?,?,?,?,?,?,?,?,?)";
-				try(Connection conn=ConnToDb.generalConnection();
+				try(Connection conn=ConnToDb.ConnectionToDB();
 						PreparedStatement prepQ=conn.prepareStatement(query))
 				{
 				prepQ.setString(1,r.getTitolo()); 
@@ -458,8 +458,8 @@ public class 	RivistaDao {
 	public void cancella(Rivista r) throws SQLException {
 
 		 int row=0;
-		 query="delete from rivista where id=?";
-		 try(Connection conn=ConnToDb.generalConnection();
+		 query="delete from RIVISTA where id=?";
+		 try(Connection conn=ConnToDb.ConnectionToDB();
 				 PreparedStatement prepQ=conn.prepareStatement(query))
 		 {
 			 prepQ.setInt(1, r.getId());
@@ -476,7 +476,7 @@ public class 	RivistaDao {
 		ObservableList<Rivista> catalogo=FXCollections.observableArrayList();
 
 		query="SELECT * from RIVISTA where id=?";
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, r.getId());
@@ -505,7 +505,7 @@ public class 	RivistaDao {
 
 		
 
-			query="UPDATE `ispw`.`rivista`"
+			query="UPDATE `RIVISTA`"
 		 			+ "SET"
 		 			+ "`titolo` = ?,"
 		 			+ "`tipologia` =?,"
@@ -518,7 +518,7 @@ public class 	RivistaDao {
 		 			+ "`prezzo` = ?,"
 		 			+ "`copieRimanenti` =? WHERE `id` =?";
 		 		
-		 	try(Connection conn=ConnToDb.generalConnection();
+		 	try(Connection conn=ConnToDb.ConnectionToDB();
 		 			PreparedStatement prepQ=conn.prepareStatement(query))
 		 	{
 			
@@ -546,12 +546,12 @@ public class 	RivistaDao {
 	public void generaReport() throws SQLException, IOException
 	{
 				FileWriter w;
-				query="select titolo,editore,copieRimanenti,prezzo as totale ,dataPubblicazione from ispw.rivista";
+				query="select titolo,editore,copieRimanenti,prezzo as totale ,dataPubblicazione from RIVISTA";
 		        w=new FileWriter("ReportFinale\\riepilogoRiviste.txt");
 		        
 		        
 		        try (BufferedWriter b=new BufferedWriter (w)){
-		        	try(Connection conn=ConnToDb.generalConnection();
+		        	try(Connection conn=ConnToDb.ConnectionToDB();
 		        			PreparedStatement prepQ=conn.prepareStatement(query))
 		        	{
 		        		
@@ -597,9 +597,9 @@ public class 	RivistaDao {
 		
 		int rim=i+d;
 		
-		query="update ispw.rivista set copieRimanenti= ? where titolo=? or id=?";
+		query="update RIVISTA set copieRimanenti= ? where titolo=? or id=?";
 
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);)
 		{
 			prepQ.setInt(1, rim);
@@ -625,8 +625,8 @@ public class 	RivistaDao {
 	public String getTitolo(Rivista r) 
 	{
 		String t="";
-		query="select titolo from rivista where id=? or id=? ";
-		try(Connection conn=ConnToDb.generalConnection();
+		query="select titolo from RIVISTA where id=? or id=? ";
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);)
 		{
 			prepQ.setInt(1, r.getId());
@@ -646,8 +646,8 @@ public class 	RivistaDao {
 
 	public void aggiornaData(Rivista r, Date sqlDate) throws SQLException {
 		int row=0;
-		query="update rivista set dataPubblicazione=? where id=? or id=?  ";
-		try(Connection conn=ConnToDb.generalConnection();
+		query="update RIVISTA set dataPubblicazione=? where id=? or id=?  ";
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);)
 		{
 			prepQ.setDate(1, sqlDate);

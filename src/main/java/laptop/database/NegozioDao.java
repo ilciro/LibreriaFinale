@@ -26,10 +26,10 @@ public class NegozioDao {
 		 ObservableList<Negozio> listOfNegozi;
 		listOfNegozi=FXCollections.observableArrayList();
 
-		query="SELECT  nome,via,isValid,isOpen from negozio";
+		query="SELECT  nome,via,isValid,isOpen from NEGOZIO";
 				
 
-			 try(Connection conn= ConnToDb.generalConnection();
+			 try(Connection conn= ConnToDb.ConnectionToDB();
 			 PreparedStatement prepQ=conn.prepareStatement(query))
 			 {
 	 			ResultSet rs=prepQ.executeQuery();
@@ -51,10 +51,10 @@ public class NegozioDao {
 	{
 		// vanno messe  le query
 		
-		query="update ispw.negozio set isOpen =? where nome=?";
+		query="update NEGOZIO set isOpen =? where nome=?";
 		
 			
-				try(Connection conn= ConnToDb.generalConnection();
+				try(Connection conn= ConnToDb.ConnectionToDB();
 				 PreparedStatement prepQ=conn.prepareStatement(query))
 				{
 				
@@ -75,8 +75,8 @@ public class NegozioDao {
 	public boolean setRitiro(Negozio shop, boolean i ) throws SQLException
 	{
 		
-			query="update ispw.negozio set isValid =? where nome=?";
-			try(Connection conn= ConnToDb.generalConnection();
+			query="update NEGOZIO set isValid =? where nome=?";
+			try(Connection conn= ConnToDb.ConnectionToDB();
 					PreparedStatement  prepQ=conn.prepareStatement(query);
 					)
 			{
@@ -98,8 +98,8 @@ public class NegozioDao {
 	{
 		int aperto=0;
 		boolean state=false;
-		query="select isOpen from negozio where nome=?";
-		try(Connection conn=ConnToDb.generalConnection();
+		query="select isOpen from NEGOZIO where nome=?";
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareCall(query))
 		{
 			prepQ.setString(1, shop.getNome());
@@ -124,11 +124,11 @@ public class NegozioDao {
 	//controllo se il negozio fa PickUP
 	public boolean checkRitiro(Negozio shop) throws SQLException
 	{
-		query="select isValid from negozio where nome=?";
+		query="select isValid from NEGOZIO where nome=?";
 		boolean state=false;
 		int disp;
 		
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setString(1, shop.getNome());

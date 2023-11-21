@@ -15,7 +15,7 @@ import laptop.model.raccolta.Rivista;
 public class ControllerAggiungiPage {
 
 	private GiornaleDao gD;
-<span class="fc" id="L18">	private boolean status = false;</span>
+<span class="nc" id="L18">	private boolean status = false;</span>
 	private Rivista r;
 	private RivistaDao rD;
 	private LibroDao lD;
@@ -28,16 +28,16 @@ public class ControllerAggiungiPage {
 
 	public boolean checkDataG(Giornale g) throws SQLException 
 	{
-<span class="pc bpc" id="L31" title="1 of 2 branches missed.">		if(g.getDataPubb()==null )</span>
+<span class="nc bnc" id="L31" title="All 2 branches missed.">		if(g.getDataPubb()==null )</span>
 		{
 <span class="nc" id="L33">			return status;</span>
 		}
 		else
 		{
-<span class="fc" id="L37">			status = gD.creaGiornale(g);</span>
+<span class="nc" id="L37">			status = gD.creaGiornale(g);</span>
 
 		}			
-<span class="fc" id="L40">		return status;</span>
+<span class="nc" id="L40">		return status;</span>
 
 	}
 	public boolean checkDataR(String [] info,  LocalDate data,
@@ -46,33 +46,33 @@ public class ControllerAggiungiPage {
 		
 
 		
-<span class="pc bpc" id="L49" title="1 of 2 branches missed.">		if(data!=null )</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">		if(data!=null )</span>
 		{
 			
-<span class="fc" id="L52">		r.setTitolo(info[0]);</span>
-<span class="fc" id="L53">		r.setTipologia(info[1]);</span>
-<span class="fc" id="L54">		r.setAutore(info[2]);</span>
-<span class="fc" id="L55">		r.setLingua(&quot;italiano&quot;);</span>
-<span class="fc" id="L56">		r.setEditore(info[4]);</span>
-<span class="fc" id="L57">		r.setDescrizione(desc);</span>
-<span class="fc" id="L58">		r.setDataPubb(data);</span>
-<span class="fc" id="L59">		r.setDisp(dispo);</span>
-<span class="fc" id="L60">		r.setPrezzo(prezzo);</span>
-<span class="fc" id="L61">		r.setCopieRim(copie);</span>
+<span class="nc" id="L52">		r.setTitolo(info[0]);</span>
+<span class="nc" id="L53">		r.setTipologia(info[1]);</span>
+<span class="nc" id="L54">		r.setAutore(info[2]);</span>
+<span class="nc" id="L55">		r.setLingua(&quot;italiano&quot;);</span>
+<span class="nc" id="L56">		r.setEditore(info[4]);</span>
+<span class="nc" id="L57">		r.setDescrizione(desc);</span>
+<span class="nc" id="L58">		r.setDataPubb(data);</span>
+<span class="nc" id="L59">		r.setDisp(dispo);</span>
+<span class="nc" id="L60">		r.setPrezzo(prezzo);</span>
+<span class="nc" id="L61">		r.setCopieRim(copie);</span>
 
-<span class="fc" id="L63">		rD.creaRivista(r);</span>
+<span class="nc" id="L63">		rD.creaRivista(r);</span>
 		
-<span class="fc" id="L65">		status = true ;</span>
+<span class="nc" id="L65">		status = true ;</span>
 		}
 		
-<span class="fc" id="L68">		return status;</span>
+<span class="nc" id="L68">		return status;</span>
 	}
 
 	public boolean checkData(String[] info,String recensione,String descrizione,LocalDate data,String[] infoCosti) throws SQLException
 	{
 
 
-<span class="pc bpc" id="L75" title="2 of 4 branches missed.">		if( infoCosti[1].length()&gt;10 || data==null )</span>
+<span class="nc bnc" id="L75" title="All 4 branches missed.">		if( infoCosti[1].length()&gt;10 || data==null )</span>
 		{
 <span class="nc" id="L77">			return status;</span>
 
@@ -80,22 +80,22 @@ public class ControllerAggiungiPage {
 		else
 		{
 
-<span class="fc" id="L83">			status =lD.creaLibrio(cBD.checkBookData(info, recensione, descrizione, data, infoCosti));</span>
+<span class="nc" id="L83">			status =lD.creaLibrio(cBD.checkBookData(info, recensione, descrizione, data, infoCosti));</span>
 
-<span class="fc" id="L85">			return status;</span>
+<span class="nc" id="L85">			return status;</span>
 		}
 	}
 	// qui chiamo la funzione del dao
 	
 	public ControllerAggiungiPage()
-<span class="fc" id="L91">	{</span>
-<span class="fc" id="L92">		gD=new GiornaleDao();</span>
-<span class="fc" id="L93">		r=new Rivista();</span>
-<span class="fc" id="L94">		rD=new RivistaDao();</span>
-<span class="fc" id="L95">		lD=new LibroDao();</span>
-<span class="fc" id="L96">		cBD=new ControllerBookData();</span>
+<span class="nc" id="L91">	{</span>
+<span class="nc" id="L92">		gD=new GiornaleDao();</span>
+<span class="nc" id="L93">		r=new Rivista();</span>
+<span class="nc" id="L94">		rD=new RivistaDao();</span>
+<span class="nc" id="L95">		lD=new LibroDao();</span>
+<span class="nc" id="L96">		cBD=new ControllerBookData();</span>
 
-<span class="fc" id="L98">	}</span>
+<span class="nc" id="L98">	}</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

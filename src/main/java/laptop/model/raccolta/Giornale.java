@@ -26,6 +26,8 @@ public class Giornale implements Raccolta{
 	private float prezzo;
 	private int id;
 	private String url="C:\\libriScaricati";
+	private final String urlL="/home/daniele/Scrivania/libriScaricati";
+
 	private String[] infoGenerali=new String[5];
 
 	
@@ -135,13 +137,13 @@ public class Giornale implements Raccolta{
 		File file;
 
 
-		file = new File(url);
+		file = new File(urlL);
 		file.mkdir();
 
 
 		desktop = Desktop.getDesktop();
 		
-			dirToOpen = new File(url);
+			dirToOpen = new File(urlL);
 
 			desktop.open(dirToOpen);
 

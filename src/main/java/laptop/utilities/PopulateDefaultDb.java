@@ -1,4 +1,4 @@
-package laptop.utilities;
+/*package laptop.utilities;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -23,19 +23,37 @@ public class PopulateDefaultDb {
 
 	}
 	
-	public static boolean populateDefaultDb() throws FileNotFoundException, SQLException
+	public static boolean populateDefaultDb() throws FileNotFoundException
 	{
+
 			createLibri();
 			 createGiornale() ;
 			  createRivista();
 			   createUser(); 
 			   createNegozio();
+
+
 			   daiPrivilegi();
+			   createAndPopulateDb();
 		
 			state=true;
 		
 		return state;
 	}
+
+	public static boolean createAndPopulateDb() throws FileNotFoundException {
+		java.util.logging.Logger.getLogger("Test create and populate db ").log(Level.INFO,"---------Eseguo file complessivo---------\n\n");
+
+		conn=ConnToDb.generalConnection();
+		sr = new ScriptRunner(conn);
+		sr.setSendFullScript(true);
+		Reader reader = new BufferedReader(new FileReader("FileSql/export-db.sql"));
+		//Running the script
+		sr.runScript(reader);
+		state=true;
+		return state;
+	}
+
 
 	public static boolean createLibri() throws FileNotFoundException
 	{
@@ -116,7 +134,7 @@ public class PopulateDefaultDb {
 
 
 	}
-	public static void daiPrivilegi() throws SQLException
+	public static void daiPrivilegi()
 	{
 		String query="set sql_safe_updates=?";
 		try(Connection conn=ConnToDb.generalConnection();
@@ -139,3 +157,4 @@ public class PopulateDefaultDb {
 	
 
 }
+*/

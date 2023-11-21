@@ -37,7 +37,7 @@ public class UsersDao {
 
 		LocalDate d=u.getDataDiNascita();
 		
-		query= "INSERT INTO `ispw`.`users`"
+		query= "INSERT INTO `USERS`"
 				+ "(`Nome`,"
 				+ "`Cognome`,"
 				+ "`Email`,"
@@ -46,7 +46,7 @@ public class UsersDao {
 				+ "VALUES"
 				+ "(?,?,?,?,?)";
 		
-			try(Connection conn=ConnToDb.generalConnection();
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				
@@ -77,7 +77,7 @@ public class UsersDao {
 	{
 
 		LocalDate d=uT.getDataDiNascitaT();
-		query= "INSERT INTO `ispw`.`users`"
+		query= "INSERT INTO `USERS`"
 				+ "(`idRuolo`,"
 				+ "`Nome`,"
 				+ "`Cognome`,"
@@ -87,7 +87,7 @@ public class UsersDao {
 				+ "`DataDiNascita`)"
 				+ "VALUES (?,?,?,?,?,?,?)";
 		
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 
 		{
@@ -128,8 +128,8 @@ public class UsersDao {
 		//levato pwd se no non aggiorna
 
 
-			query="SELECT idUser FROM ispw.users where Email =?";
-			try(Connection conn=ConnToDb.generalConnection();
+			query="SELECT idUser FROM USERS where Email =?";
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				
@@ -163,8 +163,8 @@ public class UsersDao {
 		
 		int idUser=0;
 		
-		query="SELECT idRuolo FROM ispw.users where Email = ?";
-			try(Connection conn = ConnToDb.generalConnection();
+		query="SELECT idRuolo FROM USERS where Email = ?";
+			try(Connection conn = ConnToDb.ConnectionToDB();
 			PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				prepQ.setString(1,email);
@@ -191,8 +191,8 @@ public class UsersDao {
 	{
 
 		String r = "";
-			query="SELECT idRuolo FROM ispw.users where Email = ?";
-			try(Connection conn=ConnToDb.generalConnection();
+			query="SELECT idRuolo FROM USERS where Email = ?";
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				prepQ.setString(1, u.getEmail());
@@ -220,8 +220,8 @@ public class UsersDao {
 	public static boolean checkResetpass (User u, String pwd,String email ) throws SQLException
 	{
 
-				query="Update ispw.users SET pwd = ?  where Email = ?";
-				try(Connection conn=ConnToDb.generalConnection();
+				query="Update USERS SET pwd = ?  where Email = ?";
+				try(Connection conn=ConnToDb.ConnectionToDB();
 						PreparedStatement prepQ=conn.prepareStatement(query))
 				{
 		
@@ -258,8 +258,8 @@ public class UsersDao {
 	{
 		String email = user.getEmail();
 		String ruolo=user.getIdRuolo();
-		query="DELETE FROM ispw.users WHERE Email = ? or idUser=?";
-		try(Connection conn=ConnToDb.generalConnection();
+		query="DELETE FROM USERS WHERE Email = ? or idUser=?";
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 		
@@ -295,8 +295,8 @@ public class UsersDao {
 
 		
 			
-			query="DELETE FROM ispw.users WHERE Email = ?";
-			try(Connection conn=ConnToDb.generalConnection();
+			query="DELETE FROM USERS WHERE Email = ?";
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 			
@@ -322,8 +322,8 @@ public class UsersDao {
 	{
 
 		
-			query="SELECT idRuolo,Nome,Cognome,Email,descrizione,dataDiNascita from ispw.users where Email=?";
-			try(Connection conn=ConnToDb.generalConnection();
+			query="SELECT idRuolo,Nome,Cognome,Email,descrizione,dataDiNascita from USERS where Email=?";
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				prepQ.setString(1, u.getEmail());
@@ -366,9 +366,9 @@ public class UsersDao {
 
 
 			
-			query="UPDATE ispw.users set Nome=? where Email=?";
+			query="UPDATE USERS set Nome=? where Email=?";
 			
-			try(Connection conn=ConnToDb.generalConnection();
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				prepQ.setString(1, u.getNome());
@@ -388,20 +388,13 @@ public class UsersDao {
 	public static User aggiornaCognome(User u) throws SQLException
 	{
 		
-		
-
-
 
 			
-			
-			query="UPDATE ispw.users set Cognome=? where Email=?";
-			try(Connection conn=ConnToDb.generalConnection();
+			query="UPDATE USERS set Cognome=? where Email=?";
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 
-
-
-			
 
 			prepQ.setString(1,u.getNome() );
 			prepQ.setString(2, u.getEmail());
@@ -422,11 +415,11 @@ public class UsersDao {
 	{
 		
 			
-			query="UPDATE ispw.users set Email=? where Email=?";
+			query="UPDATE USERS set Email=? where Email=?";
 
 			u.setEmail(m);
 			
-			try(Connection conn=ConnToDb.generalConnection();
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 
@@ -451,8 +444,8 @@ public class UsersDao {
 
 			
 			
-			query="UPDATE ispw.users set pwd=? where Email=?";
-			try(Connection conn=ConnToDb.generalConnection();
+			query="UPDATE USERS set pwd=? where Email=?";
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 
@@ -474,8 +467,8 @@ public class UsersDao {
 
 	public static User aggiornaDesc(User u) throws SQLException {
 					
-			query="UPDATE ispw.users set descrizione=? where Email=?";
-			try(Connection conn=ConnToDb.generalConnection();
+			query="UPDATE USERS set descrizione=? where Email=?";
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 
@@ -504,8 +497,8 @@ public class UsersDao {
 	{
 		
 			
-			query="UPDATE users set Nome=? where Email=?";
-			try(Connection conn=ConnToDb.generalConnection();
+			query="UPDATE USERS set Nome=? where Email=?";
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 
@@ -531,8 +524,8 @@ public class UsersDao {
 
 		
 			
-			query="UPDATE ispw.users set pwd=? where Email=?";
-			try(Connection conn=ConnToDb.generalConnection();
+			query="UPDATE USERS set pwd=? where Email=?";
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 
@@ -554,8 +547,8 @@ public class UsersDao {
 
 	public static TempUser aggiornaTempDesc(TempUser uT) throws SQLException {
 					
-			query="UPDATE ispw.users set descrizione=? where Email=?";
-			try(Connection conn=ConnToDb.generalConnection();
+			query="UPDATE USERS set descrizione=? where Email=?";
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 
@@ -574,9 +567,9 @@ public class UsersDao {
 	}
 
 	public static TempUser aggiornaTempData(TempUser uT) throws SQLException {
-		query="UPDATE ispw.users set DataDiNascita=? where Email=?";
+		query="UPDATE USERS set DataDiNascita=? where Email=?";
 
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 
@@ -597,14 +590,14 @@ public class UsersDao {
 
 
 	public static  void getListaUtenti() throws IOException, SQLException  {
-		query="select * from ispw.users";
+		query="select * from USERS";
 		FileWriter w;
 		w=new FileWriter("ReportFinale\\riepilogoUtenti.txt");
 
 		
 		try (BufferedWriter b=new BufferedWriter (w)) {
 
-			try(Connection conn=ConnToDb.generalConnection();
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				
@@ -641,8 +634,8 @@ public class UsersDao {
 	{
 		
 		
-		query="SELECT * FROM ispw.users where idUser = ?";
-		try(Connection conn=ConnToDb.generalConnection();
+		query="SELECT * FROM USERS where idUser = ?";
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			
@@ -676,10 +669,10 @@ public class UsersDao {
 
 
 
-			query="UPDATE users set idRuolo=? , Nome=? , Cognome=? , Email=? , pwd=? , descrizione=? , DataDiNascita=? where idUser=?";
+			query="UPDATE USERS set idRuolo=? , Nome=? , Cognome=? , Email=? , pwd=? , descrizione=? , DataDiNascita=? where idUser=?";
 
 
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 
@@ -715,9 +708,9 @@ public class UsersDao {
 
 	public static int maxIdUSer() throws SQLException
 	{
-		query="select max(idUser) as idMax from ispw.users";
+		query="select max(idUser) as idMax from USERS";
 	
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 		
@@ -741,9 +734,9 @@ public class UsersDao {
 	
 	public static String getUserList() throws SQLException
 	{
-		 query="select * from users";
+		 query="select * from USERS";
 		StringBuilder s=new StringBuilder();
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			ResultSet rs=prepQ.executeQuery();

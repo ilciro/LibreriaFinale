@@ -1,4 +1,5 @@
-package laptop.utilities;
+/*package laptop.utilities;
+
 
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
@@ -8,6 +9,8 @@ import java.util.logging.Level;
 
 public class CreateDefaultDB 
 {
+
+
 
 	private static final String  CREAEDITORE="Create table if not exists EDITORE("
 			+ "idEditor int primary key not null auto_increment,"
@@ -36,7 +39,7 @@ public class CreateDefaultDB
 			+ "prezzo float,"
 			+ "copieRimanenti int,"
 			+ "id int primary key not null auto_increment);";
-	private static final String CREACARTACREDITO="Create table if not exists cartacredito ( "
+	private static final String CREACARTACREDITO="Create table if not exists CARTACREDITO ( "
 			+ "nomeP VARCHAR(10),cognomeP  Varchar(20),"
 			+ "codiceCarta varchar(20),"
 			+ "scad date ,"
@@ -62,16 +65,16 @@ public class CreateDefaultDB
 			+ "disp int, prezzo float,"
 			+ "copieRimanenti int,"
 			+ "idProd int primary key auto_increment);";
-	private static final String CREAPAGAMENTO="create table if not exists pagamento("
+	private static final String CREAPAGAMENTO="create table if not exists PAGAMENTO("
 			+ "id_op int primary key auto_increment,"
 			+ "metodo varchar(10),esito int ,"
 			+ "nomeUtente varchar(10),spesaTotale float,"
 			+ "eMail varchar(100 ),"
 			+ "tipoAcquisto varchar(20),"
 			+ "idProd int )";
-
-
-	private CreateDefaultDB() 
+	private static final String CREAUTENTE="CREATE TABLE if not exists USERS(idUser INT primary key not null auto_increment,idRuolo VARCHAR(1) NOT NULL DEFAULT 'U',Nome VARCHAR(40),Cognome VARCHAR(40),Email VARCHAR(50) UNIQUE ,pwd VARCHAR(16),descrizione text,DataDiNascita date);";
+	private static final String CREANEGOZIO="Create table if not exists NEGOZIO ( idNegozio int not null auto_increment primary key, nome VARCHAR(100) , via VARCHAR(100), isValid boolean, isOpen BOOLEAN);";
+	private CreateDefaultDB()
 	{
 		java.util.logging.Logger.getLogger("Test Costruttore").log(Level.INFO, "creo db default");
 		
@@ -80,12 +83,7 @@ public class CreateDefaultDB
 	public static void createDefaultDB () throws SQLException, FileNotFoundException
 	{
 	    boolean status;
-	    
-	   
 
-
-	 
-		
 			 status = ConnToDb.initailConnection() && !ConnToDb.connection() ; 
 			 
 		
@@ -94,24 +92,20 @@ public class CreateDefaultDB
 			// Se non trovo il db chiamo questa funzione che lo crea
 			if(status) 
 			{
+				/*
 				try (Statement st=ConnToDb.conn.createStatement())
 				{
-					st.execute("CREATE DATABASE IF NOT EXISTS ispw");
+					st.execute("CREATE DATABASE IF NOT EXISTS ISPW");
 				}
 				try (Statement st=ConnToDb.conn.createStatement())
 				{
 					st.execute("USE ISPW");
 				}
 
-			
-				
-				try (Statement st=ConnToDb.conn.createStatement())
-				{
-					st.execute("CREATE TABLE if not exists USERS(idUser INT primary key not null auto_increment,idRuolo VARCHAR(1) NOT NULL DEFAULT 'U',Nome VARCHAR(40),Cognome VARCHAR(40),Email VARCHAR(50) UNIQUE ,pwd VARCHAR(16),descrizione text,DataDiNascita date);"
-							+ "");
-				}
+
 				try(Statement st=ConnToDb.conn.createStatement())
 				{
+					st.execute(CREAUTENTE);
 					st.execute(CREAEDITORE);
 					st.execute(CREAAMMINISTRATORE);
 					st.execute(CREACARTACREDITO);
@@ -121,25 +115,19 @@ public class CreateDefaultDB
 					st.execute(CREAPAGAMENTO);
 					st.execute(CREARIVISTA);
 					st.execute(CREASCRITTORE);
+					st.execute(CREANEGOZIO);
 				}
 				
-				try(Statement st=ConnToDb.conn.createStatement())
-				{
-					st.execute("Create table if not exists NEGOZIO"
-							+ "( idNegozio int not null auto_increment primary key, "
-							+ "nome VARCHAR(100) , via VARCHAR(100),"
-							+ "isValid boolean, isOpen BOOLEAN"
-							+ ")");
-				}
+
 				
 				java.util.logging.Logger.getLogger("Test create db").log(Level.INFO, """ 
 				Connesso a mysql workbench
-				ma non ho torvato il database ispw
+				ma non ho torvato il database ISPW
 				--> Database creato
 				----> tabelle create
 				""");
 				
-				
+
 				if (PopulateDefaultDb.populateDefaultDb()) {
 					java.util.logging.Logger.getLogger("Test create db").log(Level.INFO, "tabella popolata valori default");
 
@@ -167,4 +155,7 @@ public class CreateDefaultDB
 
 
 
+
+
 }
+ */

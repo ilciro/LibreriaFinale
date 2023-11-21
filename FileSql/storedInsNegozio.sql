@@ -1,4 +1,4 @@
-INSERT INTO `ispw`.`negozio`
+INSERT INTO `ISPW`.`NEGOZIO`
 (`nome`,`via`,`isValid`,`isOpen`)
 VALUES
 ("Negozio A","via A",true,false),

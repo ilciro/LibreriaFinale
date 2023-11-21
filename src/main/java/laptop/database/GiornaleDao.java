@@ -47,9 +47,9 @@ public class GiornaleDao {
 	{		
 
 		float prezzo=(float) 0.0;
-		query="select * from giornale where id=?";
+		query="select * from GIORNALE where id=?";
 		
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, g.getId());
@@ -79,9 +79,9 @@ public class GiornaleDao {
 		int rim=i-d;
 		
 				
-		query="update ispw.giornale set copiRim= ? where id=?";
+		query="update GIORNALE set copiRim= ? where id=?";
 		
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, rim);
@@ -96,9 +96,9 @@ public class GiornaleDao {
 	}
 	
 	public  int retId(Giornale g) throws SQLException  {
-		query="select id from giornale where titolo=?";
+		query="select id from GIORNALE where titolo=?";
 		
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setString(1, g.getTitolo());
@@ -127,8 +127,8 @@ public class GiornaleDao {
 
 		
 		
-			query="select * from ispw.giornale";
-			try(Connection conn=ConnToDb.generalConnection();
+			query="select * from GIORNALE";
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query);
 					ResultSet rs=prepQ.executeQuery())
 			{
@@ -153,9 +153,9 @@ public class GiornaleDao {
 	public  Giornale getGiornale(Giornale g) throws SQLException  
 	{
 
-		query="select * from giornale where id=?";
+		query="select * from GIORNALE where id=?";
 		
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, g.getId());
@@ -186,9 +186,9 @@ public class GiornaleDao {
 
 	public  String retTip(Giornale g) throws SQLException  {
 		
-		query="select tipologia from giornale where titolo=? or id=?";
+		query="select tipologia from GIORNALE where titolo=? or id=?";
 		
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setString(1, g.getTitolo());
@@ -211,8 +211,8 @@ public class GiornaleDao {
 	public  String getNome(Giornale g) throws SQLException  
 	{
 		String name = "";
-		query="select titolo from giornale where id=?";
-		try(Connection conn=ConnToDb.generalConnection();
+		query="select titolo from GIORNALE where id=?";
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1,g.getId());
@@ -234,8 +234,8 @@ public class GiornaleDao {
 	public  int getDisp(Giornale g) throws SQLException 
 	{
 
-		query="select disp from giornale where id=?";
-		try(Connection conn=ConnToDb.generalConnection();
+		query="select disp from GIORNALE where id=?";
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, g.getId());
@@ -259,8 +259,8 @@ public class GiornaleDao {
 	{
 		
 
-		query="select copiRim from giornale where id=?";
-		try(Connection conn=ConnToDb.generalConnection();
+		query="select copiRim from GIORNALE where id=?";
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);
 				)
 		{
@@ -281,8 +281,8 @@ public class GiornaleDao {
 
 	public  boolean checkDisp(Giornale g) throws SQLException  
 	{
-		query="select disp from ispw.giornale where id=?";
-			try(Connection conn=ConnToDb.generalConnection();
+		query="select disp from GIORNALE where id=?";
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query);
 					)
 		
@@ -309,9 +309,9 @@ public class GiornaleDao {
 
 		ObservableList<Raccolta> catalogo=FXCollections.observableArrayList();
 		
-		query="select * from giornale";
+		query="select * from GIORNALE";
 		
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			
@@ -340,7 +340,7 @@ public class GiornaleDao {
 		
 
 			
-			query= "INSERT INTO `ispw`.`giornale`"
+			query= "INSERT INTO `GIORNALE`"
 					+ "(`titolo`,"
 					+ "`tipologia`,"
 					+ "`lingua`,"
@@ -351,7 +351,7 @@ public class GiornaleDao {
 					+ "`prezzo`)"
 					+ "VALUES"
 					+ "(?,?,?,?,?,?,?,?)";
-			try(Connection conn=ConnToDb.generalConnection();
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 			
@@ -382,8 +382,8 @@ public class GiornaleDao {
 
 	public  void cancella(Giornale g) throws SQLException  {
 		int row=0;
-		query="delete from giornale where id=?";
-		try(Connection conn=ConnToDb.generalConnection();
+		query="delete from GIORNALE where id=?";
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, g.getId());
@@ -403,8 +403,8 @@ public class GiornaleDao {
 	public ObservableList<Giornale> getGiornaliSingoloById(Giornale g) throws SQLException    {
 
 		ObservableList<Giornale> catalogo=FXCollections.observableArrayList();
-		query="SELECT * FROM ispw.giornale where id=?";
-		try(Connection conn=ConnToDb.generalConnection();
+		query="SELECT * FROM GIORNALE where id=?";
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, g.getId());
@@ -435,9 +435,9 @@ public class GiornaleDao {
 
 		ObservableList<Raccolta> catalogo=FXCollections.observableArrayList();
 		
-		query="select * from giornale where titolo=? or editore=?";
+		query="select * from GIORNALE where titolo=? or editore=?";
 		
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setString(1,s);
@@ -472,7 +472,7 @@ public class GiornaleDao {
 		 int row=0;
 
 
-			query=" UPDATE `ispw`.`giornale`"
+			query=" UPDATE `GIORNALE`"
 					+ "SET"
 					+ "`titolo` =?,"
 					+ "`tipologia` = ?,"
@@ -483,7 +483,7 @@ public class GiornaleDao {
 					+ "`disp` = ?,"
 					+ "`prezzo` = ?"
 					+ "WHERE `id` = ? or id=?";
-			try(Connection conn=ConnToDb.generalConnection();
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 			prepQ.setString(1,g.getTitolo());
@@ -513,10 +513,10 @@ public class GiornaleDao {
 	public   void generaReport() throws IOException, SQLException
 	{
 		FileWriter w;
-		query="select titolo,editore,copiRim,prezzo as totale  from ispw.giornale";
+		query="select titolo,editore,copiRim,prezzo as totale  from GIORNALE";
 		w=new FileWriter("ReportFinale\\riepilogoGiornali.txt");
 		   try (BufferedWriter b=new BufferedWriter (w)){
-			   try(Connection conn=ConnToDb.generalConnection();
+			   try(Connection conn=ConnToDb.ConnectionToDB();
 					   PreparedStatement prepQ=conn.prepareStatement(query))
 			   {
 				  
@@ -527,13 +527,7 @@ public class GiornaleDao {
 
 
 
-				
-
-
 				b.write("Titolo :"+rs.getString(1)+"\t"+"Editore :"+rs.getString(2)+"\t"+"Ricavo totale :" +rs.getInt(3)*rs.getFloat(4)+"\n");
-
-
-
 
 				b.flush();
 
@@ -563,9 +557,9 @@ public class GiornaleDao {
 		
 		int rim=i+d;
 		
-		query="update ispw.giornale set copiRim= ? where titolo= ? or id=?";
+		query="update GIORNALE set copiRim= ? where titolo= ? or id=?";
 		
-			try(Connection conn=ConnToDb.generalConnection();
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				prepQ.setInt(1, rim);
@@ -585,8 +579,8 @@ public class GiornaleDao {
 	public String getTitolo(Giornale g) 
 	{
 		String t="";
-		 query="select titolo from giornale where id=? or id=?";
-		 try(Connection conn=ConnToDb.generalConnection();
+		 query="select titolo from GIORNALE where id=? or id=?";
+		 try(Connection conn=ConnToDb.ConnectionToDB();
 				 PreparedStatement prepQ=conn.prepareStatement(query))
 		 {
 			 prepQ.setInt(1, g.getId());
@@ -608,8 +602,8 @@ public class GiornaleDao {
 
 	public void aggiornaData(Giornale g, Date sqlDate) throws SQLException {
 		int row=0;
-		query="update giornale set dataPubblicazione=? where id=? or id=?  ";
-		try(Connection conn=ConnToDb.generalConnection();
+		query="update GIORNALE set dataPubblicazione=? where id=? or id=?  ";
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setDate(1, sqlDate);

@@ -26,9 +26,9 @@ public class ControllerGestionePage {
 	private static final String RIVISTA=&quot;rivista&quot;;
 
 	public void cancella(int id) throws SQLException {
-<span class="pc bpc" id="L29" title="1 of 2 branches missed.">		if (ControllerSystemState.getInstance().getType().equals(LIBRO)) {</span>
-<span class="fc" id="L30">			l.setId(id);</span>
-<span class="fc" id="L31">			lD.cancella(l);</span>
+<span class="nc bnc" id="L29" title="All 2 branches missed.">		if (ControllerSystemState.getInstance().getType().equals(LIBRO)) {</span>
+<span class="nc" id="L30">			l.setId(id);</span>
+<span class="nc" id="L31">			lD.cancella(l);</span>
 <span class="nc bnc" id="L32" title="All 2 branches missed.">		} else if (ControllerSystemState.getInstance().getType().equals(GIORNALE)) {</span>
 <span class="nc" id="L33">			g.setId(id);</span>
 <span class="nc" id="L34">			gD.cancella(g);</span>
@@ -36,7 +36,7 @@ public class ControllerGestionePage {
 <span class="nc" id="L36">			r.setId(id);</span>
 <span class="nc" id="L37">			rD.cancella(r);</span>
 		}
-<span class="fc" id="L39">	}</span>
+<span class="nc" id="L39">	}</span>
 
 
 	public ObservableList&lt;Raccolta&gt; getLista(String type) throws SQLException {
@@ -61,14 +61,14 @@ public class ControllerGestionePage {
 
 	
 	public ControllerGestionePage()
-<span class="fc" id="L64">	{</span>
-<span class="fc" id="L65">		rD=new RivistaDao();</span>
-<span class="fc" id="L66">		gD=new GiornaleDao();</span>
-<span class="fc" id="L67">		lD=new LibroDao();</span>
-<span class="fc" id="L68">		l=new Libro();</span>
-<span class="fc" id="L69">		g=new Giornale();</span>
-<span class="fc" id="L70">		r=new Rivista();</span>
-<span class="fc" id="L71">	}</span>
+<span class="nc" id="L64">	{</span>
+<span class="nc" id="L65">		rD=new RivistaDao();</span>
+<span class="nc" id="L66">		gD=new GiornaleDao();</span>
+<span class="nc" id="L67">		lD=new LibroDao();</span>
+<span class="nc" id="L68">		l=new Libro();</span>
+<span class="nc" id="L69">		g=new Giornale();</span>
+<span class="nc" id="L70">		r=new Rivista();</span>
+<span class="nc" id="L71">	}</span>
 	public String settaHeader()
 	{
 <span class="nc" id="L74">		String s=null;</span>

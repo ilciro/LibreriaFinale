@@ -1,6 +1,1 @@
-laptop\test\TestGiornale.class
-laptop\test\TestCartaCredito.class
-laptop\test\TestNegozio.class
-laptop\test\TestLibro.class
-laptop\test\TestRivista.class
-laptop\test\TestUser.class
+laptop/test/TestCartaCredito.class

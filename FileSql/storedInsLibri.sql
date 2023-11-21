@@ -1,4 +1,4 @@
-INSERT INTO `ispw`.`libro`
+INSERT INTO `ISPW`.`LIBRO`
 (`titolo`,`numeroPagine`,`Cod_isbn`,`editore`,`autore`,`lingua`,`categoria`,
 `dataPubblicazione`,`recensione`,`copieVendute`,`breveDescrizione`,`disp`,
 `prezzo`,`copieRimanenti`)

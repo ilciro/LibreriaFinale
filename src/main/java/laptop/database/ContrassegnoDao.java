@@ -19,9 +19,9 @@ public class ContrassegnoDao {
 	public void inserisciFattura(Fattura f) throws SQLException 
 	{
 		 
-		query="insert into fattura values (?,?,?,?,?,?)";
+		query="insert into FATTURA values (?,?,?,?,?,?)";
 		 		
- 		try(Connection conn=ConnToDb.generalConnection();
+ 		try(Connection conn=ConnToDb.ConnectionToDB();
  			PreparedStatement prepQ=conn.prepareStatement(query)){
  			
  			prepQ.setString(1, f.getNome());
@@ -48,9 +48,9 @@ public class ContrassegnoDao {
 	public int retUltimoOrdineF() throws SQLException 
 	{
 		int id=0;
-		 query="select count(*) as massimoF from fattura";
+		 query="select count(*) as massimoF from FATTURA";
 		 
-		 try(Connection conn=ConnToDb.generalConnection();
+		 try(Connection conn=ConnToDb.ConnectionToDB();
 				 PreparedStatement prepQ=conn.prepareStatement(query);
 				 )
 		 {
@@ -77,8 +77,8 @@ public class ContrassegnoDao {
 	{
 		boolean state=false;
 		int row;
-		String query1="delete from fattura where id=?";
-		try(Connection conn=ConnToDb.generalConnection();
+		String query1="delete from FATTURA where id=?";
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query1))
 		{
 			prepQ.setInt(1,idC);

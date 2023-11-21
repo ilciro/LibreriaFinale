@@ -1,4 +1,4 @@
-INSERT INTO `ispw`.`rivista`
+INSERT INTO `ISPW`.`RIVISTA`
 (`titolo`,`tipologia`,`autore`,`lingua`,`editore`,`Descrizione`,
 `dataPubblicazione`,`disp`,`prezzo`,`copieRimanenti`)
 VALUES

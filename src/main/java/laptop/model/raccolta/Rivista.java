@@ -29,6 +29,8 @@ public class Rivista implements Raccolta  {
 	private int copieRim;
 	private int id;
 	private String url="C:\\libriScaricati";
+	private final String urlL="/home/daniele/Scrivania/libriScaricati";
+
 	private String [] infoGenerali=new String[5];
 
 	public Rivista(String [] info,String descrizione, LocalDate dataPubb2, int disp, float prezzo, int copieRim,int id) {
@@ -181,7 +183,7 @@ public class Rivista implements Raccolta  {
 	public void scarica() throws IOException {
 		File file=null;
 		File dirToOpen=null;
-		 file = new File(url);
+		 file = new File(urlL);
 		 Desktop desktop=null;
 	      file.mkdir();
 	      
@@ -189,7 +191,7 @@ public class Rivista implements Raccolta  {
 		  desktop = Desktop.getDesktop();
 	        
 	        
-	            dirToOpen = new File(url);
+	            dirToOpen = new File(urlL);
 	            
 					desktop.open(dirToOpen);
 				

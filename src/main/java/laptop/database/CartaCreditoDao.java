@@ -24,11 +24,11 @@ public class CartaCreditoDao {
 	public ObservableList<CartaDiCredito> getCarteCredito(String nome)
 	{
 		String cod;
-		query="select nomeP,cognomeP,codiceCarta from cartacredito where nomeP=?";
+		query="select nomeP,cognomeP,codiceCarta from CARTACREDITO where nomeP=?";
 		
 		ObservableList<CartaDiCredito> catalogo=FXCollections.observableArrayList();
 
-		try(Connection conn=ConnToDb.generalConnection();
+		try(Connection conn=ConnToDb.ConnectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setString(1, nome);
@@ -59,10 +59,10 @@ public class CartaCreditoDao {
 	public void insCC(CartaDiCredito cc)
 	{
 
-		query="insert into cartacredito (nomeP,cognomeP,codiceCarta,scad,codicePin,ammontare)  values(?,?,?,?,?,?)";
+		query="insert into CARTACREDITO (nomeP,cognomeP,codiceCarta,scad,codicePin,ammontare)  values(?,?,?,?,?,?)";
 				 
 		
-			try(Connection conn=ConnToDb.generalConnection();
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				prepQ.setString(1,cc.getNomeUser());
@@ -91,10 +91,10 @@ public class CartaCreditoDao {
 		cog = null;
 		cod = null;
 		
-		query="select nomeP,cognomeP,codiceCarta,scad from cartacredito where codiceCarta=?";
+		query="select nomeP,cognomeP,codiceCarta,scad from CARTACREDITO where codiceCarta=?";
 
 		
-			try(Connection conn=ConnToDb.generalConnection();
+			try(Connection conn=ConnToDb.ConnectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query)){
 				prepQ.setString(1, cc.getNumeroCC());
 				ResultSet rs=prepQ.executeQuery();
