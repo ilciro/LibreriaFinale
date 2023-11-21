@@ -28,8 +28,7 @@ public class Rivista implements Raccolta  {
 	private float prezzo;
 	private int copieRim;
 	private int id;
-	//private String url="C:\\libriScaricati";
-	private final String urlL="/home/daniele/Scrivania/libriScaricati";
+	private static  final String urlL="/home/daniele/Scrivania/libriScaricati";
 
 	private String [] infoGenerali=new String[5];
 
@@ -181,10 +180,10 @@ public class Rivista implements Raccolta  {
 	
 	@Override
 	public void scarica() throws IOException {
-		File file=null;
-		File dirToOpen=null;
+		File file;
+		File dirToOpen;
 		 file = new File(urlL);
-		 Desktop desktop=null;
+		 Desktop desktop;
 	      file.mkdir();
 	      
 	      

@@ -25,8 +25,7 @@ public class Giornale implements Raccolta{
 	private int disponibilita;
 	private float prezzo;
 	private int id;
-	//private String url="C:\\libriScaricati";
-	private final String urlL="/home/daniele/Scrivania/libriScaricati";
+	private static final String urlL="/home/daniele/Scrivania/libriScaricati";
 
 	private String[] infoGenerali=new String[5];
 
@@ -132,8 +131,8 @@ public class Giornale implements Raccolta{
 
 	@Override
 	public void scarica() throws IOException {
-		Desktop desktop=null;
-		File dirToOpen=null;
+		Desktop desktop;
+		File dirToOpen;
 		File file;
 
 

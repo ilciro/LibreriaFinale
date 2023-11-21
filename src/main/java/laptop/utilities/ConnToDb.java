@@ -72,7 +72,7 @@ public class ConnToDb
 		return conn;
 
 	}
-	public static Connection ConnectionToDB()
+	public static Connection connectionToDB()
 	{
 
 
@@ -103,7 +103,7 @@ public class ConnToDb
 
 	public static void creaPopolaDb() throws FileNotFoundException {
 		ConnToDb.generalConnection();
-		ConnToDb.ConnectionToDB();
+		ConnToDb.connectionToDB();
 		boolean statusSys=ConnToDb.getStatusConnSys();
 		boolean statusDb=ConnToDb.getStatusConnDB();
 		boolean status=statusSys&&statusDb;
@@ -118,6 +118,7 @@ public class ConnToDb
 
 		}
 	}
+	private ConnToDb(){}
 
 
 /*
