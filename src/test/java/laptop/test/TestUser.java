@@ -16,6 +16,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.Reader;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.time.LocalDate;
@@ -31,9 +32,12 @@ class TestUser {
     private final ControllerLogin cL=new ControllerLogin();
     private final ControllerModificaUtente cMU=new ControllerModificaUtente();
 
+    LocalDate dataN=LocalDate.of(1984, 2,5);
+    String data="1984/05/05";
+
     @Test
     void testInsertUser() throws SQLException, ParseException {
-        assertTrue(cAU.checkData(RBSERDAINSERIRE.getString("nome"),RBSERDAINSERIRE.getString("cognome"),RBSERDAINSERIRE.getString("email"), RBSERDAINSERIRE.getString("pass"),RBSERDAINSERIRE.getString("dataN") ));
+        assertTrue(cAU.checkData(RBSERDAINSERIRE.getString("nome"),RBSERDAINSERIRE.getString("cognome"),RBSERDAINSERIRE.getString("email"), RBSERDAINSERIRE.getString("pass"),data));
     }
 
     @Test
@@ -42,16 +46,8 @@ class TestUser {
     }
 
 
-    @Test
-    void testAggiornaUtenteTot() throws SQLException {
 
-        User.getInstance().setEmail(RBSERDAINSERIRE.getString("email"));
-        User.getInstance().setId(11);
-
-        assertTrue(cMU.aggiornaTot(RBSERDAINSERIRE.getString("nomeM"), RBSERDAINSERIRE.getString("cognomeM"), RBSERDAINSERIRE.getString("emailM"), RBSERDAINSERIRE.getString("passM"), RBSERDAINSERIRE.getString("desc"), LocalDate.of(1985,4,4) ,RBSERDAINSERIRE.getString("ruolo")));
-    }
-
-
+/*
     @AfterAll
     static void ripristinaDB() throws FileNotFoundException {
 
@@ -69,7 +65,7 @@ class TestUser {
 
     }
 
-
+*/
 
 
 

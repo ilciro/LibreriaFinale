@@ -1,1 +1,1 @@
-drop schema ispw;
+drop schema ISPW;

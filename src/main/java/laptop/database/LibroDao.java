@@ -41,7 +41,7 @@ public class LibroDao  {
 		query=queryL;
 
 		
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);)
 		{
 			
@@ -72,7 +72,7 @@ public class LibroDao  {
 		
 		query="update LIBRO set copieRimanenti=? where  idProd=?";
 		
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, rim);
@@ -95,7 +95,7 @@ public class LibroDao  {
 		ObservableList<Raccolta> catalogo=FXCollections.observableArrayList();
 
 		query="select * from LIBRO";
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);
 				ResultSet rs=prepQ.executeQuery())
 		{
@@ -124,7 +124,7 @@ public class LibroDao  {
 		ObservableList<Raccolta> catalogo=FXCollections.observableArrayList();
 		
 		query="select * from LIBRO where titolo=? or autore=?";
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ= conn.prepareStatement(query);)
 		{
 			prepQ.setString(1, s);
@@ -154,7 +154,7 @@ public class LibroDao  {
 	public Libro getLibro(Libro l) throws SQLException
 	{
 		query=queryL;
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);)
 		{
 			prepQ.setInt(1, l.getId());
@@ -188,7 +188,7 @@ public class LibroDao  {
 	public int retId(Libro l) throws SQLException {
 		int id=0;
 		query="select idProd from LIBRO where Cod_isbn=?";
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);)
 		{
 			prepQ.setString(1, l.getCodIsbn());
@@ -213,7 +213,7 @@ public class LibroDao  {
 		query="select categoria from LIBRO where Cod_isbn=? or idProd=?";
 		String categoria=null;
 		
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);)
 		{
 			prepQ.setString(1, l.getCodIsbn());
@@ -245,7 +245,7 @@ public class LibroDao  {
 		
 		query="update LIBRO set copieVendute=copieVendute+? where Cod_isbn=? ";
 		
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, rim);
@@ -284,7 +284,7 @@ public class LibroDao  {
 						+ "idProd )"
 						+ "VALUES"
 						+ "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-				try(Connection conn=ConnToDb.ConnectionToDB();
+				try(Connection conn=ConnToDb.connectionToDB();
 						PreparedStatement prepQ=conn.prepareStatement(query);)
 				{
 				prepQ.setString(1,l.getTitolo()); 
@@ -321,7 +321,7 @@ public class LibroDao  {
 		query="select * from LIBRO where idProd=?";
 
 		
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);)
 		{
 			prepQ.setInt(1, l.getId());
@@ -352,7 +352,7 @@ public class LibroDao  {
 		int disp=0;
 		query="select disp from LIBRO where idProd=?";
 			
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);
 				
 				)
@@ -385,7 +385,7 @@ public class LibroDao  {
 	{
 		String name=null;
 		query="select titolo from LIBRO where idProd=?";
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);)
 		{
 			prepQ.setInt(1, l.getId());
@@ -405,7 +405,7 @@ public class LibroDao  {
 	{
 		ObservableList<Raccolta> catalogo=FXCollections.observableArrayList();
 		query="select * from LIBRO ";
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);)
 		{
 			
@@ -436,7 +436,7 @@ public class LibroDao  {
 		int row=0;
 		query="delete from LIBRO where idProd=?";
 		
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);)
 		{
 			prepQ.setInt(1, l.getId());
@@ -452,7 +452,7 @@ public class LibroDao  {
 	{
 		query=queryL;
 		ObservableList<Libro> catalogo=FXCollections.observableArrayList();
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);)
 		{
 			prepQ.setInt(1, l.getId());
@@ -507,7 +507,7 @@ public class LibroDao  {
 				+ " `prezzo` = ?,"
 				+ " `copieRimanenti` =?"
 				+ " WHERE `idProd`= ? or idProd=?";
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);)
 		{
 
@@ -546,7 +546,7 @@ public class LibroDao  {
 		   try (BufferedWriter b=new BufferedWriter (w)){
 		
 
-			   try(Connection 	conn = ConnToDb.ConnectionToDB();
+			   try(Connection 	conn = ConnToDb.connectionToDB();
 					   PreparedStatement prepQ=conn.prepareStatement(query);)
 			   {
 		
@@ -588,7 +588,7 @@ public class LibroDao  {
 		
 		
 		
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);)
 		{
 			prepQ.setInt(1, rim);
@@ -610,7 +610,7 @@ public class LibroDao  {
 	{
 		String t="";
 		query="select titolo from LIBRO where idProd=? or idProd=?";
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);)
 		{
 			prepQ.setInt(1, l.getId());
@@ -631,7 +631,7 @@ public class LibroDao  {
 	public void aggiornaData(Libro l, Date sqlDate) throws SQLException {
 		int row=0;
 		query="update LIBRO set dataPubblicazione=? where idProd=? or idProd=?";
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query);)
 		{
 			prepQ.setDate(1, sqlDate);

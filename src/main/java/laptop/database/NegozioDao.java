@@ -29,7 +29,7 @@ public class NegozioDao {
 		query="SELECT  nome,via,isValid,isOpen from NEGOZIO";
 				
 
-			 try(Connection conn= ConnToDb.ConnectionToDB();
+			 try(Connection conn= ConnToDb.connectionToDB();
 			 PreparedStatement prepQ=conn.prepareStatement(query))
 			 {
 	 			ResultSet rs=prepQ.executeQuery();
@@ -54,7 +54,7 @@ public class NegozioDao {
 		query="update NEGOZIO set isOpen =? where nome=?";
 		
 			
-				try(Connection conn= ConnToDb.ConnectionToDB();
+				try(Connection conn= ConnToDb.connectionToDB();
 				 PreparedStatement prepQ=conn.prepareStatement(query))
 				{
 				
@@ -76,7 +76,7 @@ public class NegozioDao {
 	{
 		
 			query="update NEGOZIO set isValid =? where nome=?";
-			try(Connection conn= ConnToDb.ConnectionToDB();
+			try(Connection conn= ConnToDb.connectionToDB();
 					PreparedStatement  prepQ=conn.prepareStatement(query);
 					)
 			{
@@ -99,7 +99,7 @@ public class NegozioDao {
 		int aperto=0;
 		boolean state=false;
 		query="select isOpen from NEGOZIO where nome=?";
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareCall(query))
 		{
 			prepQ.setString(1, shop.getNome());
@@ -128,7 +128,7 @@ public class NegozioDao {
 		boolean state=false;
 		int disp;
 		
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setString(1, shop.getNome());

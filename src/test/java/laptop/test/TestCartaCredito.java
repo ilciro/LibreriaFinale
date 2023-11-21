@@ -5,7 +5,9 @@ import laptop.utilities.ConnToDb;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+
 import java.io.FileNotFoundException;
+
 import java.util.ResourceBundle;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -39,6 +41,8 @@ class TestCartaCredito {
     {
         assertNotNull(cPCC.tornaDalDb(RBPAGAMENTO.getString("numero")));
     }
+
+
 
  
 }

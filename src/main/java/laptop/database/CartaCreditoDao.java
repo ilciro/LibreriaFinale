@@ -28,7 +28,7 @@ public class CartaCreditoDao {
 		
 		ObservableList<CartaDiCredito> catalogo=FXCollections.observableArrayList();
 
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setString(1, nome);
@@ -62,7 +62,7 @@ public class CartaCreditoDao {
 		query="insert into CARTACREDITO (nomeP,cognomeP,codiceCarta,scad,codicePin,ammontare)  values(?,?,?,?,?,?)";
 				 
 		
-			try(Connection conn=ConnToDb.ConnectionToDB();
+			try(Connection conn=ConnToDb.connectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				prepQ.setString(1,cc.getNomeUser());
@@ -94,7 +94,7 @@ public class CartaCreditoDao {
 		query="select nomeP,cognomeP,codiceCarta,scad from CARTACREDITO where codiceCarta=?";
 
 		
-			try(Connection conn=ConnToDb.ConnectionToDB();
+			try(Connection conn=ConnToDb.connectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query)){
 				prepQ.setString(1, cc.getNumeroCC());
 				ResultSet rs=prepQ.executeQuery();

@@ -31,7 +31,7 @@ public class PagamentoDao {
 
 		query="INSERT INTO PAGAMENTO(metodo,esito,nomeUtente,spesaTotale,eMail,tipoAcquisto,idProd) values (?,?,?,?,?,?,?)";
 
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			
@@ -57,7 +57,7 @@ public class PagamentoDao {
 
 			ObservableList<Pagamento> catalogo=FXCollections.observableArrayList();
 			query="SELECT id_op,metodo,esito,nomeUtente,spesaTotale,tipoAcquisto,idProd from PAGAMENTO where eMail=?";
-			try(Connection conn=ConnToDb.ConnectionToDB();
+			try(Connection conn=ConnToDb.connectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 				prepQ.setString(1, User.getInstance().getEmail());
@@ -85,7 +85,7 @@ public class PagamentoDao {
 	{
 		int id=0;
 		query="select count(*) as massimoP from PAGAMENTO";
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			ResultSet rs=prepQ.executeQuery();
@@ -107,7 +107,7 @@ public class PagamentoDao {
 		boolean state=false;
 		int row=0;
 		String query2="delete from PAGAMENTO where id_op=?";
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query2))
 		{
 			prepQ.setInt(1,idC);

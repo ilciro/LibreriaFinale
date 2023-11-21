@@ -21,7 +21,7 @@ public class ContrassegnoDao {
 		 
 		query="insert into FATTURA values (?,?,?,?,?,?)";
 		 		
- 		try(Connection conn=ConnToDb.ConnectionToDB();
+ 		try(Connection conn=ConnToDb.connectionToDB();
  			PreparedStatement prepQ=conn.prepareStatement(query)){
  			
  			prepQ.setString(1, f.getNome());
@@ -50,7 +50,7 @@ public class ContrassegnoDao {
 		int id=0;
 		 query="select count(*) as massimoF from FATTURA";
 		 
-		 try(Connection conn=ConnToDb.ConnectionToDB();
+		 try(Connection conn=ConnToDb.connectionToDB();
 				 PreparedStatement prepQ=conn.prepareStatement(query);
 				 )
 		 {
@@ -78,7 +78,7 @@ public class ContrassegnoDao {
 		boolean state=false;
 		int row;
 		String query1="delete from FATTURA where id=?";
-		try(Connection conn=ConnToDb.ConnectionToDB();
+		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query1))
 		{
 			prepQ.setInt(1,idC);
