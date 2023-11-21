@@ -4,31 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="linux v3">
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="linux v5 add test negozio">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileSql/dropSchema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/FileSql/dropSchema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileSql/export-db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/FileSql/export-db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/CartaCreditoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/CartaCreditoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/ContrassegnoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/ContrassegnoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/LibroDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/LibroDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/NegozioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/NegozioDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/PagamentoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/PagamentoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/UsersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/UsersDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Giornale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Giornale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Libro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Factory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Rivista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Rivista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/utilities/ConnToDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/utilities/ConnToDb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/downloadConfigurationGiornale.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/downloadConfigurationGiornale.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/giornaleDaModificare.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/giornaleDaModificare.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/utente.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/utente.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestCartaCredito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestCartaCredito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestLibro.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestNegozio.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestRivista.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/cartaCredito.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/cartaCredito.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/configInitial.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/downloadConfigurationRivista.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/downloadConfigurationRivista.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/fattura.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/fattura.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/giornaleDaInserire.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/libroDaInserire.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/libroDaInserire.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/libroDaModificare.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/libroDaModificare.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/negozio.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/negozio.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/pagamento.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/pagamento.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/pagamentoInfo.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/pagamentoInfo.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/reportsPath.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/rivistaDAInserire.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/rivistaDaInserire.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/rivistaDaModificare.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/settaOggetto.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/settaOggetto.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/utente.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestUser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,25 +60,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/test&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/daniele/IdeaProjects/LibreriaFinale/src/main/resources/configurations",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/configurations" />
       <recent name="$PROJECT_DIR$/src/test/java/laptop/test" />
       <recent name="$PROJECT_DIR$/FileSql" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/configurations" />
     </key>
   </component>
   <component name="RunManager" selected="Maven.LibreriaMaven [javafx:run]">
@@ -186,7 +184,31 @@
       <option name="project" value="LOCAL" />
       <updated>1700588403685</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="linux v4 add test (carta credito, giornale ed user)">
+      <option name="closed" value="true" />
+      <created>1700593122044</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700593122044</updated>
+    </task>
+    <task id="LOCAL-00007" summary="linux v4 add test (carta credito, giornale ed user)">
+      <option name="closed" value="true" />
+      <created>1700593294577</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700593294577</updated>
+    </task>
+    <task id="LOCAL-00008" summary="linux v5 add test negozio">
+      <option name="closed" value="true" />
+      <created>1700593922638</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700593922638</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -212,7 +234,9 @@
     <MESSAGE value="linux v1" />
     <MESSAGE value="linux v2" />
     <MESSAGE value="linux v3" />
-    <option name="LAST_COMMIT_MESSAGE" value="linux v3" />
+    <MESSAGE value="linux v4 add test (carta credito, giornale ed user)" />
+    <MESSAGE value="linux v5 add test negozio" />
+    <option name="LAST_COMMIT_MESSAGE" value="linux v5 add test negozio" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

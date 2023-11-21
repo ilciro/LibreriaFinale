@@ -208,7 +208,7 @@ public class Rivista implements Raccolta  {
 		
 		    		 
 		  			document = new Document();
-		     			PdfWriter.getInstance(document, new FileOutputStream(rBR.getString("path")));
+		     			PdfWriter.getInstance(document, new FileOutputStream(rBR.getString("pathL")));
 		     			document.open();	
 
 		     			document.add(new Paragraph("""

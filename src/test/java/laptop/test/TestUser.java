@@ -47,7 +47,8 @@ class TestUser {
 
 
 
-/*
+    /*
+
     @AfterAll
     static void ripristinaDB() throws FileNotFoundException {
 

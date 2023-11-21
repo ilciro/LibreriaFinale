@@ -22,6 +22,7 @@ public class Factory {
 	
 	
 	// controlli il tipo
+
 	
 	
 	public String[] createRaccolta1(String titolo,String tipologia,String autore,String lingua,String editore,String categoria,String descrizione)  
