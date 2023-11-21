@@ -28,7 +28,7 @@ public class Rivista implements Raccolta  {
 	private float prezzo;
 	private int copieRim;
 	private int id;
-	private String url="C:\\libriScaricati";
+	//private String url="C:\\libriScaricati";
 	private final String urlL="/home/daniele/Scrivania/libriScaricati";
 
 	private String [] infoGenerali=new String[5];

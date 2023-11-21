@@ -37,7 +37,7 @@ public class Libro implements Raccolta {
 	private String tipologia;
 
 	private int id;
-	private String url="C:\\libriScaricati";
+	//private String url="C:\\libriScaricati";
 	private final String urlL="/home/daniele/Scrivania/libriScaricati";
 
 	public Libro() {	

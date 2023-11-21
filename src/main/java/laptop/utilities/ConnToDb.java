@@ -19,10 +19,10 @@ public class ConnToDb
 	protected static Connection conn = null;
 
 	
-	private static final String connessione="Tentativo di conessione al server..........\\\\n";
+	private static final String CONNESSIONE="Tentativo di conessione al server..........\\\\n";
 
 
-	private static final String errore="Errore in mysql..........\\n";
+	private static final String ERRORE="Errore in mysql..........\\n";
 
 
 	private static final ResourceBundle rB=ResourceBundle.getBundle("configurations/configDb");
@@ -57,14 +57,14 @@ public class ConnToDb
 		try
 		{
 			Class.forName(driver);
-			java.util.logging.Logger.getLogger("Test General connection").log(Level.INFO, connessione);
+			java.util.logging.Logger.getLogger("Test General connection").log(Level.INFO, CONNESSIONE);
 			conn = DriverManager.getConnection(url, user,pwd);
 			java.util.logging.Logger.getLogger("Test General connection standard").log(Level.INFO, "Connesso standard a sys........\n");
 			setStatusConnSys(true);
 		}
 		catch (SQLException | ClassNotFoundException e1)
 		{
-			java.util.logging.Logger.getLogger("Test general connection error").log(Level.INFO, errore, e1);
+			java.util.logging.Logger.getLogger("Test general connection error").log(Level.INFO, ERRORE, e1);
 			setStatusConnSys(false);
 
 		}
@@ -83,14 +83,14 @@ public class ConnToDb
 		try
 		{
 			Class.forName(driver);
-			java.util.logging.Logger.getLogger("Test connection to my db").log(Level.INFO, connessione);
+			java.util.logging.Logger.getLogger("Test connection to my db").log(Level.INFO, CONNESSIONE);
 			conn = DriverManager.getConnection(url, user,pwd);
 			java.util.logging.Logger.getLogger("Test connection to my db").log(Level.INFO, "Connesso standard a ISPW........\n");
 			setStatusConnDB(true);
 		}
 		catch (SQLException | ClassNotFoundException e1)
 		{
-			java.util.logging.Logger.getLogger("TTest connection to my db error").log(Level.INFO, errore, e1);
+			java.util.logging.Logger.getLogger("TTest connection to my db error").log(Level.INFO, ERRORE, e1);
 			setStatusConnDB(false);
 
 		}

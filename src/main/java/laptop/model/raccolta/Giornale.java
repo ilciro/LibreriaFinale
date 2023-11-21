@@ -25,7 +25,7 @@ public class Giornale implements Raccolta{
 	private int disponibilita;
 	private float prezzo;
 	private int id;
-	private String url="C:\\libriScaricati";
+	//private String url="C:\\libriScaricati";
 	private final String urlL="/home/daniele/Scrivania/libriScaricati";
 
 	private String[] infoGenerali=new String[5];
