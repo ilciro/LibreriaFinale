@@ -4,31 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="linux v3">
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="linux v4 add test (carta credito, giornale ed user)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileSql/dropSchema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/FileSql/dropSchema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileSql/export-db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/FileSql/export-db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/CartaCreditoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/CartaCreditoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/ContrassegnoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/ContrassegnoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/LibroDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/LibroDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/NegozioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/NegozioDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/PagamentoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/PagamentoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/UsersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/UsersDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Giornale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Giornale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Libro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Rivista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Rivista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/utilities/ConnToDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/utilities/ConnToDb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/downloadConfigurationGiornale.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/downloadConfigurationGiornale.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/giornaleDaModificare.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/giornaleDaModificare.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/utente.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/utente.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestCartaCredito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestCartaCredito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestLibro.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestNegozio.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestRivista.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/negozio.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/negozio.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestUser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +164,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700588403685</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="linux v4 add test (carta credito, giornale ed user)">
+      <option name="closed" value="true" />
+      <created>1700593122044</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700593122044</updated>
+    </task>
+    <task id="LOCAL-00007" summary="linux v4 add test (carta credito, giornale ed user)">
+      <option name="closed" value="true" />
+      <created>1700593294577</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700593294577</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -212,7 +206,8 @@
     <MESSAGE value="linux v1" />
     <MESSAGE value="linux v2" />
     <MESSAGE value="linux v3" />
-    <option name="LAST_COMMIT_MESSAGE" value="linux v3" />
+    <MESSAGE value="linux v4 add test (carta credito, giornale ed user)" />
+    <option name="LAST_COMMIT_MESSAGE" value="linux v4 add test (carta credito, giornale ed user)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
