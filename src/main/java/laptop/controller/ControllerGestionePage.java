@@ -69,21 +69,24 @@ public class ControllerGestionePage {
 		g=new Giornale();
 		r=new Rivista();
 	}
-	public String settaHeader()
-	{
-		String s=null;
-		if(ControllerSystemState.getInstance().getType().equals(LIBRO))
-		{
-			s="Benvenuto nella schermata dei libri";
-		}
-		else if(ControllerSystemState.getInstance().getType().equals(GIORNALE))
-		{
-			s="Benvenuto nella schermata dei giornali";
-		}
-		else if(ControllerSystemState.getInstance().getType().equals(RIVISTA))
-		{
-			s="Benvenuto nella schermata dele riviste";
+	public String settaHeader(String type) {
+		String s;
+		switch (type) {
+			case LIBRO:
+				s = "Benvenuto nella schermata dei libri";
+				break;
+			case RIVISTA:
+				s = "Benvenuto nella schermata dele riviste";
+				break;
+			case GIORNALE:
+				s = "Benvenuto nella schermata dei giornali";
+				break;
+			default:
+				return "";
 		}
 		return s;
 	}
+
+
+
 }

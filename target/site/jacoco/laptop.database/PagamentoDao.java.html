@@ -83,43 +83,43 @@ import javafx.collections.ObservableList;
 		
 	public int retUltimoOrdinePag() throws SQLException 
 	{
-<span class="fc" id="L86">		int id=0;</span>
-<span class="fc" id="L87">		query=&quot;select count(*) as massimoP from PAGAMENTO&quot;;</span>
-<span class="fc" id="L88">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="fc" id="L89">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="nc" id="L86">		int id=0;</span>
+<span class="nc" id="L87">		query=&quot;select count(*) as massimoP from PAGAMENTO&quot;;</span>
+<span class="nc" id="L88">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="nc" id="L89">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
-<span class="fc" id="L91">			ResultSet rs=prepQ.executeQuery();</span>
-<span class="fc bfc" id="L92" title="All 2 branches covered.">			while ( rs.next() ) {</span>
-<span class="fc" id="L93">				id=rs.getInt(&quot;massimoP&quot;);</span>
+<span class="nc" id="L91">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="nc bnc" id="L92" title="All 2 branches missed.">			while ( rs.next() ) {</span>
+<span class="nc" id="L93">				id=rs.getInt(&quot;massimoP&quot;);</span>
 
 			}
 <span class="nc" id="L96">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L98">						java.util.logging.Logger.getLogger(&quot;ultimo ordine&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="fc" id="L99">		}</span>
+<span class="nc" id="L99">		}</span>
 				
-<span class="fc" id="L101">		return id;</span>
+<span class="nc" id="L101">		return id;</span>
 		
 	}
 
 	public boolean annullaOrdinePag(int idC) throws SQLException
 	{
-<span class="fc" id="L107">		boolean state=false;</span>
-<span class="fc" id="L108">		int row=0;</span>
-<span class="fc" id="L109">		String query2=&quot;delete from PAGAMENTO where id_op=?&quot;;</span>
-<span class="fc" id="L110">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="fc" id="L111">				PreparedStatement prepQ=conn.prepareStatement(query2))</span>
+<span class="nc" id="L107">		boolean state=false;</span>
+<span class="nc" id="L108">		int row=0;</span>
+<span class="nc" id="L109">		String query2=&quot;delete from PAGAMENTO where id_op=?&quot;;</span>
+<span class="nc" id="L110">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="nc" id="L111">				PreparedStatement prepQ=conn.prepareStatement(query2))</span>
 		{
-<span class="fc" id="L113">			prepQ.setInt(1,idC);</span>
-<span class="fc" id="L114">			row=prepQ.executeUpdate();</span>
-<span class="pc bpc" id="L115" title="1 of 2 branches missed.">			if(row==1)</span>
-<span class="fc" id="L116">				state=true;</span>
+<span class="nc" id="L113">			prepQ.setInt(1,idC);</span>
+<span class="nc" id="L114">			row=prepQ.executeUpdate();</span>
+<span class="nc bnc" id="L115" title="All 2 branches missed.">			if(row==1)</span>
+<span class="nc" id="L116">				state=true;</span>
 <span class="nc" id="L117">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L119">						java.util.logging.Logger.getLogger(&quot;annulla ordine&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="fc" id="L120">		}</span>
+<span class="nc" id="L120">		}</span>
 			
-<span class="fc" id="L122">			return state;</span>
+<span class="nc" id="L122">			return state;</span>
 
 		}
 		

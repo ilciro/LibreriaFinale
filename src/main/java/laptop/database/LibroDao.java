@@ -541,7 +541,7 @@ public class LibroDao  {
 	{
 		FileWriter w=null;
 		w=new FileWriter("ReportFinale\\riepilogoLibro.txt");
-		query="select titolo,copieVendute,prezzo as totale from libro";
+		query="select titolo,copieVendute,prezzo as totale from LIBRO";
 		
 		   try (BufferedWriter b=new BufferedWriter (w)){
 		

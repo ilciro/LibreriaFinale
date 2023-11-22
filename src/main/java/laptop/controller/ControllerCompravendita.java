@@ -76,14 +76,17 @@ public class ControllerCompravendita {
 			case LIBRO:
 
 				l.setId(Integer.parseInt(i));
+				checkID(Integer.parseInt(i));
 				status=lD.checkDisp(l);
 				break;
 			case GIORNALE:
 				g.setId(Integer.parseInt(i));
+				checkID(Integer.parseInt(i));
 				status=gD.checkDisp(g);
 				break;
 			case RIVISTA:
 				r.setId(Integer.parseInt(i));
+				checkID(Integer.parseInt(i));
 				status=rD.checkDisp(r);
 				break;
 			default: checkID(Integer.parseInt(i));

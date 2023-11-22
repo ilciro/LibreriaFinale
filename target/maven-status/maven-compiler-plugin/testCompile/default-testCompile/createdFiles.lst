@@ -1,6 +1,9 @@
-laptop/test/TestGiornale.class
-laptop/test/TestLibro.class
-laptop/test/TestUser.class
-laptop/test/TestRivista.class
-laptop/test/TestNegozio.class
-laptop/test/TestCartaCredito.class
+laptop/test/TestControllerAggiungiUtente.class
+laptop/test/TestControllerAggiungiPage.class
+laptop/test/TestControllerBookData.class
+laptop/test/TestControllerPagamentoData.class
+laptop/test/TestControllerAcquista.class
+laptop/test/TestControllerHomePageAllLogins.class
+laptop/test/TestControllerGestionePage.class
+laptop/test/TestControllerCancellaUser.class
+laptop/test/TestControllerCompravendita.class

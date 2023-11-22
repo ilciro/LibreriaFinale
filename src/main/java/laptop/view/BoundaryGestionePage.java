@@ -123,7 +123,7 @@ public class BoundaryGestionePage implements Initializable {
 		
 		
 		cGP=new ControllerGestionePage();
-		header.setText(cGP.settaHeader());
+		header.setText(cGP.settaHeader(vis.getType()));
 		
 		titolo.setCellValueFactory(new PropertyValueFactory<>("titolo"));
 		if(vis.getType().equals("libro") || vis.getType().equals("rivista"))
