@@ -19,7 +19,7 @@ public class ControllerReportPage {
 	protected String fileGiornale ="ReportFinale\\riepilogoGiornali.txt";
 	protected String fileRiviste = "ReportFinale\\riepilogoRiviste.txt";
 	protected String fileUtenti = "ReportFinale\\riepilogoUtenti.txt";
-	private static String eccezione="eccezione ottenuta :.";
+	private static final String eccezione="eccezione ottenuta :.";
 	
 	public void generaReportLibri () throws IOException, SQLException
 	{
@@ -47,6 +47,7 @@ public class ControllerReportPage {
 		gD.generaReport();
 		
 	}
+
 	public String reportTotale()
 	{
 
@@ -70,36 +71,23 @@ public class ControllerReportPage {
 
 
 			}
-			builder.append(reportLibri());
+			reportLibri();
 			builder.append(reportGiornali());
 			builder.append(reportRiviste());
 		}
-		catch(IOException | NullPointerException e)
+		catch(IOException | NullPointerException | SQLException e)
 		{
 			java.util.logging.Logger.getLogger("report utenti").log(Level.SEVERE,eccezione,e);
 
 		}
-
-	return builder.toString();
+        return builder.toString();
 
 	}
-	public String reportLibri() throws IOException {
+	public void  reportLibri() throws IOException, SQLException {
 
-		String line="";
-		StringBuilder builder=new StringBuilder();
-
+		lD.generaReport();
 
 
-		try(BufferedReader reader = new BufferedReader(new FileReader(fileLibro)))
-		{
-			while((line=reader.readLine())!=null)
-			{
-				builder.append(line);
-				builder.append("\n");
-
-			}
-		}
-		return builder.toString();
 	}
 	public String reportRaccolta() throws IOException {
 		String line="";

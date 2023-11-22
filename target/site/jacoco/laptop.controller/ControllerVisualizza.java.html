@@ -35,13 +35,13 @@ public class ControllerVisualizza {
 	public void setID(String i)
 	{		
 		
-<span class="nc" id="L38">		vis.setId(Integer.parseInt(i));</span>
-<span class="nc" id="L39">	}</span>
+<span class="fc" id="L38">		vis.setId(Integer.parseInt(i));</span>
+<span class="fc" id="L39">	}</span>
 	public int getID()
 	{
-<span class="nc" id="L42">		java.util.logging.Logger.getLogger(&quot;Test getId&quot;).log(Level.INFO, &quot;id {0}&quot;,vis.getId());</span>
+<span class="fc" id="L42">		java.util.logging.Logger.getLogger(&quot;Test getId&quot;).log(Level.INFO, &quot;id {0}&quot;,vis.getId());</span>
 
-<span class="nc" id="L44">		return vis.getId();</span>
+<span class="fc" id="L44">		return vis.getId();</span>
 	}
 	public Libro getDataL(int i) throws SQLException
 	{
@@ -53,16 +53,16 @@ public class ControllerVisualizza {
 	public Giornale getDataG(int i) throws SQLException
 	{
 		// imposto che è un libro nel controller
-<span class="nc" id="L56">		vis.setId(i);</span>
-<span class="nc" id="L57">		g.setId(vis.getId());</span>
-<span class="nc" id="L58">		return  gD.getGiornale(g);</span>
+<span class="fc" id="L56">		vis.setId(i);</span>
+<span class="fc" id="L57">		g.setId(vis.getId());</span>
+<span class="fc" id="L58">		return  gD.getGiornale(g);</span>
 	}
 	public Rivista getDataR(int i) throws SQLException
 	{
 		// imposto che è un libro nel controller
-<span class="nc" id="L63">		vis.setId(i);</span>
-<span class="nc" id="L64">		r.setId(vis.getId());</span>
-<span class="nc" id="L65">		return  rD.getRivista(r);</span>
+<span class="fc" id="L63">		vis.setId(i);</span>
+<span class="fc" id="L64">		r.setId(vis.getId());</span>
+<span class="fc" id="L65">		return  rD.getRivista(r);</span>
 	}
 	
 }

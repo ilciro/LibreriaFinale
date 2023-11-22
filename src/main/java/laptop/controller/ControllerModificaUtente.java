@@ -33,7 +33,7 @@ public class ControllerModificaUtente {
 
 
 	
-			if( !n.equals("")  && !n.equals(User.getInstance().getNome()))
+			if(!n.isEmpty() && !n.equals(User.getInstance().getNome()))
 			{
 
 				User.getInstance().setNome(n);
@@ -41,14 +41,14 @@ public class ControllerModificaUtente {
 				state =  true; 
 
 			}
-			if (!c.equals("")  && !c.equals(User.getInstance().getCognome()))
+			if (!c.isEmpty() && !c.equals(User.getInstance().getCognome()))
 			{
 				User.getInstance().setCognome(c);
 				UsersDao.aggiornaCognome(User.getInstance());
 				state =  true; 
 
 			}
-			if(!email.equals("")  && !email.equals(vecchiaMail))
+			if(!email.isEmpty() && !email.equals(vecchiaMail))
 			{
 
 				UsersDao.aggiornaEmail(User.getInstance(),email);
@@ -56,14 +56,14 @@ public class ControllerModificaUtente {
 
 
 			}
-			if(!pass.equals("")  && !pass.equals(User.getInstance().getPassword()))
+			if(!pass.isEmpty() && !pass.equals(User.getInstance().getPassword()))
 			{
 				User.getInstance().setPassword(pass);
 				UsersDao.aggiornaPass(User.getInstance());
 				state =  true; 
 
 			}
-			if(!desc.equals("") && !desc.equals(User.getInstance().getDescrizione()))
+			if(!desc.isEmpty() && !desc.equals(User.getInstance().getDescrizione()))
 			{
 				User.getInstance().setDescrizione(desc);
 				UsersDao.aggiornaDesc(User.getInstance());
@@ -81,11 +81,12 @@ public class ControllerModificaUtente {
 		return state;
 
 	}
-	public boolean aggiornaTot(String n, String c, String email, String pass, String desc, LocalDate localDate, String ruolo) throws SQLException {
+	public boolean aggiornaTot(String n, String c, String email1, String pass, String desc, LocalDate localDate, String ruolo) throws SQLException {
 		uT=prendi();
+		aggiorna(n,c,uT.getEmail(),pass,desc,localDate,email1);
 		uT.setNome(n);
 		uT.setCognome(c);
-		uT.setEmail(email);
+		uT.setEmail(email1);
 		uT.setPassword(pass);
 		uT.setDescrizione(desc);
 		uT.setDataDiNascita(localDate);

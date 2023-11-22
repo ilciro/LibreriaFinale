@@ -27,7 +27,7 @@ public class ControllerRicercaPage {
 	{
 		ObservableList<Raccolta> r = null;
 
-		switch(ControllerSystemState.getInstance().getType())
+		switch(returnType())
 		{
 			case "libro":
 				r= lD.getLibriByName(s);

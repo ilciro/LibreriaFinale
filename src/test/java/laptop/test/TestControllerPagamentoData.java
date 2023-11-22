@@ -32,6 +32,7 @@ class TestControllerPagamentoData {
          vis.setId(Integer.parseInt(RBSETTAOGGETTO.getString("idL")));
          assertDoesNotThrow(()->cCPD.checkPagamentoData(RBSETTAOGGETTO.getString("nomeUser")));
      }
+     /*
     @AfterAll
     static void ripristinaDB() throws FileNotFoundException {
 
@@ -48,5 +49,6 @@ class TestControllerPagamentoData {
         sr.runScript(reader);
 
     }
+    */
 
 }

@@ -12,14 +12,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TestControllerAggiungiUtente {
 
-    private final ResourceBundle RBSERDAINSERIRE=ResourceBundle.getBundle("configurations/userDaInserire");
+    private final ResourceBundle RBSERDAINSERIRE=ResourceBundle.getBundle("configurations/settaOggetto");
 
     private final ControllerAggiungiUtente cAU=new ControllerAggiungiUtente();
 
-    String data="1984/05/05";
+    String data="1990/11/21";
 
     @Test
     void testInsertUser() throws SQLException, ParseException {
-        assertTrue(cAU.checkData(RBSERDAINSERIRE.getString("nome"),RBSERDAINSERIRE.getString("cognome"),RBSERDAINSERIRE.getString("email"), RBSERDAINSERIRE.getString("pass"),data));
+        assertTrue(cAU.checkData(RBSERDAINSERIRE.getString("nomeU"),RBSERDAINSERIRE.getString("cognomeU"),RBSERDAINSERIRE.getString("emailU"), RBSERDAINSERIRE.getString("passU"),data));
     }
 }

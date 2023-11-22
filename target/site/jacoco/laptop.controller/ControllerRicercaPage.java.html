@@ -15,42 +15,42 @@ public class ControllerRicercaPage {
 	private GiornaleDao gD;
 	private RivistaDao rD;
 	public ControllerRicercaPage()
-<span class="nc" id="L18">	{</span>
-<span class="nc" id="L19">		lD = new LibroDao();</span>
-<span class="nc" id="L20">		gD = new GiornaleDao();</span>
-<span class="nc" id="L21">		rD =new RivistaDao();</span>
-<span class="nc" id="L22">		ControllerSystemState.getInstance().setIsSearch(true);</span>
+<span class="fc" id="L18">	{</span>
+<span class="fc" id="L19">		lD = new LibroDao();</span>
+<span class="fc" id="L20">		gD = new GiornaleDao();</span>
+<span class="fc" id="L21">		rD =new RivistaDao();</span>
+<span class="fc" id="L22">		ControllerSystemState.getInstance().setIsSearch(true);</span>
 		
-<span class="nc" id="L24">	}</span>
+<span class="fc" id="L24">	}</span>
 	
 	public ObservableList&lt;Raccolta&gt; cercaPerTipo (String s) throws SQLException
 	{
-<span class="nc" id="L28">		ObservableList&lt;Raccolta&gt; r = null;</span>
+<span class="fc" id="L28">		ObservableList&lt;Raccolta&gt; r = null;</span>
 
-<span class="nc bnc" id="L30" title="All 4 branches missed.">		switch(ControllerSystemState.getInstance().getType())</span>
+<span class="pc bpc" id="L30" title="1 of 4 branches missed.">		switch(returnType())</span>
 		{
 			case &quot;libro&quot;:
-<span class="nc" id="L33">				r= lD.getLibriByName(s);</span>
-<span class="nc" id="L34">				break;</span>
+<span class="fc" id="L33">				r= lD.getLibriByName(s);</span>
+<span class="fc" id="L34">				break;</span>
 			case &quot;giornale&quot;:
-<span class="nc" id="L36">				r=gD.getGiornaliByName(s);</span>
-<span class="nc" id="L37">				break;</span>
+<span class="fc" id="L36">				r=gD.getGiornaliByName(s);</span>
+<span class="fc" id="L37">				break;</span>
 			case &quot;rivista&quot;:
-<span class="nc" id="L39">				r=rD.getRivisteByName(s);</span>
-<span class="nc" id="L40">				break;</span>
+<span class="fc" id="L39">				r=rD.getRivisteByName(s);</span>
+<span class="fc" id="L40">				break;</span>
 <span class="nc" id="L41">			default:return r;</span>
 
 		}
 
 
 		
-<span class="nc" id="L47">		return r;</span>
+<span class="fc" id="L47">		return r;</span>
 		
 	}
 	
 	public String returnType()
 	{
-<span class="nc" id="L53">		return ControllerSystemState.getInstance().getType();</span>
+<span class="fc" id="L53">		return ControllerSystemState.getInstance().getType();</span>
 	}
 	
 	

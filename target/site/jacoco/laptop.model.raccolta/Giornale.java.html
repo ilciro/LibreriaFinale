@@ -134,22 +134,22 @@ public class Giornale implements Raccolta{
 		Desktop desktop;
 		File dirToOpen;
 
-<span class="fc" id="L137">		File file = new File(URLL);</span>
+<span class="nc" id="L137">		File file = new File(URLL);</span>
 
 
 
 
-<span class="fc" id="L142">		desktop = Desktop.getDesktop();</span>
+<span class="nc" id="L142">		desktop = Desktop.getDesktop();</span>
 		
-<span class="fc" id="L144">			dirToOpen = new File(URLL);</span>
+<span class="nc" id="L144">			dirToOpen = new File(URLL);</span>
 
-<span class="fc" id="L146">			desktop.open(dirToOpen);</span>
+<span class="nc" id="L146">			desktop.open(dirToOpen);</span>
 
 		
 
 
 
-<span class="fc" id="L152">	}</span>
+<span class="nc" id="L152">	}</span>
 
 	@Override
 	public void leggi(int i) throws DocumentException, IOException {
@@ -157,14 +157,14 @@ public class Giornale implements Raccolta{
 		
 		
 		
-<span class="fc" id="L160">		 ResourceBundle rBG=ResourceBundle.getBundle(&quot;configurations/downloadConfigurationGiornale&quot;);</span>
+<span class="nc" id="L160">		 ResourceBundle rBG=ResourceBundle.getBundle(&quot;configurations/downloadConfigurationGiornale&quot;);</span>
 
 
-<span class="fc" id="L163">		 document = new Document();</span>
-<span class="fc" id="L164">		 PdfWriter.getInstance(document, new FileOutputStream(rBG.getString(&quot;pathL&quot;)));</span>
-<span class="fc" id="L165">		 document.open();</span>
+<span class="nc" id="L163">		 document = new Document();</span>
+<span class="nc" id="L164">		 PdfWriter.getInstance(document, new FileOutputStream(rBG.getString(&quot;pathL&quot;)));</span>
+<span class="nc" id="L165">		 document.open();</span>
 
-<span class="fc" id="L167">			document.add(new Paragraph(&quot;&quot;&quot;</span>
+<span class="nc" id="L167">			document.add(new Paragraph(&quot;&quot;&quot;</span>
 					Giornale/Daily not avalaible.
 					Integer et semper purus,non finibus augue
 					Interpellates habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
@@ -174,12 +174,12 @@ public class Giornale implements Raccolta{
 					Maecenas id arcu laoreet, tristique felis sit amet,blandit nulla.Phasellus suscipit sed est ut molestie.
 					Maecenas consequat elit diam, eu semper erat porta nec.Etiam ullamcorper neque vitae mollis cursus.
 					&quot;&quot;&quot;));
-<span class="fc" id="L177">			document.close();</span>
+<span class="nc" id="L177">			document.close();</span>
 
 
 
 
-<span class="fc" id="L182">	}</span>
+<span class="nc" id="L182">	}</span>
 
 	public String[] getInfoGenerali() {
 <span class="fc" id="L185">		return infoGenerali;</span>

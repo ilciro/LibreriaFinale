@@ -19,7 +19,7 @@ public class ControllerPassword {
 	{
 		u.setEmail(email);
 		u.setPassword(vecchiaP);
-		if(u.getPassword().equals(vecchiaP) && (nuovaP.length()>=8 || !email.equals("") ) )
+		if(u.getPassword().equals(vecchiaP) && (nuovaP.length()>=8 || !email.isEmpty()) )
 		{
 			
 				u.setPassword(nuovaP);

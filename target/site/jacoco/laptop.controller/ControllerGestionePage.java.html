@@ -26,36 +26,36 @@ public class ControllerGestionePage {
 	private static final String RIVISTA=&quot;rivista&quot;;
 
 	public void cancella(int id) throws SQLException {
-<span class="pc bpc" id="L29" title="1 of 2 branches missed.">		if (ControllerSystemState.getInstance().getType().equals(LIBRO)) {</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">		if (ControllerSystemState.getInstance().getType().equals(LIBRO)) {</span>
 <span class="fc" id="L30">			l.setId(id);</span>
 <span class="fc" id="L31">			lD.cancella(l);</span>
-<span class="nc bnc" id="L32" title="All 2 branches missed.">		} else if (ControllerSystemState.getInstance().getType().equals(GIORNALE)) {</span>
+<span class="pc bpc" id="L32" title="1 of 2 branches missed.">		} else if (ControllerSystemState.getInstance().getType().equals(GIORNALE)) {</span>
 <span class="nc" id="L33">			g.setId(id);</span>
 <span class="nc" id="L34">			gD.cancella(g);</span>
-<span class="nc bnc" id="L35" title="All 2 branches missed.">		} else if (ControllerSystemState.getInstance().getType().equals(RIVISTA)) {</span>
-<span class="nc" id="L36">			r.setId(id);</span>
-<span class="nc" id="L37">			rD.cancella(r);</span>
+<span class="pc bpc" id="L35" title="1 of 2 branches missed.">		} else if (ControllerSystemState.getInstance().getType().equals(RIVISTA)) {</span>
+<span class="fc" id="L36">			r.setId(id);</span>
+<span class="fc" id="L37">			rD.cancella(r);</span>
 		}
 <span class="fc" id="L39">	}</span>
 
 
 	public ObservableList&lt;Raccolta&gt; getLista(String type) throws SQLException {
-<span class="nc" id="L43">		ObservableList&lt;Raccolta&gt; catalogo = FXCollections.observableArrayList();</span>
-<span class="nc bnc" id="L44" title="All 4 branches missed.">		switch (type) {</span>
+<span class="fc" id="L43">		ObservableList&lt;Raccolta&gt; catalogo = FXCollections.observableArrayList();</span>
+<span class="pc bpc" id="L44" title="1 of 4 branches missed.">		switch (type) {</span>
 			case LIBRO:
-<span class="nc" id="L46">				catalogo.addAll(lD.getLibroSingolo());</span>
-<span class="nc" id="L47">				break;</span>
+<span class="fc" id="L46">				catalogo.addAll(lD.getLibroSingolo());</span>
+<span class="fc" id="L47">				break;</span>
 			case GIORNALE:
-<span class="nc" id="L49">				catalogo.addAll( gD.getGiornaleSingolo());</span>
-<span class="nc" id="L50">				break;</span>
+<span class="fc" id="L49">				catalogo.addAll( gD.getGiornaleSingolo());</span>
+<span class="fc" id="L50">				break;</span>
 			case RIVISTA:
-<span class="nc" id="L52">				catalogo.addAll( rD.getRivistaSingolo());</span>
-<span class="nc" id="L53">				break;</span>
+<span class="fc" id="L52">				catalogo.addAll( rD.getRivistaSingolo());</span>
+<span class="fc" id="L53">				break;</span>
 			default:
 <span class="nc" id="L55">				return catalogo;</span>
 
 		}
-<span class="nc" id="L58">		return catalogo;</span>
+<span class="fc" id="L58">		return catalogo;</span>
 	}
 
 
@@ -69,22 +69,25 @@ public class ControllerGestionePage {
 <span class="fc" id="L69">		g=new Giornale();</span>
 <span class="fc" id="L70">		r=new Rivista();</span>
 <span class="fc" id="L71">	}</span>
-	public String settaHeader()
-	{
-<span class="nc" id="L74">		String s=null;</span>
-<span class="nc bnc" id="L75" title="All 2 branches missed.">		if(ControllerSystemState.getInstance().getType().equals(LIBRO))</span>
-		{
-<span class="nc" id="L77">			s=&quot;Benvenuto nella schermata dei libri&quot;;</span>
+	public String settaHeader(String type) {
+		String s;
+<span class="pc bpc" id="L74" title="1 of 4 branches missed.">		switch (type) {</span>
+			case LIBRO:
+<span class="fc" id="L76">				s = &quot;Benvenuto nella schermata dei libri&quot;;</span>
+<span class="fc" id="L77">				break;</span>
+			case RIVISTA:
+<span class="fc" id="L79">				s = &quot;Benvenuto nella schermata dele riviste&quot;;</span>
+<span class="fc" id="L80">				break;</span>
+			case GIORNALE:
+<span class="fc" id="L82">				s = &quot;Benvenuto nella schermata dei giornali&quot;;</span>
+<span class="fc" id="L83">				break;</span>
+			default:
+<span class="nc" id="L85">				return &quot;&quot;;</span>
 		}
-<span class="nc bnc" id="L79" title="All 2 branches missed.">		else if(ControllerSystemState.getInstance().getType().equals(GIORNALE))</span>
-		{
-<span class="nc" id="L81">			s=&quot;Benvenuto nella schermata dei giornali&quot;;</span>
-		}
-<span class="nc bnc" id="L83" title="All 2 branches missed.">		else if(ControllerSystemState.getInstance().getType().equals(RIVISTA))</span>
-		{
-<span class="nc" id="L85">			s=&quot;Benvenuto nella schermata dele riviste&quot;;</span>
-		}
-<span class="nc" id="L87">		return s;</span>
+<span class="fc" id="L87">		return s;</span>
 	}
+
+
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -27,7 +27,7 @@ public class ControllerCheckPagamentoData {
 		
 		Pagamento p;
 		
-		p=new Pagamento(0,"", 0, "utGene",0, null);
+		p=new Pagamento(0,"", 0, "",0, null);
 			
 		//inserire qui
 		p.setMetodo("cash");
@@ -43,6 +43,7 @@ public class ControllerCheckPagamentoData {
 			case "libro":
 			{
 				l.setId(vis.getId());
+				checkID(vis.getId());
 				p.setAmmontare(vis.getSpesaT());
 				p.setId(l.getId());
 				p.setTipo(lD.retTip(l));
@@ -51,6 +52,7 @@ public class ControllerCheckPagamentoData {
 			case "giornale" :
 			{
 				g.setId(vis.getId());
+				checkID(vis.getId());
 				p.setAmmontare(vis.getSpesaT());
 				p.setId(g.getId());
 				p.setTipo(gD.retTip(g));
@@ -59,12 +61,13 @@ public class ControllerCheckPagamentoData {
 			case "rivista":
 			{
 				r.setId(vis.getId());
+				checkID(vis.getId());
 				p.setAmmontare(vis.getSpesaT());
 				p.setId(r.getId());
 				p.setTipo(rD.retTip(r));
 				break;
 			}
-			default: checkID(vis.getId());
+			default: break;
 		}
 
 		

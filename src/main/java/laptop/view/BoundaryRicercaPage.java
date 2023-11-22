@@ -3,6 +3,7 @@ package laptop.view;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 
@@ -84,7 +85,7 @@ public class BoundaryRicercaPage  implements Initializable{
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonV.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource(visualizza));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(visualizza)));
 			stage.setTitle(title);
 			scene = new Scene(root);
 			stage.setScene(scene);
@@ -109,7 +110,7 @@ public class BoundaryRicercaPage  implements Initializable{
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonB.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("ricercaPerTipo.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("ricercaPerTipo.fxml")));
 		stage.setTitle(title);
 		scene = new Scene(root);
 		stage.setScene(scene);

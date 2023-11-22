@@ -267,6 +267,10 @@ INSERT INTO `ISPW`.`USERS` (`idUser`, `idRuolo`, `Nome`, `Cognome`, `Email`, `pw
 INSERT INTO `ISPW`.`USERS` (`idUser`, `idRuolo`, `Nome`, `Cognome`, `Email`, `pwd`, `descrizione`, `DataDiNascita`) VALUES (4, 'U', 'Giulia', 'Conforto', 'giuliaConforto@gmail.eu', '12345678Gc', 'utente semplice', '1998-09-05');
 INSERT INTO `ISPW`.`USERS` (`idUser`, `idRuolo`, `Nome`, `Cognome`, `Email`, `pwd`, `descrizione`, `DataDiNascita`) VALUES (5, 'W', 'Zerocalcare', 'Zerocalcare', 'zerocalcare@gmail.com', 'Zerocalcare21', 'scrittore semplice', '1980-05-20');
 INSERT INTO `ISPW`.`USERS` (`idUser`, `idRuolo`, `Nome`, `Cognome`, `Email`, `pwd`, `descrizione`, `DataDiNascita`) VALUES (6, 'E', 'Bao Publishing', 'Bao Publishing', 'baoPublishing@gmail.com', 'BaoPub2021', 'editore semplice', '1960-11-21');
+INSERT INTO `ISPW`.`USERS` (`idUser`, `idRuolo`, `Nome`, `Cognome`, `Email`, `pwd`, `descrizione`, `DataDiNascita`) VALUES (7, 'U', 'foo user', 'foo user', 'userfoo152@gmail.com', 'foo15us', 'utente foo', '2000-01-05');
+INSERT INTO `ISPW`.`USERS` (`idUser`, `idRuolo`, `Nome`, `Cognome`, `Email`, `pwd`, `descrizione`, `DataDiNascita`) VALUES (8, 'U', 'foo user1', 'foo user1', 'userfoo1521@gmail.com', 'foo151us', 'utente foo1', '2002-08-23');
+
+
 
 COMMIT;
 
