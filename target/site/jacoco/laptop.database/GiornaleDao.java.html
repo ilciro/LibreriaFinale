@@ -469,10 +469,10 @@ public class GiornaleDao {
 	}
 
 	public  void aggiornaGiornale(Giornale g) throws SQLException  {
-<span class="fc" id="L472">		 int row=0;</span>
+<span class="nc" id="L472">		 int row=0;</span>
 
 
-<span class="fc" id="L475">			query=&quot; UPDATE `GIORNALE`&quot;</span>
+<span class="nc" id="L475">			query=&quot; UPDATE `GIORNALE`&quot;</span>
 					+ &quot;SET&quot;
 					+ &quot;`titolo` =?,&quot;
 					+ &quot;`tipologia` = ?,&quot;
@@ -483,32 +483,32 @@ public class GiornaleDao {
 					+ &quot;`disp` = ?,&quot;
 					+ &quot;`prezzo` = ?&quot;
 					+ &quot;WHERE `id` = ? or id=?&quot;;
-<span class="fc" id="L486">			try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="fc" id="L487">					PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="nc" id="L486">			try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="nc" id="L487">					PreparedStatement prepQ=conn.prepareStatement(query))</span>
 			{
-<span class="fc" id="L489">			prepQ.setString(1,g.getTitolo());</span>
-<span class="fc" id="L490">			prepQ.setString(2,g.getTipologia());</span>
-<span class="fc" id="L491">			prepQ.setString(3,g.getLingua());</span>
-<span class="fc" id="L492">			prepQ.setString(4, g.getEditore());</span>
-<span class="fc" id="L493">			prepQ.setString(5,g.getDataPubb().toString());</span>
-<span class="fc" id="L494">			prepQ.setInt(6,g.getCopieRimanenti());</span>
-<span class="fc" id="L495">			prepQ.setInt(7,g.getDisponibilita());</span>
-<span class="fc" id="L496">			prepQ.setFloat(8,g.getPrezzo());</span>
-<span class="fc" id="L497">			prepQ.setInt(9, g.getId());</span>
-<span class="fc" id="L498">			prepQ.setInt(10, vis.getId());</span>
+<span class="nc" id="L489">			prepQ.setString(1,g.getTitolo());</span>
+<span class="nc" id="L490">			prepQ.setString(2,g.getTipologia());</span>
+<span class="nc" id="L491">			prepQ.setString(3,g.getLingua());</span>
+<span class="nc" id="L492">			prepQ.setString(4, g.getEditore());</span>
+<span class="nc" id="L493">			prepQ.setString(5,g.getDataPubb().toString());</span>
+<span class="nc" id="L494">			prepQ.setInt(6,g.getCopieRimanenti());</span>
+<span class="nc" id="L495">			prepQ.setInt(7,g.getDisponibilita());</span>
+<span class="nc" id="L496">			prepQ.setFloat(8,g.getPrezzo());</span>
+<span class="nc" id="L497">			prepQ.setInt(9, g.getId());</span>
+<span class="nc" id="L498">			prepQ.setInt(10, vis.getId());</span>
 
 
 
-<span class="fc" id="L502">			row=prepQ.executeUpdate();</span>
+<span class="nc" id="L502">			row=prepQ.executeUpdate();</span>
 <span class="nc" id="L503">			}catch(SQLException e)</span>
 			{
 <span class="nc" id="L505">							java.util.logging.Logger.getLogger(&quot;update g&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L506">			}</span>
+<span class="nc" id="L506">			}</span>
 
-<span class="fc" id="L508">			java.util.logging.Logger.getLogger(&quot;aggiorna g&quot;).log(Level.INFO,&quot; rows aggiornalte {0}&quot;,row);</span>
+<span class="nc" id="L508">			java.util.logging.Logger.getLogger(&quot;aggiorna g&quot;).log(Level.INFO,&quot; rows aggiornalte {0}&quot;,row);</span>
 
 
-<span class="fc" id="L511">	}	</span>
+<span class="nc" id="L511">	}	</span>
 
 	public   void generaReport() throws IOException, SQLException
 	{

@@ -18,20 +18,20 @@ public class ControllerScegliNegozio {
 <span class="nc" id="L18">	}</span>
 
 	private Negozio n;
-<span class="fc" id="L21">	private ControllerSystemState vis = ControllerSystemState.getInstance() ;</span>
+<span class="nc" id="L21">	private ControllerSystemState vis = ControllerSystemState.getInstance() ;</span>
 
 	
 	public ControllerScegliNegozio()
-<span class="fc" id="L25">	{</span>
-<span class="fc" id="L26">		nD = new NegozioDao();</span>
-<span class="fc" id="L27">		n = new Negozio(); </span>
-<span class="fc" id="L28">	}</span>
+<span class="nc" id="L25">	{</span>
+<span class="nc" id="L26">		nD = new NegozioDao();</span>
+<span class="nc" id="L27">		n = new Negozio(); </span>
+<span class="nc" id="L28">	}</span>
 	
 	public ObservableList&lt;Negozio&gt; getNegozi() throws SQLException
 	{
 		ObservableList&lt;Negozio&gt;listOfNegozi;
-<span class="fc" id="L33">		listOfNegozi = nD.getNegozi();</span>
-<span class="fc" id="L34">		return listOfNegozi;</span>
+<span class="nc" id="L33">		listOfNegozi = nD.getNegozi();</span>
+<span class="nc" id="L34">		return listOfNegozi;</span>
 	}
 	
 	public boolean isLogged()
