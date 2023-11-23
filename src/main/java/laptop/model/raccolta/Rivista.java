@@ -180,22 +180,8 @@ public class Rivista implements Raccolta  {
 	
 	@Override
 	public void scarica() throws IOException {
-		File file;
-		File dirToOpen;
-		 file = new File(URLL);
-		 Desktop desktop;
-	      file.mkdir();
-	      
-	      
-		  desktop = Desktop.getDesktop();
-	        
-	        
-	            dirToOpen = new File(URLL);
-	            
-					desktop.open(dirToOpen);
-				
-	        
-		
+		Desktop desktop = Desktop.getDesktop();
+		desktop.open(new File(URLL));
 	}
 	@Override
 	public void leggi(int i) throws FileNotFoundException, DocumentException {

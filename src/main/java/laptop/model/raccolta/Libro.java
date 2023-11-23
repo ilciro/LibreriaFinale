@@ -38,7 +38,7 @@ public class Libro implements Raccolta {
 
 	private int id;
 
-	private static final String URL="/home/daniele/Scrivania/libriScaricati";
+	private static final String URLL="/home/daniele/Scrivania/libriScaricati";
 
 	public Libro() {	
 
@@ -224,20 +224,8 @@ public class Libro implements Raccolta {
 
 	@Override
 	public void scarica() throws DocumentException, IOException {
-		Desktop desktop=null;
-		File dirToOpen=null;
-		File file;
-
-
-		file = new File(URL);
-		file.mkdir();
-
-
-		desktop = Desktop.getDesktop();
-		
-			dirToOpen = new File(URL);
-
-			desktop.open(dirToOpen);
+		Desktop desktop = Desktop.getDesktop();
+		desktop.open(new File(URLL));
 		
 
 	}

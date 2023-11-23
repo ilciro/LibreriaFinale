@@ -19,7 +19,7 @@ public class ControllerReportPage {
 	protected String fileGiornale ="ReportFinale\\riepilogoGiornali.txt";
 	protected String fileRiviste = "ReportFinale\\riepilogoRiviste.txt";
 	protected String fileUtenti = "ReportFinale\\riepilogoUtenti.txt";
-	private static final String eccezione="eccezione ottenuta :.";
+	private static final String ECCEZIONE="eccezione ottenuta :.";
 	
 	public void generaReportLibri () throws IOException, SQLException
 	{
@@ -77,7 +77,7 @@ public class ControllerReportPage {
 		}
 		catch(IOException | NullPointerException | SQLException e)
 		{
-			java.util.logging.Logger.getLogger("report utenti").log(Level.SEVERE,eccezione,e);
+			java.util.logging.Logger.getLogger("report utenti").log(Level.SEVERE,ECCEZIONE,e);
 
 		}
         return builder.toString();

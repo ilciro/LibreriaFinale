@@ -131,23 +131,9 @@ public class Giornale implements Raccolta{
 
 	@Override
 	public void scarica() throws IOException {
-		Desktop desktop;
-		File dirToOpen;
 
-		File file = new File(URLL);
-
-
-
-
-		desktop = Desktop.getDesktop();
-		
-			dirToOpen = new File(URLL);
-
-			desktop.open(dirToOpen);
-
-		
-
-
+		Desktop desktop = Desktop.getDesktop();
+		desktop.open(new File(URLL));
 
 	}
 
