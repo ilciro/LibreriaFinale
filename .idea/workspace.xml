@@ -4,11 +4,80 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="insert books">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerReportPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerReportPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libriPerSito/Alessandro Coppola - Apocalypse Town.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/Alessandro Coppola - Apocalypse Town.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libriPerSito/Andrea Baranes - Dobbiamo restituire.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/Andrea Baranes - Dobbiamo restituire.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libriPerSito/Ariel Toaff, Elio Toaff - Zohar. Il libro dello splendore.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/Ariel Toaff, Elio Toaff - Zohar. Il libro dello splendore.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libriPerSito/Come i servizi segreti usano i media - Aldo Giannuli.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/Come i servizi segreti usano i media - Aldo Giannuli.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libriPerSito/Donald Davidson - Sulla verita (2006).pdf" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/Donald Davidson - Sulla verita (2006).pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libriPerSito/eragon.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/eragon.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Giornale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Giornale.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Libro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Rivista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Rivista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/downloadConfiguration.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/downloadConfiguration.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/downloadConfigurationGiornale.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/downloadConfigurationGiornale.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/downloadConfigurationRivista.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/downloadConfigurationRivista.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerReportPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerReportPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerScegliNegozio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerScegliNegozio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/downloadConfiguration.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/downloadConfiguration.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/downloadConfigurationGiornale.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/downloadConfigurationGiornale.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/downloadConfigurationRivista.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/downloadConfigurationRivista.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Giornale.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Giornale.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Libro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Libro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Rivista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Rivista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/configurations/downloadConfiguration.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/configurations/downloadConfiguration.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/configurations/downloadConfigurationGiornale.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/configurations/downloadConfigurationGiornale.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/configurations/downloadConfigurationRivista.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/configurations/downloadConfigurationRivista.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Giornale.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Giornale.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Libro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Libro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Rivista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Rivista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-LibreriaMaven.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerReportPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerReportPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerReportPage.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerReportPage.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/UsersDao.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/UsersDao.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/UsersDao.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/UsersDao.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Giornale.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Giornale.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Libro.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Libro.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Rivista.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Rivista.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/TempUser$RuoliT.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/TempUser$RuoliT.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/TempUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/TempUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/TempUser.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/TempUser.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerAcquista.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerAcquista.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerAggiungiPage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerAggiungiPage.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerAggiungiUtente.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerAggiungiUtente.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerBookData.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerBookData.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerCancellaUser.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerCancellaUser.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerCompravendita.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerCompravendita.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerGestionePage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerGestionePage.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerHomePageAllLogins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerHomePageAllLogins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerLogin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerLogin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerModifPage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerModifPage.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerAcquista.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerAcquista.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerAggiungiPage.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerAggiungiPage.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerAggiungiUtente.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerAggiungiUtente.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerBookData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerBookData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerCancellaUser.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerCancellaUser.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerCompravendita.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerCompravendita.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerGestionePage.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerGestionePage.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerHomePageAllLogins.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerHomePageAllLogins.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerLogin.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerLogin.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerModifPage.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerModifPage.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerModificaUtente.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerModificaUtente.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerPagamentoCash.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerPagamentoCash.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/laptop/test/TestControllerReportPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/laptop/test/TestControllerReportPage.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +288,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700657813525</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="linux v8 modifed operation scarica for Libro,Rivista,Giornale">
+      <option name="closed" value="true" />
+      <created>1700761036493</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700761036493</updated>
+    </task>
+    <task id="LOCAL-00012" summary="insert books">
+      <option name="closed" value="true" />
+      <created>1700845426872</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1700845426872</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -248,7 +333,9 @@
     <MESSAGE value="linux v4 add test (carta credito, giornale ed user)" />
     <MESSAGE value="linux v5 add test negozio" />
     <MESSAGE value="linux v6 test libro and rivista" />
-    <option name="LAST_COMMIT_MESSAGE" value="linux v6 test libro and rivista" />
+    <MESSAGE value="linux v8 modifed operation scarica for Libro,Rivista,Giornale" />
+    <MESSAGE value="insert books" />
+    <option name="LAST_COMMIT_MESSAGE" value="insert books" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: laptop.test.TestControllerAcquista
 -------------------------------------------------------------------------------
-Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.413 s - in laptop.test.TestControllerAcquista
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 29.892 s - in laptop.test.TestControllerAcquista

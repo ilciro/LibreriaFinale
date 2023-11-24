@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import laptop.utilities.ConnToDb;
 import laptop.model.Fattura;
 
-<span class="nc" id="L12">public class ContrassegnoDao {</span>
+<span class="fc" id="L12">public class ContrassegnoDao {</span>
 	
 	private  static  final String ECCEZIONE=&quot;eccezione ottenuta:&quot;;
 	private String query;
@@ -19,30 +19,30 @@ import laptop.model.Fattura;
 	public void inserisciFattura(Fattura f) throws SQLException 
 	{
 		 
-<span class="nc" id="L22">		query=&quot;insert into FATTURA values (?,?,?,?,?,?)&quot;;</span>
+<span class="fc" id="L22">		query=&quot;insert into FATTURA values (?,?,?,?,?,?)&quot;;</span>
 		 		
-<span class="nc" id="L24"> 		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L25"> 			PreparedStatement prepQ=conn.prepareStatement(query)){</span>
+<span class="fc" id="L24"> 		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L25"> 			PreparedStatement prepQ=conn.prepareStatement(query)){</span>
  			
-<span class="nc" id="L27"> 			prepQ.setString(1, f.getNome());</span>
-<span class="nc" id="L28"> 			prepQ.setString(2, f.getCognome());</span>
-<span class="nc" id="L29"> 			prepQ.setString(3, f.getVia());</span>
-<span class="nc" id="L30"> 			prepQ.setString(4,f.getCom());</span>
-<span class="nc" id="L31"> 			prepQ.setInt(5, 0);</span>
-<span class="nc" id="L32"> 			prepQ.setFloat(6,f.getAmmontare());</span>
-<span class="nc" id="L33"> 			prepQ.execute();</span>
+<span class="fc" id="L27"> 			prepQ.setString(1, f.getNome());</span>
+<span class="fc" id="L28"> 			prepQ.setString(2, f.getCognome());</span>
+<span class="fc" id="L29"> 			prepQ.setString(3, f.getVia());</span>
+<span class="fc" id="L30"> 			prepQ.setString(4,f.getCom());</span>
+<span class="fc" id="L31"> 			prepQ.setInt(5, 0);</span>
+<span class="fc" id="L32"> 			prepQ.setFloat(6,f.getAmmontare());</span>
+<span class="fc" id="L33"> 			prepQ.execute();</span>
  			
  			 
 <span class="nc" id="L36"> 		}catch(SQLException e)</span>
  		{
 <span class="nc" id="L38"> 			java.util.logging.Logger.getLogger(&quot;insert fattura&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="nc" id="L39"> 		}</span>
+<span class="fc" id="L39"> 		}</span>
        
 		 
 
          
         	 
-<span class="nc" id="L45">	}  </span>
+<span class="fc" id="L45">	}  </span>
 	
 
 	public int retUltimoOrdineF() throws SQLException 

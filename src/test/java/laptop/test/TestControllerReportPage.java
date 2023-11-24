@@ -14,10 +14,16 @@ class TestControllerReportPage {
      private final ControllerReportPage cRP=new ControllerReportPage();
 
      @Test
-    void testReportTotale() throws IOException, SQLException {
+    void testGeneraReportTotale() throws IOException, SQLException {
          cRP.generaReportGiornali();
          cRP.generaReportLibri();
          cRP.generaReportRiviste();
+         cRP.getUtenti();
         assertNotNull(cRP.reportRaccolta());
+     }
+     @Test
+    void testReportTotale()
+     {
+         assertNotNull(cRP.reportTotale());
      }
 }

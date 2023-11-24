@@ -25,7 +25,7 @@ public class Giornale implements Raccolta{
 	private int disponibilita;
 	private float prezzo;
 	private int id;
-	private static final String URLL=&quot;/home/daniele/Scrivania/libriScaricati&quot;;
+	private static final String URLL=&quot;/home/daniele/Scaricati/libriPerSito/&quot;;
 
 <span class="fc" id="L30">	private String[] infoGenerali=new String[5];</span>
 
@@ -131,25 +131,11 @@ public class Giornale implements Raccolta{
 
 	@Override
 	public void scarica() throws IOException {
-		Desktop desktop;
-		File dirToOpen;
 
-<span class="nc" id="L137">		File file = new File(URLL);</span>
+<span class="fc" id="L135">		Desktop desktop = Desktop.getDesktop();</span>
+<span class="fc" id="L136">		desktop.open(new File(URLL));</span>
 
-
-
-
-<span class="nc" id="L142">		desktop = Desktop.getDesktop();</span>
-		
-<span class="nc" id="L144">			dirToOpen = new File(URLL);</span>
-
-<span class="nc" id="L146">			desktop.open(dirToOpen);</span>
-
-		
-
-
-
-<span class="nc" id="L152">	}</span>
+<span class="fc" id="L138">	}</span>
 
 	@Override
 	public void leggi(int i) throws DocumentException, IOException {
@@ -157,14 +143,14 @@ public class Giornale implements Raccolta{
 		
 		
 		
-<span class="nc" id="L160">		 ResourceBundle rBG=ResourceBundle.getBundle(&quot;configurations/downloadConfigurationGiornale&quot;);</span>
+<span class="fc" id="L146">		 ResourceBundle rBG=ResourceBundle.getBundle(&quot;configurations/downloadConfigurationGiornale&quot;);</span>
 
 
-<span class="nc" id="L163">		 document = new Document();</span>
-<span class="nc" id="L164">		 PdfWriter.getInstance(document, new FileOutputStream(rBG.getString(&quot;pathL&quot;)));</span>
-<span class="nc" id="L165">		 document.open();</span>
+<span class="fc" id="L149">		 document = new Document();</span>
+<span class="fc" id="L150">		 PdfWriter.getInstance(document, new FileOutputStream(rBG.getString(&quot;pathL&quot;)));</span>
+<span class="fc" id="L151">		 document.open();</span>
 
-<span class="nc" id="L167">			document.add(new Paragraph(&quot;&quot;&quot;</span>
+<span class="fc" id="L153">			document.add(new Paragraph(&quot;&quot;&quot;</span>
 					Giornale/Daily not avalaible.
 					Integer et semper purus,non finibus augue
 					Interpellates habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
@@ -174,20 +160,20 @@ public class Giornale implements Raccolta{
 					Maecenas id arcu laoreet, tristique felis sit amet,blandit nulla.Phasellus suscipit sed est ut molestie.
 					Maecenas consequat elit diam, eu semper erat porta nec.Etiam ullamcorper neque vitae mollis cursus.
 					&quot;&quot;&quot;));
-<span class="nc" id="L177">			document.close();</span>
+<span class="fc" id="L163">			document.close();</span>
 
 
 
 
-<span class="nc" id="L182">	}</span>
+<span class="fc" id="L168">	}</span>
 
 	public String[] getInfoGenerali() {
-<span class="fc" id="L185">		return infoGenerali;</span>
+<span class="fc" id="L171">		return infoGenerali;</span>
 	}
 
 	public void setInfoGenerali(String[] infoGenerali) {
-<span class="fc" id="L189">		this.infoGenerali = infoGenerali;</span>
-<span class="fc" id="L190">	}</span>
+<span class="fc" id="L175">		this.infoGenerali = infoGenerali;</span>
+<span class="fc" id="L176">	}</span>
 
 
 	

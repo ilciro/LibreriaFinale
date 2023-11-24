@@ -6,6 +6,7 @@ laptop/test/TestControllerPagamentoCash.class
 laptop/test/TestControllerCancellaUser.class
 laptop/test/TestControllerCompravendita.class
 laptop/test/TestControllerAggiungiUtente.class
+laptop/test/TestLibro.class
 laptop/test/TestControllerScegliNegozio.class
 laptop/test/TestControllerPagamentoCC.class
 laptop/test/TestControllerRegistraUtente.class
@@ -14,6 +15,7 @@ laptop/test/TestControllerBookData.class
 laptop/test/TestControllerPagamentoData.class
 laptop/test/TestControllerVisualizza.class
 laptop/test/TestControllerAcquista.class
+laptop/test/TestControllerDownload.class
 laptop/test/TestControllerHomePageAllLogins.class
 laptop/test/TestControllerGestionePage.class
 laptop/test/TestControllerModifPage.class
