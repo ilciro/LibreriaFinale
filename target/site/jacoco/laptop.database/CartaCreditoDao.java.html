@@ -12,7 +12,7 @@ import laptop.utilities.ConnToDb;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-<span class="nc" id="L15">public class CartaCreditoDao {</span>
+<span class="fc" id="L15">public class CartaCreditoDao {</span>
 
 	private  String n;
 	private  String cog;
@@ -59,28 +59,28 @@ import javafx.collections.ObservableList;
 	public void insCC(CartaDiCredito cc)
 	{
 
-<span class="nc" id="L62">		query=&quot;insert into CARTACREDITO (nomeP,cognomeP,codiceCarta,scad,codicePin,ammontare)  values(?,?,?,?,?,?)&quot;;</span>
+<span class="fc" id="L62">		query=&quot;insert into CARTACREDITO (nomeP,cognomeP,codiceCarta,scad,codicePin,ammontare)  values(?,?,?,?,?,?)&quot;;</span>
 				 
 		
-<span class="nc" id="L65">			try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L66">					PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="fc" id="L65">			try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L66">					PreparedStatement prepQ=conn.prepareStatement(query))</span>
 			{
-<span class="nc" id="L68">				prepQ.setString(1,cc.getNomeUser());</span>
-<span class="nc" id="L69">				prepQ.setString(2, cc.getCognomeUser());</span>
-<span class="nc" id="L70">				prepQ.setString(3, cc.getNumeroCC());</span>
-<span class="nc" id="L71">				prepQ.setDate(4, (Date) cc.getScadenza());</span>
-<span class="nc" id="L72">				prepQ.setString(5,cc.getCiv());</span>
+<span class="fc" id="L68">				prepQ.setString(1,cc.getNomeUser());</span>
+<span class="fc" id="L69">				prepQ.setString(2, cc.getCognomeUser());</span>
+<span class="fc" id="L70">				prepQ.setString(3, cc.getNumeroCC());</span>
+<span class="fc" id="L71">				prepQ.setDate(4, (Date) cc.getScadenza());</span>
+<span class="fc" id="L72">				prepQ.setString(5,cc.getCiv());</span>
 				//in alternativa vis.getSpesa
-<span class="nc" id="L74">				prepQ.setFloat(6, cc.getPrezzoTransazine());</span>
-<span class="nc" id="L75">				prepQ.executeLargeUpdate();</span>
+<span class="fc" id="L74">				prepQ.setFloat(6, cc.getPrezzoTransazine());</span>
+<span class="fc" id="L75">				prepQ.executeLargeUpdate();</span>
 <span class="nc" id="L76">			}catch(SQLException e)</span>
 			{
 <span class="nc" id="L78">				java.util.logging.Logger.getLogger(&quot;report libro&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta .&quot;,e);</span>
 
-<span class="nc" id="L80">			}</span>
+<span class="fc" id="L80">			}</span>
 
 
-<span class="nc" id="L83">	}</span>
+<span class="fc" id="L83">	}</span>
 
 	
 	public CartaDiCredito  popolaDati(CartaDiCredito cc)

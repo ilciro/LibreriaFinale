@@ -21,7 +21,7 @@ import laptop.model.raccolta.Rivista;
 
 public class ControllerDownload {
 	private String nrOrdine;
-<span class="nc" id="L24">	private ControllerSystemState vis=ControllerSystemState.getInstance();</span>
+<span class="fc" id="L24">	private ControllerSystemState vis=ControllerSystemState.getInstance();</span>
 	private ContrassegnoDao cDao;
 	private PagamentoDao pDao;
 	private LibroDao lD;
@@ -87,45 +87,45 @@ public class ControllerDownload {
 		
 <span class="nc" id="L88">	}</span>
 	public void scarica(String type) throws  IOException, URISyntaxException,  DocumentException {
-<span class="nc bnc" id="L90" title="All 4 branches missed.">		switch (type)</span>
+<span class="pc bpc" id="L90" title="1 of 4 branches missed.">		switch (type)</span>
 		{
 			case &quot;libro&quot;:
 			{
-<span class="nc" id="L94">				l.setId(vis.getId());</span>
-<span class="nc" id="L95">				l.scarica();</span>
-<span class="nc" id="L96">				l.leggi(vis.getId());</span>
-<span class="nc" id="L97">				break;</span>
+<span class="fc" id="L94">				l.setId(vis.getId());</span>
+<span class="fc" id="L95">				l.scarica();</span>
+<span class="fc" id="L96">				l.leggi(vis.getId());</span>
+<span class="fc" id="L97">				break;</span>
 			}
 			case &quot;giornale&quot;:
 			{
-<span class="nc" id="L101">				g.setId(vis.getId());</span>
-<span class="nc" id="L102">				g.scarica();</span>
-<span class="nc" id="L103">				g.leggi(vis.getId());</span>
-<span class="nc" id="L104">				break;</span>
+<span class="fc" id="L101">				g.setId(vis.getId());</span>
+<span class="fc" id="L102">				g.scarica();</span>
+<span class="fc" id="L103">				g.leggi(vis.getId());</span>
+<span class="fc" id="L104">				break;</span>
 			}
 			case &quot;rivista&quot;:
 			{
-<span class="nc" id="L108">				r.setId(vis.getId());</span>
-<span class="nc" id="L109">				r.scarica();</span>
-<span class="nc" id="L110">				r.leggi(vis.getId());</span>
-<span class="nc" id="L111">				break;</span>
+<span class="fc" id="L108">				r.setId(vis.getId());</span>
+<span class="fc" id="L109">				r.scarica();</span>
+<span class="fc" id="L110">				r.leggi(vis.getId());</span>
+<span class="fc" id="L111">				break;</span>
 			}
 			default:break;
 		}
-<span class="nc" id="L115">	}</span>
+<span class="fc" id="L115">	}</span>
 
 
-<span class="nc" id="L118">	public ControllerDownload() {</span>
-<span class="nc" id="L119">		this.setNrOrdine(UUID.randomUUID().toString());</span>
-<span class="nc" id="L120">		l = new Libro();</span>
-<span class="nc" id="L121">		cDao=new ContrassegnoDao();</span>
-<span class="nc" id="L122">		pDao=new PagamentoDao();</span>
-<span class="nc" id="L123">		lD=new LibroDao();</span>
-<span class="nc" id="L124">		g=new Giornale();</span>
-<span class="nc" id="L125">		gD=new GiornaleDao();</span>
-<span class="nc" id="L126">		r=new Rivista();</span>
-<span class="nc" id="L127">		rD=new RivistaDao();</span>
-<span class="nc" id="L128">	}</span>
+<span class="fc" id="L118">	public ControllerDownload() {</span>
+<span class="fc" id="L119">		this.setNrOrdine(UUID.randomUUID().toString());</span>
+<span class="fc" id="L120">		l = new Libro();</span>
+<span class="fc" id="L121">		cDao=new ContrassegnoDao();</span>
+<span class="fc" id="L122">		pDao=new PagamentoDao();</span>
+<span class="fc" id="L123">		lD=new LibroDao();</span>
+<span class="fc" id="L124">		g=new Giornale();</span>
+<span class="fc" id="L125">		gD=new GiornaleDao();</span>
+<span class="fc" id="L126">		r=new Rivista();</span>
+<span class="fc" id="L127">		rD=new RivistaDao();</span>
+<span class="fc" id="L128">	}</span>
 
 
 
@@ -146,8 +146,8 @@ public class ControllerDownload {
 
 
 	public void setNrOrdine(String nrOrdine) {
-<span class="nc" id="L149">		this.nrOrdine = nrOrdine;</span>
-<span class="nc" id="L150">	}</span>
+<span class="fc" id="L149">		this.nrOrdine = nrOrdine;</span>
+<span class="fc" id="L150">	}</span>
 	
 	public void incrementaLibri() throws SQLException
 	{

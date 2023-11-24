@@ -19,7 +19,7 @@ public class ControllerReportPage {
 <span class="fc" id="L19">	protected String fileGiornale =&quot;ReportFinale\\riepilogoGiornali.txt&quot;;</span>
 <span class="fc" id="L20">	protected String fileRiviste = &quot;ReportFinale\\riepilogoRiviste.txt&quot;;</span>
 <span class="fc" id="L21">	protected String fileUtenti = &quot;ReportFinale\\riepilogoUtenti.txt&quot;;</span>
-	private static final String eccezione=&quot;eccezione ottenuta :.&quot;;
+	private static final String ECCEZIONE=&quot;eccezione ottenuta :.&quot;;
 	
 	public void generaReportLibri () throws IOException, SQLException
 	{
@@ -77,7 +77,7 @@ public class ControllerReportPage {
 		}
 <span class="nc" id="L78">		catch(IOException | NullPointerException | SQLException e)</span>
 		{
-<span class="nc" id="L80">			java.util.logging.Logger.getLogger(&quot;report utenti&quot;).log(Level.SEVERE,eccezione,e);</span>
+<span class="nc" id="L80">			java.util.logging.Logger.getLogger(&quot;report utenti&quot;).log(Level.SEVERE,ECCEZIONE,e);</span>
 
 <span class="nc" id="L82">		}</span>
 <span class="nc" id="L83">        return builder.toString();</span>

@@ -6,9 +6,9 @@ import java.util.logging.Level;
 import laptop.database.UsersDao;
 import laptop.model.User;
 
-<span class="nc" id="L9">public class ControllerLogin {</span>
+<span class="fc" id="L9">public class ControllerLogin {</span>
 	
-<span class="nc" id="L11">	private  User user = User.getInstance();</span>
+<span class="fc" id="L11">	private  User user = User.getInstance();</span>
 	protected boolean esito;
 
 	
@@ -17,10 +17,10 @@ import laptop.model.User;
 		
 		
 		
-<span class="nc" id="L20">			user.setEmail(m);</span>
-<span class="nc" id="L21">			user.setPassword(p);</span>
+<span class="fc" id="L20">			user.setEmail(m);</span>
+<span class="fc" id="L21">			user.setPassword(p);</span>
 			
-<span class="nc bnc" id="L23" title="All 2 branches missed.">			 if (UsersDao.checkUser(user) == 1)</span>
+<span class="pc bpc" id="L23" title="1 of 2 branches missed.">			 if (UsersDao.checkUser(user) == 1)</span>
 			{
 				// utente trovato
 				// vai col login
@@ -39,7 +39,7 @@ import laptop.model.User;
 <span class="nc" id="L39">				 esito=false;</span>
 			 }
 			
-<span class="nc" id="L42">			return esito;</span>
+<span class="fc" id="L42">			return esito;</span>
 
 		
 	}
