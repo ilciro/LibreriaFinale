@@ -1,5 +1,6 @@
 laptop/test/TestControllerPassword.class
 laptop/test/TestControllerAggiungiPage.class
+laptop/test/TestWeb.class
 laptop/test/TestControllerVisualizzaOrdine.class
 laptop/test/TestControllerRicercaPage.class
 laptop/test/TestControllerPagamentoCash.class

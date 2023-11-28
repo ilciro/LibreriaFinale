@@ -2,6 +2,7 @@ package laptop.view;
 
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
+import java.time.Duration;
 import java.util.Objects;
 import java.util.logging.Level;
 
@@ -11,6 +12,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import laptop.utilities.ConnToDb;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 
 public class Main  extends Application {
@@ -38,33 +42,28 @@ public class Main  extends Application {
 
 	}
 
-	public static void main(String[] args)  {
+	public static void main(String[] args) {
 		//uso status per vedere se trigger creati
-		 
-		
 
-		
+
 		try {
 
 			ConnToDb.creaPopolaDb();
-			
+
 
 		} catch (FileNotFoundException eFile) {
-			java.util.logging.Logger.getLogger("crwa db").log(Level.SEVERE,"\n eccezione ottenuta .",eFile);
+			java.util.logging.Logger.getLogger("crwa db").log(Level.SEVERE, "\n eccezione ottenuta .", eFile);
 
 		}
-			
-		
-	
-		
+
 
 		launch(args);
-		
-		
-		
-		    	
-		
+
 	}
+
+
+
+
 		
 	
 }
