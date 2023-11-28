@@ -18,6 +18,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/downloadConfiguration.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/downloadConfiguration.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/downloadConfigurationGiornale.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/downloadConfigurationGiornale.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/downloadConfigurationRivista.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/downloadConfigurationRivista.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerAcquista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerAcquista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerReportPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerReportPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerScegliNegozio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerScegliNegozio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven.war" afterDir="false" />
@@ -50,6 +51,8 @@
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Giornale.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Giornale.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Libro.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Libro.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Rivista.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model.raccolta/Rivista.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/Negozio.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/Negozio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/Negozio.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/Negozio.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/TempUser$RuoliT.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/TempUser$RuoliT.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/TempUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/TempUser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.model/TempUser.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.model/TempUser.java.html" afterDir="false" />
@@ -77,7 +80,9 @@
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerModifPage.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerModifPage.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerModificaUtente.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerModificaUtente.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerPagamentoCash.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerPagamentoCash.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/laptop/test/TestControllerAcquista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/laptop/test/TestControllerAcquista.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/laptop/test/TestControllerReportPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/laptop/test/TestControllerReportPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/laptop/test/TestControllerScegliNegozio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/laptop/test/TestControllerScegliNegozio.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,7 +309,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700845426872</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="insert books">
+      <option name="closed" value="true" />
+      <created>1701192880190</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701192880190</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="UnknownFeatures">
