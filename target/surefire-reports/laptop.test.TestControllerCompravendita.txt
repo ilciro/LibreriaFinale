@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: laptop.test.TestControllerCompravendita
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.985 s - in laptop.test.TestControllerCompravendita
+<<<<<<<<< Temporary merge branch 1
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.386 s - in laptop.test.TestControllerCompravendita
+=========
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.343 s - in laptop.test.TestControllerCompravendita
+>>>>>>>>> Temporary merge branch 2
