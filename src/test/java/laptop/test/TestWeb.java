@@ -13,10 +13,16 @@ class TestWeb {
 
 
          WebDriver driver = new ChromeDriver();
+         driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
 
+         /*
          driver.get("https://google.com");
 
          driver.findElement(By.id("L2AGLb")).click();
+
+          */
+
+
      }
 
 }
