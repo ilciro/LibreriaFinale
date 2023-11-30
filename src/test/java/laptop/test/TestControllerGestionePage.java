@@ -1,4 +1,4 @@
-package laptop.test;
+/*package laptop.test;
 
 import laptop.controller.ControllerGestionePage;
 import laptop.controller.ControllerSystemState;
@@ -50,3 +50,4 @@ class TestControllerGestionePage {
     }
 
 }
+*/

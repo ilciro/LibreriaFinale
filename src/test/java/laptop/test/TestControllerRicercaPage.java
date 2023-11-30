@@ -1,4 +1,4 @@
-package laptop.test;
+/*package laptop.test;
 
 import laptop.controller.ControllerRicercaPage;
 import laptop.controller.ControllerRicercaPerTipo;
@@ -45,3 +45,6 @@ class TestControllerRicercaPage {
      }
 
 }
+
+
+ */

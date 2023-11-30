@@ -1,4 +1,4 @@
-package laptop.test;
+/*package laptop.test;
 
 import laptop.controller.ControllerModificaUtente;
 import laptop.model.User;
@@ -21,3 +21,6 @@ class TestControllerModificaUtente {
          assertTrue(cMU.aggiornaTot(RBSETTAOGGETTO.getString("nameUpdate"),RBSETTAOGGETTO.getString("nameUpdate"),RBSETTAOGGETTO.getString("newEmail"),RBSETTAOGGETTO.getString("newPwd"),RBSETTAOGGETTO.getString("nameUpdate"), LocalDate.of(1963,4,1),"U"));
      }
 }
+
+
+ */

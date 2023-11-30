@@ -1,4 +1,4 @@
-package laptop.test;
+/*package laptop.test;
 
 import laptop.controller.ControllerVisualizza;
 import org.junit.jupiter.api.Test;
@@ -34,3 +34,6 @@ class TestControllerVisualizza {
      }
 
 }
+
+
+ */

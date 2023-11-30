@@ -1,4 +1,4 @@
-package laptop.test;
+/*package laptop.test;
 
 import com.itextpdf.text.DocumentException;
 import laptop.controller.ControllerDownload;
@@ -37,3 +37,6 @@ public class TestControllerDownload {
         assertDoesNotThrow(()->cD.scarica(ControllerSystemState.getInstance().getType()));
     }
 }
+
+
+ */

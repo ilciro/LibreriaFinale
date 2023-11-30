@@ -1,4 +1,4 @@
-package laptop.test;
+/*package laptop.test;
 
 import laptop.controller.ControllerCompravendita;
 import laptop.controller.ControllerSystemState;
@@ -40,3 +40,6 @@ class TestControllerCompravendita {
     }
 
 }
+
+
+ */

@@ -123,4 +123,6 @@ class TestControllerAcquista {
         assertNotEquals(0,cA.getDisp(vis.getType()));
     }
 
+
+
 }

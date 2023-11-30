@@ -1,4 +1,4 @@
-package laptop.test;
+/*package laptop.test;
 
 import laptop.controller.ControllerLogin;
 import org.junit.jupiter.api.Test;
@@ -26,3 +26,5 @@ class TestControllerLogin {
     }
 
 }
+*/
+

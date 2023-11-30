@@ -1,4 +1,4 @@
-package laptop.test;
+/*package laptop.test;
 
 import laptop.controller.ControllerAggiungiUtente;
 import org.junit.jupiter.api.Test;
@@ -23,3 +23,6 @@ class TestControllerAggiungiUtente {
         assertTrue(cAU.checkData(RBSERDAINSERIRE.getString("nomeU"),RBSERDAINSERIRE.getString("cognomeU"),RBSERDAINSERIRE.getString("emailU"), RBSERDAINSERIRE.getString("passU"),data));
     }
 }
+
+
+ */

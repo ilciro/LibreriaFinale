@@ -92,7 +92,7 @@ xyz
 <br>
 <br>
 
-<c:set var = "tipo" scope = "session" value = "${bean1.getIsLoggedB() }"/>
+<c:set var = "tipo" scope = "session" value = "${bean1.isLoggedB()}"/>
 
 <c:choose>
 <c:when test="${ tipo==true}">

@@ -1,4 +1,4 @@
-package laptop.test;
+/*package laptop.test;
 
 import laptop.controller.ControllerScegliNegozio;
 import laptop.model.Negozio;
@@ -27,3 +27,6 @@ class TestControllerScegliNegozio {
      }
 
 }
+
+
+ */

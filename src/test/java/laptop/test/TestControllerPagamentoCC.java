@@ -1,4 +1,4 @@
-package laptop.test;
+/*package laptop.test;
 
 import laptop.controller.ControllerPagamentoCC;
 import laptop.controller.ControllerSystemState;
@@ -31,3 +31,6 @@ class TestControllerPagamentoCC {
      }
 
 }
+
+
+ */

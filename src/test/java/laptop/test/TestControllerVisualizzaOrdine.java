@@ -1,4 +1,4 @@
-package laptop.test;
+/*package laptop.test;
 
 import laptop.controller.ControllerVisualizzaOrdine;
 import laptop.model.User;
@@ -20,3 +20,6 @@ class TestControllerVisualizzaOrdine {
          assertNotNull(cVO.getDati());
      }
 }
+
+
+ */

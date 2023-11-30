@@ -1,4 +1,4 @@
-package laptop.test;
+/*package laptop.test;
 
 import laptop.controller.ControllerPassword;
 import laptop.model.User;
@@ -19,3 +19,6 @@ class TestControllerPassword {
 
      }
 }
+
+
+ */

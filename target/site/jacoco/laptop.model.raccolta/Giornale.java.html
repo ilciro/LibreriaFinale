@@ -55,36 +55,36 @@ public class Giornale implements Raccolta{
 <span class="fc" id="L55">	}</span>
 
 	public String getTitolo() {
-<span class="fc" id="L58">		return titolo;</span>
+<span class="nc" id="L58">		return titolo;</span>
 	}
 
 	public void setTitolo(String titolo) {
-<span class="fc" id="L62">		this.titolo = titolo;</span>
-<span class="fc" id="L63">	}</span>
+<span class="nc" id="L62">		this.titolo = titolo;</span>
+<span class="nc" id="L63">	}</span>
 
 	public String getTipologia() {
-<span class="fc" id="L66">		return tipologia;</span>
+<span class="nc" id="L66">		return tipologia;</span>
 	}
 
 	public void setTipologia(String tipologia) {
-<span class="fc" id="L70">		this.tipologia = tipologia;</span>
-<span class="fc" id="L71">	}</span>
+<span class="nc" id="L70">		this.tipologia = tipologia;</span>
+<span class="nc" id="L71">	}</span>
 
 	public String getLingua() {
-<span class="fc" id="L74">		return lingua;</span>
+<span class="nc" id="L74">		return lingua;</span>
 	}
 
 	public void setLingua(String lingua) {
-<span class="fc" id="L78">		this.lingua = lingua;</span>
-<span class="fc" id="L79">	}</span>
+<span class="nc" id="L78">		this.lingua = lingua;</span>
+<span class="nc" id="L79">	}</span>
 
 	public String getEditore() {
-<span class="fc" id="L82">		return editore;</span>
+<span class="nc" id="L82">		return editore;</span>
 	}
 
 	public void setEditore(String editore) {
-<span class="fc" id="L86">		this.editore = editore;</span>
-<span class="fc" id="L87">	}</span>
+<span class="nc" id="L86">		this.editore = editore;</span>
+<span class="nc" id="L87">	}</span>
 
 	public LocalDate getDataPubb() {
 <span class="fc" id="L90">		return dataPubb;</span>
@@ -132,10 +132,10 @@ public class Giornale implements Raccolta{
 	@Override
 	public void scarica() throws IOException {
 
-<span class="fc" id="L135">		Desktop desktop = Desktop.getDesktop();</span>
-<span class="fc" id="L136">		desktop.open(new File(URLL));</span>
+<span class="nc" id="L135">		Desktop desktop = Desktop.getDesktop();</span>
+<span class="nc" id="L136">		desktop.open(new File(URLL));</span>
 
-<span class="fc" id="L138">	}</span>
+<span class="nc" id="L138">	}</span>
 
 	@Override
 	public void leggi(int i) throws DocumentException, IOException {
@@ -143,14 +143,14 @@ public class Giornale implements Raccolta{
 		
 		
 		
-<span class="fc" id="L146">		 ResourceBundle rBG=ResourceBundle.getBundle(&quot;configurations/downloadConfigurationGiornale&quot;);</span>
+<span class="nc" id="L146">		 ResourceBundle rBG=ResourceBundle.getBundle(&quot;configurations/downloadConfigurationGiornale&quot;);</span>
 
 
-<span class="fc" id="L149">		 document = new Document();</span>
-<span class="fc" id="L150">		 PdfWriter.getInstance(document, new FileOutputStream(rBG.getString(&quot;pathL&quot;)));</span>
-<span class="fc" id="L151">		 document.open();</span>
+<span class="nc" id="L149">		 document = new Document();</span>
+<span class="nc" id="L150">		 PdfWriter.getInstance(document, new FileOutputStream(rBG.getString(&quot;pathL&quot;)));</span>
+<span class="nc" id="L151">		 document.open();</span>
 
-<span class="fc" id="L153">			document.add(new Paragraph(&quot;&quot;&quot;</span>
+<span class="nc" id="L153">			document.add(new Paragraph(&quot;&quot;&quot;</span>
 					Giornale/Daily not avalaible.
 					Integer et semper purus,non finibus augue
 					Interpellates habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
@@ -160,12 +160,12 @@ public class Giornale implements Raccolta{
 					Maecenas id arcu laoreet, tristique felis sit amet,blandit nulla.Phasellus suscipit sed est ut molestie.
 					Maecenas consequat elit diam, eu semper erat porta nec.Etiam ullamcorper neque vitae mollis cursus.
 					&quot;&quot;&quot;));
-<span class="fc" id="L163">			document.close();</span>
+<span class="nc" id="L163">			document.close();</span>
 
 
 
 
-<span class="fc" id="L168">	}</span>
+<span class="nc" id="L168">	}</span>
 
 	public String[] getInfoGenerali() {
 <span class="fc" id="L171">		return infoGenerali;</span>
