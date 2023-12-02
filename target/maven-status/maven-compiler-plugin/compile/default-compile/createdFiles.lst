@@ -11,7 +11,6 @@ laptop/controller/ControllerVisualizza.class
 laptop/controller/ControllerAcquista.class
 laptop/controller/ControllerCompravendita.class
 laptop/controller/ControllerPassword.class
-web/servlet/ReportServlet.class
 laptop/model/User.class
 web/bean/CartaCreditoBean.class
 web/servlet/RicercaServlet.class
@@ -20,6 +19,7 @@ laptop/exception/IdException.class
 laptop/view/BoundaryAdminPage.class
 laptop/controller/ControllerUserPage.class
 laptop/database/CartaCreditoDao.class
+web/servlet/ReportServlet1.class
 web/bean/UserBean$Ruoli.class
 web/servlet/ServletScrittore.class
 laptop/view/BoundaryPagamentoCC.class

@@ -537,10 +537,9 @@ public class LibroDao  {
 
 	}	
 
-	public void generaReport() throws SQLException, IOException
+	public void generaReport() throws IOException
 	{
-		FileWriter w=null;
-		w=new FileWriter("ReportFinale\\riepilogoLibro.txt");
+		FileWriter w=new FileWriter("ReportFinale/riepilogoLibro.txt");
 		query="select titolo,copieVendute,prezzo as totale from LIBRO";
 		
 		   try (BufferedWriter b=new BufferedWriter (w)){

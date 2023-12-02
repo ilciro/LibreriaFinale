@@ -594,7 +594,7 @@ public class UsersDao {
 	public static  void getListaUtenti() throws IOException, SQLException  {
 		query="select * from USERS";
 		FileWriter w;
-		w=new FileWriter("ReportFinale\\riepilogoUtenti.txt");
+		w=new FileWriter("ReportFinale/riepilogoUtenti.txt");
 
 		
 		try (BufferedWriter b=new BufferedWriter (w)) {

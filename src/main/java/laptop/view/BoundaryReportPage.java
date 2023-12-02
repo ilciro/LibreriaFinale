@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 
@@ -49,8 +50,7 @@ public class BoundaryReportPage implements Initializable {
 	
 	
 	@FXML
-	private void totale() throws NullPointerException
-	{
+	private void totale() throws NullPointerException, SQLException, IOException {
 		ta.setText(cRP.reportTotale());
 		
 
@@ -58,22 +58,22 @@ public class BoundaryReportPage implements Initializable {
 	@FXML
 	private void reportLibri() throws IOException, SQLException 
 	{
-		cRP.reportLibri();
+		ta.setText(cRP.leggiLibro());
+
         
     }
 		
 
 	
 	@FXML
-	private void raccolta() throws IOException {
-		cRP.reportRaccolta();
+	private void raccolta() throws IOException, SQLException {
+		ta.setText(cRP.reportRaccolta());
         
 		
 	}
 	@FXML
-	private void reportGiornali()
-	{
-		cRP.reportGiornali();
+	private void reportGiornali() throws SQLException, IOException {
+		ta.setText(cRP.leggiGiornale());
 		
 	}
 	@FXML
@@ -82,7 +82,7 @@ public class BoundaryReportPage implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonI.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("adminPage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("adminPage.fxml")));
 		stage.setTitle("Benvenuto nella schermata del riepilogo dei libri");
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -93,7 +93,7 @@ public class BoundaryReportPage implements Initializable {
 	@FXML
 	private void reportRiviste() throws IOException, SQLException
 	{
-		cRP.reportRiviste();
+		ta.setText(cRP.leggiRivista());
 	}
         
 		

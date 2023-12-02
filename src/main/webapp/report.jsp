@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang=en-it>
 <head>
@@ -10,37 +11,16 @@
 
 <h1> Scegliere una tra le seguenti checkbox</h1>
 
-<form action="ReportServlet" method="post">
+<form action="ReportServlet1" method="post">
+
+
 <div>
-<label for="totaleC">
-totale
-</label>
-<input type="checkbox" id="totaleC" name="totaleC" value="totale">
-
-<label for="totaleL">
-libri
-</label>
-<input type="checkbox" id="totaleL" name="totaleL" value="libri">
-
-<label for="totaleG">
-giornale
-</label>
-<input type="checkbox" id="totaleG" name="totaleG" value="giornale">
-
-<label for="totaleR">
-rivista
-</label>
-<input type="checkbox" id="totaleR" name="totaleR" value="rivista">
-
-<label for="totaleRacc">
-raccolta
-</label>
-<input type="checkbox" id="totaleRacc" name="totaleRacc" value="raccolta">
-
-<input type="submit" id="scelta" name="scelta" class="invia">
-
+<input type="submit" id="buttonT" name="buttonT" value="raccolta" class="totale">
+<input type="submit" id="buttonL" name="buttonL" value="libro" class="libri">
+<input type="submit" id="buttonG" name="buttonG" value="giornale" class="giornali">
+<input type="submit" id="buttonR" name="buttonR" value="rivista" class="riviste">
+<input type="submit" id="raccoltaB" name="raccoltaB" value="raccolta" class="raccolta">
 <input type="submit" id="buttonI" name="buttonI" value="indietro" class="annulla">
-
 
 <br>
 <br>

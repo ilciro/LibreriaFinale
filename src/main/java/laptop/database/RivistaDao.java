@@ -547,7 +547,7 @@ public class 	RivistaDao {
 	{
 				FileWriter w;
 				query="select titolo,editore,copieRimanenti,prezzo as totale ,dataPubblicazione from RIVISTA";
-		        w=new FileWriter("ReportFinale\\riepilogoRiviste.txt");
+		        w=new FileWriter("ReportFinale/riepilogoRiviste.txt");
 		        
 		        
 		        try (BufferedWriter b=new BufferedWriter (w)){

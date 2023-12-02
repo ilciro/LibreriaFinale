@@ -514,7 +514,7 @@ public class GiornaleDao {
 	{
 		FileWriter w;
 		query="select titolo,editore,copiRim,prezzo as totale  from GIORNALE";
-		w=new FileWriter("ReportFinale\\riepilogoGiornali.txt");
+		w=new FileWriter("ReportFinale/riepilogoGiornali.txt");
 		   try (BufferedWriter b=new BufferedWriter (w)){
 			   try(Connection conn=ConnToDb.connectionToDB();
 					   PreparedStatement prepQ=conn.prepareStatement(query))

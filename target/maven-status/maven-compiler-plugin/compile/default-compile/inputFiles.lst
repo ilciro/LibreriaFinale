@@ -9,7 +9,6 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/ModificaUtenteServlet.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/InserisciOggettoServlet.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerCheckPagamentoData.java
-/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/ReportServlet.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerRegistraUtente.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/Main.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/bean/RivistaBean.java
@@ -34,6 +33,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerModificaUtente.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/ModificaRivistaServlet.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/exception/AcquistaException.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/ReportServlet1.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryGestionePage.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryScegliNegozio.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryModificaUtente.java

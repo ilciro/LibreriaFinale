@@ -1,11 +1,8 @@
-1	UTENTET	admin	admin	admin@admin.com	null	1980-10-26
-2	UTENTET	Gianni	Morandi	giannni@gmail.com	null	1940-10-18
-3	UTENTET	gino	zaia	gino@zaia.eu	null	1995-04-25
-4	UTENTET	Giulia	Conforto	giuliaConforto@gmail.eu	null	1998-09-05
-7	UTENTET	franco	rossi	francoRossi12@gmail.com	null	1985-05-06
-8	UTENTET	lisa	gialli	lisagialli15@libero.it	null	1961-11-09
-9	UTENTET	marco	arancioni	maran@libero.it	null	1972-01-12
-10	UTENTET	andrea	verdi	a.verdi1@gmail.com	null	1998-06-05
-11	UTENTET	tempUserNome	tempUSerCognome	tempUSer@libero.it	provo ad inserire un temp user	1988-05-12
-12	UTENTET	nuovoUtenteN	nuovoUtenteC	nuovoUtente10@gmail.com	null	1985-02-24
-13	UTENTET	nome user	cognome user	emailProva@gmail.com	null	1985-08-11
+1	UTENTET	admin	admin	admin@admin.com	utente "admin"	1980-10-26
+2	UTENTET	Gianni	Morandi	giannni@gmail.com	utente con privilegi massimi	1940-10-18
+3	UTENTET	Gino	Zaia	gino@zaia.eu	utente semplice	1995-04-25
+4	UTENTET	Giulia	Conforto	giuliaConforto@gmail.eu	utente semplice	1998-09-05
+5	UTENTET	Zerocalcare	Zerocalcare	zerocalcare@gmail.com	scrittore semplice	1980-05-20
+6	UTENTET	Bao Publishing	Bao Publishing	baoPublishing@gmail.com	editore semplice	1960-11-21
+7	UTENTET	foo user	foo user	userfoo152@gmail.com	utente foo	2000-01-05
+8	UTENTET	foo user1	foo user1	userfoo1521@gmail.com	utente foo1	2002-08-23
