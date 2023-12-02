@@ -28,17 +28,17 @@ public class UserBean {
 	private String mexB;
 	private String listaUtentiB;
 	
-<span class="nc" id="L31">	private static UserBean userInstance = null;</span>
+<span class="fc" id="L31">	private static UserBean userInstance = null;</span>
 
     private UserBean() {}
 
     public static UserBean getInstance() {
-<span class="nc bnc" id="L36" title="All 2 branches missed.">        if (userInstance == null) {</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (userInstance == null) {</span>
           
-<span class="nc" id="L38">        	userInstance = new UserBean();</span>
+<span class="fc" id="L38">        	userInstance = new UserBean();</span>
                 }
        
-<span class="nc" id="L41">        return userInstance;</span>
+<span class="fc" id="L41">        return userInstance;</span>
     }
 	
 	
@@ -72,16 +72,16 @@ public class UserBean {
 	}
 
 	public void setEmailB(String emailB) {
-<span class="nc" id="L75">		this.emailB = emailB;</span>
-<span class="nc" id="L76">	}</span>
+<span class="fc" id="L75">		this.emailB = emailB;</span>
+<span class="fc" id="L76">	}</span>
 
 	public String getPasswordB() {
 <span class="nc" id="L79">		return passwordB;</span>
 	}
 
 	public void setPasswordB(String passwordB) {
-<span class="nc" id="L83">		this.passwordB = passwordB;</span>
-<span class="nc" id="L84">	}</span>
+<span class="fc" id="L83">		this.passwordB = passwordB;</span>
+<span class="fc" id="L84">	}</span>
 
 	public String getDescrizioneB() {
 <span class="nc" id="L87">		return descrizioneB;</span>

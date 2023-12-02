@@ -27,32 +27,32 @@ public class Giornale implements Raccolta{
 	private int id;
 	private static final String URLL=&quot;/home/daniele/Scaricati/libriPerSito/&quot;;
 
-<span class="fc" id="L30">	private String[] infoGenerali=new String[5];</span>
+<span class="nc" id="L30">	private String[] infoGenerali=new String[5];</span>
 
 	
 	public Giornale()
 	{
-<span class="fc" id="L35">		super();</span>
-<span class="fc" id="L36">	}</span>
+<span class="nc" id="L35">		super();</span>
+<span class="nc" id="L36">	}</span>
 
 
 	public Giornale(String []info,LocalDate dataPubb,int nrCopie, int disponibilita, float prezzo, int id)
-<span class="fc" id="L40">	{</span>
-<span class="fc" id="L41">		this.infoGenerali=info;</span>
-<span class="fc" id="L42">		this.dataPubb=dataPubb;</span>
-<span class="fc" id="L43">		this.copieRimanenti=nrCopie;</span>
-<span class="fc" id="L44">		this.disponibilita=disponibilita;</span>
-<span class="fc" id="L45">		this.prezzo=prezzo;</span>
-<span class="fc" id="L46">		this.id=id;</span>
-<span class="fc" id="L47">		this.titolo=info[0];</span>
-<span class="fc" id="L48">		this.tipologia=info[1];</span>
-<span class="fc" id="L49">		this.editore=info[4];</span>
-<span class="fc" id="L50">		this.lingua=info[3];</span>
+<span class="nc" id="L40">	{</span>
+<span class="nc" id="L41">		this.infoGenerali=info;</span>
+<span class="nc" id="L42">		this.dataPubb=dataPubb;</span>
+<span class="nc" id="L43">		this.copieRimanenti=nrCopie;</span>
+<span class="nc" id="L44">		this.disponibilita=disponibilita;</span>
+<span class="nc" id="L45">		this.prezzo=prezzo;</span>
+<span class="nc" id="L46">		this.id=id;</span>
+<span class="nc" id="L47">		this.titolo=info[0];</span>
+<span class="nc" id="L48">		this.tipologia=info[1];</span>
+<span class="nc" id="L49">		this.editore=info[4];</span>
+<span class="nc" id="L50">		this.lingua=info[3];</span>
 		
 
 
 
-<span class="fc" id="L55">	}</span>
+<span class="nc" id="L55">	}</span>
 
 	public String getTitolo() {
 <span class="nc" id="L58">		return titolo;</span>
@@ -87,45 +87,45 @@ public class Giornale implements Raccolta{
 <span class="nc" id="L87">	}</span>
 
 	public LocalDate getDataPubb() {
-<span class="fc" id="L90">		return dataPubb;</span>
+<span class="nc" id="L90">		return dataPubb;</span>
 	}
 
 	public void setDataPubb(LocalDate dataPubb) {
-<span class="fc" id="L94">		this.dataPubb = dataPubb;</span>
-<span class="fc" id="L95">	}</span>
+<span class="nc" id="L94">		this.dataPubb = dataPubb;</span>
+<span class="nc" id="L95">	}</span>
 
 	public int getCopieRimanenti() {
-<span class="fc" id="L98">		return copieRimanenti;</span>
+<span class="nc" id="L98">		return copieRimanenti;</span>
 	}
 
 	public void setCopieRimanenti(int copieRimanenti) {
-<span class="fc" id="L102">		this.copieRimanenti = copieRimanenti;</span>
-<span class="fc" id="L103">	}</span>
+<span class="nc" id="L102">		this.copieRimanenti = copieRimanenti;</span>
+<span class="nc" id="L103">	}</span>
 
 	public int getDisponibilita() {
-<span class="fc" id="L106">		return this.disponibilita;</span>
+<span class="nc" id="L106">		return this.disponibilita;</span>
 	}
 
 	public void setDisponibilita(int disponibilita) {
-<span class="fc" id="L110">		this.disponibilita = disponibilita;</span>
-<span class="fc" id="L111">	}</span>
+<span class="nc" id="L110">		this.disponibilita = disponibilita;</span>
+<span class="nc" id="L111">	}</span>
 
 	public float getPrezzo() {
-<span class="fc" id="L114">		return prezzo;</span>
+<span class="nc" id="L114">		return prezzo;</span>
 	}
 
 	public void setPrezzo(float prezzo) {
-<span class="fc" id="L118">		this.prezzo = prezzo;</span>
-<span class="fc" id="L119">	}</span>
+<span class="nc" id="L118">		this.prezzo = prezzo;</span>
+<span class="nc" id="L119">	}</span>
 
 
 	public int getId() {
-<span class="fc" id="L123">		return id;</span>
+<span class="nc" id="L123">		return id;</span>
 	}
 
 	public void setId(int id) {
-<span class="fc" id="L127">		this.id = id;</span>
-<span class="fc" id="L128">	}</span>
+<span class="nc" id="L127">		this.id = id;</span>
+<span class="nc" id="L128">	}</span>
 
 
 
@@ -168,12 +168,12 @@ public class Giornale implements Raccolta{
 <span class="nc" id="L168">	}</span>
 
 	public String[] getInfoGenerali() {
-<span class="fc" id="L171">		return infoGenerali;</span>
+<span class="nc" id="L171">		return infoGenerali;</span>
 	}
 
 	public void setInfoGenerali(String[] infoGenerali) {
-<span class="fc" id="L175">		this.infoGenerali = infoGenerali;</span>
-<span class="fc" id="L176">	}</span>
+<span class="nc" id="L175">		this.infoGenerali = infoGenerali;</span>
+<span class="nc" id="L176">	}</span>
 
 
 	

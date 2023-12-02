@@ -14,7 +14,7 @@
 <h2> Accedere con le credenziali oppure registrarsi</h2>
 
 <form action="LoginServlet" method="post">
-<div>
+<div> class="exception">
 inserire email :
 <input type="text"  id="emailL" name="emailL" >
 <br>
@@ -32,7 +32,9 @@ inserire password:
 
 <br>
 <br>
+
 ${beanUb.getMexB() }
+
 </div>
 
 

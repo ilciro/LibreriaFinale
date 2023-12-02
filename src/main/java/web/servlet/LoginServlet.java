@@ -34,6 +34,7 @@ public class LoginServlet extends HttpServlet {
 		String annulla=req.getParameter("annullaB");
 		String registra=req.getParameter("registerB");
 		String reset=req.getParameter("resetB");
+		RequestDispatcher view;
 
 		try {
 		if(login!=null && login.equals("login") && (!"".equals(email) && !"".equals(pass)))
@@ -52,7 +53,7 @@ public class LoginServlet extends HttpServlet {
 						SystemBean.getInstance().setLoggedB(true);
 						req.setAttribute(beanUb,UserBean.getInstance());
 						req.setAttribute(beanS,SystemBean.getInstance() );
-						RequestDispatcher view = getServletContext().getRequestDispatcher("/admin.jsp");
+						 view = getServletContext().getRequestDispatcher("/admin.jsp");
 						view.forward(req,resp);
 						break;
 					case "U","u":
@@ -82,25 +83,27 @@ public class LoginServlet extends HttpServlet {
 
 			}
 		else {
-			UserBean.getInstance().setMexB(" utente non registrato / credenziali sbagliate ... per favore registrarsi");
+			UserBean.getInstance().setMexB("utente non registrato / credenziali sbagliate ... per favore registrarsi");
+			SystemBean.getInstance().setLoggedB(false);
 			req.setAttribute(beanUb,UserBean.getInstance());
-			RequestDispatcher view = getServletContext().getRequestDispatcher("/login.jsp");
+			req.setAttribute(beanS,SystemBean.getInstance());
+			 view = getServletContext().getRequestDispatcher("/login.jsp");
 			view.forward(req,resp);
 		}
 		if(annulla!=null && annulla.equals("indietro"))
 		{
-			RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp");
+			 view = getServletContext().getRequestDispatcher("/index.jsp");
 			view.forward(req,resp);
 
 		}
 		if(registra!=null && registra.equals("registrati"))
 		{
-			RequestDispatcher view = getServletContext().getRequestDispatcher("/registrazione.jsp");
+			 view = getServletContext().getRequestDispatcher("/registrazione.jsp");
 			view.forward(req,resp);
 		}
 		if(reset!=null && reset.equals("reset password"))
 		{
-			RequestDispatcher view = getServletContext().getRequestDispatcher("/resetPassword.jsp");
+			 view = getServletContext().getRequestDispatcher("/resetPassword.jsp");
 			view.forward(req,resp);
 		}
 

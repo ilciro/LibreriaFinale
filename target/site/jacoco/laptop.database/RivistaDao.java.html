@@ -28,16 +28,16 @@ public class 	RivistaDao {
 	private  String query ;
 	
 	private  int q;
-<span class="fc" id="L31">	private int id = 0;</span>
-<span class="fc" id="L32">	private boolean state=false;</span>
-<span class="fc" id="L33">	private String riv=&quot;SELECT * from RIVISTA;&quot;;</span>
+<span class="nc" id="L31">	private int id = 0;</span>
+<span class="nc" id="L32">	private boolean state=false;</span>
+<span class="nc" id="L33">	private String riv=&quot;SELECT * from RIVISTA;&quot;;</span>
 
-<span class="fc" id="L35">	private ControllerSystemState vis=ControllerSystemState.getInstance();</span>
+<span class="nc" id="L35">	private ControllerSystemState vis=ControllerSystemState.getInstance();</span>
 	private static final String RIVISTA=&quot;rivista&quot;;
 
-<span class="fc" id="L38">	private static String eccezione=&quot;eccezione generata:&quot;;</span>
+<span class="nc" id="L38">	private static String eccezione=&quot;eccezione generata:&quot;;</span>
 	private int disp;
-<span class="fc" id="L40">	private static String rivistaS=&quot;rivista singola&quot;;</span>
+<span class="nc" id="L40">	private static String rivistaS=&quot;rivista singola&quot;;</span>
 
 	
 	
@@ -82,24 +82,24 @@ public class 	RivistaDao {
 
 	public float getCosto(Rivista r) throws SQLException
 	{
-<span class="fc" id="L85">		float prezzo=(float) 0.0;</span>
-<span class="fc" id="L86">		query=&quot;select * from RIVISTA where id=?&quot;;</span>
-<span class="fc" id="L87">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="fc" id="L88">				PreparedStatement prepQ=conn.prepareCall(query))</span>
+<span class="nc" id="L85">		float prezzo=(float) 0.0;</span>
+<span class="nc" id="L86">		query=&quot;select * from RIVISTA where id=?&quot;;</span>
+<span class="nc" id="L87">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="nc" id="L88">				PreparedStatement prepQ=conn.prepareCall(query))</span>
 		{
-<span class="fc" id="L90">			prepQ.setInt(1, r.getId());</span>
-<span class="fc" id="L91">			ResultSet rs=prepQ.executeQuery();</span>
-<span class="fc bfc" id="L92" title="All 2 branches covered.">			 while ( rs.next() ) {</span>
-<span class="fc" id="L93">              prezzo=rs.getFloat(&quot;prezzo&quot;);</span>
+<span class="nc" id="L90">			prepQ.setInt(1, r.getId());</span>
+<span class="nc" id="L91">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="nc bnc" id="L92" title="All 2 branches missed.">			 while ( rs.next() ) {</span>
+<span class="nc" id="L93">              prezzo=rs.getFloat(&quot;prezzo&quot;);</span>
 
          }
 <span class="nc" id="L96">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L98">			java.util.logging.Logger.getLogger(&quot;get costo&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L99">		}</span>
+<span class="nc" id="L99">		}</span>
 		
 		
-<span class="fc" id="L102">		return prezzo;</span>
+<span class="nc" id="L102">		return prezzo;</span>
 		
 	}
 
@@ -223,9 +223,9 @@ public class 	RivistaDao {
 	}
 
 	public RivistaDao()
-<span class="fc" id="L226">	{</span>
-<span class="fc" id="L227">		f=new Factory();</span>
-<span class="fc" id="L228">	}</span>
+<span class="nc" id="L226">	{</span>
+<span class="nc" id="L227">		f=new Factory();</span>
+<span class="nc" id="L228">	}</span>
 	
 	public int retId(Rivista r) throws SQLException {
 <span class="nc" id="L231">		query=&quot;select id from RIVISTA where titolo=?&quot;;</span>
@@ -274,23 +274,23 @@ public class 	RivistaDao {
 	
 	public String getNome(Rivista r) throws SQLException
 	{
-<span class="fc" id="L277">		String name=null;</span>
-<span class="fc" id="L278">		query=&quot;select titolo from RIVISTA where id=?&quot;;</span>
-<span class="fc" id="L279">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="fc" id="L280">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="nc" id="L277">		String name=null;</span>
+<span class="nc" id="L278">		query=&quot;select titolo from RIVISTA where id=?&quot;;</span>
+<span class="nc" id="L279">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="nc" id="L280">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
-<span class="fc" id="L282">			prepQ.setInt(1,r.getId());</span>
-<span class="fc" id="L283">			ResultSet rs=prepQ.executeQuery();</span>
-<span class="fc bfc" id="L284" title="All 2 branches covered.">			while (rs.next())</span>
+<span class="nc" id="L282">			prepQ.setInt(1,r.getId());</span>
+<span class="nc" id="L283">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="nc bnc" id="L284" title="All 2 branches missed.">			while (rs.next())</span>
 	        {
-<span class="fc" id="L286">	        	name = rs.getString(1);</span>
+<span class="nc" id="L286">	        	name = rs.getString(1);</span>
 	        }
 <span class="nc" id="L288">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L290">			java.util.logging.Logger.getLogger(&quot;nome rivista&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L291">		}</span>
+<span class="nc" id="L291">		}</span>
         	
-<span class="fc" id="L293">        return name;</span>
+<span class="nc" id="L293">        return name;</span>
    }
 
 	public int getDisp(Rivista r) throws SQLException
@@ -326,24 +326,24 @@ public class 	RivistaDao {
 	public int getQuantita(Rivista r) throws SQLException
 	{
         
-<span class="fc" id="L329">		query=&quot;select copieRimanenti from RIVISTA where id=?&quot;;</span>
-<span class="fc" id="L330">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="fc" id="L331">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="nc" id="L329">		query=&quot;select copieRimanenti from RIVISTA where id=?&quot;;</span>
+<span class="nc" id="L330">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="nc" id="L331">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
 			
-<span class="fc" id="L334">			prepQ.setInt(1, r.getId());</span>
-<span class="fc" id="L335">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="nc" id="L334">			prepQ.setInt(1, r.getId());</span>
+<span class="nc" id="L335">			ResultSet rs=prepQ.executeQuery();</span>
 			
-<span class="fc bfc" id="L337" title="All 2 branches covered.">				while (rs.next()) {</span>
-<span class="fc" id="L338">					q = rs.getInt(1);</span>
+<span class="nc bnc" id="L337" title="All 2 branches missed.">				while (rs.next()) {</span>
+<span class="nc" id="L338">					q = rs.getInt(1);</span>
 				}			
 			
 <span class="nc" id="L341">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L343">			java.util.logging.Logger.getLogger(&quot;quantita r&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="fc" id="L344">		}</span>
+<span class="nc" id="L344">		}</span>
 
-<span class="fc" id="L346">		return q;</span>
+<span class="nc" id="L346">		return q;</span>
 	}
 
 	public boolean checkDisp(Rivista r) throws SQLException

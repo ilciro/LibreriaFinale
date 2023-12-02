@@ -1,4 +1,4 @@
-package web.test;
+/*package web.test;
 
 import laptop.database.GiornaleDao;
 import org.apache.commons.beanutils.PropertyUtils;
@@ -16,7 +16,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 class TestWebGiornale {
     private final GiornaleBean gB=new GiornaleBean();
@@ -24,7 +23,7 @@ class TestWebGiornale {
     private final AcquistaBean aB=new AcquistaBean();
     private final CartaCreditoBean ccB=new CartaCreditoBean();
     @Test
-    void testPagamentoCashEDownloadLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException, ParseException {
+    void testPagamentoCashEDownloadGiornale() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException, ParseException {
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //schermata index
         WebDriver driver = new ChromeDriver();
@@ -134,6 +133,9 @@ class TestWebGiornale {
 
     }
 
- */
+
     }
 }
+
+ */
+

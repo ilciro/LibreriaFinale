@@ -16,17 +16,17 @@ public class ControllerSystemState {
 	 private int quantita; //usato per avere quantita oggetto che compro
 	 private String metodoP; //usato per vedere se contanti o cc
 	 
-<span class="fc" id="L19">	 private static ControllerSystemState instance = null;</span>
+<span class="nc" id="L19">	 private static ControllerSystemState instance = null;</span>
 
 	    private ControllerSystemState() {}
 
 	    public static ControllerSystemState getInstance() {
-<span class="fc bfc" id="L24" title="All 2 branches covered.">	        if (instance == null) {</span>
+<span class="nc bnc" id="L24" title="All 2 branches missed.">	        if (instance == null) {</span>
 	          
-<span class="fc" id="L26">	        	instance = new ControllerSystemState();</span>
+<span class="nc" id="L26">	        	instance = new ControllerSystemState();</span>
 	                }
 	       
-<span class="fc" id="L29">	        return instance;</span>
+<span class="nc" id="L29">	        return instance;</span>
 	    }
 	 public int getQuantita() {
 <span class="nc" id="L32">		return quantita;</span>
@@ -47,27 +47,27 @@ public class ControllerSystemState {
 	
 
 	public int getId() {
-<span class="fc" id="L50">		return id;</span>
+<span class="nc" id="L50">		return id;</span>
 	}
 
 	public void setId(int id) {
-<span class="fc" id="L54">		this.id = id;</span>
-<span class="fc" id="L55">	}</span>
+<span class="nc" id="L54">		this.id = id;</span>
+<span class="nc" id="L55">	}</span>
 	public void setTypeAsBook()
 	{
-<span class="fc" id="L58">		this.type = &quot;libro&quot;;</span>
-<span class="fc" id="L59">	}</span>
+<span class="nc" id="L58">		this.type = &quot;libro&quot;;</span>
+<span class="nc" id="L59">	}</span>
 	public void setTypeAsMagazine()
 	{
-<span class="fc" id="L62">		this.type = &quot;rivista&quot;;</span>
-<span class="fc" id="L63">	}</span>
+<span class="nc" id="L62">		this.type = &quot;rivista&quot;;</span>
+<span class="nc" id="L63">	}</span>
 	public void setTypeAsDaily()
 	{
-<span class="fc" id="L66">		this.type = &quot;giornale&quot;;</span>
-<span class="fc" id="L67">	}</span>
+<span class="nc" id="L66">		this.type = &quot;giornale&quot;;</span>
+<span class="nc" id="L67">	}</span>
 	public String getType()
 	{
-<span class="fc" id="L70">		return type;</span>
+<span class="nc" id="L70">		return type;</span>
 	}
 
 	public boolean getIsLogged() {

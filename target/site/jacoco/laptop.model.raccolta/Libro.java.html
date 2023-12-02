@@ -31,8 +31,8 @@ public class Libro implements Raccolta {
 	private String desc;
 	private int disponibilita;
 	private float prezzo;
-<span class="pc" id="L34">	private String[] infoGenerali=new String[6];</span>
-<span class="pc" id="L35">	private String[] infoCostiDisp=new String[6];</span>
+<span class="nc" id="L34">	private String[] infoGenerali=new String[6];</span>
+<span class="nc" id="L35">	private String[] infoCostiDisp=new String[6];</span>
 	private int numeroPagine;
 	private String tipologia;
 
@@ -40,9 +40,9 @@ public class Libro implements Raccolta {
 
 	private static final String URLL=&quot;/home/daniele/Scaricati/libriPerSito/&quot;;
 
-<span class="fc" id="L43">	public Libro() {	</span>
+<span class="nc" id="L43">	public Libro() {	</span>
 
-<span class="fc" id="L45">	}</span>
+<span class="nc" id="L45">	}</span>
 
 	public String getTitolo() {
 <span class="nc" id="L48">		return this.titolo;</span>
@@ -214,13 +214,13 @@ public class Libro implements Raccolta {
 	
 
 	public int getId() {
-<span class="fc" id="L217">		return id;</span>
+<span class="nc" id="L217">		return id;</span>
 	}
 
 	public void setId(int id)
 	{
-<span class="fc" id="L222">		this.id = id ;</span>
-<span class="fc" id="L223">	}</span>
+<span class="nc" id="L222">		this.id = id ;</span>
+<span class="nc" id="L223">	}</span>
 
 	@Override
 	public void scarica() throws DocumentException, IOException {
