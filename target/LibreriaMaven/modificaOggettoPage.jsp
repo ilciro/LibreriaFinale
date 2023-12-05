@@ -15,7 +15,7 @@
 <h2> Scegliere i campi da modificare</h2>
 
 
-<c:set var = "tipo" scope = "session" value = "${SystemBean.getIstance().getTypeB() }"/>
+<c:set var = "tipo" scope = "session" value = "${SystemBean.getInstance().getTypeB() }"/>
 
 <form action="ModificaLibroServlet" method="post">
 

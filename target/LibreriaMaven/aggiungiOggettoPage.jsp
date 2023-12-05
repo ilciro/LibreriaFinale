@@ -18,6 +18,8 @@
 
  
 <c:set var = "tipo" scope = "session" value = "${bean1.getTypeB() }"/>
+
+<h1> non funziona porca miseria</h1>
 <form action ="InserisciOggettoServlet" method="post">
 
 <div>
@@ -58,9 +60,39 @@ lingua
 categoria
 <label for="catL"></label>
 <textarea  cols=25 rows=5 id="catL" name="catL" readonly>
-${beanMOB.getTipologiaLB()}
+ADOLESCENTI_RAGAZZI
+ARTE
+CINEMA_FOTOGRAFIA
+BIOGRAFIE
+DIARI_MEMORIE
+CALENDARI_AGENDE
+DIRITTO
+DIZINARI_OPERE
+ECONOMIA
+FAMIGLIA
+SALUTE_BENESSERE
+FANTASCIENZA_FANTASY
+FUMETTI_MANGA
+GIALLI_THRILLER
+COMPUTER_GIOCHI
+HUMOR
+INFORMATICA
+WEB_DIGITAL_MEDIA
+LETTERATURA_NARRATIVA
+LIBRI_BAMBINI
+LIBRI_SCOLASTICI
+LIBRI_UNIVERSITARI
+RICETTARI_GENERALI
+LINGUISTICA_SCRITTURA
+POLITICA
+RELIGIONE
+ROMANZI_ROSA
+SCIENZE
+TECNOLOGIA_MEDICINA
+NON_VALIDO
+
 </textarea> 
-<input type="submit" id="generaL" name="generaL" value="prendi lista">
+
 <label for="catS"></label>
 <input type="text" id="catS" name="catS">
 </p>

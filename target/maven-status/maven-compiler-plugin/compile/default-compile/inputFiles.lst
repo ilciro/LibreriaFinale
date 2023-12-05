@@ -78,7 +78,6 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/model/raccolta/Giornale.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerPagamentoCC.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/InserisciOggettoServletRivista.java
-/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/InitializeServlet.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/bean/SystemBean.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/exception/IdException.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerRicercaPage.java
