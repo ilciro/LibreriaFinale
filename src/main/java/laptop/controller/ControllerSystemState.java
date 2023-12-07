@@ -15,6 +15,8 @@ public class ControllerSystemState {
 	 private float spesaT;// usato per avere importo totale 
 	 private int quantita; //usato per avere quantita oggetto che compro
 	 private String metodoP; //usato per vedere se contanti o cc
+
+	private int idOggetto; //usato nel pagamento
 	 
 	 private static ControllerSystemState instance = null;
 
@@ -102,6 +104,12 @@ public class ControllerSystemState {
 		this.metodoP = metodoP;
 	}
 
-	
-	
+
+	public int getIdOggetto() {
+		return idOggetto;
+	}
+
+	public void setIdOggetto(int idOggetto) {
+		this.idOggetto = idOggetto;
+	}
 }

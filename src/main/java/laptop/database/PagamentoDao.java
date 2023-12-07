@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
+import laptop.controller.ControllerSystemState;
 import laptop.model.Pagamento;
 import laptop. model.User;
 import laptop.utilities.ConnToDb;
@@ -15,6 +16,7 @@ import javafx.collections.ObservableList;
 public class PagamentoDao {
 	private String query;
 	private static final String ECCEZIONE="eccezione ottenuta:";
+	private static ControllerSystemState vis=ControllerSystemState.getInstance();
 
 	
 
@@ -42,7 +44,7 @@ public class PagamentoDao {
 			prepQ.setFloat(4,p.getAmmontare());
 			prepQ.setString(5, User.getInstance().getEmail());
 			prepQ.setString(6,p.getTipo());
-			prepQ.setInt(7, p.getId());
+			prepQ.setInt(7, vis.getIdOggetto());
 			prepQ.executeUpdate();
 		}catch(SQLException e)
 		{
