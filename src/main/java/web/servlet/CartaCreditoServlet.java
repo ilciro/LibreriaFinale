@@ -112,17 +112,16 @@ public class CartaCreditoServlet extends HttpServlet {
                 p.setTipo(pB.getTipoB());
                 p.setIdOggetto(pB.getIdOggettoB());
 
+                pD.inserisciPagamento(p);
 
 
                 if(SystemBean.getInstance().isNegozioSelezionatoB())
                 {
                     req.setAttribute("beanS",SystemBean.getInstance());
-
                     RequestDispatcher view = getServletContext().getRequestDispatcher("/negozi.jsp");
                     view.forward(req,resp);
                 }
                 else {
-                    pD.inserisciPagamento(p);
 
                     req.setAttribute("beanS",SystemBean.getInstance());
                     RequestDispatcher view = getServletContext().getRequestDispatcher("/download.jsp");

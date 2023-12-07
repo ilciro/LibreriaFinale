@@ -5,6 +5,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerCheckPagamentoData.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerRegistraUtente.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/Main.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/bean/RivistaBean.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/model/Pagamento.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryHomePageAfterLogin.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerPagamentoCash.java
@@ -17,6 +18,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/LibriServlet.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryAcquista.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/database/ContrassegnoDao.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/bean/GiornaleBean.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/exception/LogoutException.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerModificaUtente.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/exception/AcquistaException.java
@@ -31,6 +33,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryReportPage.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryModificaPage.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryDownload.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/DownloadServletG.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/model/CartaDiCredito.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryVisualizzaProfilo.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerPassword.java
@@ -70,6 +73,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/model/Fattura.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerModifPage.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/database/GiornaleDao.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/GiornaliServlet.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryVisualizza.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/model/User.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/model/raccolta/Factory.java
@@ -93,6 +97,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryAdminPage.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryRaccoltaPage.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerScegliNegozio.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/DownloadServletR.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerAggiungiPage.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerCancellaUser.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryResetPwd.java

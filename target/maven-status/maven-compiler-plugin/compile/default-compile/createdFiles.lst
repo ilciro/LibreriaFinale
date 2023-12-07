@@ -24,10 +24,12 @@ web/bean/CartaCreditoBean.class
 laptop/model/TempUser$RuoliT.class
 laptop/model/Pagamento.class
 laptop/database/RivistaDao.class
+web/bean/RivistaBean.class
 laptop/exception/IdException.class
 laptop/view/BoundaryAdminPage.class
 laptop/controller/ControllerUserPage.class
 laptop/database/CartaCreditoDao.class
+web/servlet/DownloadServletR.class
 laptop/view/BoundaryUserPage.class
 laptop/controller/ControllerGestionePage.class
 laptop/view/BoundaryPagamentoCC.class
@@ -69,6 +71,7 @@ laptop/model/raccolta/CategorieLibro.class
 laptop/view/BoundaryHomePage.class
 laptop/controller/ControllerRicercaPage.class
 laptop/view/BoundaryResetPwd.class
+web/bean/GiornaleBean.class
 laptop/controller/ControllerReportPage.class
 laptop/controller/ControllerBookData.class
 laptop/controller/ControllerModifPage.class
@@ -87,10 +90,12 @@ laptop/view/BoundaryRegistraUtente.class
 laptop/utilities/ConnToDb.class
 laptop/controller/ControllerScegliNegozio.class
 laptop/controller/ControllerRegistraUtente.class
+web/servlet/GiornaliServlet.class
 laptop/view/BoundaryModificaUtente.class
 laptop/view/BoundaryAggiungiUtente.class
 laptop/database/UsersDao.class
 laptop/model/raccolta/Raccolta.class
+web/servlet/DownloadServletG.class
 web/servlet/AcquistaServlet.class
 laptop/controller/ControllerAggiungiPage.class
 laptop/model/raccolta/Libro.class

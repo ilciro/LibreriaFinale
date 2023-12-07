@@ -105,13 +105,15 @@ public class SystemBean {
         this.categoriaB = categoriaB;
     }
 
-    private int oggettoIdB;
 
-    public int getOggettoIdB() {
-        return oggettoIdB;
+private  boolean loggedB;
+
+
+    public boolean isLoggedB() {
+        return loggedB;
     }
 
-    public void setOggettoIdB(int oggettoIdB) {
-        this.oggettoIdB = oggettoIdB;
+    public void setLoggedB(boolean loggedB) {
+        this.loggedB = loggedB;
     }
 }

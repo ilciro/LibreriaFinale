@@ -105,7 +105,7 @@ id prodotto
 Inserire id di oggetto scelto:
 
 
-<input type="text" id="idOgg" name="idOgg" value="idOgg">
+<input type="text" id="idOgg" name="idOgg" >
 <br>
 <br>
 

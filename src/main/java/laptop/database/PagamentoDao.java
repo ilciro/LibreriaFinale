@@ -44,7 +44,7 @@ public class PagamentoDao {
 			prepQ.setFloat(4,p.getAmmontare());
 			prepQ.setString(5, User.getInstance().getEmail());
 			prepQ.setString(6,p.getTipo());
-			prepQ.setInt(7, vis.getIdOggetto());
+			prepQ.setInt(7, p.getIdOggetto());
 			prepQ.executeUpdate();
 		}catch(SQLException e)
 		{
