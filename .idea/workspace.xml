@@ -4,32 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="insert buy book">
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="insert buy newspaper and magazines">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/PagamentoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/PagamentoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/bean/SystemBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/bean/SystemBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/AcquistaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/AcquistaServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/CartaCreditoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/CartaCreditoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/IndexServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/download.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/download.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/giornali.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/giornali.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/libri.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/libri.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/bean/LibroBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/bean/LibroBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/bean/NegozioBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/bean/NegozioBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/bean/RivistaBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/bean/RivistaBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/DownloadServletG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/DownloadServletG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/DownloadServletR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/DownloadServletR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/FatturaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/FatturaServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/fattura.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/fattura.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/riviste.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/riviste.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/PagamentoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/PagamentoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/SystemBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/SystemBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/LibroBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/LibroBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/NegozioBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/NegozioBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/RivistaBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/RivistaBean.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/AcquistaServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/AcquistaServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/CartaCreditoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/CartaCreditoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/IndexServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/IndexServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/download.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/download.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/giornali.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/giornali.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/libri.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/libri.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/PagamentoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/PagamentoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/bean/SystemBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/bean/SystemBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/DownloadServletG.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/DownloadServletG.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/DownloadServletR.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/DownloadServletR.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/FatturaServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/FatturaServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/fattura.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/fattura.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/riviste.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/riviste.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/bean/LibroBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/bean/LibroBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/bean/NegozioBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/bean/NegozioBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/bean/RivistaBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/bean/RivistaBean.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/AcquistaServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/AcquistaServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/CartaCreditoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/CartaCreditoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/IndexServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/IndexServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/FatturaServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/FatturaServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/original-LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-LibreriaMaven.war" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,27 +89,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Maven.LibreriaMaven [clean].executor": "Run",
-    "Maven.LibreriaMaven [install].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/daniele/IdeaProjects/LibreriaFinale/src/main/resources",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;JUnit.TestIndexPage.testAcquistaLibro.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestIndexPage.testIndexBook.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.LibreriaMaven [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.LibreriaMaven [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/daniele/IdeaProjects/LibreriaFinale/src/main/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="web.bean" />
@@ -128,7 +135,7 @@
       <recent name="laptop.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestIndexPage.testIndexBook">
+  <component name="RunManager" selected="JUnit.TestIndexPage.testAcquistaLibro">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="laptop.view.Main" />
       <module name="LibreriaMaven" />
@@ -157,6 +164,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestIndexPage.testAcquistaLibro" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LibreriaMaven" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="web.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="web.test" />
+      <option name="MAIN_CLASS_NAME" value="web.test.TestIndexPage" />
+      <option name="METHOD_NAME" value="testAcquistaLibro" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestIndexPage.testIndexBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibreriaMaven" />
       <extension name="coverage">
@@ -178,16 +201,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestWeb" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestWeb.testPagamento" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LibreriaMaven" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestWeb" />
-      <option name="METHOD_NAME" value="testPagamento" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -233,28 +246,36 @@
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
       <option name="extraClassPath" value="" />
       <option name="vmOptions" value="" />
+      <module name="LibreriaMaven" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.TestIndexPage.testAcquistaLibro" />
       <item itemvalue="JUnit.TestIndexPage.testIndexBook" />
       <item itemvalue="JUnit.TestIndexPage" />
       <item itemvalue="JUnit.TestWeb" />
-      <item itemvalue="JUnit.TestWeb.testPagamento" />
       <item itemvalue="Maven.LibreriaMaven [javafx:run]" />
       <item itemvalue="Smart Tomcat.Unnamed" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestIndexPage.testAcquistaLibro" />
         <item itemvalue="JUnit.TestIndexPage.testIndexBook" />
         <item itemvalue="JUnit.TestIndexPage" />
         <item itemvalue="JUnit.TestWeb" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.TestWeb.testPagamento" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-8336523bb0d9-9b5c8e75" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -455,7 +476,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701955803748</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="insert buy newspaper and magazines">
+      <option name="closed" value="true" />
+      <created>1701963551449</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1701963551449</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -496,7 +525,8 @@
     <MESSAGE value="added test login v2" />
     <MESSAGE value="remove webapp" />
     <MESSAGE value="insert buy book" />
-    <option name="LAST_COMMIT_MESSAGE" value="insert buy book" />
+    <MESSAGE value="insert buy newspaper and magazines" />
+    <option name="LAST_COMMIT_MESSAGE" value="insert buy newspaper and magazines" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -2,8 +2,25 @@ package web.bean;
 
 public class NegozioBean {
     private String nomeB;
-    private boolean isOpenB;
-    private boolean isValidB;
+    private boolean openB;
+
+    public boolean isOpenB() {
+        return openB;
+    }
+
+    public void setOpenB(boolean openB) {
+        this.openB = openB;
+    }
+
+    public boolean isValidB() {
+        return validB;
+    }
+
+    public void setValidB(boolean validB) {
+        this.validB = validB;
+    }
+
+    private boolean validB;
 
     private String mexB;
 
@@ -15,21 +32,7 @@ public class NegozioBean {
         this.nomeB = nomeB;
     }
 
-    public boolean isOpenB() {
-        return isOpenB;
-    }
 
-    public void setOpenB(boolean openB) {
-        isOpenB = openB;
-    }
-
-    public boolean isValidB() {
-        return isValidB;
-    }
-
-    public void setValidB(boolean validB) {
-        isValidB = validB;
-    }
 
     public String getMexB() {
         return mexB;

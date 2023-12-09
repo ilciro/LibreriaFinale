@@ -26,7 +26,7 @@
 inserire il nome :
 </td>
 <td>
-<input type="text" id="nomeL" name="nomeL">
+<input type="text" id="nomeT" name="nomeT" >
 </td>
 </tr>
 <tr>
@@ -34,7 +34,7 @@ inserire il nome :
 inserire il cognome :
 </td>
 <td>
-<input type="text" id="cognomeL" name="cognomeL">
+<input type="text" id="cognomeT" name="cognomeT">
 </td>
 </tr>
 <tr>
@@ -42,7 +42,7 @@ inserire il cognome :
 inserire indirizzo  :
 </td>
 <td>
-<input type="text" id="indirizzoL" name="indirizzoL">
+<input type="text" id="indirizzoT" name="indirizzoT">
 </td>
 </tr>
 <tr>

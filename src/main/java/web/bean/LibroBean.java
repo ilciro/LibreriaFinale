@@ -6,9 +6,11 @@ import laptop.exception.IdException;
 import laptop.model.raccolta.CategorieLibro;
 import laptop.model.raccolta.Raccolta;
 
+import java.beans.BeanProperty;
 import java.sql.SQLException;
 
 public class LibroBean {
+
 
     private LibroDao lD=new LibroDao();
 
@@ -41,6 +43,7 @@ public class LibroBean {
 
         this.idB = idB;
     }
+
 
 
     public ObservableList<Raccolta> getElencoLibriB() {

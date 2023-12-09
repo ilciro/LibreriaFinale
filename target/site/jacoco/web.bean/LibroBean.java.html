@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LibroBean.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">web.bean</a> &gt; <span class="el_source">LibroBean.java</span></div><h1>LibroBean.java</h1><pre class="source lang-java linenums">package web.bean;
+
+import javafx.collections.ObservableList;
+import laptop.database.LibroDao;
+import laptop.exception.IdException;
+import laptop.model.raccolta.CategorieLibro;
+import laptop.model.raccolta.Raccolta;
+
+import java.beans.BeanProperty;
+import java.sql.SQLException;
+
+<span class="fc" id="L12">public class LibroBean {</span>
+
+
+<span class="fc" id="L15">    private LibroDao lD=new LibroDao();</span>
+
+    private ObservableList&lt;Raccolta&gt; elencoLibriB;
+
+    private Exception mexB;
+
+    private int idB;
+    private String titoloB;
+
+    public String getTitoloB() {
+<span class="nc" id="L25">        return titoloB;</span>
+    }
+
+    public void setTitoloB(String titoloB) {
+<span class="nc" id="L29">        this.titoloB = titoloB;</span>
+<span class="nc" id="L30">    }</span>
+
+    public int getIdB() {
+<span class="nc" id="L33">        return idB;</span>
+    }
+
+    public void setIdB(int idB) throws IdException, SQLException {
+<span class="pc bpc" id="L37" title="2 of 4 branches missed.">        if(idB&lt;1 || idB&gt;lunghezzaLista())</span>
+        {
+<span class="nc" id="L39">            this.idB=0;</span>
+<span class="nc" id="L40">            setMexB( new IdException(&quot;id incorrect&quot;));</span>
+
+        }
+
+<span class="fc" id="L44">        this.idB = idB;</span>
+<span class="fc" id="L45">    }</span>
+
+
+
+    public ObservableList&lt;Raccolta&gt; getElencoLibriB() {
+<span class="nc" id="L50">        return elencoLibriB;</span>
+    }
+
+    public void setElencoLibriB(ObservableList&lt;Raccolta&gt; elencoLibriB) {
+<span class="fc" id="L54">        this.elencoLibriB = elencoLibriB;</span>
+<span class="fc" id="L55">    }</span>
+
+    public Exception getMexB() {
+<span class="nc" id="L58">        return mexB;</span>
+    }
+
+    public void setMexB(Exception mexB) {
+<span class="nc" id="L62">        this.mexB = mexB;</span>
+<span class="nc" id="L63">    }</span>
+
+    //user for calculate length
+    private int lunghezzaLista() throws SQLException {
+<span class="fc" id="L67">      return  lD.getLibri().size();</span>
+
+    }
+
+    public String getCategoriaB() {
+<span class="nc" id="L72">        return categoriaB;</span>
+    }
+
+    public void setCategoriaB(String categoriaB) {
+<span class="nc bnc" id="L76" title="All 30 branches missed.">        switch (categoriaB){</span>
+            case &quot;ADOLESCENTI_RAGAZZI&quot;:
+<span class="nc" id="L78">                this.categoriaB = CategorieLibro.ADOLESCENTI_RAGAZZI.toString();</span>
+<span class="nc" id="L79">                break;</span>
+            case &quot;ARTE&quot;:
+<span class="nc" id="L81">                this.categoriaB = CategorieLibro.ARTE.toString();</span>
+<span class="nc" id="L82">                break;</span>
+            case &quot;CINEMA_FOTOGRAFIA&quot; :
+<span class="nc" id="L84">                this.categoriaB = CategorieLibro.CINEMA_FOTOGRAFIA.toString();</span>
+<span class="nc" id="L85">                break;</span>
+            case &quot;BIOGRAFIE&quot; :
+<span class="nc" id="L87">                this.categoriaB = CategorieLibro.BIOGRAFIE.toString();</span>
+<span class="nc" id="L88">                break;</span>
+            case &quot;DIARI_MEMORIE&quot; :
+<span class="nc" id="L90">                this.categoriaB = CategorieLibro.DIARI_MEMORIE.toString();</span>
+<span class="nc" id="L91">                break;</span>
+            case &quot;CALENDARI_AGENDE&quot; :
+<span class="nc" id="L93">                this.categoriaB = CategorieLibro.CALENDARI_AGENDE.toString();</span>
+<span class="nc" id="L94">                break;</span>
+            case &quot;DIRITTO&quot; :
+<span class="nc" id="L96">                this.categoriaB = CategorieLibro.DIRITTO.toString();</span>
+<span class="nc" id="L97">                break;</span>
+            case &quot;DIZINARI_OPERE&quot; :
+<span class="nc" id="L99">                this.categoriaB = CategorieLibro.DIZINARI_OPERE.toString();</span>
+<span class="nc" id="L100">                break;</span>
+            case &quot;ECONOMIA&quot; :
+<span class="nc" id="L102">                this.categoriaB = CategorieLibro.ECONOMIA.toString();</span>
+<span class="nc" id="L103">                break;</span>
+            case &quot;FAMIGLIA&quot; :
+<span class="nc" id="L105">                this.categoriaB = CategorieLibro.FAMIGLIA.toString();</span>
+<span class="nc" id="L106">                break;</span>
+            case &quot;SALUTE_BENESSERE&quot; :
+<span class="nc" id="L108">                this.categoriaB = CategorieLibro.SALUTE_BENESSERE.toString();</span>
+<span class="nc" id="L109">                break;</span>
+            case &quot;FANTASCIENZA_FANTASY&quot; :
+<span class="nc" id="L111">                this.categoriaB = CategorieLibro.FANTASCIENZA_FANTASY.toString();</span>
+<span class="nc" id="L112">                break;</span>
+            case &quot;FUMETTI_MANGA&quot; :
+<span class="nc" id="L114">                this.categoriaB = CategorieLibro.FUMETTI_MANGA.toString();</span>
+<span class="nc" id="L115">                break;</span>
+            case &quot;GIALLI_THRILLER&quot; :
+<span class="nc" id="L117">                this.categoriaB = CategorieLibro.GIALLI_THRILLER.toString();</span>
+<span class="nc" id="L118">                break;</span>
+            case &quot;COMPUTER_GIOCHI&quot; :
+<span class="nc" id="L120">                this.categoriaB = CategorieLibro.COMPUTER_GIOCHI.toString();</span>
+<span class="nc" id="L121">                break;</span>
+            case &quot;HUMOR&quot; :
+<span class="nc" id="L123">                this.categoriaB = CategorieLibro.HUMOR.toString();</span>
+<span class="nc" id="L124">                break;</span>
+            case &quot;INFORMATICA&quot; :
+<span class="nc" id="L126">                this.categoriaB = CategorieLibro.INFORMATICA.toString();</span>
+<span class="nc" id="L127">                break;</span>
+            case &quot;WEB_DIGITAL_MEDIA&quot; :
+<span class="nc" id="L129">                this.categoriaB = CategorieLibro.WEB_DIGITAL_MEDIA.toString();</span>
+<span class="nc" id="L130">                break;</span>
+            case &quot;LETTERATURA_NARRATIVA&quot; :
+<span class="nc" id="L132">                this.categoriaB = CategorieLibro.LETTERATURA_NARRATIVA.toString();</span>
+<span class="nc" id="L133">                break;</span>
+            case &quot;LIBRI_BAMBINI&quot; :
+<span class="nc" id="L135">                this.categoriaB = CategorieLibro.LIBRI_BAMBINI.toString();</span>
+<span class="nc" id="L136">                break;</span>
+            case &quot;LIBRI_SCOLASTICI&quot; :
+<span class="nc" id="L138">                this.categoriaB = CategorieLibro.LIBRI_SCOLASTICI.toString();</span>
+<span class="nc" id="L139">                break;</span>
+            case &quot;LIBRI_UNIVERSITARI&quot; :
+<span class="nc" id="L141">                this.categoriaB = CategorieLibro.LIBRI_UNIVERSITARI.toString();</span>
+<span class="nc" id="L142">                break;</span>
+            case &quot;RICETTARI_GENERALI&quot; :
+<span class="nc" id="L144">                this.categoriaB = CategorieLibro.RICETTARI_GENERALI.toString();</span>
+<span class="nc" id="L145">                break;</span>
+            case &quot;LINGUISTICA_SCRITTURA&quot; :
+<span class="nc" id="L147">                this.categoriaB = CategorieLibro.LINGUISTICA_SCRITTURA.toString();</span>
+<span class="nc" id="L148">                break;</span>
+            case &quot;POLITICA&quot; :
+<span class="nc" id="L150">                this.categoriaB = CategorieLibro.POLITICA.toString();</span>
+<span class="nc" id="L151">                break;</span>
+            case &quot;RELIGIONE&quot; :
+<span class="nc" id="L153">                this.categoriaB = CategorieLibro.RELIGIONE.toString();</span>
+<span class="nc" id="L154">                break;</span>
+            case &quot;ROMANZI_ROSA&quot; :
+<span class="nc" id="L156">                this.categoriaB = CategorieLibro.ROMANZI_ROSA.toString();</span>
+<span class="nc" id="L157">                break;</span>
+            case &quot;SCIENZE&quot; :
+<span class="nc" id="L159">                this.categoriaB = CategorieLibro.SCIENZE.toString();</span>
+<span class="nc" id="L160">                break;</span>
+            case &quot;TECNOLOGIA_MEDICINA&quot; :
+<span class="nc" id="L162">                this.categoriaB = CategorieLibro.TECNOLOGIA_MEDICINA.toString();</span>
+<span class="nc" id="L163">                break;</span>
+
+            default :
+<span class="nc" id="L166">                this.categoriaB = null;</span>
+                break;
+        }
+<span class="nc" id="L169">    }</span>
+
+    private String categoriaB;
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

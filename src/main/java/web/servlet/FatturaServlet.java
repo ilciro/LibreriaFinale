@@ -38,9 +38,9 @@ public class FatturaServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String nome=req.getParameter("nomeL");
-        String cognome=req.getParameter("cognomeL");
-        String indirizzo=req.getParameter("indirizzoL");
+        String nome=req.getParameter("nomeT");
+        String cognome=req.getParameter("cognomeT");
+        String indirizzo=req.getParameter("indirizzoT");
         String com=req.getParameter("com");
         String invia=req.getParameter("buttonC");
         String annullaO=req.getParameter("annulla");

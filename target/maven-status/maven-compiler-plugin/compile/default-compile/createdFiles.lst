@@ -13,6 +13,7 @@ laptop/model/User$Ruoli.class
 laptop/view/BoundaryCompravendita.class
 laptop/view/Main.class
 web/bean/DownloadBean.class
+web/servlet/RivisteServlet.class
 laptop/exception/AcquistaException.class
 laptop/controller/ControllerVisualizza.class
 laptop/controller/ControllerAcquista.class
