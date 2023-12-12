@@ -46,7 +46,7 @@ public class RivistaBean {
             case "TELEVISIVO"->    this.tipologiaB = CategorieRivista.TELEVISIVO.toString();
             case "MILITARE"->    this.tipologiaB = CategorieRivista.MILITARE.toString();
             case "INFORMATICA"->    this.tipologiaB = CategorieRivista.INFORMATICA.toString();
-            default -> {    }
+            default -> {  this.tipologiaB=null;  }
 
 
 

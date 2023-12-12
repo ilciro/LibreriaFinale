@@ -11,6 +11,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import laptop.database.GiornaleDao;
+import laptop.model.raccolta.Giornale;
 import laptop.utilities.ConnToDb;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -42,7 +44,7 @@ public class Main  extends Application {
 
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 		//uso status per vedere se trigger creati
 
 
@@ -58,6 +60,8 @@ public class Main  extends Application {
 
 
 		launch(args);
+
+
 
 	}
 

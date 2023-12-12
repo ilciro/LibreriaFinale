@@ -23,6 +23,8 @@ USE `ISPW` ;
 -- -----------------------------------------------------
 -- Table `ISPW`.`USERS`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `ISPW`.`USERS` ;
+
 CREATE TABLE IF NOT EXISTS `ISPW`.`USERS` (
   `idUser` INT NOT NULL AUTO_INCREMENT,
   `idRuolo` VARCHAR(1) NOT NULL DEFAULT 'U',
@@ -43,6 +45,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 -- Table `ISPW`.`AMMINISTRATORE`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `ISPW`.`AMMINISTRATORE` ;
 CREATE TABLE IF NOT EXISTS `ISPW`.`AMMINISTRATORE` (
   `idAdmin` INT NOT NULL AUTO_INCREMENT,
   `idUser` INT NULL DEFAULT NULL,
@@ -59,6 +62,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 -- Table `ISPW`.`CARTACREDITO`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `ISPW`.`CARTACREDITO` ;
 CREATE TABLE IF NOT EXISTS `ISPW`.`CARTACREDITO` (
   `nomeP` VARCHAR(10) NULL DEFAULT NULL,
   `cognomeP` VARCHAR(20) NULL DEFAULT NULL,
@@ -74,6 +78,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 -- Table `ISPW`.`EDITORE`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `ISPW`.`EDITORE` ;
 CREATE TABLE IF NOT EXISTS `ISPW`.`EDITORE` (
   `idEditor` INT NOT NULL AUTO_INCREMENT,
   `idUser` INT NULL DEFAULT NULL,
@@ -91,6 +96,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 -- Table `ISPW`.`FATTURA`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `ISPW`.`FATTURA` ;
 CREATE TABLE IF NOT EXISTS `ISPW`.`FATTURA` (
   `nome` VARCHAR(10) NULL DEFAULT NULL,
   `cognome` VARCHAR(10) NULL DEFAULT NULL,
@@ -107,10 +113,11 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 -- Table `ISPW`.`GIORNALE`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `ISPW`.`GIORNALE` ;
 CREATE TABLE IF NOT EXISTS `ISPW`.`GIORNALE` (
   `titolo` VARCHAR(200) NULL DEFAULT NULL,
   `tipologia` VARCHAR(60) NULL DEFAULT NULL,
-  `lingua` VARCHAR(30) NULL DEFAULT NULL,
+  `lingua` VARCHAR(10) NULL DEFAULT NULL,
   `editore` VARCHAR(200) NULL DEFAULT NULL,
   `dataPubblicazione` DATE NULL DEFAULT NULL,
   `copiRim` INT NULL DEFAULT NULL,
@@ -127,6 +134,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 -- Table `ISPW`.`LIBRO`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `ISPW`.`LIBRO` ;
 CREATE TABLE IF NOT EXISTS `ISPW`.`LIBRO` (
   `titolo` VARCHAR(200) NULL DEFAULT NULL,
   `numeroPagine` INT NULL DEFAULT NULL,
@@ -154,6 +162,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 -- Table `ISPW`.`NEGOZIO`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `ISPW`.`NEGOZIO` ;
 CREATE TABLE IF NOT EXISTS `ISPW`.`NEGOZIO` (
   `idNegozio` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NULL DEFAULT NULL,
@@ -170,6 +179,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 -- Table `ISPW`.`PAGAMENTO`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `ISPW`.`PAGAMENTO` ;
 CREATE TABLE IF NOT EXISTS `ISPW`.`PAGAMENTO` (
   `id_op` INT NOT NULL AUTO_INCREMENT,
   `metodo` VARCHAR(10) NULL DEFAULT NULL,
@@ -188,6 +198,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 -- Table `ISPW`.`RIVISTA`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `ISPW`.`RIVISTA` ;
 CREATE TABLE IF NOT EXISTS `ISPW`.`RIVISTA` (
   `titolo` VARCHAR(200) NULL DEFAULT NULL,
   `tipologia` VARCHAR(60) NULL DEFAULT NULL,
@@ -210,6 +221,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 -- Table `ISPW`.`SCRITTORI`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `ISPW`.`SCRITTORI` ;
 CREATE TABLE IF NOT EXISTS `ISPW`.`SCRITTORI` (
   `idScrittore` INT NOT NULL AUTO_INCREMENT,
   `idUser` INT NULL DEFAULT NULL,
@@ -267,10 +279,6 @@ INSERT INTO `ISPW`.`USERS` (`idUser`, `idRuolo`, `Nome`, `Cognome`, `Email`, `pw
 INSERT INTO `ISPW`.`USERS` (`idUser`, `idRuolo`, `Nome`, `Cognome`, `Email`, `pwd`, `descrizione`, `DataDiNascita`) VALUES (4, 'U', 'Giulia', 'Conforto', 'giuliaConforto@gmail.eu', '12345678Gc', 'utente semplice', '1998-09-05');
 INSERT INTO `ISPW`.`USERS` (`idUser`, `idRuolo`, `Nome`, `Cognome`, `Email`, `pwd`, `descrizione`, `DataDiNascita`) VALUES (5, 'W', 'Zerocalcare', 'Zerocalcare', 'zerocalcare@gmail.com', 'Zerocalcare21', 'scrittore semplice', '1980-05-20');
 INSERT INTO `ISPW`.`USERS` (`idUser`, `idRuolo`, `Nome`, `Cognome`, `Email`, `pwd`, `descrizione`, `DataDiNascita`) VALUES (6, 'E', 'Bao Publishing', 'Bao Publishing', 'baoPublishing@gmail.com', 'BaoPub2021', 'editore semplice', '1960-11-21');
-INSERT INTO `ISPW`.`USERS` (`idUser`, `idRuolo`, `Nome`, `Cognome`, `Email`, `pwd`, `descrizione`, `DataDiNascita`) VALUES (7, 'U', 'foo user', 'foo user', 'userfoo152@gmail.com', 'foo15us', 'utente foo', '2000-01-05');
-INSERT INTO `ISPW`.`USERS` (`idUser`, `idRuolo`, `Nome`, `Cognome`, `Email`, `pwd`, `descrizione`, `DataDiNascita`) VALUES (8, 'U', 'foo user1', 'foo user1', 'userfoo1521@gmail.com', 'foo151us', 'utente foo1', '2002-08-23');
-
-
 
 COMMIT;
 
@@ -321,4 +329,3 @@ INSERT INTO `ISPW`.`RIVISTA` (`titolo`, `tipologia`, `autore`, `lingua`, `editor
 INSERT INTO `ISPW`.`RIVISTA` (`titolo`, `tipologia`, `autore`, `lingua`, `editore`, `Descrizione`, `dataPubblicazione`, `disp`, `prezzo`, `copieRimanenti`, `id`) VALUES ('Rivista B', 'SPORTIVO', 'Bao Publishing', 'italiano', 'Bao Publishing', 'testo casuale', '1970-01-01', 1, 2.0, 131, 5);
 
 COMMIT;
-

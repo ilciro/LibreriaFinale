@@ -337,7 +337,7 @@ public class GiornaleDao {
 
 
 	public  boolean creaGiornale(Giornale g) throws SQLException  {
-		
+		 int row;
 
 			
 			query= "INSERT INTO `GIORNALE`"
@@ -348,9 +348,10 @@ public class GiornaleDao {
 					+ "`dataPubblicazione`,"
 					+ "`copiRim`,"
 					+ "`disp`,"
-					+ "`prezzo`)"
+					+ "`prezzo`,"
+					+ "`id`)"
 					+ "VALUES"
-					+ "(?,?,?,?,?,?,?,?)";
+					+ "(?,?,?,?,?,?,?,?,?)";
 			try(Connection conn=ConnToDb.connectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
@@ -363,10 +364,10 @@ public class GiornaleDao {
 			prepQ.setInt(6,g.getCopieRimanenti());
 			prepQ.setInt(7, g.getDisponibilita());
 			prepQ.setFloat(8, g.getPrezzo());
+			prepQ.setInt(9,0);
 
-			prepQ.executeUpdate();
-
-			state= true; // true		 			 	
+			row=prepQ.executeUpdate();
+                state= row == 1; // true
 		
 			}catch(SQLException e)
 			{
@@ -380,7 +381,7 @@ public class GiornaleDao {
 	}
 
 
-	public  void cancella(Giornale g) throws SQLException  {
+	public  int cancella(Giornale g) throws SQLException  {
 		int row=0;
 		query="delete from GIORNALE where id=?";
 		try(Connection conn=ConnToDb.connectionToDB();
@@ -395,7 +396,7 @@ public class GiornaleDao {
 		}
 		java.util.logging.Logger.getLogger("cancella g").log(Level.INFO,"\n rows affcted {0}",row);
 
-
+	return row;
 
 
 	}
@@ -468,7 +469,7 @@ public class GiornaleDao {
 
 	}
 
-	public  void aggiornaGiornale(Giornale g) throws SQLException  {
+	public  int aggiornaGiornale(Giornale g) throws SQLException  {
 		 int row=0;
 
 
@@ -506,7 +507,7 @@ public class GiornaleDao {
 			}
 
 			java.util.logging.Logger.getLogger("aggiorna g").log(Level.INFO," rows aggiornalte {0}",row);
-
+			return row;
 
 	}	
 

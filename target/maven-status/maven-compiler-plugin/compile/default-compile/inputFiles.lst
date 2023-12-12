@@ -40,6 +40,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryModificaPage.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryDownload.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/DownloadServletG.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/GestioneOggettoServletGiornale.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/model/CartaDiCredito.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryVisualizzaProfilo.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerPassword.java
@@ -85,6 +86,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/GiornaliServlet.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryVisualizza.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/bean/ModificaOggettoBean.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/InserisciGiornaleServlet.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/model/User.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/model/raccolta/Factory.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/model/raccolta/Rivista.java
@@ -99,6 +101,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerUserPage.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryPagamentoCC.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerHomePageAfterLoginSE.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/ModificaGiornaleServlet.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryUserPage.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryLogin.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/model/raccolta/Raccolta.java

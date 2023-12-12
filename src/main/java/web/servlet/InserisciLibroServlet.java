@@ -46,8 +46,7 @@ public class InserisciLibroServlet extends HttpServlet {
         try {
 
             if (conferma != null && conferma.equals("conferma")) {
-                java.util.Date utilDate;
-                java.sql.Date sqlDate;
+
 
                 lB.setTitoloB(titolo);
                 lB.setCodIsbnB(codice);
@@ -57,11 +56,10 @@ public class InserisciLibroServlet extends HttpServlet {
                 lB.setLinguaB(lingua);
                 lB.setCategoriaB(cat);
 
+                java.util.Date utilDate;
+                java.sql.Date sqlDate;
                 SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-
-
-
-                    utilDate = format.parse(dataL);
+                utilDate = format.parse(dataL);
 
                 sqlDate = new java.sql.Date(utilDate.getTime());
                 lB.setDateB(sqlDate);
@@ -100,7 +98,7 @@ public class InserisciLibroServlet extends HttpServlet {
 
                 if (lD.creaLibrio(l)) {
                     lD.aggiornaData(l, sqlDate);
-                    req.setAttribute("bean", lB);
+                    req.setAttribute("beanL", lB);
                     RequestDispatcher view = getServletContext().getRequestDispatcher("/gestioneOggettoPageLibro.jsp");
                     view.forward(req, resp);
 
@@ -110,6 +108,11 @@ public class InserisciLibroServlet extends HttpServlet {
                 }
 
 
+            }
+            if(annulla!=null && annulla.equals("indietro"))
+            {
+                RequestDispatcher view= getServletContext().getRequestDispatcher("/gestioneOggettoPageLibro.jsp");
+                view.forward(req,resp);
             }
         }catch (SQLException | ParseException e) {
             java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());

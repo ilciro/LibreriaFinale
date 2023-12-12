@@ -53,6 +53,7 @@ laptop/controller/ControllerCancellaUser.class
 web/servlet/NegozioServlet.class
 laptop/view/BoundaryHomePageAfterLoginSE.class
 laptop/model/raccolta/CategorieRivista.class
+web/servlet/ModificaGiornaleServlet.class
 laptop/controller/ControllerSystemState.class
 web/servlet/IndexServlet.class
 laptop/view/BoundaryLogin.class
@@ -62,6 +63,7 @@ laptop/controller/ControllerDownload.class
 web/servlet/GestioneOggettoServletLibro.class
 laptop/model/TempUser.class
 laptop/view/BoundaryAcquista.class
+web/servlet/GestioneOggettoServletGiornale.class
 laptop/controller/ControllerRicercaPerTipo.class
 web/servlet/DownloadServlet.class
 laptop/controller/ControllerReportRaccolta.class
@@ -83,6 +85,7 @@ laptop/controller/ControllerReportPage.class
 laptop/controller/ControllerBookData.class
 laptop/controller/ControllerModifPage.class
 web/servlet/CartaCreditoServlet.class
+web/servlet/InserisciGiornaleServlet.class
 laptop/model/raccolta/MatchParam.class
 laptop/view/BoundaryVisualizzaProfilo.class
 laptop/database/LibroDao.class

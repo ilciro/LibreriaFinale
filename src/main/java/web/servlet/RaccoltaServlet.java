@@ -37,14 +37,16 @@ public class RaccoltaServlet extends HttpServlet {
                 view = getServletContext().getRequestDispatcher("/gestioneOggettoPageLibro.jsp");
                 view.forward(req,resp);
             }
-            /*
+
             if(giornale!=null && giornale.equals("giornali") )
             {
                sB.setTypeAsDaily();
+               sB.setTypeB("giornale");
                 req.setAttribute(beanS,sB);
-                // view = getServletContext().getRequestDispatcher(gestioneOggetto);
+                 view = getServletContext().getRequestDispatcher("/gestioneOggettoPageGiornale.jsp");
                 view.forward(req,resp);
             }
+            /*
             if(rivista!=null && rivista.equals("riviste"))
             {
                 sB.setTypeAsMagazine();

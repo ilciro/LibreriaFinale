@@ -57,7 +57,7 @@ public class ControllerReportPage {
 	/*
 	uso queste operazioni er leggere ogni singolo file
 	 */
-	public String leggiLibro() throws SQLException, IOException {
+	public String leggiLibro() throws  IOException {
 		generaReportLibri();
 		StringBuilder builder = new StringBuilder();
 		String line = "";

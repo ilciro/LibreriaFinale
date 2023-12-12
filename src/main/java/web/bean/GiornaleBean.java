@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 public class GiornaleBean {
 
-    private GiornaleDao gD=new GiornaleDao();
+
     private ObservableList<Raccolta> listaGiornaliB;
     private int idB;
     private String titoloB;
@@ -88,7 +88,7 @@ public class GiornaleBean {
     }
 
     public void setIdB(int idB) throws SQLException {
-        if(idB<1 || idB>lunghezzaLista())
+        if(idB<1 )
         {
             this.idB=0;
             setMexB( new IdException("id incorrect"));
@@ -106,9 +106,7 @@ public class GiornaleBean {
         this.titoloB = titoloB;
     }
 
-    private int lunghezzaLista() throws SQLException {
-        return gD.getGiornali().size();
-    }
+
     private Exception mexB;
 
     public Exception getMexB() {
