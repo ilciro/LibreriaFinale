@@ -47,5 +47,10 @@ public class IndexServlet extends HttpServlet {
              view= getServletContext().getRequestDispatcher("/riviste.jsp");
             view.forward(req,resp);
         }
+        if(login!=null && login.equals("login"))
+        {
+            view= getServletContext().getRequestDispatcher("/login.jsp");
+            view.forward(req,resp);
+        }
     }
 }

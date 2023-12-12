@@ -5,6 +5,7 @@ import laptop.database.GiornaleDao;
 import laptop.exception.IdException;
 import laptop.model.raccolta.Raccolta;
 
+import java.sql.Date;
 import java.sql.SQLException;
 
 public class GiornaleBean {
@@ -17,6 +18,72 @@ public class GiornaleBean {
     public ObservableList<Raccolta> getListaGiornaliB() {
         return listaGiornaliB;
     }
+
+    private String tipologiaB;
+    private String linguaB;
+    private String editoreB;
+
+    private java.sql.Date dataB;
+    private int CopieRimanentiB;
+
+    public String getTipologiaB() {
+        return tipologiaB;
+    }
+
+    public void setTipologiaB(String tipologiaB) {
+        this.tipologiaB = tipologiaB;
+    }
+
+    public String getLinguaB() {
+        return linguaB;
+    }
+
+    public void setLinguaB(String linguaB) {
+        this.linguaB = linguaB;
+    }
+
+    public String getEditoreB() {
+        return editoreB;
+    }
+
+    public void setEditoreB(String editoreB) {
+        this.editoreB = editoreB;
+    }
+
+    public Date getDataB() {
+        return dataB;
+    }
+
+    public void setDataB(Date dataB) {
+        this.dataB = dataB;
+    }
+
+    public int getCopieRimanentiB() {
+        return CopieRimanentiB;
+    }
+
+    public void setCopieRimanentiB(int copieRimanentiB) {
+        CopieRimanentiB = copieRimanentiB;
+    }
+
+    public int getDisponibilitaB() {
+        return DisponibilitaB;
+    }
+
+    public void setDisponibilitaB(int disponibilitaB) {
+        DisponibilitaB = disponibilitaB;
+    }
+
+    public float getPrezzoB() {
+        return prezzoB;
+    }
+
+    public void setPrezzoB(float prezzoB) {
+        this.prezzoB = prezzoB;
+    }
+
+    private int DisponibilitaB;
+    private float prezzoB;
 
     public void setListaGiornaliB(ObservableList<Raccolta> listaGiornaliB) {
         this.listaGiornaliB = listaGiornaliB;

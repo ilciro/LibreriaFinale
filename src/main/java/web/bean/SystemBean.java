@@ -39,6 +39,8 @@ public class SystemBean {
     private String titoloB;
     private String metodoPB;
 
+
+
     public String getMetodoPB() {
         return metodoPB;
     }

@@ -1,18 +1,16 @@
 package web.bean;
 
 import javafx.collections.ObservableList;
-import laptop.database.LibroDao;
 import laptop.exception.IdException;
 import laptop.model.raccolta.CategorieLibro;
 import laptop.model.raccolta.Raccolta;
 
-import java.beans.BeanProperty;
+import java.sql.Date;
 import java.sql.SQLException;
 
 public class LibroBean {
 
 
-    private LibroDao lD=new LibroDao();
 
     private ObservableList<Raccolta> elencoLibriB;
 
@@ -20,10 +18,65 @@ public class LibroBean {
 
     private int idB;
     private String titoloB;
+    private String codIsbnB;
+    private int numeroPagineB;
+    private String autoreB;
+    private String editoreB;
+    private String linguaB;
+    private String categoriaB;
+
+    private java.sql.Date dateB;
+
+    private String recensioneB;
+    private String descB;
+    private int disponibilitaB;
+    private float prezzoB;
+    private int nrCopieB;
+
+    public String getRecensioneB() {
+        return recensioneB;
+    }
+
+    public void setRecensioneB(String recensioneB) {
+        this.recensioneB = recensioneB;
+    }
+
+    public String getDescB() {
+        return descB;
+    }
+
+    public void setDescB(String descB) {
+        this.descB = descB;
+    }
+
+    public int getDisponibilitaB() {
+        return disponibilitaB;
+    }
+
+    public void setDisponibilitaB(int disponibilitaB) {
+        this.disponibilitaB = disponibilitaB;
+    }
+
+    public float getPrezzoB() {
+        return prezzoB;
+    }
+
+    public void setPrezzoB(float prezzoB) {
+        this.prezzoB = prezzoB;
+    }
+
+    public int getNrCopieB() {
+        return nrCopieB;
+    }
+
+    public void setNrCopieB(int nrCopieB) {
+        this.nrCopieB = nrCopieB;
+    }
 
     public String getTitoloB() {
         return titoloB;
     }
+
 
     public void setTitoloB(String titoloB) {
         this.titoloB = titoloB;
@@ -34,7 +87,7 @@ public class LibroBean {
     }
 
     public void setIdB(int idB) throws IdException, SQLException {
-        if(idB<1 || idB>lunghezzaLista())
+        if(idB<1 )
         {
             this.idB=0;
             setMexB( new IdException("id incorrect"));
@@ -63,10 +116,7 @@ public class LibroBean {
     }
 
     //user for calculate length
-    private int lunghezzaLista() throws SQLException {
-      return  lD.getLibri().size();
 
-    }
 
     public String getCategoriaB() {
         return categoriaB;
@@ -168,5 +218,52 @@ public class LibroBean {
         }
     }
 
-    private String categoriaB;
+
+    public String getCodIsbnB() {
+        return codIsbnB;
+    }
+
+    public void setCodIsbnB(String codIsbnB) {
+        this.codIsbnB = codIsbnB;
+    }
+
+    public int getNumeroPagineB() {
+        return numeroPagineB;
+    }
+
+    public void setNumeroPagineB(int numeroPagineB) {
+        this.numeroPagineB = numeroPagineB;
+    }
+
+    public String getAutoreB() {
+        return autoreB;
+    }
+
+    public void setAutoreB(String autoreB) {
+        this.autoreB = autoreB;
+    }
+
+    public String getEditoreB() {
+        return editoreB;
+    }
+
+    public void setEditoreB(String editoreB) {
+        this.editoreB = editoreB;
+    }
+
+    public String getLinguaB() {
+        return linguaB;
+    }
+
+    public void setLinguaB(String linguaB) {
+        this.linguaB = linguaB;
+    }
+
+    public Date getDateB() {
+        return dateB;
+    }
+
+    public void setDateB(Date dateB) {
+        this.dateB = dateB;
+    }
 }

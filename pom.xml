@@ -152,6 +152,8 @@
   </dependencies>
 
   <build>
+
+
 	  
 	  
     <finalName>LibreriaMaven</finalName>
@@ -167,7 +169,9 @@
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.3.1</version>
 
-               
+
+
+
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -232,7 +236,7 @@
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-war-plugin</artifactId>
     <version>3.3.2</version>
-   
+
                 
 	</plugin>
 	<plugin>
@@ -293,7 +297,7 @@
                       </goals>
                       <configuration>
                           <sources>
-                              <source>ReportFinale/</source>
+                              <source>../ReportFinale/</source>
                           </sources>
                       </configuration>
                   </execution>
@@ -302,5 +306,7 @@
 
 
       </plugins>
+
+
   </build>
 </project>

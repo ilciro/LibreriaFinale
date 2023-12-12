@@ -120,7 +120,7 @@
             </goals>
             <configuration>
               <sources>
-                <source>ReportFinale/</source>
+                <source>../ReportFinale/</source>
               </sources>
             </configuration>
           </execution>

@@ -296,23 +296,23 @@ public class LibroDao  {
 <span class="nc" id="L296">				prepQ.setString(7,l.getCategoria());</span>
 <span class="nc" id="L297">				prepQ.setDate(8, java.sql.Date.valueOf(l.getDataPubb().toString()));  </span>
 <span class="nc" id="L298">				prepQ.setString(9, l.getRecensione());</span>
-<span class="nc" id="L299">				prepQ.setInt(10,l.getNrCopie());</span>
-<span class="nc" id="L300">				prepQ.setString(11, l.getDesc());</span>
-<span class="nc" id="L301">				prepQ.setInt(12, l.getDisponibilita());</span>
-<span class="nc" id="L302">				prepQ.setFloat(13, l.getPrezzo());</span>
-<span class="nc" id="L303">				prepQ.setInt(14,l.getNrCopie());</span>
-<span class="nc" id="L304">				prepQ.setInt(15, 0);</span>
-<span class="nc" id="L305">				prepQ.executeUpdate();</span>
-<span class="nc" id="L306">				state= true; // true	</span>
-<span class="nc" id="L307">				}catch(SQLException e)</span>
+				//copie vendute
+<span class="nc" id="L300">				prepQ.setInt(10,0);</span>
+<span class="nc" id="L301">				prepQ.setString(11, l.getDesc());</span>
+<span class="nc" id="L302">				prepQ.setInt(12, l.getDisponibilita());</span>
+<span class="nc" id="L303">				prepQ.setFloat(13, l.getPrezzo());</span>
+<span class="nc" id="L304">				prepQ.setInt(14,l.getNrCopie());</span>
+<span class="nc" id="L305">				prepQ.setInt(15, 0);</span>
+<span class="nc" id="L306">				int row= prepQ.executeUpdate();</span>
+<span class="nc bnc" id="L307" title="All 2 branches missed.">				if(row==1)</span>
+<span class="nc" id="L308">					state= true; // true</span>
+<span class="nc" id="L309">				}catch(SQLException e)</span>
 				{
-<span class="nc" id="L309">						java.util.logging.Logger.getLogger(&quot;crea libro&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="nc" id="L310">				}</span>
-			
-			
-		
-<span class="nc" id="L314">		return state;</span>
+<span class="nc" id="L311">					state=false;</span>
+<span class="nc" id="L312">						java.util.logging.Logger.getLogger(&quot;crea libro&quot;).log(Level.INFO, ECCEZIONE, e);</span>
+<span class="nc" id="L313">				}</span>
 
+<span class="nc" id="L315">		return state;</span>
 
 	}
 	
@@ -432,7 +432,7 @@ public class LibroDao  {
 
 	}
 
-	public void cancella(Libro l) throws SQLException {
+	public int cancella(Libro l) throws SQLException {
 <span class="nc" id="L436">		int row=0;</span>
 <span class="nc" id="L437">		query=&quot;delete from LIBRO where idProd=?&quot;;</span>
 		
@@ -444,9 +444,9 @@ public class LibroDao  {
 		}
 		
 <span class="nc" id="L446">		java.util.logging.Logger.getLogger(&quot;Cancella libro&quot;).log(Level.INFO,&quot;libro cancellato {0}&quot;,row);</span>
-
+<span class="nc" id="L447">		return row;</span>
 		
-<span class="nc" id="L449">	}</span>
+	}
 
 	public ObservableList&lt;Libro&gt; getLibriSingoloById(Libro l) throws SQLException
 	{

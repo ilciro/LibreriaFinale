@@ -18,12 +18,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import web.bean.*;
 
-;import java.lang.reflect.InvocationTargetException;
+;import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
 class TestIndexPage {
@@ -48,6 +51,7 @@ class TestIndexPage {
     private final Rivista r=new Rivista();
     private final RivistaBean rB=new RivistaBean();
     private final RivistaDao rD=new RivistaDao();
+    private final UserBean uB=UserBean.getInstance();
 
 
 
@@ -283,6 +287,115 @@ class TestIndexPage {
     }
 
 
+    @Test
+    void testLogin() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, IOException {
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //schermata index
+        driver = new ChromeDriver();
+        driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
+        driver.findElement(By.id("buttonLogin")).click();
+        driver.findElement(By.id("emailL")).sendKeys("admin@admin.com");
+        driver.findElement(By.id("passL")).sendKeys("Admin871");
+        PropertyUtils.setProperty(uB,"emailB",driver.findElement(By.id("emailL")).getAttribute("value"));
+        PropertyUtils.setProperty(uB,"passB",driver.findElement(By.id("passL")).getAttribute("value"));
+        driver.findElement(By.id("loginB")).click();
+        //schermata admin
+       driver.findElement(By.id("reportB")).click();
+       //schermata report
+
+        //lD.generaReport();
+        driver.findElement(By.id("raccoltaB")).click();
+        assertNotNull(PropertyUtils.getProperty(uB,"emailB"));
+
+    }
+
+    @Test
+    void testRaccoltaAdminLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+        /*
+           1) genero lista
+           2) aggiungo
+           3) modifico
+           4) cancello
+         */
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //schermata index
+        driver = new ChromeDriver();
+        driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
+        driver.findElement(By.id("buttonLogin")).click();
+        driver.findElement(By.id("emailL")).sendKeys("admin@admin.com");
+        driver.findElement(By.id("passL")).sendKeys("Admin871");
+        PropertyUtils.setProperty(uB,"emailB",driver.findElement(By.id("emailL")).getAttribute("value"));
+        PropertyUtils.setProperty(uB,"passB",driver.findElement(By.id("passL")).getAttribute("value"));
+        driver.findElement(By.id("loginB")).click();
+        driver.findElement(By.id("raccoltaB")).click();
+        //schermata raccolta
+        // (1)
+        driver.findElement(By.id("buttonL")).click();
+        //schermata getione oggetto -> libri
+        driver.findElement(By.id("buttonGenera")).click();
+        driver.findElement(By.id("buttonAdd")).click();
+        //schermata aggiungi oggetto
+        // (2)
+        driver.findElement(By.id("titoloL")).sendKeys("provo ad inserire un libro dalla web");
+        driver.findElement(By.id("nrPagL")).sendKeys("150");
+        driver.findElement(By.id("codL")).sendKeys("152996325");
+        driver.findElement(By.id("autoreL")).sendKeys("autore web");
+        driver.findElement(By.id("editoreL")).sendKeys("editore dalla web");
+        driver.findElement(By.id("linguaL")).sendKeys("italiano");
+        driver.findElement(By.id("catS")).sendKeys("FAMIGLIA");
+        driver.findElement(By.id("dataL")).sendKeys("2024/11/11");
+        driver.findElement(By.id("recensioneL")).sendKeys("provoad inserire un nuovo libro dalla web");
+        driver.findElement(By.id("descL")).sendKeys("descrizione di prova");
+        driver.findElement(By.id("checkL")).click();
+        driver.findElement(By.id("prezzoL")).sendKeys("4.50");
+        driver.findElement(By.id("copieL")).sendKeys("300");
+        driver.findElement(By.id("confermaB")).click();
+        // scheramta libro
+        //carico schermata modifica
+        driver.findElement(By.id("idL")).sendKeys("5");
+        PropertyUtils.setProperty(sB,"idB",Integer.parseInt(driver.findElement(By.id("idL")).getAttribute("value")));
+        //schermata modifica
+        // (3)
+        //setto id a 5
+        driver.findElement(By.id("buttonMod")).click();
+        driver.findElement(By.id("listaB")).click();
+        //modifico
+        driver.findElement(By.id("titoloNL")).sendKeys("modifico il libro");
+        driver.findElement(By.id("pagineNL")).sendKeys("185");
+        driver.findElement(By.id("codiceNL")).sendKeys("152901325");
+        driver.findElement(By.id("autoreNL")).sendKeys("autore cambiato");
+        driver.findElement(By.id("editoreNL")).sendKeys("editore cambiato");
+        driver.findElement(By.id("linguaNL")).sendKeys("italianoo");
+        driver.findElement(By.id("categoriaNL")).sendKeys("ARTE");
+        driver.findElement(By.id("dataNL")).sendKeys("11/11/2025");
+        driver.findElement(By.id("recNL")).sendKeys("modifico libro dalla web");
+        driver.findElement(By.id("descNL")).sendKeys("modifica di prova");
+        driver.findElement(By.id("dispNL")).click();
+        driver.findElement(By.id("prezzoNL")).sendKeys("4.80");
+        driver.findElement(By.id("copieNL")).sendKeys("150");
+        driver.findElement(By.id("buttonI")).click();
+        // schemtata libro
+        // (4)
+        //elimino
+        driver.findElement(By.id("idL")).sendKeys("5");
+        PropertyUtils.setProperty(sB,"idB",Integer.parseInt(driver.findElement(By.id("idL")).getAttribute("value")));
+        driver.findElement(By.id("buttonCanc")).click();
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
 
 
     @AfterEach
@@ -291,6 +404,9 @@ class TestIndexPage {
         driver.close();
 
     }
+
+
+
 
 
 }

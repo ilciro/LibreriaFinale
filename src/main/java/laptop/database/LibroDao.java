@@ -296,23 +296,23 @@ public class LibroDao  {
 				prepQ.setString(7,l.getCategoria());
 				prepQ.setDate(8, java.sql.Date.valueOf(l.getDataPubb().toString()));  
 				prepQ.setString(9, l.getRecensione());
-				prepQ.setInt(10,l.getNrCopie());
+				//copie vendute
+				prepQ.setInt(10,0);
 				prepQ.setString(11, l.getDesc());
 				prepQ.setInt(12, l.getDisponibilita());
 				prepQ.setFloat(13, l.getPrezzo());
 				prepQ.setInt(14,l.getNrCopie());
 				prepQ.setInt(15, 0);
-				prepQ.executeUpdate();
-				state= true; // true	
+				int row= prepQ.executeUpdate();
+				if(row==1)
+					state= true; // true
 				}catch(SQLException e)
 				{
+					state=false;
 						java.util.logging.Logger.getLogger("crea libro").log(Level.INFO, ECCEZIONE, e);
 				}
-			
-			
-		
-		return state;
 
+		return state;
 
 	}
 	
@@ -432,7 +432,7 @@ public class LibroDao  {
 
 	}
 
-	public void cancella(Libro l) throws SQLException {
+	public int cancella(Libro l) throws SQLException {
 		int row=0;
 		query="delete from LIBRO where idProd=?";
 		
@@ -444,7 +444,7 @@ public class LibroDao  {
 		}
 		
 		java.util.logging.Logger.getLogger("Cancella libro").log(Level.INFO,"libro cancellato {0}",row);
-
+		return row;
 		
 	}
 
