@@ -23,7 +23,6 @@ public class UserBean {
     private String ruoloB;
     private String emailB;
     private String passB;
-    private  String rB;
     private String mexB;
 
     private String nomeB;
@@ -117,23 +116,14 @@ public class UserBean {
 
     private String getRuolo(String r)
     {
-        switch (r){
-            case "ADMIN","A":
-                rB= Ruoli.ADMIN.toString();
-                break;
-            case "EDITORE","E":
-                rB= Ruoli.EDITORE.toString();
-                break;
-            case "SCRITTORE","W":
-                rB= Ruoli.SCRITTORE.toString();
-                break;
-            case "UTENTE","U":
-                rB= Ruoli.UTENTE.toString();
-                break;
-            default:
-                rB= null;
-                break;
-        }
+        String rB = switch (r) {
+            case "ADMIN", "A" -> Ruoli.ADMIN.toString();
+            case "EDITORE", "E" -> Ruoli.EDITORE.toString();
+            case "SCRITTORE", "W" -> Ruoli.SCRITTORE.toString();
+            case "UTENTE", "U" -> Ruoli.UTENTE.toString();
+            default -> null;
+        };
+
         assert rB != null;
         return rB.substring(0,1);
     }

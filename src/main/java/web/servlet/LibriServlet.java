@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.lang.ref.ReferenceQueue;
 import java.sql.SQLException;
 import java.util.Objects;
+import java.util.logging.Level;
 
 import laptop.database.LibroDao;
 import laptop.exception.IdException;
@@ -82,7 +83,8 @@ public class LibriServlet extends HttpServlet {
                 view.forward(req,resp);
             }
         } catch (SQLException | IdException e) {
-            throw new RuntimeException(e);
+            java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+
         }
 
     }

@@ -20,9 +20,8 @@ public class ControllerReportPage {
 	protected String fileGiornale ="ReportFinale/riepilogoGiornali.txt";
 	protected String fileRiviste = "ReportFinale/riepilogoRiviste.txt";
 	protected String fileUtenti = "ReportFinale/riepilogoUtenti.txt";
-	private static final String ECCEZIONE="eccezione ottenuta :.";
-	
-	public void generaReportLibri () throws IOException, SQLException
+
+	public void generaReportLibri () throws IOException
 	{
 		lD.generaReport();
 		
@@ -35,7 +34,7 @@ public class ControllerReportPage {
 		rD.generaReport();
 		
 	}
-	public void generaReportGiornali () throws IOException, SQLException 
+	public void generaReportGiornali () throws IOException, SQLException
 	{
 		gD.generaReport();
 		
@@ -69,7 +68,7 @@ public class ControllerReportPage {
 			}
 
 		} catch (IOException e) {
-			throw new RuntimeException(e);
+			throw new IOException(e);
 		}
 		return builder.toString();
 	}
@@ -84,7 +83,7 @@ public class ControllerReportPage {
 			}
 
 		} catch (IOException e) {
-			throw new RuntimeException(e);
+			throw new IOException(e);
 		}
 		return builder.toString();
 	}
@@ -99,7 +98,7 @@ public class ControllerReportPage {
 			}
 
 		} catch (IOException e) {
-			throw new RuntimeException(e);
+			throw new IOException(e);
 		}
 		return builder.toString();
 	}
@@ -114,7 +113,7 @@ public class ControllerReportPage {
 			}
 
 		} catch (IOException e) {
-			throw new RuntimeException(e);
+			throw new IOException(e);
 		}
 		return builder.toString();
 	}

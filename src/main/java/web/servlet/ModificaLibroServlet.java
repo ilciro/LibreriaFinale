@@ -20,6 +20,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.logging.Level;
 
 @WebServlet("/ModificaLibroServlet")
 
@@ -121,7 +122,7 @@ public class ModificaLibroServlet extends HttpServlet {
             view.forward(req,resp);
         }
         }catch (SQLException | ParseException e) {
-            throw new RuntimeException(e);
+            java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
         }
 
     }

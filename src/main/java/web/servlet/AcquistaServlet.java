@@ -2,6 +2,7 @@ package web.servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.logging.Level;
 
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
@@ -169,7 +170,8 @@ public class AcquistaServlet extends HttpServlet {
             RequestDispatcher view = getServletContext().getRequestDispatcher("/acquista.jsp");
             view.forward(req,resp);
         } catch (IdException e) {
-            throw new RuntimeException(e);
+            java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+
         }
     }
 

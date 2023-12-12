@@ -4,71 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="insert buy magazines and test -&gt; first use case closed">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="insert management book web">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibreriaMaven.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LibreriaMaven.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReportFinale/riepilogoGiornali.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReportFinale/riepilogoLibro.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReportFinale/riepilogoRiviste.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReportFinale/riepilogoUtenti.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/LibroDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/LibroDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerReportPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerReportPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/PagamentoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/PagamentoDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/bean/GiornaleBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/bean/GiornaleBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/bean/LibroBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/bean/LibroBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/bean/RivistaBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/bean/RivistaBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/bean/SystemBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/bean/SystemBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/IndexServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/file.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pippo.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/file.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/web/test/TestIndexPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/test/TestIndexPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/file.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerGestionePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerGestionePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/LibroDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/LibroDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/GiornaleBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/GiornaleBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/LibroBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/LibroBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/RivistaBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/RivistaBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/SystemBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/SystemBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/IndexServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/IndexServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/file.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerGestionePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerGestionePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/LibroDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/LibroDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/bean/GiornaleBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/bean/GiornaleBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/bean/LibroBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/bean/LibroBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/bean/RivistaBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/bean/RivistaBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/bean/SystemBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/bean/SystemBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/IndexServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/IndexServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-LibreriaMaven.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerGestionePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/ControllerGestionePage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.controller/index.source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/LibroDao.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/LibroDao.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/LibroDao.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/LibroDao.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/laptop.database/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/laptop.database/index.source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/GiornaleBean.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/GiornaleBean.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/GiornaleBean.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/GiornaleBean.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/LibroBean.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/LibroBean.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/LibroBean.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/LibroBean.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/RivistaBean.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/RivistaBean.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/RivistaBean.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/RivistaBean.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/SystemBean.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/SystemBean.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/SystemBean.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/SystemBean.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/web.bean/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/web.bean/index.source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-web.test.TestIndexPage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-web.test.TestIndexPage.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/web.test.TestIndexPage.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/web.test.TestIndexPage.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/web/test/TestIndexPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/test/TestIndexPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/AcquistaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/AcquistaServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/CartaCreditoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/CartaCreditoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/GestioneOggettoServletLibro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/GestioneOggettoServletLibro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/InserisciLibroServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/InserisciLibroServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/LibriServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/LibriServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/ModificaLibroServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/ModificaLibroServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -527,7 +476,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702146905746</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="insert management book web">
+      <option name="closed" value="true" />
+      <created>1702374143995</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1702374143995</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -570,7 +527,8 @@
     <MESSAGE value="insert buy book" />
     <MESSAGE value="insert buy newspaper and magazines" />
     <MESSAGE value="insert buy magazines and test -&gt; first use case closed" />
-    <option name="LAST_COMMIT_MESSAGE" value="insert buy magazines and test -&gt; first use case closed" />
+    <MESSAGE value="insert management book web" />
+    <option name="LAST_COMMIT_MESSAGE" value="insert management book web" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -3,7 +3,6 @@ package web.bean;
 import javafx.collections.ObservableList;
 import laptop.database.RivistaDao;
 import laptop.exception.IdException;
-import laptop.model.raccolta.CategorieLibro;
 import laptop.model.raccolta.CategorieRivista;
 import laptop.model.raccolta.Raccolta;
 
@@ -21,10 +20,10 @@ public class RivistaBean {
     private String autoreB;
     private String linguaB;
     private String editoreB;
-    private String DescrizioneB;
+    private String descrizioneB;
     private java.sql.Date dataB;
     private float prezzoB;
-    private int CopieRimB;
+    private int copieRimB;
     private int dispB;
 
     public String getTipologiaB() {
@@ -33,35 +32,22 @@ public class RivistaBean {
 
     public void setTipologiaB(String tipologiaB) {
         switch (tipologiaB) {
-            case "SETTIMANALE":
-                this.tipologiaB = CategorieRivista.SETTIMANALE.toString();
-                break;
-            case "BISETTIMANALE":
-                this.tipologiaB = CategorieRivista.BISETTIMANALE.toString();
-            case "MENSILE":
-                this.tipologiaB = CategorieRivista.MENSILE.toString();
-            case "BIMESTRALE":
-                this.tipologiaB = CategorieRivista.BIMESTRALE.toString();
-            case "TRIMESTRALE":
-                this.tipologiaB = CategorieRivista.TRIMESTRALE.toString();
-            case "ANNUALE":
-                this.tipologiaB = CategorieRivista.ANNUALE.toString();
-            case "ESTIVO":
-                this.tipologiaB = CategorieRivista.ESTIVO.toString();
-            case "INVERNALE":
-                this.tipologiaB = CategorieRivista.INVERNALE.toString();
-            case "SPORTIVO":
-                this.tipologiaB = CategorieRivista.SPORTIVO.toString();
-            case "CINEMATOGRAFICA":
-                this.tipologiaB = CategorieRivista.CINEMATOGRAFICA.toString();
-            case "GOSSIP":
-                this.tipologiaB = CategorieRivista.GOSSIP.toString();
-            case "TELEVISIVO":
-                this.tipologiaB = CategorieRivista.TELEVISIVO.toString();
-            case "MILITARE":
-                this.tipologiaB = CategorieRivista.MILITARE.toString();
-            case "INFORMATICA":
-                this.tipologiaB = CategorieRivista.INFORMATICA.toString();
+            case "SETTIMANALE"->this.tipologiaB = CategorieRivista.SETTIMANALE.toString();
+            case "BISETTIMANALE" ->this.tipologiaB = CategorieRivista.BISETTIMANALE.toString();
+            case "MENSILE"->  this.tipologiaB = CategorieRivista.MENSILE.toString();
+            case "BIMESTRALE"-> this.tipologiaB = CategorieRivista.BIMESTRALE.toString();
+            case "TRIMESTRALE"-> this.tipologiaB = CategorieRivista.TRIMESTRALE.toString();
+            case "ANNUALE"-> this.tipologiaB = CategorieRivista.ANNUALE.toString();
+            case "ESTIVO"-> this.tipologiaB = CategorieRivista.ESTIVO.toString();
+            case "INVERNALE"-> this.tipologiaB = CategorieRivista.INVERNALE.toString();
+            case "SPORTIVO"->    this.tipologiaB = CategorieRivista.SPORTIVO.toString();
+            case "CINEMATOGRAFICA"->    this.tipologiaB = CategorieRivista.CINEMATOGRAFICA.toString();
+            case "GOSSIP"->    this.tipologiaB = CategorieRivista.GOSSIP.toString();
+            case "TELEVISIVO"->    this.tipologiaB = CategorieRivista.TELEVISIVO.toString();
+            case "MILITARE"->    this.tipologiaB = CategorieRivista.MILITARE.toString();
+            case "INFORMATICA"->    this.tipologiaB = CategorieRivista.INFORMATICA.toString();
+            default -> {    }
+
 
 
         }
@@ -93,11 +79,11 @@ public class RivistaBean {
     }
 
     public String getDescrizioneB() {
-        return DescrizioneB;
+        return descrizioneB;
     }
 
     public void setDescrizioneB(String descrizioneB) {
-        DescrizioneB = descrizioneB;
+        this.descrizioneB = descrizioneB;
     }
 
     public Date getDataB() {
@@ -117,11 +103,11 @@ public class RivistaBean {
     }
 
     public int getCopieRimB() {
-        return CopieRimB;
+        return copieRimB;
     }
 
     public void setCopieRimB(int copieRimB) {
-        CopieRimB = copieRimB;
+        this.copieRimB = copieRimB;
     }
 
     public ObservableList<Raccolta> getListaRivisteB() {

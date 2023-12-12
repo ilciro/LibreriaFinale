@@ -24,7 +24,7 @@ public class GiornaleBean {
     private String editoreB;
 
     private java.sql.Date dataB;
-    private int CopieRimanentiB;
+    private int copieRimanentiB;
 
     public String getTipologiaB() {
         return tipologiaB;
@@ -59,20 +59,14 @@ public class GiornaleBean {
     }
 
     public int getCopieRimanentiB() {
-        return CopieRimanentiB;
+        return copieRimanentiB;
     }
 
     public void setCopieRimanentiB(int copieRimanentiB) {
-        CopieRimanentiB = copieRimanentiB;
+        this.copieRimanentiB = copieRimanentiB;
     }
 
-    public int getDisponibilitaB() {
-        return DisponibilitaB;
-    }
 
-    public void setDisponibilitaB(int disponibilitaB) {
-        DisponibilitaB = disponibilitaB;
-    }
 
     public float getPrezzoB() {
         return prezzoB;
@@ -82,7 +76,7 @@ public class GiornaleBean {
         this.prezzoB = prezzoB;
     }
 
-    private int DisponibilitaB;
+    private int disponibilitaB;
     private float prezzoB;
 
     public void setListaGiornaliB(ObservableList<Raccolta> listaGiornaliB) {
@@ -123,5 +117,13 @@ public class GiornaleBean {
 
     public void setMexB(Exception mexB) {
         this.mexB = mexB;
+    }
+
+    public int getDisponibilitaB() {
+        return disponibilitaB;
+    }
+
+    public void setDisponibilitaB(int disponibilitaB) {
+        this.disponibilitaB = disponibilitaB;
     }
 }

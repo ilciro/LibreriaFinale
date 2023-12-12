@@ -16,6 +16,7 @@ import web.bean.UserBean;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
+import java.util.logging.Level;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -107,7 +108,8 @@ public class LoginServlet extends HttpServlet {
 
 
         } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException | SQLException e) {
-            throw new RuntimeException(e);
+            java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+
         }
 
 

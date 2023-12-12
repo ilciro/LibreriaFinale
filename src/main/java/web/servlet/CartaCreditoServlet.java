@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 
 import laptop.database.CartaCreditoDao;
+import laptop.exception.IdException;
 import web.bean.CartaCreditoBean;
 import web.bean.LibroBean;
 import web.bean.PagamentoBean;
@@ -140,10 +141,8 @@ public class CartaCreditoServlet extends HttpServlet {
 
             }
 
-        } catch (ParseException   e) {
+        } catch (ParseException | SQLException | IdException e) {
             java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
         }
     }
 

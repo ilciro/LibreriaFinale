@@ -1,6 +1,5 @@
 package web.bean;
 
-import java.io.*;
 
 public class TextAreaBean {
 

@@ -17,6 +17,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.logging.Level;
 
 @WebServlet("/InserisciLibroServlet")
 
@@ -110,7 +111,10 @@ public class InserisciLibroServlet extends HttpServlet {
 
 
             }
-        }catch (SQLException | ParseException e) {throw new RuntimeException();}
+        }catch (SQLException | ParseException e) {
+            java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+
+        }
 
     }
 }

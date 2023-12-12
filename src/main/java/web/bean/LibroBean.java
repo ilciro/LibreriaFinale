@@ -86,7 +86,7 @@ public class LibroBean {
         return idB;
     }
 
-    public void setIdB(int idB) throws IdException, SQLException {
+    public void setIdB(int idB) throws IdException {
         if(idB<1 )
         {
             this.idB=0;

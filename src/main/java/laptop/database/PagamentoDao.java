@@ -16,7 +16,6 @@ import javafx.collections.ObservableList;
 public class PagamentoDao {
 	private String query;
 	private static final String ECCEZIONE="eccezione ottenuta:";
-	private static ControllerSystemState vis=ControllerSystemState.getInstance();
 
 	
 

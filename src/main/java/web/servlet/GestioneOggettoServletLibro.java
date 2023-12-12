@@ -15,6 +15,7 @@ import web.bean.SystemBean;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.logging.Level;
 
 @WebServlet("/GestioneOggettoServletLibro")
 
@@ -87,7 +88,7 @@ public class GestioneOggettoServletLibro extends HttpServlet {
         }
     }catch (SQLException |IdException e)
         {
-           throw new RuntimeException();
+            java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
         }
     }
 }
