@@ -1,7 +1,6 @@
 package web.bean;
 
 import javafx.collections.ObservableList;
-import laptop.database.RivistaDao;
 import laptop.exception.IdException;
 import laptop.model.raccolta.CategorieRivista;
 import laptop.model.raccolta.Raccolta;
@@ -14,7 +13,6 @@ public class RivistaBean {
     private int idB;
     private String titoloB;
     private Exception mexB;
-    private final RivistaDao rD=new RivistaDao();
 
     private String tipologiaB;
     private String autoreB;

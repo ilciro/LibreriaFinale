@@ -643,6 +643,41 @@ public class LibroDao  {
 <span class="nc" id="L643">		java.util.logging.Logger.getLogger(&quot;aggiorna data&quot;).log(Level.INFO, &quot;libri aggiornati {0}.&quot;,row);</span>
 
 <span class="nc" id="L645">	}</span>
+	//used for ricerca
+
+	public ObservableList&lt;Raccolta&gt; getLibriByName(Libro l) throws SQLException
+	{
+<span class="nc" id="L650">		ObservableList&lt;Raccolta&gt; catalogo=FXCollections.observableArrayList();</span>
+
+<span class="nc" id="L652">		query=&quot;select * from LIBRO where titolo=? or autore=?&quot;;</span>
+<span class="nc" id="L653">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="nc" id="L654">			PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		{
+
+<span class="nc" id="L657">			prepQ.setString(1,l.getTitolo());</span>
+<span class="nc" id="L658">			prepQ.setString(2,l.getAutore());</span>
+<span class="nc" id="L659">			ResultSet rs=prepQ.executeQuery();</span>
+
+<span class="nc bnc" id="L661" title="All 2 branches missed.">			while(rs.next())</span>
+			{
+
+
+<span class="nc" id="L665">				f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(7), rs.getString(5), rs.getString(6),rs.getString(4), rs.getString(7));</span>
+<span class="nc" id="L666">				f.createRaccoltaFinale2(LIBRO,rs.getInt(2),rs.getString(3),rs.getInt(10),rs.getInt(12),rs.getFloat(13),rs.getInt(14));</span>
+<span class="nc" id="L667">				catalogo.add(f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11),rs.getInt(15)));</span>
+
+
+
+			}
+
+<span class="nc" id="L673">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L675">			java.util.logging.Logger.getLogger(&quot;get libri&quot;).log(Level.INFO, ECCEZIONE, e);</span>
+<span class="nc" id="L676">		}</span>
+
+
+<span class="nc" id="L679">		return catalogo;</span>
+	}
 
 	
 

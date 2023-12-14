@@ -47,6 +47,7 @@ class TestIndexPage {
 
     private final NegozioBean nB=new NegozioBean();
     private final NegozioDao nD=new NegozioDao();
+    private final RicercaBean ricB=new RicercaBean();
 
     private final Rivista r=new Rivista();
     private final RivistaBean rB=new RivistaBean();
@@ -318,6 +319,8 @@ class TestIndexPage {
 
     @Test
     void testRaccoltaAdminLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+
+
         /*
            1) genero lista
            2) aggiungo
@@ -359,7 +362,6 @@ class TestIndexPage {
         driver.findElement(By.id("prezzoL")).sendKeys("4.50");
         driver.findElement(By.id("copieL")).sendKeys("300");
         driver.findElement(By.id("confermaB")).click();
-
         // scheramta libro
         //carico schermata modifica
         driver.findElement(By.id("idL")).sendKeys("7");
@@ -399,6 +401,8 @@ class TestIndexPage {
 
     @Test
     void testRaccoltaAdminGiornale() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+
+
         /*
            1) genero lista
            2) aggiungo
@@ -460,6 +464,108 @@ class TestIndexPage {
 
 
     }
+
+
+
+    @Test
+    void testRicercaPerLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //schermata index
+        driver = new ChromeDriver();
+        driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
+        driver.findElement(By.id("buttonLogin")).click();
+        driver.findElement(By.id("emailL")).sendKeys("admin@admin.com");
+        driver.findElement(By.id("passL")).sendKeys("Admin871");
+        PropertyUtils.setProperty(uB,"emailB",driver.findElement(By.id("emailL")).getAttribute("value"));
+        PropertyUtils.setProperty(uB,"passB",driver.findElement(By.id("passL")).getAttribute("value"));
+        driver.findElement(By.id("loginB")).click();
+        //schermata per gestione utenti(in comuni con utente loggato)
+        driver.findElement(By.id("utentiB")).click();
+        driver.findElement(By.id("buttonRic")).click();
+        driver.findElement(By.id("buttonL")).click();
+        //schermata ricerca -> vadoper libri
+        WebElement autore=driver.findElement(By.id("cercaL"));
+        autore.sendKeys("zerocalcare");
+        PropertyUtils.setProperty(ricB,"autoreB",autore.getAttribute("value"));
+        driver.findElement(By.id("cercaB")).click();
+        driver.findElement(By.id("buttonI")).click();
+        //ripreto controllo
+        driver.findElement(By.id("buttonL")).click();
+        WebElement titolo=driver.findElement(By.id("cercaL"));
+        titolo.sendKeys("Erasgon Vol 1");
+        PropertyUtils.setProperty(ricB,"titoloB",titolo.getAttribute("value"));
+        driver.findElement(By.id("cercaB")).click();
+        assertNotNull(PropertyUtils.getProperty(ricB,"titoloB"));
+
+    }
+
+
+    @Test
+    void testRicercaPerGiornale() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //schermata index
+        driver = new ChromeDriver();
+        driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
+        driver.findElement(By.id("buttonLogin")).click();
+        driver.findElement(By.id("emailL")).sendKeys("admin@admin.com");
+        driver.findElement(By.id("passL")).sendKeys("Admin871");
+        PropertyUtils.setProperty(uB,"emailB",driver.findElement(By.id("emailL")).getAttribute("value"));
+        PropertyUtils.setProperty(uB,"passB",driver.findElement(By.id("passL")).getAttribute("value"));
+        driver.findElement(By.id("loginB")).click();
+        //schermata per gestione utenti(in comuni con utente loggato)
+        driver.findElement(By.id("utentiB")).click();
+        driver.findElement(By.id("buttonRic")).click();
+        driver.findElement(By.id("buttonG")).click();
+        //schermata ricerca -> vadoper libri
+        WebElement editore=driver.findElement(By.id("cercaL"));
+        editore.sendKeys("hoepli");
+        PropertyUtils.setProperty(ricB,"editoreB",editore.getAttribute("value"));
+        driver.findElement(By.id("cercaB")).click();
+        driver.findElement(By.id("buttonI")).click();
+        //ripreto controllo
+        driver.findElement(By.id("buttonG")).click();
+        WebElement titolo=driver.findElement(By.id("cercaL"));
+        titolo.sendKeys("La Republica1");
+        PropertyUtils.setProperty(ricB,"titoloB",titolo.getAttribute("value"));
+        driver.findElement(By.id("cercaB")).click();
+        assertNotNull(PropertyUtils.getProperty(ricB,"titoloB"));
+
+    }
+
+
+
+    @Test
+    void testRicercaPerRivista() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //schermata index
+        driver = new ChromeDriver();
+        driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
+        driver.findElement(By.id("buttonLogin")).click();
+        driver.findElement(By.id("emailL")).sendKeys("admin@admin.com");
+        driver.findElement(By.id("passL")).sendKeys("Admin871");
+        PropertyUtils.setProperty(uB,"emailB",driver.findElement(By.id("emailL")).getAttribute("value"));
+        PropertyUtils.setProperty(uB,"passB",driver.findElement(By.id("passL")).getAttribute("value"));
+        driver.findElement(By.id("loginB")).click();
+        //schermata per gestione utenti(in comuni con utente loggato)
+        driver.findElement(By.id("utentiB")).click();
+        driver.findElement(By.id("buttonRic")).click();
+        driver.findElement(By.id("buttonR")).click();
+        //schermata ricerca -> vadoper libri
+        WebElement autore=driver.findElement(By.id("cercaL"));
+        autore.sendKeys("bao publishing");
+        PropertyUtils.setProperty(ricB,"autoreB",autore.getAttribute("value"));
+        driver.findElement(By.id("cercaB")).click();
+        driver.findElement(By.id("buttonI")).click();
+        //ripreto controllo
+        driver.findElement(By.id("buttonR")).click();
+        WebElement titolo=driver.findElement(By.id("cercaL"));
+        titolo.sendKeys("focus");
+        PropertyUtils.setProperty(ricB,"titoloB",titolo.getAttribute("value"));
+        driver.findElement(By.id("cercaB")).click();
+        assertNotNull(PropertyUtils.getProperty(ricB,"titoloB"));
+
+    }
+
 
 
 

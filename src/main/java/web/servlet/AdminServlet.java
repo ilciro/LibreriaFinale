@@ -58,8 +58,8 @@ public class AdminServlet extends HttpServlet {
                 UserBean.getInstance().setCognomeB(null);
                 UserBean.getInstance().setDataDiNascitaB(null);
                 UserBean.getInstance().setDescrizioneB(null);
-                UserBean.getInstance().setEmailB(null);
-                UserBean.getInstance().setPassB(null);
+                UserBean.getInstance().setEmailB("");
+                UserBean.getInstance().setPassB("");
 
 
                 java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, "stai sloggando {0}", UserBean.getInstance().getEmailB());

@@ -643,6 +643,41 @@ public class LibroDao  {
 		java.util.logging.Logger.getLogger("aggiorna data").log(Level.INFO, "libri aggiornati {0}.",row);
 
 	}
+	//used for ricerca
+
+	public ObservableList<Raccolta> getLibriByName(Libro l) throws SQLException
+	{
+		ObservableList<Raccolta> catalogo=FXCollections.observableArrayList();
+
+		query="select * from LIBRO where titolo=? or autore=?";
+		try(Connection conn=ConnToDb.connectionToDB();
+			PreparedStatement prepQ=conn.prepareStatement(query);)
+		{
+
+			prepQ.setString(1,l.getTitolo());
+			prepQ.setString(2,l.getAutore());
+			ResultSet rs=prepQ.executeQuery();
+
+			while(rs.next())
+			{
+
+
+				f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(7), rs.getString(5), rs.getString(6),rs.getString(4), rs.getString(7));
+				f.createRaccoltaFinale2(LIBRO,rs.getInt(2),rs.getString(3),rs.getInt(10),rs.getInt(12),rs.getFloat(13),rs.getInt(14));
+				catalogo.add(f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11),rs.getInt(15)));
+
+
+
+			}
+
+		}catch(SQLException e)
+		{
+			java.util.logging.Logger.getLogger("get libri").log(Level.INFO, ECCEZIONE, e);
+		}
+
+
+		return catalogo;
+	}
 
 	
 

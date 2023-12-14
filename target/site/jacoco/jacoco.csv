@@ -5,7 +5,7 @@ LibreriaMaven Maven Webapp,laptop.database,PagamentoDao,185,0,6,0,52,0,8,0,5,0
 LibreriaMaven Maven Webapp,laptop.database,NegozioDao,152,47,8,2,48,11,8,3,4,2
 LibreriaMaven Maven Webapp,laptop.database,GiornaleDao,985,162,27,5,232,40,31,7,17,5
 LibreriaMaven Maven Webapp,laptop.database,UsersDao,1095,0,26,0,322,0,38,0,25,0
-LibreriaMaven Maven Webapp,laptop.database,LibroDao,1092,170,25,5,247,38,30,7,17,5
+LibreriaMaven Maven Webapp,laptop.database,LibroDao,1195,170,27,5,262,38,32,7,18,5
 LibreriaMaven Maven Webapp,laptop.database,CartaCreditoDao,182,0,4,0,49,0,6,0,4,0
 LibreriaMaven Maven Webapp,laptop.model,CartaDiCredito,140,0,0,0,49,0,23,0,23,0
 LibreriaMaven Maven Webapp,laptop.model,Fattura,80,0,0,0,29,0,15,0,15,0
@@ -24,7 +24,7 @@ LibreriaMaven Maven Webapp,laptop.model.raccolta,CategorieLibro,183,0,0,0,10,0,1
 LibreriaMaven Maven Webapp,laptop.model.raccolta,Rivista,152,109,15,0,55,38,26,16,12,16
 LibreriaMaven Maven Webapp,web.bean,SystemBean,20,66,0,2,8,29,6,18,6,17
 LibreriaMaven Maven Webapp,web.bean,UserBean,94,28,9,4,32,11,23,6,16,5
-LibreriaMaven Maven Webapp,web.bean,RivistaBean,166,19,16,1,51,7,39,3,24,3
+LibreriaMaven Maven Webapp,web.bean,RivistaBean,166,14,16,1,51,6,39,3,24,3
 LibreriaMaven Maven Webapp,web.bean,DownloadBean,17,0,0,0,7,0,5,0,5,0
 LibreriaMaven Maven Webapp,web.bean,LibroBean,266,14,31,1,105,6,60,3,30,3
 LibreriaMaven Maven Webapp,web.bean,AcquistaBean,13,11,0,0,5,5,4,3,4,3
@@ -35,6 +35,7 @@ LibreriaMaven Maven Webapp,web.bean,NegozioBean,12,19,0,0,4,9,4,5,4,5
 LibreriaMaven Maven Webapp,web.bean,GiornaleBean,78,14,1,1,31,6,21,3,20,3
 LibreriaMaven Maven Webapp,web.bean,CartaCreditoBean,15,30,0,0,5,14,5,8,5,8
 LibreriaMaven Maven Webapp,web.bean,PagamentoBean,25,27,0,0,9,13,8,7,8,7
+LibreriaMaven Maven Webapp,web.bean,RicercaBean,20,18,0,0,8,8,6,5,6,5
 LibreriaMaven Maven Webapp,web.bean,ModificaOggettoBean,28,0,4,0,9,0,7,0,5,0
 LibreriaMaven Maven Webapp,laptop.exception,IdException,4,0,0,0,2,0,1,0,1,0
 LibreriaMaven Maven Webapp,laptop.exception,AcquistaException,4,0,0,0,2,0,1,0,1,0
