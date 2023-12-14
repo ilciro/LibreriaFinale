@@ -14,6 +14,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryHomePageAfterLogin.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerPagamentoCash.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerDownload.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/GestioneOggettoServletRivista.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/bean/NegozioBean.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryRegistraUtente.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryHomePageAfterLoginSE.java
@@ -26,6 +27,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/bean/GiornaleBean.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/exception/LogoutException.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerModificaUtente.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/ModificaRivistaServlet.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/GestioneOggettoServletLibro.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/exception/AcquistaException.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryGestionePage.java
@@ -43,6 +45,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/GestioneOggettoServletGiornale.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/model/CartaDiCredito.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryVisualizzaProfilo.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/InserisciRivistaServlet.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerPassword.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryHomePage.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/ModificaLibroServlet.java

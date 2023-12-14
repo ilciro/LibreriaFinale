@@ -53,6 +53,11 @@ class TestIndexPage {
     private final RivistaDao rD=new RivistaDao();
     private final UserBean uB=UserBean.getInstance();
 
+            /*
+        TODO
+            fare test
+            poi fare commit
+         */
 
 
      @Test
@@ -83,6 +88,7 @@ class TestIndexPage {
          int quantita=Integer.parseInt(driver.findElement(By.id("quantita")).getAttribute("value"));
          PropertyUtils.setProperty(sB,"quantitaB",quantita);
          driver.findElement(By.id("totaleB")).click();
+
          float prezzo=Float.parseFloat(driver.findElement(By.id("totale")).getAttribute("value"));
          PropertyUtils.setProperty(sB,"spesaTB",prezzo);
          PropertyUtils.setProperty(aB,"prezzoB",PropertyUtils.getProperty(sB,"spesaTB"));
@@ -309,6 +315,7 @@ class TestIndexPage {
 
     }
 
+
     @Test
     void testRaccoltaAdminLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         /*
@@ -316,7 +323,9 @@ class TestIndexPage {
            2) aggiungo
            3) modifico
            4) cancello
+
          */
+
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //schermata index
         driver = new ChromeDriver();
@@ -324,8 +333,8 @@ class TestIndexPage {
         driver.findElement(By.id("buttonLogin")).click();
         driver.findElement(By.id("emailL")).sendKeys("admin@admin.com");
         driver.findElement(By.id("passL")).sendKeys("Admin871");
-        PropertyUtils.setProperty(uB,"emailB",driver.findElement(By.id("emailL")).getAttribute("value"));
-        PropertyUtils.setProperty(uB,"passB",driver.findElement(By.id("passL")).getAttribute("value"));
+        PropertyUtils.setProperty(uB, "emailB", driver.findElement(By.id("emailL")).getAttribute("value"));
+        PropertyUtils.setProperty(uB, "passB", driver.findElement(By.id("passL")).getAttribute("value"));
         driver.findElement(By.id("loginB")).click();
         driver.findElement(By.id("raccoltaB")).click();
         //schermata raccolta
@@ -350,9 +359,10 @@ class TestIndexPage {
         driver.findElement(By.id("prezzoL")).sendKeys("4.50");
         driver.findElement(By.id("copieL")).sendKeys("300");
         driver.findElement(By.id("confermaB")).click();
+
         // scheramta libro
         //carico schermata modifica
-        driver.findElement(By.id("idL")).sendKeys("5");
+        driver.findElement(By.id("idL")).sendKeys("7");
         PropertyUtils.setProperty(sB,"idB",Integer.parseInt(driver.findElement(By.id("idL")).getAttribute("value")));
         //schermata modifica
         // (3)
@@ -377,21 +387,80 @@ class TestIndexPage {
         // schemtata libro
         // (4)
         //elimino
-        driver.findElement(By.id("idL")).sendKeys("5");
+
+        driver.findElement(By.id("idL")).sendKeys("2");
         PropertyUtils.setProperty(sB,"idB",Integer.parseInt(driver.findElement(By.id("idL")).getAttribute("value")));
         driver.findElement(By.id("buttonCanc")).click();
 
 
 
 
+    }
 
+    @Test
+    void testRaccoltaAdminGiornale() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+        /*
+           1) genero lista
+           2) aggiungo
+           3) modifico
+           4) cancello
+           */
 
-
-
-
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //schermata index
+        driver = new ChromeDriver();
+        driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
+        driver.findElement(By.id("buttonLogin")).click();
+        driver.findElement(By.id("emailL")).sendKeys("admin@admin.com");
+        driver.findElement(By.id("passL")).sendKeys("Admin871");
+        PropertyUtils.setProperty(uB,"emailB",driver.findElement(By.id("emailL")).getAttribute("value"));
+        PropertyUtils.setProperty(uB,"passB",driver.findElement(By.id("passL")).getAttribute("value"));
+        driver.findElement(By.id("loginB")).click();
+        driver.findElement(By.id("raccoltaB")).click();
+        //schermata raccolta
+        // (1)
+        driver.findElement(By.id("buttonG")).click();
+        //schermata getione oggetto -> libri
+        driver.findElement(By.id("buttonGenera")).click();
+        driver.findElement(By.id("buttonAdd")).click();
+        //schermata aggiungi oggetto
+        // (2)
+        driver.findElement(By.id("titoloG")).sendKeys("provo ad inserire un giornale dalla web");
+        driver.findElement(By.id("editoreG")).sendKeys("editore dalla web");
+        driver.findElement(By.id("linguaG")).sendKeys("italiano");
+        driver.findElement(By.id("dataG")).sendKeys("2024/11/11");
+        driver.findElement(By.id("prezzoG")).sendKeys("4.50");
+        driver.findElement(By.id("copieG")).sendKeys("300");
+        driver.findElement(By.id("dispG")).sendKeys("1");
+        driver.findElement(By.id("confermaB")).click();
+        // scheramta libro
+        //carico schermata modifica
+        driver.findElement(By.id("idL")).sendKeys("5");
+        PropertyUtils.setProperty(sB,"idB",Integer.parseInt(driver.findElement(By.id("idL")).getAttribute("value")));
+        //schermata modifica
+        // (3)
+        //setto id a 5
+        driver.findElement(By.id("buttonMod")).click();
+        driver.findElement(By.id("buttonG")).click();
+        //modifico
+        driver.findElement(By.id("titoloNG")).sendKeys("modifico il giornale");
+        driver.findElement(By.id("editoreNG")).sendKeys("editore cambiato");
+        driver.findElement(By.id("linguaNG")).sendKeys("italianoo");
+        driver.findElement(By.id("dataNG")).sendKeys("11/11/2025");
+        driver.findElement(By.id("dispNG")).sendKeys("1");
+        driver.findElement(By.id("prezzoNG")).sendKeys("5.00");
+        driver.findElement(By.id("copieNG")).sendKeys("200");
+        driver.findElement(By.id("confermaB")).click();
+        // schemtata libro
+        // (4)
+        //elimino
+        driver.findElement(By.id("idL")).sendKeys("5");
+        PropertyUtils.setProperty(sB,"idB",Integer.parseInt(driver.findElement(By.id("idL")).getAttribute("value")));
+        driver.findElement(By.id("buttonCanc")).click();
 
 
     }
+
 
 
 
@@ -404,6 +473,7 @@ class TestIndexPage {
         driver.close();
 
     }
+
 
 
 

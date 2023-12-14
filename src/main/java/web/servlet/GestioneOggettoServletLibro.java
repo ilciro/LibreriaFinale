@@ -7,7 +7,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import laptop.database.LibroDao;
-import laptop.exception.IdException;
 import laptop.model.raccolta.Libro;
 import web.bean.LibroBean;
 import web.bean.ModificaOggettoBean;
@@ -86,7 +85,7 @@ public class GestioneOggettoServletLibro extends HttpServlet {
             view= getServletContext().getRequestDispatcher("/raccolta.jsp");
             view.forward(req,resp);
         }
-    }catch (SQLException |IdException e)
+    }catch (SQLException e)
         {
             java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
         }

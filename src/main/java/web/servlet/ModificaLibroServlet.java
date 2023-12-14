@@ -41,8 +41,8 @@ public class ModificaLibroServlet extends HttpServlet {
         try {
         if(lista!=null && lista.equals("prendi dati"))
         {
-
-                l.setId(sB.getIdB());
+                lB.setIdB(sB.getIdB());
+                l.setId(lB.getIdB());
 
                 //passo tutti i valori al bean
 

@@ -186,6 +186,7 @@ prezzo da aggiornare:
 
 </div>
 
+</form>
 
 
 </body>

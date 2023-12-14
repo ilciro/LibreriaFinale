@@ -123,7 +123,7 @@ public class RivistaBean {
     }
 
     public void setIdB(int idB) throws IdException, SQLException {
-        if(idB<1 || idB>lunghezzaLista())
+        if(idB<1 )
         {
             this.idB=0;
             setMexB( new IdException("id incorrect"));
@@ -147,10 +147,6 @@ public class RivistaBean {
 
     public void setMexB(Exception mexB) {
         this.mexB = mexB;
-    }
-    private int lunghezzaLista() throws SQLException {
-        return  rD.getRiviste().size();
-
     }
 
     public int getDispB() {

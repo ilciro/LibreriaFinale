@@ -1,13 +1,10 @@
 package web.servlet;
 
 import java.io.IOException;
-import java.lang.ref.ReferenceQueue;
 import java.sql.SQLException;
-import java.util.Objects;
 import java.util.logging.Level;
 
 import laptop.database.LibroDao;
-import laptop.exception.IdException;
 import laptop.model.raccolta.Libro;
 import web.bean.AcquistaBean;
 import web.bean.LibroBean;
@@ -23,11 +20,10 @@ import jakarta.servlet.http.HttpServletResponse;
 public class LibriServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-    private static LibroBean lB = new LibroBean();
-    private static String libri = "/libri.jsp";
-    private int dimensione = 0;
-    private static LibroDao lD = new LibroDao();
-    private static Libro l = new Libro();
+    private final LibroBean lB = new LibroBean();
+    private final String libri = "/libri.jsp";
+    private final LibroDao lD = new LibroDao();
+    private final Libro l = new Libro();
     private final String beanL = "beanL";
     private final SystemBean sB=SystemBean.getInstance();
     private final AcquistaBean aB=new AcquistaBean();
@@ -82,7 +78,7 @@ public class LibriServlet extends HttpServlet {
                  view= getServletContext().getRequestDispatcher("/index.jsp");
                 view.forward(req,resp);
             }
-        } catch (SQLException | IdException e) {
+        } catch (SQLException  e) {
             java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
 
         }

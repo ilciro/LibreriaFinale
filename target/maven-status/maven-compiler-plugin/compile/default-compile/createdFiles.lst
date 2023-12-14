@@ -26,6 +26,7 @@ web/servlet/ReportServlet.class
 laptop/model/User.class
 web/bean/CartaCreditoBean.class
 laptop/model/TempUser$RuoliT.class
+web/servlet/GestioneOggettoServletRivista.class
 laptop/model/Pagamento.class
 laptop/database/RivistaDao.class
 web/bean/RivistaBean.class
@@ -48,6 +49,7 @@ laptop/view/BoundaryPagamentoCash.class
 laptop/controller/ControllerLogin.class
 laptop/controller/ControllerVisualizzaProfilo.class
 laptop/view/BoundaryRicercaPerTipo.class
+web/servlet/ModificaRivistaServlet.class
 laptop/view/BoundaryVisualizzaOrdine.class
 laptop/controller/ControllerCancellaUser.class
 web/servlet/NegozioServlet.class
@@ -110,6 +112,7 @@ web/servlet/ModificaLibroServlet.class
 laptop/model/raccolta/Raccolta.class
 web/servlet/DownloadServletG.class
 web/servlet/AcquistaServlet.class
+web/servlet/InserisciRivistaServlet.class
 laptop/controller/ControllerAggiungiPage.class
 laptop/model/raccolta/Libro.class
 laptop/model/CartaDiCredito.class

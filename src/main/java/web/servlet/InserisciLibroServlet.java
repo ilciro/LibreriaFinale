@@ -29,23 +29,25 @@ public class InserisciLibroServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String conferma=req.getParameter("confermaB");
         String annulla=req.getParameter("annullaB");
-        String titolo=req.getParameter("titoloL");
-        String pagine=req.getParameter("nrPagL");
-        String codice=req.getParameter("codL");
-        String autore=req.getParameter("autoreL");
-        String editore=req.getParameter("editoreL");
-        String lingua=req.getParameter("linguaL");
-        String cat=req.getParameter("catS");
-        String dataL=req.getParameter("dataL");
-        String recensione=req.getParameter("recensioneL");
-        String desc=req.getParameter("descL");
-        String disp=req.getParameter("checkL");
-        String prezzo=req.getParameter("prezzoL");
-        String copie=req.getParameter("copieL");
+
 
         try {
 
             if (conferma != null && conferma.equals("conferma")) {
+
+                String titolo=req.getParameter("titoloL");
+                String pagine=req.getParameter("nrPagL");
+                String codice=req.getParameter("codL");
+                String autore=req.getParameter("autoreL");
+                String editore=req.getParameter("editoreL");
+                String lingua=req.getParameter("linguaL");
+                String cat=req.getParameter("catS");
+                String dataL=req.getParameter("dataL");
+                String recensione=req.getParameter("recensioneL");
+                String desc=req.getParameter("descL");
+                String disp=req.getParameter("checkL");
+                String prezzo=req.getParameter("prezzoL");
+                String copie=req.getParameter("copieL");
 
 
                 lB.setTitoloB(titolo);

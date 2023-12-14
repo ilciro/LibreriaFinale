@@ -408,7 +408,8 @@ public class 	RivistaDao {
 	}
 
 	public Boolean creaRivista(Rivista r) throws SQLException {
-    	
+
+		int row;
     		
 				
 				query= "INSERT INTO `RIVISTA`"
@@ -421,8 +422,8 @@ public class 	RivistaDao {
 			 			+ "`dataPubblicazione`,"
 			 			+ "`disp`,"
 			 			+ "`prezzo`,"
-			 			+ "`copieRimanenti`)"
-			 			+ "VALUES (?,?,?,?,?,?,?,?,?,?)";
+			 			+ "`copieRimanenti`,"
+						+ " id) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 				try(Connection conn=ConnToDb.connectionToDB();
 						PreparedStatement prepQ=conn.prepareStatement(query))
 				{
@@ -436,16 +437,20 @@ public class 	RivistaDao {
 				prepQ.setInt(8, r.getDisp());
 				prepQ.setFloat(9, r.getPrezzo());
 				prepQ.setInt(10,r.getCopieRim());
+				prepQ.setInt(11,r.getId());
 
 
 				
-				prepQ.executeUpdate();
-			 	state= true; // true		 			 	
+				row=prepQ.executeUpdate();
+				if(row==1)
+			 		state= true; // true
 				}catch(SQLException e)
 				{
 					state=false;
 					java.util.logging.Logger.getLogger("crea rivista").log(Level.INFO, eccezione, e);
 				}
+
+
 			
 		
 		
@@ -455,7 +460,7 @@ public class 	RivistaDao {
 		
 	}
 
-	public void cancella(Rivista r) throws SQLException {
+	public int cancella(Rivista r) throws SQLException {
 
 		 int row=0;
 		 query="delete from RIVISTA where id=?";
@@ -469,7 +474,7 @@ public class 	RivistaDao {
 			 java.util.logging.Logger.getLogger("cancella r").log(Level.INFO, eccezione, e);
 		 }
 		 java.util.logging.Logger.getLogger("rivista cancellata").log(Level.INFO, "row delected{0}",row);
-
+	return row;
 	}
 
 	public ObservableList<Rivista> getRivistaSingoloById(Rivista r) throws SQLException {
@@ -652,7 +657,7 @@ public class 	RivistaDao {
 		{
 			prepQ.setDate(1, sqlDate);
 			prepQ.setInt(2, r.getId());
-			prepQ.setInt(row, vis.getId());
+			prepQ.setInt(3, vis.getId());
 			row=prepQ.executeUpdate();
 		}
 		java.util.logging.Logger.getLogger("aggiorna data giornale").log(Level.INFO, "rivista aggiornati {0}.",row);
