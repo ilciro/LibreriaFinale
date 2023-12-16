@@ -18,9 +18,11 @@ laptop/view/Main.class
 web/bean/DownloadBean.class
 web/servlet/RivisteServlet.class
 laptop/exception/AcquistaException.class
+web/servlet/ProfiloServlet.class
 laptop/controller/ControllerVisualizza.class
 laptop/controller/ControllerAcquista.class
 laptop/controller/ControllerCompravendita.class
+web/servlet/InserisciUtenteServlet.class
 laptop/controller/ControllerPassword.class
 laptop/view/BoundaryScegliNegozio.class
 web/servlet/ReportServlet.class
@@ -94,6 +96,7 @@ web/servlet/InserisciGiornaleServlet.class
 laptop/model/raccolta/MatchParam.class
 laptop/view/BoundaryVisualizzaProfilo.class
 laptop/database/LibroDao.class
+web/servlet/ModificaUtenteServlet.class
 laptop/model/raccolta/Rivista.class
 laptop/view/BoundaryReportPage.class
 web/bean/FatturaBean.class

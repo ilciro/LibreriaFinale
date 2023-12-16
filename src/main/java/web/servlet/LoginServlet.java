@@ -36,47 +36,59 @@ public class LoginServlet extends HttpServlet {
             if (login != null && login.equals("login")) {
                 //switch page to go
 
-                PropertyUtils.setProperty(uB, "emailB", email);
-                PropertyUtils.setProperty(uB, "passB", pass);
-                u.setEmail(PropertyUtils.getProperty(uB, "emailB").toString());
-                u.setPassword(PropertyUtils.getProperty(uB, "passB").toString());
-                u.setIdRuolo(UsersDao.getRuolo(u));
-                PropertyUtils.setProperty(uB, "ruoloB", u.getIdRuolo());
-                String ruolo = PropertyUtils.getProperty(uB, "ruoloB").toString();
+                uB.setEmailB(email);
+                uB.setPassB(pass);
 
-                switch (ruolo) {
-                    case "A", "a":
-                        SystemBean.getInstance().setLoggedB(true);
-                        req.setAttribute("beanUb", uB);
-                        req.setAttribute("beanS", sB);
-                        view = getServletContext().getRequestDispatcher("/admin.jsp");
-                        view.forward(req, resp);
-                        break;
-                    case "U", "u":
-                        SystemBean.getInstance().setLoggedB(true);
-                        req.setAttribute("beanUb", uB);
-                        req.setAttribute("beanS", sB);
-                        view = getServletContext().getRequestDispatcher("/utenti.jsp");
-                        view.forward(req, resp);
-                        break;
-                    case "W", "w":
-                        SystemBean.getInstance().setLoggedB(true);
-                        req.setAttribute("beanUb", uB);
-                        req.setAttribute("beanS", sB);
-                        view = getServletContext().getRequestDispatcher("/scrittore.jsp");
-                        view.forward(req, resp);
-                        break;
-                    case "E", "e":
-                        SystemBean.getInstance().setLoggedB(true);
-                        req.setAttribute("beanUb", uB);
-                        req.setAttribute("beanS", sB);
-                        view = getServletContext().getRequestDispatcher("/editore.jsp");
-                        view.forward(req, resp);
-                        break;
-                    default:
-                        break;
+                u.setEmail(uB.getEmailB());
+                u.setPassword(uB.getPassB());
+                if(UsersDao.checkUser(u)==1) {
+                    u.setIdRuolo(UsersDao.getRuolo(u));
+                    uB.setRuoloB(u.getIdRuolo());
 
+                    String ruolo = uB.getRuoloB();
+
+                    switch (ruolo) {
+                        case "A", "a":
+                            sB.setLoggedB(true);
+                            req.setAttribute("beanUb", uB);
+                            req.setAttribute("beanS", sB);
+                            view = getServletContext().getRequestDispatcher("/admin.jsp");
+                            view.forward(req, resp);
+                            break;
+                        case "U", "u":
+                            sB.setLoggedB(true);
+                            req.setAttribute("beanUb", uB);
+                            req.setAttribute("beanS", sB);
+                            view = getServletContext().getRequestDispatcher("/utenti.jsp");
+                            view.forward(req, resp);
+                            break;
+                        case "W", "w":
+                            sB.setLoggedB(true);
+                            req.setAttribute("beanUb", uB);
+                            req.setAttribute("beanS", sB);
+                            view = getServletContext().getRequestDispatcher("/scrittore.jsp");
+                            view.forward(req, resp);
+                            break;
+                        case "E", "e":
+                            sB.setLoggedB(true);
+                            req.setAttribute("beanUb", uB);
+                            req.setAttribute("beanS", sB);
+                            view = getServletContext().getRequestDispatcher("/editore.jsp");
+                            view.forward(req, resp);
+                            break;
+                        default:
+                            break;
+
+                    }
                 }
+                else {
+                    uB.setMexB("credenziali sbagliare .. riprovare");
+                    req.setAttribute("beanUb",uB);
+                    view= getServletContext().getRequestDispatcher("/login.jsp");
+                    view.forward(req,resp);
+                }
+
+
             }
             if(annulla!=null && annulla.equals("indietro"))
             {

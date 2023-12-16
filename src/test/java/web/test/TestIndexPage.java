@@ -56,8 +56,7 @@ class TestIndexPage {
 
             /*
         TODO
-            fare test
-            poi fare commit
+            finire elimina web e fare test
          */
 
 
@@ -321,13 +320,12 @@ class TestIndexPage {
     void testRaccoltaAdminLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
 
 
-        /*
-           1) genero lista
-           2) aggiungo
-           3) modifico
-           4) cancello
 
-         */
+        //   1) genero lista
+        //   2) aggiungo
+        //   3) modifico
+        //   4) cancello
+
 
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //schermata index
@@ -399,16 +397,18 @@ class TestIndexPage {
 
     }
 
+
     @Test
     void testRaccoltaAdminGiornale() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
 
 
-        /*
-           1) genero lista
-           2) aggiungo
-           3) modifico
-           4) cancello
-           */
+
+       //    1) genero lista
+       //    2) aggiungo
+       //    3) modifico
+       //    4) cancello
+
+
 
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //schermata index
@@ -465,7 +465,7 @@ class TestIndexPage {
 
     }
 
-
+/*
 
     @Test
     void testRicercaPerLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
@@ -567,6 +567,65 @@ class TestIndexPage {
     }
 
 
+ */
+
+    @Test
+    void testGestioneProfilo() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+        // 1)insert neu user
+        // 2)modific user
+        // 3)delete user
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //schermata index
+        driver = new ChromeDriver();
+        driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
+        driver.findElement(By.id("buttonLogin")).click();
+        driver.findElement(By.id("emailL")).sendKeys("admin@admin.com");
+        driver.findElement(By.id("passL")).sendKeys("Admin871");
+        PropertyUtils.setProperty(uB,"emailB",driver.findElement(By.id("emailL")).getAttribute("value"));
+        PropertyUtils.setProperty(uB,"passB",driver.findElement(By.id("passL")).getAttribute("value"));
+        driver.findElement(By.id("loginB")).click();
+        //scchermata utenti
+        driver.findElement(By.id("utentiB")).click();
+        driver.findElement(By.id("buttonProfilo")).click();
+        driver.findElement(By.id("genera lista")).click();
+        driver.findElement(By.id("inserisci")).click();
+        // 1)
+        driver.findElement(By.id("nomeU")).sendKeys("provo ad inserire un utente");
+        driver.findElement(By.id("cognomeU")).sendKeys("cognome utente inserito");
+        driver.findElement(By.id("emailU")).sendKeys("nome.cognome1@gmail.com");
+        driver.findElement(By.id("passU")).sendKeys("nomeC963");
+        driver.findElement(By.id("descU")).sendKeys("descizione utente inserito");
+        driver.findElement(By.id("dataU")).sendKeys("1985/06/11");
+        PropertyUtils.setProperty(uB,"ruoloB","A");
+        driver.findElement(By.id("buttonI")).click();
+        driver.findElement(By.id("genera lista")).click();
+        // 2)
+        WebElement id=driver.findElement(By.id("idOgg"));
+        id.sendKeys("7");
+        PropertyUtils.setProperty(uB,"idB",Integer.parseInt(id.getAttribute("value")));
+        driver.findElement(By.id("modifica")).click();
+        //schermata per modificare
+        driver.findElement(By.id("generaB")).click();
+        driver.findElement(By.id("ruoloNL")).sendKeys("E");
+        driver.findElement(By.id("nomeNL")).sendKeys("3 picche");
+        driver.findElement(By.id("cognomeNL")).sendKeys("nere");
+        driver.findElement(By.id("emailNL")).sendKeys("pi3ne@libero.it");
+        driver.findElement(By.id("passNL")).sendKeys("n3p845");
+        driver.findElement(By.id("descNL")).sendKeys("editore 3 picche");
+        driver.findElement(By.id("buttonI")).click();
+        // 3)
+        WebElement id1=driver.findElement(By.id("idOgg"));
+        id1.sendKeys("7");
+        PropertyUtils.setProperty(uB,"idB",Integer.parseInt(id1.getAttribute("value")));
+        driver.findElement(By.id("elimina")).click();
+        driver.findElement(By.id("genera lista")).click();
+
+
+
+    }
+
+
+
 
 
 
@@ -579,6 +638,8 @@ class TestIndexPage {
         driver.close();
 
     }
+
+
 
 
 

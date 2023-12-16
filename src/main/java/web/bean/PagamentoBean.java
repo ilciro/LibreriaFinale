@@ -1,5 +1,8 @@
 package web.bean;
 
+import javafx.collections.ObservableList;
+import laptop.model.Pagamento;
+
 public class PagamentoBean {
     private int idB;
     private String metodoB;
@@ -8,6 +11,8 @@ public class PagamentoBean {
 
     private String nomeUtenteB;
     private String tipoB;
+
+    private ObservableList<Pagamento> listaPagamentiB;
 
     public int getIdB() {
         return idB;
@@ -64,5 +69,13 @@ public class PagamentoBean {
 
     public void setIdOggettoB(int idOggettoB) {
         this.idOggettoB = idOggettoB;
+    }
+
+    public ObservableList<Pagamento> getListaPagamentiB() {
+        return listaPagamentiB;
+    }
+
+    public void setListaPagamentiB(ObservableList<Pagamento> listaPagamentiB) {
+        this.listaPagamentiB = listaPagamentiB;
     }
 }

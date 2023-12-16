@@ -37,11 +37,14 @@ public class AdminServlet extends HttpServlet {
             view.forward(req, resp);
         }
         if (utente != null && utente.equals("utenti")) {
-             view = getServletContext().getRequestDispatcher("/utenti.jsp");
+
+            req.setAttribute("beanUb",uB);
+
+            view = getServletContext().getRequestDispatcher("/utenti.jsp");
             view.forward(req, resp);
         }
         if (logout != null && logout.equals("logout")) {
-            String email = UserBean.getInstance().getEmailB();
+            String email = uB.getEmailB();
 
 
             if (email == null) {

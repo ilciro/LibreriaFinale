@@ -12,6 +12,13 @@
 
 <h2>Scegliere cosa fare</h2>
 
+<p> parametri:</p>
+<p> email : ${beanUb.getEmailB()}</p>
+<p> ruolo : ${beanUb.getRuoloB()}</p>
+<p> pass: ${beanUb.getPassB()}</p>
+
+
+
 <form action="AdminServlet" method="post">
 <div>
 <input type="submit" id="reportB" name="reportB" value="report" class="report">
@@ -21,6 +28,8 @@
 
 </div>
 </form>
+
+
 
 </body>
 </html>

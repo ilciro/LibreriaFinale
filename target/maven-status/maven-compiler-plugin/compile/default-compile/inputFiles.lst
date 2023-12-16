@@ -5,6 +5,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/model/raccolta/CategorieRivista.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/bean/TextAreaBean.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/database/NegozioDao.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/ModificaUtenteServlet.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerCheckPagamentoData.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/ReportServlet.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerRegistraUtente.java
@@ -90,6 +91,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/bean/RicercaBean.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/database/GiornaleDao.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/GiornaliServlet.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/InserisciUtenteServlet.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryVisualizza.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/bean/ModificaOggettoBean.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/InserisciGiornaleServlet.java
@@ -112,6 +114,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryLogin.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/model/raccolta/Raccolta.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerReportRaccolta.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/ProfiloServlet.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/database/LibroDao.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerCompravendita.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/RicercaCatalogoServlet.java

@@ -1,8 +1,13 @@
 package web.bean;
 
+import javafx.collections.ObservableList;
+import laptop.model.User;
+
 import java.time.LocalDate;
 
 public class UserBean {
+
+
 
     public String getMexB() {
         return mexB;
@@ -11,6 +16,15 @@ public class UserBean {
     public void setMexB(String mexB) {
         this.mexB = mexB;
     }
+
+    public String getStringB() {
+        return stringB;
+    }
+
+    public void setStringB(String stringB) {
+        this.stringB = stringB;
+    }
+
 
     enum Ruoli {
         ADMIN,
@@ -29,6 +43,9 @@ public class UserBean {
     private String cognomeB;
 
     private LocalDate dataDiNascitaB;
+
+    private  String stringB;
+
 
     public String getNomeB() {
         return nomeB;

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+         <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+
 <!DOCTYPE html>
 <html lang=it>
 <head>
@@ -12,8 +14,43 @@
 <h1> Loggato come utente</h1>
 <h2> Scegli cosa vuoi fare</h2>
 
+<p> parametri:</p>
+<p> email : ${beanUb.getEmailB()}</p>
+<p> ruolo : ${beanUb.getRuoloB()}</p>
+<p> pass: ${beanUb.getPassB()}</p>
+
+
 <form action="UtentiServlet" method="post">
-<div>
+
+<c:set var = "tipo" scope = "session" value = "${beanUb.getRuoloB() }"/>
+
+<c:choose>
+<c:when test="${ tipo=='A'}">
+
+<table>
+<caption>
+gestione profilo
+<br>
+</caption>
+<tr>
+<th scope="col">
+visualizza profilo
+</th>
+</tr>
+<tr>
+<td>
+<img alt="source not found" src="immagini/vector-users-icon-png_302626.jpg" width=100  height=100 >
+</td>
+</tr>
+<td>
+<input type="submit" name="buttonProfilo" id="buttonProfilo" value="profilo" class="profilo">
+</td>
+</tr>
+</table>
+
+</c:when>
+
+<c:when test="{tipo=='E' || tipo=='W' || tipo=='S' || tipo=='U'}" >
 <table>
 <caption>
 scegliere tra libri , giornali e riviste ,logout , ricerca, gestione profilo
@@ -35,9 +72,6 @@ logout
 <th>
 ricerca
 </th>
-<th>
-visualizza profilo
-</th>
 </tr>
 <tr>
 <td>
@@ -54,9 +88,6 @@ visualizza profilo
 </td>
 <td>
 <img alt="source not found" src="immagini/Search-icon-13.png" width=100  height=100 >
-</td>
-<td>
-<img alt="source not found" src="immagini/vector-users-icon-png_302626.jpg" width=100  height=100 >
 </td>
 </tr>
 <tr>
@@ -75,12 +106,14 @@ visualizza profilo
 <td>
 <input type="submit" name="buttonRic" id="buttonRic" value="ricerca" class="ricerca">
 </td>
-<td>
-<input type="submit" name="buttonProfilo" id="buttonProfilo" value="profilo" class="profilo">
-</td>
+
 </tr>
 </table>
-</div>
+</c:when>
+</c:choose>
+
+
+
 </form>
 
 </body>

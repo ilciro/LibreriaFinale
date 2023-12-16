@@ -96,29 +96,17 @@ public class User {
 	public void setIdRuolo(String ruolo) {
 
 		 switch (ruolo){
-			case "ADMIN":
+			case "ADMIN", "A":
 				r = Ruoli.ADMIN.toString();
 				break;				
-			case "EDITORE":
+			case "EDITORE", "E":
 				r = Ruoli.EDITORE.toString();
 				break;
-			case "SCRITTORE":
+			case "SCRITTORE", "W":
 				r = Ruoli.SCRITTORE.toString();
 				break;
-			case "UTENTE":
-				r = Ruoli.UTENTE.toString();
-				break;	
-			case "W":
-				r = Ruoli.SCRITTORE.toString();
-				break;
-			case "E":
-				r = Ruoli.EDITORE.toString();
-				break;	
-			case "A":
-				r = Ruoli.ADMIN.toString();
-				break;
-				
-			default:
+
+             default:
 				r= Ruoli.UTENTE.toString();
 				break;
 			}

@@ -1,9 +1,19 @@
 package web.servlet;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.logging.Level;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import laptop.database.UsersDao;
 import laptop.exception.LogoutException;
+import laptop.model.TempUser;
+import laptop.model.User;
+import laptop.utilities.ConnToDb;
 import web.bean.SystemBean;
 import web.bean.UserBean;
 import jakarta.servlet.RequestDispatcher;
@@ -20,9 +30,20 @@ public class UtentiServlet extends HttpServlet {
      *
      */
     private static final long serialVersionUID = 1L;
+    private final UserBean uB=UserBean.getInstance();
+
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String profilo=req.getParameter("buttonProfilo");
+
+        if(profilo!=null && profilo.equals("profilo"))
+        {
+            req.setAttribute("beanUb",UserBean.getInstance());
+            RequestDispatcher view= getServletContext().getRequestDispatcher("/profilo.jsp");
+            view.forward(req,resp);
+        }
+        /*
         String libro=req.getParameter("buttonL");
         String giornale=req.getParameter("buttonG");
         String rivista=req.getParameter("buttonR");
@@ -82,6 +103,7 @@ public class UtentiServlet extends HttpServlet {
             }
             if(profilo!=null && profilo.equals("profilo"))
             {
+                req.setAttribute("beanUb",UserBean.getInstance());
                 RequestDispatcher view = getServletContext().getRequestDispatcher("/profilo.jsp");
                 view.forward(req,resp);
             }
@@ -90,7 +112,10 @@ public class UtentiServlet extends HttpServlet {
             java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
 
         }
+
+         */
     }
 
 
-}
+
+    }
