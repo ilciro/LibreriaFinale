@@ -2,6 +2,8 @@ package laptop.view;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 
@@ -19,6 +21,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import laptop.controller.ControllerPagamentoCash;
 import laptop.controller.ControllerSystemState;
+import laptop.exception.IdException;
 
 public class BoundaryPagamentoCash implements Initializable{
 	@FXML
@@ -59,10 +62,10 @@ public class BoundaryPagamentoCash implements Initializable{
 	private static ControllerSystemState vis = ControllerSystemState.getInstance();
 
 	@FXML
-	private void procediCash() throws IOException {
+	private void procediCash() throws IOException, SQLException, IdException {
 		
 		vis.setMetodoP("cash");
-		try {
+
 
 			n = nomeTF.getText();
 			c = cognomeTF.getText();
@@ -71,14 +74,14 @@ public class BoundaryPagamentoCash implements Initializable{
 			
 
 
-			if (n.equals("") || c.equals("") || v.equals("")) {
+			if (n.isEmpty() || c.isEmpty() || v.isEmpty()) {
 				java.util.logging.Logger.getLogger("procedi cash").log(Level.SEVERE,"\n errore nel pagamento");
 
 
 				Stage stage;
 				Parent root;
 				stage = (Stage) buttonI.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getClassLoader().getResource("pagamentoContrassegno.fxml"));
+				root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("pagamentoContrassegno.fxml")));
 				stage.setTitle("Benvenuto nella schermata del riepilogo ordine");
 				scene = new Scene(root);
 				stage.setScene(scene);
@@ -97,7 +100,7 @@ public class BoundaryPagamentoCash implements Initializable{
 					Stage stage;
 					Parent root;
 					stage = (Stage) buttonI.getScene().getWindow();
-					root = FXMLLoader.load(getClass().getClassLoader().getResource("scegliNegozio.fxml"));
+					root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("scegliNegozio.fxml")));
 					stage.setTitle("Benvenuto nella schermata per scegliere il negozio");
 					scene = new Scene(root);
 					stage.setScene(scene);
@@ -108,16 +111,14 @@ public class BoundaryPagamentoCash implements Initializable{
 				Stage stage;
 				Parent root;
 				stage = (Stage) buttonI.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getClassLoader().getResource("download.fxml"));
+				root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("download.fxml")));
 				stage.setTitle("Benvenuto nella schermata per il download");
 				scene = new Scene(root);
 				stage.setScene(scene);
 				stage.show();
 				}
 			}
-		} catch (Exception e) {
-			e.getCause();
-		}
+
 
 	}
 
@@ -126,7 +127,7 @@ public class BoundaryPagamentoCash implements Initializable{
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonA.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("acquista.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("acquista.fxml")));
 		stage.setTitle("benvenuto nella schermata del riepilogo ordine");
 
 		scene = new Scene(root);

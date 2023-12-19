@@ -3,6 +3,7 @@ package laptop.view;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 
@@ -77,71 +78,67 @@ public class BoundaryLogin implements Initializable {
 		ruolo=cL.getRuoloTempUSer(textFieldUsername.getText());
 
 		if (cL.controlla(u,p)) {
-		
-			if(ruolo.equals("e") || ruolo.equals("E"))
-			{
-				Stage stage;
-				Parent root;
-				stage = (Stage) buttonI.getScene().getWindow();
-				/*
-				 * modificare schermata
-				 */
-				root = FXMLLoader.load(getClass().getClassLoader().getResource("homePageAfterLoginES.fxml"));
-				stage.setTitle("Benvenuto nella schermata di Home page ");
 
-				scene = new Scene(root);
-				stage.setScene(scene);
-				stage.show();
+            switch (ruolo) {
+                case "e", "E" -> {
+                    Stage stage;
+                    Parent root;
+                    stage = (Stage) buttonI.getScene().getWindow();
+                    /*
+                     * modificare schermata
+                     */
+                    root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePageAfterLoginES.fxml")));
+                    stage.setTitle("Benvenuto nella schermata di Home page ");
 
-			}
-			else if(ruolo.equals("w") || ruolo.equals("W"))
-			{
-					Stage stage;
-					Parent root;
-					stage = (Stage) buttonI.getScene().getWindow();
-					/*
-					 * modificare schermata
-					 */
-					root = FXMLLoader.load(getClass().getClassLoader().getResource("homePageAfterLoginES.fxml"));
-					stage.setTitle("Benvenuto nella schermata di home page dedicata agli editori/ scrittori");
+                    scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
 
-					scene = new Scene(root);
-					stage.setScene(scene);
-					stage.show();
+                }
+                case "w", "W" -> {
+                    Stage stage;
+                    Parent root;
+                    stage = (Stage) buttonI.getScene().getWindow();
+                    /*
+                     * modificare schermata
+                     */
+                    root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePageAfterLoginES.fxml")));
+                    stage.setTitle("Benvenuto nella schermata di home page dedicata agli editori/ scrittori");
 
-				
+                    scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
 
-			}
-			else if(ruolo.equals("a") || ruolo.equals("A"))
-			{
-					Stage stage;
-					Parent root;
-					stage = (Stage) buttonI.getScene().getWindow();
-					/*
-					 * modificare schermata
-					 */
-					root = FXMLLoader.load(getClass().getClassLoader().getResource("adminPage.fxml"));
-					stage.setTitle("Benvenuto nella schermata di gestione amministrativa ");
 
-					scene = new Scene(root);
-					stage.setScene(scene);
-					stage.show();
+                }
+                case "a", "A" -> {
+                    Stage stage;
+                    Parent root;
+                    stage = (Stage) buttonI.getScene().getWindow();
+                    /*
+                     * modificare schermata
+                     */
+                    root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("adminPage.fxml")));
+                    stage.setTitle("Benvenuto nella schermata di gestione amministrativa ");
 
-				
+                    scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
 
-			}
-			else if(ruolo.equals("u") || ruolo.equals("U"))
-			{			
-			
-				Stage stage;
-				Parent root;
-				stage = (Stage) buttonI.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getClassLoader().getResource("homePageAfterLogin.fxml"));
-				stage.setTitle("Benvenuto nella schermata di home page ");
-				scene = new Scene(root);
-				stage.setScene(scene);
-				stage.show();
-			}
+
+                }
+                case "u", "U" -> {
+
+                    Stage stage;
+                    Parent root;
+                    stage = (Stage) buttonI.getScene().getWindow();
+                    root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePageAfterLogin.fxml")));
+                    stage.setTitle("Benvenuto nella schermata di home page ");
+                    scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                }
+            }
 			
 
 		} 
@@ -160,7 +157,7 @@ public class BoundaryLogin implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonA.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("homePage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePage.fxml")));
 		stage.setTitle("Benvenuto nella schermata del catalogo libri ");
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -177,7 +174,7 @@ public class BoundaryLogin implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonReg.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("registraUtente.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("registraUtente.fxml")));
 		stage.setTitle("Benvenuto nella schermata del login");
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -191,7 +188,7 @@ public class BoundaryLogin implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonReg.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("resetPwd.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("resetPwd.fxml")));
 		stage.setTitle("Benvenuto nella schermata del login");
 		scene = new Scene(root);
 		stage.setScene(scene);

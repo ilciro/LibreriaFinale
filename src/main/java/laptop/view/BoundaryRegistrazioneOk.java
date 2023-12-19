@@ -1,6 +1,7 @@
 package laptop.view;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -36,7 +37,7 @@ public class BoundaryRegistrazioneOk {
 		Stage stage;
 		Parent root;
 		stage = (Stage) loginB.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("loginPage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("loginPage.fxml")));
 		stage.setTitle("Registazione andata a buon fine");
 
 		scene = new Scene(root);
@@ -49,7 +50,7 @@ public class BoundaryRegistrazioneOk {
 		Stage stage;
 		Parent root;
 		stage = (Stage) homePageB.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("homePage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePage.fxml")));
 		stage.setTitle("Registazione andata a buon fine");
 
 		scene = new Scene(root);

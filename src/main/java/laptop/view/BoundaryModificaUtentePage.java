@@ -6,6 +6,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 
@@ -107,7 +108,7 @@ public class BoundaryModificaUtentePage implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonI.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("adminPage.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("adminPage.fxml")));
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
@@ -117,7 +118,7 @@ public class BoundaryModificaUtentePage implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonI.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("modificaUtentePage.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("modificaUtentePage.fxml")));
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
@@ -145,7 +146,7 @@ public class BoundaryModificaUtentePage implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonI.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("userPage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("userPage.fxml")));
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();

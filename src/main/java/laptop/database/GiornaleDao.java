@@ -348,10 +348,9 @@ public class GiornaleDao {
 					+ "`dataPubblicazione`,"
 					+ "`copiRim`,"
 					+ "`disp`,"
-					+ "`prezzo`,"
-					+ "`id`)"
+					+ "`prezzo`)"
 					+ "VALUES"
-					+ "(?,?,?,?,?,?,?,?,?)";
+					+ "(?,?,?,?,?,?,?,?)";
 			try(Connection conn=ConnToDb.connectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
@@ -364,7 +363,7 @@ public class GiornaleDao {
 			prepQ.setInt(6,g.getCopieRimanenti());
 			prepQ.setInt(7, g.getDisponibilita());
 			prepQ.setFloat(8, g.getPrezzo());
-			prepQ.setInt(9,0);
+
 
 			row=prepQ.executeUpdate();
                 state= row == 1; // true

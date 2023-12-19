@@ -422,8 +422,7 @@ public class 	RivistaDao {
 			 			+ "`dataPubblicazione`,"
 			 			+ "`disp`,"
 			 			+ "`prezzo`,"
-			 			+ "`copieRimanenti`,"
-						+ " id) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+			 			+ "`copieRimanenti` VALUES (?,?,?,?,?,?,?,?,?,?)";
 				try(Connection conn=ConnToDb.connectionToDB();
 						PreparedStatement prepQ=conn.prepareStatement(query))
 				{
@@ -437,7 +436,6 @@ public class 	RivistaDao {
 				prepQ.setInt(8, r.getDisp());
 				prepQ.setFloat(9, r.getPrezzo());
 				prepQ.setInt(10,r.getCopieRim());
-				prepQ.setInt(11,r.getId());
 
 
 				

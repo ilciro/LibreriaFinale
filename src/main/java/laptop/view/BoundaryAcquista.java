@@ -3,6 +3,7 @@ package laptop.view;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 
@@ -87,7 +88,7 @@ public class BoundaryAcquista implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonCC.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("acquista.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("acquista.fxml")));
 			stage.setTitle("Benvenuto nella schermata di acquisto");
 			scene = new Scene(root);
 			stage.setScene(scene);

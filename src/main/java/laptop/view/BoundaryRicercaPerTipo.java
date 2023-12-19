@@ -2,6 +2,7 @@ package laptop.view;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 
@@ -47,7 +48,7 @@ public class BoundaryRicercaPerTipo implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonB.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("homePageAfterLogin.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePageAfterLogin.fxml")));
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
@@ -57,7 +58,7 @@ public class BoundaryRicercaPerTipo implements Initializable {
 				Stage stage;
 				Parent root;
 				stage = (Stage) buttonB.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getClassLoader().getResource("homePage.fxml"));
+				root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePage.fxml")));
 				scene = new Scene(root);
 				stage.setScene(scene);
 				stage.show();
@@ -73,7 +74,7 @@ public class BoundaryRicercaPerTipo implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonL.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource(pageFxml));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(pageFxml)));
 			stage.setTitle(title);
 			scene = new Scene(root);
 			stage.setScene(scene);
@@ -95,7 +96,7 @@ public class BoundaryRicercaPerTipo implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonG.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource(pageFxml));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(pageFxml)));
 			stage.setTitle(title);
 			scene = new Scene(root);
 			stage.setScene(scene);
@@ -117,7 +118,7 @@ public class BoundaryRicercaPerTipo implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonR.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource(pageFxml));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(pageFxml)));
 			stage.setTitle(title);
 			scene = new Scene(root);
 			stage.setScene(scene);

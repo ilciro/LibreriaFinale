@@ -41,6 +41,7 @@ laptop/database/CartaCreditoDao.class
 web/servlet/DownloadServletR.class
 web/bean/UserBean$Ruoli.class
 laptop/view/BoundaryUserPage.class
+web/servlet/ServletScrittore.class
 laptop/controller/ControllerGestionePage.class
 laptop/view/BoundaryPagamentoCC.class
 laptop/controller/ControllerPagamentoCash.class

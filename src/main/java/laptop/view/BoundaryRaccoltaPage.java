@@ -2,6 +2,7 @@ package laptop.view;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -41,7 +42,7 @@ public class BoundaryRaccoltaPage implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonG.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource(gestione));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(gestione)));
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
@@ -54,7 +55,7 @@ public class BoundaryRaccoltaPage implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) rivisteB.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource(gestione));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(gestione)));
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
@@ -68,7 +69,7 @@ public class BoundaryRaccoltaPage implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) libriB.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource(gestione));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(gestione)));
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
@@ -83,7 +84,7 @@ public class BoundaryRaccoltaPage implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonI.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("raccoltaPage.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("raccoltaPage.fxml")));
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
@@ -94,7 +95,7 @@ public class BoundaryRaccoltaPage implements Initializable {
 				Stage stage;
 				Parent root;
 				stage = (Stage) buttonI.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getClassLoader().getResource("homePageAfterLoginES.fxml"));
+				root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePageAfterLoginES.fxml")));
 				scene = new Scene(root);
 				stage.setScene(scene);
 				stage.show();
@@ -104,7 +105,7 @@ public class BoundaryRaccoltaPage implements Initializable {
 				 Stage stage;
 					Parent root;
 					stage = (Stage) buttonI.getScene().getWindow();
-					root = FXMLLoader.load(getClass().getClassLoader().getResource("homePageAfterLogin.fxml"));
+					root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePageAfterLogin.fxml")));
 					scene = new Scene(root);
 					stage.setScene(scene);
 					stage.show();

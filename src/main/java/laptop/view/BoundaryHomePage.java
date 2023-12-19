@@ -1,6 +1,7 @@
 package laptop.view;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,7 +53,7 @@ public class BoundaryHomePage {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonL.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource(compravendita));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(compravendita)));
 		stage.setTitle("Benvenuto nella schermata del riepilogo dei giornali");
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -66,7 +67,7 @@ public class BoundaryHomePage {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonL.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource(compravendita));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(compravendita)));
 		stage.setTitle("Benvenuto nella schermata del riepilogo delle riviste");
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -80,7 +81,7 @@ public class BoundaryHomePage {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonL.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource(compravendita));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(compravendita)));
 		stage.setTitle("Benvenuto nella schermata del riepilogo dei libri");
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -93,7 +94,7 @@ public class BoundaryHomePage {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonL.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("loginPage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("loginPage.fxml")));
 		stage.setTitle("Benvenuto nella schermata del login");
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -107,7 +108,7 @@ public class BoundaryHomePage {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonC.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("ricercaPerTipo.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("ricercaPerTipo.fxml")));
 		scene = new Scene(root);
 		stage.setScene(scene);
 

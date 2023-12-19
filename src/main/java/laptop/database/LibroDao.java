@@ -280,10 +280,9 @@ public class LibroDao  {
 						+ "`breveDescrizione`,"
 						+ "`disp`,"
 						+ "`prezzo`,"
-						+ "`copieRimanenti`,"
-						+ "idProd )"
+						+ "`copieRimanenti`)"
 						+ "VALUES"
-						+ "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+						+ "(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 				try(Connection conn=ConnToDb.connectionToDB();
 						PreparedStatement prepQ=conn.prepareStatement(query);)
 				{
@@ -302,7 +301,6 @@ public class LibroDao  {
 				prepQ.setInt(12, l.getDisponibilita());
 				prepQ.setFloat(13, l.getPrezzo());
 				prepQ.setInt(14,l.getNrCopie());
-				prepQ.setInt(15, 0);
 				int row= prepQ.executeUpdate();
 				if(row==1)
 					state= true; // true

@@ -56,7 +56,7 @@ class TestIndexPage {
 
             /*
         TODO
-            finire elimina web e fare test
+            sistemare utente -> levare c:if ecc ecc
          */
 
 

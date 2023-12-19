@@ -3,6 +3,7 @@ package laptop.view;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -69,7 +70,7 @@ public class BoundaryResetPwd implements Initializable{
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonH.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("homePage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePage.fxml")));
 		stage.setTitle("Benvenuto nella schermata del login");
 		scene = new Scene(root);
 		stage.setScene(scene);

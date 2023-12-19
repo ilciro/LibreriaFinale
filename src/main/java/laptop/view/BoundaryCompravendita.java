@@ -3,6 +3,7 @@ package laptop.view;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 
@@ -104,7 +105,7 @@ public class BoundaryCompravendita implements Initializable {
 			Stage stage;
 			Parent root=null;
 			stage = (Stage) buttonV.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("visualizzaPage.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("visualizzaPage.fxml")));
 			stage.setTitle("Benvenuto nella schermata del riepilogo ordine");
 			scene = new Scene(root);
 			stage.setScene(scene);

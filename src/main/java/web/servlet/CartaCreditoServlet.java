@@ -47,6 +47,7 @@ public class CartaCreditoServlet extends HttpServlet {
     private static PagamentoDao pD=new PagamentoDao();
 
     private final CartaCreditoDao cCD=new CartaCreditoDao();
+    private final SystemBean sB=SystemBean.getInstance();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String n=req.getParameter("nomeL");
@@ -58,22 +59,57 @@ public class CartaCreditoServlet extends HttpServlet {
         String annulla=req.getParameter("buttonA");
         String registra=req.getParameter("regB");
         String generaLista=req.getParameter("prendiDB");
+        String nomeUtente= req.getParameter("utenteL");
+        String cartePossedute=req.getParameter("scegliCarta");
+        RequestDispatcher view;
         try {
             if(annulla!=null && annulla.equals("annulla"))
             {
-                RequestDispatcher view = getServletContext().getRequestDispatcher("/acquista.jsp");
+                 view = getServletContext().getRequestDispatcher("/acquista.jsp");
                 view.forward(req,resp);
             }
             if(invia!=null && invia.equals("paga"))
             {
-                ccB.setNomeB(n);
-                ccB.setCivB(c);
-                ccB.setNumeroCCB(numero);
-                ccB.setCognomeB(c);
-                ccB.setDataScadB(new SimpleDateFormat("yyyy/mm/dd").parse(scad));
-                ccB.setCivB(civ);
-                ccB.setPrezzoTransazioneB(SystemBean.getInstance().getSpesaTB());
 
+                //inserire pagamento
+
+                pB.setIdB(0);
+                pB.setMetodoB("cCredito");
+                pB.setEsitoB(0);
+                pB.setNomeUtenteB(n);
+                pB.setAmmontareB(sB.getSpesaTB());
+                pB.setTipoB(sB.getCategoriaB());
+                pB.setIdOggettoB(sB.getIdB());
+
+                Pagamento p=new Pagamento();
+
+                p.setId(pB.getIdB());
+                p.setMetodo(pB.getMetodoB());
+                p.setEsito(pB.getEsitoB());
+                p.setNomeUtente(pB.getNomeUtenteB());
+                p.setAmmontare(pB.getAmmontareB());
+                p.setTipo(pB.getTipoB());
+                p.setIdOggetto(pB.getIdOggettoB());
+
+                pD.inserisciPagamento(p);
+
+
+                if(SystemBean.getInstance().isNegozioSelezionatoB())
+                {
+                    req.setAttribute("beanS",sB);
+                     view = getServletContext().getRequestDispatcher("/negozi.jsp");
+                    view.forward(req,resp);
+                }
+                else {
+
+                    req.setAttribute("beanS",sB);
+                     view = getServletContext().getRequestDispatcher("/download.jsp");
+                    view.forward(req,resp);
+                }
+
+            }
+            if(registra!=null && registra.equals("registra e paga"))
+            {
                 Date sqlDate = null;
                 java.util.Date utilDate;
                 SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
@@ -81,6 +117,17 @@ public class CartaCreditoServlet extends HttpServlet {
 
                 utilDate = format.parse(scad);
                 sqlDate = new java.sql.Date(utilDate.getTime());
+
+
+                ccB.setNomeB(n);
+                ccB.setCivB(c);
+                ccB.setNumeroCCB(numero);
+                ccB.setCognomeB(c);
+                ccB.setDataScadB(sqlDate);
+                ccB.setCivB(civ);
+                ccB.setPrezzoTransazioneB(sB.getSpesaTB());
+
+
 
                 //inserire cc
 
@@ -99,9 +146,9 @@ public class CartaCreditoServlet extends HttpServlet {
                 pB.setMetodoB("cCredito");
                 pB.setEsitoB(0);
                 pB.setNomeUtenteB(n);
-                pB.setAmmontareB(SystemBean.getInstance().getSpesaTB());
-                pB.setTipoB(SystemBean.getInstance().getCategoriaB());
-                pB.setIdOggettoB(SystemBean.getInstance().getIdB());
+                pB.setAmmontareB(sB.getSpesaTB());
+                pB.setTipoB(sB.getCategoriaB());
+                pB.setIdOggettoB(sB.getIdB());
 
                 Pagamento p=new Pagamento();
 
@@ -115,33 +162,56 @@ public class CartaCreditoServlet extends HttpServlet {
 
                 pD.inserisciPagamento(p);
 
-
-                if(SystemBean.getInstance().isNegozioSelezionatoB())
+                if(pB.getIdB()!=0)
                 {
-                    req.setAttribute("beanS",SystemBean.getInstance());
-                    RequestDispatcher view = getServletContext().getRequestDispatcher("/negozi.jsp");
+                    view= getServletContext().getRequestDispatcher("/index.jsp");
                     view.forward(req,resp);
                 }
                 else {
-
-                    req.setAttribute("beanS",SystemBean.getInstance());
-                    RequestDispatcher view = getServletContext().getRequestDispatcher("/download.jsp");
+                    req.setAttribute("beanCC",ccB);
+                    req.setAttribute("beanS",sB);
+                    view= getServletContext().getRequestDispatcher("/cartaCredito.jsp");
                     view.forward(req,resp);
                 }
 
-            }
-            if(registra!=null && registra.equals("registra e paga"))
-            {
+
                 java.util.logging.Logger.getLogger("post registra ").log(Level.INFO, "da fare");
 
             }
-            if(generaLista!=null && generaLista.equals("generaLista"))
+            if(cartePossedute!=null && cartePossedute.equals("prendi dati carta"))
             {
-                java.util.logging.Logger.getLogger("post genera").log(Level.INFO, "da fare");
+                String numeroCarta=req.getParameter("numeroCartaL");
+                ccB.setNumeroCCB(numeroCarta);
+                cc.setNumeroCC(ccB.getNumeroCCB());
+
+                ccB.setNomeB(cCD.popolaDati(cc).getNomeUser());
+                ccB.setCognomeB(cCD.popolaDati(cc).getCognomeUser());
+
+                ccB.setDataScadB(cCD.popolaDati(cc).getScadenza());
+                ccB.setCivB(cCD.popolaDati(cc).getCiv());
+
+                req.setAttribute("beanS",sB);
+                req.setAttribute("beanCC",ccB);
+
+                view= getServletContext().getRequestDispatcher("/cartaCredito.jsp");
+                view.forward(req,resp);
 
             }
 
-        } catch (ParseException | SQLException | IdException e) {
+            if(generaLista!=null && generaLista.equals("genera lista"))
+            {
+                ccB.setNomeB(nomeUtente);
+                cc.setNomeUser(ccB.getNomeB());
+                ccB.setListaCarteCreditoB(cCD.getCarteCredito(ccB.getNomeB()));
+
+                req.setAttribute("beanS",sB);
+                req.setAttribute("beanCC",ccB);
+                view= getServletContext().getRequestDispatcher("/cartaCredito.jsp");
+                view.forward(req,resp);
+
+            }
+
+        } catch ( SQLException | IdException | ParseException e) {
             java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
         }
     }

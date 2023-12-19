@@ -1,5 +1,8 @@
 package web.bean;
 
+import javafx.collections.ObservableList;
+import laptop.model.CartaDiCredito;
+
 import java.util.Date;
 
 public class CartaCreditoBean {
@@ -9,6 +12,7 @@ public class CartaCreditoBean {
     private Date dataScadB;
     private float prezzoTransazioneB;
     private String cognomeB;
+    private ObservableList<CartaDiCredito>listaCarteCreditoB;
 
     public String getNomeB() {
         return nomeB;
@@ -57,5 +61,13 @@ public class CartaCreditoBean {
 
     public void setCognomeB(String cognomeB) {
         this.cognomeB = cognomeB;
+    }
+
+    public ObservableList<CartaDiCredito> getListaCarteCreditoB() {
+        return listaCarteCreditoB;
+    }
+
+    public void setListaCarteCreditoB(ObservableList<CartaDiCredito> listaCarteCreditoB) {
+        this.listaCarteCreditoB = listaCarteCreditoB;
     }
 }

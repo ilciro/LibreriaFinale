@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 
@@ -58,7 +59,7 @@ public class BoundaryAggiungiUtente implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonI.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("adminPage.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("adminPage.fxml")));
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
@@ -68,7 +69,7 @@ public class BoundaryAggiungiUtente implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonA.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("aggiungiUtente.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("aggiungiUtente.fxml")));
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
@@ -81,7 +82,7 @@ public class BoundaryAggiungiUtente implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonA.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("userPage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("userPage.fxml")));
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();

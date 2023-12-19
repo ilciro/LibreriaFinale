@@ -3,6 +3,7 @@ package laptop.view;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import javafx.beans.property.SimpleIntegerProperty;
@@ -93,7 +94,7 @@ public class BoundaryVisualizzaOrdine implements Initializable {
 		   Stage stage;
 			Parent root;
 			stage = (Stage) buttonI.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("visualizzaProfilo.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("visualizzaProfilo.fxml")));
 			stage.setTitle("Benvenuto nella schermata del riepilogo dei giornali");
 			scene = new Scene(root);
 			stage.setScene(scene);
@@ -108,7 +109,7 @@ public class BoundaryVisualizzaOrdine implements Initializable {
 	{ Stage stage;
 			Parent root;
 			stage = (Stage) buttonHP.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("homePageAfterLogin.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePageAfterLogin.fxml")));
 			stage.setTitle("Benvenuto nella schermata del riepilogo dei giornali");
 			scene = new Scene(root);
 			stage.setScene(scene);

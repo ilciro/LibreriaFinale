@@ -55,25 +55,11 @@ public class LoginServlet extends HttpServlet {
                             view = getServletContext().getRequestDispatcher("/admin.jsp");
                             view.forward(req, resp);
                             break;
-                        case "U", "u":
+                        case "U", "u", "W", "w", "S", "s", "E", "e":
                             sB.setLoggedB(true);
                             req.setAttribute("beanUb", uB);
                             req.setAttribute("beanS", sB);
                             view = getServletContext().getRequestDispatcher("/utenti.jsp");
-                            view.forward(req, resp);
-                            break;
-                        case "W", "w":
-                            sB.setLoggedB(true);
-                            req.setAttribute("beanUb", uB);
-                            req.setAttribute("beanS", sB);
-                            view = getServletContext().getRequestDispatcher("/scrittore.jsp");
-                            view.forward(req, resp);
-                            break;
-                        case "E", "e":
-                            sB.setLoggedB(true);
-                            req.setAttribute("beanUb", uB);
-                            req.setAttribute("beanS", sB);
-                            view = getServletContext().getRequestDispatcher("/editore.jsp");
                             view.forward(req, resp);
                             break;
                         default:

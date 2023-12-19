@@ -26,6 +26,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryAcquista.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/bean/UserBean.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/database/ContrassegnoDao.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/ServletScrittore.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/bean/GiornaleBean.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/exception/LogoutException.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerModificaUtente.java

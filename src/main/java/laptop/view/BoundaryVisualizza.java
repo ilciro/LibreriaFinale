@@ -3,6 +3,7 @@ package laptop.view;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -98,7 +99,7 @@ public class BoundaryVisualizza implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonA.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("acquista.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("acquista.fxml")));
 		stage.setTitle("Benvenuto nella schermata del riepilogo ordine");
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
@@ -111,7 +112,7 @@ public class BoundaryVisualizza implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonBack.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("compravendita.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("compravendita.fxml")));
 
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
@@ -122,7 +123,7 @@ public class BoundaryVisualizza implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonBack.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("ricercaPage.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("ricercaPage.fxml")));
 
 			Scene scene = new Scene(root);
 			stage.setScene(scene);

@@ -1,6 +1,7 @@
 package laptop.view;
 
 import java.io.IOException;
+import java.util.Objects;
 import java.util.logging.Level;
 
 import javafx.fxml.FXML;
@@ -59,7 +60,7 @@ public class BoundaryHomePageAfterLoginSE {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonL.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource(compravendita));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(compravendita)));
 		stage.setTitle("Benvenuto nella schermata del riepilogo dei giornali");
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -74,7 +75,7 @@ public class BoundaryHomePageAfterLoginSE {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonL.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource(compravendita));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(compravendita)));
 		stage.setTitle("Benvenuto nella schermata del riepilogo delle riviste");
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -89,7 +90,7 @@ public class BoundaryHomePageAfterLoginSE {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonL.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource(compravendita));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(compravendita)));
 		stage.setTitle("Benvenuto nella schermata del riepilogo dei libri");
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -103,7 +104,7 @@ public class BoundaryHomePageAfterLoginSE {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonL.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("visualizzaProfilo.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("visualizzaProfilo.fxml")));
 		stage.setTitle("Benvenuto nel tuo profilo qui puoi visualizzare le tue informazioni");
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -123,7 +124,7 @@ public class BoundaryHomePageAfterLoginSE {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonLogout.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("homePage.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePage.fxml")));
 			scene = new Scene(root);
 			stage.setScene(scene);
 
@@ -146,7 +147,7 @@ public class BoundaryHomePageAfterLoginSE {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonC.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("ricercaPerTipo.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("ricercaPerTipo.fxml")));
 		scene = new Scene(root);
 		stage.setScene(scene);
 
@@ -161,7 +162,7 @@ public class BoundaryHomePageAfterLoginSE {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonR.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("raccoltaPage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("raccoltaPage.fxml")));
 		scene = new Scene(root);
 		stage.setScene(scene);
 

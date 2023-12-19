@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 
@@ -131,108 +132,102 @@ public class BoundaryModificaPage implements Initializable {
 	@FXML
 	private void aggiorna() throws SQLException, NullPointerException
 	{
-		if(vis.getType().equals("libro"))
-		{
-		String t=titoloT.getText();
-		np=Integer.parseInt(numeroPagineT.getText());
-		String cod=codeIsbnT.getText();
-		String ed=editoreT.getText();
-		String a=autoreT.getText();
-		String l=linguaT.getText();
-		String c= categoriaTF.getSelectionModel().getSelectedItem();
-		LocalDate d=dataP.getValue();
-		String r=recensioneT.getText();
-		boolean disp=disponibilitaC.isSelected();
-		String desc=descrizioneT.getText();
-		
-		if(disp)
-		{
-			infoCostoDisp[3]=String.valueOf(1);
-			//
-		}
-		else {
-			infoCostoDisp[3]=String.valueOf(0);
-		}
-		prezzo=Float.parseFloat(prezzoT.getText());
-		copie=Integer.parseInt(copieRimanentiT.getText());
-		
-		infoGen[0]=t;
-		infoGen[2]=a;
-		infoGen[3]=l;
-		infoGen[4]=ed;
-		infoGen[5]=c;
-		infoCostoDisp[0]=String.valueOf(np);
-		infoCostoDisp[1]=cod;
-		infoCostoDisp[4]=String.valueOf(prezzo);
-		infoCostoDisp[5]=String.valueOf(copie);
-		
-		cMP.checkDataL(infoGen,r,desc,d,infoCostoDisp);
-		}else if(vis.getType().equals("giornale"))
-		{
-			String t=titoloT.getText();
-			String tipo="Quotidiano";
-			String ed=editoreT.getText();
-			String l=linguaT.getText();
+        switch (vis.getType()) {
+            case "libro" -> {
+                String t = titoloT.getText();
+                np = Integer.parseInt(numeroPagineT.getText());
+                String cod = codeIsbnT.getText();
+                String ed = editoreT.getText();
+                String a = autoreT.getText();
+                String l = linguaT.getText();
+                String c = categoriaTF.getSelectionModel().getSelectedItem();
+                LocalDate d = dataP.getValue();
+                String r = recensioneT.getText();
+                boolean disp = disponibilitaC.isSelected();
+                String desc = descrizioneT.getText();
 
-			LocalDate d=dataP.getValue();
-			boolean disp=disponibilitaC.isPressed();
-			
-			int dispo;
-			
-			if(disp)
-			{
-				dispo=1;
-				//disponibile
-			}
-			else {
-				dispo=0;
-			}
-			prezzo=Float.parseFloat(prezzoT.getText());
-			copie=Integer.parseInt(copieRimanentiT.getText());
-			
-			info[0]=t;
-			info[1]=tipo;
-			info[2]=ed;
-			info[3]=l;
-			
-			cMP.checkDataG(info,d,dispo,prezzo,copie);
-			
-		}
-		else if(vis.getType().equals("rivista"))
-		{
-			String t=titoloT.getText();
-			String tipologia=categoriaTF.getSelectionModel().getSelectedItem();
-			String autore=autoreT.getText();
-			String l=linguaT.getText();
-			String e=editoreT.getText();
-			String desc=descrizioneT.getText();
-			LocalDate d=dataP.getValue();
-			boolean disp=disponibilitaC.isPressed();
+                if (disp) {
+                    infoCostoDisp[3] = String.valueOf(1);
+                    //
+                } else {
+                    infoCostoDisp[3] = String.valueOf(0);
+                }
+                prezzo = Float.parseFloat(prezzoT.getText());
+                copie = Integer.parseInt(copieRimanentiT.getText());
 
-			
-			int dispo;
-			
-			if(disp)
-			{
-				dispo=1;
-				//disponibile
-			}
-			else {
-				dispo=0;
-			}
-			prezzo=Float.parseFloat(prezzoT.getText());
-			copie=Integer.parseInt(copieRimanentiT.getText());
-			
-			info[0]=t;
-			info[1]=tipologia;
-			info[2]=autore;
-			info[3]=l;
-			info[4]=e;
+                infoGen[0] = t;
+                infoGen[2] = a;
+                infoGen[3] = l;
+                infoGen[4] = ed;
+                infoGen[5] = c;
+                infoCostoDisp[0] = String.valueOf(np);
+                infoCostoDisp[1] = cod;
+                infoCostoDisp[4] = String.valueOf(prezzo);
+                infoCostoDisp[5] = String.valueOf(copie);
 
-			cMP.checkDataR(info,d,dispo,prezzo,copie,vis.getId(),desc);
-			
-			
-		}
+                cMP.checkDataL(infoGen, r, desc, d, infoCostoDisp);
+            }
+            case "giornale" -> {
+                String t = titoloT.getText();
+                String tipo = "Quotidiano";
+                String ed = editoreT.getText();
+                String l = linguaT.getText();
+
+                LocalDate d = dataP.getValue();
+                boolean disp = disponibilitaC.isPressed();
+
+                int dispo;
+
+                if (disp) {
+                    dispo = 1;
+                    //disponibile
+                } else {
+                    dispo = 0;
+                }
+                prezzo = Float.parseFloat(prezzoT.getText());
+                copie = Integer.parseInt(copieRimanentiT.getText());
+
+                info[0] = t;
+                info[1] = tipo;
+                info[2] = ed;
+                info[3] = l;
+
+                cMP.checkDataG(info, d, dispo, prezzo, copie);
+
+            }
+            case "rivista" -> {
+                String t = titoloT.getText();
+                String tipologia = categoriaTF.getSelectionModel().getSelectedItem();
+                String autore = autoreT.getText();
+                String l = linguaT.getText();
+                String e = editoreT.getText();
+                String desc = descrizioneT.getText();
+                LocalDate d = dataP.getValue();
+                boolean disp = disponibilitaC.isPressed();
+
+
+                int dispo;
+
+                if (disp) {
+                    dispo = 1;
+                    //disponibile
+                } else {
+                    dispo = 0;
+                }
+                prezzo = Float.parseFloat(prezzoT.getText());
+                copie = Integer.parseInt(copieRimanentiT.getText());
+
+                info[0] = t;
+                info[1] = tipologia;
+                info[2] = autore;
+                info[3] = l;
+                info[4] = e;
+
+                cMP.checkDataR(info, d, dispo, prezzo, copie, vis.getId(), desc);
+
+
+            }
+        }
 	}
 		
 		
@@ -242,7 +237,7 @@ public class BoundaryModificaPage implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonA.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("paginaGestione.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("paginaGestione.fxml")));
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();

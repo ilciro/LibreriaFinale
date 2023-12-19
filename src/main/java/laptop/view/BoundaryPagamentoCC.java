@@ -6,6 +6,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 
@@ -106,7 +107,7 @@ public class BoundaryPagamentoCC implements Initializable {
 				Stage stage;
 				Parent root;
 				stage = (Stage) buttonI.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getClassLoader().getResource("scegliNegozio.fxml"));
+				root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("scegliNegozio.fxml")));
 				stage.setTitle("Benvenuto nella schermata per il download");
 				scene = new Scene(root);
 				stage.setScene(scene);
@@ -118,7 +119,7 @@ public class BoundaryPagamentoCC implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonI.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("download.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("download.fxml")));
 			stage.setTitle("Benvenuto nella schermata per il download");
 			scene = new Scene(root);
 			stage.setScene(scene);
@@ -130,7 +131,7 @@ public class BoundaryPagamentoCC implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonI.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("PagamentoCC.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("PagamentoCC.fxml")));
 
 			stage.setTitle("Benvenuto nella schermata per il pagamento");
 
@@ -148,7 +149,7 @@ public class BoundaryPagamentoCC implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonA.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("acquista.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("acquista.fxml")));
 		stage.setTitle("benvenuto nella schermata del riepilogo ordine");
 
 		scene = new Scene(root);
@@ -214,7 +215,7 @@ public class BoundaryPagamentoCC implements Initializable {
 		try {
 
 			String nomeUt = nomeInput.getText();
-			if (nomeUt.equals("")) {
+			if (nomeUt.isEmpty()) {
 				buttonPrendi.setDisable(true);
 				throw new IOException();
 			}

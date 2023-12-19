@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -219,7 +220,7 @@ public class BoundaryAggiungiPage implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonA.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("paginaGestione.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("paginaGestione.fxml")));
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();

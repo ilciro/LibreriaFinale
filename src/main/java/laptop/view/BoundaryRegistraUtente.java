@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -83,7 +84,7 @@ public class BoundaryRegistraUtente implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonReg.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("registrazioneOk.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("registrazioneOk.fxml")));
 			stage.setTitle("Registazione andata a buon fine");
 
 			scene = new Scene(root);
@@ -112,7 +113,7 @@ public class BoundaryRegistraUtente implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonA.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("homePage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePage.fxml")));
 		stage.setTitle("Registazione andata a buon fine");
 
 		scene = new Scene(root);

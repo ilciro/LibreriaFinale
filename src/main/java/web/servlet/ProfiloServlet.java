@@ -29,7 +29,7 @@ public class ProfiloServlet extends HttpServlet{
     private static String profilo="/profilo.jsp";
     private final UserBean uB=UserBean.getInstance();
     private final SystemBean sB=SystemBean.getInstance();
-    private final User u= User.getInstance();
+    private final User u= User.getInstance() ;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -39,6 +39,14 @@ public class ProfiloServlet extends HttpServlet{
         String idOgg=req.getParameter("idOgg");
         String cancella=req.getParameter("elimina");
         String annulla=req.getParameter("indietro");
+        //scrittore gestione
+        String dati=req.getParameter("prendiDatiB");
+        String ordini=req.getParameter("ordiniB");
+        String indietro=req.getParameter("indietroB");
+
+
+
+
         RequestDispatcher view;
         try {
             if (lista != null && lista.equals("genera lista")) {
@@ -82,73 +90,43 @@ public class ProfiloServlet extends HttpServlet{
                 view= getServletContext().getRequestDispatcher("/utenti.jsp");
                 view.forward(req,resp);
             }
+            if(dati!=null && dati.equals("prendi dati"))
+            {
+                u.setEmail(uB.getEmailB());
+                UsersDao.pickData(u);
+                uB.setNomeB(u.getNome());
+                uB.setCognomeB(u.getCognome());
+                uB.setEmailB(u.getEmail());
+                uB.setDataDiNascitaB(u.getDataDiNascita());
+                uB.setRuoloB("W");
+                req.setAttribute("beanUb",uB);
+                 view = getServletContext().getRequestDispatcher(profilo);
+                view.forward(req,resp);
+            }
+            if(ordini!=null && ordini.equals("cronologia ordini"))
+            {
+                //prendo pagamento dao> lista pagamento
+                uB.setRuoloB("W");
+
+                u.setEmail(uB.getEmailB());
+                pB.setListaPagamentiB(pD.getPagamenti());
+                req.setAttribute("beanUb",uB );
+                req.setAttribute("beanP", pB);
+                 view = getServletContext().getRequestDispatcher(profilo);
+                view.forward(req,resp);
+            }
+            if(indietro!=null && indietro.equals("indietro"))
+            {
+                 view = getServletContext().getRequestDispatcher("/scrittore.jsp");
+                view.forward(req,resp);
+            }
+
         }catch (SQLException e)
         {
             java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post .", e);
 
         }
-        /*
-        String dati=req.getParameter("prendiDatiB");
-        String modifica=req.getParameter("modificBa");
-        String ordini=req.getParameter("ordiniB");
-        String cancella=req.getParameter("cancellaB");
-        String indietro=req.getParameter("indietroB");
 
-
-        try {
-            if(dati!=null && dati.equals("prendi dati"))
-            {
-                User.getInstance().setEmail(UserBean.getInstance().getEmailB());
-                UsersDao.pickData(User.getInstance());
-                UserBean.getInstance().setNomeB(User.getInstance().getNome());
-                UserBean.getInstance().setCognomeB(User.getInstance().getCognome());
-                UserBean.getInstance().setEmailB(User.getInstance().getEmail());
-                UserBean.getInstance().setDataDiNascitaB(UserBean.getInstance().getDataDiNascitaB());
-                req.setAttribute("beanUb",UserBean.getInstance());
-                RequestDispatcher view = getServletContext().getRequestDispatcher(profilo);
-                view.forward(req,resp);
-            }
-            if(modifica!=null && modifica.equals("modifica"))
-            {
-                RequestDispatcher view = getServletContext().getRequestDispatcher("/modificaProfilo.jsp");
-                view.forward(req,resp);
-            }
-            if(ordini!=null && ordini.equals("ordini"))
-            {
-                //prendo pagamento dao> lista pagamento
-                User.getInstance().setEmail(UserBean.getInstance().getEmailB());
-                pB.setListaPagamentiB(pD.getPagamenti());
-                req.setAttribute("bean", User.getInstance());
-                req.setAttribute("beanP", pB);
-                RequestDispatcher view = getServletContext().getRequestDispatcher(profilo);
-                view.forward(req,resp);
-            }
-            if(cancella!=null && cancella.equals("cancella"))
-            {
-                User.getInstance().setEmail(UserBean.getInstance().getEmailB());
-                if(UsersDao.deleteUser(User.getInstance()))
-                {
-                    RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp");
-                    view.forward(req,resp);
-                }
-                else {
-                    UserBean.getInstance().setMexB(" utente non cancellato... ");
-                    req.setAttribute("beanUb",UserBean.getInstance());
-                    RequestDispatcher view = getServletContext().getRequestDispatcher(profilo);
-                    view.forward(req,resp);
-                }
-
-            }
-            if(indietro!=null && indietro.equals("indietro"))
-            {
-                RequestDispatcher view = getServletContext().getRequestDispatcher("/utenti.jsp");
-                view.forward(req,resp);
-            }
-        }catch(SQLException e)
-        {
-            java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
-
-        } */
 
     }
 

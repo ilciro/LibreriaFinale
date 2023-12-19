@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.sql.Connection;
 import java.sql.Date;
+import java.util.logging.Logger;
 
 import laptop.model.CartaDiCredito;
 import laptop.utilities.ConnToDb;
@@ -46,7 +47,7 @@ public class CartaCreditoDao {
 			}
 		}catch(SQLException e)
 		{
-						java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
+						Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
 		}
 			
 	
@@ -75,7 +76,7 @@ public class CartaCreditoDao {
 				prepQ.executeLargeUpdate();
 			}catch(SQLException e)
 			{
-				java.util.logging.Logger.getLogger("report libro").log(Level.SEVERE,"\n eccezione ottenuta .",e);
+				Logger.getLogger("report libro").log(Level.SEVERE,"\n eccezione ottenuta .",e);
 
 			}
 
@@ -90,8 +91,13 @@ public class CartaCreditoDao {
 		n = null;
 		cog = null;
 		cod = null;
+		Date date=null;
+		String civ = null;
+
+
+
 		
-		query="select nomeP,cognomeP,codiceCarta,scad from CARTACREDITO where codiceCarta=?";
+		query="select distinct nomeP,cognomeP,codiceCarta,scad,codicePin from CARTACREDITO where codiceCarta=?";
 
 		
 			try(Connection conn=ConnToDb.connectionToDB();
@@ -104,13 +110,20 @@ public class CartaCreditoDao {
 					n=rs.getString(1);
 					cog=rs.getString(2);
 					cod=rs.getString(3);
-		}
+					date=rs.getDate(4);
+					civ=rs.getString(5);
+
+
+				}
 
 				cc.setNomeUser(n);
 				cc.setCognomeUser(cog);
 				cc.setNumeroCC(cod);
+                assert date != null;
+                cc.setScadenza(Date.valueOf(date.toLocalDate()));
+				cc.setCiv(civ);
 			} catch (SQLException e) {
-				java.util.logging.Logger.getLogger("report libro").log(Level.SEVERE,"\n eccezione ottenuta .",e);
+				Logger.getLogger("report libro").log(Level.SEVERE,"\n eccezione ottenuta .",e);
 
 			}
 		return cc;

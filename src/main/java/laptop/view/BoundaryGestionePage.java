@@ -3,6 +3,7 @@ package laptop.view;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import javafx.beans.property.SimpleFloatProperty;
@@ -76,7 +77,7 @@ public class BoundaryGestionePage implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonAdd.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("aggiungiOggettoPage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("aggiungiOggettoPage.fxml")));
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
@@ -88,7 +89,7 @@ public class BoundaryGestionePage implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) modB.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("modificaOggettoPage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("modificaOggettoPage.fxml")));
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
@@ -109,7 +110,7 @@ public class BoundaryGestionePage implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonB.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("adminPage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("adminPage.fxml")));
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();

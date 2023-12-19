@@ -1,6 +1,7 @@
 package laptop.view;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,7 +35,7 @@ public class BoundaryAdminPage {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonL.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("homePage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePage.fxml")));
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();

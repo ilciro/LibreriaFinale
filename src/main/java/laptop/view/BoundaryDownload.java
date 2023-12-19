@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -66,7 +67,7 @@ public class BoundaryDownload implements Initializable {
 	            Stage stage;
 				Parent root;
 				stage = (Stage) buttonA.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getClassLoader().getResource("homePage.fxml"));
+				root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePage.fxml")));
 				scene = new Scene(root);
 				stage.setScene(scene);
 				stage.show();
@@ -82,7 +83,7 @@ public class BoundaryDownload implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonA.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("homePageAfterLogin.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePageAfterLogin.fxml")));
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
@@ -92,7 +93,7 @@ public class BoundaryDownload implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonA.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("homePage.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePage.fxml")));
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();

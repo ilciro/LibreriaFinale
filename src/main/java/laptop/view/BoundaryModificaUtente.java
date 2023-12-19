@@ -3,6 +3,7 @@ package laptop.view;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 
@@ -123,7 +124,7 @@ public class BoundaryModificaUtente implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) annullaB.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("visualizzaProfilo.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("visualizzaProfilo.fxml")));
 		stage.setTitle("Benvenuto nella schermata del riepilogo ordine");
 		scene = new Scene(root);
 		stage.setScene(scene);

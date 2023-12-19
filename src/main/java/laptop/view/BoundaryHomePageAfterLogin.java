@@ -1,6 +1,7 @@
 package laptop.view;
 
 import java.io.IOException;
+import java.util.Objects;
 import java.util.logging.Level;
 
 import javafx.fxml.FXML;
@@ -58,7 +59,7 @@ private void getListaGiornali() throws IOException {
 	Stage stage;
 	Parent root;
 	stage = (Stage) buttonL.getScene().getWindow();
-	root = FXMLLoader.load(getClass().getClassLoader().getResource(compravendita));
+	root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(compravendita)));
 	stage.setTitle("Benvenuto nella schermata del riepilogo dei giornali");
 	scene = new Scene(root);
 	stage.setScene(scene);
@@ -73,7 +74,7 @@ private void getListaRiviste() throws IOException {
 	Stage stage;
 	Parent root;
 	stage = (Stage) buttonL.getScene().getWindow();
-	root = FXMLLoader.load(getClass().getClassLoader().getResource(compravendita));
+	root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(compravendita)));
 	stage.setTitle("Benvenuto nella schermata del riepilogo delle riviste");
 	scene = new Scene(root);
 	stage.setScene(scene);
@@ -88,7 +89,7 @@ private void getListaLibri() throws IOException {
 	Stage stage;
 	Parent root;
 	stage = (Stage) buttonL.getScene().getWindow();
-	root = FXMLLoader.load(getClass().getClassLoader().getResource(compravendita));
+	root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(compravendita)));
 	stage.setTitle("Benvenuto nella schermata del riepilogo dei libri");
 	scene = new Scene(root);
 	stage.setScene(scene);
@@ -105,7 +106,7 @@ private void profile() throws IOException {
 	Stage stage;
 	Parent root;
 	stage = (Stage) buttonL.getScene().getWindow();
-	root = FXMLLoader.load(getClass().getClassLoader().getResource("visualizzaProfilo.fxml"));
+	root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("visualizzaProfilo.fxml")));
 	stage.setTitle("Benvenuto nel tuo profilo qui puoi visualizzare le tue informazioni");
 	scene = new Scene(root);
 	stage.setScene(scene);
@@ -126,7 +127,7 @@ private void logout() throws IOException, LogoutException
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonLogout.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("homePage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePage.fxml")));
 		scene = new Scene(root);
 		stage.setScene(scene);
 
@@ -147,7 +148,7 @@ private void cerca() throws IOException {
 	Stage stage;
 	Parent root;
 	stage = (Stage) buttonC.getScene().getWindow();
-	root = FXMLLoader.load(getClass().getClassLoader().getResource("ricercaPerTipo.fxml"));
+	root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("ricercaPerTipo.fxml")));
 	scene = new Scene(root);
 	stage.setScene(scene);
 	stage.show();
