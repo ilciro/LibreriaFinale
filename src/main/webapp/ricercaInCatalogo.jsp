@@ -23,7 +23,7 @@
 
 <c:set var = "tipo" scope = "session" value = "${beanS.getTypeB() }"/>
 <c:choose>
-<c:when test="${ tipo=='libro'}">
+<c:when test="${ (tipo=='libro') || (tipo=='rivista')}">
 
 
 <div class="column">
@@ -125,57 +125,7 @@ id oggetto
 </div>
 </c:when>
 
-<c:when test="${ tipo=='rivista'}">
 
-
-<div class="column">
- titolo / autore da cercare nel catalogo delle riviste:
- <input type="text" id="cercaL" name="cercaL">
- </div>
- <div class="column">
- <input type="submit" name="cercaB" id="cercaB" value="cerca" class="invia">
- </div>
-
-<table>
-<caption>elenco dal db</caption>
-<tr>
-<th scope="col">
-titolo
-</th>
-<th>
-autore
-</th>
-<th>
-id oggetto
-</th>
-</tr>
-
-<c:forEach items="#{beanRicerca.listaB}" var="lista">
-
-
-<tr>
-
-<td>${ lista.getTitolo() }</td>
-<td>${ lista.getAutore() }</td>
-<td>${ lista.getId()}</td>
-
-</c:forEach>
-</table>
-
-<br>
-<br>
-
-<div class"column">
-<input type="submit" name="visualizzaB" id="visualizzaB" value="visualizza" class="visualizza">
-
-<br>
-<br>
-<br>
-<br>
- <input type="submit" name="buttonI" id="buttonI" value="indietro" class="annulla">
- </div>
-</div>
-</c:when>
 
 
 

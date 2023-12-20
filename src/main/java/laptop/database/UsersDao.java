@@ -9,8 +9,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import laptop.utilities.ConnToDb;
 import laptop.model.TempUser;
 import laptop.model.User;
@@ -421,87 +419,6 @@ public class UsersDao {
 	}
 
 
-	// Per il terzo caso d'uso creo e uso sempre il temp user per appoggiarmi all'utente che modifico  e quindi 
-
-	/*
-	public static TempUser aggiornaTempNome(TempUser uT) throws SQLException {
-
-
-		query = "UPDATE USERS set Nome=? where Email=?";
-		try (Connection conn = ConnToDb.connectionToDB();
-			 PreparedStatement prepQ = conn.prepareStatement(query)) {
-
-			prepQ.setString(1, uT.getNomeT());
-			prepQ.setString(2, uT.getEmailT());
-			prepQ.executeUpdate();
-
-		} catch (SQLException e) {
-			java.util.logging.Logger.getLogger("aggiorna temp nome").log(Level.INFO, ECCEZIONE, e);
-
-		}
-		return uT;
-	}
-
-
-	public static TempUser aggiornaTempPass(TempUser uT) throws SQLException {
-
-
-		query = "UPDATE USERS set pwd=? where Email=?";
-		try (Connection conn = ConnToDb.connectionToDB();
-			 PreparedStatement prepQ = conn.prepareStatement(query)) {
-
-
-			prepQ.setString(1, uT.getPasswordT());
-			prepQ.setString(2, uT.getEmailT());
-			prepQ.executeUpdate();
-
-		} catch (SQLException e) {
-			java.util.logging.Logger.getLogger("aggiorna pass temp user").log(Level.INFO, ECCEZIONE, e);
-
-		}
-
-		return uT;
-	}
-
-	public static TempUser aggiornaTempDesc(TempUser uT) throws SQLException {
-
-		query = "UPDATE USERS set descrizione=? where Email=?";
-		try (Connection conn = ConnToDb.connectionToDB();
-			 PreparedStatement prepQ = conn.prepareStatement(query)) {
-
-
-			prepQ.setString(1, uT.getDescrizioneT());
-			prepQ.setString(2, uT.getEmailT());
-			prepQ.executeUpdate();
-
-		} catch (SQLException e) {
-			java.util.logging.Logger.getLogger("aggiorna email temp user").log(Level.INFO, ECCEZIONE, e);
-		}
-
-		return uT;
-	}
-
-	public static TempUser aggiornaTempData(TempUser uT) throws SQLException {
-		query = "UPDATE USERS set DataDiNascita=? where Email=?";
-
-		try (Connection conn = ConnToDb.connectionToDB();
-			 PreparedStatement prepQ = conn.prepareStatement(query)) {
-
-
-			prepQ.setString(1, uT.getDataDiNascitaT().toString());
-			prepQ.setString(2, uT.getEmailT());
-			prepQ.executeUpdate();
-
-		} catch (SQLException e) {
-			java.util.logging.Logger.getLogger("aggiorna data temp user").log(Level.INFO, ECCEZIONE, e);
-
-		}
-		// errore
-		return uT;
-	}
-
-
-	 */
 
 	public static void getListaUtenti() throws IOException, SQLException {
 		query = "select * from USERS";
@@ -526,7 +443,7 @@ public class UsersDao {
 					TempUser.getInstance().setEmailT(rs.getString(5));
 					TempUser.getInstance().setDescrizioneT(rs.getString(7));
 					TempUser.getInstance().setDataDiNascitaT(rs.getDate(8).toLocalDate());
-					b.write("" + TempUser.getInstance().getId() + "\t" + TempUser.getInstance().getIdRuolo() + "\t" + TempUser.getInstance().getNomeT() + "\t" + TempUser.getInstance().getCognomeT() +
+					b.write(TempUser.getInstance().getId() + "\t" + TempUser.getInstance().getIdRuolo() + "\t" + TempUser.getInstance().getNomeT() + "\t" + TempUser.getInstance().getCognomeT() +
 							"\t" + TempUser.getInstance().getEmailT() + "\t" + TempUser.getInstance().getDescrizioneT() + "\t" + TempUser.getInstance().getDataDiNascitaT().toString() + "\n");
 
 				}

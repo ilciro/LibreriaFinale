@@ -44,8 +44,9 @@ public class RivistaBean {
             case "TELEVISIVO"->    this.tipologiaB = CategorieRivista.TELEVISIVO.toString();
             case "MILITARE"->    this.tipologiaB = CategorieRivista.MILITARE.toString();
             case "INFORMATICA"->    this.tipologiaB = CategorieRivista.INFORMATICA.toString();
-
-
+            default -> {
+                break;
+            }
 
 
         }
@@ -120,7 +121,7 @@ public class RivistaBean {
         return idB;
     }
 
-    public void setIdB(int idB) throws IdException, SQLException {
+    public void setIdB(int idB) {
         if(idB<1 )
         {
             this.idB=0;

@@ -1,11 +1,9 @@
 package laptop.controller;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.logging.Level;
 
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
