@@ -502,8 +502,9 @@ public class 	RivistaDao {
 	}
 	
 	
-	public void aggiornaRivista(Rivista r) throws SQLException {
+	public boolean aggiornaRivista(Rivista r) throws SQLException {
 		 int rowAffected=0;
+		 boolean status=false;
 
 
 		
@@ -543,8 +544,11 @@ public class 	RivistaDao {
 		 	{
 		 		java.util.logging.Logger.getLogger("aggiorna rivista").log(Level.INFO, eccezione, e);
 		 	}
+			 if(rowAffected==1)
+				 status=true;
 		 	java.util.logging.Logger.getLogger("Aggiorno").log(Level.INFO,"rows afffected{0}",rowAffected);
-	 }	
+			return status;
+	 }
 	
 	public void generaReport() throws SQLException, IOException
 	{

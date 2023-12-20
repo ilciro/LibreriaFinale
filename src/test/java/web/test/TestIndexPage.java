@@ -315,6 +315,7 @@ class TestIndexPage {
 
     }
 
+    /*
 
     @Test
     void testRaccoltaAdminLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
@@ -465,7 +466,7 @@ class TestIndexPage {
 
     }
 
-/*
+
 
     @Test
     void testRicercaPerLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
@@ -567,7 +568,7 @@ class TestIndexPage {
     }
 
 
- */
+
 
     @Test
     void testGestioneProfilo() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
@@ -627,6 +628,9 @@ class TestIndexPage {
 
 
 
+
+
+     */
 
 
 

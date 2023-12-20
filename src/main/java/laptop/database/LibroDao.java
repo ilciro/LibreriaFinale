@@ -480,11 +480,12 @@ public class LibroDao  {
 
 	}
 
-	public void aggiornaLibro(Libro l) throws SQLException,NullPointerException
+	public boolean aggiornaLibro(Libro l) throws SQLException,NullPointerException
 	{
 
 
 		int rowAffected=0;
+		boolean status=false;
 
 		
 
@@ -528,10 +529,14 @@ public class LibroDao  {
 
 
 		rowAffected = prepQ.executeUpdate();
+
+
 		}
+		if(rowAffected==1)
+			status=true;
 
 		java.util.logging.Logger.getLogger("Aggiornamento libro").log(Level.INFO, "row affected {0}",rowAffected);
-
+	return status;
 
 	}	
 

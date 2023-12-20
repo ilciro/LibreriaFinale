@@ -34,7 +34,7 @@ public class RaccoltaServlet extends HttpServlet {
                 sB.setTypeAsBook();
                 sB.setTypeB("libro");
                 req.setAttribute(beanS,sB);
-                view = getServletContext().getRequestDispatcher("/gestioneOggettoPageLibro.jsp");
+                view = getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
                 view.forward(req,resp);
             }
 
@@ -43,7 +43,7 @@ public class RaccoltaServlet extends HttpServlet {
                sB.setTypeAsDaily();
                sB.setTypeB("giornale");
                 req.setAttribute(beanS,sB);
-                 view = getServletContext().getRequestDispatcher("/gestioneOggettoPageGiornale.jsp");
+                 view = getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
                 view.forward(req,resp);
             }
 
@@ -52,7 +52,7 @@ public class RaccoltaServlet extends HttpServlet {
                 sB.setTypeAsMagazine();
                 sB.setTypeB("rivista");
                 req.setAttribute(beanS,sB);
-                 view = getServletContext().getRequestDispatcher("/gestioneOggettoPageRivista.jsp");
+                 view = getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
                 view.forward(req,resp);
             }
 
@@ -65,8 +65,8 @@ public class RaccoltaServlet extends HttpServlet {
                 uB.setCognomeB(null);
                 uB.setDataDiNascitaB(null);
                 uB.setDescrizioneB(null);
-                uB.setEmailB(null);
-                uB.setPassB(null);
+                uB.setEmailB("");
+                uB.setPassB("");
 
 
                 java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, "stai sloggando {0}", UserBean.getInstance().getEmailB());

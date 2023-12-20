@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<h1> Loggato come utente</h1>
+<h1> Loggato come ${beanUb.getRuoloB()}</h1>
 <h2> Scegli cosa vuoi fare</h2>
 
 <p> parametri:</p>
@@ -50,7 +50,7 @@ visualizza profilo
 
 </c:when>
 
-<c:when test="{(tipo=='E') || ( tipo=='W') || ( tipo=='S') ||( tipo=='U')}" >
+<c:when test="${(tipo=='E') || ( tipo=='W') || ( tipo=='S') ||( tipo=='U')}" >
 <table>
 <caption>
 scegliere tra libri , giornali e riviste ,logout , ricerca, gestione profilo

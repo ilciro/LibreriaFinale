@@ -4,6 +4,7 @@ import javafx.collections.ObservableList;
 import laptop.model.User;
 
 import java.time.LocalDate;
+import java.util.regex.Pattern;
 
 public class UserBean {
 
@@ -114,10 +115,16 @@ public class UserBean {
     }
 
     public void setEmailB(String emailB) {
-        if(emailB.isEmpty() )
-        {
+
+        Pattern pattern;
+
+        String emailRegex;
+        emailRegex= "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+
+        pattern = Pattern.compile(emailRegex);
+        if (emailB == null || emailB.isEmpty() || !pattern.matcher(emailB).matches())
             this.emailB=null;
-        }
+
         this.emailB = emailB;
     }
 
@@ -126,7 +133,7 @@ public class UserBean {
     }
 
     public void setPassB(String passB) {
-        if(passB.isEmpty())
+        if(passB.length() <= 8)
             this.passB=null;
         this.passB = passB;
     }

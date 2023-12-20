@@ -96,7 +96,7 @@ public class AcquistaServlet extends HttpServlet {
                     rB.setIdB(SystemBean.getInstance().getIdB());
                     r.setId(rB.getIdB());
                     aB.setTitoloB(rD.getTitolo(r));
-                    costo = Integer.parseInt(q) * gD.getCosto(g);
+                    costo = Integer.parseInt(q) * rD.getCosto(r);
                     aB.setPrezzoB(costo);
                     SystemBean.getInstance().setQuantitaB(Integer.parseInt(q));
                     SystemBean.getInstance().setSpesaTB(aB.getPrezzoB());
