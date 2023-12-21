@@ -143,11 +143,11 @@ public class UsersDao {
 		// ritorna int per motivi legati al controller
 		// anche se lo tratto come boolean
 		String email = uT.getEmailT();
-		int status = -1;
+
 
 		int idUser = 0;
 
-		query = "SELECT idRuolo FROM USERS where Email = ?";
+		query = "SELECT idUser FROM USERS where Email = ?";
 		try (Connection conn = ConnToDb.connectionToDB();
 			 PreparedStatement prepQ = conn.prepareStatement(query)) {
 			prepQ.setString(1, email);
@@ -155,17 +155,14 @@ public class UsersDao {
 			ResultSet rs = prepQ.executeQuery();
 			while (rs.next()) {
 				idUser = rs.getInt("idUser");
-				if (idUser != 0)
-					status = 1; // true
 
-				// account al ready exists
 			}
 		} catch (SQLException e) {
 			Logger.getLogger("check temp user").log(Level.INFO, ECCEZIONE, e);
 
 		}
 
-		return status;
+		return idUser;
 	}
 
 	public static String getRuolo(User u) throws SQLException {

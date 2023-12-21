@@ -220,7 +220,7 @@ prezzo:
 <input type="text" id="prezzoG" name="prezzoG" value="${beanG.getPrezzoB() }">
 <br>
 <br>
-<input type="submit" id="buttonG" name="buttonG" value="prendi dati" class="genera">
+<input type="submit" id="listaB" name="listaB" value="prendi dati" class="genera">
 
 </div>
 <div class="columnG">

@@ -169,9 +169,6 @@ public class AcquistaServlet extends HttpServlet {
             req.setAttribute("beanA",aB);
             RequestDispatcher view = getServletContext().getRequestDispatcher("/acquista.jsp");
             view.forward(req,resp);
-        } catch (IdException e) {
-            java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
-
         }
     }
 

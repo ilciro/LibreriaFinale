@@ -1,0 +1,5 @@
+Titolo :Focus	Editore :Bao Publishing	Ricavo totale :615.0	pubblicato il : 2021-01-13
+Titolo :Focus Junior	Editore :Bao Publishing	Ricavo totale :2468.0	pubblicato il : 2021-01-21
+Titolo :Tv Sorrisi e canzoni	Editore :Bao Publishing	Ricavo totale :200.0	pubblicato il : 2021-02-02
+Titolo :Rivista A	Editore :Bao Publishing	Ricavo totale :242.0	pubblicato il : 1970-01-01
+Titolo :Rivista B	Editore :Bao Publishing	Ricavo totale :262.0	pubblicato il : 1970-01-01

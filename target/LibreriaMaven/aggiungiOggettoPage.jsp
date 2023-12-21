@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="css//aggiungiOggetto.css">
 
 <body>
-<h1>Inserire un nuovo ${beanS.getTypeB()}/h1>
+<h1>Inserire un nuovo ${beanS.getTypeB()}</h1>
 
 <h2> compilare il form</h2>
 
@@ -22,9 +22,10 @@
 <p> type: ${beanS.getTypeB() }</p>
 
 
+
 <form action ="InserisciOggettoServlet" method="post">
 
-<c:set var="tipo" scope="session" value="${beanS:getTypeB()}"/>
+<c:set var="tipo" scope="session" value="${beanS.getTypeB()}"/>
 
 <c:choose>
 <c:when test="${tipo=='libro'}">

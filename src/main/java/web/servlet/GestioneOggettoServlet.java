@@ -114,20 +114,55 @@ public class GestioneOggettoServlet extends HttpServlet {
             }
             if(cancella!=null && cancella.equals("cancella"))
             {
-                //same scene
-                int idL=Integer.parseInt(id);
-                sB.setIdB(idL);
-                lB.setIdB(sB.getIdB());
-                l.setId(sB.getIdB());
-                if(lD.cancella(l)==1)
+                switch (sB.getTypeB())
                 {
-                    view= getServletContext().getRequestDispatcher("/gestioneOggettoPageLibro.jsp");
-                    view.forward(req,resp);
+                    case "libro":
+                        int idL=Integer.parseInt(id);
+                        sB.setIdB(idL);
+                        lB.setIdB(sB.getIdB());
+                        l.setId(sB.getIdB());
+                        if(lD.cancella(l)==1)
+                        {
+                            view= getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
+                            view.forward(req,resp);
+                        }
+                        else {
+                            view= getServletContext().getRequestDispatcher("/modificaLibroPage.jsp");
+                            view.forward(req,resp);
+                        }
+                        break;
+                    case "giornale":
+                        int idG=Integer.parseInt(id);
+                        sB.setIdB(idG);
+                        gB.setIdB(sB.getIdB());
+                        g.setId(sB.getIdB());
+                        if(gD.cancella(g)==1)
+                        {
+                            view= getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
+                            view.forward(req,resp);
+                        }
+                        else {
+                            view= getServletContext().getRequestDispatcher("/modificaLibroPage.jsp");
+                            view.forward(req,resp);
+                        }
+                        break;
+                    case "rivista":
+                        int idR=Integer.parseInt(id);
+                        sB.setIdB(idR);
+                        rB.setIdB(sB.getIdB());
+                        r.setId(sB.getIdB());
+                        if(rD.cancella(r)==1)
+                        {
+                            view= getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
+                            view.forward(req,resp);
+                        }
+                        else {
+                            view= getServletContext().getRequestDispatcher("/modificaLibroPage.jsp");
+                            view.forward(req,resp);
+                        }
                 }
-                else {
-                    view= getServletContext().getRequestDispatcher("/modificaLibroPage.jsp");
-                    view.forward(req,resp);
-                }
+                //same scene
+
             }
             if(indietro!=null && indietro.equals("indietro"))
             {
@@ -136,7 +171,7 @@ public class GestioneOggettoServlet extends HttpServlet {
             }
 
 
-        }catch (SQLException | IdException e)
+        }catch (SQLException  e)
         {
             java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
         }

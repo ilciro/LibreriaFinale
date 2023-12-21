@@ -28,6 +28,9 @@
 <c:when test="${ tipo=='A'}">
 
 <table>
+<th>
+elenco azioni possibili
+</th>
 <caption>
 gestione profilo
 <br>

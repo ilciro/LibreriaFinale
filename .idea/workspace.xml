@@ -4,13 +4,54 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="modified web app finish">
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="resolve code smells">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerReportPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerReportPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReportFinale/riepilogoUtenti.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ReportFinale/riepilogoUtenti.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/UsersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/UsersDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/bean/RivistaBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/bean/RivistaBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/ricercaInCatalogo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/ricercaInCatalogo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ricercaInCatalogo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ricercaInCatalogo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryGestionePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryGestionePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryUserPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryUserPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/AcquistaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/AcquistaServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/GestioneOggettoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/GestioneOggettoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/InserisciOggettoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/InserisciOggettoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/ModificaOggettoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/ModificaOggettoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/RivisteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/RivisteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/aggiungiOggettoPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/aggiungiOggettoPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/modificaOggettoPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modificaOggettoPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/utenti.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/utenti.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/test/TestIndexPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/test/TestIndexPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerReportPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerReportPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/RivistaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/RivistaDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/UsersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/UsersDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryGestionePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryGestionePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryUserPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryUserPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/RivistaBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/RivistaBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/AcquistaServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/AcquistaServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/GestioneOggettoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/GestioneOggettoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/InserisciOggettoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/InserisciOggettoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/ModificaOggettoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/ModificaOggettoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/RivisteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/RivisteServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/aggiungiOggettoPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/aggiungiOggettoPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/ricercaInCatalogo.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/ricercaInCatalogo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/modificaOggettoPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/modificaOggettoPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/ricercaInCatalogo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/ricercaInCatalogo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/utenti.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/utenti.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerReportPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerReportPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/RivistaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/RivistaDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/UsersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/UsersDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryGestionePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryGestionePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryUserPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryUserPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/bean/RivistaBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/bean/RivistaBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/AcquistaServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/AcquistaServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/GestioneOggettoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/GestioneOggettoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/InserisciOggettoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/InserisciOggettoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/ModificaOggettoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/ModificaOggettoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/RivisteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/RivisteServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-LibreriaMaven.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/web/test/TestIndexPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/test/TestIndexPage.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -542,7 +583,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703081383777</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="resolve code smells">
+      <option name="closed" value="true" />
+      <created>1703082451914</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1703082451914</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -563,7 +612,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="linux v5 add test negozio" />
     <MESSAGE value="linux v6 test libro and rivista" />
     <MESSAGE value="linux v8 modifed operation scarica for Libro,Rivista,Giornale" />
     <MESSAGE value="insert books" />
@@ -588,7 +636,8 @@
     <MESSAGE value="insert management users" />
     <MESSAGE value="modified boundary" />
     <MESSAGE value="modified web app finish" />
-    <option name="LAST_COMMIT_MESSAGE" value="modified web app finish" />
+    <MESSAGE value="resolve code smells" />
+    <option name="LAST_COMMIT_MESSAGE" value="resolve code smells" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -68,7 +68,8 @@ public class BoundaryGestionePage implements Initializable {
 	@FXML
 	private void genera() throws SQLException  
 	{
-		cGP.getLista(vis.getType());
+
+		table.setItems(cGP.getLista(vis.getType()));
 		
 	}
 	@FXML

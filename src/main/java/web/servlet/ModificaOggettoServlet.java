@@ -88,7 +88,7 @@ public class ModificaOggettoServlet extends HttpServlet {
                         rB.setIdB(sB.getIdB());
                         r.setId(rB.getIdB());
                         rB.setTitoloB(rD.getRivista(r).getTitolo());
-                        rB.setTipologiaB(rD.retTip(r));
+                        rB.setTipologiaB(rD.getRivista(r).getTipologia());
                         rB.setAutoreB(rD.getRivista(r).getAutore());
                         rB.setLinguaB(rD.getRivista(r).getLingua());
                         rB.setEditoreB(rD.getRivista(r).getEditore());
@@ -232,7 +232,7 @@ public class ModificaOggettoServlet extends HttpServlet {
                         if(rD.aggiornaRivista(r))
                         {
                             req.setAttribute("beanR",rB);
-                            view= getServletContext().getRequestDispatcher("/gestioneOggetto.jsp");
+                            view= getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
                             view.forward(req,resp);
                         }
                         else{
@@ -248,7 +248,7 @@ public class ModificaOggettoServlet extends HttpServlet {
                 view.forward(req,resp);
             }
 
-        }catch (SQLException | ParseException | IdException e)
+        }catch (SQLException | ParseException e)
         {
             java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
 

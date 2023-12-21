@@ -25,7 +25,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 
-@WebServlet("/InserisciOggettoSevlet")
+@WebServlet("/InserisciOggettoServlet")
 
 public class InserisciOggettoServlet extends HttpServlet {
     private final Libro l=new Libro();
@@ -168,6 +168,7 @@ public class InserisciOggettoServlet extends HttpServlet {
                         }
                         break;
                     case "rivista":
+                        String dataR=req.getParameter("dataL");
                         rB.setTitoloB(req.getParameter("titoloL"));
                         rB.setTipologiaB(req.getParameter("catS"));
                         rB.setAutoreB(req.getParameter("autL"));
@@ -178,7 +179,7 @@ public class InserisciOggettoServlet extends HttpServlet {
                         java.util.Date utilDate2;
                         java.sql.Date sqlDate2;
                         SimpleDateFormat format2 = new SimpleDateFormat("yyyy/MM/dd");
-                        utilDate2 = format2.parse(req.getParameter("dataL"));
+                        utilDate2 = format2.parse(dataR);
 
                         sqlDate2 = new java.sql.Date(utilDate2.getTime());
 
@@ -200,23 +201,25 @@ public class InserisciOggettoServlet extends HttpServlet {
                         DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 
                         //convert String to LocalDate
-                        LocalDate localDate2 = LocalDate.parse(req.getParameter("dataL"), formatter2);
+                        LocalDate localDate2 = LocalDate.parse(dataR, formatter2);
                         r.setDataPubb(localDate2);
                         r.setDisp(rB.getDispB());
                         r.setPrezzo(rB.getPrezzoB());
                         r.setCopieRim(rB.getCopieRimB());
 
-                        if (rD.creaRivista(r)) {
-                            rD.aggiornaData(r, sqlDate2);
-                            req.setAttribute("beanR", rB);
-                            RequestDispatcher view = getServletContext().getRequestDispatcher("/gestioneOggettoPageRivista.jsp");
-                            view.forward(req, resp);
+                        if(rD.creaRivista(r))
+                        {
 
-                        } else {
-                            RequestDispatcher view = getServletContext().getRequestDispatcher("/aggiungiRivistaPage.jsp");
+                            rD.aggiornaData(r, sqlDate2);
+
+                            req.setAttribute("beanR", rB);
+                            RequestDispatcher view = getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
                             view.forward(req, resp);
                         }
-                        break;
+                        else{
+                            RequestDispatcher view = getServletContext().getRequestDispatcher("/aggiungiOggettoPage.jsp");
+                            view.forward(req, resp);
+                        }
                     default:break;
 
 

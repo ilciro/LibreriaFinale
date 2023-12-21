@@ -82,7 +82,7 @@ public class RivisteServlet extends HttpServlet {
             }
 
 
-        } catch ( SQLException | IdException e) {
+        } catch ( SQLException  e) {
             rB.setMexB(new IdException("id nullo o eccede lista"));
             req.setAttribute("beanR",rB);
              view = getServletContext().getRequestDispatcher(riviste);
