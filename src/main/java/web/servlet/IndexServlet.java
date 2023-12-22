@@ -28,21 +28,22 @@ public class IndexServlet extends HttpServlet {
          */
         if(libro!=null && libro.equals("libri"))
         {
-            sB.setTypeAsBook();
+
+            sB.setTypeB("libro");
             req.setAttribute("beanS",sB);
              view= getServletContext().getRequestDispatcher("/libri.jsp");
             view.forward(req,resp);
         }
         if(giornale!=null && giornale.equals("giornali"))
         {
-            sB.setTypeAsDaily();
+            sB.setTypeB("giornale");
             req.setAttribute("beanS",sB);
              view= getServletContext().getRequestDispatcher("/giornali.jsp");
             view.forward(req,resp);
         }
         if(rivista!=null && rivista.equals("riviste"))
         {
-            sB.setTypeAsMagazine();
+            sB.setTypeB("rivista");
             req.setAttribute("beanS",sB);
              view= getServletContext().getRequestDispatcher("/riviste.jsp");
             view.forward(req,resp);

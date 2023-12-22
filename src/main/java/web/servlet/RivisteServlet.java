@@ -19,10 +19,10 @@ import java.sql.SQLException;
 public class RivisteServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    private static RivistaBean rB=new RivistaBean();
-    private static String riviste="/riviste.jsp";
-    private static Rivista r=new Rivista();
-    private static RivistaDao rD=new RivistaDao();
+    private final RivistaBean rB=new RivistaBean();
+    private final String riviste="/riviste.jsp";
+    private final Rivista r=new Rivista();
+    private final RivistaDao rD=new RivistaDao();
     private final static String beanR="beanR";
     private final SystemBean sB=SystemBean.getInstance();
 
@@ -58,15 +58,17 @@ public class RivisteServlet extends HttpServlet {
 
                 int idO=Integer.parseInt(id);
                 sB.setIdB(idO);
+                sB.setTypeB("rivista");
 
 
-                    rB.setIdB(Integer.parseInt(id));
+
+                rB.setIdB(Integer.parseInt(id));
                     r.setId(rB.getIdB());
                     rB.setTitoloB(rD.getTitolo(r));
-                    SystemBean.getInstance().setIdB(rB.getIdB());
-                    SystemBean.getInstance().setTitoloB(rB.getTitoloB());
+                    sB.setIdB(rB.getIdB());
+                    sB.setTitoloB(rB.getTitoloB());
                     req.setAttribute("beanR",rB);
-                    req.setAttribute("beanS",SystemBean.getInstance());
+                    req.setAttribute("beanS",sB);
 
                      view = getServletContext().getRequestDispatcher("/acquista.jsp");
                     view.forward(req,resp);

@@ -46,24 +46,24 @@ public class GiornaleDao {
 	public float getCosto(Giornale g) throws SQLException  
 	{		
 
-<span class="nc" id="L49">		float prezzo=(float) 0.0;</span>
-<span class="nc" id="L50">		query=&quot;select * from GIORNALE where id=?&quot;;</span>
+<span class="fc" id="L49">		float prezzo=(float) 0.0;</span>
+<span class="fc" id="L50">		query=&quot;select * from GIORNALE where id=?&quot;;</span>
 		
-<span class="nc" id="L52">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L53">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="fc" id="L52">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L53">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
-<span class="nc" id="L55">			prepQ.setInt(1, g.getId());</span>
-<span class="nc" id="L56">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc" id="L55">			prepQ.setInt(1, g.getId());</span>
+<span class="fc" id="L56">			ResultSet rs=prepQ.executeQuery();</span>
 		
-<span class="nc bnc" id="L58" title="All 2 branches missed.">			while ( rs.next() ) {</span>
-<span class="nc" id="L59">				prezzo=rs.getFloat(&quot;prezzo&quot;);</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">			while ( rs.next() ) {</span>
+<span class="fc" id="L59">				prezzo=rs.getFloat(&quot;prezzo&quot;);</span>
 			}
 <span class="nc" id="L61">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L63">			java.util.logging.Logger.getLogger(&quot;GetCosto g&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="nc" id="L64">		}</span>
+<span class="fc" id="L64">		}</span>
 		
-<span class="nc" id="L66">		return prezzo;</span>
+<span class="fc" id="L66">		return prezzo;</span>
 
 
 		
@@ -123,31 +123,31 @@ public class GiornaleDao {
 
 	public  ObservableList&lt;Raccolta&gt; getGiornali() throws SQLException   {
 
-<span class="nc" id="L126">			ObservableList&lt;Raccolta&gt; catalogo=FXCollections.observableArrayList();</span>
+<span class="fc" id="L126">			ObservableList&lt;Raccolta&gt; catalogo=FXCollections.observableArrayList();</span>
 
 		
 		
-<span class="nc" id="L130">			query=&quot;select * from GIORNALE&quot;;</span>
-<span class="nc" id="L131">			try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L132">					PreparedStatement prepQ=conn.prepareStatement(query);</span>
-<span class="nc" id="L133">					ResultSet rs=prepQ.executeQuery())</span>
+<span class="fc" id="L130">			query=&quot;select * from GIORNALE&quot;;</span>
+<span class="fc" id="L131">			try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L132">					PreparedStatement prepQ=conn.prepareStatement(query);</span>
+<span class="fc" id="L133">					ResultSet rs=prepQ.executeQuery())</span>
 			{
-<span class="nc bnc" id="L135" title="All 2 branches missed.">			while(rs.next())        </span>
+<span class="fc bfc" id="L135" title="All 2 branches covered.">			while(rs.next())        </span>
 
 			{
 				
-<span class="nc" id="L139">				f.createRaccoltaFinale1(GIORNALE, rs.getString(1),rs.getString(2), null,rs.getString(3),rs.getString(4),null);</span>
-<span class="nc" id="L140">				f.createRaccoltaFinale2(GIORNALE,0,null,0,rs.getInt(7),rs.getFloat(8),rs.getInt(6));</span>
-<span class="nc" id="L141">				catalogo.add(f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), null, null,rs.getInt(9)));</span>
+<span class="fc" id="L139">				f.createRaccoltaFinale1(GIORNALE, rs.getString(1),rs.getString(2), null,rs.getString(3),rs.getString(4),null);</span>
+<span class="fc" id="L140">				f.createRaccoltaFinale2(GIORNALE,0,null,0,rs.getInt(7),rs.getFloat(8),rs.getInt(6));</span>
+<span class="fc" id="L141">				catalogo.add(f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), null, null,rs.getInt(9)));</span>
 			
 				
 			}
 <span class="nc" id="L145">			}catch(SQLException e)</span>
 			{
 <span class="nc" id="L147">				java.util.logging.Logger.getLogger(&quot;catalogo giornali&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="nc" id="L148">			}</span>
+<span class="fc" id="L148">			}</span>
 
-<span class="nc" id="L150">		return catalogo;</span>
+<span class="fc" id="L150">		return catalogo;</span>
 	}
 	
 	public  Giornale getGiornale(Giornale g) throws SQLException  
@@ -578,25 +578,25 @@ public class GiornaleDao {
 	
 	public String getTitolo(Giornale g) 
 	{
-<span class="nc" id="L581">		String t=&quot;&quot;;</span>
-<span class="nc" id="L582">		 query=&quot;select titolo from GIORNALE where id=? or id=?&quot;;</span>
-<span class="nc" id="L583">		 try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L584">				 PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="fc" id="L581">		String t=&quot;&quot;;</span>
+<span class="fc" id="L582">		 query=&quot;select titolo from GIORNALE where id=? or id=?&quot;;</span>
+<span class="fc" id="L583">		 try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L584">				 PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		 {
-<span class="nc" id="L586">			 prepQ.setInt(1, g.getId());</span>
-<span class="nc" id="L587">			 prepQ.setInt(2, vis.getId());</span>
-<span class="nc" id="L588">			 ResultSet rs=prepQ.executeQuery();</span>
-<span class="nc bnc" id="L589" title="All 2 branches missed.">			 if(rs.next())</span>
+<span class="fc" id="L586">			 prepQ.setInt(1, g.getId());</span>
+<span class="fc" id="L587">			 prepQ.setInt(2, vis.getId());</span>
+<span class="fc" id="L588">			 ResultSet rs=prepQ.executeQuery();</span>
+<span class="pc bpc" id="L589" title="1 of 2 branches missed.">			 if(rs.next())</span>
 			 {
-<span class="nc" id="L591">				 t=rs.getString(&quot;titolo&quot;);</span>
+<span class="fc" id="L591">				 t=rs.getString(&quot;titolo&quot;);</span>
 			 }
 <span class="nc" id="L593">		 }catch(SQLException e)</span>
 		 {
 <span class="nc" id="L595">				java.util.logging.Logger.getLogger(&quot;titolo giornale&quot;).log(Level.INFO, &quot;titolo aggiornati {0}.&quot;,e.toString());</span>
-<span class="nc" id="L596">		 }</span>
+<span class="fc" id="L596">		 }</span>
 		 
 		
-<span class="nc" id="L599">		 return t;</span>
+<span class="fc" id="L599">		 return t;</span>
 		
 	}
 

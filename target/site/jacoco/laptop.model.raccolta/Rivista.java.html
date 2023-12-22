@@ -30,22 +30,22 @@ public class Rivista implements Raccolta  {
 	private int id;
 	private static  final String URLL=&quot;/home/daniele/Scaricati/libriPerSito/&quot;;
 
-<span class="pc" id="L33">	private String [] infoGenerali=new String[5];</span>
+<span class="fc" id="L33">	private String [] infoGenerali=new String[5];</span>
 
-<span class="nc" id="L35">	public Rivista(String [] info,String descrizione, LocalDate dataPubb2, int disp, float prezzo, int copieRim,int id) {</span>
-<span class="nc" id="L36">		this.setInfoGenerali(info);</span>
-<span class="nc" id="L37">		this.descrizione = descrizione;</span>
-<span class="nc" id="L38">		this.dataPubb = dataPubb2;</span>
-<span class="nc" id="L39">		this.disp = disp;</span>
-<span class="nc" id="L40">		this.prezzo = prezzo;</span>
-<span class="nc" id="L41">		this.copieRim = copieRim;</span>
-<span class="nc" id="L42">		this.id = id;</span>
-<span class="nc" id="L43">		this.titolo=info[0];</span>
-<span class="nc" id="L44">		this.tipologia=info[1];</span>
-<span class="nc" id="L45">		this.editore=info[4];</span>
-<span class="nc" id="L46">		this.lingua=info[3];</span>
-<span class="nc" id="L47">		this.autore=info[2];</span>
-<span class="nc" id="L48">	}</span>
+<span class="fc" id="L35">	public Rivista(String [] info,String descrizione, LocalDate dataPubb2, int disp, float prezzo, int copieRim,int id) {</span>
+<span class="fc" id="L36">		this.setInfoGenerali(info);</span>
+<span class="fc" id="L37">		this.descrizione = descrizione;</span>
+<span class="fc" id="L38">		this.dataPubb = dataPubb2;</span>
+<span class="fc" id="L39">		this.disp = disp;</span>
+<span class="fc" id="L40">		this.prezzo = prezzo;</span>
+<span class="fc" id="L41">		this.copieRim = copieRim;</span>
+<span class="fc" id="L42">		this.id = id;</span>
+<span class="fc" id="L43">		this.titolo=info[0];</span>
+<span class="fc" id="L44">		this.tipologia=info[1];</span>
+<span class="fc" id="L45">		this.editore=info[4];</span>
+<span class="fc" id="L46">		this.lingua=info[3];</span>
+<span class="fc" id="L47">		this.autore=info[2];</span>
+<span class="fc" id="L48">	}</span>
 	public Rivista() {
 <span class="fc" id="L50">		super();</span>
 <span class="fc" id="L51">	}</span>
@@ -66,22 +66,22 @@ public class Rivista implements Raccolta  {
 <span class="nc" id="L66">		return this.editore;</span>
 	}
 	public String getDescrizione() {
-<span class="nc" id="L69">		return this.descrizione;</span>
+<span class="fc" id="L69">		return this.descrizione;</span>
 	}
 	public LocalDate getDataPubb() {
-<span class="nc" id="L72">		return this.dataPubb;</span>
+<span class="fc" id="L72">		return this.dataPubb;</span>
 	}
 	public int getDisp() {
-<span class="nc" id="L75">		return this.disp;</span>
+<span class="fc" id="L75">		return this.disp;</span>
 	}
 	public float getPrezzo() {
-<span class="nc" id="L78">		return this.prezzo;</span>
+<span class="fc" id="L78">		return this.prezzo;</span>
 	}
 	public int getCopieRim() {
-<span class="nc" id="L81">		return this.copieRim;</span>
+<span class="fc" id="L81">		return this.copieRim;</span>
 	}
 	public int getId() {
-<span class="nc" id="L84">		return this.id;</span>
+<span class="fc" id="L84">		return this.id;</span>
 	}
 	public void setTitolo(String titolo) {
 <span class="fc" id="L87">		this.titolo = titolo;</span>
@@ -160,23 +160,23 @@ public class Rivista implements Raccolta  {
 <span class="nc" id="L160">		this.editore = editore;</span>
 <span class="nc" id="L161">	}</span>
 	public void setDescrizione(String descrizione) {
-<span class="nc" id="L163">		this.descrizione = descrizione;</span>
-<span class="nc" id="L164">	}</span>
+<span class="fc" id="L163">		this.descrizione = descrizione;</span>
+<span class="fc" id="L164">	}</span>
 	public void setDataPubb(LocalDate dataPubb) {
-<span class="nc" id="L166">		this.dataPubb = dataPubb;</span>
-<span class="nc" id="L167">	}</span>
+<span class="fc" id="L166">		this.dataPubb = dataPubb;</span>
+<span class="fc" id="L167">	}</span>
 	public void setDisp(int disp) {
-<span class="nc" id="L169">		this.disp = disp;</span>
-<span class="nc" id="L170">	}</span>
+<span class="fc" id="L169">		this.disp = disp;</span>
+<span class="fc" id="L170">	}</span>
 	public void setPrezzo(float prezzo) {
-<span class="nc" id="L172">		this.prezzo = prezzo;</span>
-<span class="nc" id="L173">	}</span>
+<span class="fc" id="L172">		this.prezzo = prezzo;</span>
+<span class="fc" id="L173">	}</span>
 	public void setCopieRim(int copieRim) {
-<span class="nc" id="L175">		this.copieRim = copieRim;</span>
-<span class="nc" id="L176">	}</span>
+<span class="fc" id="L175">		this.copieRim = copieRim;</span>
+<span class="fc" id="L176">	}</span>
 	public void setId(int id) {
-<span class="nc" id="L178">		this.id = id;</span>
-<span class="nc" id="L179">	}</span>
+<span class="fc" id="L178">		this.id = id;</span>
+<span class="fc" id="L179">	}</span>
 	
 	@Override
 	public void scarica() throws IOException {
@@ -216,11 +216,11 @@ public class Rivista implements Raccolta  {
 		
 <span class="nc" id="L217">	}</span>
 	public String [] getInfoGenerali() {
-<span class="nc" id="L219">		return infoGenerali;</span>
+<span class="fc" id="L219">		return infoGenerali;</span>
 	}
 	public void setInfoGenerali(String [] infoGenerali) {
-<span class="nc" id="L222">		this.infoGenerali = infoGenerali;</span>
-<span class="nc" id="L223">	}</span>
+<span class="fc" id="L222">		this.infoGenerali = infoGenerali;</span>
+<span class="fc" id="L223">	}</span>
  
 	
 }

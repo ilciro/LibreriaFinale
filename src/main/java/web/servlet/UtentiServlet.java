@@ -1,19 +1,12 @@
 package web.servlet;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
 import java.util.logging.Level;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import laptop.database.UsersDao;
+
 import laptop.exception.LogoutException;
-import laptop.model.TempUser;
-import laptop.model.User;
-import laptop.utilities.ConnToDb;
+
 import web.bean.SystemBean;
 import web.bean.UserBean;
 import jakarta.servlet.RequestDispatcher;
@@ -31,6 +24,7 @@ public class UtentiServlet extends HttpServlet {
      */
     private static final long serialVersionUID = 1L;
     private final UserBean uB=UserBean.getInstance();
+    private final SystemBean sB=SystemBean.getInstance();
 
 
     @Override
@@ -42,46 +36,52 @@ public class UtentiServlet extends HttpServlet {
         String rivista = req.getParameter("buttonR");
         String ricerca = req.getParameter("buttonRic");
 
+
         RequestDispatcher view;
         try {
 
             if (profilo != null && profilo.equals("profilo")) {
-                req.setAttribute("beanUb", UserBean.getInstance());
+                req.setAttribute("beanUb", uB);
                 view = getServletContext().getRequestDispatcher("/profilo.jsp");
                 view.forward(req, resp);
             }
 
             if (libro != null && libro.equals("libri")) {
+
+                req.setAttribute("beanS", sB);
+
                 view = getServletContext().getRequestDispatcher("/libri.jsp");
                 view.forward(req, resp);
             }
             if (giornale != null && giornale.equals("giornali")) {
+                req.setAttribute("beanS", sB);
                 view = getServletContext().getRequestDispatcher("/giornali.jsp");
                 view.forward(req, resp);
             }
             if (rivista != null && rivista.equals("riviste")) {
-                view = getServletContext().getRequestDispatcher("/rivista.jsp");
+                req.setAttribute("beanS", sB);
+                view = getServletContext().getRequestDispatcher("/riviste.jsp");
                 view.forward(req, resp);
             }
             if (logout != null && logout.equals("logout")) {
 
-                String n = UserBean.getInstance().getNomeB();
+                String n = uB.getNomeB();
                 java.util.logging.Logger.getLogger("Test logout").log(Level.INFO, "stai sloggando come {0}", n);
 
                 if (n == null) {
                     throw new LogoutException("Errore Logout");
 
                 } else {
-                    UserBean.getInstance().setIdB(-1);
-                    UserBean.getInstance().setNomeB(null);
-                    UserBean.getInstance().setCognomeB(null);
-                    UserBean.getInstance().setDataDiNascitaB(null);
-                    UserBean.getInstance().setDescrizioneB(null);
-                    UserBean.getInstance().setEmailB("");
-                    UserBean.getInstance().setPassB("");
+                    uB.setIdB(-1);
+                    uB.setNomeB(null);
+                    uB.setCognomeB(null);
+                    uB.setDataDiNascitaB(null);
+                    uB.setDescrizioneB(null);
+                    uB.setEmailB("");
+                    uB.setPassB("");
 
 
-                    java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, "stai sloggando {0}", UserBean.getInstance().getEmailB());
+                    java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, "stai sloggando {0}", uB.getEmailB());
                     SystemBean.getInstance().setLoggedB(false);
 
                      view = getServletContext().getRequestDispatcher("/index.jsp");

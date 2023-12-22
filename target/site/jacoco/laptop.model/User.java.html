@@ -29,17 +29,17 @@ public class User {
 	private LocalDate dataDiNascita;
 	private String r;
 	
-<span class="fc" id="L32">	private static User userInstance = null;</span>
+<span class="nc" id="L32">	private static User userInstance = null;</span>
 
     private User() {}
 
     public static User getInstance() {
-<span class="fc bfc" id="L37" title="All 2 branches covered.">        if (userInstance == null) {</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">        if (userInstance == null) {</span>
           
-<span class="fc" id="L39">        	userInstance = new User();</span>
+<span class="nc" id="L39">        	userInstance = new User();</span>
                 }
        
-<span class="fc" id="L42">        return userInstance;</span>
+<span class="nc" id="L42">        return userInstance;</span>
     }
 	
 

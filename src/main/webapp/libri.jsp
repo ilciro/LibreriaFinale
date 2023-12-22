@@ -13,6 +13,7 @@
 <p> ecco i parametri </p>
 <p> systemBean type : ${beanS.getTypeB()}</p>
 <p> systemBena logged : ${beanS.isLoggedB()}</p>
+<p> email : ${beanUb.getEmailB()}
 
 
 

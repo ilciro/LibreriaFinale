@@ -31,8 +31,8 @@ public class Libro implements Raccolta {
 	private String desc;
 	private int disponibilita;
 	private float prezzo;
-<span class="pc" id="L34">	private String[] infoGenerali=new String[6];</span>
-<span class="pc" id="L35">	private String[] infoCostiDisp=new String[6];</span>
+<span class="fc" id="L34">	private String[] infoGenerali=new String[6];</span>
+<span class="fc" id="L35">	private String[] infoCostiDisp=new String[6];</span>
 	private int numeroPagine;
 	private String tipologia;
 
@@ -64,16 +64,16 @@ public class Libro implements Raccolta {
 <span class="nc" id="L64">		return this.categoria;</span>
 	}
 	public LocalDate getDataPubb() {
-<span class="nc" id="L67">		return this.dataPubb;</span>
+<span class="fc" id="L67">		return this.dataPubb;</span>
 	}
 	public String getRecensione() {
-<span class="nc" id="L70">		return this.recensione;</span>
+<span class="fc" id="L70">		return this.recensione;</span>
 	}
 	public int getNrCopie() {
 <span class="nc" id="L73">		return this.nrCopie;</span>
 	}
 	public String getDesc() {
-<span class="nc" id="L76">		return this.desc;</span>
+<span class="fc" id="L76">		return this.desc;</span>
 	}
 	public int getDisponibilita() {
 <span class="nc" id="L79">		return this.disponibilita;</span>
@@ -194,17 +194,17 @@ public class Libro implements Raccolta {
 		}
 <span class="nc" id="L195">	}</span>
 	public void setDataPubb(LocalDate dataPubb) {
-<span class="nc" id="L197">		this.dataPubb = dataPubb;</span>
-<span class="nc" id="L198">	}</span>
+<span class="fc" id="L197">		this.dataPubb = dataPubb;</span>
+<span class="fc" id="L198">	}</span>
 	public void setRecensione(String recensione) {
-<span class="nc" id="L200">		this.recensione = recensione;</span>
-<span class="nc" id="L201">	}</span>
+<span class="fc" id="L200">		this.recensione = recensione;</span>
+<span class="fc" id="L201">	}</span>
 	public void setNrCopie(int nrCopie) {
 <span class="nc" id="L203">		this.nrCopie = nrCopie;</span>
 <span class="nc" id="L204">	}</span>
 	public void setDesc(String desc) {
-<span class="nc" id="L206">		this.desc = desc;</span>
-<span class="nc" id="L207">	}</span>
+<span class="fc" id="L206">		this.desc = desc;</span>
+<span class="fc" id="L207">	}</span>
 	public void setDisponibilita(int disponibilita) {
 <span class="nc" id="L209">		this.disponibilita = disponibilita;</span>
 <span class="nc" id="L210">	}</span>
@@ -214,13 +214,13 @@ public class Libro implements Raccolta {
 	
 
 	public int getId() {
-<span class="nc" id="L217">		return id;</span>
+<span class="fc" id="L217">		return id;</span>
 	}
 
 	public void setId(int id)
 	{
-<span class="nc" id="L222">		this.id = id ;</span>
-<span class="nc" id="L223">	}</span>
+<span class="fc" id="L222">		this.id = id ;</span>
+<span class="fc" id="L223">	}</span>
 
 	@Override
 	public void scarica() throws DocumentException, IOException {
@@ -293,44 +293,44 @@ public class Libro implements Raccolta {
 	/*
 	 * provo a levare i codeSmells &gt; 7 paramentri
 	 */
-<span class="nc" id="L296">	public Libro(String[] info, LocalDate dataPubb,  String recensione,  int id,String desc,String [] quantita) {</span>
-<span class="nc" id="L297">		this.infoGenerali=info;</span>
-<span class="nc" id="L298">		this.recensione=recensione;	</span>
-<span class="nc" id="L299">		this.dataPubb = dataPubb;		</span>
-<span class="nc" id="L300">		this.id=id;</span>
-<span class="nc" id="L301">		this.infoCostiDisp=quantita;</span>
-<span class="nc" id="L302">		this.desc=desc;</span>
-<span class="nc" id="L303">		this.titolo=info[0];</span>
-<span class="nc" id="L304">		this.editore=info[4];</span>
-<span class="nc" id="L305">		this.autore=info[2];</span>
-<span class="nc" id="L306">		this.categoria=info[5];</span>
-<span class="nc" id="L307">		this.prezzo=Float.parseFloat(quantita[4]);</span>
-<span class="nc" id="L308">		this.numeroPagine=Integer.parseInt(quantita[0]);</span>
-<span class="nc" id="L309">		this.codIsbn=quantita[1];</span>
-<span class="nc" id="L310">		this.lingua=info[3];</span>
-<span class="nc" id="L311">		this.disponibilita=Integer.parseInt(quantita[3]);</span>
-<span class="nc" id="L312">		this.nrCopie=Integer.parseInt(quantita[5]);</span>
+<span class="fc" id="L296">	public Libro(String[] info, LocalDate dataPubb,  String recensione,  int id,String desc,String [] quantita) {</span>
+<span class="fc" id="L297">		this.infoGenerali=info;</span>
+<span class="fc" id="L298">		this.recensione=recensione;	</span>
+<span class="fc" id="L299">		this.dataPubb = dataPubb;		</span>
+<span class="fc" id="L300">		this.id=id;</span>
+<span class="fc" id="L301">		this.infoCostiDisp=quantita;</span>
+<span class="fc" id="L302">		this.desc=desc;</span>
+<span class="fc" id="L303">		this.titolo=info[0];</span>
+<span class="fc" id="L304">		this.editore=info[4];</span>
+<span class="fc" id="L305">		this.autore=info[2];</span>
+<span class="fc" id="L306">		this.categoria=info[5];</span>
+<span class="fc" id="L307">		this.prezzo=Float.parseFloat(quantita[4]);</span>
+<span class="fc" id="L308">		this.numeroPagine=Integer.parseInt(quantita[0]);</span>
+<span class="fc" id="L309">		this.codIsbn=quantita[1];</span>
+<span class="fc" id="L310">		this.lingua=info[3];</span>
+<span class="fc" id="L311">		this.disponibilita=Integer.parseInt(quantita[3]);</span>
+<span class="fc" id="L312">		this.nrCopie=Integer.parseInt(quantita[5]);</span>
 		
-<span class="nc" id="L314">	}</span>
+<span class="fc" id="L314">	}</span>
 
 	public String[] getInfoGenerali() {
-<span class="nc" id="L317">		return infoGenerali;</span>
+<span class="fc" id="L317">		return infoGenerali;</span>
 	}
 
 	public void setInfoGenerali(String[] infoGenerali) {
-<span class="nc" id="L321">		this.infoGenerali = infoGenerali;</span>
-<span class="nc" id="L322">	}</span>
+<span class="fc" id="L321">		this.infoGenerali = infoGenerali;</span>
+<span class="fc" id="L322">	}</span>
 
 	
 	
 
 	public String[] getInfoCostiDisp() {
-<span class="nc" id="L328">		return infoCostiDisp;</span>
+<span class="fc" id="L328">		return infoCostiDisp;</span>
 	}
 
 	public void setInfoCostiDisp(String[] infoCostiDisp) {
-<span class="nc" id="L332">		this.infoCostiDisp = infoCostiDisp;</span>
-<span class="nc" id="L333">	}</span>
+<span class="fc" id="L332">		this.infoCostiDisp = infoCostiDisp;</span>
+<span class="fc" id="L333">	}</span>
 
 	public String getTipologia() {
 <span class="nc" id="L336">		return tipologia;</span>

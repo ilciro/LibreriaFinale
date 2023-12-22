@@ -2,9 +2,7 @@ package web.test;
 
 
 import laptop.database.*;
-import laptop.model.Negozio;
 import laptop.model.TempUser;
-import laptop.model.User;
 import laptop.model.raccolta.Giornale;
 import laptop.model.raccolta.Libro;
 import laptop.model.raccolta.Rivista;
@@ -17,12 +15,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import web.bean.*;
 
-;import java.io.File;
-import java.io.IOException;
+
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.concurrent.TimeUnit;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -44,9 +43,16 @@ class TestIndexPage {
     private final RivistaDao rD=new RivistaDao();
     private final UserBean uB=UserBean.getInstance();
 
-    private final User u= User.getInstance();
     private final TempUser tUser=TempUser.getInstance();
     private final TextAreaBean tAB=new TextAreaBean();
+    private final SystemBean sB=SystemBean.getInstance();
+    private final AcquistaBean aB=new AcquistaBean();
+    private final FatturaBean fB=new FatturaBean();
+
+    private final CartaCreditoBean cCB=new CartaCreditoBean();
+    private final PagamentoBean pB=new PagamentoBean();
+    private final NegozioBean nB=new NegozioBean();
+    private final NegozioDao nD=new NegozioDao();
 
          /*
             Test for Admin all functionalities
@@ -58,7 +64,8 @@ class TestIndexPage {
         String isbn;
         int idLibro;
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-        //schermata index
+
+      //schermata index
         driver = new ChromeDriver();
         driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
         driver.findElement(By.id("buttonLogin")).click();
@@ -135,7 +142,7 @@ class TestIndexPage {
     //funziona
 
     @Test
-    void testLoginAdminRaccoltaGiorale() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+    void testLoginAdminRaccoltaGiornale() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
         String titolo;
 
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
@@ -178,6 +185,12 @@ class TestIndexPage {
 
         driver.findElement(By.id("buttonMod")).click();
         driver.findElement(By.id("listaB")).click();
+
+        //deuplicate
+        driver.findElement(By.id("listaB")).click();
+
+
+
 
 
 
@@ -241,7 +254,12 @@ class TestIndexPage {
         driver.findElement(By.id("idL")).sendKeys(PropertyUtils.getProperty(rB,"idB").toString());
         driver.findElement(By.id("buttonMod")).click();
         driver.findElement(By.id("listaB")).click();
+
+        //duplicate
+        driver.findElement(By.id("listaB")).click();
+
         //modif
+
         driver.findElement(By.id("titoloNR")).sendKeys("titolo aggoirnato");
         driver.findElement(By.id("categoriaNR")).sendKeys("TELEVISIVO");
         driver.findElement(By.id("autoreNR")).sendKeys("paperino");
@@ -267,7 +285,6 @@ class TestIndexPage {
     void testAdminUtenti() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
         String email;
         String pass;
-        int idUser;
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //schermata index
         driver = new ChromeDriver();
@@ -338,7 +355,7 @@ class TestIndexPage {
 
     }
     @Test
-    void testLoginAdminReport() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, IOException {
+    void testLoginAdminReport() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //schermata index
         driver = new ChromeDriver();
@@ -357,12 +374,257 @@ class TestIndexPage {
 
     }
 
+    //    test for user
+
+
+    @Test
+    void testLoginUserLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //schermata index
+        driver = new ChromeDriver();
+        driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
+        driver.findElement(By.id("buttonLogin")).click();
+        driver.findElement(By.id("emailL")).sendKeys("giuliaConforto@gmail.eu");
+        driver.findElement(By.id("passL")).sendKeys("12345678Gc");
+        PropertyUtils.setProperty(uB,"emailB",driver.findElement(By.id("emailL")).getAttribute("value"));
+        PropertyUtils.setProperty(uB,"passB",driver.findElement(By.id("passL")).getAttribute("value"));
+        driver.findElement(By.id("loginB")).click();
+        //schermata utente: libro , giornale , rivista , logout,ricerca
+        driver.findElement(By.id("buttonL")).click();
+
+
+        PropertyUtils.setProperty(lB,"elencoLibriB", lD.getLibri());
+
+
+        driver.findElement(By.id("idOgg")).sendKeys("1");
+        int id=Integer.parseInt(driver.findElement(By.id("idOgg")).getAttribute("value"));
+        PropertyUtils.setProperty(sB,"idB", id);
+        PropertyUtils.setProperty(lB,"idB", id);
+        l.setId(id);
+        PropertyUtils.setProperty(sB, "titoloB",lD.getTitolo(l));
+        PropertyUtils.setProperty(aB, "titoloB",sB.getTitoloB());
+        PropertyUtils.setProperty(aB,"prezzoB",lD.getCosto(l));
+        driver.findElement(By.id("procedi")).click();
+        //schermata acquista
+        driver.findElement(By.id("quantita")).clear();
+        driver.findElement(By.id("quantita")).sendKeys("3");
+        int quantita=Integer.parseInt(driver.findElement(By.id("quantita")).getAttribute("value"));
+        PropertyUtils.setProperty(sB,"quantitaB",quantita);
+        driver.findElement(By.id("totaleB")).click();
+
+
+        float prezzo=Float.parseFloat(driver.findElement(By.id("totale")).getAttribute("value"));
+        PropertyUtils.setProperty(sB,"spesaTB",prezzo);
+        PropertyUtils.setProperty(aB,"prezzoB",PropertyUtils.getProperty(sB,"spesaTB"));
+
+        //metodo cash
+        WebElement input =driver.findElement(By.xpath("//input[@list='metodi']"));
+        WebElement option =driver.findElement(By.xpath("//*[@id='metodi']/option[1]"));
+        String value = option.getAttribute("value");
+        input.sendKeys(value);
+        PropertyUtils.setProperty(sB,"metodoPB",value);
+        driver.findElement(By.id("pdfB")).click();
+        //schermata fattura
+        driver.findElement(By.id("nomeT")).sendKeys("francoB");
+        driver.findElement(By.id("cognomeT")).sendKeys("rossiB");
+        driver.findElement(By.id("indirizzoT")).sendKeys("via papaveri 12");
+        driver.findElement(By.id("com")).sendKeys("il cap è 00005 . Chiamare prima al numero 9411526");
+
+        String nome=driver.findElement(By.name("nomeT")).getAttribute("value");
+        String cognome=driver.findElement(By.name("cognomeT")).getAttribute("value");
+        String indirizzo=driver.findElement(By.name("indirizzoT")).getAttribute("value");
+        String com=driver.findElement(By.name("com")).getAttribute("value");
+        //setto fattura
+        PropertyUtils.setProperty(fB,"nomeB",nome);
+        PropertyUtils.setProperty(fB,"cognomeB",cognome);
+        PropertyUtils.setProperty(fB,"indirizzoB",indirizzo);
+        PropertyUtils.setProperty(fB,"comunicazioniB",com);
+        driver.findElement(By.id("buttonC")).click();
+        //schermata download
+        String titolo=PropertyUtils.getProperty(sB,"titoloB").toString();
+        driver.findElement(By.id("titoloL")).sendKeys(titolo);
+        driver.findElement(By.id("downloadB")).click();
+
+        assertEquals(1,PropertyUtils.getProperty(sB,"idB"));
+
+
+    }
+    @Test
+    void testLoginUserGiornale() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, ParseException, SQLException {
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //schermata index
+        driver = new ChromeDriver();
+        driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
+        driver.findElement(By.id("buttonLogin")).click();
+        driver.findElement(By.id("emailL")).sendKeys("giuliaConforto@gmail.eu");
+        driver.findElement(By.id("passL")).sendKeys("12345678Gc");
+        PropertyUtils.setProperty(uB,"emailB",driver.findElement(By.id("emailL")).getAttribute("value"));
+        PropertyUtils.setProperty(uB,"passB",driver.findElement(By.id("passL")).getAttribute("value"));
+        driver.findElement(By.id("loginB")).click();
+        driver.findElement(By.id("buttonG")).click();
+        //schermata giornali
+        PropertyUtils.setProperty(gB,"listaGiornaliB", gD.getGiornali());
+        PropertyUtils.setProperty(sB,"typeB", sB.getTypeB());
+        driver.findElement(By.id("idOgg")).sendKeys("1");
+        int id=Integer.parseInt(driver.findElement(By.id("idOgg")).getAttribute("value"));
+        PropertyUtils.setProperty(sB,"categoriaB","QUOTIDIANO");
+        PropertyUtils.setProperty(sB,"idB", id);
+        PropertyUtils.setProperty(gB,"idB", id);
+        g.setId(id);
+        PropertyUtils.setProperty(sB, "titoloB",gD.getTitolo(g));
+        PropertyUtils.setProperty(aB, "titoloB",sB.getTitoloB());
+        PropertyUtils.setProperty(aB,"prezzoB",gD.getCosto(g));
+        driver.findElement(By.id("procedi")).click();
+        //schermata acquista
+        driver.findElement(By.id("quantita")).clear();
+        driver.findElement(By.id("quantita")).sendKeys("3");
+        int quantita=Integer.parseInt(driver.findElement(By.id("quantita")).getAttribute("value"));
+        PropertyUtils.setProperty(sB,"quantitaB",quantita);
+        driver.findElement(By.id("totaleB")).click();
+        float prezzo=Float.parseFloat(driver.findElement(By.id("totale")).getAttribute("value"));
+        PropertyUtils.setProperty(sB,"spesaTB",prezzo);
+        PropertyUtils.setProperty(aB,"prezzoB",PropertyUtils.getProperty(sB,"spesaTB"));
+        //metodo cCredito
+        WebElement input =driver.findElement(By.xpath("//input[@list='metodi']"));
+        WebElement option =driver.findElement(By.xpath("//*[@id='metodi']/option[2]"));
+        String value = option.getAttribute("value");
+        input.sendKeys(value);
+        PropertyUtils.setProperty(sB,"metodoPB",value);
+        driver.findElement(By.id("negozioB")).click();
+        //schermata cartacredito
+
+        driver.findElement(By.id("nomeL")).sendKeys("luigiB");
+        driver.findElement(By.id("cognomeL")).sendKeys("neriB");
+        driver.findElement(By.id("cartaL")).sendKeys("1995-8412-6632-2500");
+        driver.findElement(By.id("scadL")).sendKeys("2028/08/01");
+        driver.findElement(By.id("passL")).sendKeys("185");
+
+        String nome=driver.findElement(By.id("nomeL")).getAttribute("value");
+        String cognome=driver.findElement(By.id("cognomeL")).getAttribute("value");
+        String numeroCarta=driver.findElement(By.id("cartaL")).getAttribute("value");
+        String scadenza=driver.findElement(By.id("scadL")).getAttribute("value");
+        String civ=driver.findElement(By.id("passL")).getAttribute("value");
+
+        PropertyUtils.setProperty(cCB,"nomeB",nome);
+        PropertyUtils.setProperty(cCB,"cognomeB",cognome);
+        PropertyUtils.setProperty(cCB,"numeroCCB",numeroCarta);
+
+
+        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+        java.util.Date utilDate = format.parse(scadenza);
+
+        PropertyUtils.setProperty(cCB,"dataScadB",utilDate);
+        PropertyUtils.setProperty(cCB,"prezzoTransazioneB",PropertyUtils.getProperty(sB,"spesaTB"));
+        PropertyUtils.setProperty(cCB,"civB",civ);
+
+        PropertyUtils.setProperty(pB,"idB",0);
+        PropertyUtils.setProperty(pB,"metodoB",value);
+        PropertyUtils.setProperty(pB,"nomeUtenteB",PropertyUtils.getProperty(cCB,"nomeB"));
+        PropertyUtils.setProperty(pB,"ammontareB",PropertyUtils.getProperty(sB,"spesaTB"));
+        PropertyUtils.setProperty(pB,"tipoB",PropertyUtils.getProperty(sB,"categoriaB"));
+        PropertyUtils.setProperty(pB,"idOggettoB",PropertyUtils.getProperty(sB,"idB"));
+
+        driver.findElement(By.id("buttonI")).click();
+        //schermata negozio
+
+        //Negozio A
+        PropertyUtils.setProperty(nB,"nomeB",nD.getNegozi().get(0).getNome());
+        PropertyUtils.setProperty(nB,"openB",nD.getNegozi().get(0).getIsOpen());
+        PropertyUtils.setProperty(nB,"validB",nD.getNegozi().get(0).getIsValid());
+        PropertyUtils.setProperty(nB,"mexB","negozio non disponibile e/o chiuso");
+        driver.findElement(By.id("buttonNeg1")).click();
+        //Negozio C
+        PropertyUtils.setProperty(nB,"nomeB",nD.getNegozi().get(2).getNome());
+        PropertyUtils.setProperty(nB,"openB",nD.getNegozi().get(2).getIsOpen());
+        PropertyUtils.setProperty(nB,"validB",nD.getNegozi().get(2).getIsValid());
+        PropertyUtils.setProperty(nB,"mexB","negozio non disponibile e/o chiuso");
+        driver.findElement(By.id("buttonNeg3")).click();
+        //Negozio D
+        PropertyUtils.setProperty(nB,"nomeB",nD.getNegozi().get(3).getNome());
+        PropertyUtils.setProperty(nB,"openB",nD.getNegozi().get(3).getIsOpen());
+        PropertyUtils.setProperty(nB,"validB",nD.getNegozi().get(3).getIsValid());
+        PropertyUtils.setProperty(nB,"mexB","negozio non disponibile e/o chiuso");
+        driver.findElement(By.id("buttonNeg4")).click();
+        //Negozio B
+        PropertyUtils.setProperty(nB,"nomeB",nD.getNegozi().get(1).getNome());
+        PropertyUtils.setProperty(nB,"openB",nD.getNegozi().get(1).getIsOpen());
+        PropertyUtils.setProperty(nB,"validB",nD.getNegozi().get(1).getIsValid());
+        driver.findElement(By.id("buttonNeg2")).click();
+
+        assertEquals(1,PropertyUtils.getProperty(sB,"idB"));
+    }
+
+
+    @Test
+    void testLoginUtenteAnnullaRivista() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //schermata index
+        driver = new ChromeDriver();
+        driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
+        driver.findElement(By.id("buttonLogin")).click();
+        driver.findElement(By.id("emailL")).sendKeys("giuliaConforto@gmail.eu");
+        driver.findElement(By.id("passL")).sendKeys("12345678Gc");
+        PropertyUtils.setProperty(uB,"emailB",driver.findElement(By.id("emailL")).getAttribute("value"));
+        PropertyUtils.setProperty(uB,"passB",driver.findElement(By.id("passL")).getAttribute("value"));
+        driver.findElement(By.id("loginB")).click();
+        driver.findElement(By.id("buttonR")).click();
+        //schermata riviste
+        //setto il tipo cosi a rivista
+
+        PropertyUtils.setProperty(rB,"listaRivisteB", rD.getRiviste());
+        PropertyUtils.setProperty(sB,"typeB", sB.getTypeB());
+        driver.findElement(By.id("idOgg")).sendKeys("2");
+        int id=Integer.parseInt(driver.findElement(By.id("idOgg")).getAttribute("value"));
+        PropertyUtils.setProperty(sB,"idB", id);
+        PropertyUtils.setProperty(rB,"idB", id);
+        r.setId(id);
+        PropertyUtils.setProperty(sB, "titoloB",rD.getTitolo(r));
+        PropertyUtils.setProperty(aB, "titoloB",sB.getTitoloB());
+        PropertyUtils.setProperty(aB,"prezzoB",rD.getCosto(r));
+        driver.findElement(By.id("procedi")).click();
+        //schermata acquista
+        driver.findElement(By.id("quantita")).clear();
+        driver.findElement(By.id("quantita")).sendKeys("3");
+        int quantita=Integer.parseInt(driver.findElement(By.id("quantita")).getAttribute("value"));
+        PropertyUtils.setProperty(sB,"quantitaB",quantita);
+        driver.findElement(By.id("totaleB")).click();
+        float prezzo=Float.parseFloat(driver.findElement(By.id("totale")).getAttribute("value"));
+        PropertyUtils.setProperty(sB,"spesaTB",prezzo);
+        PropertyUtils.setProperty(aB,"prezzoB",PropertyUtils.getProperty(sB,"spesaTB"));
+
+        //metodo cash
+        WebElement input =driver.findElement(By.xpath("//input[@list='metodi']"));
+        WebElement option =driver.findElement(By.xpath("//*[@id='metodi']/option[1]"));
+        String value = option.getAttribute("value");
+        input.sendKeys(value);
+        PropertyUtils.setProperty(sB,"metodoPB",value);
+        driver.findElement(By.id("pdfB")).click();
+        //schermata fattura
+        driver.findElement(By.id("nomeT")).sendKeys("marcoB");
+        driver.findElement(By.id("cognomeT")).sendKeys("arancioniB");
+        driver.findElement(By.id("indirizzoT")).sendKeys("via ciclamini 12");
+        driver.findElement(By.id("com")).sendKeys("il cap è 025235 . Chiamare prima al numero 118563");
+
+        String nome=driver.findElement(By.name("nomeT")).getAttribute("value");
+        String cognome=driver.findElement(By.name("cognomeT")).getAttribute("value");
+        String indirizzo=driver.findElement(By.name("indirizzoT")).getAttribute("value");
+        String com=driver.findElement(By.name("com")).getAttribute("value");
+        //setto fattura
+        PropertyUtils.setProperty(fB,"nomeB",nome);
+        PropertyUtils.setProperty(fB,"cognomeB",cognome);
+        PropertyUtils.setProperty(fB,"indirizzoB",indirizzo);
+        PropertyUtils.setProperty(fB,"comunicazioniB",com);
+        driver.findElement(By.id("buttonC")).click();
+        //schermata download
+        String titolo=PropertyUtils.getProperty(sB,"titoloB").toString();
+        driver.findElement(By.id("titoloL")).sendKeys(titolo);
+        driver.findElement(By.id("annullaB")).click();
+
+        assertEquals(2,PropertyUtils.getProperty(sB,"idB"));
 
 
 
-
-
-
+}
 
 
 
@@ -372,7 +634,6 @@ class TestIndexPage {
         driver.close();
 
     }
-
 
 
 

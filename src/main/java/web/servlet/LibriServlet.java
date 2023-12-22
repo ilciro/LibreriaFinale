@@ -41,7 +41,7 @@ public class LibriServlet extends HttpServlet {
 
                lB.setElencoLibriB(lD.getLibri());
                req.setAttribute(beanL,lB);
-               req.setAttribute("beanS",SystemBean.getInstance());
+               req.setAttribute("beanS",sB);
                 view= getServletContext().getRequestDispatcher(libri);
                view.forward(req,resp);
 
@@ -60,6 +60,7 @@ public class LibriServlet extends HttpServlet {
                     sB.setIdB(lB.getIdB());
                     //aggiungo categoria
                     sB.setCategoriaB(lD.retTip(l));
+                    sB.setTypeB("libro");
 
                     //setto i parametri nel bean acquista
                     aB.setTitoloB(lB.getTitoloB());

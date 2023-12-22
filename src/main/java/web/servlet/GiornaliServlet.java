@@ -65,6 +65,8 @@ public class GiornaliServlet extends HttpServlet{
                 gB.setTitoloB(gD.getTitolo(giornale));
                 sB.setTitoloB(gB.getTitoloB());
                 sB.setIdB(gB.getIdB());
+                sB.setTypeB("giornale");
+
                 //aggiungo categoria
                 sB.setCategoriaB(gD.retTip(giornale));
 

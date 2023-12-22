@@ -39,6 +39,7 @@ public class AcquistaServlet extends HttpServlet {
     private final Giornale g=new Giornale();
     private final GiornaleDao gD=new GiornaleDao();
     private final GiornaleBean gB=new GiornaleBean();
+    private final SystemBean sB=SystemBean.getInstance();
 
 
 
@@ -48,11 +49,11 @@ public class AcquistaServlet extends HttpServlet {
         String calcola=req.getParameter("totaleB");
         String metodo=req.getParameter("metodoP");
         String negozio=req.getParameter("negozioB");
-        SystemBean.getInstance().setMetodoPB(metodo);
+        sB.setMetodoPB(metodo);
         String download=req.getParameter("pdfB");
-        float costo=(float)0.0;
-        String type=SystemBean.getInstance().getTypeB();
-        String pagamento=SystemBean.getInstance().getMetodoPB();
+        float costo;
+        String type=sB.getTypeB();
+        String pagamento=sB.getMetodoPB();
         try {
 
 
@@ -63,46 +64,46 @@ public class AcquistaServlet extends HttpServlet {
                 if (type.equals(LIBRO)) {
 
 
-                    lB.setIdB(SystemBean.getInstance().getIdB());
+                    lB.setIdB(sB.getIdB());
                     l.setId(lB.getIdB());
                     aB.setTitoloB(lD.getTitolo(l));
                     costo = Integer.parseInt(q) * lD.getCosto(l);
                     aB.setPrezzoB(costo);
-                    SystemBean.getInstance().setQuantitaB(Integer.parseInt(q));
-                    SystemBean.getInstance().setSpesaTB(aB.getPrezzoB());
-                    SystemBean.getInstance().setTitoloB(aB.getTitoloB());
-                    SystemBean.getInstance().setIdB(lB.getIdB());
+                    sB.setQuantitaB(Integer.parseInt(q));
+                    sB.setSpesaTB(aB.getPrezzoB());
+                    sB.setTitoloB(aB.getTitoloB());
+                    sB.setIdB(lB.getIdB());
 
-                    req.setAttribute("beanS",SystemBean.getInstance());
+                    req.setAttribute("beanS",sB);
                     req.setAttribute("beanA",aB);
                 }
                 if(type.equals(GIORNALE))
                 {
-                    gB.setIdB(SystemBean.getInstance().getIdB());
+                    gB.setIdB(sB.getIdB());
                     g.setId(gB.getIdB());
                     aB.setTitoloB(gD.getTitolo(g));
                     costo = Integer.parseInt(q) * gD.getCosto(g);
                     aB.setPrezzoB(costo);
-                    SystemBean.getInstance().setQuantitaB(Integer.parseInt(q));
-                    SystemBean.getInstance().setSpesaTB(aB.getPrezzoB());
-                    SystemBean.getInstance().setTitoloB(aB.getTitoloB());
-                    SystemBean.getInstance().setIdB(gB.getIdB());
-                    req.setAttribute("beanS",SystemBean.getInstance());
+                    sB.setQuantitaB(Integer.parseInt(q));
+                    sB.setSpesaTB(aB.getPrezzoB());
+                    sB.setTitoloB(aB.getTitoloB());
+                    sB.setIdB(gB.getIdB());
+                    req.setAttribute("beanS",sB);
                     req.setAttribute("beanA",aB);
                 }
 
                 if(type.equals(RIVISTA))
                 {
-                    rB.setIdB(SystemBean.getInstance().getIdB());
+                    rB.setIdB(sB.getIdB());
                     r.setId(rB.getIdB());
                     aB.setTitoloB(rD.getTitolo(r));
                     costo = Integer.parseInt(q) * rD.getCosto(r);
                     aB.setPrezzoB(costo);
-                    SystemBean.getInstance().setQuantitaB(Integer.parseInt(q));
-                    SystemBean.getInstance().setSpesaTB(aB.getPrezzoB());
-                    SystemBean.getInstance().setTitoloB(aB.getTitoloB());
-                    SystemBean.getInstance().setIdB(rB.getIdB());
-                    req.setAttribute("beanS",SystemBean.getInstance());
+                    sB.setQuantitaB(Integer.parseInt(q));
+                    sB.setSpesaTB(aB.getPrezzoB());
+                    sB.setTitoloB(aB.getTitoloB());
+                    sB.setIdB(rB.getIdB());
+                    req.setAttribute("beanS",sB);
                     req.setAttribute("beanA",aB);
                 }
 
@@ -116,20 +117,20 @@ public class AcquistaServlet extends HttpServlet {
 
             if(negozio!=null && negozio.equals("ritiro in negozio"))
             {
-                SystemBean.getInstance().setNegozioSelezionatoB(true);
+                sB.setNegozioSelezionatoB(true);
                 switch(pagamento)
                 {
                     case "cash":
                     {
-                        req.setAttribute(beanS, SystemBean.getInstance());
+                        req.setAttribute(beanS, sB);
                         RequestDispatcher view = getServletContext().getRequestDispatcher("/fattura.jsp");
                         view.forward(req,resp);
                         break;
                     }
                     case "cCredito":
                     {
-                        SystemBean.getInstance().setSpesaTB(aB.getPrezzoB());
-                        req.setAttribute(beanS, SystemBean.getInstance());
+                        sB.setSpesaTB(aB.getPrezzoB());
+                        req.setAttribute(beanS, sB);
                         RequestDispatcher view = getServletContext().getRequestDispatcher("/cartaCredito.jsp");
                         view.forward(req,resp);
                         break;
@@ -140,12 +141,12 @@ public class AcquistaServlet extends HttpServlet {
             }
             if(download!=null && download.equals("scarica il pdf"))
             {
-                SystemBean.getInstance().setNegozioSelezionatoB(false);
+                sB.setNegozioSelezionatoB(false);
                 switch(pagamento)
                 {
                     case "cash":
                     {
-                        req.setAttribute(beanS, SystemBean.getInstance());
+                        req.setAttribute(beanS, sB);
 
                         RequestDispatcher view = getServletContext().getRequestDispatcher("/fattura.jsp");
                         view.forward(req,resp);
@@ -153,8 +154,8 @@ public class AcquistaServlet extends HttpServlet {
                     }
                     case "cCredito":
                     {
-                        SystemBean.getInstance().setSpesaTB(aB.getPrezzoB());
-                        req.setAttribute(beanS, SystemBean.getInstance());
+                        sB.setSpesaTB(aB.getPrezzoB());
+                        req.setAttribute(beanS, sB);
                         RequestDispatcher view = getServletContext().getRequestDispatcher("/cartaCredito.jsp");
                         view.forward(req,resp);
                         break;

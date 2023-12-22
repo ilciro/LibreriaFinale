@@ -18,6 +18,7 @@
 <p> email : ${beanUb.getEmailB()}</p>
 <p> ruolo : ${beanUb.getRuoloB()}</p>
 <p> pass: ${beanUb.getPassB()}</p>
+<p> loggato : ${beanS.isLoggedB()}</p>
 
 
 <form action="UtentiServlet" method="post">

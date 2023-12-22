@@ -36,26 +36,26 @@ public class LibroDao  {
 
 	public float getCosto(Libro l) throws SQLException
 	{
-<span class="nc" id="L39">		float prezzo=(float) 0.0;</span>
+<span class="fc" id="L39">		float prezzo=(float) 0.0;</span>
 		
-<span class="nc" id="L41">		query=queryL;</span>
+<span class="fc" id="L41">		query=queryL;</span>
 
 		
-<span class="nc" id="L44">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L45">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+<span class="fc" id="L44">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L45">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
 		{
 			
-<span class="nc" id="L48">			prepQ.setInt(1, l.getId());</span>
-<span class="nc" id="L49">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc" id="L48">			prepQ.setInt(1, l.getId());</span>
+<span class="fc" id="L49">			ResultSet rs=prepQ.executeQuery();</span>
 			
-<span class="nc bnc" id="L51" title="All 2 branches missed.">			while ( rs.next() ) {</span>
-<span class="nc" id="L52">				prezzo=rs.getFloat(&quot;prezzo&quot;);</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">			while ( rs.next() ) {</span>
+<span class="fc" id="L52">				prezzo=rs.getFloat(&quot;prezzo&quot;);</span>
 			}
 <span class="nc" id="L54">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L56">			java.util.logging.Logger.getLogger(&quot;costo libro&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="nc" id="L57">		}</span>
-<span class="nc" id="L58">		return prezzo;</span>
+<span class="fc" id="L57">		}</span>
+<span class="fc" id="L58">		return prezzo;</span>
 
 	}
 
@@ -92,20 +92,20 @@ public class LibroDao  {
 
 	public ObservableList&lt;Raccolta&gt; getLibri() throws SQLException
 	{
-<span class="nc" id="L95">		ObservableList&lt;Raccolta&gt; catalogo=FXCollections.observableArrayList();</span>
+<span class="fc" id="L95">		ObservableList&lt;Raccolta&gt; catalogo=FXCollections.observableArrayList();</span>
 
-<span class="nc" id="L97">		query=&quot;select * from LIBRO&quot;;</span>
-<span class="nc" id="L98">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L99">				PreparedStatement prepQ=conn.prepareStatement(query);</span>
-<span class="nc" id="L100">				ResultSet rs=prepQ.executeQuery())</span>
+<span class="fc" id="L97">		query=&quot;select * from LIBRO&quot;;</span>
+<span class="fc" id="L98">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L99">				PreparedStatement prepQ=conn.prepareStatement(query);</span>
+<span class="fc" id="L100">				ResultSet rs=prepQ.executeQuery())</span>
 		{
-<span class="nc bnc" id="L102" title="All 2 branches missed.">		while(rs.next())</span>
+<span class="fc bfc" id="L102" title="All 2 branches covered.">		while(rs.next())</span>
 		{
 			
 				
-<span class="nc" id="L106">					f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(7), rs.getString(5), rs.getString(6),rs.getString(4), rs.getString(7));</span>
-<span class="nc" id="L107">					f.createRaccoltaFinale2(LIBRO,rs.getInt(2),rs.getString(3),rs.getInt(10),rs.getInt(12),rs.getFloat(13),rs.getInt(14));</span>
-<span class="nc" id="L108">					catalogo.add(f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11),rs.getInt(15)));</span>
+<span class="fc" id="L106">					f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(7), rs.getString(5), rs.getString(6),rs.getString(4), rs.getString(7));</span>
+<span class="fc" id="L107">					f.createRaccoltaFinale2(LIBRO,rs.getInt(2),rs.getString(3),rs.getInt(10),rs.getInt(12),rs.getFloat(13),rs.getInt(14));</span>
+<span class="fc" id="L108">					catalogo.add(f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11),rs.getInt(15)));</span>
 					
 				
 			
@@ -113,10 +113,10 @@ public class LibroDao  {
 <span class="nc" id="L113">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L115">			java.util.logging.Logger.getLogger(&quot;get libri&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="nc" id="L116">		}</span>
+<span class="fc" id="L116">		}</span>
 		
 
-<span class="nc" id="L119">		return catalogo;</span>
+<span class="fc" id="L119">		return catalogo;</span>
 	}
 
 	public ObservableList&lt;Raccolta&gt; getLibriByName(String s) throws SQLException
@@ -610,24 +610,24 @@ public class LibroDao  {
 	
 	public String getTitolo(Libro l) 
 	{
-<span class="nc" id="L613">		String t=&quot;&quot;;</span>
-<span class="nc" id="L614">		query=&quot;select titolo from LIBRO where idProd=? or idProd=?&quot;;</span>
-<span class="nc" id="L615">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L616">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+<span class="fc" id="L613">		String t=&quot;&quot;;</span>
+<span class="fc" id="L614">		query=&quot;select titolo from LIBRO where idProd=? or idProd=?&quot;;</span>
+<span class="fc" id="L615">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L616">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
 		{
-<span class="nc" id="L618">			prepQ.setInt(1, l.getId());</span>
-<span class="nc" id="L619">			prepQ.setInt(2, vis.getId());</span>
-<span class="nc" id="L620">			ResultSet rs=prepQ.executeQuery();</span>
-<span class="nc bnc" id="L621" title="All 2 branches missed.">			if(rs.next())</span>
+<span class="fc" id="L618">			prepQ.setInt(1, l.getId());</span>
+<span class="fc" id="L619">			prepQ.setInt(2, vis.getId());</span>
+<span class="fc" id="L620">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="pc bpc" id="L621" title="1 of 2 branches missed.">			if(rs.next())</span>
 			{
-<span class="nc" id="L623">				t=rs.getString(&quot;titolo&quot;);</span>
+<span class="fc" id="L623">				t=rs.getString(&quot;titolo&quot;);</span>
 			}
 <span class="nc" id="L625">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L627">			java.util.logging.Logger.getLogger(&quot;get Titolo l&quot;).log(Level.INFO, &quot;titolo libro .&quot;,e);</span>
 
-<span class="nc" id="L629">		}</span>
-<span class="nc" id="L630">		return t;</span>
+<span class="fc" id="L629">		}</span>
+<span class="fc" id="L630">		return t;</span>
 	}
 
 	public void aggiornaData(Libro l, Date sqlDate) throws SQLException {
