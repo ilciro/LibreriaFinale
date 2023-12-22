@@ -1,4 +1,4 @@
-/*package laptop.test;
+package laptop.test;
 
 import laptop.controller.ControllerAcquista;
 import laptop.controller.ControllerSystemState;
@@ -128,4 +128,3 @@ class TestControllerAcquista {
 }
 
 
- */

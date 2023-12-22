@@ -1,8 +1,6 @@
 Titolo :Apocalypse town: Cronache dalla fine della civilta urbana	Ricavo totale :4794.0
 Titolo :Andrea Baranes : control i falsi miti	Ricavo totale :599.0
-Titolo :Il libro dello splendore	Ricavo totale :7450.0
 Titolo :Come i servizi segreti usano i media	Ricavo totale :259.59998
-Titolo :Sulla verità	Ricavo totale :164.0
 Titolo :Erasgon Vol 1	Ricavo totale :480000.0
 Titolo :Scritti inediti di linguistica generale	Ricavo totale :0.0
 Titolo :Alchimia e kabbalah	Ricavo totale :1700.0
@@ -15,5 +13,6 @@ Titolo :Scheletri	Ricavo totale :20000.0
 Titolo :La scuola di pizze in faccia del professor Calcare	Ricavo totale :21400.0
 Titolo :Dodici	Ricavo totale :11000.0
 Titolo :Tecniche proibite di persuasione, manipolazione e influenza utilizzando schemi di linguaggio e tecniche di PNL	Ricavo totale :15400.0
-Titolo :CiccioGamer89 Presenta Fortnite. Trucchi e Segreti	Ricavo totale :110.0
+Titolo :CiccioGamer89 Presenta Fortnite. Trucchi e Segreti: attenzione ai nabbi	Ricavo totale :521.0
 Titolo :In cucina con Ciccio	Ricavo totale :16.5
+Titolo :titolo ins prova	Ricavo totale :0.0

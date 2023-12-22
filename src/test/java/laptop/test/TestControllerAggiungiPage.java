@@ -1,4 +1,4 @@
-/*package laptop.test;
+package laptop.test;
 
 import laptop.controller.ControllerAggiungiPage;
 import laptop.model.raccolta.Giornale;
@@ -86,4 +86,3 @@ class TestControllerAggiungiPage {
 }
 
 
- */

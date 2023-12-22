@@ -1,4 +1,4 @@
-/*package laptop.test;
+package laptop.test;
 
 import laptop.controller.ControllerHomePageAfterLogin;
 import laptop.controller.ControllerHomePageAfterLoginSE;
@@ -32,4 +32,3 @@ class TestControllerHomePageAllLogins {
 
 
 }
-*/

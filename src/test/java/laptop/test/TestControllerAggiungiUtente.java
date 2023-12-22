@@ -1,4 +1,4 @@
-/*package laptop.test;
+package laptop.test;
 
 import laptop.controller.ControllerAggiungiUtente;
 import org.junit.jupiter.api.Test;
@@ -25,4 +25,3 @@ class TestControllerAggiungiUtente {
 }
 
 
- */

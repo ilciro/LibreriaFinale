@@ -4,5 +4,3 @@
 4	UTENTET	Giulia	Conforto	giuliaConforto@gmail.eu	utente semplice	1998-09-05
 5	UTENTET	Zerocalcare	Zerocalcare	zerocalcare@gmail.com	scrittore semplice	1980-05-20
 6	UTENTET	Bao Publishing	Bao Publishing	baoPublishing@gmail.com	editore semplice	1960-11-21
-7	UTENTET	Editore Prova	Editore Prova	editore185@gmail.com	editore semplice	1975-04-28
-21	UTENTET	daniele	cinus	danielecinus10@gmail.com	utente aggiunto	1995-10-31

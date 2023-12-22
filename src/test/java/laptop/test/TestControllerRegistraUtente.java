@@ -1,4 +1,4 @@
-/*package laptop.test;
+package laptop.test;
 
 import laptop.controller.ControllerRegistraUtente;
 import org.junit.jupiter.api.Test;
@@ -21,6 +21,4 @@ class TestControllerRegistraUtente {
      }
 
 }
-
- */
 

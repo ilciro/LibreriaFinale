@@ -1,4 +1,4 @@
-/*package laptop.test;
+package laptop.test;
 
 import laptop.controller.ControllerReportPage;
 import org.junit.jupiter.api.Test;
@@ -18,15 +18,13 @@ class TestControllerReportPage {
          cRP.generaReportGiornali();
          cRP.generaReportLibri();
          cRP.generaReportRiviste();
-         cRP.getUtenti();
+         cRP.generaReportUtenti();
         assertNotNull(cRP.reportRaccolta());
      }
      @Test
-    void testReportTotale()
-     {
+    void testReportTotale() throws SQLException, IOException {
          assertNotNull(cRP.reportTotale());
      }
 }
 
 
- */

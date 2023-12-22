@@ -1,4 +1,4 @@
-/*package laptop.test;
+package laptop.test;
 
 import laptop.controller.ControllerCancellaUser;
 import laptop.controller.ControllerSystemState;
@@ -22,4 +22,3 @@ class TestControllerCancellaUser {
 
 }
 
- */

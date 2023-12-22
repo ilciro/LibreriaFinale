@@ -1,4 +1,4 @@
-/*package laptop.test;
+package laptop.test;
 
 import laptop.controller.ControllerModificaUtente;
 import laptop.model.User;
@@ -23,4 +23,3 @@ class TestControllerModificaUtente {
 }
 
 
- */

@@ -1,4 +1,4 @@
-/*package laptop.test;
+package laptop.test;
 
 import laptop.controller.ControllerPagamentoCash;
 import laptop.controller.ControllerSystemState;
@@ -31,4 +31,3 @@ class TestControllerPagamentoCash {
 }
 
 
- */
