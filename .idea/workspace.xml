@@ -4,24 +4,62 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="test web completed">
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="add tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/settaOggetto.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/settaOggetto.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/profilo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/profilo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerAcquista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerAcquista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerAggiungiPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerAggiungiPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerAggiungiUtente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerAggiungiUtente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerBookData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerBookData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerCancellaUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerCancellaUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerCompravendita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerCompravendita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerDownload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerDownload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerGestionePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerGestionePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerHomePageAllLogins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerHomePageAllLogins.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerModifPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerModifPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerModificaUtente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerModificaUtente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerPagamentoCC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerPagamentoCC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerPagamentoCash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerPagamentoCash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerPagamentoData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerPagamentoData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/utenti.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/utenti.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestControllerPassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/test/TestIndexPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/test/TestIndexPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/configurations/settaOggetto.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/configurations/settaOggetto.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerAcquista.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerAcquista.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerAggiungiPage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerAggiungiPage.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerAggiungiUtente.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerAggiungiUtente.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerBookData.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerBookData.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerCancellaUser.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerCancellaUser.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerCompravendita.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerCompravendita.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerDownload.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerDownload.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerGestionePage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerGestionePage.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerHomePageAllLogins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerHomePageAllLogins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerLogin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerLogin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerModifPage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerModifPage.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerModificaUtente.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerModificaUtente.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerPagamentoCC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerPagamentoCC.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerPagamentoCash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerPagamentoCash.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerPagamentoData.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerPagamentoData.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerPassword.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerPassword.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerRegistraUtente.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerRegistraUtente.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerReportPage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerReportPage.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerRicercaPage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerRicercaPage.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerScegliNegozio.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerScegliNegozio.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerVisualizza.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerVisualizza.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerVisualizzaOrdine.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-laptop.test.TestControllerVisualizzaOrdine.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerAcquista.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerAcquista.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerAggiungiPage.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerAggiungiPage.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerAggiungiUtente.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerAggiungiUtente.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerBookData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerBookData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerCancellaUser.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerCancellaUser.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerCompravendita.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerCompravendita.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerDownload.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerDownload.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerGestionePage.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerGestionePage.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerHomePageAllLogins.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerHomePageAllLogins.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerLogin.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerLogin.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerModifPage.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerModifPage.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerModificaUtente.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerModificaUtente.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerPagamentoCC.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerPagamentoCC.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerPagamentoCash.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerPagamentoCash.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerPagamentoData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerPagamentoData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerPassword.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerPassword.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerRegistraUtente.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerRegistraUtente.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerReportPage.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerReportPage.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerRicercaPage.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerRicercaPage.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerScegliNegozio.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerScegliNegozio.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerVisualizza.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerVisualizza.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerVisualizzaOrdine.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/laptop.test.TestControllerVisualizzaOrdine.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire/surefire6343654054006491068tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire/surefire_02812736349851230776tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire/surefirebooter7033097428230926836.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/laptop/test/TestControllerPassword.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/laptop/test/TestControllerPassword.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -585,7 +623,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703264234392</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="add tests">
+      <option name="closed" value="true" />
+      <created>1703266253568</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1703266253568</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -606,7 +652,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;target/LibreriaMaven.war&#10;#&#9;target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Giornale.class&#10;#&#9;target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Libro.class&#10;#&#9;target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Rivista.class&#10;#&#9;target/classes/laptop/model/raccolta/Giornale.class&#10;#&#9;target/classes/laptop/model/raccolta/Libro.class&#10;#&#9;target/classes/laptop/model/raccolta/Rivista.class&#10;#&#9;target/jacoco.exec&#10;#&#9;target/original-LibreriaMaven.war&#10;#&#9;target/site/jacoco/index.html&#10;#&#9;target/site/jacoco/jacoco-sessions.html&#10;#&#9;target/site/jacoco/jacoco.xml&#10;#&#9;target/site/jacoco/laptop.controller/index.html&#10;#&#9;target/site/jacoco/laptop.controller/index.source.html&#10;#&#9;target/site/jacoco/laptop.model.raccolta/Libro.java.html&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerAcquista.xml&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerAggiungiPage.xml&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerAggiungiUtente.xml&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerBookData.xml&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerCancellaUser.xml&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerCompravendita.xml&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerGestionePage.xml&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerHomePageAllLogins.xml&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerLogin.xml&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerModifPage.xml&#10;#&#9;target/surefire-reports/laptop.test.TestControllerAcquista.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerAggiungiPage.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerAggiungiUtente.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerCancellaUser.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerCompravendita.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerGestionePage.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerHomePageAllLogins.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerLogin.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerModifPage.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerModificaUtente.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerPagamentoCash.txt" />
     <MESSAGE value="configured selenium" />
     <MESSAGE value="configured selenium on localhost" />
     <MESSAGE value="web test (livro/giornale/rivista)" />
@@ -631,7 +676,8 @@
     <MESSAGE value="test admin web" />
     <MESSAGE value="test user web" />
     <MESSAGE value="test web completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="test web completed" />
+    <MESSAGE value="add tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="add tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

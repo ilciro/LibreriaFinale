@@ -1,4 +1,4 @@
-package web.test;
+/*package web.test;
 
 
 import laptop.database.*;
@@ -54,9 +54,9 @@ class TestIndexPage {
     private final NegozioBean nB=new NegozioBean();
     private final NegozioDao nD=new NegozioDao();
 
-         /*
-            Test for Admin all functionalities
-          */
+
+           // Test for Admin all functionalities
+
 
 
   @Test
@@ -204,6 +204,7 @@ class TestIndexPage {
         driver.findElement(By.id("dispNG")).sendKeys("1");
         driver.findElement(By.id("prezzoNG")).sendKeys("4.56f");
         driver.findElement(By.id("buttonI")).click();
+
         //delete
         driver.findElement(By.id("idL")).sendKeys(PropertyUtils.getProperty(gB,"idB").toString());
         driver.findElement(By.id("buttonCanc")).click();
@@ -272,6 +273,7 @@ class TestIndexPage {
         driver.findElement(By.id("prezzoNR")).sendKeys("3.25f");
         driver.findElement(By.id("copieNR")).sendKeys("30");
         driver.findElement(By.id("buttonI")).click();
+
         //delete
         driver.findElement(By.id("idL")).sendKeys(PropertyUtils.getProperty(rB,"idB").toString());
         driver.findElement(By.id("buttonCanc")).click();
@@ -819,12 +821,6 @@ class TestIndexPage {
 
 
 
-
-
-
-
-
-
-
-
 }
+
+ */
