@@ -66,14 +66,14 @@ public class RicercaCatalogoServlet extends HttpServlet {
                         rB.setEditoreB(titolo);
                         g.setTitolo(rB.getTitoloB());
                         g.setEditore(rB.getEditoreB());
-                        rB.setListaB(gD.getGiornaliByName(titolo));
+                        rB.setListaB(gD.getGiornaliByName(g));
                         break;
                     case RIVISTA:
                         rB.setTitoloB(titolo);
                         rB.setAutoreB(titolo);
                         r.setAutore(rB.getAutoreB());
                         r.setTitolo(rB.getTitoloB());
-                        rB.setListaB(rD.getRivisteByName(titolo));
+                        rB.setListaB(rD.getRivisteByName(r));
                         break;
                     default:break;
 

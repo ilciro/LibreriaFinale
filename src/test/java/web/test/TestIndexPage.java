@@ -58,6 +58,7 @@ class TestIndexPage {
             Test for Admin all functionalities
           */
 
+
   @Test
     void testLoginAdminRaccoltaLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
         //usato per prendere id
@@ -624,7 +625,188 @@ class TestIndexPage {
 
 
 
-}
+    }
+
+        // test for Writer
+
+    @Test
+    void testLoginRicercaScrittoreByTitoloLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //schermata index
+        driver = new ChromeDriver();
+        driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
+        driver.findElement(By.id("buttonLogin")).click();
+        driver.findElement(By.id("emailL")).sendKeys("zerocalcare@gmail.com");
+        driver.findElement(By.id("passL")).sendKeys("Zerocalcare21");
+        PropertyUtils.setProperty(uB,"emailB",driver.findElement(By.id("emailL")).getAttribute("value"));
+        PropertyUtils.setProperty(uB,"passB",driver.findElement(By.id("passL")).getAttribute("value"));
+        driver.findElement(By.id("loginB")).click();
+        //schermata scelta
+        driver.findElement(By.id("buttonRic")).click();
+        //schemata ricerca
+        driver.findElement(By.id("buttonL")).click();
+        //research in books
+        //titolo
+        WebElement titoloL=driver.findElement(By.id("cercaL"));
+        titoloL.sendKeys("Erasgon Vol 1");
+        String titoloLibro=titoloL.getAttribute("value");
+
+        driver.findElement(By.id("cercaB")).click();
+        PropertyUtils.setProperty(lB,"titoloB",titoloLibro);
+        l.setTitolo(PropertyUtils.getProperty(lB,"titoloB").toString());
+        assertNotNull(lD.getLibriByName(l));
+
+
+    }
+    @Test
+    void testLoginRicercaScrittoreByAutoreLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //schermata index
+        driver = new ChromeDriver();
+        driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
+        driver.findElement(By.id("buttonLogin")).click();
+        driver.findElement(By.id("emailL")).sendKeys("zerocalcare@gmail.com");
+        driver.findElement(By.id("passL")).sendKeys("Zerocalcare21");
+        PropertyUtils.setProperty(uB,"emailB",driver.findElement(By.id("emailL")).getAttribute("value"));
+        PropertyUtils.setProperty(uB,"passB",driver.findElement(By.id("passL")).getAttribute("value"));
+        driver.findElement(By.id("loginB")).click();
+        //schermata scelta
+        driver.findElement(By.id("buttonRic")).click();
+        //schemata ricerca
+        driver.findElement(By.id("buttonL")).click();
+        //research in books
+        //titolo
+        WebElement titoloL=driver.findElement(By.id("cercaL"));
+        titoloL.sendKeys("CiccioGamer89");
+        String titoloLibro=titoloL.getAttribute("value");
+
+        driver.findElement(By.id("cercaB")).click();
+        PropertyUtils.setProperty(lB,"titoloB",titoloLibro);
+        l.setTitolo(PropertyUtils.getProperty(lB,"titoloB").toString());
+        assertNotNull(lD.getLibriByName(l));
+
+
+    }
+
+    // test for editor
+    @Test
+    void testLoginRicercaScrittoreByEditoreGiornale() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //schermata index
+        driver = new ChromeDriver();
+        driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
+        driver.findElement(By.id("buttonLogin")).click();
+        driver.findElement(By.id("emailL")).sendKeys("zerocalcare@gmail.com");
+        driver.findElement(By.id("passL")).sendKeys("Zerocalcare21");
+        PropertyUtils.setProperty(uB,"emailB",driver.findElement(By.id("emailL")).getAttribute("value"));
+        PropertyUtils.setProperty(uB,"passB",driver.findElement(By.id("passL")).getAttribute("value"));
+        driver.findElement(By.id("loginB")).click();
+        //schermata scelta
+        driver.findElement(By.id("buttonRic")).click();
+        //schemata ricerca
+        driver.findElement(By.id("buttonG")).click();
+        //research in books
+        //titolo
+        WebElement editoreG=driver.findElement(By.id("cercaL"));
+        editoreG.sendKeys("La Republica");
+        String editoreGiornale=editoreG.getAttribute("value");
+
+        driver.findElement(By.id("cercaB")).click();
+        PropertyUtils.setProperty(gB,"editoreB",editoreGiornale);
+        g.setEditore(PropertyUtils.getProperty(gB,"editoreB").toString());
+        assertNotNull(gD.getGiornaliByName(g));
+
+
+    }
+    @Test
+    void testLoginRicercaScrittoreByTitoloGiornale() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //schermata index
+        driver = new ChromeDriver();
+        driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
+        driver.findElement(By.id("buttonLogin")).click();
+        driver.findElement(By.id("emailL")).sendKeys("zerocalcare@gmail.com");
+        driver.findElement(By.id("passL")).sendKeys("Zerocalcare21");
+        PropertyUtils.setProperty(uB,"emailB",driver.findElement(By.id("emailL")).getAttribute("value"));
+        PropertyUtils.setProperty(uB,"passB",driver.findElement(By.id("passL")).getAttribute("value"));
+        driver.findElement(By.id("loginB")).click();
+        //schermata scelta
+        driver.findElement(By.id("buttonRic")).click();
+        //schemata ricerca
+        driver.findElement(By.id("buttonG")).click();
+        //research in books
+        //titolo
+        WebElement titoloG=driver.findElement(By.id("cercaL"));
+        titoloG.sendKeys("La Republica");
+        String titoloGiornale=titoloG.getAttribute("value");
+
+        driver.findElement(By.id("cercaB")).click();
+        PropertyUtils.setProperty(gB,"titoloB",titoloGiornale);
+        g.setTitolo(PropertyUtils.getProperty(gB,"titoloB").toString());
+        assertNotNull(gD.getGiornaliByName(g));
+
+
+    }
+
+    @Test
+    void testLoginRicercaScrittoreByTitoloRivista() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //schermata index
+        driver = new ChromeDriver();
+        driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
+        driver.findElement(By.id("buttonLogin")).click();
+        driver.findElement(By.id("emailL")).sendKeys("BaoPublishing@gmail.com");
+        driver.findElement(By.id("passL")).sendKeys("BaoPub2021");
+        PropertyUtils.setProperty(uB,"emailB",driver.findElement(By.id("emailL")).getAttribute("value"));
+        PropertyUtils.setProperty(uB,"passB",driver.findElement(By.id("passL")).getAttribute("value"));
+        driver.findElement(By.id("loginB")).click();
+        //schermata scelta
+        driver.findElement(By.id("buttonRic")).click();
+        //schemata ricerca
+        driver.findElement(By.id("buttonL")).click();
+        //research in books
+        //titolo
+        WebElement titoloR=driver.findElement(By.id("cercaL"));
+        titoloR.sendKeys("Focus");
+        String titoloRivista=titoloR.getAttribute("value");
+
+        driver.findElement(By.id("cercaB")).click();
+        PropertyUtils.setProperty(rB,"titoloB",titoloRivista);
+        r.setTitolo(PropertyUtils.getProperty(rB,"titoloB").toString());
+        assertNotNull(rD.getRivisteByName(r));
+
+
+    }
+    @Test
+    void testLoginRicercaScrittoreByAutoreRivista() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //schermata index
+        driver = new ChromeDriver();
+        driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
+        driver.findElement(By.id("buttonLogin")).click();
+        driver.findElement(By.id("emailL")).sendKeys("BaoPublishing@gmail.com");
+        driver.findElement(By.id("passL")).sendKeys("BaoPub2021");
+        PropertyUtils.setProperty(uB,"emailB",driver.findElement(By.id("emailL")).getAttribute("value"));
+        PropertyUtils.setProperty(uB,"passB",driver.findElement(By.id("passL")).getAttribute("value"));
+        driver.findElement(By.id("loginB")).click();
+        //schermata scelta
+        driver.findElement(By.id("buttonRic")).click();
+        //schemata ricerca
+        driver.findElement(By.id("buttonL")).click();
+        //research in books
+        //titolo
+        WebElement autoreR=driver.findElement(By.id("cercaL"));
+        autoreR.sendKeys("Panorama");
+        String autoreRivista=autoreR.getAttribute("value");
+
+        driver.findElement(By.id("cercaB")).click();
+        PropertyUtils.setProperty(rB,"autoreB",autoreRivista);
+        r.setAutore(PropertyUtils.getProperty(rB,"autoreB").toString());
+        assertNotNull(rD.getRivisteByName(r));
+
+
+    }
+
 
 
 
@@ -634,6 +816,8 @@ class TestIndexPage {
         driver.close();
 
     }
+
+
 
 
 

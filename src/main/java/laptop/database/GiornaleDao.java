@@ -431,7 +431,7 @@ public class GiornaleDao {
 
 	}
 
-	public  ObservableList<Raccolta> getGiornaliByName(String s) throws SQLException {
+	public  ObservableList<Raccolta> getGiornaliByName(Giornale g) throws SQLException {
 
 		ObservableList<Raccolta> catalogo=FXCollections.observableArrayList();
 		
@@ -440,8 +440,8 @@ public class GiornaleDao {
 		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query))
 		{
-			prepQ.setString(1,s);
-			prepQ.setString(2, s);
+			prepQ.setString(1,g.getTitolo());
+			prepQ.setString(2, g.getEditore());
 			ResultSet rs=prepQ.executeQuery();
 			while (rs.next())
 			{

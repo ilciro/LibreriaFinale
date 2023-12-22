@@ -163,7 +163,7 @@ public class 	RivistaDao {
 	}
 	
 	
-	public ObservableList<Raccolta> getRivisteByName(String s) throws SQLException
+	public ObservableList<Raccolta> getRivisteByName(Rivista r) throws SQLException
 	{
 		 
 
@@ -175,8 +175,8 @@ public class 	RivistaDao {
 				PreparedStatement prepQ=conn.prepareStatement(query);
 				)
 		{
-			prepQ.setString(1, s);
-			prepQ.setString(2, s);
+			prepQ.setString(1, r.getTitolo());
+			prepQ.setString(2, r.getAutore());
 			ResultSet rs=prepQ.executeQuery();
             while(rs.next())
             {

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: web.test.TestIndexPage
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 86.801 s - in web.test.TestIndexPage
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 134.554 s - in web.test.TestIndexPage

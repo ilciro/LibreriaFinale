@@ -163,28 +163,28 @@ public class 	RivistaDao {
 	}
 	
 	
-	public ObservableList&lt;Raccolta&gt; getRivisteByName(String s) throws SQLException
+	public ObservableList&lt;Raccolta&gt; getRivisteByName(Rivista r) throws SQLException
 	{
 		 
 
 		
-<span class="nc" id="L171">		ObservableList&lt;Raccolta&gt; catalogo=FXCollections.observableArrayList();</span>
+<span class="fc" id="L171">		ObservableList&lt;Raccolta&gt; catalogo=FXCollections.observableArrayList();</span>
 		
-<span class="nc" id="L173">		query=&quot;select * from RIVISTA where titolo=? or autore=?&quot;;</span>
-<span class="nc" id="L174">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L175">				PreparedStatement prepQ=conn.prepareStatement(query);</span>
+<span class="fc" id="L173">		query=&quot;select * from RIVISTA where titolo=? or autore=?&quot;;</span>
+<span class="fc" id="L174">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L175">				PreparedStatement prepQ=conn.prepareStatement(query);</span>
 				)
 		{
-<span class="nc" id="L178">			prepQ.setString(1, s);</span>
-<span class="nc" id="L179">			prepQ.setString(2, s);</span>
-<span class="nc" id="L180">			ResultSet rs=prepQ.executeQuery();</span>
-<span class="nc bnc" id="L181" title="All 2 branches missed.">            while(rs.next())</span>
+<span class="fc" id="L178">			prepQ.setString(1, r.getTitolo());</span>
+<span class="fc" id="L179">			prepQ.setString(2, r.getAutore());</span>
+<span class="fc" id="L180">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L181" title="All 2 branches covered.">            while(rs.next())</span>
             {
 
         		
-<span class="nc" id="L185">        			f.createRaccoltaFinale1(RIVISTA, rs.getString(1),rs.getString(2), rs.getString(3),rs.getString(4),rs.getString(5),null);</span>
-<span class="nc" id="L186">					f.createRaccoltaFinale2(RIVISTA,0,null,0,rs.getInt(8),rs.getFloat(9),rs.getInt(10));</span>
-<span class="nc" id="L187">					catalogo.add(f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(), null, null,rs.getInt(11)));</span>
+<span class="fc" id="L185">        			f.createRaccoltaFinale1(RIVISTA, rs.getString(1),rs.getString(2), rs.getString(3),rs.getString(4),rs.getString(5),null);</span>
+<span class="fc" id="L186">					f.createRaccoltaFinale2(RIVISTA,0,null,0,rs.getInt(8),rs.getFloat(9),rs.getInt(10));</span>
+<span class="fc" id="L187">					catalogo.add(f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(), null, null,rs.getInt(11)));</span>
 		
 					
         		
@@ -192,8 +192,8 @@ public class 	RivistaDao {
 <span class="nc" id="L192">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L194">			java.util.logging.Logger.getLogger(&quot;rivista by name&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="nc" id="L195">		}</span>
-<span class="nc" id="L196">		return catalogo;</span>
+<span class="fc" id="L195">		}</span>
+<span class="fc" id="L196">		return catalogo;</span>
 		 
 		
 	}

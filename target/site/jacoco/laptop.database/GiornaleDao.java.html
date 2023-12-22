@@ -431,24 +431,24 @@ public class GiornaleDao {
 
 	}
 
-	public  ObservableList&lt;Raccolta&gt; getGiornaliByName(String s) throws SQLException {
+	public  ObservableList&lt;Raccolta&gt; getGiornaliByName(Giornale g) throws SQLException {
 
-<span class="nc" id="L436">		ObservableList&lt;Raccolta&gt; catalogo=FXCollections.observableArrayList();</span>
+<span class="fc" id="L436">		ObservableList&lt;Raccolta&gt; catalogo=FXCollections.observableArrayList();</span>
 		
-<span class="nc" id="L438">		query=&quot;select * from GIORNALE where titolo=? or editore=?&quot;;</span>
+<span class="fc" id="L438">		query=&quot;select * from GIORNALE where titolo=? or editore=?&quot;;</span>
 		
-<span class="nc" id="L440">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L441">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="fc" id="L440">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L441">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
-<span class="nc" id="L443">			prepQ.setString(1,s);</span>
-<span class="nc" id="L444">			prepQ.setString(2, s);</span>
-<span class="nc" id="L445">			ResultSet rs=prepQ.executeQuery();</span>
-<span class="nc bnc" id="L446" title="All 2 branches missed.">			while (rs.next())</span>
+<span class="fc" id="L443">			prepQ.setString(1,g.getTitolo());</span>
+<span class="fc" id="L444">			prepQ.setString(2, g.getEditore());</span>
+<span class="fc" id="L445">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L446" title="All 2 branches covered.">			while (rs.next())</span>
 			{
 
-<span class="nc" id="L449">				f.createRaccoltaFinale1(GIORNALE, rs.getString(1),rs.getString(2), null,rs.getString(3),rs.getString(4),null);</span>
-<span class="nc" id="L450">				f.createRaccoltaFinale2(GIORNALE,0,null,0,rs.getInt(7),rs.getFloat(8),rs.getInt(6));</span>
-<span class="nc" id="L451">				catalogo.add (f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), null, null,rs.getInt(9)));</span>
+<span class="fc" id="L449">				f.createRaccoltaFinale1(GIORNALE, rs.getString(1),rs.getString(2), null,rs.getString(3),rs.getString(4),null);</span>
+<span class="fc" id="L450">				f.createRaccoltaFinale2(GIORNALE,0,null,0,rs.getInt(7),rs.getFloat(8),rs.getInt(6));</span>
+<span class="fc" id="L451">				catalogo.add (f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), null, null,rs.getInt(9)));</span>
 	
 			
 			}
@@ -456,14 +456,14 @@ public class GiornaleDao {
 <span class="nc" id="L456">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L458">			java.util.logging.Logger.getLogger(&quot;gionali by name&quot;).log(Level.INFO, eccezione, e);</span>
-<span class="nc" id="L459">		}</span>
+<span class="fc" id="L459">		}</span>
 
 		
 		
 
 			
 
-<span class="nc" id="L466">		return catalogo;</span>
+<span class="fc" id="L466">		return catalogo;</span>
 
 
 	}

@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="test admin web">
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="test user web">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerRicercaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerRicercaPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/LibroDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/LibroDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/AcquistaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/AcquistaServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/GiornaliServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/GiornaliServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/IndexServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/LibriServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/LibriServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/RivisteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/RivisteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/UtentiServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/UtentiServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/libri.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/libri.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/utenti.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/utenti.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/RicercaCatalogoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/RicercaCatalogoServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/web/test/TestIndexPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/test/TestIndexPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven.war" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/Search-icon-13.png" beforeDir="false" />
@@ -226,12 +220,11 @@
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/guava-31.1-jre.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/itextpdf-5.5.13.3.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/j2objc-annotations-1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/jakarta.activation-2.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/jakarta.el-api-4.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/jakarta.servlet-api-5.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/jakarta.servlet.jsp.jstl-2.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-2.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/jakarta.xml.bind-api-3.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/jakarta.activation-1.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/jakarta.el-api-5.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/jakarta.servlet-api-6.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/jakarta.servlet.jsp.jstl-3.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-3.0.0.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/javafx-base-17-linux.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/javafx-base-17.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/javafx-controls-17-linux.jar" beforeDir="false" />
@@ -368,12 +361,6 @@
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/riviste.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/utenti.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/RivistaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/RivistaDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/AcquistaServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/AcquistaServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/GiornaliServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/GiornaliServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/IndexServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/IndexServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/LibriServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/LibriServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/RivisteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/RivisteServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/UtentiServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/UtentiServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/original-LibreriaMaven.war" beforeDir="false" />
@@ -1102,7 +1089,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703174560606</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="test user web">
+      <option name="closed" value="true" />
+      <created>1703260912733</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1703260912734</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -1123,7 +1118,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="linux v8 modifed operation scarica for Libro,Rivista,Giornale" />
     <MESSAGE value="insert books" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;target/LibreriaMaven.war&#10;#&#9;target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Giornale.class&#10;#&#9;target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Libro.class&#10;#&#9;target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Rivista.class&#10;#&#9;target/classes/laptop/model/raccolta/Giornale.class&#10;#&#9;target/classes/laptop/model/raccolta/Libro.class&#10;#&#9;target/classes/laptop/model/raccolta/Rivista.class&#10;#&#9;target/jacoco.exec&#10;#&#9;target/original-LibreriaMaven.war&#10;#&#9;target/site/jacoco/index.html&#10;#&#9;target/site/jacoco/jacoco-sessions.html&#10;#&#9;target/site/jacoco/jacoco.xml&#10;#&#9;target/site/jacoco/laptop.controller/index.html&#10;#&#9;target/site/jacoco/laptop.controller/index.source.html&#10;#&#9;target/site/jacoco/laptop.model.raccolta/Libro.java.html&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerAcquista.xml&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerAggiungiPage.xml&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerAggiungiUtente.xml&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerBookData.xml&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerCancellaUser.xml&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerCompravendita.xml&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerGestionePage.xml&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerHomePageAllLogins.xml&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerLogin.xml&#10;#&#9;target/surefire-reports/TEST-laptop.test.TestControllerModifPage.xml&#10;#&#9;target/surefire-reports/laptop.test.TestControllerAcquista.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerAggiungiPage.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerAggiungiUtente.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerCancellaUser.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerCompravendita.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerGestionePage.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerHomePageAllLogins.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerLogin.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerModifPage.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerModificaUtente.txt&#10;#&#9;target/surefire-reports/laptop.test.TestControllerPagamentoCash.txt" />
     <MESSAGE value="configured selenium" />
@@ -1148,7 +1142,8 @@
     <MESSAGE value="modified web app finish" />
     <MESSAGE value="resolve code smells" />
     <MESSAGE value="test admin web" />
-    <option name="LAST_COMMIT_MESSAGE" value="test admin web" />
+    <MESSAGE value="test user web" />
+    <option name="LAST_COMMIT_MESSAGE" value="test user web" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
