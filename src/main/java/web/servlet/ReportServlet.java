@@ -1,20 +1,17 @@
 package web.servlet;
 
 import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletConfig;
-import jakarta.servlet.ServletContext;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import laptop.database.LibroDao;
 import laptop.model.TempUser;
 import laptop.utilities.ConnToDb;
 import web.bean.TextAreaBean;
 
 import java.io.*;
-import java.lang.ref.ReferenceQueue;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

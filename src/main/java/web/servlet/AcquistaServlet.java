@@ -2,7 +2,6 @@ package web.servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.logging.Level;
 
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
@@ -66,8 +65,8 @@ public class AcquistaServlet extends HttpServlet {
 
                     lB.setIdB(sB.getIdB());
                     l.setId(lB.getIdB());
-                    aB.setTitoloB(lD.getTitolo(l));
-                    costo = Integer.parseInt(q) * lD.getCosto(l);
+                    aB.setTitoloB(lD.getData(l).getTitolo());
+                    costo = Integer.parseInt(q) * lD.getData(l).getPrezzo();
                     aB.setPrezzoB(costo);
                     sB.setQuantitaB(Integer.parseInt(q));
                     sB.setSpesaTB(aB.getPrezzoB());
@@ -81,8 +80,8 @@ public class AcquistaServlet extends HttpServlet {
                 {
                     gB.setIdB(sB.getIdB());
                     g.setId(gB.getIdB());
-                    aB.setTitoloB(gD.getTitolo(g));
-                    costo = Integer.parseInt(q) * gD.getCosto(g);
+                    aB.setTitoloB(gD.getData(g).getTitolo());
+                    costo = Integer.parseInt(q) * gD.getData(g).getPrezzo();
                     aB.setPrezzoB(costo);
                     sB.setQuantitaB(Integer.parseInt(q));
                     sB.setSpesaTB(aB.getPrezzoB());
@@ -96,8 +95,8 @@ public class AcquistaServlet extends HttpServlet {
                 {
                     rB.setIdB(sB.getIdB());
                     r.setId(rB.getIdB());
-                    aB.setTitoloB(rD.getTitolo(r));
-                    costo = Integer.parseInt(q) * rD.getCosto(r);
+                    aB.setTitoloB(rD.getData(r).getTitolo());
+                    costo = Integer.parseInt(q) * rD.getData(r).getPrezzo();
                     aB.setPrezzoB(costo);
                     sB.setQuantitaB(Integer.parseInt(q));
                     sB.setSpesaTB(aB.getPrezzoB());

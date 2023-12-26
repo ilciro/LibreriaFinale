@@ -48,21 +48,21 @@ public class ControllerVisualizza {
 		// imposto che è un libro nel controller
 		vis.setId(i);
 		l.setId(vis.getId());
-		return  lD.getLibro(l);
+		return  lD.getData(l);
 	}
 	public Giornale getDataG(int i) throws SQLException
 	{
 		// imposto che è un libro nel controller
 		vis.setId(i);
 		g.setId(vis.getId());
-		return  gD.getGiornale(g);
+		return  gD.getData(g);
 	}
 	public Rivista getDataR(int i) throws SQLException
 	{
 		// imposto che è un libro nel controller
 		vis.setId(i);
 		r.setId(vis.getId());
-		return  rD.getRivista(r);
+		return  rD.getData(r);
 	}
 	
 }

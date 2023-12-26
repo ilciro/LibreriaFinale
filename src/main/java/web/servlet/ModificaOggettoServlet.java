@@ -9,7 +9,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
 import laptop.database.RivistaDao;
-import laptop.exception.IdException;
 import laptop.model.raccolta.Giornale;
 import laptop.model.raccolta.Libro;
 import laptop.model.raccolta.Rivista;
@@ -52,19 +51,19 @@ public class ModificaOggettoServlet extends HttpServlet {
 
                         //passo tutti i valori al bean
 
-                        lB.setTitoloB(lD.getLibro(l).getTitolo());
-                        lB.setNumeroPagineB(lD.getLibro(l).getNrCopie());
-                        lB.setCodIsbnB(lD.getLibro(l).getCodIsbn());
-                        lB.setEditoreB(lD.getLibro(l).getEditore());
-                        lB.setAutoreB(lD.getLibro(l).getAutore());
-                        lB.setLinguaB(lD.getLibro(l).getLingua());
-                        lB.setCategoriaB(lD.getLibro(l).getCategoria());
-                        lB.setDateB(Date.valueOf(lD.getLibro(l).getDataPubb()));
-                        lB.setRecensioneB(lD.getLibro(l).getRecensione());
-                        lB.setDescB(lD.getLibro(l).getDesc());
-                        lB.setDisponibilitaB(lD.getLibro(l).getDisponibilita());
-                        lB.setPrezzoB(lD.getLibro(l).getPrezzo());
-                        lB.setNrCopieB(lD.getLibro(l).getNrCopie());
+                        lB.setTitoloB(lD.getData(l).getTitolo());
+                        lB.setNumeroPagineB(lD.getData(l).getNrCopie());
+                        lB.setCodIsbnB(lD.getData(l).getCodIsbn());
+                        lB.setEditoreB(lD.getData(l).getEditore());
+                        lB.setAutoreB(lD.getData(l).getAutore());
+                        lB.setLinguaB(lD.getData(l).getLingua());
+                        lB.setCategoriaB(lD.getData(l).getCategoria());
+                        lB.setDateB(Date.valueOf(lD.getData(l).getDataPubb()));
+                        lB.setRecensioneB(lD.getData(l).getRecensione());
+                        lB.setDescB(lD.getData(l).getDesc());
+                        lB.setDisponibilitaB(lD.getData(l).getDisponibilita());
+                        lB.setPrezzoB(lD.getData(l).getPrezzo());
+                        lB.setNrCopieB(lD.getData(l).getNrCopie());
 
 
                         req.setAttribute("beanS",sB);
@@ -72,14 +71,14 @@ public class ModificaOggettoServlet extends HttpServlet {
                         break;
                     case "giornale":
                         g.setId(sB.getIdB());
-                        gB.setTitoloB(gD.getGiornale(g).getTitolo());
+                        gB.setTitoloB(gD.getData(g).getTitolo());
                         gB.setTipologiaB("QUOTIDIANO");
-                        gB.setLinguaB(gD.getGiornale(g).getLingua());
-                        gB.setEditoreB(gD.getGiornale(g).getEditore());
-                        gB.setDataB(Date.valueOf(gD.getGiornale(g).getDataPubb()));
-                        gB.setCopieRimanentiB(gD.getGiornale(g).getCopieRimanenti());
-                        gB.setDisponibilitaB(gD.getGiornale(g).getDisponibilita());
-                        gB.setPrezzoB(gD.getCosto(g));
+                        gB.setLinguaB(gD.getData(g).getLingua());
+                        gB.setEditoreB(gD.getData(g).getEditore());
+                        gB.setDataB(Date.valueOf(gD.getData(g).getDataPubb()));
+                        gB.setCopieRimanentiB(gD.getData(g).getCopieRimanenti());
+                        gB.setDisponibilitaB(gD.getData(g).getDisponibilita());
+                        gB.setPrezzoB(gD.getData(g).getPrezzo());
 
                         req.setAttribute("beanS",sB);
                         req.setAttribute("beanG",gB);
@@ -87,16 +86,16 @@ public class ModificaOggettoServlet extends HttpServlet {
                     case "rivista":
                         rB.setIdB(sB.getIdB());
                         r.setId(rB.getIdB());
-                        rB.setTitoloB(rD.getRivista(r).getTitolo());
-                        rB.setTipologiaB(rD.getRivista(r).getTipologia());
-                        rB.setAutoreB(rD.getRivista(r).getAutore());
-                        rB.setLinguaB(rD.getRivista(r).getLingua());
-                        rB.setEditoreB(rD.getRivista(r).getEditore());
-                        rB.setDescrizioneB(rD.getRivista(r).getDescrizione());
-                        rB.setDataB(Date.valueOf(rD.getRivista(r).getDataPubb()));
-                        rB.setDispB(rD.getRivista(r).getDisp());
-                        rB.setPrezzoB(rD.getRivista(r).getPrezzo());
-                        rB.setCopieRimB(rD.getRivista(r).getCopieRim());
+                        rB.setTitoloB(rD.getData(r).getTitolo());
+                        rB.setTipologiaB(rD.getData(r).getTipologia());
+                        rB.setAutoreB(rD.getData(r).getAutore());
+                        rB.setLinguaB(rD.getData(r).getLingua());
+                        rB.setEditoreB(rD.getData(r).getEditore());
+                        rB.setDescrizioneB(rD.getData(r).getDescrizione());
+                        rB.setDataB(Date.valueOf(rD.getData(r).getDataPubb()));
+                        rB.setDispB(rD.getData(r).getDisp());
+                        rB.setPrezzoB(rD.getData(r).getPrezzo());
+                        rB.setCopieRimB(rD.getData(r).getCopieRim());
 
 
                         req.setAttribute("beanS",sB);
@@ -138,7 +137,7 @@ public class ModificaOggettoServlet extends HttpServlet {
                         lB.setPrezzoB(Float.parseFloat(req.getParameter("prezzoNL")));
 
                         l.setTitolo(lB.getTitoloB());
-                        l.setNumeroPagine(lB.getNumeroPagineB());
+                        l.setNrPagine(lB.getNumeroPagineB());
                         l.setCodIsbn(lB.getCodIsbnB());
                         l.setEditore(lB.getEditoreB());
                         l.setAutore(lB.getAutoreB());
@@ -229,7 +228,7 @@ public class ModificaOggettoServlet extends HttpServlet {
                         r.setPrezzo(rB.getPrezzoB());
                         r.setCopieRim(rB.getCopieRimB());
 
-                        if(rD.aggiornaRivista(r))
+                        if(rD.aggiornaRivista(r)==1)
                         {
                             req.setAttribute("beanR",rB);
                             view= getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");

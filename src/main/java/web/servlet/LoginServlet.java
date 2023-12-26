@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import laptop.database.UsersDao;
 import laptop.model.User;
 import org.apache.commons.beanutils.PropertyUtils;
-import org.apache.ibatis.jdbc.SQL;
+
 import web.bean.SystemBean;
 import web.bean.UserBean;
 

@@ -22,10 +22,10 @@ public class NegozioServlet extends HttpServlet {
      *
      */
     private static final long serialVersionUID = 1L;
-    private static NegozioBean nB=new NegozioBean();
-    private static Negozio n=new Negozio();
-    private static String index="/index.jsp";
-    private static NegozioDao nD=new NegozioDao();
+    private final NegozioBean nB=new NegozioBean();
+    private final Negozio n=new Negozio();
+    private final String index="/index.jsp";
+    private final NegozioDao nD=new NegozioDao();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

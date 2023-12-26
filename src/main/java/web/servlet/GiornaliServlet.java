@@ -2,7 +2,6 @@ package web.servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.logging.Level;
 
 import laptop.database.GiornaleDao;
 import laptop.exception.IdException;
@@ -25,10 +24,10 @@ public class GiornaliServlet extends HttpServlet{
      *
      */
     private static final long serialVersionUID = 1L;
-    private static String giornali="/giornali.jsp";
-    private static GiornaleBean gB=new GiornaleBean();
-    private static GiornaleDao gD=new GiornaleDao();
-    private static Giornale giornale=new Giornale();
+    private final String giornali="/giornali.jsp";
+    private final GiornaleBean gB=new GiornaleBean();
+    private final GiornaleDao gD=new GiornaleDao();
+    private final Giornale giornale=new Giornale();
     private final SystemBean sB=SystemBean.getInstance();
     private final AcquistaBean aB=new AcquistaBean();
 
@@ -62,17 +61,17 @@ public class GiornaliServlet extends HttpServlet{
                 gB.setIdB(idOgg);
                 giornale.setId(gB.getIdB());
 
-                gB.setTitoloB(gD.getTitolo(giornale));
+                gB.setTitoloB(gD.getData(giornale).getTitolo());
                 sB.setTitoloB(gB.getTitoloB());
                 sB.setIdB(gB.getIdB());
                 sB.setTypeB("giornale");
 
                 //aggiungo categoria
-                sB.setCategoriaB(gD.retTip(giornale));
+                sB.setCategoriaB(gD.getData(giornale).getTipologia());
 
                 //setto i parametri nel bean acquista
                 aB.setTitoloB(gB.getTitoloB());
-                aB.setPrezzoB(gD.getCosto(giornale));
+                aB.setPrezzoB(gD.getData(giornale).getPrezzo());
 
                 req.setAttribute("beanS", sB);
                 req.setAttribute("beanG", gB);

@@ -18,36 +18,35 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 
 public class Libro implements Raccolta {
-
 	private String titolo;
 	private String codIsbn;
 	private String editore;
 	private String autore;
 	private String lingua;
 	private String categoria;
+	private String descrizione;
 	private LocalDate dataPubb;
 	private String recensione;
+
+	private int nrPagine;
 	private int nrCopie; // numero copie vendute
-	private String desc;
 	private int disponibilita;
 	private float prezzo;
-	private String[] infoGenerali=new String[6];
-	private String[] infoCostiDisp=new String[6];
-	private int numeroPagine;
-	private String tipologia;
-
 	private int id;
+	private String[] infoGenerali=new String[7];
+	private String[] infoCostiDisp=new String[5];
 
 	private static final String URLL="/home/daniele/Scaricati/libriPerSito/";
 
-	public Libro() {	
+	public Libro() {
 
 	}
+
 
 	public String getTitolo() {
 		return this.titolo;
 	}
-	
+
 	public String getCodIsbn() {
 		return this.codIsbn;
 	}
@@ -73,7 +72,7 @@ public class Libro implements Raccolta {
 		return this.nrCopie;
 	}
 	public String getDesc() {
-		return this.desc;
+		return this.descrizione;
 	}
 	public int getDisponibilita() {
 		return this.disponibilita;
@@ -81,11 +80,11 @@ public class Libro implements Raccolta {
 	public float getPrezzo() {
 		return this.prezzo;
 	}
-	
+
 	public void setTitolo(String titolo) {
 		this.titolo = titolo;
 	}
-	
+
 	public void setCodIsbn(String codIsbn) {
 		this.codIsbn = codIsbn;
 	}
@@ -98,101 +97,7 @@ public class Libro implements Raccolta {
 	public void setLingua(String lingua) {
 		this.lingua = lingua;
 	}
-	public void setCategoria(String categoria) {
-		switch (categoria){
-		case "ADOLESCENTI_RAGAZZI": 
-			this.categoria = CategorieLibro.ADOLESCENTI_RAGAZZI.toString();  
-			break;
-		case "ARTE": 
-			this.categoria = CategorieLibro.ARTE.toString();  
-			break;
-		case "CINEMA_FOTOGRAFIA" : 
-			this.categoria = CategorieLibro.CINEMA_FOTOGRAFIA.toString();  
-			break;
-		case "BIOGRAFIE" : 
-			this.categoria = CategorieLibro.BIOGRAFIE.toString();  
-			break;
-		case "DIARI_MEMORIE" : 
-			this.categoria = CategorieLibro.DIARI_MEMORIE.toString();  
-			break;
-		case "CALENDARI_AGENDE" : 
-			this.categoria = CategorieLibro.CALENDARI_AGENDE.toString();  
-			break;
-		case "DIRITTO" : 
-			this.categoria = CategorieLibro.DIRITTO.toString();  
-			break;
-		case "DIZINARI_OPERE" : 
-			this.categoria = CategorieLibro.DIZINARI_OPERE.toString();  
-			break;
-		case "ECONOMIA" : 
-			this.categoria = CategorieLibro.ECONOMIA.toString();  
-			break;
-		case "FAMIGLIA" : 
-			this.categoria = CategorieLibro.FAMIGLIA.toString();  
-			break;
-		case "SALUTE_BENESSERE" : 
-			this.categoria = CategorieLibro.SALUTE_BENESSERE.toString();  
-			break;
-		case "FANTASCIENZA_FANTASY" : 
-			this.categoria = CategorieLibro.FANTASCIENZA_FANTASY.toString();  
-			break;
-		case "FUMETTI_MANGA" : 
-			this.categoria = CategorieLibro.FUMETTI_MANGA.toString();  
-			break;
-		case "GIALLI_THRILLER" : 
-			this.categoria = CategorieLibro.GIALLI_THRILLER.toString();  
-			break;		
-		case "COMPUTER_GIOCHI" : 
-			this.categoria = CategorieLibro.COMPUTER_GIOCHI.toString();  
-			break;
-		case "HUMOR" : 
-			this.categoria = CategorieLibro.HUMOR.toString();  
-			break;
-		case "INFORMATICA" : 
-			this.categoria = CategorieLibro.INFORMATICA.toString();  
-			break;		
-		case "WEB_DIGITAL_MEDIA" : 
-			this.categoria = CategorieLibro.WEB_DIGITAL_MEDIA.toString();  
-			break;		
-		case "LETTERATURA_NARRATIVA" : 
-			this.categoria = CategorieLibro.LETTERATURA_NARRATIVA.toString();  
-			break;		
-		case "LIBRI_BAMBINI" : 
-			this.categoria = CategorieLibro.LIBRI_BAMBINI.toString();  
-			break;		
-		case "LIBRI_SCOLASTICI" : 
-			this.categoria = CategorieLibro.LIBRI_SCOLASTICI.toString();  
-			break;
-		case "LIBRI_UNIVERSITARI" : 
-			this.categoria = CategorieLibro.LIBRI_UNIVERSITARI.toString();  
-			break;			
-		case "RICETTARI_GENERALI" : 
-			this.categoria = CategorieLibro.RICETTARI_GENERALI.toString();  
-			break;	
-		case "LINGUISTICA_SCRITTURA" : 
-			this.categoria = CategorieLibro.LINGUISTICA_SCRITTURA.toString();  
-			break;
-		case "POLITICA" : 
-			this.categoria = CategorieLibro.POLITICA.toString();  
-			break;
-		case "RELIGIONE" : 
-			this.categoria = CategorieLibro.RELIGIONE.toString();  
-			break;
-		case "ROMANZI_ROSA" : 
-			this.categoria = CategorieLibro.ROMANZI_ROSA.toString();  
-			break;		
-		case "SCIENZE" : 
-			this.categoria = CategorieLibro.SCIENZE.toString();  
-			break;		
-		case "TECNOLOGIA_MEDICINA" : 
-			this.categoria = CategorieLibro.TECNOLOGIA_MEDICINA.toString();  
-			break;
-		
-		default :
-			this.categoria = null;
-			break;
-		}
-	}
+
 	public void setDataPubb(LocalDate dataPubb) {
 		this.dataPubb = dataPubb;
 	}
@@ -203,7 +108,7 @@ public class Libro implements Raccolta {
 		this.nrCopie = nrCopie;
 	}
 	public void setDesc(String desc) {
-		this.desc = desc;
+		this.descrizione = desc;
 	}
 	public void setDisponibilita(int disponibilita) {
 		this.disponibilita = disponibilita;
@@ -211,7 +116,7 @@ public class Libro implements Raccolta {
 	public void setPrezzo(float prezzo) {
 		this.prezzo = prezzo;
 	}
-	
+
 
 	public int getId() {
 		return id;
@@ -222,45 +127,141 @@ public class Libro implements Raccolta {
 		this.id = id ;
 	}
 
+	public void setCategoria(String categoria) {
+		switch (categoria){
+			case "ADOLESCENTI_RAGAZZI":
+				this.categoria = CategorieLibro.ADOLESCENTI_RAGAZZI.toString();
+				break;
+			case "ARTE":
+				this.categoria = CategorieLibro.ARTE.toString();
+				break;
+			case "CINEMA_FOTOGRAFIA" :
+				this.categoria = CategorieLibro.CINEMA_FOTOGRAFIA.toString();
+				break;
+			case "BIOGRAFIE" :
+				this.categoria = CategorieLibro.BIOGRAFIE.toString();
+				break;
+			case "DIARI_MEMORIE" :
+				this.categoria = CategorieLibro.DIARI_MEMORIE.toString();
+				break;
+			case "CALENDARI_AGENDE" :
+				this.categoria = CategorieLibro.CALENDARI_AGENDE.toString();
+				break;
+			case "DIRITTO" :
+				this.categoria = CategorieLibro.DIRITTO.toString();
+				break;
+			case "DIZINARI_OPERE" :
+				this.categoria = CategorieLibro.DIZINARI_OPERE.toString();
+				break;
+			case "ECONOMIA" :
+				this.categoria = CategorieLibro.ECONOMIA.toString();
+				break;
+			case "FAMIGLIA" :
+				this.categoria = CategorieLibro.FAMIGLIA.toString();
+				break;
+			case "SALUTE_BENESSERE" :
+				this.categoria = CategorieLibro.SALUTE_BENESSERE.toString();
+				break;
+			case "FANTASCIENZA_FANTASY" :
+				this.categoria = CategorieLibro.FANTASCIENZA_FANTASY.toString();
+				break;
+			case "FUMETTI_MANGA" :
+				this.categoria = CategorieLibro.FUMETTI_MANGA.toString();
+				break;
+			case "GIALLI_THRILLER" :
+				this.categoria = CategorieLibro.GIALLI_THRILLER.toString();
+				break;
+			case "COMPUTER_GIOCHI" :
+				this.categoria = CategorieLibro.COMPUTER_GIOCHI.toString();
+				break;
+			case "HUMOR" :
+				this.categoria = CategorieLibro.HUMOR.toString();
+				break;
+			case "INFORMATICA" :
+				this.categoria = CategorieLibro.INFORMATICA.toString();
+				break;
+			case "WEB_DIGITAL_MEDIA" :
+				this.categoria = CategorieLibro.WEB_DIGITAL_MEDIA.toString();
+				break;
+			case "LETTERATURA_NARRATIVA" :
+				this.categoria = CategorieLibro.LETTERATURA_NARRATIVA.toString();
+				break;
+			case "LIBRI_BAMBINI" :
+				this.categoria = CategorieLibro.LIBRI_BAMBINI.toString();
+				break;
+			case "LIBRI_SCOLASTICI" :
+				this.categoria = CategorieLibro.LIBRI_SCOLASTICI.toString();
+				break;
+			case "LIBRI_UNIVERSITARI" :
+				this.categoria = CategorieLibro.LIBRI_UNIVERSITARI.toString();
+				break;
+			case "RICETTARI_GENERALI" :
+				this.categoria = CategorieLibro.RICETTARI_GENERALI.toString();
+				break;
+			case "LINGUISTICA_SCRITTURA" :
+				this.categoria = CategorieLibro.LINGUISTICA_SCRITTURA.toString();
+				break;
+			case "POLITICA" :
+				this.categoria = CategorieLibro.POLITICA.toString();
+				break;
+			case "RELIGIONE" :
+				this.categoria = CategorieLibro.RELIGIONE.toString();
+				break;
+			case "ROMANZI_ROSA" :
+				this.categoria = CategorieLibro.ROMANZI_ROSA.toString();
+				break;
+			case "SCIENZE" :
+				this.categoria = CategorieLibro.SCIENZE.toString();
+				break;
+			case "TECNOLOGIA_MEDICINA" :
+				this.categoria = CategorieLibro.TECNOLOGIA_MEDICINA.toString();
+				break;
+
+			default :
+				this.categoria = null;
+				break;
+		}
+	}
+
 	@Override
 	public void scarica() throws DocumentException, IOException {
 		Desktop desktop = Desktop.getDesktop();
 		desktop.open(new File(URLL));
-		
+
 
 	}
 	@Override
 	public void leggi(int i) throws IOException, DocumentException, URISyntaxException {
 		Document document=null;
 		File file;
-		
-		
+
+
 		int dimensione=0;
-	
+
 		ResourceBundle rB=ResourceBundle.getBundle("configurations/booksPath");
 		 ResourceBundle rBD=ResourceBundle.getBundle("configurations/downloadConfiguration");
 			 Enumeration<String> enumeration = rBD.getKeys();
-			 
-		
+
+
 
 		      // print all the keys
 		      while (enumeration.hasMoreElements()) {
 		    	 enumeration.nextElement();
-		     
-		    	
+
+
 		    		 if(i==dimensione)
 		    	  {
 		    		  document = new Document();
 		     			PdfWriter.getInstance(document, new FileOutputStream(rBD.getString("path"+i+"L")));
-		     			document.open();	   		
+		     			document.open();
 		  			file=new File(rB.getString("path"+i+"L"));
 		  			Desktop.getDesktop().open(file);
 		    	  }
-		    	  
+
 		    	  else {
 		  			document = new Document();
 		     			PdfWriter.getInstance(document, new FileOutputStream(rBD.getString("pathNonFound")));
-		     			document.open();	
+		     			document.open();
 
 		     			document.add(new Paragraph("""
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat ornare dictum. Donec semper pellentesque risus, quis pulvinar nisl efficitur nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus nisl mi, ullamcorper cursus pulvinar ut, pretium ut quam. Proin felis mauris, pretium non scelerisque vitae, posuere vel risus. Sed tortor enim, sollicitudin et eros at, fermentum suscipit urna. Sed at nisi quis libero hendrerit interdum at sodales dui. Nullam nec mattis urna. Quisque rhoncus pharetra malesuada. Etiam porttitor ligula consequat nisi luctus scelerisque. Sed purus purus, gravida ac orci sit amet, faucibus euismod diam. In dignissim enim sed nisl euismod, in vulputate odio facilisis. Sed venenatis facilisis massa, ac condimentum ante rutrum blandit. Vivamus efficitur eros quis diam semper, nec porttitor lectus vehicula. Fusce turpis ipsum, mollis vel nunc vitae, blandit molestie nunc. Nunc sit amet feugiat lacus.
@@ -273,44 +274,50 @@ public class Libro implements Raccolta {
 								
 								Vestibulum aliquet nisi sit amet tristique consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a fringilla libero. Fusce pharetra purus eu tortor dapibus laoreet. Quisque mattis justo et lacus fringilla mattis. Cras sit amet elementum ipsum. Sed varius congue dolor ac placerat. Integer cursus nulla at lectus sollicitudin hendrerit. Suspendisse sit amet tincidunt nunc, at volutpat nisi.
 								"""));
-		     			
 
-		  		} 
-		    	
+
+		  		}
+
 		    	   dimensione++;
 
 		      }
-	    	  
 
-	
-		  
 
-		
-		
-		
+
+
+
+
+
+
 	}
-	
+
 	/*
 	 * provo a levare i codeSmells > 7 paramentri
 	 */
-	public Libro(String[] info, LocalDate dataPubb,  String recensione,  int id,String desc,String [] quantita) {
+	public Libro(String[] info, LocalDate dataPubb,  String recensione, String descrizione,String [] prezzi) {
 		this.infoGenerali=info;
-		this.recensione=recensione;	
-		this.dataPubb = dataPubb;		
-		this.id=id;
-		this.infoCostiDisp=quantita;
-		this.desc=desc;
+		this.infoCostiDisp=prezzi;
+		this.descrizione=descrizione;
+
+		this.recensione=recensione;
+		this.dataPubb = dataPubb;
+
 		this.titolo=info[0];
-		this.editore=info[4];
-		this.autore=info[2];
+		this.codIsbn=info[1];
+		this.editore=info[2];
+		this.autore=info[3];
+		this.lingua=info[4];
 		this.categoria=info[5];
-		this.prezzo=Float.parseFloat(quantita[4]);
-		this.numeroPagine=Integer.parseInt(quantita[0]);
-		this.codIsbn=quantita[1];
-		this.lingua=info[3];
-		this.disponibilita=Integer.parseInt(quantita[3]);
-		this.nrCopie=Integer.parseInt(quantita[5]);
-		
+		this.descrizione=info[6];
+
+		this.nrPagine=Integer.parseInt(prezzi[0]);
+		this.nrCopie=Integer.parseInt(prezzi[1]);
+		this.disponibilita=Integer.parseInt(prezzi[2]);
+		this.prezzo=Float.parseFloat(prezzi[3]);
+		this.id=Integer.parseInt(prezzi[4]);
+
+
+
 	}
 
 	public String[] getInfoGenerali() {
@@ -321,8 +328,8 @@ public class Libro implements Raccolta {
 		this.infoGenerali = infoGenerali;
 	}
 
-	
-	
+
+
 
 	public String[] getInfoCostiDisp() {
 		return infoCostiDisp;
@@ -332,22 +339,12 @@ public class Libro implements Raccolta {
 		this.infoCostiDisp = infoCostiDisp;
 	}
 
-	public String getTipologia() {
-		return tipologia;
+
+	public int getNrPagine() {
+		return nrPagine;
 	}
 
-	public void setTipologia(String tipologia) {
-		this.tipologia = tipologia;
+	public void setNrPagine(int nrPagine) {
+		this.nrPagine = nrPagine;
 	}
-
-	public int getNumeroPagine() {
-		return numeroPagine;
-	}
-
-	public void setNumeroPagine(int numeroPagine) {
-		this.numeroPagine = numeroPagine;
-	}
-
-
-
 }

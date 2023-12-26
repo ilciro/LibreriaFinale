@@ -23,12 +23,12 @@ public class ControllerModifPage {
 	
 	public ObservableList<Libro> getLibriById(int id) throws SQLException {
 		l.setId(id);
-		return ld.getLibriSingoloById(l);
+		return ld.getLibroIdTitoloAutore(l);
 	}
 	
 	public ObservableList<Giornale> getGiornaliById(int id) throws SQLException   {
 		g.setId(id);
-		return gD.getGiornaliSingoloById(g);
+		return gD.getGiornaleIdTitoloAutore(g);
 	}
 	
 		
@@ -50,7 +50,7 @@ public class ControllerModifPage {
 		}
 		public ObservableList<Rivista> getRivistaById(int id) throws SQLException {
 			r.setId(id);
-			return rD.getRivistaSingoloById(r);
+			return rD.getRivistaIdTitoloAutore(r);
 		}
 		
 		
@@ -89,11 +89,11 @@ public class ControllerModifPage {
 	}
 	
 	
-	public void checkDataL(String []info,String recensione,String descrizione,LocalDate data,String[] infoCosti) throws NullPointerException, SQLException 
+	public boolean checkDataL(String []info,String recensione,String descrizione,LocalDate data,String[] infoCosti) throws NullPointerException, SQLException
 	{
 		
 		
-		ld.aggiornaLibro(cBD.checkBookData(info, recensione, descrizione, data, infoCosti));
+		return ld.aggiornaLibro(cBD.checkBookData(info, recensione, descrizione, data, infoCosti));
 	}
 	
 	

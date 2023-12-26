@@ -20,13 +20,13 @@ import java.sql.SQLException;
 
 public class DownloadServletG extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static DownloadBean dB=new DownloadBean();
-    private static SystemBean sB=SystemBean.getInstance();
-    private static Giornale g=new Giornale();
-    private static PagamentoDao pD=new PagamentoDao();
-    private static GiornaleDao gD=new GiornaleDao();
-    private static ContrassegnoDao fDao=new ContrassegnoDao();
-    private static String index="/index.jsp";
+    private final DownloadBean dB=new DownloadBean();
+    private final SystemBean sB=SystemBean.getInstance();
+    private final Giornale g=new Giornale();
+    private final PagamentoDao pD=new PagamentoDao();
+    private final GiornaleDao gD=new GiornaleDao();
+    private final ContrassegnoDao fDao=new ContrassegnoDao();
+    private final String index="/index.jsp";
 
 
     @Override

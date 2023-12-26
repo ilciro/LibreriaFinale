@@ -15,7 +15,7 @@ import java.util.logging.Level;
 @WebServlet("/ServletScrittore")
 public class ServletScrittore extends HttpServlet {
     private final UserBean uB=UserBean.getInstance();
-    private SystemBean sB=SystemBean.getInstance();
+    private final SystemBean sB=SystemBean.getInstance();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String buttonL=req.getParameter("buttonL");

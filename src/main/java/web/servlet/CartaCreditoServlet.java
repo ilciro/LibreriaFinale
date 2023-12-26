@@ -1,9 +1,7 @@
 package web.servlet;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.Date;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -36,11 +34,11 @@ public class CartaCreditoServlet extends HttpServlet {
      *
      */
     private static final long serialVersionUID = 1L;
-    private static CartaCreditoBean ccB=new CartaCreditoBean();
-    private static CartaDiCredito cc=new CartaDiCredito();
-    private static Libro l=new Libro();
-    private static LibroBean lB=new LibroBean();
-    private static Giornale g=new Giornale();
+    private final CartaCreditoBean ccB=new CartaCreditoBean();
+    private final CartaDiCredito cc=new CartaDiCredito();
+    private final Libro l=new Libro();
+    private final LibroBean lB=new LibroBean();
+    private final Giornale g=new Giornale();
 
     private final PagamentoBean pB=new PagamentoBean();
 

@@ -19,45 +19,148 @@ import laptop.utilities.ConnToDb;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class LibroDao  {
-	
+public class LibroDao {
+
 	private Factory f;
-	private  String query ;
-	
-	private  int q; // quantita'
-	
-	private boolean state=false;
-	private ControllerSystemState vis=ControllerSystemState.getInstance();
+	private String query;
+
+
+
+	private boolean state = false;
+	private ControllerSystemState vis = ControllerSystemState.getInstance();
 
 	private static final String LIBRO = "libro";
-	private static final String ECCEZIONE="ECCEZIONE generata:";
-	private static String queryL="select * from LIBRO where idProd=?";
+	private static final String ECCEZIONE = "ECCEZIONE generata:";
 
-
-	public float getCosto(Libro l) throws SQLException
+	public LibroDao()
 	{
-		float prezzo=(float) 0.0;
-		
-		query=queryL;
+		f=new Factory();
+	}
 
-		
-		try(Connection conn=ConnToDb.connectionToDB();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-			
-			prepQ.setInt(1, l.getId());
+
+
+	public Libro getData(Libro l) {
+
+		String query ="select * from LIBRO where idLibro=? or idLibro=?";
+
+		try (Connection conn = ConnToDb.connectionToDB();
+			PreparedStatement prepQ= conn.prepareStatement(query))  {
+
+			prepQ.setInt(1,l.getId());
+			prepQ.setInt(2,vis.getId());
 			ResultSet rs=prepQ.executeQuery();
-			
-			while ( rs.next() ) {
-				prezzo=rs.getFloat("prezzo");
+			while (rs.next())
+			{
+				f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(3), rs.getString(4), rs.getString(5),rs.getString(6), rs.getString(7));
+
+
+				f.createRaccoltaFinale2(LIBRO, rs.getInt(2), rs.getInt(10), rs.getInt(12),rs.getFloat(13),rs.getInt(14));
+
+				l=(Libro) f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11));
+
+
 			}
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("costo libro").log(Level.INFO, ECCEZIONE, e);
+		} catch (SQLException e) {
+			java.util.logging.Logger.getLogger("get data").log(Level.INFO, ECCEZIONE, e);
 		}
-		return prezzo;
+	return l;
 
 	}
+
+	public ObservableList<Raccolta> getLibri() {
+		ObservableList<Raccolta> catalogo = FXCollections.observableArrayList();
+
+		query = "select * from LIBRO";
+		try (Connection conn = ConnToDb.connectionToDB();
+			 PreparedStatement prepQ = conn.prepareStatement(query);
+			 ResultSet rs = prepQ.executeQuery()) {
+			while (rs.next()) {
+
+				f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(3), rs.getString(4), rs.getString(5),rs.getString(6), rs.getString(7));
+
+
+				f.createRaccoltaFinale2(LIBRO, rs.getInt(2), rs.getInt(10), rs.getInt(12),rs.getFloat(13),rs.getInt(14));
+
+
+
+					catalogo.add(f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11)));
+
+
+
+			}
+		} catch (SQLException e) {
+			java.util.logging.Logger.getLogger("get libri").log(Level.INFO, ECCEZIONE, e);
+		}
+		return catalogo;
+	}
+
+	public ObservableList<Raccolta> getLibriIdTitoloAutore(Libro l) {
+		ObservableList<Raccolta> catalogo = FXCollections.observableArrayList();
+
+		query = "select * from LIBRO where idLibro=? or idLibro=? or titolo=? or autore=?";
+		try (Connection conn = ConnToDb.connectionToDB();
+			 PreparedStatement prepQ= conn.prepareStatement(query))  {
+
+			prepQ.setInt(1,l.getId());
+			prepQ.setInt(2,vis.getId());
+			prepQ.setString(3,l.getTitolo());
+			prepQ.setString(4,l.getAutore());
+
+			ResultSet rs=prepQ.executeQuery();
+			while (rs.next())
+			{
+				f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(3), rs.getString(4), rs.getString(5),rs.getString(6), rs.getString(7));
+
+
+				f.createRaccoltaFinale2(LIBRO, rs.getInt(2), rs.getInt(10), rs.getInt(12),rs.getFloat(13),rs.getInt(14));
+
+
+
+				catalogo.add(f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11)));
+
+
+			}
+		} catch (SQLException e) {
+			java.util.logging.Logger.getLogger("get data").log(Level.INFO, ECCEZIONE, e);
+		}
+		return catalogo;
+	}
+
+	public ObservableList<Libro> getLibroIdTitoloAutore(Libro l) {
+		ObservableList<Libro> catalogo = FXCollections.observableArrayList();
+
+		query = "select * from LIBRO where idLibro=? or idLibro=? or titolo=? or autore=?";
+		try (Connection conn = ConnToDb.connectionToDB();
+			 PreparedStatement prepQ= conn.prepareStatement(query))  {
+
+			prepQ.setInt(1,l.getId());
+			prepQ.setInt(2,vis.getId());
+			prepQ.setString(3,l.getTitolo());
+			prepQ.setString(4,l.getAutore());
+
+			ResultSet rs=prepQ.executeQuery();
+			while (rs.next())
+			{
+				f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(3), rs.getString(4), rs.getString(5),rs.getString(6), rs.getString(7));
+
+
+				f.createRaccoltaFinale2(LIBRO, rs.getInt(2), rs.getInt(10), rs.getInt(12),rs.getFloat(13),rs.getInt(14));
+
+
+
+				catalogo.add((Libro) f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11)));
+
+
+			}
+		} catch (SQLException e) {
+			java.util.logging.Logger.getLogger("get data").log(Level.INFO, ECCEZIONE, e);
+		}
+		return catalogo;
+	}
+
+
+
+
 
 	public void aggiornaDisponibilita(Libro l) throws SQLException
 	{
@@ -65,15 +168,15 @@ public class LibroDao  {
 		int d=vis.getQuantita();
 		int i=l.getNrCopie();
 		int rim=i-d;
-		
-		
-		
-	
-		
-		query="update LIBRO set copieRimanenti=? where  idProd=?";
-		
+
+
+
+
+
+		query="update LIBRO set copieRimanenti=? where  idLibro=?";
+
 		try(Connection conn=ConnToDb.connectionToDB();
-				PreparedStatement prepQ=conn.prepareStatement(query))
+			PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, rim);
 			prepQ.setInt(2, l.getId());
@@ -82,486 +185,189 @@ public class LibroDao  {
 		{
 			java.util.logging.Logger.getLogger("aggiorna disp l").log(Level.INFO, ECCEZIONE, e);
 		}
-		
-
-
-	}
-
-	
-	
-
-	public ObservableList<Raccolta> getLibri() throws SQLException
-	{
-		ObservableList<Raccolta> catalogo=FXCollections.observableArrayList();
-
-		query="select * from LIBRO";
-		try(Connection conn=ConnToDb.connectionToDB();
-				PreparedStatement prepQ=conn.prepareStatement(query);
-				ResultSet rs=prepQ.executeQuery())
-		{
-		while(rs.next())
-		{
-			
-				
-					f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(7), rs.getString(5), rs.getString(6),rs.getString(4), rs.getString(7));
-					f.createRaccoltaFinale2(LIBRO,rs.getInt(2),rs.getString(3),rs.getInt(10),rs.getInt(12),rs.getFloat(13),rs.getInt(14));
-					catalogo.add(f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11),rs.getInt(15)));
-					
-				
-			
-		}
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("get libri").log(Level.INFO, ECCEZIONE, e);
-		}
-		
-
-		return catalogo;
-	}
-
-
-
-	public Libro getLibro(Libro l) throws SQLException
-	{
-		query=queryL;
-		try(Connection conn=ConnToDb.connectionToDB();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-			prepQ.setInt(1, l.getId());
-			ResultSet rs=prepQ.executeQuery();
-		while (rs.next())
-		{
-			f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(7), rs.getString(5), rs.getString(6),rs.getString(4), rs.getString(7));
-			
-			
-			f.createRaccoltaFinale2(LIBRO, rs.getInt(2), rs.getString(3), rs.getInt(10),rs.getInt(12),rs.getFloat(13),rs.getInt(14));
-
-			l=(Libro) f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11),rs.getInt(15));
-		
-			
-		}
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("get libro").log(Level.INFO, ECCEZIONE, e);
-		}
-		
-		return l;
-
-	}
-	
-
-	public LibroDao()
-	{
-		f=new Factory();
-	}
-
-	public int retId(Libro l) throws SQLException {
-		int id=0;
-		query="select idProd from LIBRO where Cod_isbn=?";
-		try(Connection conn=ConnToDb.connectionToDB();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-			prepQ.setString(1, l.getCodIsbn());
-			ResultSet rs=prepQ.executeQuery();
-		
-			while ( rs.next() ) {
-				id=rs.getInt("idProd");
-			}
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("ret id libro").log(Level.INFO, ECCEZIONE, e);
-		}
-		return id;
 
 
 
 	}
-	
-
-	public String retTip(Libro l) throws SQLException {
-		
-		query="select categoria from LIBRO where Cod_isbn=? or idProd=?";
-		String categoria=null;
-		
-		try(Connection conn=ConnToDb.connectionToDB();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-			prepQ.setString(1, l.getCodIsbn());
-			prepQ.setInt(2, l.getId());
-			ResultSet rs=prepQ.executeQuery();
-		
-		
-			while ( rs.next() ) {
-				categoria=rs.getString("categoria");
-
-			}
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("tipo l").log(Level.INFO, ECCEZIONE, e);
-		}
-		return categoria;
-
-
-	}
-
-	public void aggiornaCopieVendute(Libro l) throws SQLException
-	{
-		
-		int d=vis.getQuantita();
-		int i=l.getNrCopie();
-		
-		int rim=i+d;
-		
-		
-		query="update LIBRO set copieVendute=copieVendute+? where Cod_isbn=? ";
-		
-		try(Connection conn=ConnToDb.connectionToDB();
-				PreparedStatement prepQ=conn.prepareStatement(query))
-		{
-			prepQ.setInt(1, rim);
-			prepQ.setString(2, l.getCodIsbn());
-			
-			prepQ.executeUpdate();
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("aggiorna copie vendute").log(Level.INFO, ECCEZIONE, e);
-		}
-		
-
-		
-
-	}
-
 	// Creo il libro nel terzo caso d'uso per l'aggiunta manuale
 	public boolean creaLibrio(Libro l) throws SQLException
 	{
-				
-				query= "INSERT INTO `LIBRO`"
-						+ "(`titolo`,"
-						+ "`numeroPagine`,"
-						+ "`Cod_isbn`,"
-						+ "`editore`,"
-						+ "`autore`,"
-						+ "`lingua`,"
-						+ "`categoria`,"
-						+ "`dataPubblicazione`,"
-						+ "`recensione`,"
-						+ " copieVendute,"
-						+ "`breveDescrizione`,"
-						+ "`disp`,"
-						+ "`prezzo`,"
-						+ "`copieRimanenti`)"
-						+ "VALUES"
-						+ "(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-				try(Connection conn=ConnToDb.connectionToDB();
-						PreparedStatement prepQ=conn.prepareStatement(query);)
-				{
-				prepQ.setString(1,l.getTitolo()); 
-				prepQ.setInt(2,l.getNumeroPagine());
-				prepQ.setString(3,l.getCodIsbn());
-				prepQ.setString(4,l.getEditore());
-				prepQ.setString(5,l.getAutore());
-				prepQ.setString(6,l.getLingua());
-				prepQ.setString(7,l.getCategoria());
-				prepQ.setDate(8, java.sql.Date.valueOf(l.getDataPubb().toString()));  
-				prepQ.setString(9, l.getRecensione());
-				//copie vendute
-				prepQ.setInt(10,0);
-				prepQ.setString(11, l.getDesc());
-				prepQ.setInt(12, l.getDisponibilita());
-				prepQ.setFloat(13, l.getPrezzo());
-				prepQ.setInt(14,l.getNrCopie());
-				int row= prepQ.executeUpdate();
-				if(row==1)
-					state= true; // true
-				}catch(SQLException e)
-				{
-					state=false;
-						java.util.logging.Logger.getLogger("crea libro").log(Level.INFO, ECCEZIONE, e);
-				}
+
+		query= "INSERT INTO `LIBRO`"
+				+ "(`titolo`,"
+				+ "`numeroPagine`,"
+				+ "`Cod_isbn`,"
+				+ "`editore`,"
+				+ "`autore`,"
+				+ "`lingua`,"
+				+ "`categoria`,"
+				+ "`dataPubblicazione`,"
+				+ "`recensione`,"
+				+ " copieVendute,"
+				+ "`breveDescrizione`,"
+				+ "`disp`,"
+				+ "`prezzo`,"
+				+ "`copieRimanenti`)"
+				+ "VALUES"
+				+ "(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		try(Connection conn=ConnToDb.connectionToDB();
+			PreparedStatement prepQ=conn.prepareStatement(query))
+		{
+			prepQ.setString(1,l.getTitolo());
+			prepQ.setInt(2,l.getNrPagine());
+			prepQ.setString(3,l.getCodIsbn());
+			prepQ.setString(4,l.getEditore());
+			prepQ.setString(5,l.getAutore());
+			prepQ.setString(6,l.getLingua());
+			prepQ.setString(7,l.getCategoria());
+			prepQ.setDate(8, java.sql.Date.valueOf(l.getDataPubb().toString()));
+			prepQ.setString(9, l.getRecensione());
+			//copie vendute
+			prepQ.setInt(10,l.getNrCopie());
+			prepQ.setString(11, l.getDesc());
+			prepQ.setInt(12, l.getDisponibilita());
+			prepQ.setFloat(13, l.getPrezzo());
+			prepQ.setInt(14,l.getNrCopie());
+			int row= prepQ.executeUpdate();
+			if(row==1) {
+				state = true; // true
+
+			}
+		}catch(SQLException e) {
+
+			state = false;
+			java.util.logging.Logger.getLogger("crea libro").log(Level.INFO, ECCEZIONE, e);
+		}
 
 		return state;
-
-	}
-	
-	public int getQuantita(Libro l) throws SQLException
-	{
-		query="select * from LIBRO where idProd=?";
-
-		
-		try(Connection conn=ConnToDb.connectionToDB();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-			prepQ.setInt(1, l.getId());
-			ResultSet rs=prepQ.executeQuery();
-		
-			while (rs.next()) {
-					q = rs.getInt("copieRimanenti");
-				}
-
-			}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("quantita l").log(Level.INFO, ECCEZIONE, e);
-		}
-			
-
-
-		
-
-
-		return q;
-	}
-	
-
-	// Uso questo pulseante quando clicco sul pulsante mostra libro 
-	public boolean checkDisp(Libro l) throws SQLException
-	{
-		int id=l.getId();
-		int disp=0;
-		query="select disp from LIBRO where idProd=?";
-			
-		try(Connection conn=ConnToDb.connectionToDB();
-				PreparedStatement prepQ=conn.prepareStatement(query);
-				
-				)
-		{
-			
-		prepQ.setInt(1, id);
-		ResultSet rs=prepQ.executeQuery();
-				while(rs.next())
-				{
-					disp = rs.getInt(1);
-					if (disp == 1)
-						state=true;
-					
-				
-					java.util.logging.Logger.getLogger("Disponibilita").log(Level.INFO,"libro disponibile");
-				}
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("disponibilita l").log(Level.INFO, ECCEZIONE, e);
-		}
-				
-
-		return state;
-	}
-
-	//fare singoli get dal db con associazione alle funzioni 
-	//o fare associazioni dal contoller
-	 
-	public String getNome(Libro l) throws SQLException
-	{
-		String name=null;
-		query="select titolo from LIBRO where idProd=?";
-		try(Connection conn=ConnToDb.connectionToDB();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-			prepQ.setInt(1, l.getId());
-			ResultSet rs=prepQ.executeQuery();
-			while (rs.next())
-		{
-			name = rs.getString(1);
-		}
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("nome l").log(Level.INFO, ECCEZIONE, e);
-		}
-		return name;
-	}
-
-	public ObservableList<Raccolta> getLibroSingolo() throws SQLException
-	{
-		ObservableList<Raccolta> catalogo=FXCollections.observableArrayList();
-		query="select * from LIBRO ";
-		try(Connection conn=ConnToDb.connectionToDB();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-			
-			ResultSet rs=prepQ.executeQuery();
-		while (rs.next())
-		{
-			f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(7), rs.getString(5), rs.getString(6),rs.getString(4), rs.getString(7));
-			
-			
-			f.createRaccoltaFinale2(LIBRO, rs.getInt(2), rs.getString(3), rs.getInt(10),rs.getInt(12),rs.getFloat(13),rs.getInt(14));
-
-			catalogo.add(f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11),rs.getInt(15)));
-		
-			
-		}
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("libro singolo").log(Level.INFO, ECCEZIONE, e);
-		}
-		
-		java.util.logging.Logger.getLogger("Catalogo").log(Level.INFO, "ctalogo {0}",catalogo);
-	
-		return catalogo;
 
 	}
 
 	public int cancella(Libro l) throws SQLException {
-		int row=0;
-		query="delete from LIBRO where idProd=?";
-		
+		int row;
+		query="delete from LIBRO where idLibro=? or Cod_isbn=?";
+
 		try(Connection conn=ConnToDb.connectionToDB();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+			PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, l.getId());
+			prepQ.setString(2,l.getCodIsbn());
 			row=prepQ.executeUpdate();
 		}
-		
+
 		java.util.logging.Logger.getLogger("Cancella libro").log(Level.INFO,"libro cancellato {0}",row);
 		return row;
-		
-	}
-
-	public ObservableList<Libro> getLibriSingoloById(Libro l) throws SQLException
-	{
-		query=queryL;
-		ObservableList<Libro> catalogo=FXCollections.observableArrayList();
-		try(Connection conn=ConnToDb.connectionToDB();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-			prepQ.setInt(1, l.getId());
-			ResultSet rs=prepQ.executeQuery();
-		while(rs.next())
-		{
-
-			
-					f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(7), rs.getString(5), rs.getString(6),rs.getString(4), rs.getString(7));
-				
-				
-					f.createRaccoltaFinale2(LIBRO, rs.getInt(2), rs.getString(3), rs.getInt(10),rs.getInt(12),rs.getFloat(13),rs.getInt(14));
-
-					catalogo.add((Libro) f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11),rs.getInt(15)));
-
-				
-
-		}
-
-		}catch(SQLException e)
-		{
-						java.util.logging.Logger.getLogger("libro by id").log(Level.INFO, ECCEZIONE, e);
-		}
-		java.util.logging.Logger.getLogger("catalogo").log(Level.INFO,"catalogo trovato");
-
-		return catalogo;
 
 	}
-
-	public boolean aggiornaLibro(Libro l) throws SQLException,NullPointerException
+	public boolean aggiornaLibro(Libro l) throws NullPointerException
 	{
 
 
-		int rowAffected=0;
+		//int rowAffected=0;
 		boolean status=false;
 
-		
 
-		query=" UPDATE LIBRO "
-				+ "SET "
-				+ " `titolo` =?,"
-				+ " `numeroPagine` = ?,"
-				+ " `Cod_isbn` = ?,"
-				+ " `editore` = ?,"
-				+ " `autore` = ?,"
-				+ " `lingua` = ?,"
-				+ " `categoria` = ?,"
-				+ " `dataPubblicazione` = ?,"
-				+ " `recensione` = ?,"
-				+ " `copieVendute` = ?,"
-				+ " `breveDescrizione` =?,"
-				+ " `disp` = ?,"
-				+ " `prezzo` = ?,"
-				+ " `copieRimanenti` =?"
-				+ " WHERE `idProd`= ? or idProd=?";
+		System.out.println("libro id nel dao:"+ l.getId());
+		System.out.println("libro titolo nel dao:"+ l.getTitolo());
+		System.out.println("libro data nel dao:"+ l.getDataPubb());
+
+
+		query=" UPDATE LIBRO SET  `titolo` =?, `numeroPagine` = ?, `Cod_isbn` = ?, `editore` = ?, `autore` = ?, `lingua` = ?, `categoria` = ?, `dataPubblicazione` = ?, `recensione` = ?, `copieVendute` = ?, `breveDescrizione` =?, `disp` = ?,`prezzo` = ?,`copieRimanenti` =? WHERE `idLibro`= ? ";
 		try(Connection conn=ConnToDb.connectionToDB();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+			PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 
-		prepQ.setString(1,l.getTitolo());
-		prepQ.setInt(2,l.getNumeroPagine());
-		prepQ.setString(3,l.getCodIsbn());
-		prepQ.setString(4,l.getEditore());
-		prepQ.setString(5,l.getAutore());
-		prepQ.setString(6,l.getLingua());
-		prepQ.setString(7,l.getCategoria());
-		prepQ.setString(8, l.getDataPubb().toString());
-		prepQ.setString(9,l.getRecensione());
-		prepQ.setInt(10,l.getNrCopie());
-		prepQ.setString(11,l.getDesc());
-		prepQ.setInt(12,l.getDisponibilita());
-		prepQ.setFloat(13,l.getPrezzo());
-		prepQ.setInt(14,l.getNrCopie());
-		prepQ.setInt(15, l.getId());
-		prepQ.setInt(16, vis.getId());
+			prepQ.setString(1,l.getTitolo());
+			prepQ.setInt(2,l.getNrPagine());
+			prepQ.setString(3,l.getCodIsbn());
+			prepQ.setString(4,l.getEditore());
+			prepQ.setString(5,l.getAutore());
+			prepQ.setString(6,l.getLingua());
+			prepQ.setString(7,l.getCategoria());
+			prepQ.setString(8, l.getDataPubb().toString());
+			prepQ.setString(9,l.getRecensione());
+			prepQ.setInt(10,l.getNrCopie());
+			prepQ.setString(11,l.getDesc());
+			prepQ.setInt(12,l.getDisponibilita());
+			prepQ.setFloat(13,l.getPrezzo());
+			prepQ.setInt(14,l.getNrCopie());
+			prepQ.setInt(15, l.getId());
 
 
-		rowAffected = prepQ.executeUpdate();
 
+			System.out.println("rows aff"+ prepQ.executeUpdate());
+
+			if(prepQ.executeUpdate()==1)
+			{
+				status=true;
+			}
+
+
+
+
+		} catch (SQLException e) {
+			java.util.logging.Logger.getLogger("Aggiornamento libro").log(Level.INFO, ECCEZIONE,e);
 
 		}
-		if(rowAffected==1)
-			status=true;
 
-		java.util.logging.Logger.getLogger("Aggiornamento libro").log(Level.INFO, "row affected {0}",rowAffected);
-	return status;
 
-	}	
 
+
+		//java.util.logging.Logger.getLogger("Aggiornamento libro").log(Level.INFO, "row affected {0}",rowAffected);
+		return status;
+
+	}
 	public void generaReport() throws IOException
 	{
 		FileWriter w=new FileWriter("ReportFinale/riepilogoLibro.txt");
 		query="select titolo,copieVendute,prezzo as totale from LIBRO";
-		
-		   try (BufferedWriter b=new BufferedWriter (w)){
-		
 
-			   try(Connection 	conn = ConnToDb.connectionToDB();
-					   PreparedStatement prepQ=conn.prepareStatement(query);)
-			   {
-		
-			ResultSet rs=prepQ.executeQuery();
+		try (BufferedWriter b=new BufferedWriter (w)){
 
 
-			while(rs.next())
+			try(Connection 	conn = ConnToDb.connectionToDB();
+				PreparedStatement prepQ=conn.prepareStatement(query))
 			{
 
+				ResultSet rs=prepQ.executeQuery();
+
+
+				while(rs.next())
+				{
 
 
 
-				b.write("Titolo :"+rs.getString(1)+"\t"+"Ricavo totale :" +rs.getInt(2)*rs.getFloat(3)+"\n");
+
+					b.write("Titolo :"+rs.getString(1)+"\t"+"Ricavo totale :" +rs.getInt(2)*rs.getFloat(3)+"\n");
 
 
 
 
-				b.flush();
+					b.flush();
 
 
+				}
+
+			}catch(SQLException e)
+			{
+				java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
 			}
+		}
 
-		}catch(SQLException e)
-			   {
-								java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
-			   }
-		   }
-		
 
 	}
-	
-	public void incrementaDisponibilita(Libro l) throws SQLException
+	public void incrementaDisponibilita(Libro l)
 	{
 		int d=vis.getQuantita();
 		int i=l.getNrCopie();
-		
+
 		int rim=i+d;
-		query="update LIBRO set copieRimanenti= ? where Cod_isbn=? or idProd=?";
-		
-		
-		
+		query="update LIBRO set copieRimanenti= ? where Cod_isbn=? or idLibro=?";
+
+
+
 		try(Connection conn=ConnToDb.connectionToDB();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+			PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setInt(1, rim);
 			prepQ.setString(2, l.getCodIsbn());
@@ -571,87 +377,27 @@ public class LibroDao  {
 		{
 			java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
 		}
-		
-		
 
-	}
-	
-	
-	
-	public String getTitolo(Libro l) 
-	{
-		String t="";
-		query="select titolo from LIBRO where idProd=? or idProd=?";
-		try(Connection conn=ConnToDb.connectionToDB();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-			prepQ.setInt(1, l.getId());
-			prepQ.setInt(2, vis.getId());
-			ResultSet rs=prepQ.executeQuery();
-			if(rs.next())
-			{
-				t=rs.getString("titolo");
-			}
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("get Titolo l").log(Level.INFO, "titolo libro .",e);
 
-		}
-		return t;
+
 	}
 
 	public void aggiornaData(Libro l, Date sqlDate) throws SQLException {
-		int row=0;
-		query="update LIBRO set dataPubblicazione=? where idProd=? or idProd=?";
+		int row;
+		query="update LIBRO set dataPubblicazione=? where idLibro=? or idLibro=?";
 		try(Connection conn=ConnToDb.connectionToDB();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
+			PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 			prepQ.setDate(1, sqlDate);
 			prepQ.setInt(2, l.getId());
 			prepQ.setInt(3, vis.getId());
 			row=prepQ.executeUpdate();
-			
+
 		}
-		
+
 		java.util.logging.Logger.getLogger("aggiorna data").log(Level.INFO, "libri aggiornati {0}.",row);
 
 	}
-	//used for ricerca
-
-	public ObservableList<Raccolta> getLibriByName(Libro l) throws SQLException
-	{
-		ObservableList<Raccolta> catalogo=FXCollections.observableArrayList();
-
-		query="select * from LIBRO where titolo=? or autore=?";
-		try(Connection conn=ConnToDb.connectionToDB();
-			PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-
-			prepQ.setString(1,l.getTitolo());
-			prepQ.setString(2,l.getAutore());
-			ResultSet rs=prepQ.executeQuery();
-
-			while(rs.next())
-			{
-
-
-				f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(7), rs.getString(5), rs.getString(6),rs.getString(4), rs.getString(7));
-				f.createRaccoltaFinale2(LIBRO,rs.getInt(2),rs.getString(3),rs.getInt(10),rs.getInt(12),rs.getFloat(13),rs.getInt(14));
-				catalogo.add(f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11),rs.getInt(15)));
-
-
-
-			}
-
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("get libri").log(Level.INFO, ECCEZIONE, e);
-		}
-
-
-		return catalogo;
-	}
-
-	
 
 }
+

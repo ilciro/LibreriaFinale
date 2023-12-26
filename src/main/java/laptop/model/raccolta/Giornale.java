@@ -27,7 +27,7 @@ public class Giornale implements Raccolta{
 	private int id;
 	private static final String URLL="/home/daniele/Scaricati/libriPerSito/";
 
-	private String[] infoGenerali=new String[5];
+	private String[] infoGenerali=new String[4];
 
 	
 	public Giornale()
@@ -46,8 +46,8 @@ public class Giornale implements Raccolta{
 		this.id=id;
 		this.titolo=info[0];
 		this.tipologia=info[1];
-		this.editore=info[4];
-		this.lingua=info[3];
+		this.editore=info[3];
+		this.lingua=info[2];
 		
 
 

@@ -97,7 +97,7 @@ public class InserisciOggettoServlet extends HttpServlet {
 
 
                         l.setTitolo(lB.getTitoloB());
-                        l.setNumeroPagine(lB.getNumeroPagineB());
+                        l.setNrPagine(lB.getNumeroPagineB());
                         l.setCodIsbn(lB.getCodIsbnB());
                         l.setEditore(lB.getEditoreB());
                         l.setAutore(lB.getAutoreB());

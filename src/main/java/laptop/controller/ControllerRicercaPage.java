@@ -42,18 +42,18 @@ public class ControllerRicercaPage {
 			case "libro":
 				l.setTitolo(s);
 				l.setAutore(s);
-				r= lD.getLibriByName(l);
+				r= lD.getLibriIdTitoloAutore(l);
 				break;
 			case "giornale":
 				g.setEditore(s);
 				g.setTitolo(s);
-				r=gD.getGiornaliByName(g);
+				r=gD.getGiornaliIdTitoloAutore(g);
 				break;
 			case "rivista":
 				riv.setTitolo(s);
 				riv.setAutore(s);
 
-				r=rD.getRivisteByName(riv);
+				r=rD.getRivisteIdTitoloAutore(riv);
 				break;
 			default:return r;
 

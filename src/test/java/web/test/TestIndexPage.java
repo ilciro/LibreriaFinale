@@ -135,7 +135,9 @@ class TestIndexPage {
 
 
 
-        assertNotEquals(0,PropertyUtils.getProperty(lB,"idB"));
+
+
+      assertNotEquals(0,PropertyUtils.getProperty(lB,"idB"));
 
     }
 
@@ -187,8 +189,6 @@ class TestIndexPage {
         driver.findElement(By.id("buttonMod")).click();
         driver.findElement(By.id("listaB")).click();
 
-        //deuplicate
-        driver.findElement(By.id("listaB")).click();
 
 
 
@@ -257,8 +257,6 @@ class TestIndexPage {
         driver.findElement(By.id("buttonMod")).click();
         driver.findElement(By.id("listaB")).click();
 
-        //duplicate
-        driver.findElement(By.id("listaB")).click();
 
         //modif
 
@@ -352,6 +350,8 @@ class TestIndexPage {
 
         driver.findElement(By.id("idOgg")).sendKeys(PropertyUtils.getProperty(uB,"idB").toString());
         driver.findElement(By.id("elimina")).click();
+
+
         assertNotEquals(0,PropertyUtils.getProperty(uB,"idB"));
 
 
@@ -373,6 +373,8 @@ class TestIndexPage {
         driver.findElement(By.id("reportB")).click();
         //schermata report
         driver.findElement(By.id("buttonT")).click();
+
+
         assertNotEquals("",PropertyUtils.getProperty(tAB,"scriviB"));
 
     }
@@ -447,6 +449,8 @@ class TestIndexPage {
         String titolo=PropertyUtils.getProperty(sB,"titoloB").toString();
         driver.findElement(By.id("titoloL")).sendKeys(titolo);
         driver.findElement(By.id("downloadB")).click();
+
+
 
         assertEquals(1,PropertyUtils.getProperty(sB,"idB"));
 
@@ -554,6 +558,8 @@ class TestIndexPage {
         PropertyUtils.setProperty(nB,"validB",nD.getNegozi().get(1).getIsValid());
         driver.findElement(By.id("buttonNeg2")).click();
 
+
+
         assertEquals(1,PropertyUtils.getProperty(sB,"idB"));
     }
 
@@ -576,7 +582,7 @@ class TestIndexPage {
 
         PropertyUtils.setProperty(rB,"listaRivisteB", rD.getRiviste());
         PropertyUtils.setProperty(sB,"typeB", sB.getTypeB());
-        driver.findElement(By.id("idOgg")).sendKeys("2");
+        driver.findElement(By.id("idOgg")).sendKeys("1");
         int id=Integer.parseInt(driver.findElement(By.id("idOgg")).getAttribute("value"));
         PropertyUtils.setProperty(sB,"idB", id);
         PropertyUtils.setProperty(rB,"idB", id);
@@ -623,7 +629,9 @@ class TestIndexPage {
         driver.findElement(By.id("titoloL")).sendKeys(titolo);
         driver.findElement(By.id("annullaB")).click();
 
-        assertEquals(2,PropertyUtils.getProperty(sB,"idB"));
+
+
+        assertEquals(1,PropertyUtils.getProperty(sB,"idB"));
 
 
 
@@ -656,6 +664,8 @@ class TestIndexPage {
         driver.findElement(By.id("cercaB")).click();
         PropertyUtils.setProperty(lB,"titoloB",titoloLibro);
         l.setTitolo(PropertyUtils.getProperty(lB,"titoloB").toString());
+
+
         assertNotNull(lD.getLibriByName(l));
 
 
@@ -685,6 +695,8 @@ class TestIndexPage {
         driver.findElement(By.id("cercaB")).click();
         PropertyUtils.setProperty(lB,"titoloB",titoloLibro);
         l.setTitolo(PropertyUtils.getProperty(lB,"titoloB").toString());
+
+
         assertNotNull(lD.getLibriByName(l));
 
 
@@ -716,6 +728,8 @@ class TestIndexPage {
         driver.findElement(By.id("cercaB")).click();
         PropertyUtils.setProperty(gB,"editoreB",editoreGiornale);
         g.setEditore(PropertyUtils.getProperty(gB,"editoreB").toString());
+
+
         assertNotNull(gD.getGiornaliByName(g));
 
 
@@ -745,6 +759,8 @@ class TestIndexPage {
         driver.findElement(By.id("cercaB")).click();
         PropertyUtils.setProperty(gB,"titoloB",titoloGiornale);
         g.setTitolo(PropertyUtils.getProperty(gB,"titoloB").toString());
+
+
         assertNotNull(gD.getGiornaliByName(g));
 
 
@@ -775,6 +791,8 @@ class TestIndexPage {
         driver.findElement(By.id("cercaB")).click();
         PropertyUtils.setProperty(rB,"titoloB",titoloRivista);
         r.setTitolo(PropertyUtils.getProperty(rB,"titoloB").toString());
+
+
         assertNotNull(rD.getRivisteByName(r));
 
 
@@ -804,10 +822,13 @@ class TestIndexPage {
         driver.findElement(By.id("cercaB")).click();
         PropertyUtils.setProperty(rB,"autoreB",autoreRivista);
         r.setAutore(PropertyUtils.getProperty(rB,"autoreB").toString());
+
+
         assertNotNull(rD.getRivisteByName(r));
 
 
     }
+
 
 
 
@@ -822,5 +843,8 @@ class TestIndexPage {
 
 
 }
+
+
+
 
  */

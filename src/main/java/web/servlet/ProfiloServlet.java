@@ -24,9 +24,9 @@ public class ProfiloServlet extends HttpServlet{
      *
      */
     private static final long serialVersionUID = 1L;
-    private static PagamentoBean pB=new PagamentoBean();
-    private static PagamentoDao pD=new PagamentoDao();
-    private static String profilo="/profilo.jsp";
+    private final PagamentoBean pB=new PagamentoBean();
+    private final PagamentoDao pD=new PagamentoDao();
+    private final String profilo="/profilo.jsp";
     private final UserBean uB=UserBean.getInstance();
     private final SystemBean sB=SystemBean.getInstance();
     private final User u= User.getInstance() ;

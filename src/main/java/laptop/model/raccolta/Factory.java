@@ -25,57 +25,59 @@ public class Factory {
 
 	
 	
-	public String[] createRaccolta1(String titolo,String tipologia,String autore,String lingua,String editore,String categoria,String descrizione)  
+	public String[] createRaccolta1(String titolo,String isbn,String editore,String autore,String lingua,String categoria)
 	{
 		 String[] infoGenerali ;
 
 		
-		 infoGenerali=mp.popola1(titolo, tipologia, autore, lingua, editore, categoria, descrizione);
+		 infoGenerali=mp.popola1(titolo, isbn, editore, autore, lingua, categoria);
 
 		 return infoGenerali;
 		 
 	}
-	public String[] createRaccolta2(int numPag,String isbn,int nrCopie,int disp,float prezzo,int copieRim)
+	public String[] createRaccolta2(int numPag,int nrCopie,int disp,float prezzo,int id)
 	{
 		 String[] infoCosti;
 
-		 infoCosti= mp.popola2(numPag, isbn, nrCopie, disp, prezzo, copieRim);
+		 infoCosti= mp.popola2(numPag, nrCopie, disp, prezzo,id);
 
 		 return infoCosti;
 	}
 	
 	
-	public void createRaccoltaFinale1(String tipologiaO,String titolo,String tipologia,String autore,String lingua,String editore,String categoria) 
+	public void createRaccoltaFinale1(String tipologiaO,String titolo,String isbn,String editore,String autore,String lingua,String categoria)
 	{
 		if(tipologiaO.equals(LIBRO))
 		{
-				l.setInfoGenerali(createRaccolta1(titolo, tipologia, autore, lingua, editore, categoria,autore));
+				l.setInfoGenerali(createRaccolta1(titolo, isbn, editore, autore, lingua,categoria));
 		}
 		if(tipologiaO.equals(GIORNALE))
 		{
 
-				g.setInfoGenerali(createRaccolta1(titolo, tipologia, null, lingua, editore, null,null));
+				g.setInfoGenerali(createRaccolta1(titolo, null, editore, null, lingua, categoria));
 
 		}
 		if(tipologiaO.equals(RIVISTA))
 		{
-				r.setInfoGenerali(createRaccolta1(titolo, tipologia, autore, lingua, editore, categoria,null));
+				r.setInfoGenerali(createRaccolta1(titolo, null, editore, autore, lingua, categoria));
 		}
 		
 	}
 	
-	public void createRaccoltaFinale2(String tipologiaO,int numPag,String isbn,int nrCopie,int disp,float prezzo,int copieRim) 
+	public void createRaccoltaFinale2(String tipologiaO,int numPag,int nrCopie,int disp,float prezzo,int id)
 	{
 		if(tipologiaO.equals(LIBRO))	
 		{
-				l.setInfoCostiDisp(createRaccolta2(numPag, isbn,nrCopie,disp,prezzo,copieRim));
+				l.setInfoCostiDisp(createRaccolta2(numPag,nrCopie,disp,prezzo,id));
 				
 		}
 		if (tipologiaO.equals(GIORNALE))
 			{
+				g.setCopieRimanenti(nrCopie);
 			g.setDisponibilita(disp);
 			g.setPrezzo(prezzo);
-			g.setCopieRimanenti(copieRim);
+			g.setId(id);
+
 			
 			
 			}	
@@ -83,13 +85,14 @@ public class Factory {
 		{
 			r.setDisp(disp);
 			r.setPrezzo(prezzo);
-			r.setCopieRim(copieRim);
+			r.setCopieRim(nrCopie);
+			r.setId(id);
 		}
 	}
 	
 	
 	
-	public Raccolta createRaccoltaFinaleCompleta(String tipologiaO,LocalDate dataPubb,String recensione,String descrizione,int id) 
+	public Raccolta createRaccoltaFinaleCompleta(String tipologiaO,LocalDate dataPubb,String recensione,String descrizione)
 	{
 		switch(tipologiaO)
 		{
@@ -97,15 +100,12 @@ public class Factory {
 				l.setDataPubb(dataPubb);
 				l.setRecensione(recensione);
 				l.setDesc(descrizione);
-				l.setId(id);
-				return  new Libro(l.getInfoGenerali(),l.getDataPubb(),l.getRecensione(),l.getId(),l.getDesc(),l.getInfoCostiDisp());
+				return  new Libro(l.getInfoGenerali(),l.getDataPubb(),l.getRecensione(),l.getDesc(),l.getInfoCostiDisp());
 			case GIORNALE:
 				g.setDataPubb(dataPubb);
-				g.setId(id);
 				return new Giornale(g.getInfoGenerali(),g.getDataPubb(),g.getCopieRimanenti(),g.getDisponibilita(),g.getPrezzo(),g.getId());
 			case RIVISTA:
 				r.setDataPubb(dataPubb);
-				r.setId(id);
 				r.setDescrizione(descrizione);
 				return new Rivista(r.getInfoGenerali(), r.getDescrizione(), r.getDataPubb(),r.getDisp(),r.getPrezzo() ,r.getCopieRim(),r.getId());
 		
@@ -132,10 +132,10 @@ public class Factory {
 	
 	
 	
-	public Raccolta creaLibro(String[] info,LocalDate dataPubb,String recensione,int id,String desc,String []infoCosti)
+	public Raccolta creaLibro(String[] info,LocalDate dataPubb,String recensione,String desc,String []infoCosti)
 	{
 
-		return new Libro(info,dataPubb,recensione,id,desc,infoCosti);
+		return new Libro(info,dataPubb,recensione,desc,infoCosti);
 	}
 	
 	public Raccolta creaGiornale(String[] info,LocalDate dataPubb,int nrCopie, int disponibilita, float prezzo, int id)

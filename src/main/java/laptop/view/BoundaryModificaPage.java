@@ -164,8 +164,11 @@ public class BoundaryModificaPage implements Initializable {
                 infoCostoDisp[1] = cod;
                 infoCostoDisp[4] = String.valueOf(prezzo);
                 infoCostoDisp[5] = String.valueOf(copie);
+				if(!cMP.checkDataL(infoGen, r, desc, d, infoCostoDisp))
+				{
+					java.util.logging.Logger.getLogger("Test modif book").log(Level.SEVERE,"\n not modified {0}");
 
-                cMP.checkDataL(infoGen, r, desc, d, infoCostoDisp);
+				}
             }
             case "giornale" -> {
                 String t = titoloT.getText();
@@ -252,7 +255,7 @@ public class BoundaryModificaPage implements Initializable {
 			if(vis.getType().equals("libro"))
 			{
 				labelT.setText(cMP.getLibriById(vis.getId()).get(0).getTitolo());
-				labelNP.setText(String.valueOf(cMP.getLibriById(vis.getId()).get(0).getNumeroPagine()));
+				labelNP.setText(String.valueOf(cMP.getLibriById(vis.getId()).get(0).getNrPagine()));
 				labelCod.setText(cMP.getLibriById(vis.getId()).get(0).getCodIsbn());
 				labelE.setText(cMP.getLibriById(vis.getId()).get(0).getEditore());
 				labelA.setText(cMP.getLibriById(vis.getId()).get(0).getAutore());

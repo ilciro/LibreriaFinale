@@ -1,17 +1,13 @@
 package web.servlet;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.logging.Level;
 
-import javafx.collections.ObservableList;
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
 import laptop.database.RivistaDao;
 import laptop.model.raccolta.Giornale;
 import laptop.model.raccolta.Libro;
 import laptop.model.raccolta.Rivista;
-import web.bean.LibroBean;
 import web.bean.RicercaBean;
 import web.bean.SystemBean;
 import jakarta.servlet.RequestDispatcher;
@@ -48,75 +44,68 @@ public class RicercaCatalogoServlet extends HttpServlet {
         String indietro=req.getParameter("buttonI");
         String type=SystemBean.getInstance().getTypeB();
 
-        try {
-            if(cercaB!=null && cercaB.equals("cerca"))
-            {
-                switch(type)
-                {
-                    case LIBRO:
-
-                        rB.setTitoloB(titolo);
-                        rB.setAutoreB(titolo);
-                        l.setAutore(rB.getAutoreB());
-                        l.setTitolo(rB.getTitoloB());
-                        rB.setListaB(lD.getLibriByName(l));
-                        break;
-                    case GIORNALE:
-                        rB.setTitoloB(titolo);
-                        rB.setEditoreB(titolo);
-                        g.setTitolo(rB.getTitoloB());
-                        g.setEditore(rB.getEditoreB());
-                        rB.setListaB(gD.getGiornaliByName(g));
-                        break;
-                    case RIVISTA:
-                        rB.setTitoloB(titolo);
-                        rB.setAutoreB(titolo);
-                        r.setAutore(rB.getAutoreB());
-                        r.setTitolo(rB.getTitoloB());
-                        rB.setListaB(rD.getRivisteByName(r));
-                        break;
-                    default:break;
-
-                }
-                req.setAttribute("beanRicerca",rB);
-                req.setAttribute("beanS",SystemBean.getInstance());
-                RequestDispatcher view=getServletContext().getRequestDispatcher("/ricercaInCatalogo.jsp");
-                view.forward(req, resp);
-            }
-            if(indietro!=null && indietro.equals("indietro"))
-            {
-                RequestDispatcher view=getServletContext().getRequestDispatcher("/ricerca.jsp");
-                view.forward(req, resp);
-            }
-            if(visualizza!=null && visualizza.equals("visualizza"))
-            {
-                RequestDispatcher view;
-                switch(type)
-                {
-                    case LIBRO:
-                        view=getServletContext().getRequestDispatcher("/libri.jsp");
-                        view.forward(req, resp);
-                        break;
-                    case GIORNALE:
-                        view=getServletContext().getRequestDispatcher("/giornali.jsp");
-                        view.forward(req, resp);
-                        break;
-                    case RIVISTA:
-                        view=getServletContext().getRequestDispatcher("/riviste.jsp");
-                        view.forward(req, resp);
-                        break;
-                    default:break;
-
-                }
-            }
-
-
-
-        }catch(SQLException e)
+        if(cercaB!=null && cercaB.equals("cerca"))
         {
-            java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+            switch(type)
+            {
+                case LIBRO:
 
+                    rB.setTitoloB(titolo);
+                    rB.setAutoreB(titolo);
+                    l.setAutore(rB.getAutoreB());
+                    l.setTitolo(rB.getTitoloB());
+                    rB.setListaB(lD.getLibriIdTitoloAutore(l));
+                    break;
+                case GIORNALE:
+                    rB.setTitoloB(titolo);
+                    rB.setEditoreB(titolo);
+                    g.setTitolo(rB.getTitoloB());
+                    g.setEditore(rB.getEditoreB());
+                    rB.setListaB(gD.getGiornaliIdTitoloAutore(g));
+                    break;
+                case RIVISTA:
+                    rB.setTitoloB(titolo);
+                    rB.setAutoreB(titolo);
+                    r.setAutore(rB.getAutoreB());
+                    r.setTitolo(rB.getTitoloB());
+                    rB.setListaB(rD.getRivisteIdTitoloAutore(r));
+                    break;
+                default:break;
+
+            }
+            req.setAttribute("beanRicerca",rB);
+            req.setAttribute("beanS",SystemBean.getInstance());
+            RequestDispatcher view=getServletContext().getRequestDispatcher("/ricercaInCatalogo.jsp");
+            view.forward(req, resp);
         }
+        if(indietro!=null && indietro.equals("indietro"))
+        {
+            RequestDispatcher view=getServletContext().getRequestDispatcher("/ricerca.jsp");
+            view.forward(req, resp);
+        }
+        if(visualizza!=null && visualizza.equals("visualizza"))
+        {
+            RequestDispatcher view;
+            switch(type)
+            {
+                case LIBRO:
+                    view=getServletContext().getRequestDispatcher("/libri.jsp");
+                    view.forward(req, resp);
+                    break;
+                case GIORNALE:
+                    view=getServletContext().getRequestDispatcher("/giornali.jsp");
+                    view.forward(req, resp);
+                    break;
+                case RIVISTA:
+                    view=getServletContext().getRequestDispatcher("/riviste.jsp");
+                    view.forward(req, resp);
+                    break;
+                default:break;
+
+            }
+        }
+
+
     }
 
 

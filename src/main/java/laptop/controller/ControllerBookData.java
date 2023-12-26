@@ -11,7 +11,7 @@ public class ControllerBookData {
 	public Libro  checkBookData(String []info,String recensione,String descrizione,LocalDate data,String[] infoCosti)
 	{
 		l.setTitolo(info[0]);
-		l.setNumeroPagine(Integer.parseInt(infoCosti[0]));
+		l.setNrPagine(Integer.parseInt(infoCosti[0]));
 		l.setCodIsbn(infoCosti[1]);
 		l.setEditore(info[4]);
 		l.setAutore(info[2]);
@@ -23,6 +23,8 @@ public class ControllerBookData {
 		l.setDisponibilita(Integer.parseInt(infoCosti[3]));
 		l.setPrezzo(Float.parseFloat(infoCosti[4]));
 		l.setNrCopie(Integer.parseInt(infoCosti[5]));
+
+
 		return l;
 	}
 	public ControllerBookData()

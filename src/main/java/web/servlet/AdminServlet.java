@@ -56,16 +56,16 @@ public class AdminServlet extends HttpServlet {
 
             } else {
 
-                UserBean.getInstance().setIdB(-1);
-                UserBean.getInstance().setNomeB(null);
-                UserBean.getInstance().setCognomeB(null);
-                UserBean.getInstance().setDataDiNascitaB(null);
-                UserBean.getInstance().setDescrizioneB(null);
-                UserBean.getInstance().setEmailB("");
-                UserBean.getInstance().setPassB("");
+                uB.setIdB(-1);
+                uB.setNomeB(null);
+                uB.setCognomeB(null);
+                uB.setDataDiNascitaB(null);
+                uB.setDescrizioneB(null);
+                uB.setEmailB("");
+                uB.setPassB("");
 
 
-                java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, "stai sloggando {0}", UserBean.getInstance().getEmailB());
+                java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, "stai sloggando {0}", uB.getEmailB());
                 sB.setLoggedB(false);
 
                  view = getServletContext().getRequestDispatcher("/index.jsp");

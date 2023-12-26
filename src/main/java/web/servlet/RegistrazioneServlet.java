@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
-import java.util.regex.Pattern;
 
 import web.bean.UserBean;
 import jakarta.servlet.RequestDispatcher;

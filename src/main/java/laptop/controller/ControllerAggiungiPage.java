@@ -72,19 +72,13 @@ public class ControllerAggiungiPage {
 	{
 
 
-		if( infoCosti[1].length()>10 || data==null )
-		{
-			return status;
+        if (infoCosti[1].length() <= 10 && data != null) {
 
-		}
-		else
-		{
+            status = lD.creaLibrio(cBD.checkBookData(info, recensione, descrizione, data, infoCosti));
 
-			status =lD.creaLibrio(cBD.checkBookData(info, recensione, descrizione, data, infoCosti));
-
-			return status;
-		}
-	}
+        }
+        return status;
+    }
 	// qui chiamo la funzione del dao
 	
 	public ControllerAggiungiPage()

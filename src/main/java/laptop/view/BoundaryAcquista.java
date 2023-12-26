@@ -99,7 +99,7 @@ public class BoundaryAcquista implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonCC.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("pagamentoCC.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("pagamentoCC.fxml")));
 		stage.setTitle("Benvenuto nella schermata dell'acquisto con carta credito");
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -123,7 +123,7 @@ public class BoundaryAcquista implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonCC.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("acquista.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("acquista.fxml")));
 			stage.setTitle("Benvenuto nella schermata di acquisto");
 			scene = new Scene(root);
 			stage.setScene(scene);
@@ -139,7 +139,7 @@ public class BoundaryAcquista implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonCash.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("pagamentoContrassegno.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("pagamentoContrassegno.fxml")));
 		stage.setTitle("Benvenuto nella schermata dell'acquisto in contanti");
 
 		scene = new Scene(root);
@@ -154,7 +154,7 @@ public class BoundaryAcquista implements Initializable {
 	@FXML
 	private void importo() throws  SQLException, NumberFormatException, IdException, AcquistaException {
 		
-		if (!nome.getText().equals("")) {
+		if (!nome.getText().isEmpty()) {
 			buttonCC.setDisable(false);
 			buttonCash.setDisable(false);
 
@@ -189,7 +189,7 @@ public class BoundaryAcquista implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) link.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("homePageAfterLogin.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePageAfterLogin.fxml")));
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
@@ -199,7 +199,7 @@ public class BoundaryAcquista implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) link.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("homePage.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePage.fxml")));
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();

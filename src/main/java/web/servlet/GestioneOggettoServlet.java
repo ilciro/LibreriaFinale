@@ -9,7 +9,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
 import laptop.database.RivistaDao;
-import laptop.exception.IdException;
 import laptop.model.raccolta.Giornale;
 import laptop.model.raccolta.Libro;
 import laptop.model.raccolta.Rivista;
@@ -27,7 +26,7 @@ public class GestioneOggettoServlet extends HttpServlet {
     private final Libro l=new Libro();
     private final LibroDao lD=new LibroDao();
     private final GiornaleDao gD=new GiornaleDao();
-    private Giornale g=new Giornale();
+    private final Giornale g=new Giornale();
     private final Rivista r=new Rivista();
     private final RivistaDao rD=new RivistaDao();
     private final LibroBean lB=new LibroBean();

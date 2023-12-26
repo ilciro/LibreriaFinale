@@ -49,7 +49,7 @@ public class BoundaryAdminPage {
 		Stage stage;
 		Parent root;
 		stage = (Stage) raccoltaB.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("raccoltaPage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("raccoltaPage.fxml")));
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
@@ -61,7 +61,7 @@ public class BoundaryAdminPage {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonU.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("userPage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("userPage.fxml")));
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
@@ -72,7 +72,7 @@ public class BoundaryAdminPage {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonR.getScene().getWindow();
-		root = FXMLLoader.load(getClass().getClassLoader().getResource("reportPage.fxml"));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("reportPage.fxml")));
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();

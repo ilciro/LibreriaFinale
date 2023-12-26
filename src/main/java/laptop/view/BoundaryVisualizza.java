@@ -140,7 +140,7 @@ public class BoundaryVisualizza implements Initializable {
 			{
 		
 				labelTitolo.setText(cV.getDataL(i).getTitolo());
-				labelNumeroPagine.setText(String.valueOf(cV.getDataL(i).getNumeroPagine()));
+				labelNumeroPagine.setText(String.valueOf(cV.getDataL(i).getNrPagine()));
 				labelCodiceISBN.setText(cV.getDataL(i).getCodIsbn());
 				labelEditore.setText(cV.getDataL(i).getEditore());
 				labelAutore.setText(cV.getDataL(i).getAutore());

@@ -46,7 +46,7 @@ public class ControllerCheckPagamentoData {
 				checkID(vis.getId());
 				p.setAmmontare(vis.getSpesaT());
 				p.setId(l.getId());
-				p.setTipo(lD.retTip(l));
+				p.setTipo(lD.getData(l).getCategoria());
 				break;
 			}
 			case "giornale" :
@@ -55,7 +55,7 @@ public class ControllerCheckPagamentoData {
 				checkID(vis.getId());
 				p.setAmmontare(vis.getSpesaT());
 				p.setId(g.getId());
-				p.setTipo(gD.retTip(g));
+				p.setTipo(gD.getData(g).getTipologia());
 				break;
 			}
 			case "rivista":
@@ -64,7 +64,7 @@ public class ControllerCheckPagamentoData {
 				checkID(vis.getId());
 				p.setAmmontare(vis.getSpesaT());
 				p.setId(r.getId());
-				p.setTipo(rD.retTip(r));
+				p.setTipo(rD.getData(r).getTipologia());
 				break;
 			}
 			default: break;

@@ -48,7 +48,7 @@ public class ControllerAcquista {
 				l.setTitolo(titolo);
 				l.setNrCopie(quantita);
 				vis.setQuantita(quantita);
-				 x = lD.getCosto(l);
+				 x = lD.getData(l).getPrezzo();
 				lD.aggiornaDisponibilita(l);
 				break;
 			}
@@ -59,7 +59,7 @@ public class ControllerAcquista {
 				g.setId(vis.getId());
 				g.setCopieRimanenti(quantita);
 				vis.setQuantita(disp);
-				x = gD.getCosto(g);
+				x = gD.getData(g).getPrezzo();
 				gD.aggiornaDisponibilita(g);
 				break;
 			}
@@ -70,7 +70,7 @@ public class ControllerAcquista {
 				r.setId(vis.getId());
 				r.setCopieRim(quantita);
 				vis.setQuantita(disp);
-				x= rD.getCosto(r);
+				x= rD.getData(r).getPrezzo();
 				rD.aggiornaDisponibilita(r);
 				break;
 			}
@@ -112,19 +112,19 @@ public class ControllerAcquista {
 			case LIBRO:
 
 				l.setId(vis.getId());
-				rimanenza=lD.getQuantita(l);
+				rimanenza=lD.getData(l).getNrCopie();
 				checkRimanenza(rimanenza,i);
 				break;
 			case GIORNALE:
 
 				g.setId(vis.getId());
-				rimanenza=gD.getQuantita(g);
+				rimanenza=gD.getData(g).getCopieRimanenti();
 				checkRimanenza(rimanenza,i);
 				break;
 			case RIVISTA:
 
 				r.setId(vis.getId());
-				rimanenza=rD.getQuantita(r);
+				rimanenza=rD.getData(r).getCopieRim();
 				checkRimanenza(rimanenza,i);
 				break;
 			default: throw new IdException("incorrect id");
@@ -148,16 +148,16 @@ public class ControllerAcquista {
 		if(type.equals(LIBRO))
 		{
 			l.setId(id);
-			name = lD.getNome(l);
+			name = lD.getData(l).getTitolo();
 		}
 		else if(type.equals(GIORNALE)) {
 			g.setId(id);
-			name = gD.getNome(g);
+			name = gD.getData(g).getTitolo();
 		}
 		else if(type.equals(RIVISTA))
 		{
 			r.setId(id);
-			name = rD.getNome(r);
+			name = rD.getData(r).getTitolo();
 			
 		}
 		return name ;
@@ -176,15 +176,15 @@ public class ControllerAcquista {
 		{
 			case LIBRO :
 				l.setId(id);
-				costo=lD.getCosto(l);
+				costo=lD.getData(l).getPrezzo();
 				break;
 			case GIORNALE:
 				g.setId(id);
-				costo=gD.getCosto(g);
+				costo=gD.getData(g).getPrezzo();
 				break;
 			case RIVISTA:
 				r.setId(id);
-				costo=rD.getCosto(r);
+				costo=rD.getData(r).getPrezzo();
 				break;
 			default: return costo;
 		}
@@ -201,15 +201,15 @@ public class ControllerAcquista {
 		{
 			case LIBRO:
 				l.setId(vis.getId());
-				disp=lD.getQuantita(l);
+				disp=lD.getData(l).getDisponibilita();
 				break;
 			case GIORNALE:
 				g.setId(vis.getId());
-				disp=gD.getQuantita(g);
+				disp=gD.getData(g).getDisponibilita();
 				break;
 			case RIVISTA:
 				r.setId(vis.getId());
-				disp=rD.getQuantita(r);
+				disp=rD.getData(r).getDisp();
 				break;
 			default:checkID(vis.getId());
 				return disp;

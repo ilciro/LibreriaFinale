@@ -26,14 +26,14 @@ public class FatturaServlet extends HttpServlet{
      *
      */
     private static final long serialVersionUID = 1L;
-    private static FatturaBean fB=new FatturaBean();
-    private static  Fattura f=new Fattura();
+    private final FatturaBean fB=new FatturaBean();
+    private final  Fattura f=new Fattura();
 
-    private static LibroBean lB=new LibroBean();
-    private static PagamentoDao pD=new PagamentoDao();
-    private static ContrassegnoDao fD=new ContrassegnoDao();
-    private static Pagamento p=new Pagamento();
-    private static PagamentoBean pB=new PagamentoBean();
+    private final LibroBean lB=new LibroBean();
+    private final PagamentoDao pD=new PagamentoDao();
+    private final ContrassegnoDao fD=new ContrassegnoDao();
+    private final Pagamento p=new Pagamento();
+    private final PagamentoBean pB=new PagamentoBean();
 
 
     @Override
