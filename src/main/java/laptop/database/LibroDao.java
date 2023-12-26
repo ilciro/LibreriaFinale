@@ -41,7 +41,7 @@ public class LibroDao {
 
 	public Libro getData(Libro l) {
 
-		String query ="select * from LIBRO where idLibro=? or idLibro=?";
+		 query ="select * from LIBRO where idLibro=? or idLibro=?";
 
 		try (Connection conn = ConnToDb.connectionToDB();
 			PreparedStatement prepQ= conn.prepareStatement(query))  {
@@ -121,7 +121,7 @@ public class LibroDao {
 
 			}
 		} catch (SQLException e) {
-			java.util.logging.Logger.getLogger("get data").log(Level.INFO, ECCEZIONE, e);
+			java.util.logging.Logger.getLogger("get libri obs").log(Level.INFO, ECCEZIONE, e);
 		}
 		return catalogo;
 	}
@@ -153,7 +153,7 @@ public class LibroDao {
 
 			}
 		} catch (SQLException e) {
-			java.util.logging.Logger.getLogger("get data").log(Level.INFO, ECCEZIONE, e);
+			java.util.logging.Logger.getLogger("get libro id autore obes").log(Level.INFO, ECCEZIONE, e);
 		}
 		return catalogo;
 	}
@@ -263,13 +263,9 @@ public class LibroDao {
 	{
 
 
-		//int rowAffected=0;
+		int rowAffected=0;
 		boolean status=false;
 
-
-		System.out.println("libro id nel dao:"+ l.getId());
-		System.out.println("libro titolo nel dao:"+ l.getTitolo());
-		System.out.println("libro data nel dao:"+ l.getDataPubb());
 
 
 		query=" UPDATE LIBRO SET  `titolo` =?, `numeroPagine` = ?, `Cod_isbn` = ?, `editore` = ?, `autore` = ?, `lingua` = ?, `categoria` = ?, `dataPubblicazione` = ?, `recensione` = ?, `copieVendute` = ?, `breveDescrizione` =?, `disp` = ?,`prezzo` = ?,`copieRimanenti` =? WHERE `idLibro`= ? ";
@@ -294,10 +290,11 @@ public class LibroDao {
 			prepQ.setInt(15, l.getId());
 
 
+			rowAffected=prepQ.executeUpdate();
 
-			System.out.println("rows aff"+ prepQ.executeUpdate());
 
-			if(prepQ.executeUpdate()==1)
+
+			if(rowAffected==1)
 			{
 				status=true;
 			}
@@ -313,7 +310,7 @@ public class LibroDao {
 
 
 
-		//java.util.logging.Logger.getLogger("Aggiornamento libro").log(Level.INFO, "row affected {0}",rowAffected);
+		java.util.logging.Logger.getLogger("Aggiornamento libro").log(Level.INFO, "row affected {0}",rowAffected);
 		return status;
 
 	}

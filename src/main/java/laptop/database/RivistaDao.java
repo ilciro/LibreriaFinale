@@ -32,7 +32,7 @@ public class 	RivistaDao {
 	private ControllerSystemState vis=ControllerSystemState.getInstance();
 	private  final String Rivista="Rivista";
 
-	private final String ECCEZIONE="eccezione generata:";
+	private static final String ECCEZIONE="eccezione generata:";
 
 
 	public RivistaDao (){
@@ -40,7 +40,7 @@ public class 	RivistaDao {
 	}
 	public Rivista getData(Rivista r) {
 
-		String query ="select * from RIVISTA where idRivista=? or idRivista=?";
+		 query ="select * from RIVISTA where idRivista=? or idRivista=?";
 
 		try (Connection conn = ConnToDb.connectionToDB();
 			 PreparedStatement prepQ= conn.prepareStatement(query))  {
@@ -117,7 +117,7 @@ public class 	RivistaDao {
 
 			}
 		} catch (SQLException e) {
-			java.util.logging.Logger.getLogger("get data").log(Level.INFO, ECCEZIONE, e);
+			java.util.logging.Logger.getLogger("get data riviste obs").log(Level.INFO, ECCEZIONE, e);
 		}
 		return catalogo;
 	}
@@ -147,7 +147,7 @@ public class 	RivistaDao {
 
 			}
 		} catch (SQLException e) {
-			java.util.logging.Logger.getLogger("get data").log(Level.INFO, ECCEZIONE, e);
+			java.util.logging.Logger.getLogger("get data rivista obs").log(Level.INFO, ECCEZIONE, e);
 		}
 		return catalogo;
 	}

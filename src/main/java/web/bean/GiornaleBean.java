@@ -87,7 +87,7 @@ public class GiornaleBean {
         return idB;
     }
 
-    public void setIdB(int idB) throws SQLException {
+    public void setIdB(int idB)  {
         if(idB<1 )
         {
             this.idB=0;

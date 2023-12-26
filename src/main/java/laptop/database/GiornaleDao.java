@@ -31,7 +31,9 @@ public class GiornaleDao {
 	private boolean state=false;
 	private ControllerSystemState vis=ControllerSystemState.getInstance();
 	private static final String GIORNALE = "giornale";
-	private final String ECCEZIONE="eccezione generata:";
+	private static final String ECCEZIONE="eccezione generata:";
+
+
 
 	public GiornaleDao ()
 	{
@@ -40,7 +42,7 @@ public class GiornaleDao {
 
 	public Giornale getData(Giornale g) {
 
-		String query ="select * from GIORNALE where idGiornale=? or idGiornale=?";
+		 query ="select * from GIORNALE where idGiornale=? or idGiornale=?";
 
 		try (Connection conn = ConnToDb.connectionToDB();
 			 PreparedStatement prepQ= conn.prepareStatement(query))  {
@@ -117,7 +119,7 @@ public class GiornaleDao {
 
 			}
 		} catch (SQLException e) {
-			java.util.logging.Logger.getLogger("get data").log(Level.INFO, ECCEZIONE, e);
+			java.util.logging.Logger.getLogger("get giornale id").log(Level.INFO, ECCEZIONE, e);
 		}
 		return catalogo;
 	}
@@ -147,7 +149,7 @@ public class GiornaleDao {
 
 			}
 		} catch (SQLException e) {
-			java.util.logging.Logger.getLogger("get data").log(Level.INFO, ECCEZIONE, e);
+			java.util.logging.Logger.getLogger("get giornale titolo id").log(Level.INFO, ECCEZIONE, e);
 		}
 		return catalogo;
 	}

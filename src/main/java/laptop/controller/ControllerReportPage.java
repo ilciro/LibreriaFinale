@@ -27,12 +27,12 @@ public class ControllerReportPage {
 	public void generaReportUtenti() throws IOException, SQLException  {
 		UsersDao.getListaUtenti();
 	}
-	public void generaReportRiviste () throws IOException, SQLException
+	public void generaReportRiviste () throws IOException
 	{
 		rD.generaReport();
 		
 	}
-	public void generaReportGiornali () throws IOException, SQLException
+	public void generaReportGiornali () throws IOException
 	{
 		gD.generaReport();
 		
