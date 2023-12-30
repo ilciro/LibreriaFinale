@@ -122,10 +122,14 @@ public class BoundaryGestionePage implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
-		
-		cGP=new ControllerGestionePage();
-		header.setText(cGP.settaHeader(vis.getType()));
+
+
+        try {
+            cGP=new ControllerGestionePage();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        header.setText(cGP.settaHeader(vis.getType()));
 		
 		titolo.setCellValueFactory(new PropertyValueFactory<>("titolo"));
 		if(vis.getType().equals("libro") || vis.getType().equals("rivista"))

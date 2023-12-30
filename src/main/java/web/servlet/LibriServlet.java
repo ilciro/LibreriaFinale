@@ -26,6 +26,9 @@ public class LibriServlet extends HttpServlet {
     private final SystemBean sB=SystemBean.getInstance();
     private final AcquistaBean aB=new AcquistaBean();
 
+    public LibriServlet() throws IOException {
+    }
+
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

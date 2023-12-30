@@ -1,5 +1,6 @@
 package laptop.controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import laptop.database.GiornaleDao;
@@ -73,8 +74,7 @@ public class ControllerCheckPagamentoData {
 		
 		
 	}
-	public ControllerCheckPagamentoData()
-	{
+	public ControllerCheckPagamentoData() throws IOException {
 		l=new Libro();
 		g=new Giornale();
 		r=new Rivista();

@@ -1,5 +1,6 @@
 package laptop.controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import laptop.database.ContrassegnoDao;
@@ -43,7 +44,7 @@ public class ControllerPagamentoCash {
 			
 	}
 
-	public ControllerPagamentoCash()  {
+	public ControllerPagamentoCash() throws IOException {
 		cD = new ContrassegnoDao();
 		f = new Fattura();
 		cCPD=new ControllerCheckPagamentoData();

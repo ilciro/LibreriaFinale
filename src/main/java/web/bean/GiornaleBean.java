@@ -1,12 +1,10 @@
 package web.bean;
 
 import javafx.collections.ObservableList;
-import laptop.database.GiornaleDao;
 import laptop.exception.IdException;
 import laptop.model.raccolta.Raccolta;
 
 import java.sql.Date;
-import java.sql.SQLException;
 
 public class GiornaleBean {
 

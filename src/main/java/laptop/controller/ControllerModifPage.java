@@ -1,5 +1,6 @@
 package laptop.controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
@@ -77,8 +78,7 @@ public class ControllerModifPage {
 		
 	
 	
-	public ControllerModifPage()
-	{
+	public ControllerModifPage() throws IOException {
 		ld=new LibroDao();
 		l=new Libro();
 		g=new Giornale();

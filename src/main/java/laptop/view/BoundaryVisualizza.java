@@ -88,8 +88,7 @@ public class BoundaryVisualizza implements Initializable {
 	private static String indisponibile="not found";
 
 	
-	public BoundaryVisualizza()
-	{
+	public BoundaryVisualizza() throws IOException {
 		cV = new ControllerVisualizza();
 	}
 	

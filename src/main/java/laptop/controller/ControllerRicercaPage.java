@@ -1,5 +1,6 @@
 package laptop.controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import javafx.collections.ObservableList;
@@ -20,8 +21,7 @@ public class ControllerRicercaPage {
 	private Libro l;
 	private Giornale g;
 	private Rivista riv;
-	public ControllerRicercaPage()
-	{
+	public ControllerRicercaPage() throws IOException {
 		lD = new LibroDao();
 		gD = new GiornaleDao();
 		rD =new RivistaDao();

@@ -7,6 +7,7 @@ import laptop.model.User;
 import laptop.model.raccolta.Libro;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -32,6 +33,9 @@ public class TestLoginAdminRaccoltaLibri {
     private final LibroDao lD=new LibroDao();
     private final ResourceBundle rBUser=ResourceBundle.getBundle("configurations/users");
     private final ResourceBundle rBLibro=ResourceBundle.getBundle("configurations/books");
+
+    public TestLoginAdminRaccoltaLibri() throws IOException {
+    }
 
     //test for controller login
 

@@ -38,6 +38,9 @@ public class DownloadServlet extends HttpServlet{
 
     private final String index="/index.jsp";
 
+    public DownloadServlet() throws IOException {
+    }
+
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

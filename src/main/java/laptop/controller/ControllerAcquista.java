@@ -1,5 +1,6 @@
 package laptop.controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 
@@ -91,7 +92,7 @@ public class ControllerAcquista {
 
 
 
-	public ControllerAcquista()    {
+	public ControllerAcquista() throws IOException {
 		lD = new LibroDao();
 		gD = new GiornaleDao();
 		rD = new RivistaDao();

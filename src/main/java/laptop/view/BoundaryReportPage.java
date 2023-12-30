@@ -100,9 +100,13 @@ public class BoundaryReportPage implements Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
-		cRP=new ControllerReportPage();
-		
-	}
+
+        try {
+            cRP=new ControllerReportPage();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 
 }

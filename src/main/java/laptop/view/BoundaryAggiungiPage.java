@@ -228,8 +228,12 @@ public class BoundaryAggiungiPage implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		cAP=new ControllerAggiungiPage();
-		if(ControllerSystemState.getInstance().getType().equals("libro"))
+        try {
+            cAP=new ControllerAggiungiPage();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        if(ControllerSystemState.getInstance().getType().equals("libro"))
 		{
 		
 		categoriaList.setItems(items);

@@ -40,6 +40,8 @@ public class AcquistaServlet extends HttpServlet {
     private final GiornaleBean gB=new GiornaleBean();
     private final SystemBean sB=SystemBean.getInstance();
 
+    public AcquistaServlet() throws IOException {
+    }
 
 
     @Override
@@ -164,7 +166,7 @@ public class AcquistaServlet extends HttpServlet {
             }
 
 
-        } catch (NumberFormatException | SQLException e) {
+        } catch (NumberFormatException e) {
             aB.setMexB(new IdException("quantita eccede la scorta nel magazzino"));
             req.setAttribute("beanA",aB);
             RequestDispatcher view = getServletContext().getRequestDispatcher("/acquista.jsp");

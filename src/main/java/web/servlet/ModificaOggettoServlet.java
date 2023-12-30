@@ -34,6 +34,10 @@ public class ModificaOggettoServlet extends HttpServlet {
     private final RivistaDao rD=new RivistaDao();
     private final Rivista r=new Rivista();
     private final RivistaBean rB=new RivistaBean();
+
+    public ModificaOggettoServlet() throws IOException {
+    }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String lista=req.getParameter("listaB");

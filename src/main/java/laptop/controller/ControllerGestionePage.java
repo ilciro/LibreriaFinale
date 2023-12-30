@@ -1,5 +1,6 @@
 package laptop.controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import javafx.collections.FXCollections;
@@ -60,8 +61,7 @@ public class ControllerGestionePage {
 
 
 	
-	public ControllerGestionePage()
-	{
+	public ControllerGestionePage() throws IOException {
 		rD=new RivistaDao();
 		gD=new GiornaleDao();
 		lD=new LibroDao();

@@ -1,5 +1,6 @@
 package laptop.controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import javafx.collections.FXCollections;
@@ -33,7 +34,7 @@ public class ControllerCompravendita {
 
 
 
-	public ControllerCompravendita() {
+	public ControllerCompravendita() throws IOException {
 		lD = new LibroDao();
 		gD=new GiornaleDao();
 		g=new Giornale();

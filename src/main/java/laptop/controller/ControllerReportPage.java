@@ -121,8 +121,7 @@ public class ControllerReportPage {
 	public String reportRaccolta() throws IOException, SQLException {
 		return leggiLibro()+"\n"+leggiGiornale()+"\n"+leggiRivista()+"\n";
 	}
-	public ControllerReportPage()
-	{
+	public ControllerReportPage() throws IOException {
 		lD=new LibroDao();
 		rD=new RivistaDao();
 		gD=new GiornaleDao();

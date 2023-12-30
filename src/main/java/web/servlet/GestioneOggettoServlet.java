@@ -32,6 +32,10 @@ public class GestioneOggettoServlet extends HttpServlet {
     private final LibroBean lB=new LibroBean();
     private final RivistaBean rB=new RivistaBean();
     private final GiornaleBean gB=new GiornaleBean();
+
+    public GestioneOggettoServlet() throws IOException {
+    }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String genera=req.getParameter("buttonGenera");

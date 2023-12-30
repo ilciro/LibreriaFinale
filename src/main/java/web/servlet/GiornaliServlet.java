@@ -31,6 +31,9 @@ public class GiornaliServlet extends HttpServlet{
     private final SystemBean sB=SystemBean.getInstance();
     private final AcquistaBean aB=new AcquistaBean();
 
+    public GiornaliServlet() throws IOException {
+    }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String i=req.getParameter("procedi");
@@ -39,62 +42,54 @@ public class GiornaliServlet extends HttpServlet{
         String id=req.getParameter("idOgg");
         RequestDispatcher view;
 
-        try {
-            if(g!=null && g.equals("genera lista"))
-            {
+        if(g!=null && g.equals("genera lista"))
+        {
 
 
-                gB.setListaGiornaliB(gD.getGiornali());
+            gB.setListaGiornaliB(gD.getGiornali());
 
-                req.setAttribute("beanG",gB);
-                 view = getServletContext().getRequestDispatcher(giornali);
-                view.forward(req,resp);
-
-
-            }
-            if(i!=null && i.equals("procedi"))
-            {
-
-                int idOgg=Integer.parseInt(id);
-                sB.setIdB(idOgg);
-
-                gB.setIdB(idOgg);
-                giornale.setId(gB.getIdB());
-
-                gB.setTitoloB(gD.getData(giornale).getTitolo());
-                sB.setTitoloB(gB.getTitoloB());
-                sB.setIdB(gB.getIdB());
-                sB.setTypeB("giornale");
-
-                //aggiungo categoria
-                sB.setCategoriaB(gD.getData(giornale).getTipologia());
-
-                //setto i parametri nel bean acquista
-                aB.setTitoloB(gB.getTitoloB());
-                aB.setPrezzoB(gD.getData(giornale).getPrezzo());
-
-                req.setAttribute("beanS", sB);
-                req.setAttribute("beanG", gB);
-                req.setAttribute("beanA",aB);
-                view = getServletContext().getRequestDispatcher("/acquista.jsp");
-                view.forward(req, resp);
-                }
-
-
-
-            if(a!=null && a.equals("indietro"))
-            {
-                 view = getServletContext().getRequestDispatcher("/index.jsp");
-                view.forward(req,resp);
-            }
-
-
-        } catch (SQLException e) {
-            gB.setMexB(new IdException("id nullo o eccede lista"));
             req.setAttribute("beanG",gB);
              view = getServletContext().getRequestDispatcher(giornali);
             view.forward(req,resp);
+
+
         }
+        if(i!=null && i.equals("procedi"))
+        {
+
+            int idOgg=Integer.parseInt(id);
+            sB.setIdB(idOgg);
+
+            gB.setIdB(idOgg);
+            giornale.setId(gB.getIdB());
+
+            gB.setTitoloB(gD.getData(giornale).getTitolo());
+            sB.setTitoloB(gB.getTitoloB());
+            sB.setIdB(gB.getIdB());
+            sB.setTypeB("giornale");
+
+            //aggiungo categoria
+            sB.setCategoriaB(gD.getData(giornale).getTipologia());
+
+            //setto i parametri nel bean acquista
+            aB.setTitoloB(gB.getTitoloB());
+            aB.setPrezzoB(gD.getData(giornale).getPrezzo());
+
+            req.setAttribute("beanS", sB);
+            req.setAttribute("beanG", gB);
+            req.setAttribute("beanA",aB);
+            view = getServletContext().getRequestDispatcher("/acquista.jsp");
+            view.forward(req, resp);
+            }
+
+
+        if(a!=null && a.equals("indietro"))
+        {
+             view = getServletContext().getRequestDispatcher("/index.jsp");
+            view.forward(req,resp);
+        }
+
+
     }
 
 

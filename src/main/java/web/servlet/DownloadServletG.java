@@ -28,6 +28,9 @@ public class DownloadServletG extends HttpServlet {
     private final ContrassegnoDao fDao=new ContrassegnoDao();
     private final String index="/index.jsp";
 
+    public DownloadServletG() throws IOException {
+    }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

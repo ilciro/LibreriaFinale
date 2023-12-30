@@ -179,7 +179,7 @@ public class BoundaryAcquista implements Initializable {
 
 	}
 
-	public BoundaryAcquista() throws SQLException {
+	public BoundaryAcquista() throws SQLException, IOException {
 		cA = new ControllerAcquista();
 	}
 

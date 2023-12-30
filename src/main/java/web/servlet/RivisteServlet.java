@@ -24,6 +24,9 @@ public class RivisteServlet extends HttpServlet {
     private final static String beanR="beanR";
     private final SystemBean sB=SystemBean.getInstance();
 
+    public RivisteServlet() throws IOException {
+    }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String i=req.getParameter("procedi");

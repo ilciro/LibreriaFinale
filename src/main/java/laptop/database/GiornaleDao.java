@@ -2,6 +2,7 @@ package laptop.database;
 
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Connection;
@@ -33,11 +34,15 @@ public class GiornaleDao {
 	private static final String GIORNALE = "giornale";
 	private static final String ECCEZIONE="eccezione generata:";
 
+	private static final String TXT_FILE_NAME="ReportFinale/riepilogogiornale.txt";
+	private File fd;
 
-
-	public GiornaleDao ()
-	{
-		f=new Factory();
+	public GiornaleDao() throws IOException {
+		f = new Factory();
+		this.fd=new File(TXT_FILE_NAME);
+		if (!fd.exists()) {
+			fd.createNewFile();
+		}
 	}
 
 	public Giornale getData(Giornale g) {

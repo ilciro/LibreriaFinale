@@ -195,10 +195,14 @@ public class BoundaryCompravendita implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
-		cCV = new ControllerCompravendita();
-		
-		buttonV.setText(popolaBottoneV());
+
+        try {
+            cCV = new ControllerCompravendita();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        buttonV.setText(popolaBottoneV());
 		buttonA.setText(popolaBottoneA());
 		
 		if(ControllerSystemState.getInstance().getType().equals(LIBRO))

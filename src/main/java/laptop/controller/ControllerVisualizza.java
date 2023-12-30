@@ -1,5 +1,6 @@
 package laptop.controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
@@ -23,8 +24,7 @@ public class ControllerVisualizza {
 	
 	private ControllerSystemState vis = ControllerSystemState.getInstance() ;
 	
-	public ControllerVisualizza()
-	{
+	public ControllerVisualizza() throws IOException {
 		l = new Libro();
 		g=new Giornale();
 		r=new Rivista();

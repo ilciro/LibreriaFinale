@@ -249,103 +249,105 @@ public class BoundaryModificaPage implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		/* settare valori textArea*/
-		cMP=new ControllerModifPage();
-		
-		try {
-			if(vis.getType().equals("libro"))
-			{
-				labelT.setText(cMP.getLibriById(vis.getId()).get(0).getTitolo());
-				labelNP.setText(String.valueOf(cMP.getLibriById(vis.getId()).get(0).getNrPagine()));
-				labelCod.setText(cMP.getLibriById(vis.getId()).get(0).getCodIsbn());
-				labelE.setText(cMP.getLibriById(vis.getId()).get(0).getEditore());
-				labelA.setText(cMP.getLibriById(vis.getId()).get(0).getAutore());
-				labelL.setText(cMP.getLibriById(vis.getId()).get(0).getLingua());
-				labelCat.setText(String.valueOf(cMP.getLibriById(vis.getId()).get(0).getCategoria()));
-				labelR.setText(cMP.getLibriById(vis.getId()).get(0).getRecensione());
-				labelP.setText(String.valueOf(cMP.getLibriById(vis.getId()).get(0).getPrezzo()));
-				labelCopie.setText(String.valueOf(cMP.getLibriById(vis.getId()).get(0).getNrCopie()));
-				labelD.setText(cMP.getLibriById(vis.getId()).get(0).getDataPubb().toString());
-				labelDesc.setText(cMP.getLibriById(vis.getId()).get(0).getDesc());
-				labelDisp.setText(String.valueOf(cMP.getLibriById(vis.getId()).get(0).getDisponibilita()));
-	
-				categoriaTF.setItems(items);
-				items.add("ADOLESCENTI_RAGAZZI");
-				items.add("ARTE");
-				items.add("CINEMA_FOTOGRAFIA");
-				items.add("BIOGRAFIE");
-				items.add("DIARI_MEMORIE");
-				items.add("CALENDARI_AGENDE");
-				items.add("DIRITTO");
-				items.add("DIZINARI_OPERE");
-				items.add("ECONOMIA");
-				items.add("FAMIGLIA");
-				items.add("SALUTE_BENESSERE");
-				
-				items.add("FANTASCIENZA_FANTASY");
-				items.add("FUMETTI_MANGA");
-				items.add("GIALLI_THRILLER");
-				items.add("COMPUTER_GIOCHI");
-				items.add("HUMOR");
-				items.add("INFORMATICA");
-				items.add("WEB_DIGITAL_MEDIA");
-				items.add("LETTERATURA_NARRATIVA");
-				items.add("LIBRI_BAMBINI");
-				items.add("LIBRI_SCOLASTICI");
-				items.add("LIBRI_UNIVERSITARI");
-				items.add("RICETTARI_GENERALI");
-				
-				items.add("LINGUISTICA_SCRITTURA");
-				items.add("POLITICA");
-				items.add("RELIGIONE");
-				items.add("ROMANZI_ROSA");
-			
-				items.add("SCIENZE");
-				items.add("TECNOLOGIA_MEDICINA");
-			}
-			else if(vis.getType().equals("giornale"))
-			{
-				labelT.setText(cMP.getGiornaliById(vis.getId()).get(0).getTitolo());
-				labelE.setText(cMP.getGiornaliById(vis.getId()).get(0).getEditore());
-				labelL.setText(cMP.getGiornaliById(vis.getId()).get(0).getLingua());
-				labelCat.setText("Quotidiano");
-				labelP.setText(String.valueOf(cMP.getGiornaliById(vis.getId()).get(0).getPrezzo()));
-				labelCopie.setText(String.valueOf(cMP.getGiornaliById(vis.getId()).get(0).getCopieRimanenti()));
-				labelD.setText(cMP.getGiornaliById(vis.getId()).get(0).getDataPubb().toString());
-				labelDisp.setText(String.valueOf(cMP.getGiornaliById(vis.getId()).get(0).getDisponibilita()));
-			}
-			else if(vis.getType().equals("rivista"))
-			{
-				labelT.setText(cMP.getRivistaById(vis.getId()).get(0).getTitolo());
-				labelE.setText(cMP.getRivistaById(vis.getId()).get(0).getEditore());
-				labelA.setText(cMP.getRivistaById(vis.getId()).get(0).getAutore());
-				labelL.setText(cMP.getRivistaById(vis.getId()).get(0).getLingua());
-				labelCat.setText(String.valueOf(cMP.getRivistaById(vis.getId()).get(0).getTipologia()));
-				labelP.setText(String.valueOf(cMP.getRivistaById(vis.getId()).get(0).getPrezzo()));
-				labelCopie.setText(String.valueOf(cMP.getRivistaById(vis.getId()).get(0).getCopieRim()));
-				labelD.setText(cMP.getRivistaById(vis.getId()).get(0).getDataPubb().toString());
-				labelDesc.setText(cMP.getRivistaById(vis.getId()).get(0).getDescrizione());
-				labelDisp.setText(String.valueOf(cMP.getRivistaById(vis.getId()).get(0).getDisp()));
-				
-				categoriaTF.setItems(items);
-				items.add("SETTIMANALE");
-				items.add("BISETTIMANALE");
-				items.add("MENSILE");
-				items.add("BIMESTRALE");
-				items.add("TRIMESTRALE");
-				items.add("ANNUALE");
-				items.add("ESTIVO");
-				items.add("INVERNALE");
-				items.add("SPORTIVO");
-				items.add("CINEMATOGRAFIA");
-				items.add("GOSSIP");
-				items.add("TELEVISIVO");
-				items.add("MILITARE");
-				items.add("INFORMATICA");
-			}
 
 
 
-		} catch (SQLException   e) 	
+
+        try {
+			cMP=new ControllerModifPage();
+            switch (vis.getType()) {
+                case "libro" -> {
+                    labelT.setText(cMP.getLibriById(vis.getId()).get(0).getTitolo());
+                    labelNP.setText(String.valueOf(cMP.getLibriById(vis.getId()).get(0).getNrPagine()));
+                    labelCod.setText(cMP.getLibriById(vis.getId()).get(0).getCodIsbn());
+                    labelE.setText(cMP.getLibriById(vis.getId()).get(0).getEditore());
+                    labelA.setText(cMP.getLibriById(vis.getId()).get(0).getAutore());
+                    labelL.setText(cMP.getLibriById(vis.getId()).get(0).getLingua());
+                    labelCat.setText(String.valueOf(cMP.getLibriById(vis.getId()).get(0).getCategoria()));
+                    labelR.setText(cMP.getLibriById(vis.getId()).get(0).getRecensione());
+                    labelP.setText(String.valueOf(cMP.getLibriById(vis.getId()).get(0).getPrezzo()));
+                    labelCopie.setText(String.valueOf(cMP.getLibriById(vis.getId()).get(0).getNrCopie()));
+                    labelD.setText(cMP.getLibriById(vis.getId()).get(0).getDataPubb().toString());
+                    labelDesc.setText(cMP.getLibriById(vis.getId()).get(0).getDesc());
+                    labelDisp.setText(String.valueOf(cMP.getLibriById(vis.getId()).get(0).getDisponibilita()));
+
+                    categoriaTF.setItems(items);
+                    items.add("ADOLESCENTI_RAGAZZI");
+                    items.add("ARTE");
+                    items.add("CINEMA_FOTOGRAFIA");
+                    items.add("BIOGRAFIE");
+                    items.add("DIARI_MEMORIE");
+                    items.add("CALENDARI_AGENDE");
+                    items.add("DIRITTO");
+                    items.add("DIZINARI_OPERE");
+                    items.add("ECONOMIA");
+                    items.add("FAMIGLIA");
+                    items.add("SALUTE_BENESSERE");
+
+                    items.add("FANTASCIENZA_FANTASY");
+                    items.add("FUMETTI_MANGA");
+                    items.add("GIALLI_THRILLER");
+                    items.add("COMPUTER_GIOCHI");
+                    items.add("HUMOR");
+                    items.add("INFORMATICA");
+                    items.add("WEB_DIGITAL_MEDIA");
+                    items.add("LETTERATURA_NARRATIVA");
+                    items.add("LIBRI_BAMBINI");
+                    items.add("LIBRI_SCOLASTICI");
+                    items.add("LIBRI_UNIVERSITARI");
+                    items.add("RICETTARI_GENERALI");
+
+                    items.add("LINGUISTICA_SCRITTURA");
+                    items.add("POLITICA");
+                    items.add("RELIGIONE");
+                    items.add("ROMANZI_ROSA");
+
+                    items.add("SCIENZE");
+                    items.add("TECNOLOGIA_MEDICINA");
+                }
+                case "giornale" -> {
+                    labelT.setText(cMP.getGiornaliById(vis.getId()).get(0).getTitolo());
+                    labelE.setText(cMP.getGiornaliById(vis.getId()).get(0).getEditore());
+                    labelL.setText(cMP.getGiornaliById(vis.getId()).get(0).getLingua());
+                    labelCat.setText("Quotidiano");
+                    labelP.setText(String.valueOf(cMP.getGiornaliById(vis.getId()).get(0).getPrezzo()));
+                    labelCopie.setText(String.valueOf(cMP.getGiornaliById(vis.getId()).get(0).getCopieRimanenti()));
+                    labelD.setText(cMP.getGiornaliById(vis.getId()).get(0).getDataPubb().toString());
+                    labelDisp.setText(String.valueOf(cMP.getGiornaliById(vis.getId()).get(0).getDisponibilita()));
+                }
+                case "rivista" -> {
+                    labelT.setText(cMP.getRivistaById(vis.getId()).get(0).getTitolo());
+                    labelE.setText(cMP.getRivistaById(vis.getId()).get(0).getEditore());
+                    labelA.setText(cMP.getRivistaById(vis.getId()).get(0).getAutore());
+                    labelL.setText(cMP.getRivistaById(vis.getId()).get(0).getLingua());
+                    labelCat.setText(String.valueOf(cMP.getRivistaById(vis.getId()).get(0).getTipologia()));
+                    labelP.setText(String.valueOf(cMP.getRivistaById(vis.getId()).get(0).getPrezzo()));
+                    labelCopie.setText(String.valueOf(cMP.getRivistaById(vis.getId()).get(0).getCopieRim()));
+                    labelD.setText(cMP.getRivistaById(vis.getId()).get(0).getDataPubb().toString());
+                    labelDesc.setText(cMP.getRivistaById(vis.getId()).get(0).getDescrizione());
+                    labelDisp.setText(String.valueOf(cMP.getRivistaById(vis.getId()).get(0).getDisp()));
+
+                    categoriaTF.setItems(items);
+                    items.add("SETTIMANALE");
+                    items.add("BISETTIMANALE");
+                    items.add("MENSILE");
+                    items.add("BIMESTRALE");
+                    items.add("TRIMESTRALE");
+                    items.add("ANNUALE");
+                    items.add("ESTIVO");
+                    items.add("INVERNALE");
+                    items.add("SPORTIVO");
+                    items.add("CINEMATOGRAFIA");
+                    items.add("GOSSIP");
+                    items.add("TELEVISIVO");
+                    items.add("MILITARE");
+                    items.add("INFORMATICA");
+                }
+            }
+
+
+
+		} catch (SQLException |IOException  e)
 		{
 			java.util.logging.Logger.getLogger("Test pagacc").log(Level.SEVERE,"\n eccezione ottenuta {0}",e.toString());
 

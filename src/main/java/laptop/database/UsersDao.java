@@ -1,5 +1,6 @@
 package laptop.database;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.*;
@@ -9,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
+import laptop.model.raccolta.Factory;
 import laptop.utilities.ConnToDb;
 import laptop.model.TempUser;
 import laptop.model.User;
@@ -418,6 +420,16 @@ public class UsersDao {
 
 
 	public static void getListaUtenti() throws IOException, SQLException {
+
+		  final String TXT_FILE_NAME="ReportFinale/riepilogoLibro.txt";
+		 File fd;
+
+
+			fd=new File(TXT_FILE_NAME);
+			if (!fd.exists()) {
+				fd.createNewFile();
+			}
+
 		query = "select * from USERS";
 		FileWriter w;
 		w = new FileWriter("ReportFinale/riepilogoUtenti.txt");

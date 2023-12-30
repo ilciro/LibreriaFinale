@@ -1,6 +1,7 @@
 package laptop.view;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.time.Duration;
 import java.util.Objects;
@@ -11,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import laptop.database.CsvDao;
 import laptop.database.GiornaleDao;
 import laptop.model.raccolta.Giornale;
 import laptop.utilities.ConnToDb;
@@ -21,6 +23,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Main  extends Application {
     public static final String ANSI_GREEN = "\u001B[32m";
+	private static CsvDao csvDao ;
 
     	// insert a comment
 	
@@ -44,10 +47,10 @@ public class Main  extends Application {
 
 	}
 
-	public static void main(String[] args)  {
+	public static void main(String[] args) throws IOException {
 		//uso status per vedere se trigger creati
 
-
+/*
 		try {
 
 			ConnToDb.creaPopolaDb();
@@ -60,6 +63,12 @@ public class Main  extends Application {
 
 
 		launch(args);
+
+ */
+
+		csvDao=new CsvDao();
+
+
 
 
 

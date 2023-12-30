@@ -36,6 +36,9 @@ public class RicercaCatalogoServlet extends HttpServlet {
 
     private final Rivista r=new Rivista();
 
+    public RicercaCatalogoServlet() throws IOException {
+    }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String titolo=req.getParameter("cercaL");

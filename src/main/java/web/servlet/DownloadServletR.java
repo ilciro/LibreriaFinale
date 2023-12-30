@@ -28,6 +28,8 @@ public class DownloadServletR extends HttpServlet {
     private final ContrassegnoDao fDao=new ContrassegnoDao();
     private final String index="/index.jsp";
 
+    public DownloadServletR() throws IOException {
+    }
 
 
     @Override

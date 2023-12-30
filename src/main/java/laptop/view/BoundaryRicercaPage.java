@@ -58,8 +58,7 @@ public class BoundaryRicercaPage  implements Initializable{
 	protected Scene scene;
 	
 	
-	public BoundaryRicercaPage()
-	{
+	public BoundaryRicercaPage() throws IOException {
 		cRP = new ControllerRicercaPage();
 		cV=new ControllerVisualizza();
 		

@@ -38,6 +38,10 @@ public class InserisciOggettoServlet extends HttpServlet {
     private final RivistaBean rB=new RivistaBean();
     private final Rivista r=new Rivista();
     private final RivistaDao rD=new RivistaDao();
+
+    public InserisciOggettoServlet() throws IOException {
+    }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String conferma=req.getParameter("confermaB");

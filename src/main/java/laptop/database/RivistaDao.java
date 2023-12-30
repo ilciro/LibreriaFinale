@@ -1,6 +1,7 @@
 package laptop.database;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Connection;
@@ -35,8 +36,15 @@ public class 	RivistaDao {
 	private static final String ECCEZIONE="eccezione generata:";
 
 
-	public RivistaDao (){
-		f=new Factory();
+	private static final String TXT_FILE_NAME="ReportFinale/riepilogoRivista.txt";
+	private File fd;
+
+	public RivistaDao() throws IOException {
+		f = new Factory();
+		this.fd=new File(TXT_FILE_NAME);
+		if (!fd.exists()) {
+			fd.createNewFile();
+		}
 	}
 	public Rivista getData(Rivista r) {
 

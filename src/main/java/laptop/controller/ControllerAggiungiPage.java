@@ -1,5 +1,6 @@
 package laptop.controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
@@ -81,8 +82,7 @@ public class ControllerAggiungiPage {
     }
 	// qui chiamo la funzione del dao
 	
-	public ControllerAggiungiPage()
-	{
+	public ControllerAggiungiPage() throws IOException {
 		gD=new GiornaleDao();
 		r=new Rivista();
 		rD=new RivistaDao();

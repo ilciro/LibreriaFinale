@@ -115,7 +115,7 @@ public class ControllerDownload {
 	}
 
 
-	public ControllerDownload() {
+	public ControllerDownload() throws IOException {
 		this.setNrOrdine(UUID.randomUUID().toString());
 		l = new Libro();
 		cDao=new ContrassegnoDao();
