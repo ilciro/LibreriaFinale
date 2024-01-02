@@ -69,6 +69,7 @@ laptop/controller/ControllerDownload.class
 web/servlet/InserisciOggettoServlet.class
 laptop/model/TempUser.class
 laptop/view/BoundaryAcquista.class
+laptop/database/CsvDao$UserAttributes.class
 laptop/controller/ControllerRicercaPerTipo.class
 web/servlet/DownloadServlet.class
 laptop/controller/ControllerReportRaccolta.class

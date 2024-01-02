@@ -1,9 +1,11 @@
 package laptop.view;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.Duration;
+import java.time.LocalDate;
 import java.util.Objects;
 import java.util.logging.Level;
 
@@ -14,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import laptop.database.CsvDao;
 import laptop.database.GiornaleDao;
+import laptop.model.User;
 import laptop.model.raccolta.Giornale;
 import laptop.utilities.ConnToDb;
 import org.openqa.selenium.By;
@@ -47,7 +50,7 @@ public class Main  extends Application {
 
 	}
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 		//uso status per vedere se trigger creati
 
 
@@ -62,17 +65,42 @@ public class Main  extends Application {
 		}
 
 
-		launch(args);
+	//	launch(args);
 
 
-/*
+
 		csvDao=new CsvDao();
 
 		csvDao.generaReport();
+		User u=User.getInstance();
+		User u1=User.getInstance();
+
+		// vedere se id presente
+		u.setId(10);
+		u.setIdRuolo("U");
+		u.setNome("daniele");
+		u.setCognome("cinus");
+		u.setEmail("danielecinus10@gmail.com");
+		u.setDescrizione("utente semplice");
+		u.setDataDiNascita(LocalDate.of(1995,10,31));
+		File fd=new File("localDBFile.csv");
+		//funziona
+		CsvDao.saveUser(fd,User.getInstance());
+		System.out.println("lista by name / email :"+CsvDao.retreiveByNomeEmail(fd,User.getInstance().getNome(), User.getInstance().getEmail()));
+		System.out.println("modif users \n");
+
+		//modif data
+		u1.setId(u.getId());
+		u1.setIdRuolo(u.getIdRuolo());
+		u1.setNome(u.getNome());
+		u1.setCognome(u.getCognome());
+		u1.setEmail("gnappetto1995@gmail.com");
+		u1.setDescrizione(u.getDescrizione());
+		u1.setDataDiNascita(u.getDataDiNascita());
+		CsvDao.modifPassUser(fd,u,u1);
 
 
 
- */
 
 
 

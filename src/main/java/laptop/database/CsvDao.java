@@ -1,16 +1,21 @@
 package laptop.database;
 
+import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
+import laptop.model.User;
 import laptop.model.raccolta.Libro;
 import laptop.utilities.ConnToDb;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
+import java.nio.file.Files;
 import java.sql.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
+import static java.nio.file.StandardCopyOption.*;
 public class CsvDao implements DaoInterface {
     private static final String CSV_FILE_NAME="localDBFile.csv";
 
@@ -84,6 +89,176 @@ public class CsvDao implements DaoInterface {
                 }
             }
         }
+
+    }
+    public static synchronized void saveUser(File fd, User instance) throws Exception {
+        CSVWriter csvWriter = new CSVWriter(new BufferedWriter(new FileWriter(fd, true)));
+        String[] record = new String[8];
+
+        record[UserAttributes.getIndex_Id()] = String.valueOf(instance.getId());
+        record[UserAttributes.getIndex_Ruolo()] = instance.getIdRuolo().substring(0,1);
+        record[UserAttributes.getIndex_Nome()] = instance.getNome();
+        record[UserAttributes.getIndex_Cognome()] = String.valueOf(instance.getCognome());
+        record[UserAttributes.getIndex_Email()] = String.valueOf(instance.getEmail());
+        record[UserAttributes.getIndex_Descrizione()] = String.valueOf(instance.getDescrizione());
+        record[UserAttributes.getIndex_Data()] = String.valueOf(instance.getDataDiNascita());
+
+        csvWriter.writeNext(record);
+        csvWriter.flush();
+        csvWriter.close();
+
+
+    }
+    public static synchronized List<User> retreiveByNomeEmail(File fd, String nome,String email) throws Exception {
+        // create csvReader object passing file reader as a parameter
+        CSVReader csvReader = new CSVReader(new BufferedReader(new FileReader(fd)));
+        String[] record;
+
+        List<User> userList = new ArrayList<User>();
+
+        while ((record = csvReader.readNext()) != null) {
+            int posNome = UserAttributes.getIndex_Nome();
+            int posEmail=UserAttributes.getIndex_Email();
+
+            boolean recordFound = (record[posNome].equals(nome))||(record[posEmail].equals(email));
+            if (recordFound) {
+                int id = Integer.parseInt(record[UserAttributes.getIndex_Id()]);
+                String nomeA = record[UserAttributes.getIndex_Nome()];
+                String emailA = record[UserAttributes.getIndex_Email()];
+
+
+                User.getInstance().setId(id);
+                User.getInstance().setNome(nomeA);
+                User.getInstance().setEmail(emailA);
+                userList.add(User.getInstance());
+            }
+        }
+
+        csvReader.close();
+
+        if (userList.isEmpty()) {
+            throw new Exception(" user not found");
+        }
+
+        return userList;
+    }
+    private static synchronized void removeUserById(File fd, User instance) throws Exception {
+        File tmpFD = File.createTempFile("dao", "tmp");
+        boolean found = false;
+
+        // create csvReader object passing file reader as a parameter
+        CSVReader csvReader = new CSVReader(new BufferedReader(new FileReader(fd)));
+        String[] record;
+
+        CSVWriter csvWriter = new CSVWriter(new BufferedWriter(new FileWriter(tmpFD, true)));
+
+        while ((record = csvReader.readNext()) != null) {
+            int posId = UserAttributes.getIndex_Id();
+            int posMail=UserAttributes.getIndex_Email();
+
+            boolean recordFound = (record[posId].equals(String.valueOf(instance.getId()))||(record[posMail].equals(String.valueOf(instance.getEmail()))));
+            if (!recordFound) {
+                csvWriter.writeNext(record);
+            } else {
+                found = recordFound;
+            }
+        }
+        csvWriter.flush();
+
+        csvReader.close();
+        csvWriter.close();
+
+        if (found) {
+            Files.move(tmpFD.toPath(), fd.toPath(), REPLACE_EXISTING);
+        } else {
+            tmpFD.delete();
+        }
+    }
+    public static synchronized void modifPassUser(File fd, User instance,User instanceA) throws Exception {
+        //modified only email because pass not showed
+
+        //instance for delete
+        // instance agg fro insert
+
+        removeUserById(fd,instance);
+        saveUser(fd,instanceA);
+
+
+
+    }
+    public static synchronized List<User> retreiveAllDataUser(File fd,String email) throws Exception {
+        // create csvReader object passing file reader as a parameter
+        CSVReader csvReader = new CSVReader(new BufferedReader(new FileReader(fd)));
+        String[] record;
+
+        List<User> userList = new ArrayList<User>();
+
+        while ((record = csvReader.readNext()) != null) {
+
+            int posEmail=UserAttributes.getIndex_Email();
+
+            boolean recordFound = record[posEmail].equals(email);
+            if (recordFound) {
+                int id = Integer.parseInt(record[UserAttributes.getIndex_Id()]);
+                String ruolo=record[UserAttributes.getIndex_Ruolo()];
+                String nome = record[UserAttributes.getIndex_Nome()];
+                String cognome=record[UserAttributes.getIndex_Cognome()];
+                String emailA = record[UserAttributes.getIndex_Email()];
+                String desc=record[UserAttributes.getIndex_Descrizione()];
+                String data=record[UserAttributes.getIndex_Data()];
+
+
+                User.getInstance().setId(id);
+                User.getInstance().setIdRuolo(ruolo);
+                User.getInstance().setNome(nome);
+                User.getInstance().setCognome(cognome);
+                User.getInstance().setEmail(emailA);
+                User.getInstance().setDescrizione(desc);
+                User.getInstance().setDataDiNascita(LocalDate.parse(data));
+                userList.add(User.getInstance());
+            }
+        }
+
+        csvReader.close();
+
+        if (userList.isEmpty()) {
+            throw new Exception(" user not found");
+        }
+
+        return userList;
+    }
+
+
+
+    private static class UserAttributes{
+        public static int getIndex_Id() {
+            return 0;
+        }
+
+        public static int getIndex_Ruolo() {
+            return 1;
+        }
+
+        public static int getIndex_Nome() {
+            return 2;
+        }
+
+        public static int getIndex_Cognome() {
+            return 4;
+        }
+        public static int getIndex_Email() {
+            return 5;
+        }
+        public static int getIndex_Descrizione() {
+            return 6;
+        }
+        public static int getIndex_Data() {
+            return 7;
+        }
+    }
+
+
+
         /*
         todo
             copiare users dao in csv
@@ -133,10 +308,4 @@ public class CsvDao implements DaoInterface {
 	}
 
          */
-
-
-
-
-
-    }
 }

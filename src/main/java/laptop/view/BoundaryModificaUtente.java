@@ -95,7 +95,7 @@ public class BoundaryModificaUtente implements Initializable {
 	@FXML
 	private void aggiorna() throws SQLException
 	{
-		if(cMU.aggiorna(nuovoNL.getText(),nuovoCL.getText(),
+		if(cMU.aggiornaTot(nuovoNL.getText(),nuovoCL.getText(),
 				nuovaEmailL.getText(),nuovaPwd.getText(),
 				nuovaDescL.getText(),nuovaDNL.getValue(),vecchiaEmailL.getText()))
 		{
