@@ -50,7 +50,7 @@ public class Main  extends Application {
 	public static void main(String[] args) throws IOException {
 		//uso status per vedere se trigger creati
 
-/*
+
 		try {
 
 			ConnToDb.creaPopolaDb();
@@ -64,11 +64,15 @@ public class Main  extends Application {
 
 		launch(args);
 
- */
 
+/*
 		csvDao=new CsvDao();
 
+		csvDao.generaReport();
 
+
+
+ */
 
 
 

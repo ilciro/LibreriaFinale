@@ -42,9 +42,7 @@ public class 	RivistaDao {
 	public RivistaDao() throws IOException {
 		f = new Factory();
 		this.fd=new File(TXT_FILE_NAME);
-		if (!fd.exists()) {
-			fd.createNewFile();
-		}
+
 	}
 	public Rivista getData(Rivista r) {
 
@@ -289,45 +287,51 @@ public class 	RivistaDao {
 		return row;
 
 	}
-	public void generaReport() throws IOException
-	{
-		FileWriter w=new FileWriter("ReportFinale/riepilogoRivista.txt");
-		query="select titolo,copieVendute,prezzo as totale from Rivista";
+	public void generaReport() throws IOException {
 
-		try (BufferedWriter b=new BufferedWriter (w)){
-
-
-			try(Connection 	conn = ConnToDb.connectionToDB();
-				PreparedStatement prepQ=conn.prepareStatement(query))
-			{
-
-				ResultSet rs=prepQ.executeQuery();
-
-
-				while(rs.next())
-				{
-
-
-
-
-					b.write("Titolo :"+rs.getString(1)+"\t"+"Ricavo totale :" +rs.getInt(2)*rs.getFloat(3)+"\n");
-
-
-
-
-					b.flush();
-
-
-				}
-
-			}catch(SQLException e)
-			{
-				java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
+		try {
+			if (!fd.exists()) {
+				throw new IOException("file not exists");
 			}
+			if(fd.exists())
+			{
+				if(fd.delete())
+				{
+					throw new IOException("file deleted -> not exists");
+				}
+			}
+		} catch (IOException e) {
+			java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
+			if (fd.createNewFile()) {
+
+
+				try (BufferedWriter b = new BufferedWriter(new FileWriter(TXT_FILE_NAME))) {
+
+					query = "select titolo,copieRimanenti,prezzo  from RIVISTA";
+
+					try (Connection conn = ConnToDb.connectionToDB();
+						 PreparedStatement prepQ = conn.prepareStatement(query)) {
+
+						ResultSet rs = prepQ.executeQuery();
+
+
+						while (rs.next()) {
+
+							b.write("Titolo :" + rs.getString("titolo") + "\t" + "Ricavo totale :" + rs.getInt("copieRimanenti") * rs.getFloat("prezzo") + "\n");
+
+							b.flush();
+
+						}
+
+					} catch (SQLException e1) {
+						java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e1);
+					}
+				}
+			}
+
 		}
-
-
 	}
+
 	public void incrementaDisponibilita(Rivista r)
 	{
 		int d=vis.getQuantita();

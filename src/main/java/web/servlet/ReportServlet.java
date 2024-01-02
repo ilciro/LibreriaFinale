@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import laptop.database.GiornaleDao;
 import laptop.model.TempUser;
 import laptop.utilities.ConnToDb;
 import web.bean.TextAreaBean;
@@ -27,64 +28,70 @@ public class ReportServlet extends HttpServlet {
 
     private final TextAreaBean tAB=new TextAreaBean();
 
+    private final GiornaleDao gD=new GiornaleDao();
+
+
 
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String libro=req.getParameter("buttonL");
-        String giornale=req.getParameter("buttonG");
-        String rivista=req.getParameter("buttonR");
-        String raccolta=req.getParameter("raccoltaB");
-        String totale=req.getParameter("buttonT");
-        String indietro=req.getParameter("buttonI");
+        String libro = req.getParameter("buttonL");
+        String giornale = req.getParameter("buttonG");
+        String rivista = req.getParameter("buttonR");
+        String raccolta = req.getParameter("raccoltaB");
+        String totale = req.getParameter("buttonT");
+        String indietro = req.getParameter("buttonI");
         RequestDispatcher view;
 
+        try {
 
-        if(libro !=null && libro.equals("libro")) {
-            // nou used report , but dicrectly
+            if (libro != null && libro.equals("libro")) {
+                // nou used report , but dicrectly
 
-            tAB.setScriviB(reportLibro());
-            req.setAttribute("beanTA",tAB);
-             view= getServletContext().getRequestDispatcher("/report.jsp");
-            view.forward(req,resp);
-        }
-        if(giornale!=null && giornale.equals("giornale")) {
-            tAB.setScriviB(reportGiornale());
-            req.setAttribute("beanTA",tAB);
-             view= getServletContext().getRequestDispatcher("/report.jsp");
-            view.forward(req,resp);
-        }
-        if (rivista!=null && rivista.equals("rivista")) {
-            tAB.setScriviB(reportRivista());
-            req.setAttribute("beanTA",tAB);
-             view= getServletContext().getRequestDispatcher("/report.jsp");
-            view.forward(req,resp);
-        }
-        if(raccolta!=null && raccolta.equals("raccolta"))
-        {
-            String builder = reportLibro() + "\n" +
-                    reportGiornale() + "\n" +
-                    reportRivista() + "\n";
-            tAB.setScriviB(builder);
-            req.setAttribute("beanTA",tAB);
-             view= getServletContext().getRequestDispatcher("/report.jsp");
-            view.forward(req,resp);
-        }
-        if(totale!=null &&totale.equals("totale"))
-        {
-            String builder = reportLibro() + "\n" +
-                    reportGiornale() + "\n" +
-                    reportRivista() + "\n"+
-                    reportUtenti()+"\n";
+                tAB.setScriviB(reportLibro());
+                req.setAttribute("beanTA", tAB);
+                view = getServletContext().getRequestDispatcher("/report.jsp");
+                view.forward(req, resp);
+            }
+            if (giornale != null && giornale.equals("giornale")) {
+                tAB.setScriviB(reportGiornale());
+                req.setAttribute("beanTA", tAB);
+                view = getServletContext().getRequestDispatcher("/report.jsp");
+                view.forward(req, resp);
+            }
+            if (rivista != null && rivista.equals("rivista")) {
+                tAB.setScriviB(reportRivista());
+                req.setAttribute("beanTA", tAB);
+                view = getServletContext().getRequestDispatcher("/report.jsp");
+                view.forward(req, resp);
+            }
+            if (raccolta != null && raccolta.equals("raccolta")) {
+                String builder = reportLibro() + "\n" +
+                        reportGiornale() + "\n" +
+                        reportRivista() + "\n";
                 tAB.setScriviB(builder);
-            req.setAttribute("beanTA",tAB);
-             view= getServletContext().getRequestDispatcher("/report.jsp");
-            view.forward(req,resp);
-        }
-        if(indietro!=null && indietro.equals("indietro"))
+                req.setAttribute("beanTA", tAB);
+                view = getServletContext().getRequestDispatcher("/report.jsp");
+                view.forward(req, resp);
+            }
+            if (totale != null && totale.equals("totale")) {
+                String builder = reportLibro() + "\n" +
+                        reportGiornale() + "\n" +
+                        reportRivista() + "\n" +
+                        reportUtenti() + "\n";
+                tAB.setScriviB(builder);
+                req.setAttribute("beanTA", tAB);
+                view = getServletContext().getRequestDispatcher("/report.jsp");
+                view.forward(req, resp);
+            }
+            if (indietro != null && indietro.equals("indietro")) {
+                view = getServletContext().getRequestDispatcher("/admin.jsp");
+                view.forward(req, resp);
+            }
+        }catch (IOException e)
         {
-            view= getServletContext().getRequestDispatcher("/admin.jsp");
-            view.forward(req,resp);
+            java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
+
         }
     }
 
@@ -109,29 +116,24 @@ public class ReportServlet extends HttpServlet {
             }
         return report.toString();
     }
-    public  String reportGiornale()  {
+    public  String reportGiornale() throws IOException {
 
-        String query = "select titolo,editore,copiRim,prezzo as totale  from GIORNALE";
-        StringBuilder report = new StringBuilder();
-        try (Connection conn = ConnToDb.connectionToDB();
-             PreparedStatement prepQ = conn.prepareStatement(query)) {
+       gD.generaReport();
+        StringBuilder builder = new StringBuilder();
+        String line ;
 
-            ResultSet rs = prepQ.executeQuery();
-
-            while (rs.next()) {
-
-
-                report.append("Titolo :").append(rs.getString(1)).append("\t").append("Editore :").append(rs.getString(2)).append("\t").append("Ricavo totale :").append(rs.getInt(3) * rs.getFloat(4)).append("\n");
-
-
+        String fileGiornale = "src/main/resources/Reports/riepilogoGiornali.txt";
+        try (BufferedReader readerU = new BufferedReader(new FileReader(fileGiornale))) {
+            while (( line = readerU.readLine()) != null) {
+                builder.append(line);
+                builder.append("\n");
             }
 
-
-        } catch (SQLException e) {
-            java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
+        } catch (IOException e) {
+            throw new IOException(e);
         }
 
-        return report.toString();
+        return builder.toString();
     }
 
     private String reportRivista()
@@ -189,7 +191,7 @@ public class ReportServlet extends HttpServlet {
                     report.append(TempUser.getInstance().getId()).append("\t").append(TempUser.getInstance().getIdRuolo()).append("\t").append(TempUser.getInstance().getNomeT()).append("\t").append(TempUser.getInstance().getCognomeT()).append("\t").append(TempUser.getInstance().getEmailT()).append("\t").append(TempUser.getInstance().getDescrizioneT()).append("\t").append(TempUser.getInstance().getDataDiNascitaT().toString()).append("\n");
 
                 }
-            }catch(SQLException  e)
+            }catch(SQLException e)
             {
                 java.util.logging.Logger.getLogger("lista utenti").log(Level.SEVERE,ECCEZIONE,e);
 

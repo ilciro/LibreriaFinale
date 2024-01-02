@@ -4,49 +4,81 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="restrung dao v2">
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="restrung dao v3 (insert file dao pt1)">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FileSql/export-db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/FileSql/export-db.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibreriaMaven.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LibreriaMaven.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReportFinale/riepilogoGiornali.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReportFinale/riepilogoLibro.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReportFinale/riepilogoRiviste.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReportFinale/riepilogoUtenti.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/localDBFile.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerAcquista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerAcquista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerAggiungiPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerAggiungiPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerCheckPagamentoData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerCheckPagamentoData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerCompravendita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerCompravendita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerDownload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerDownload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerGestionePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerGestionePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerModifPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerModifPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerPagamentoCC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerPagamentoCC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerPagamentoCash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerPagamentoCash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerModificaUtente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerModificaUtente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerReportPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerReportPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerRicercaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerRicercaPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerVisualizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerVisualizza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/CartaCreditoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/CartaCreditoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/CsvDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/CsvDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/LibroDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/LibroDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/UsersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/UsersDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryAcquista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryAcquista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryAggiungiPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryAggiungiPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryCompravendita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryCompravendita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryDownload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryDownload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryGestionePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryGestionePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryModificaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryModificaPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryReportPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryReportPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryRicercaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryRicercaPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryVisualizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryVisualizza.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/bean/GiornaleBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/bean/GiornaleBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/AcquistaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/AcquistaServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/DownloadServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/DownloadServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/DownloadServletG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/DownloadServletG.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/DownloadServletR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/DownloadServletR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/GestioneOggettoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/GestioneOggettoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/GiornaliServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/GiornaliServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/InserisciOggettoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/InserisciOggettoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/LibriServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/LibriServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/ModificaOggettoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/ModificaOggettoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/RicercaCatalogoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/RicercaCatalogoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/RivisteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/RivisteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestLoginAdminRaccoltaLibri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/laptop/test/TestLoginAdminRaccoltaLibri.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/IndexServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/ReportServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/ReportServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerReportPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerReportPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/CsvDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/CsvDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GiornaleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GiornaleDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/LibroDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/LibroDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/RivistaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/RivistaDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/UsersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/UsersDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/IndexServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/IndexServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/ReportServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/ReportServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerAcquista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerAcquista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerAggiungiPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerAggiungiPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerCheckPagamentoData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerCheckPagamentoData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerCompravendita.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerCompravendita.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerDownload.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerDownload.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerGestionePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerGestionePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerModifPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerModifPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerPagamentoCC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerPagamentoCC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerPagamentoCash.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerPagamentoCash.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerReportPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerReportPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerRicercaPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerRicercaPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerVisualizza.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerVisualizza.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/GiornaleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/GiornaleDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/LibroDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/LibroDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/RivistaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/RivistaDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/UsersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/UsersDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryAcquista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryAcquista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryAggiungiPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryAggiungiPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryCompravendita.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryCompravendita.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryDownload.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryDownload.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryGestionePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryGestionePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryModificaPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryModificaPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryReportPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryReportPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryRicercaPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryRicercaPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryVisualizza.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryVisualizza.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/bean/GiornaleBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/bean/GiornaleBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/AcquistaServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/AcquistaServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/DownloadServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/DownloadServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/DownloadServletG.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/DownloadServletG.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/DownloadServletR.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/DownloadServletR.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/GestioneOggettoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/GestioneOggettoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/GiornaliServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/GiornaliServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/IndexServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/IndexServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/InserisciOggettoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/InserisciOggettoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/LibriServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/LibriServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/ModificaOggettoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/ModificaOggettoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/ReportServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/ReportServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/RicercaCatalogoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/RicercaCatalogoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/RivisteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/RivisteServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-LibreriaMaven.war" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +152,7 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/daniele/IdeaProjects/LibreriaFinale/src/main/resources&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
@@ -643,7 +675,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703633276418</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="restrung dao v3 (insert file dao pt1)">
+      <option name="closed" value="true" />
+      <created>1703938791177</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1703938791177</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -665,7 +705,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;src/test/java/laptop/test/TestWeb.java" />
     <MESSAGE value="added test loginv2" />
     <MESSAGE value="added test login" />
     <MESSAGE value="added test login v2" />
@@ -690,7 +729,8 @@
     <MESSAGE value="add tests v1( only laptop)" />
     <MESSAGE value="restrung dao" />
     <MESSAGE value="restrung dao v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="restrung dao v2" />
+    <MESSAGE value="restrung dao v3 (insert file dao pt1)" />
+    <option name="LAST_COMMIT_MESSAGE" value="restrung dao v3 (insert file dao pt1)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

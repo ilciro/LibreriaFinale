@@ -14,10 +14,10 @@ public class ControllerReportPage {
 	private LibroDao lD;
 	private GiornaleDao gD;
 	private RivistaDao rD;
-	protected String fileLibro = "ReportFinale/riepilogoLibro.txt";
-	protected String fileGiornale ="ReportFinale/riepilogoGiornali.txt";
-	protected String fileRiviste = "ReportFinale/riepilogoRiviste.txt";
-	protected String fileUtenti = "ReportFinale/riepilogoUtenti.txt";
+	protected String fileLibro = "src/main/resources/Reports/riepilogoLibri.txt";
+	protected String fileGiornale ="src/main/resources/Reports/riepilogoGiornali.txt";
+	protected String fileRiviste = "src/main/resources/Reports/riepilogoRiviste.txt";
+	protected String fileUtenti = "src/main/resources/Reports/riepilogoUtenti.txt";
 
 	public void generaReportLibri () throws IOException
 	{

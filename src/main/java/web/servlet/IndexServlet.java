@@ -21,10 +21,7 @@ public class IndexServlet extends HttpServlet {
         String login=req.getParameter("buttonLogin");
         String ricerca=req.getParameter("buttonRic");
         RequestDispatcher view;
-        /*
-        TODO
-            impementare login e ricerca
-         */
+
         if(libro!=null && libro.equals("libri"))
         {
 
@@ -50,6 +47,11 @@ public class IndexServlet extends HttpServlet {
         if(login!=null && login.equals("login"))
         {
             view= getServletContext().getRequestDispatcher("/login.jsp");
+            view.forward(req,resp);
+        }
+        if(ricerca!=null && ricerca.equals("ricerca"))
+        {
+            view= getServletContext().getRequestDispatcher("/ricerca.jsp");
             view.forward(req,resp);
         }
     }

@@ -15,6 +15,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/model/Pagamento.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/RicercaServlet.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryHomePageAfterLogin.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/database/CsvDao.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerPagamentoCash.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerDownload.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/bean/NegozioBean.java
@@ -50,6 +51,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/GestioneOggettoServlet.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerVisualizza.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/utilities/ConnToDb.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/database/DaoInterface.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryPagamentoCash.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerAcquista.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/bean/PagamentoBean.java

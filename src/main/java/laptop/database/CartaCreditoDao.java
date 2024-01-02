@@ -59,6 +59,8 @@ public class CartaCreditoDao {
 	
 	public void insCC(CartaDiCredito cc)
 	{
+		long row=0;
+		boolean status=false;
 
 		query="insert into CARTACREDITO (nomeP,cognomeP,codiceCarta,scad,codicePin,ammontare)  values(?,?,?,?,?,?)";
 				 
@@ -73,13 +75,14 @@ public class CartaCreditoDao {
 				prepQ.setString(5,cc.getCiv());
 				//in alternativa vis.getSpesa
 				prepQ.setFloat(6, cc.getPrezzoTransazine());
-				prepQ.executeLargeUpdate();
+				row=prepQ.executeLargeUpdate();
 			}catch(SQLException e)
 			{
 				Logger.getLogger("report libro").log(Level.SEVERE,"\n eccezione ottenuta .",e);
 
 			}
-
+			if(row==1)
+				status= true;
 
 	}
 
