@@ -70,7 +70,7 @@ public class ControllerReportPage {
 		}
 		return builder.toString();
 	}
-	public String leggiGiornale() throws SQLException, IOException {
+	public String leggiGiornale() throws  IOException {
 		generaReportGiornali();
 		StringBuilder builder = new StringBuilder();
 		String line = "";
@@ -85,7 +85,7 @@ public class ControllerReportPage {
 		}
 		return builder.toString();
 	}
-	public String leggiRivista() throws SQLException, IOException {
+	public String leggiRivista() throws  IOException {
 		generaReportRiviste();
 		StringBuilder builder = new StringBuilder();
 		String line = "";
@@ -118,7 +118,7 @@ public class ControllerReportPage {
 
 
 
-	public String reportRaccolta() throws IOException, SQLException {
+	public String reportRaccolta() throws IOException {
 		return leggiLibro()+"\n"+leggiGiornale()+"\n"+leggiRivista()+"\n";
 	}
 	public ControllerReportPage() throws IOException {

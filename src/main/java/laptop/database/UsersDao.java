@@ -3,6 +3,10 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.DirectoryNotEmptyException;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
 import java.sql.*;
 import java.time.LocalDate;
 
@@ -25,10 +29,8 @@ public class UsersDao {
 	private static final String ECCEZIONE = "errore in mysql :";
 	private static int row = 0;
 
-	private static File fd;
 
-
-	// use this function on controller after you had check the email
+    // use this function on controller after you had check the email
 	// add an user on db after registration
 	// prende i dati dall'oggetto che gli abbiamo passato 
 	public static boolean createUser(User u) throws SQLException {
@@ -254,14 +256,14 @@ public class UsersDao {
 		  final String TXT_FILE_NAME="ReportFinale/riepilogoLibro.txt";
 
 		  try {
-			  fd = new File(TXT_FILE_NAME);
+              File fd = new File(TXT_FILE_NAME);
 
 			  if (!fd.exists()) {
 				  throw new IOException("file not found");
 			  }
 			  if(fd.exists())
 			  {
-				  if(fd.delete())
+				  cleanUp(Path.of(TXT_FILE_NAME));
 				  	throw new IOException("file deleted -> not exists");
 			  }
 		  }catch (IOException e)
@@ -444,6 +446,10 @@ public class UsersDao {
 		}
 
 		return row;
+	}
+
+	public static void cleanUp(Path path) throws NoSuchFileException, DirectoryNotEmptyException, IOException {
+		Files.delete(path);
 	}
 }
 

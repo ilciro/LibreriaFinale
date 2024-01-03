@@ -12,24 +12,23 @@ import java.nio.file.Files;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static java.nio.file.StandardCopyOption.*;
 public class CsvDao implements DaoInterface {
-    private static final String CSV_FILE_NAME="localDBFile.csv";
+    private static final String CSVFILENAME="localDBFile.csv";
 
     private final File fd;
 
-    //private HashMap<String, Libro> localCache;
 
 
     public CsvDao() throws IOException {
-        this.fd = new File(CSV_FILE_NAME);
+        this.fd = new File(CSVFILENAME);
 
 
 
-        //this.localCache = new HashMap<String, Libro>();
     }
 
 
@@ -43,14 +42,16 @@ public class CsvDao implements DaoInterface {
             }
         }catch (IOException e)
         {
-            System.out.println("EXCEPTION CsvDao");
+            Logger.getLogger("genera report").log(Level.SEVERE, "\n file not ecists");
 
-            if (!fd.exists()) {
+
+
                 if (fd.createNewFile())
                 {
 
 
-                    System.out.println("creo file CsvDao");
+                    Logger.getLogger("report users").log(Level.SEVERE, "\n making file");
+
 
                     String query=   "SELECT * from USERS";
 
@@ -59,11 +60,9 @@ public class CsvDao implements DaoInterface {
                          PreparedStatement prepQ=conn.prepareStatement(query)){
 
                         ResultSet rs = prepQ.executeQuery(query);
-                        CSVWriter writer = new CSVWriter(new FileWriter(CSV_FILE_NAME));
+                        CSVWriter writer = new CSVWriter(new FileWriter(CSVFILENAME));
                         ResultSetMetaData Mdata = rs.getMetaData();
-                        Mdata.getColumnName(1);
-                        String[] line1 = {Mdata.getColumnName(1), Mdata.getColumnName(2), Mdata.getColumnName(3), Mdata.getColumnName(4), Mdata.getColumnName(5),Mdata.getColumnName(7),Mdata.getColumnName(8)};
-                        writer.writeNext(line1);
+
 
                         String[] data =new String[7];
                         while (rs.next())
@@ -82,28 +81,29 @@ public class CsvDao implements DaoInterface {
 
 
                     } catch (SQLException ex) {
-                        throw new RuntimeException(ex);
+                        Logger.getLogger("report libro").log(Level.SEVERE, "\n eccezione ottenuta .", ex);
+
                     }
 
 
                 }
-            }
+
         }
 
     }
     public static synchronized void saveUser(File fd, User instance) throws Exception {
         CSVWriter csvWriter = new CSVWriter(new BufferedWriter(new FileWriter(fd, true)));
-        String[] record = new String[8];
+        String[] userVector = new String[8];
 
-        record[UserAttributes.getIndex_Id()] = String.valueOf(instance.getId());
-        record[UserAttributes.getIndex_Ruolo()] = instance.getIdRuolo().substring(0,1);
-        record[UserAttributes.getIndex_Nome()] = instance.getNome();
-        record[UserAttributes.getIndex_Cognome()] = String.valueOf(instance.getCognome());
-        record[UserAttributes.getIndex_Email()] = String.valueOf(instance.getEmail());
-        record[UserAttributes.getIndex_Descrizione()] = String.valueOf(instance.getDescrizione());
-        record[UserAttributes.getIndex_Data()] = String.valueOf(instance.getDataDiNascita());
+        userVector[UserAttributes.getIndexId()] = String.valueOf(instance.getId());
+        userVector[UserAttributes.getIndexRuolo()] = instance.getIdRuolo().substring(0,1);
+        userVector[UserAttributes.getIndexNome()] = instance.getNome();
+        userVector[UserAttributes.getIndexCognome()] = String.valueOf(instance.getCognome());
+        userVector[UserAttributes.getIndexEmail()] = String.valueOf(instance.getEmail());
+        userVector[UserAttributes.getIndexDescrizione()] = String.valueOf(instance.getDescrizione());
+        userVector[UserAttributes.getIndexData()] = String.valueOf(instance.getDataDiNascita());
 
-        csvWriter.writeNext(record);
+        csvWriter.writeNext(userVector);
         csvWriter.flush();
         csvWriter.close();
 
@@ -112,19 +112,19 @@ public class CsvDao implements DaoInterface {
     public static synchronized List<User> retreiveByNomeEmail(File fd, String nome,String email) throws Exception {
         // create csvReader object passing file reader as a parameter
         CSVReader csvReader = new CSVReader(new BufferedReader(new FileReader(fd)));
-        String[] record;
+        String[] userVector;
 
-        List<User> userList = new ArrayList<User>();
+        List<User> userList = new ArrayList<>();
 
-        while ((record = csvReader.readNext()) != null) {
-            int posNome = UserAttributes.getIndex_Nome();
-            int posEmail=UserAttributes.getIndex_Email();
+        while ((userVector = csvReader.readNext()) != null) {
+            int posNome = UserAttributes.getIndexNome();
+            int posEmail=UserAttributes.getIndexEmail();
 
-            boolean recordFound = (record[posNome].equals(nome))||(record[posEmail].equals(email));
-            if (recordFound) {
-                int id = Integer.parseInt(record[UserAttributes.getIndex_Id()]);
-                String nomeA = record[UserAttributes.getIndex_Nome()];
-                String emailA = record[UserAttributes.getIndex_Email()];
+            boolean userVectorFound = (userVector[posNome].equals(nome))||(userVector[posEmail].equals(email));
+            if (userVectorFound) {
+                int id = Integer.parseInt(userVector[UserAttributes.getIndexId()]);
+                String nomeA = userVector[UserAttributes.getIndexNome()];
+                String emailA = userVector[UserAttributes.getIndexEmail()];
 
 
                 User.getInstance().setId(id);
@@ -148,19 +148,19 @@ public class CsvDao implements DaoInterface {
 
         // create csvReader object passing file reader as a parameter
         CSVReader csvReader = new CSVReader(new BufferedReader(new FileReader(fd)));
-        String[] record;
+        String[] userVector;
 
         CSVWriter csvWriter = new CSVWriter(new BufferedWriter(new FileWriter(tmpFD, true)));
 
-        while ((record = csvReader.readNext()) != null) {
-            int posId = UserAttributes.getIndex_Id();
-            int posMail=UserAttributes.getIndex_Email();
+        while ((userVector = csvReader.readNext()) != null) {
+            int posId = UserAttributes.getIndexId();
+            int posMail=UserAttributes.getIndexEmail();
 
-            boolean recordFound = (record[posId].equals(String.valueOf(instance.getId()))||(record[posMail].equals(String.valueOf(instance.getEmail()))));
-            if (!recordFound) {
-                csvWriter.writeNext(record);
+            boolean userVectorFound = (userVector[posId].equals(String.valueOf(instance.getId()))||(userVector[posMail].equals(String.valueOf(instance.getEmail()))));
+            if (!userVectorFound) {
+                csvWriter.writeNext(userVector);
             } else {
-                found = recordFound;
+                found = userVectorFound;
             }
         }
         csvWriter.flush();
@@ -189,23 +189,23 @@ public class CsvDao implements DaoInterface {
     public static synchronized List<User> retreiveAllDataUser(File fd,String email) throws Exception {
         // create csvReader object passing file reader as a parameter
         CSVReader csvReader = new CSVReader(new BufferedReader(new FileReader(fd)));
-        String[] record;
+        String[] userVector;
 
-        List<User> userList = new ArrayList<User>();
+        List<User> userList = new ArrayList<>();
 
-        while ((record = csvReader.readNext()) != null) {
+        while ((userVector = csvReader.readNext()) != null) {
 
-            int posEmail=UserAttributes.getIndex_Email();
+            int posEmail=UserAttributes.getIndexEmail();
 
-            boolean recordFound = record[posEmail].equals(email);
-            if (recordFound) {
-                int id = Integer.parseInt(record[UserAttributes.getIndex_Id()]);
-                String ruolo=record[UserAttributes.getIndex_Ruolo()];
-                String nome = record[UserAttributes.getIndex_Nome()];
-                String cognome=record[UserAttributes.getIndex_Cognome()];
-                String emailA = record[UserAttributes.getIndex_Email()];
-                String desc=record[UserAttributes.getIndex_Descrizione()];
-                String data=record[UserAttributes.getIndex_Data()];
+            boolean userVectorFound = userVector[posEmail].equals(email);
+            if (userVectorFound) {
+                int id = Integer.parseInt(userVector[UserAttributes.getIndexId()]);
+                String ruolo=userVector[UserAttributes.getIndexRuolo()];
+                String nome = userVector[UserAttributes.getIndexNome()];
+                String cognome=userVector[UserAttributes.getIndexCognome()];
+                String emailA = userVector[UserAttributes.getIndexEmail()];
+                String desc=userVector[UserAttributes.getIndexDescrizione()];
+                String data=userVector[UserAttributes.getIndexData()];
 
 
                 User.getInstance().setId(id);
@@ -231,81 +231,33 @@ public class CsvDao implements DaoInterface {
 
 
     private static class UserAttributes{
-        public static int getIndex_Id() {
+        public static int getIndexId() {
             return 0;
         }
 
-        public static int getIndex_Ruolo() {
+        public static int getIndexRuolo() {
             return 1;
         }
 
-        public static int getIndex_Nome() {
+        public static int getIndexNome() {
             return 2;
         }
 
-        public static int getIndex_Cognome() {
+        public static int getIndexCognome() {
             return 4;
         }
-        public static int getIndex_Email() {
+        public static int getIndexEmail() {
             return 5;
         }
-        public static int getIndex_Descrizione() {
+        public static int getIndexDescrizione() {
             return 6;
         }
-        public static int getIndex_Data() {
+        public static int getIndexData() {
             return 7;
         }
     }
 
 
 
-        /*
-        todo
-            copiare users dao in csv
-         */
-        /*
-        @Override
-	public void saveAlbum(Album instance) throws Exception {
-		boolean duplicatedRecordId = false;
 
-		synchronized (this.localCache) {
-			duplicatedRecordId = (this.localCache.get(String.valueOf(instance.getAlbumId())) != null);
-		}
-
-		if (!duplicatedRecordId) {
-			try {
-				List<Album> albumList = retreiveById(this.fd, instance.getAlbumId());
-				duplicatedRecordId = (albumList.size() != 0);
-			} catch (Exception e) {
-				duplicatedRecordId = false;
-			}
-		}
-
-		if (duplicatedRecordId) {
-			DuplicatedRecordException e = new DuplicatedRecordException(
-					"Duplicated Instance ID. Id " + instance.getAlbumId() + " was already assigned");
-			throw e;
-		}
-
-		saveAlbum(this.fd, instance);
-	}
-
-	private static synchronized void saveAlbum(File fd, Album instance) throws Exception {
-
-		// create csvWriter object passing file reader as a parameter
-		CSVWriter csvWriter = new CSVWriter(new BufferedWriter(new FileWriter(fd, true)));
-
-		String[] record = new String[4];
-
-		record[AlbumAttributesOrder.getIndex_AlbumID()] = String.valueOf(instance.getAlbumId());
-		record[AlbumAttributesOrder.getIndex_Titolo()] = instance.getTitolo();
-		record[AlbumAttributesOrder.getIndex_Artista()] = instance.getArtista();
-		record[AlbumAttributesOrder.getIndex_Anno()] = String.valueOf(instance.getAnno());
-
-		csvWriter.writeNext(record);
-		csvWriter.flush();
-		csvWriter.close();
-	}
-
-         */
 }

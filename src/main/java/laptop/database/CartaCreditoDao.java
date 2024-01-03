@@ -57,33 +57,26 @@ public class CartaCreditoDao {
 	}	
 
 	
-	public void insCC(CartaDiCredito cc)
-	{
-		long row=0;
-		boolean status=false;
+	public void insCC(CartaDiCredito cc) {
 
-		query="insert into CARTACREDITO (nomeP,cognomeP,codiceCarta,scad,codicePin,ammontare)  values(?,?,?,?,?,?)";
-				 
-		
-			try(Connection conn=ConnToDb.connectionToDB();
-					PreparedStatement prepQ=conn.prepareStatement(query))
-			{
-				prepQ.setString(1,cc.getNomeUser());
-				prepQ.setString(2, cc.getCognomeUser());
-				prepQ.setString(3, cc.getNumeroCC());
-				prepQ.setDate(4, (Date) cc.getScadenza());
-				prepQ.setString(5,cc.getCiv());
-				//in alternativa vis.getSpesa
-				prepQ.setFloat(6, cc.getPrezzoTransazine());
-				row=prepQ.executeLargeUpdate();
-			}catch(SQLException e)
-			{
-				Logger.getLogger("report libro").log(Level.SEVERE,"\n eccezione ottenuta .",e);
 
-			}
-			if(row==1)
-				status= true;
+		query = "insert into CARTACREDITO (nomeP,cognomeP,codiceCarta,scad,codicePin,ammontare)  values(?,?,?,?,?,?)";
 
+
+		try (Connection conn = ConnToDb.connectionToDB();
+			 PreparedStatement prepQ = conn.prepareStatement(query)) {
+			prepQ.setString(1, cc.getNomeUser());
+			prepQ.setString(2, cc.getCognomeUser());
+			prepQ.setString(3, cc.getNumeroCC());
+			prepQ.setDate(4, (Date) cc.getScadenza());
+			prepQ.setString(5, cc.getCiv());
+			//in alternativa vis.getSpesa
+			prepQ.setFloat(6, cc.getPrezzoTransazine());
+			 prepQ.executeLargeUpdate();
+		} catch (SQLException e) {
+			Logger.getLogger("report libro").log(Level.SEVERE, "\n eccezione ottenuta .", e);
+
+		}
 	}
 
 	
