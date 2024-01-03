@@ -251,7 +251,7 @@ public class UsersDao {
 
 
 
-	public static void getListaUtenti() throws IOException, SQLException {
+	public static void getListaUtenti() throws IOException {
 
 		  final String TXT_FILE_NAME="ReportFinale/riepilogoLibro.txt";
 
@@ -340,7 +340,7 @@ public class UsersDao {
 		return uT;
 	}
 
-	public static User aggiornaUtente(User u,String vecchiaEmail) throws SQLException {
+	public static User aggiornaUtente(User u,String vecchiaEmail)  {
 
 
 		query = "UPDATE USERS set idRuolo=? , Nome=? , Cognome=? , Email=? , pwd=? , descrizione=? , DataDiNascita=? where idUser=? or Email=?";
@@ -448,7 +448,7 @@ public class UsersDao {
 		return row;
 	}
 
-	public static void cleanUp(Path path) throws NoSuchFileException, DirectoryNotEmptyException, IOException {
+	public static void cleanUp(Path path) throws IOException {
 		Files.delete(path);
 	}
 }

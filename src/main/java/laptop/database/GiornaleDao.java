@@ -5,6 +5,10 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.DirectoryNotEmptyException;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -294,13 +298,12 @@ public class GiornaleDao {
 			}
 			if(fd.exists())
 			{
-				if(fd.delete())
-				{
+				cleanUp(Path.of(TXT_FILE_NAME));
 					throw new IOException("file deleted -> not exists");
-				}
+
 			}
 		} catch (IOException e) {
-			java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
+			java.util.logging.Logger.getLogger("Test genera report").log(Level.INFO, ECCEZIONE, e);
 			if (fd.createNewFile()) {
 
 
@@ -323,7 +326,7 @@ public class GiornaleDao {
 						}
 
 					} catch (SQLException e1) {
-						java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e1);
+						java.util.logging.Logger.getLogger("Test Eccezione report").log(Level.INFO, ECCEZIONE, e1);
 					}
 				}
 			}
@@ -352,7 +355,7 @@ public class GiornaleDao {
 			prepQ.executeUpdate();
 		}catch(SQLException e)
 		{
-			java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
+			java.util.logging.Logger.getLogger("Test incrementa disp").log(Level.INFO, ECCEZIONE, e);
 		}
 
 
@@ -374,6 +377,10 @@ public class GiornaleDao {
 
 		java.util.logging.Logger.getLogger("aggiorna data").log(Level.INFO, "libri aggiornati {0}.",row);
 
+	}
+
+	public static void cleanUp(Path path) throws NoSuchFileException, DirectoryNotEmptyException, IOException {
+		Files.delete(path);
 	}
 
 

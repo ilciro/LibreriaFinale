@@ -4,6 +4,10 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.DirectoryNotEmptyException;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -23,21 +27,21 @@ import javafx.collections.ObservableList;
 
 public class 	RivistaDao {
 	
-	private  Factory f;
+	private final Factory f;
 	
 	private  String query ;
 	
 
 	private boolean state=false;
 
-	private ControllerSystemState vis=ControllerSystemState.getInstance();
-	private  final String Rivista="Rivista";
+	private final ControllerSystemState vis=ControllerSystemState.getInstance();
+	private  final String RIVISTA="Rivista";
 
 	private static final String ECCEZIONE="eccezione generata:";
 
 
 	private static final String TXT_FILE_NAME="ReportFinale/riepilogoRivista.txt";
-	private File fd;
+	private final File fd;
 
 	public RivistaDao() throws IOException {
 		f = new Factory();
@@ -56,12 +60,12 @@ public class 	RivistaDao {
 			ResultSet rs=prepQ.executeQuery();
 			while (rs.next())
 			{
-				f.createRaccoltaFinale1(Rivista, rs.getString(1), null, rs.getString(5), rs.getString(3),rs.getString(4), rs.getString(2));
+				f.createRaccoltaFinale1(RIVISTA, rs.getString(1), null, rs.getString(5), rs.getString(3),rs.getString(4), rs.getString(2));
 
 
-				f.createRaccoltaFinale2(Rivista, 0, rs.getInt(10), rs.getInt(8),rs.getFloat(9),rs.getInt(10));
+				f.createRaccoltaFinale2(RIVISTA, 0, rs.getInt(10), rs.getInt(8),rs.getFloat(9),rs.getInt(10));
 
-				r=(Rivista) f.createRaccoltaFinaleCompleta(Rivista, rs.getDate(7).toLocalDate(),null, null);
+				r=(Rivista) f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(),null, null);
 
 
 			}
@@ -81,12 +85,12 @@ public class 	RivistaDao {
 			 ResultSet rs = prepQ.executeQuery()) {
 			while (rs.next()) {
 
-				f.createRaccoltaFinale1(Rivista, rs.getString(1), null, rs.getString(5), rs.getString(3),rs.getString(4), rs.getString(2));
+				f.createRaccoltaFinale1(RIVISTA, rs.getString(1), null, rs.getString(5), rs.getString(3),rs.getString(4), rs.getString(2));
 
 
-				f.createRaccoltaFinale2(Rivista, 0, rs.getInt(10), rs.getInt(8),rs.getFloat(9),rs.getInt(10));
+				f.createRaccoltaFinale2(RIVISTA, 0, rs.getInt(10), rs.getInt(8),rs.getFloat(9),rs.getInt(10));
 
-				catalogo.add(f.createRaccoltaFinaleCompleta(Rivista, rs.getDate(7).toLocalDate(),null, null));
+				catalogo.add(f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(),null, null));
 
 
 
@@ -113,12 +117,12 @@ public class 	RivistaDao {
 			ResultSet rs=prepQ.executeQuery();
 			while (rs.next())
 			{
-				f.createRaccoltaFinale1(Rivista, rs.getString(1), null, rs.getString(5), rs.getString(3),rs.getString(4), rs.getString(2));
+				f.createRaccoltaFinale1(RIVISTA, rs.getString(1), null, rs.getString(5), rs.getString(3),rs.getString(4), rs.getString(2));
 
 
-				f.createRaccoltaFinale2(Rivista, 0, rs.getInt(10), rs.getInt(8),rs.getFloat(9),rs.getInt(10));
+				f.createRaccoltaFinale2(RIVISTA, 0, rs.getInt(10), rs.getInt(8),rs.getFloat(9),rs.getInt(10));
 
-				catalogo.add(f.createRaccoltaFinaleCompleta(Rivista, rs.getDate(7).toLocalDate(),null, null));
+				catalogo.add(f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(),null, null));
 
 
 			}
@@ -143,12 +147,12 @@ public class 	RivistaDao {
 			ResultSet rs=prepQ.executeQuery();
 			while (rs.next())
 			{
-				f.createRaccoltaFinale1(Rivista, rs.getString(1), null, rs.getString(5), rs.getString(3),rs.getString(4), rs.getString(2));
+				f.createRaccoltaFinale1(RIVISTA, rs.getString(1), null, rs.getString(5), rs.getString(3),rs.getString(4), rs.getString(2));
 
 
-				f.createRaccoltaFinale2(Rivista, 0, rs.getInt(10), rs.getInt(8),rs.getFloat(9),rs.getInt(10));
+				f.createRaccoltaFinale2(RIVISTA, 0, rs.getInt(10), rs.getInt(8),rs.getFloat(9),rs.getInt(10));
 
-				catalogo.add((Rivista) f.createRaccoltaFinaleCompleta(Rivista, rs.getDate(7).toLocalDate(),null, null));
+				catalogo.add((Rivista) f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(),null, null));
 
 
 			}
@@ -295,13 +299,12 @@ public class 	RivistaDao {
 			}
 			if(fd.exists())
 			{
-				if(fd.delete())
-				{
+				cleanUp(Path.of(TXT_FILE_NAME));
 					throw new IOException("file deleted -> not exists");
-				}
+
 			}
 		} catch (IOException e) {
-			java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
+			java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, ECCEZIONE, e);
 			if (fd.createNewFile()) {
 
 
@@ -324,7 +327,7 @@ public class 	RivistaDao {
 						}
 
 					} catch (SQLException e1) {
-						java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e1);
+						java.util.logging.Logger.getLogger("Test Eccezione sql").log(Level.INFO, ECCEZIONE, e1);
 					}
 				}
 			}
@@ -350,7 +353,7 @@ public class 	RivistaDao {
 			prepQ.executeUpdate();
 		}catch(SQLException e)
 		{
-			java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
+			java.util.logging.Logger.getLogger("Test Eccezione incrementa disp").log(Level.INFO, ECCEZIONE, e);
 		}
 
 
@@ -375,7 +378,9 @@ public class 	RivistaDao {
 	}
 
 
-	
+	public void cleanUp(Path path) throws NoSuchFileException, DirectoryNotEmptyException, IOException {
+		Files.delete(path);
+	}
 
 
 	
