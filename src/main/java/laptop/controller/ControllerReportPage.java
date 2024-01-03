@@ -24,7 +24,7 @@ public class ControllerReportPage {
 		lD.generaReport();
 		
 	}
-	public void generaReportUtenti() throws IOException, SQLException  {
+	public void generaReportUtenti() throws IOException  {
 		UsersDao.getListaUtenti();
 	}
 	public void generaReportRiviste () throws IOException

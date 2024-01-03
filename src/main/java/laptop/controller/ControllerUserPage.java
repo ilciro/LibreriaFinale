@@ -8,7 +8,7 @@ import laptop.database.UsersDao;
 
 public class ControllerUserPage {
 	
-	public void getUtenti() throws IOException, SQLException  {
+	public void getUtenti() throws IOException  {
 		 UsersDao.getListaUtenti();
 	}
 	

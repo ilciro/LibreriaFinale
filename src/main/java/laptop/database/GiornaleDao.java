@@ -5,9 +5,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.DirectoryNotEmptyException;
 import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.sql.Connection;
 import java.sql.Date;
@@ -27,23 +25,23 @@ import javafx.collections.ObservableList;
 
 public class GiornaleDao {
 	
-	private Factory f;
+	private final Factory f;
 	
 
 	private  String query  ;
 	
 
 	private boolean state=false;
-	private ControllerSystemState vis=ControllerSystemState.getInstance();
+	private final ControllerSystemState vis=ControllerSystemState.getInstance();
 	private static final String GIORNALE = "giornale";
 	private static final String ECCEZIONE="eccezione generata:";
 
-	private static final String TXT_FILE_NAME="src/main/resources/Reports/riepilogoGiornali.txt";
-	private File fd;
+	private static final String RIEPILOGOGIORNALI="src/main/resources/Reports/riepilogoGiornali.txt";
+	private final File fd;
 
 	public GiornaleDao() {
 		f = new Factory();
-		this.fd=new File(TXT_FILE_NAME);
+		this.fd=new File(RIEPILOGOGIORNALI);
 
 	}
 
@@ -298,7 +296,7 @@ public class GiornaleDao {
 			}
 			if(fd.exists())
 			{
-				cleanUp(Path.of(TXT_FILE_NAME));
+				cleanUp(Path.of(RIEPILOGOGIORNALI));
 					throw new IOException("file deleted -> not exists");
 
 			}
@@ -307,7 +305,7 @@ public class GiornaleDao {
 			if (fd.createNewFile()) {
 
 
-				try (BufferedWriter b = new BufferedWriter(new FileWriter(TXT_FILE_NAME))) {
+				try (BufferedWriter b = new BufferedWriter(new FileWriter(RIEPILOGOGIORNALI))) {
 
 					query = "select titolo,copieRimanenti,prezzo  from GIORNALE";
 
@@ -379,7 +377,7 @@ public class GiornaleDao {
 
 	}
 
-	public static void cleanUp(Path path) throws NoSuchFileException, DirectoryNotEmptyException, IOException {
+	public static void cleanUp(Path path) throws  IOException {
 		Files.delete(path);
 	}
 

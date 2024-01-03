@@ -40,12 +40,12 @@ public class 	RivistaDao {
 	private static final String ECCEZIONE="eccezione generata:";
 
 
-	private static final String TXT_FILE_NAME="ReportFinale/riepilogoRivista.txt";
+	private static final String RIEPILOGORIVISTE="ReportFinale/riepilogoRivista.txt";
 	private final File fd;
 
 	public RivistaDao() throws IOException {
 		f = new Factory();
-		this.fd=new File(TXT_FILE_NAME);
+		this.fd=new File(RIEPILOGORIVISTE);
 
 	}
 	public Rivista getData(Rivista r) {
@@ -299,7 +299,7 @@ public class 	RivistaDao {
 			}
 			if(fd.exists())
 			{
-				cleanUp(Path.of(TXT_FILE_NAME));
+				cleanUp(Path.of(RIEPILOGORIVISTE));
 					throw new IOException("file deleted -> not exists");
 
 			}
@@ -308,7 +308,7 @@ public class 	RivistaDao {
 			if (fd.createNewFile()) {
 
 
-				try (BufferedWriter b = new BufferedWriter(new FileWriter(TXT_FILE_NAME))) {
+				try (BufferedWriter b = new BufferedWriter(new FileWriter(RIEPILOGORIVISTE))) {
 
 					query = "select titolo,copieRimanenti,prezzo  from RIVISTA";
 

@@ -29,11 +29,10 @@
 
 
 <table>
-<th>
 <caption>
 elenco azioni possibili
 </caption>
-</th>
+
 
 
 <tr>

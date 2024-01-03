@@ -4,9 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.DirectoryNotEmptyException;
 import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.sql.Connection;
 import java.sql.Date;
@@ -37,12 +35,12 @@ public class LibroDao implements DaoInterface{
 	private static final String LIBRO = "libro";
 	private static final String ECCEZIONE = "ECCEZIONE generata:";
 
-	private static final String TXT_FILE_NAME="ReportFinale/riepilogoLibro.txt";
+	private static final String REPORTLIBRI="ReportFinale/riepilogoLibro.txt";
 	private final File fd;
 
 	public LibroDao() throws IOException {
 		f = new Factory();
-		this.fd=new File(TXT_FILE_NAME);
+		this.fd=new File(REPORTLIBRI);
 
 	}
 
@@ -304,7 +302,7 @@ public class LibroDao implements DaoInterface{
 			}
 			if(fd.exists())
 			{
-				cleanUp(Path.of(TXT_FILE_NAME));
+				cleanUp(Path.of(REPORTLIBRI));
 					throw new IOException("file deleted -> not exists");
 
 			}
@@ -313,7 +311,7 @@ public class LibroDao implements DaoInterface{
 			if (fd.createNewFile()) {
 
 
-				try (BufferedWriter b = new BufferedWriter(new FileWriter(TXT_FILE_NAME))) {
+				try (BufferedWriter b = new BufferedWriter(new FileWriter(REPORTLIBRI))) {
 
 					query = "select titolo,copieRimanenti,prezzo  from LIBRO";
 
@@ -377,7 +375,7 @@ public class LibroDao implements DaoInterface{
 		java.util.logging.Logger.getLogger("aggiorna data").log(Level.INFO, "libri aggiornati {0}.", row);
 
 	}
-	public static void cleanUp(Path path) throws NoSuchFileException, DirectoryNotEmptyException, IOException {
+	public static void cleanUp(Path path) throws IOException {
 		Files.delete(path);
 	}
 
