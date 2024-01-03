@@ -16,12 +16,12 @@ import laptop.model.raccolta.Rivista;
 
 
 public class ControllerGestionePage {
-	private RivistaDao rD;
-	private LibroDao lD;
-	private GiornaleDao gD;
-	private Libro l;
-	private Giornale g;
-	private Rivista r;
+	private final RivistaDao rD;
+	private final LibroDao lD;
+	private final GiornaleDao gD;
+	private final Libro l;
+	private final Giornale g;
+	private final Rivista r;
 	private static final String LIBRO="libro";
 	private static final String GIORNALE="giornale";
 	private static final String RIVISTA="rivista";
@@ -40,7 +40,7 @@ public class ControllerGestionePage {
 	}
 
 
-	public ObservableList<Raccolta> getLista(String type) throws SQLException {
+	public ObservableList<Raccolta> getLista(String type)  {
 		ObservableList<Raccolta> catalogo = FXCollections.observableArrayList();
 		switch (type) {
 			case LIBRO:

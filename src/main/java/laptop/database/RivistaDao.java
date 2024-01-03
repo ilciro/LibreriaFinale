@@ -173,7 +173,7 @@ public class 	RivistaDao {
 
 
 
-		query="update Rivista set copieRimanenti=? where  idRivista=?";
+		query="update RIVISTA set copieRimanenti=? where  idRivista=?";
 
 		try(Connection conn=ConnToDb.connectionToDB();
 			PreparedStatement prepQ=conn.prepareStatement(query))
@@ -197,26 +197,30 @@ public class 	RivistaDao {
 		query= "INSERT INTO `RIVISTA`"
 				+ "(`titolo`,"
 				+ "`tipologia`,"
+				+ "`autore`,"
 				+ "`lingua`,"
 				+ "`editore`,"
+				+ "`descrizione`,"
 				+ "`dataPubblicazione`,"
-				+ "`copiRim`,"
+				+ "`copieRimanenti`,"
 				+ "`disp`,"
 				+ "`prezzo`)"
 				+ "VALUES"
-				+ "(?,?,?,?,?,?,?,?)";
+				+ "(?,?,?,?,?,?,?,?,?,?)";
 		try(Connection conn=ConnToDb.connectionToDB();
 			PreparedStatement prepQ=conn.prepareStatement(query))
 		{
 
 			prepQ.setString(1,r.getTitolo());
 			prepQ.setString(2,r.getTipologia());
-			prepQ.setString(3,r.getLingua());
-			prepQ.setString(4,r.getEditore());
-			prepQ.setDate(5, java.sql.Date.valueOf(r.getDataPubb().toString()));
-			prepQ.setInt(6,r.getCopieRim());
-			prepQ.setInt(7, r.getDisp());
-			prepQ.setFloat(8, r.getPrezzo());
+			prepQ.setString(3,r.getAutore());
+			prepQ.setString(4,r.getLingua());
+			prepQ.setString(5,r.getEditore());
+			prepQ.setString(6,r.getDescrizione());
+			prepQ.setDate(7, java.sql.Date.valueOf(r.getDataPubb().toString()));
+			prepQ.setInt(8,r.getCopieRim());
+			prepQ.setInt(9, r.getDisp());
+			prepQ.setFloat(10, r.getPrezzo());
 
 
 			row=prepQ.executeUpdate();

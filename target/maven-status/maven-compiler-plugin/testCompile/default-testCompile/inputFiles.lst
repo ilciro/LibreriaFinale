@@ -1,2 +1,3 @@
-/home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/test/TestLoginAdminRaccoltaLibri.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerAcquistaTest.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerAggiungiPageTest.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/web/test/TestIndexPage.java

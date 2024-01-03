@@ -232,7 +232,7 @@ public class UsersDao {
 				u.setNome(rs.getString("Nome"));
 				u.setCognome(rs.getString("Cognome"));
 				u.setDescrizione(rs.getString("descrizione"));
-				u.setDataDiNascita(rs.getDate("DataDiNascita").toLocalDate());
+				u.setDataDiNascita(rs.getDate("dataNascita").toLocalDate());
 
 
 			}

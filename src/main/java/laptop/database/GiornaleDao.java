@@ -199,7 +199,7 @@ public class GiornaleDao {
 				+ "`lingua`,"
 				+ "`editore`,"
 				+ "`dataPubblicazione`,"
-				+ "`copiRim`,"
+				+ "`copieRimanenti`,"
 				+ "`disp`,"
 				+ "`prezzo`)"
 				+ "VALUES"

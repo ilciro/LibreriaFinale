@@ -185,20 +185,19 @@ public class LibroDao implements DaoInterface{
 		query = "INSERT INTO `LIBRO`"
 				+ "(`titolo`,"
 				+ "`numeroPagine`,"
-				+ "`Cod_isbn`,"
+				+ "`codIsbn`,"
 				+ "`editore`,"
 				+ "`autore`,"
 				+ "`lingua`,"
 				+ "`categoria`,"
 				+ "`dataPubblicazione`,"
 				+ "`recensione`,"
-				+ " copieVendute,"
+				+ " copierimanenti,"
 				+ "`breveDescrizione`,"
 				+ "`disp`,"
-				+ "`prezzo`,"
-				+ "`copieRimanenti`)"
+				+ "`prezzo`)"
 				+ "VALUES"
-				+ "(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+				+ "(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		try (Connection conn = ConnToDb.connectionToDB();
 			 PreparedStatement prepQ = conn.prepareStatement(query)) {
 			prepQ.setString(1, l.getTitolo());
@@ -215,7 +214,6 @@ public class LibroDao implements DaoInterface{
 			prepQ.setString(11, l.getDesc());
 			prepQ.setInt(12, l.getDisponibilita());
 			prepQ.setFloat(13, l.getPrezzo());
-			prepQ.setInt(14, l.getNrCopie());
 			int row = prepQ.executeUpdate();
 			if (row == 1) {
 				state = true; // true
@@ -233,7 +231,7 @@ public class LibroDao implements DaoInterface{
 
 	public int cancella(Libro l) throws SQLException {
 		int row;
-		query = "delete from LIBRO where idLibro=? or Cod_isbn=?";
+		query = "delete from LIBRO where idLibro=? or codIsbn=?";
 
 		try (Connection conn = ConnToDb.connectionToDB();
 			 PreparedStatement prepQ = conn.prepareStatement(query)) {
@@ -254,7 +252,7 @@ public class LibroDao implements DaoInterface{
 		boolean status = false;
 
 
-		query = " UPDATE LIBRO SET  `titolo` =?, `numeroPagine` = ?, `Cod_isbn` = ?, `editore` = ?, `autore` = ?, `lingua` = ?, `categoria` = ?, `dataPubblicazione` = ?, `recensione` = ?, `copieVendute` = ?, `breveDescrizione` =?, `disp` = ?,`prezzo` = ?,`copieRimanenti` =? WHERE `idLibro`= ? ";
+		query = " UPDATE LIBRO SET  `titolo` =?, `numeroPagine` = ?, `codIsbn` = ?, `editore` = ?, `autore` = ?, `lingua` = ?, `categoria` = ?, `dataPubblicazione` = ?, `recensione` = ?, `copieRimanenti` = ?, `breveDescrizione` =?, `disp` = ?,`prezzo` = ? WHERE `idLibro`= ? ";
 		try (Connection conn = ConnToDb.connectionToDB();
 			 PreparedStatement prepQ = conn.prepareStatement(query)) {
 
@@ -271,8 +269,7 @@ public class LibroDao implements DaoInterface{
 			prepQ.setString(11, l.getDesc());
 			prepQ.setInt(12, l.getDisponibilita());
 			prepQ.setFloat(13, l.getPrezzo());
-			prepQ.setInt(14, l.getNrCopie());
-			prepQ.setInt(15, l.getId());
+			prepQ.setInt(14, l.getId());
 
 
 			rowAffected = prepQ.executeUpdate();
@@ -344,7 +341,7 @@ public class LibroDao implements DaoInterface{
 		int i = l.getNrCopie();
 
 		int rim = i + d;
-		query = "update LIBRO set copieRimanenti= ? where Cod_isbn=? or idLibro=?";
+		query = "update LIBRO set copieRimanenti= ? where codIsbn=? or idLibro=?";
 
 
 		try (Connection conn = ConnToDb.connectionToDB();

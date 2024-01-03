@@ -29,12 +29,11 @@
 <c:when test="${ tipo=='A'}">
 
 <table>
-<th>
+
 <caption>
 gestione profilo
-<br>
 </caption>
-</th>
+
 <tr>
 <th scope="col">
 visualizza profilo

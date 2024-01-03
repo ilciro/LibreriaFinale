@@ -8,7 +8,7 @@ import laptop.model.User;
 
 public class ControllerLogin {
 	
-	private  User user = User.getInstance();
+	private final User user = User.getInstance();
 	protected boolean esito;
 
 	

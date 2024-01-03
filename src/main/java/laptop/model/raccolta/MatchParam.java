@@ -7,7 +7,7 @@ public class MatchParam {
 	public String[] popola1(String titolo,String isbn,String editore,String autore,String lingua,String categoria)
 	{
 		
-		String[] appoggio=new String[6];
+		String[] appoggio=new String[7];
 
 		
 			appoggio[0]=titolo;

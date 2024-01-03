@@ -4,9 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="restrung dao v4 code smells v4">
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerReportPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerReportPage.java" afterDir="false" />
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="restrung dao v4 code smells v5">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerAcquista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerAcquista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerGestionePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerGestionePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/LibroDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/LibroDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/UsersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/UsersDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/MatchParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/MatchParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/laptop/test/TestLoginAdminRaccoltaLibri.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerAcquista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerAcquista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerGestionePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerGestionePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerModificaUtente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerModificaUtente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerReportPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerReportPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerUserPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerUserPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/CartaCreditoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/CartaCreditoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/CsvDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/CsvDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GiornaleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GiornaleDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/LibroDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/LibroDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/RivistaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/RivistaDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/UsersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/UsersDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/MatchParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/MatchParam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryModificaUtente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryModificaUtente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/profilo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/profilo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/utenti.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/utenti.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerAcquista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerAcquista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerGestionePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerGestionePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerReportPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerReportPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerUserPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerUserPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/CartaCreditoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/CartaCreditoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/CsvDao$UserAttributes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/CsvDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/CsvDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/GiornaleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/GiornaleDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/LibroDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/LibroDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/RivistaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/RivistaDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/UsersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/UsersDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/MatchParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/MatchParam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-LibreriaMaven.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/laptop/test/TestLoginAdminRaccoltaLibri.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,10 +65,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="package-info" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -274,14 +320,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
-    </task>
-    <task id="LOCAL-00004" summary="linux v2">
-      <option name="closed" value="true" />
-      <created>1700587935388</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1700587935388</updated>
     </task>
     <task id="LOCAL-00005" summary="linux v3">
       <option name="closed" value="true" />
@@ -651,7 +689,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704301361163</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="restrung dao v4 code smells v5">
+      <option name="closed" value="true" />
+      <created>1704301669735</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1704301669735</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -673,7 +719,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="insert buy magazines and test -&gt; first use case closed" />
     <MESSAGE value="insert management book web" />
     <MESSAGE value="insert management book web v2( fix bugs)" />
     <MESSAGE value="insert management daily web (no test)" />
@@ -698,7 +743,8 @@
     <MESSAGE value="restrung dao v4 code smells v2" />
     <MESSAGE value="restrung dao v4 code smells v3" />
     <MESSAGE value="restrung dao v4 code smells v4" />
-    <option name="LAST_COMMIT_MESSAGE" value="restrung dao v4 code smells v4" />
+    <MESSAGE value="restrung dao v4 code smells v5" />
+    <option name="LAST_COMMIT_MESSAGE" value="restrung dao v4 code smells v5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

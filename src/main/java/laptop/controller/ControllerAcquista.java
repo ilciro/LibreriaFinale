@@ -16,6 +16,7 @@ import laptop.model.raccolta.Libro;
 import laptop.model.raccolta.Rivista;
 
 
+
 public class ControllerAcquista {
 	
 	// Levatoil agamento in quanto lo faccio dopo a seconda del tipo
@@ -80,14 +81,13 @@ public class ControllerAcquista {
 		}
 		return x;
 	}
-	private boolean checkID(int id) throws IdException {
-		boolean status=false;
+	private void checkID(int id) throws IdException {
+
 		if(id <=0 || id>30)
 		{
 			throw  new IdException("wrong id");
 		}
-		status=true;
-		return status;
+
 	}
 
 
@@ -105,7 +105,7 @@ public class ControllerAcquista {
 	}
 
 
-	public void inserisciAmmontare(String type,int i) throws SQLException, AcquistaException, IdException {
+	public void inserisciAmmontare(String type,int i) throws AcquistaException, IdException {
 		int rimanenza;
 		vis.setId(i);
 		switch(type)
@@ -146,21 +146,20 @@ public class ControllerAcquista {
 		
 		int id = vis.getId();
 		String type =vis.getType();
-		if(type.equals(LIBRO))
-		{
-			l.setId(id);
-			name = lD.getData(l).getTitolo();
-		}
-		else if(type.equals(GIORNALE)) {
-			g.setId(id);
-			name = gD.getData(g).getTitolo();
-		}
-		else if(type.equals(RIVISTA))
-		{
-			r.setId(id);
-			name = rD.getData(r).getTitolo();
-			
-		}
+        switch (type) {
+            case LIBRO -> {
+                l.setId(id);
+                name = lD.getData(l).getTitolo();
+            }
+            case GIORNALE -> {
+                g.setId(id);
+                name = gD.getData(g).getTitolo();
+            }
+            case RIVISTA -> {
+                r.setId(id);
+                name = rD.getData(r).getTitolo();
+            }
+        }
 		return name ;
 	}
 
