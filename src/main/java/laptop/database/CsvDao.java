@@ -2,15 +2,14 @@ package laptop.database;
 
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
+import laptop.exception.IdException;
 import laptop.model.User;
 import laptop.utilities.ConnToDb;
 import org.apache.commons.lang.SystemUtils;
 
 import java.io.*;
 
-import java.nio.file.DirectoryNotEmptyException;
 import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.attribute.FileAttribute;
 import java.nio.file.attribute.PosixFilePermission;
@@ -242,7 +241,7 @@ if(SystemUtils.IS_OS_UNIX) {
         csvReader.close();
 
         if (userList.isEmpty()) {
-            throw new Exception(" user not found");
+            throw new IdException(" user not found -> id null");
         }
 
         return userList;

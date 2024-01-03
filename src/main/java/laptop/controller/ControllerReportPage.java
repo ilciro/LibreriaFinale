@@ -100,7 +100,7 @@ public class ControllerReportPage {
 		}
 		return builder.toString();
 	}
-	public String leggiUtenti() throws SQLException, IOException {
+	public String leggiUtenti() throws IOException {
 		generaReportUtenti();
 		StringBuilder builder = new StringBuilder();
 		String line = "";

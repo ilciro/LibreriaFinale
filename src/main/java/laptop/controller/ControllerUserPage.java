@@ -1,14 +1,13 @@
 package laptop.controller;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.logging.Level;
 
 import laptop.database.UsersDao;
 
 public class ControllerUserPage {
 	
-	public void getUtenti() throws IOException  {
+	public void getUtenti() throws IOException {
 		 UsersDao.getListaUtenti();
 	}
 	

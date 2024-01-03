@@ -4,9 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.DirectoryNotEmptyException;
 import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.sql.Connection;
 import java.sql.Date;
@@ -378,7 +376,7 @@ public class 	RivistaDao {
 	}
 
 
-	public void cleanUp(Path path) throws NoSuchFileException, DirectoryNotEmptyException, IOException {
+	public void cleanUp(Path path) throws IOException {
 		Files.delete(path);
 	}
 
