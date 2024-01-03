@@ -14,7 +14,7 @@ import laptop.model.raccolta.Libro;
 import laptop.model.raccolta.Rivista;
 
 public class ControllerCheckPagamentoData {
-<span class="nc" id="L17">	private ControllerSystemState vis=ControllerSystemState.getInstance();</span>
+<span class="fc" id="L17">	private ControllerSystemState vis=ControllerSystemState.getInstance();</span>
 	private Libro l;
 	private Giornale g;
 	private Rivista r;
@@ -24,75 +24,75 @@ public class ControllerCheckPagamentoData {
 	private RivistaDao rD;
 	private PagamentoDao pagD;
 	public void checkPagamentoData(String nome) throws SQLException, IdException {
-<span class="nc" id="L27">		String tipo=vis.getType();</span>
+<span class="fc" id="L27">		String tipo=vis.getType();</span>
 		
 		Pagamento p;
 		
-<span class="nc" id="L31">		p=new Pagamento(0,&quot;&quot;, 0, &quot;&quot;,0, null);</span>
+<span class="fc" id="L31">		p=new Pagamento(0,&quot;&quot;, 0, &quot;&quot;,0, null);</span>
 			
 		//inserire qui
-<span class="nc" id="L34">		p.setMetodo(&quot;cash&quot;);</span>
-<span class="nc" id="L35">		p.setNomeUtente(nome);</span>
+<span class="fc" id="L34">		p.setMetodo(&quot;cash&quot;);</span>
+<span class="fc" id="L35">		p.setNomeUtente(nome);</span>
 		
-<span class="nc" id="L37">		p.setId(vis.getId());</span>
+<span class="fc" id="L37">		p.setId(vis.getId());</span>
 		
 		
 		
-<span class="nc" id="L41">		pagD.inserisciPagamento(p);</span>
+<span class="fc" id="L41">		pagD.inserisciPagamento(p);</span>
 
-<span class="nc bnc" id="L43" title="All 4 branches missed.">		switch (tipo){</span>
+<span class="pc bpc" id="L43" title="1 of 4 branches missed.">		switch (tipo){</span>
 			case &quot;libro&quot;:
 			{
-<span class="nc" id="L46">				l.setId(vis.getId());</span>
-<span class="nc" id="L47">				checkID(vis.getId());</span>
-<span class="nc" id="L48">				p.setAmmontare(vis.getSpesaT());</span>
-<span class="nc" id="L49">				p.setId(l.getId());</span>
-<span class="nc" id="L50">				p.setTipo(lD.getData(l).getCategoria());</span>
-<span class="nc" id="L51">				break;</span>
+<span class="fc" id="L46">				l.setId(vis.getId());</span>
+<span class="fc" id="L47">				checkID(vis.getId());</span>
+<span class="fc" id="L48">				p.setAmmontare(vis.getSpesaT());</span>
+<span class="fc" id="L49">				p.setId(l.getId());</span>
+<span class="fc" id="L50">				p.setTipo(lD.getData(l).getCategoria());</span>
+<span class="fc" id="L51">				break;</span>
 			}
 			case &quot;giornale&quot; :
 			{
-<span class="nc" id="L55">				g.setId(vis.getId());</span>
-<span class="nc" id="L56">				checkID(vis.getId());</span>
-<span class="nc" id="L57">				p.setAmmontare(vis.getSpesaT());</span>
-<span class="nc" id="L58">				p.setId(g.getId());</span>
-<span class="nc" id="L59">				p.setTipo(gD.getData(g).getTipologia());</span>
-<span class="nc" id="L60">				break;</span>
+<span class="fc" id="L55">				g.setId(vis.getId());</span>
+<span class="fc" id="L56">				checkID(vis.getId());</span>
+<span class="fc" id="L57">				p.setAmmontare(vis.getSpesaT());</span>
+<span class="fc" id="L58">				p.setId(g.getId());</span>
+<span class="fc" id="L59">				p.setTipo(gD.getData(g).getTipologia());</span>
+<span class="fc" id="L60">				break;</span>
 			}
 			case &quot;rivista&quot;:
 			{
-<span class="nc" id="L64">				r.setId(vis.getId());</span>
-<span class="nc" id="L65">				checkID(vis.getId());</span>
-<span class="nc" id="L66">				p.setAmmontare(vis.getSpesaT());</span>
-<span class="nc" id="L67">				p.setId(r.getId());</span>
-<span class="nc" id="L68">				p.setTipo(rD.getData(r).getTipologia());</span>
-<span class="nc" id="L69">				break;</span>
+<span class="fc" id="L64">				r.setId(vis.getId());</span>
+<span class="fc" id="L65">				checkID(vis.getId());</span>
+<span class="fc" id="L66">				p.setAmmontare(vis.getSpesaT());</span>
+<span class="fc" id="L67">				p.setId(r.getId());</span>
+<span class="fc" id="L68">				p.setTipo(rD.getData(r).getTipologia());</span>
+<span class="fc" id="L69">				break;</span>
 			}
 			default: break;
 		}
 
 		
 		
-<span class="nc" id="L76">	}</span>
-<span class="nc" id="L77">	public ControllerCheckPagamentoData() throws IOException {</span>
-<span class="nc" id="L78">		l=new Libro();</span>
-<span class="nc" id="L79">		g=new Giornale();</span>
-<span class="nc" id="L80">		r=new Rivista();</span>
-<span class="nc" id="L81">		lD=new LibroDao();</span>
-<span class="nc" id="L82">		rD=new RivistaDao();</span>
-<span class="nc" id="L83">		gD=new GiornaleDao();</span>
-<span class="nc" id="L84">		pagD=new PagamentoDao();</span>
+<span class="fc" id="L76">	}</span>
+<span class="fc" id="L77">	public ControllerCheckPagamentoData() throws IOException {</span>
+<span class="fc" id="L78">		l=new Libro();</span>
+<span class="fc" id="L79">		g=new Giornale();</span>
+<span class="fc" id="L80">		r=new Rivista();</span>
+<span class="fc" id="L81">		lD=new LibroDao();</span>
+<span class="fc" id="L82">		rD=new RivistaDao();</span>
+<span class="fc" id="L83">		gD=new GiornaleDao();</span>
+<span class="fc" id="L84">		pagD=new PagamentoDao();</span>
 		
-<span class="nc" id="L86">	}</span>
+<span class="fc" id="L86">	}</span>
 	private void checkID(int id) throws IdException {
 
-<span class="nc bnc" id="L89" title="All 4 branches missed.">		if (id&lt;=0 || id&gt;25)</span>
+<span class="pc bpc" id="L89" title="2 of 4 branches missed.">		if (id&lt;=0 || id&gt;25)</span>
 		{
 
 <span class="nc" id="L92">			throw new IdException(&quot;id not correct&quot;);</span>
 		}
 
-<span class="nc" id="L95">	}</span>
+<span class="fc" id="L95">	}</span>
 
 
 }

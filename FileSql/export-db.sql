@@ -246,17 +246,6 @@ USE `ISPW`;
 
 DELIMITER $$
 
-USE `ISPW`$$
-DROP TRIGGER IF EXISTS `ISPW`.`delete_after` $$
-USE `ISPW`$$
-CREATE
-DEFINER=`root`@`localhost`
-TRIGGER `ISPW`.`delete_after`
-AFTER DELETE ON `ISPW`.`USERS`
-FOR EACH ROW
-begin
- delete from ISPW.USERS where idUser=old.idUser;
- end$$
 
 
 USE `ISPW`$$
@@ -372,4 +361,5 @@ INSERT INTO `ISPW`.`RIVISTA` (`titolo`, `tipologia`, `autore`, `lingua`, `editor
 INSERT INTO `ISPW`.`RIVISTA` (`titolo`, `tipologia`, `autore`, `lingua`, `editore`, `Descrizione`, `dataPubblicazione`, `disp`, `prezzo`, `copieRimanenti`, `idRivista`) VALUES ('Rivista B', 'SPORTIVO', 'Bao Publishing', 'italiano', 'Bao Publishing', 'testo casuale', '1970-01-01', 1, 2.0, 131, 5);
 
 COMMIT;
+
 

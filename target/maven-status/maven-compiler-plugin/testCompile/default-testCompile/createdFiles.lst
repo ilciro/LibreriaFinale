@@ -1,2 +1,7 @@
 laptop/controller/ControllerAcquistaTest.class
+laptop/controller/ControllerCompravenditaTest.class
+laptop/controller/ControllerCheckPagamentoDataTest.class
+laptop/controller/ControllerCancellaUserTest.class
+laptop/controller/ControllerAggiungiUtenteTest.class
 laptop/controller/ControllerAggiungiPageTest.class
+laptop/controller/ControllerGestionePageTest.class

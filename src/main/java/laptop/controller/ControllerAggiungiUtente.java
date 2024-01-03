@@ -19,7 +19,7 @@ public class ControllerAggiungiUtente {
 	}
 
 	public boolean checkData(String nome, String cognome, String email, String pass, String dataN) throws ParseException, SQLException {
-		Date sqlDate = null;
+		Date sqlDate ;
 		java.util.Date utilDate;
 		
 		SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
@@ -28,7 +28,8 @@ public class ControllerAggiungiUtente {
 	         utilDate = format.parse(dataN);
 	         sqlDate = new java.sql.Date(utilDate.getTime());
        
-      
+
+			 User.getInstance().setIdRuolo("U");
        
        User.getInstance().setNome(nome);
        User.getInstance().setCognome(cognome);

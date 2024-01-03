@@ -75,20 +75,20 @@ public class 	RivistaDao {
 	}
 
 	public ObservableList&lt;Raccolta&gt; getRiviste() {
-<span class="nc" id="L78">		ObservableList&lt;Raccolta&gt; catalogo = FXCollections.observableArrayList();</span>
+<span class="fc" id="L78">		ObservableList&lt;Raccolta&gt; catalogo = FXCollections.observableArrayList();</span>
 
-<span class="nc" id="L80">		query = &quot;select * from RIVISTA&quot;;</span>
-<span class="nc" id="L81">		try (Connection conn = ConnToDb.connectionToDB();</span>
-<span class="nc" id="L82">			 PreparedStatement prepQ = conn.prepareStatement(query);</span>
-<span class="nc" id="L83">			 ResultSet rs = prepQ.executeQuery()) {</span>
-<span class="nc bnc" id="L84" title="All 2 branches missed.">			while (rs.next()) {</span>
+<span class="fc" id="L80">		query = &quot;select * from RIVISTA&quot;;</span>
+<span class="fc" id="L81">		try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="fc" id="L82">			 PreparedStatement prepQ = conn.prepareStatement(query);</span>
+<span class="fc" id="L83">			 ResultSet rs = prepQ.executeQuery()) {</span>
+<span class="fc bfc" id="L84" title="All 2 branches covered.">			while (rs.next()) {</span>
 
-<span class="nc" id="L86">				f.createRaccoltaFinale1(RIVISTA, rs.getString(1), null, rs.getString(5), rs.getString(3),rs.getString(4), rs.getString(2));</span>
+<span class="fc" id="L86">				f.createRaccoltaFinale1(RIVISTA, rs.getString(1), null, rs.getString(5), rs.getString(3),rs.getString(4), rs.getString(2));</span>
 
 
-<span class="nc" id="L89">				f.createRaccoltaFinale2(RIVISTA, 0, rs.getInt(10), rs.getInt(8),rs.getFloat(9),rs.getInt(10));</span>
+<span class="fc" id="L89">				f.createRaccoltaFinale2(RIVISTA, 0, rs.getInt(10), rs.getInt(8),rs.getFloat(9),rs.getInt(10));</span>
 
-<span class="nc" id="L91">				catalogo.add(f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(),null, null));</span>
+<span class="fc" id="L91">				catalogo.add(f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(),null, null));</span>
 
 
 
@@ -96,8 +96,8 @@ public class 	RivistaDao {
 			}
 <span class="nc" id="L97">		} catch (SQLException e) {</span>
 <span class="nc" id="L98">			java.util.logging.Logger.getLogger(&quot;get libri&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="nc" id="L99">		}</span>
-<span class="nc" id="L100">		return catalogo;</span>
+<span class="fc" id="L99">		}</span>
+<span class="fc" id="L100">		return catalogo;</span>
 	}
 
 	public ObservableList&lt;Raccolta&gt; getRivisteIdTitoloAutore(Rivista r) {
@@ -238,18 +238,18 @@ public class 	RivistaDao {
 	}
 	public int cancella(Rivista r) throws SQLException {
 		int row;
-<span class="nc" id="L241">		query=&quot;delete from RIVISTA where idRivista=? or idRivista=?&quot;;</span>
+<span class="fc" id="L241">		query=&quot;delete from RIVISTA where idRivista=? or idRivista=?&quot;;</span>
 
-<span class="nc" id="L243">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L244">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="fc" id="L243">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L244">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
-<span class="nc" id="L246">			prepQ.setInt(1, r.getId());</span>
-<span class="nc" id="L247">			prepQ.setInt(2,vis.getId());</span>
-<span class="nc" id="L248">			row=prepQ.executeUpdate();</span>
+<span class="fc" id="L246">			prepQ.setInt(1, r.getId());</span>
+<span class="fc" id="L247">			prepQ.setInt(2,vis.getId());</span>
+<span class="fc" id="L248">			row=prepQ.executeUpdate();</span>
 		}
 
-<span class="nc" id="L251">		java.util.logging.Logger.getLogger(&quot;Cancella Rivista&quot;).log(Level.INFO,&quot;Rivista cancellato {0}&quot;,row);</span>
-<span class="nc" id="L252">		return row;</span>
+<span class="fc" id="L251">		java.util.logging.Logger.getLogger(&quot;Cancella Rivista&quot;).log(Level.INFO,&quot;Rivista cancellato {0}&quot;,row);</span>
+<span class="fc" id="L252">		return row;</span>
 
 	}
 	public  int aggiornaRivista(Rivista r) throws SQLException  {

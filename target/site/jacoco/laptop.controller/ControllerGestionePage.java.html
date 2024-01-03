@@ -27,64 +27,64 @@ public class ControllerGestionePage {
 	private static final String RIVISTA=&quot;rivista&quot;;
 
 	public void cancella(int id) throws SQLException {
-<span class="nc bnc" id="L30" title="All 2 branches missed.">		if (ControllerSystemState.getInstance().getType().equals(LIBRO)) {</span>
-<span class="nc" id="L31">			l.setId(id);</span>
-<span class="nc" id="L32">			lD.cancella(l);</span>
-<span class="nc bnc" id="L33" title="All 2 branches missed.">		} else if (ControllerSystemState.getInstance().getType().equals(GIORNALE)) {</span>
-<span class="nc" id="L34">			g.setId(id);</span>
-<span class="nc" id="L35">			gD.cancella(g);</span>
-<span class="nc bnc" id="L36" title="All 2 branches missed.">		} else if (ControllerSystemState.getInstance().getType().equals(RIVISTA)) {</span>
-<span class="nc" id="L37">			r.setId(id);</span>
-<span class="nc" id="L38">			rD.cancella(r);</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">		if (ControllerSystemState.getInstance().getType().equals(LIBRO)) {</span>
+<span class="fc" id="L31">			l.setId(id);</span>
+<span class="fc" id="L32">			lD.cancella(l);</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">		} else if (ControllerSystemState.getInstance().getType().equals(GIORNALE)) {</span>
+<span class="fc" id="L34">			g.setId(id);</span>
+<span class="fc" id="L35">			gD.cancella(g);</span>
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">		} else if (ControllerSystemState.getInstance().getType().equals(RIVISTA)) {</span>
+<span class="fc" id="L37">			r.setId(id);</span>
+<span class="fc" id="L38">			rD.cancella(r);</span>
 		}
-<span class="nc" id="L40">	}</span>
+<span class="fc" id="L40">	}</span>
 
 
 	public ObservableList&lt;Raccolta&gt; getLista(String type)  {
-<span class="nc" id="L44">		ObservableList&lt;Raccolta&gt; catalogo = FXCollections.observableArrayList();</span>
-<span class="nc bnc" id="L45" title="All 4 branches missed.">		switch (type) {</span>
+<span class="fc" id="L44">		ObservableList&lt;Raccolta&gt; catalogo = FXCollections.observableArrayList();</span>
+<span class="pc bpc" id="L45" title="1 of 4 branches missed.">		switch (type) {</span>
 			case LIBRO:
-<span class="nc" id="L47">				catalogo.addAll(lD.getLibri());</span>
-<span class="nc" id="L48">				break;</span>
+<span class="fc" id="L47">				catalogo.addAll(lD.getLibri());</span>
+<span class="fc" id="L48">				break;</span>
 			case GIORNALE:
-<span class="nc" id="L50">				catalogo.addAll( gD.getGiornali());</span>
-<span class="nc" id="L51">				break;</span>
+<span class="fc" id="L50">				catalogo.addAll( gD.getGiornali());</span>
+<span class="fc" id="L51">				break;</span>
 			case RIVISTA:
-<span class="nc" id="L53">				catalogo.addAll( rD.getRiviste());</span>
-<span class="nc" id="L54">				break;</span>
+<span class="fc" id="L53">				catalogo.addAll( rD.getRiviste());</span>
+<span class="fc" id="L54">				break;</span>
 			default:
 <span class="nc" id="L56">				return catalogo;</span>
 
 		}
-<span class="nc" id="L59">		return catalogo;</span>
+<span class="fc" id="L59">		return catalogo;</span>
 	}
 
 
 	
-<span class="nc" id="L64">	public ControllerGestionePage() throws IOException {</span>
-<span class="nc" id="L65">		rD=new RivistaDao();</span>
-<span class="nc" id="L66">		gD=new GiornaleDao();</span>
-<span class="nc" id="L67">		lD=new LibroDao();</span>
-<span class="nc" id="L68">		l=new Libro();</span>
-<span class="nc" id="L69">		g=new Giornale();</span>
-<span class="nc" id="L70">		r=new Rivista();</span>
-<span class="nc" id="L71">	}</span>
+<span class="fc" id="L64">	public ControllerGestionePage() throws IOException {</span>
+<span class="fc" id="L65">		rD=new RivistaDao();</span>
+<span class="fc" id="L66">		gD=new GiornaleDao();</span>
+<span class="fc" id="L67">		lD=new LibroDao();</span>
+<span class="fc" id="L68">		l=new Libro();</span>
+<span class="fc" id="L69">		g=new Giornale();</span>
+<span class="fc" id="L70">		r=new Rivista();</span>
+<span class="fc" id="L71">	}</span>
 	public String settaHeader(String type) {
 		String s;
-<span class="nc bnc" id="L74" title="All 4 branches missed.">		switch (type) {</span>
+<span class="pc bpc" id="L74" title="1 of 4 branches missed.">		switch (type) {</span>
 			case LIBRO:
-<span class="nc" id="L76">				s = &quot;Benvenuto nella schermata dei libri&quot;;</span>
-<span class="nc" id="L77">				break;</span>
+<span class="fc" id="L76">				s = &quot;Benvenuto nella schermata dei libri&quot;;</span>
+<span class="fc" id="L77">				break;</span>
 			case RIVISTA:
-<span class="nc" id="L79">				s = &quot;Benvenuto nella schermata dele riviste&quot;;</span>
-<span class="nc" id="L80">				break;</span>
+<span class="fc" id="L79">				s = &quot;Benvenuto nella schermata dele riviste&quot;;</span>
+<span class="fc" id="L80">				break;</span>
 			case GIORNALE:
-<span class="nc" id="L82">				s = &quot;Benvenuto nella schermata dei giornali&quot;;</span>
-<span class="nc" id="L83">				break;</span>
+<span class="fc" id="L82">				s = &quot;Benvenuto nella schermata dei giornali&quot;;</span>
+<span class="fc" id="L83">				break;</span>
 			default:
 <span class="nc" id="L85">				return &quot;&quot;;</span>
 		}
-<span class="nc" id="L87">		return s;</span>
+<span class="fc" id="L87">		return s;</span>
 	}
 
 

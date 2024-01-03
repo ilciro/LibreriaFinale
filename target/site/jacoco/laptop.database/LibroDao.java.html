@@ -73,28 +73,28 @@ public class LibroDao implements DaoInterface{
 	}
 
 	public ObservableList&lt;Raccolta&gt; getLibri() {
-<span class="nc" id="L76">		ObservableList&lt;Raccolta&gt; catalogo = FXCollections.observableArrayList();</span>
+<span class="fc" id="L76">		ObservableList&lt;Raccolta&gt; catalogo = FXCollections.observableArrayList();</span>
 
-<span class="nc" id="L78">		query = &quot;select * from LIBRO&quot;;</span>
-<span class="nc" id="L79">		try (Connection conn = ConnToDb.connectionToDB();</span>
-<span class="nc" id="L80">			 PreparedStatement prepQ = conn.prepareStatement(query);</span>
-<span class="nc" id="L81">			 ResultSet rs = prepQ.executeQuery()) {</span>
-<span class="nc bnc" id="L82" title="All 2 branches missed.">			while (rs.next()) {</span>
+<span class="fc" id="L78">		query = &quot;select * from LIBRO&quot;;</span>
+<span class="fc" id="L79">		try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="fc" id="L80">			 PreparedStatement prepQ = conn.prepareStatement(query);</span>
+<span class="fc" id="L81">			 ResultSet rs = prepQ.executeQuery()) {</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">			while (rs.next()) {</span>
 
-<span class="nc" id="L84">				f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7));</span>
-
-
-<span class="nc" id="L87">				f.createRaccoltaFinale2(LIBRO, rs.getInt(2), rs.getInt(10), rs.getInt(12), rs.getFloat(13), rs.getInt(14));</span>
+<span class="fc" id="L84">				f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7));</span>
 
 
-<span class="nc" id="L90">				catalogo.add(f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11)));</span>
+<span class="fc" id="L87">				f.createRaccoltaFinale2(LIBRO, rs.getInt(2), rs.getInt(10), rs.getInt(12), rs.getFloat(13), rs.getInt(14));</span>
+
+
+<span class="fc" id="L90">				catalogo.add(f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11)));</span>
 
 
 			}
 <span class="nc" id="L94">		} catch (SQLException e) {</span>
 <span class="nc" id="L95">			java.util.logging.Logger.getLogger(&quot;get libri&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="nc" id="L96">		}</span>
-<span class="nc" id="L97">		return catalogo;</span>
+<span class="fc" id="L96">		}</span>
+<span class="fc" id="L97">		return catalogo;</span>
 	}
 
 	public ObservableList&lt;Raccolta&gt; getLibriIdTitoloAutore(Libro l) {
@@ -231,17 +231,17 @@ public class LibroDao implements DaoInterface{
 
 	public int cancella(Libro l) throws SQLException {
 		int row;
-<span class="nc" id="L234">		query = &quot;delete from LIBRO where idLibro=? or codIsbn=?&quot;;</span>
+<span class="fc" id="L234">		query = &quot;delete from LIBRO where idLibro=? or codIsbn=?&quot;;</span>
 
-<span class="nc" id="L236">		try (Connection conn = ConnToDb.connectionToDB();</span>
-<span class="nc" id="L237">			 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
-<span class="nc" id="L238">			prepQ.setInt(1, l.getId());</span>
-<span class="nc" id="L239">			prepQ.setString(2, l.getCodIsbn());</span>
-<span class="nc" id="L240">			row = prepQ.executeUpdate();</span>
+<span class="fc" id="L236">		try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="fc" id="L237">			 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
+<span class="fc" id="L238">			prepQ.setInt(1, l.getId());</span>
+<span class="fc" id="L239">			prepQ.setString(2, l.getCodIsbn());</span>
+<span class="fc" id="L240">			row = prepQ.executeUpdate();</span>
 		}
 
-<span class="nc" id="L243">		java.util.logging.Logger.getLogger(&quot;Cancella libro&quot;).log(Level.INFO, &quot;libro cancellato {0}&quot;, row);</span>
-<span class="nc" id="L244">		return row;</span>
+<span class="fc" id="L243">		java.util.logging.Logger.getLogger(&quot;Cancella libro&quot;).log(Level.INFO, &quot;libro cancellato {0}&quot;, row);</span>
+<span class="fc" id="L244">		return row;</span>
 
 	}
 

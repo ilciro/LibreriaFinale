@@ -3,9 +3,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.DirectoryNotEmptyException;
 import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.sql.*;
 import java.time.LocalDate;
@@ -14,7 +12,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-import laptop.model.raccolta.Factory;
 import laptop.utilities.ConnToDb;
 import laptop.model.TempUser;
 import laptop.model.User;
@@ -44,7 +41,7 @@ public class UsersDao {
 				+ "`Email`,"
 				+ "`pwd`,"
 				+ " `descrizione`,"
-				+ "`DataDiNascita`)"
+				+ "`DataNascita`)"
 				+ "VALUES"
 				+ "(?,?,?,?,?,?)";
 

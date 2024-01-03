@@ -13,7 +13,7 @@ import laptop.utilities.ConnToDb;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-<span class="nc" id="L16">public class PagamentoDao {</span>
+<span class="fc" id="L16">public class PagamentoDao {</span>
 	private String query;
 	private static final String ECCEZIONE=&quot;eccezione ottenuta:&quot;;
 
@@ -30,28 +30,28 @@ import javafx.collections.ObservableList;
 		
 		
 
-<span class="nc" id="L33">		query=&quot;INSERT INTO PAGAMENTO(metodo,esito,nomeUtente,spesaTotale,eMail,tipoAcquisto,idProd) values (?,?,?,?,?,?,?)&quot;;</span>
+<span class="fc" id="L33">		query=&quot;INSERT INTO PAGAMENTO(metodo,esito,nomeUtente,spesaTotale,eMail,tipoAcquisto,idProdotto) values (?,?,?,?,?,?,?)&quot;;</span>
 
-<span class="nc" id="L35">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L36">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="fc" id="L35">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L36">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
 			
 			
-<span class="nc" id="L40">			prepQ.setString(1,p.getMetodo()); // </span>
-<span class="nc" id="L41">			prepQ.setInt(2,p.getEsito());</span>
-<span class="nc" id="L42">			prepQ.setString(3,p.getNomeUtente());</span>
-<span class="nc" id="L43">			prepQ.setFloat(4,p.getAmmontare());</span>
-<span class="nc" id="L44">			prepQ.setString(5, User.getInstance().getEmail());</span>
-<span class="nc" id="L45">			prepQ.setString(6,p.getTipo());</span>
-<span class="nc" id="L46">			prepQ.setInt(7, p.getIdOggetto());</span>
-<span class="nc" id="L47">			prepQ.executeUpdate();</span>
+<span class="fc" id="L40">			prepQ.setString(1,p.getMetodo()); // </span>
+<span class="fc" id="L41">			prepQ.setInt(2,p.getEsito());</span>
+<span class="fc" id="L42">			prepQ.setString(3,p.getNomeUtente());</span>
+<span class="fc" id="L43">			prepQ.setFloat(4,p.getAmmontare());</span>
+<span class="fc" id="L44">			prepQ.setString(5, User.getInstance().getEmail());</span>
+<span class="fc" id="L45">			prepQ.setString(6,p.getTipo());</span>
+<span class="fc" id="L46">			prepQ.setInt(7, p.getIdOggetto());</span>
+<span class="fc" id="L47">			prepQ.executeUpdate();</span>
 <span class="nc" id="L48">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L50">						java.util.logging.Logger.getLogger(&quot;insert pagamento&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="nc" id="L51">		}</span>
+<span class="fc" id="L51">		}</span>
 		
 		
-<span class="nc" id="L54">		}</span>
+<span class="fc" id="L54">		}</span>
 		
 	
 	public ObservableList&lt;Pagamento&gt; getPagamenti() throws SQLException  {
