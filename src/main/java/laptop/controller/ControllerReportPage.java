@@ -38,7 +38,7 @@ public class ControllerReportPage {
 		
 	}
 
-	public String reportTotale() throws SQLException, IOException {
+	public String reportTotale() throws  IOException {
 		generaReportUtenti();
         return leggiLibro() +
 				"\n" +

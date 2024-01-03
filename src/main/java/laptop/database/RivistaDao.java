@@ -33,7 +33,7 @@ public class 	RivistaDao {
 	private boolean state=false;
 
 	private final ControllerSystemState vis=ControllerSystemState.getInstance();
-	private  final String RIVISTA="Rivista";
+	private  static final String RIVISTA="rivista";
 
 	private static final String ECCEZIONE="eccezione generata:";
 

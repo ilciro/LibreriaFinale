@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="restrung dao v4 code smells v3">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="restrung dao v4 code smells v4">
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerReportPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerReportPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerUserPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerUserPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/CsvDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/CsvDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/profilo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/profilo.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,14 +274,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
-    </task>
-    <task id="LOCAL-00003" summary="linux v1">
-      <option name="closed" value="true" />
-      <created>1700586083588</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1700586083588</updated>
     </task>
     <task id="LOCAL-00004" summary="linux v2">
       <option name="closed" value="true" />
@@ -655,7 +643,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704300900543</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="restrung dao v4 code smells v4">
+      <option name="closed" value="true" />
+      <created>1704301361163</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1704301361163</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -677,7 +673,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="insert buy newspaper and magazines" />
     <MESSAGE value="insert buy magazines and test -&gt; first use case closed" />
     <MESSAGE value="insert management book web" />
     <MESSAGE value="insert management book web v2( fix bugs)" />
@@ -702,7 +697,8 @@
     <MESSAGE value="restrung dao v4 code smells" />
     <MESSAGE value="restrung dao v4 code smells v2" />
     <MESSAGE value="restrung dao v4 code smells v3" />
-    <option name="LAST_COMMIT_MESSAGE" value="restrung dao v4 code smells v3" />
+    <MESSAGE value="restrung dao v4 code smells v4" />
+    <option name="LAST_COMMIT_MESSAGE" value="restrung dao v4 code smells v4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
