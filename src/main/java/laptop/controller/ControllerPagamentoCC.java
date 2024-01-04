@@ -34,7 +34,7 @@ public class ControllerPagamentoCC {
 		 int anno;
 		 int mese;
 		 int giorno;
-		String[] verifica=null;
+		String[] verifica;
 
 
 		appoggio = appoggio + d;

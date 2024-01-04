@@ -60,7 +60,7 @@ public class CartaCreditoDao {
 	public void insCC(CartaDiCredito cc) {
 
 
-		query = "insert into CARTACREDITO (nomeP,cognomeP,codiceCarta,scad,codicePin,ammontare)  values(?,?,?,?,?,?)";
+		query = "insert into CARTACREDITO (nomeP,cognomeP,codiceCarta,scadenza,pin,ammontare)  values(?,?,?,?,?,?)";
 
 
 		try (Connection conn = ConnToDb.connectionToDB();
@@ -93,7 +93,7 @@ public class CartaCreditoDao {
 
 
 		
-		query="select distinct nomeP,cognomeP,codiceCarta,scad,codicePin from CARTACREDITO where codiceCarta=?";
+		query="select distinct nomeP,cognomeP,codiceCarta,scadenza,pin from CARTACREDITO where codiceCarta=?";
 
 		
 			try(Connection conn=ConnToDb.connectionToDB();

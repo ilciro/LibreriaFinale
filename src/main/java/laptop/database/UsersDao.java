@@ -340,7 +340,7 @@ public class UsersDao {
 	public static User aggiornaUtente(User u,String vecchiaEmail)  {
 
 
-		query = "UPDATE USERS set idRuolo=? , Nome=? , Cognome=? , Email=? , pwd=? , descrizione=? , DataDiNascita=? where idUser=? or Email=?";
+		query = "UPDATE USERS set idRuolo=? , Nome=? , Cognome=? , Email=? , pwd=? , descrizione=? , dataNascita=? where idUser=? or Email=?";
 
 
 		try (Connection conn = ConnToDb.connectionToDB();

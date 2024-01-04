@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
+import laptop.controller.ControllerSystemState;
 import laptop.utilities.ConnToDb;
 import laptop.model.Fattura;
 
@@ -13,13 +14,14 @@ public class ContrassegnoDao {
 	
 	private  static  final String ECCEZIONE="eccezione ottenuta:";
 	private String query;
+	private ControllerSystemState vis=ControllerSystemState.getInstance();
 
 	
 
 	public void inserisciFattura(Fattura f) throws SQLException 
 	{
 		 
-		query="insert into FATTURA values (?,?,?,?,?,?)";
+		query="insert into FATTURA (nome,cognome,via,comunicazioni,ammontare)values (?,?,?,?,?)";
 		 		
  		try(Connection conn=ConnToDb.connectionToDB();
  			PreparedStatement prepQ=conn.prepareStatement(query)){
@@ -28,8 +30,7 @@ public class ContrassegnoDao {
  			prepQ.setString(2, f.getCognome());
  			prepQ.setString(3, f.getVia());
  			prepQ.setString(4,f.getCom());
- 			prepQ.setInt(5, 0);
- 			prepQ.setFloat(6,f.getAmmontare());
+			 prepQ.setFloat(5,vis.getSpesaT());
  			prepQ.execute();
  			
  			 
@@ -77,7 +78,7 @@ public class ContrassegnoDao {
 	{
 		boolean state=false;
 		int row;
-		String query1="delete from FATTURA where id=?";
+		String query1="delete from FATTURA where idFattura=?";
 		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query1))
 		{
