@@ -98,33 +98,33 @@ public class LibroDao implements DaoInterface{
 	}
 
 	public ObservableList&lt;Raccolta&gt; getLibriIdTitoloAutore(Libro l) {
-<span class="nc" id="L101">		ObservableList&lt;Raccolta&gt; catalogo = FXCollections.observableArrayList();</span>
+<span class="fc" id="L101">		ObservableList&lt;Raccolta&gt; catalogo = FXCollections.observableArrayList();</span>
 
-<span class="nc" id="L103">		query = &quot;select * from LIBRO where idLibro=? or idLibro=? or titolo=? or autore=?&quot;;</span>
-<span class="nc" id="L104">		try (Connection conn = ConnToDb.connectionToDB();</span>
-<span class="nc" id="L105">			 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
+<span class="fc" id="L103">		query = &quot;select * from LIBRO where idLibro=? or idLibro=? or titolo=? or autore=?&quot;;</span>
+<span class="fc" id="L104">		try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="fc" id="L105">			 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
 
-<span class="nc" id="L107">			prepQ.setInt(1, l.getId());</span>
-<span class="nc" id="L108">			prepQ.setInt(2, vis.getId());</span>
-<span class="nc" id="L109">			prepQ.setString(3, l.getTitolo());</span>
-<span class="nc" id="L110">			prepQ.setString(4, l.getAutore());</span>
+<span class="fc" id="L107">			prepQ.setInt(1, l.getId());</span>
+<span class="fc" id="L108">			prepQ.setInt(2, vis.getId());</span>
+<span class="fc" id="L109">			prepQ.setString(3, l.getTitolo());</span>
+<span class="fc" id="L110">			prepQ.setString(4, l.getAutore());</span>
 
-<span class="nc" id="L112">			ResultSet rs = prepQ.executeQuery();</span>
-<span class="nc bnc" id="L113" title="All 2 branches missed.">			while (rs.next()) {</span>
-<span class="nc" id="L114">				f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7));</span>
-
-
-<span class="nc" id="L117">				f.createRaccoltaFinale2(LIBRO, rs.getInt(2), rs.getInt(10), rs.getInt(12), rs.getFloat(13), rs.getInt(14));</span>
+<span class="fc" id="L112">			ResultSet rs = prepQ.executeQuery();</span>
+<span class="fc bfc" id="L113" title="All 2 branches covered.">			while (rs.next()) {</span>
+<span class="fc" id="L114">				f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7));</span>
 
 
-<span class="nc" id="L120">				catalogo.add(f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11)));</span>
+<span class="fc" id="L117">				f.createRaccoltaFinale2(LIBRO, rs.getInt(2), rs.getInt(10), rs.getInt(12), rs.getFloat(13), rs.getInt(14));</span>
+
+
+<span class="fc" id="L120">				catalogo.add(f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11)));</span>
 
 
 			}
 <span class="nc" id="L124">		} catch (SQLException e) {</span>
 <span class="nc" id="L125">			java.util.logging.Logger.getLogger(&quot;get libri obs&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="nc" id="L126">		}</span>
-<span class="nc" id="L127">		return catalogo;</span>
+<span class="fc" id="L126">		}</span>
+<span class="fc" id="L127">		return catalogo;</span>
 	}
 
 	public ObservableList&lt;Libro&gt; getLibroIdTitoloAutore(Libro l) {
@@ -294,8 +294,8 @@ public class LibroDao implements DaoInterface{
 	public void generaReport() throws IOException {
 
 		try {
-<span class="nc bnc" id="L297" title="All 2 branches missed.">			if (!fd.exists()) {</span>
-<span class="nc" id="L298">				throw new IOException(&quot;file not exists&quot;);</span>
+<span class="pc bpc" id="L297" title="1 of 2 branches missed.">			if (!fd.exists()) {</span>
+<span class="fc" id="L298">				throw new IOException(&quot;file not exists&quot;);</span>
 			}
 <span class="nc bnc" id="L300" title="All 2 branches missed.">			if(fd.exists())</span>
 			{
@@ -303,8 +303,8 @@ public class LibroDao implements DaoInterface{
 <span class="nc" id="L303">					throw new IOException(&quot;file deleted -&gt; not exists&quot;);</span>
 
 			}
-<span class="nc" id="L306">		} catch (IOException e) {</span>
-<span class="nc" id="L307">			java.util.logging.Logger.getLogger(&quot;Test Eccezione genera report&quot;).log(Level.INFO, ECCEZIONE, e);</span>
+<span class="fc" id="L306">		} catch (IOException e) {</span>
+<span class="fc" id="L307">			java.util.logging.Logger.getLogger(&quot;Test Eccezione genera report&quot;).log(Level.INFO, ECCEZIONE, e);</span>
 <span class="nc bnc" id="L308" title="All 2 branches missed.">			if (fd.createNewFile()) {</span>
 
 

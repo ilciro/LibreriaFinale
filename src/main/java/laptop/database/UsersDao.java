@@ -213,7 +213,7 @@ public class UsersDao {
 	public static User pickData(User u) throws SQLException {
 
 
-		query = "SELECT idRuolo,Nome,Cognome,Email,descrizione,dataDiNascita from USERS where Email=? or idUser=?";
+		query = "SELECT idRuolo,Nome,Cognome,Email,descrizione,dataNascita from USERS where Email=? or idUser=?";
 		try (Connection conn = ConnToDb.connectionToDB();
 			 PreparedStatement prepQ = conn.prepareStatement(query)) {
 			prepQ.setString(1, u.getEmail());
@@ -250,7 +250,7 @@ public class UsersDao {
 
 	public static void getListaUtenti() throws IOException {
 
-		  final String TXT_FILE_NAME="ReportFinale/riepilogoLibro.txt";
+		  final String TXT_FILE_NAME="riepilogoUtenti.txt";
 
 		  try {
               File fd = new File(TXT_FILE_NAME);
@@ -415,7 +415,7 @@ public class UsersDao {
 
 		int row = 0;
 
-		query = "UPDATE USERS set idRuolo=? , Nome=? , Cognome=? , Email=? , pwd=? , descrizione=? , DataDiNascita=? where idUser=?";
+		query = "UPDATE USERS set idRuolo=? , Nome=? , Cognome=? , Email=? , pwd=? , descrizione=? , DataNascita=? where idUser=?";
 
 
 		try (Connection conn = ConnToDb.connectionToDB();

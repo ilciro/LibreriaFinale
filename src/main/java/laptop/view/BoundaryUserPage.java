@@ -132,7 +132,7 @@ public class BoundaryUserPage implements Initializable {
 
 	}
 	@FXML
-	private void prendi() throws IOException,NullPointerException, SQLException {
+	private void prendi() throws IOException,NullPointerException {
 		
 		
 		

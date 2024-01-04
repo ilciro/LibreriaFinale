@@ -36,7 +36,7 @@ public class GiornaleDao {
 	private static final String GIORNALE = "giornale";
 	private static final String ECCEZIONE="eccezione generata:";
 
-	private static final String RIEPILOGOGIORNALI="src/main/resources/Reports/riepilogoGiornali.txt";
+	private static final String RIEPILOGOGIORNALI="riepilogoGiornali.txt";
 	private final File fd;
 
 	public GiornaleDao() {
@@ -102,7 +102,7 @@ public class GiornaleDao {
 	public ObservableList<Raccolta> getGiornaliIdTitoloAutore(Giornale g) {
 		ObservableList<Raccolta> catalogo = FXCollections.observableArrayList();
 
-		query = "select * from GIORNALE where idGiornale=? or idGiornale=? or titolo=? or autore=?";
+		query = "select * from GIORNALE where idGiornale=? or idGiornale=? or titolo=? or editore=?";
 		try (Connection conn = ConnToDb.connectionToDB();
 			 PreparedStatement prepQ= conn.prepareStatement(query))  {
 

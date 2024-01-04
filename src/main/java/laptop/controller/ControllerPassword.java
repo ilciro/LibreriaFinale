@@ -7,7 +7,7 @@ import laptop.database.UsersDao;
 import laptop.model.User;
 
 public class ControllerPassword {
-	private User u = User.getInstance();
+	private final User u = User.getInstance();
 	private boolean status=false;
 	public ControllerPassword()
 	{

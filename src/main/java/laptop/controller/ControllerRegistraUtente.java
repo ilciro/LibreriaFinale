@@ -11,7 +11,7 @@ import laptop.model.User;
 
 public class ControllerRegistraUtente {
 	private Boolean state=false;
-	private User u=User.getInstance();
+	private final User u=User.getInstance();
 
 	public Boolean registra(String n, String c, String email, String pwd, String pwdC, LocalDate localDate) throws SQLException {
 		
@@ -44,7 +44,7 @@ public class ControllerRegistraUtente {
 	
 	
 	//le chiamo protected perchele uso nel controller stesso e basta 
-	public boolean checkData (String n, String c, String email, String pwd, String pwdC)
+	private boolean checkData (String n, String c, String email, String pwd, String pwdC)
 	// controll  all data
 	{
 		if(checkEmail(email) && checkPassword(pwd,pwdC) && checkNomeCognome(n,c))
@@ -53,8 +53,8 @@ public class ControllerRegistraUtente {
 		}
 		return state;
 	}
-	
-	public boolean checkEmail(String email)
+
+	private boolean checkEmail(String email)
 	{
 		 Pattern pattern;
 
@@ -66,16 +66,16 @@ public class ControllerRegistraUtente {
 			return false; 
 		return pattern.matcher(email).matches();
 	}
-    
-	public boolean checkPassword(String pwd, String pwdC )
+
+	private boolean checkPassword(String pwd, String pwdC )
 	{
 		if(pwd.length()>=8 && pwdC.length()>=8 && pwd.equals(pwdC)) {
 			state= true;
 		}
 		return state;
 	}
-	
-	public boolean checkNomeCognome(String n, String c)
+
+	private boolean checkNomeCognome(String n, String c)
 	{
 		if (n != null && c != null)
 		{

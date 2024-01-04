@@ -57,7 +57,7 @@ public class PagamentoDao {
 	public ObservableList<Pagamento> getPagamenti() throws SQLException  {
 
 			ObservableList<Pagamento> catalogo=FXCollections.observableArrayList();
-			query="SELECT id_op,metodo,esito,nomeUtente,spesaTotale,tipoAcquisto,idProd from PAGAMENTO where eMail=?";
+			query="SELECT idPagamento,metodo,esito,nomeUtente,spesaTotale,tipoAcquisto,idProdotto from PAGAMENTO where eMail=?";
 			try(Connection conn=ConnToDb.connectionToDB();
 					PreparedStatement prepQ=conn.prepareStatement(query))
 			{
@@ -107,7 +107,7 @@ public class PagamentoDao {
 	{
 		boolean state=false;
 		int row=0;
-		String query2="delete from PAGAMENTO where id_op=?";
+		String query2="delete from PAGAMENTO where idPagamento=?";
 		try(Connection conn=ConnToDb.connectionToDB();
 				PreparedStatement prepQ=conn.prepareStatement(query2))
 		{

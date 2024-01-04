@@ -8,7 +8,7 @@ import laptop.model.Pagamento;
 
 public class ControllerVisualizzaOrdine {
 	
-	private PagamentoDao pD;
+	private final PagamentoDao pD;
 	
 	public ObservableList<Pagamento> getDati() throws SQLException  {
 		

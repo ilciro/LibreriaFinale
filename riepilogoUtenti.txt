@@ -1,0 +1,6 @@
+1	UTENTET	admin	admin	admin@admin.com	utente admin	1980-10-26
+2	UTENTET	Gianni	Morandi	giannni@gmail.com	utente con privilegi massimi	1940-10-18
+3	UTENTET	Gino	Zaia	gino@zaia.eu	utente semplice	1995-04-25
+4	UTENTET	Giulia	Conforto	giuliaConforto@gmail.eu	utente semplice	1998-09-05
+5	UTENTET	zerocalcare	zerocalcare	zerocalcare@gmail.com	scrittore semplice	1980-05-20
+6	UTENTET	Bao Publishing	Bao Publishing	baoPublishing@gmail.com	editore semplice	1960-11-21

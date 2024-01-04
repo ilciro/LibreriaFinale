@@ -38,7 +38,7 @@ public class 	RivistaDao {
 	private static final String ECCEZIONE=&quot;eccezione generata:&quot;;
 
 
-	private static final String RIEPILOGORIVISTE=&quot;ReportFinale/riepilogoRivista.txt&quot;;
+	private static final String RIEPILOGORIVISTE=&quot;riepilogoRivista.txt&quot;;
 	private final File fd;
 
 <span class="fc" id="L44">	public RivistaDao() throws IOException {</span>
@@ -101,33 +101,33 @@ public class 	RivistaDao {
 	}
 
 	public ObservableList&lt;Raccolta&gt; getRivisteIdTitoloAutore(Rivista r) {
-<span class="nc" id="L104">		ObservableList&lt;Raccolta&gt; catalogo = FXCollections.observableArrayList();</span>
+<span class="fc" id="L104">		ObservableList&lt;Raccolta&gt; catalogo = FXCollections.observableArrayList();</span>
 
-<span class="nc" id="L106">		query = &quot;select * from RIVISTA where idRivista=? or idRivista=? or titolo=? or autore=?&quot;;</span>
-<span class="nc" id="L107">		try (Connection conn = ConnToDb.connectionToDB();</span>
-<span class="nc" id="L108">			 PreparedStatement prepQ= conn.prepareStatement(query))  {</span>
+<span class="fc" id="L106">		query = &quot;select * from RIVISTA where idRivista=? or idRivista=? or titolo=? or autore=?&quot;;</span>
+<span class="fc" id="L107">		try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="fc" id="L108">			 PreparedStatement prepQ= conn.prepareStatement(query))  {</span>
 
-<span class="nc" id="L110">			prepQ.setInt(1,r.getId());</span>
-<span class="nc" id="L111">			prepQ.setInt(2,vis.getId());</span>
-<span class="nc" id="L112">			prepQ.setString(3,r.getTitolo());</span>
-<span class="nc" id="L113">			prepQ.setString(4,r.getEditore());</span>
+<span class="fc" id="L110">			prepQ.setInt(1,r.getId());</span>
+<span class="fc" id="L111">			prepQ.setInt(2,vis.getId());</span>
+<span class="fc" id="L112">			prepQ.setString(3,r.getTitolo());</span>
+<span class="fc" id="L113">			prepQ.setString(4,r.getEditore());</span>
 
-<span class="nc" id="L115">			ResultSet rs=prepQ.executeQuery();</span>
-<span class="nc bnc" id="L116" title="All 2 branches missed.">			while (rs.next())</span>
+<span class="fc" id="L115">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L116" title="All 2 branches covered.">			while (rs.next())</span>
 			{
-<span class="nc" id="L118">				f.createRaccoltaFinale1(RIVISTA, rs.getString(1), null, rs.getString(5), rs.getString(3),rs.getString(4), rs.getString(2));</span>
+<span class="fc" id="L118">				f.createRaccoltaFinale1(RIVISTA, rs.getString(1), null, rs.getString(5), rs.getString(3),rs.getString(4), rs.getString(2));</span>
 
 
-<span class="nc" id="L121">				f.createRaccoltaFinale2(RIVISTA, 0, rs.getInt(10), rs.getInt(8),rs.getFloat(9),rs.getInt(10));</span>
+<span class="fc" id="L121">				f.createRaccoltaFinale2(RIVISTA, 0, rs.getInt(10), rs.getInt(8),rs.getFloat(9),rs.getInt(10));</span>
 
-<span class="nc" id="L123">				catalogo.add(f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(),null, null));</span>
+<span class="fc" id="L123">				catalogo.add(f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(),null, null));</span>
 
 
 			}
 <span class="nc" id="L127">		} catch (SQLException e) {</span>
 <span class="nc" id="L128">			java.util.logging.Logger.getLogger(&quot;get data riviste obs&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="nc" id="L129">		}</span>
-<span class="nc" id="L130">		return catalogo;</span>
+<span class="fc" id="L129">		}</span>
+<span class="fc" id="L130">		return catalogo;</span>
 	}
 
 	public ObservableList&lt;Rivista&gt; getRivistaIdTitoloAutore(Rivista r) {

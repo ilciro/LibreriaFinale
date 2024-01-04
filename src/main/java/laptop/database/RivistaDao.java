@@ -38,7 +38,7 @@ public class 	RivistaDao {
 	private static final String ECCEZIONE="eccezione generata:";
 
 
-	private static final String RIEPILOGORIVISTE="ReportFinale/riepilogoRivista.txt";
+	private static final String RIEPILOGORIVISTE="riepilogoRivista.txt";
 	private final File fd;
 
 	public RivistaDao() throws IOException {

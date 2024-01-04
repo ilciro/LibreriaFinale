@@ -20,18 +20,12 @@ public class ControllerRicercaPerTipo {
 	public boolean setRicerca(String type)
 	{
 		switch (type){
-			case "libro":
+			case "libro", "giornale", "rivista":
 				state=true;
 				break;
-			case "giornale":
-				state=true;
-				break;
-			case "rivista":
-				state=true;
-				break;
-			default:return state;
+            default:return state;
 
 		}
-		return state;
+		return true;
 	}
 }

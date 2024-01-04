@@ -86,7 +86,7 @@ public class UsersDao {
 <span class="fc" id="L86">			prepQ.setString(1, u.getEmail());</span>
 <span class="fc" id="L87">			prepQ.setString(2, u.getPassword());</span>
 <span class="fc" id="L88">			ResultSet rs = prepQ.executeQuery();</span>
-<span class="pc bpc" id="L89" title="1 of 2 branches missed.">			if (rs.next()) {</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">			if (rs.next()) {</span>
 <span class="fc" id="L90">				int id = rs.getInt(&quot;idUser&quot;);</span>
 <span class="pc bpc" id="L91" title="1 of 2 branches missed.">				if (id &gt; 0)</span>
 <span class="fc" id="L92">					status = 1;</span>
@@ -213,31 +213,31 @@ public class UsersDao {
 	public static User pickData(User u) throws SQLException {
 
 
-<span class="fc" id="L216">		query = &quot;SELECT idRuolo,Nome,Cognome,Email,descrizione,dataDiNascita from USERS where Email=? or idUser=?&quot;;</span>
+<span class="fc" id="L216">		query = &quot;SELECT idRuolo,Nome,Cognome,Email,descrizione,dataNascita from USERS where Email=? or idUser=?&quot;;</span>
 <span class="fc" id="L217">		try (Connection conn = ConnToDb.connectionToDB();</span>
 <span class="fc" id="L218">			 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
 <span class="fc" id="L219">			prepQ.setString(1, u.getEmail());</span>
 <span class="fc" id="L220">			prepQ.setInt(2,u.getId());</span>
 
-<span class="nc" id="L222">			ResultSet rs = prepQ.executeQuery();</span>
-<span class="nc bnc" id="L223" title="All 2 branches missed.">			while (rs.next()) {</span>
+<span class="fc" id="L222">			ResultSet rs = prepQ.executeQuery();</span>
+<span class="fc bfc" id="L223" title="All 2 branches covered.">			while (rs.next()) {</span>
 
 
 				// setto i vari dati
 
-<span class="nc" id="L228">				u.setIdRuolo(rs.getString(&quot;idRuolo&quot;));</span>
-<span class="nc" id="L229">				u.setNome(rs.getString(&quot;Nome&quot;));</span>
-<span class="nc" id="L230">				u.setCognome(rs.getString(&quot;Cognome&quot;));</span>
-<span class="nc" id="L231">				u.setDescrizione(rs.getString(&quot;descrizione&quot;));</span>
-<span class="nc" id="L232">				u.setDataDiNascita(rs.getDate(&quot;dataNascita&quot;).toLocalDate());</span>
+<span class="fc" id="L228">				u.setIdRuolo(rs.getString(&quot;idRuolo&quot;));</span>
+<span class="fc" id="L229">				u.setNome(rs.getString(&quot;Nome&quot;));</span>
+<span class="fc" id="L230">				u.setCognome(rs.getString(&quot;Cognome&quot;));</span>
+<span class="fc" id="L231">				u.setDescrizione(rs.getString(&quot;descrizione&quot;));</span>
+<span class="fc" id="L232">				u.setDataDiNascita(rs.getDate(&quot;dataNascita&quot;).toLocalDate());</span>
 
 
 			}
-<span class="fc" id="L236">		} catch (SQLException e) {</span>
-<span class="fc" id="L237">			Logger.getLogger(&quot;pick data exception &quot;).log(Level.SEVERE, &quot;errore nel pick data {0}&quot;, e.toString());</span>
+<span class="nc" id="L236">		} catch (SQLException e) {</span>
+<span class="nc" id="L237">			Logger.getLogger(&quot;pick data exception &quot;).log(Level.SEVERE, &quot;errore nel pick data {0}&quot;, e.toString());</span>
 
 
-<span class="nc" id="L240">		}</span>
+<span class="fc" id="L240">		}</span>
 
 
 		// errore
@@ -250,47 +250,47 @@ public class UsersDao {
 
 	public static void getListaUtenti() throws IOException {
 
-<span class="nc" id="L253">		  final String TXT_FILE_NAME=&quot;ReportFinale/riepilogoLibro.txt&quot;;</span>
+<span class="fc" id="L253">		  final String TXT_FILE_NAME=&quot;riepilogoUtenti.txt&quot;;</span>
 
 		  try {
-<span class="nc" id="L256">              File fd = new File(TXT_FILE_NAME);</span>
+<span class="fc" id="L256">              File fd = new File(TXT_FILE_NAME);</span>
 
-<span class="nc bnc" id="L258" title="All 2 branches missed.">			  if (!fd.exists()) {</span>
+<span class="pc bpc" id="L258" title="1 of 2 branches missed.">			  if (!fd.exists()) {</span>
 <span class="nc" id="L259">				  throw new IOException(&quot;file not found&quot;);</span>
 			  }
-<span class="nc bnc" id="L261" title="All 2 branches missed.">			  if(fd.exists())</span>
+<span class="pc bpc" id="L261" title="1 of 2 branches missed.">			  if(fd.exists())</span>
 			  {
-<span class="nc" id="L263">				  cleanUp(Path.of(TXT_FILE_NAME));</span>
-<span class="nc" id="L264">				  	throw new IOException(&quot;file deleted -&gt; not exists&quot;);</span>
+<span class="fc" id="L263">				  cleanUp(Path.of(TXT_FILE_NAME));</span>
+<span class="fc" id="L264">				  	throw new IOException(&quot;file deleted -&gt; not exists&quot;);</span>
 			  }
-<span class="nc" id="L266">		  }catch (IOException e)</span>
+<span class="fc" id="L266">		  }catch (IOException e)</span>
 		  {
-<span class="nc" id="L268">			  Logger.getLogger(&quot;lista utenti&quot;).log(Level.SEVERE, &quot;\n eccezione ottenuta .&quot;, e);</span>
+<span class="fc" id="L268">			  Logger.getLogger(&quot;lista utenti&quot;).log(Level.SEVERE, &quot;\n eccezione ottenuta .&quot;, e);</span>
 
-<span class="nc" id="L270">			  query = &quot;select * from USERS&quot;;</span>
+<span class="fc" id="L270">			  query = &quot;select * from USERS&quot;;</span>
 			  FileWriter w;
-<span class="nc" id="L272">			  w = new FileWriter(TXT_FILE_NAME);</span>
+<span class="fc" id="L272">			  w = new FileWriter(TXT_FILE_NAME);</span>
 
 
-<span class="nc" id="L275">			  try (BufferedWriter b = new BufferedWriter(w)) {</span>
+<span class="fc" id="L275">			  try (BufferedWriter b = new BufferedWriter(w)) {</span>
 
-<span class="nc" id="L277">				  try (Connection conn = ConnToDb.connectionToDB();</span>
-<span class="nc" id="L278">					   PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
+<span class="fc" id="L277">				  try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="fc" id="L278">					   PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
 
-<span class="nc" id="L280">					  ResultSet rs = prepQ.executeQuery();</span>
+<span class="fc" id="L280">					  ResultSet rs = prepQ.executeQuery();</span>
 
 
-<span class="nc bnc" id="L283" title="All 2 branches missed.">					  while (rs.next()) {</span>
+<span class="pc bpc" id="L283" title="1 of 2 branches missed.">					  while (rs.next()) {</span>
 
-<span class="nc" id="L285">						  TempUser.getInstance().setId(rs.getInt(1));</span>
-<span class="nc" id="L286">						  TempUser.getInstance().setIdRuolo(rs.getString(2));</span>
-<span class="nc" id="L287">						  TempUser.getInstance().setNomeT(rs.getString(3));</span>
-<span class="nc" id="L288">						  TempUser.getInstance().setCognomeT(rs.getString(4));</span>
-<span class="nc" id="L289">						  TempUser.getInstance().setEmailT(rs.getString(5));</span>
-<span class="nc" id="L290">						  TempUser.getInstance().setDescrizioneT(rs.getString(7));</span>
-<span class="nc" id="L291">						  TempUser.getInstance().setDataDiNascitaT(rs.getDate(8).toLocalDate());</span>
-<span class="nc" id="L292">						  b.write(TempUser.getInstance().getId() + &quot;\t&quot; + TempUser.getInstance().getIdRuolo() + &quot;\t&quot; + TempUser.getInstance().getNomeT() + &quot;\t&quot; + TempUser.getInstance().getCognomeT() +</span>
-<span class="nc" id="L293">								  &quot;\t&quot; + TempUser.getInstance().getEmailT() + &quot;\t&quot; + TempUser.getInstance().getDescrizioneT() + &quot;\t&quot; + TempUser.getInstance().getDataDiNascitaT().toString() + &quot;\n&quot;);</span>
+<span class="fc" id="L285">						  TempUser.getInstance().setId(rs.getInt(1));</span>
+<span class="fc" id="L286">						  TempUser.getInstance().setIdRuolo(rs.getString(2));</span>
+<span class="fc" id="L287">						  TempUser.getInstance().setNomeT(rs.getString(3));</span>
+<span class="fc" id="L288">						  TempUser.getInstance().setCognomeT(rs.getString(4));</span>
+<span class="fc" id="L289">						  TempUser.getInstance().setEmailT(rs.getString(5));</span>
+<span class="fc" id="L290">						  TempUser.getInstance().setDescrizioneT(rs.getString(7));</span>
+<span class="fc" id="L291">						  TempUser.getInstance().setDataDiNascitaT(rs.getDate(8).toLocalDate());</span>
+<span class="fc" id="L292">						  b.write(TempUser.getInstance().getId() + &quot;\t&quot; + TempUser.getInstance().getIdRuolo() + &quot;\t&quot; + TempUser.getInstance().getNomeT() + &quot;\t&quot; + TempUser.getInstance().getCognomeT() +</span>
+<span class="fc" id="L293">								  &quot;\t&quot; + TempUser.getInstance().getEmailT() + &quot;\t&quot; + TempUser.getInstance().getDescrizioneT() + &quot;\t&quot; + TempUser.getInstance().getDataDiNascitaT().toString() + &quot;\n&quot;);</span>
 
 					  }
 <span class="nc" id="L296">				  } catch (SQLException e1) {</span>
@@ -415,7 +415,7 @@ public class UsersDao {
 
 <span class="nc" id="L416">		int row = 0;</span>
 
-<span class="nc" id="L418">		query = &quot;UPDATE USERS set idRuolo=? , Nome=? , Cognome=? , Email=? , pwd=? , descrizione=? , DataDiNascita=? where idUser=?&quot;;</span>
+<span class="nc" id="L418">		query = &quot;UPDATE USERS set idRuolo=? , Nome=? , Cognome=? , Email=? , pwd=? , descrizione=? , DataNascita=? where idUser=?&quot;;</span>
 
 
 <span class="nc" id="L421">		try (Connection conn = ConnToDb.connectionToDB();</span>
@@ -446,8 +446,8 @@ public class UsersDao {
 	}
 
 	public static void cleanUp(Path path) throws IOException {
-<span class="nc" id="L449">		Files.delete(path);</span>
-<span class="nc" id="L450">	}</span>
+<span class="fc" id="L449">		Files.delete(path);</span>
+<span class="fc" id="L450">	}</span>
 }
 
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

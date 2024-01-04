@@ -34,8 +34,5 @@ public class ControllerScegliNegozio {
 		return listOfNegozi;
 	}
 	
-	public boolean isLogged()
-	{
-		return vis.getIsLogged();
-	}
+
 }

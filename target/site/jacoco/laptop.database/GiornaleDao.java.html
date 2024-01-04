@@ -36,7 +36,7 @@ public class GiornaleDao {
 	private static final String GIORNALE = &quot;giornale&quot;;
 	private static final String ECCEZIONE=&quot;eccezione generata:&quot;;
 
-	private static final String RIEPILOGOGIORNALI=&quot;src/main/resources/Reports/riepilogoGiornali.txt&quot;;
+	private static final String RIEPILOGOGIORNALI=&quot;riepilogoGiornali.txt&quot;;
 	private final File fd;
 
 <span class="fc" id="L42">	public GiornaleDao() {</span>
@@ -100,33 +100,33 @@ public class GiornaleDao {
 	}
 
 	public ObservableList&lt;Raccolta&gt; getGiornaliIdTitoloAutore(Giornale g) {
-<span class="nc" id="L103">		ObservableList&lt;Raccolta&gt; catalogo = FXCollections.observableArrayList();</span>
+<span class="fc" id="L103">		ObservableList&lt;Raccolta&gt; catalogo = FXCollections.observableArrayList();</span>
 
-<span class="nc" id="L105">		query = &quot;select * from GIORNALE where idGiornale=? or idGiornale=? or titolo=? or autore=?&quot;;</span>
-<span class="nc" id="L106">		try (Connection conn = ConnToDb.connectionToDB();</span>
-<span class="nc" id="L107">			 PreparedStatement prepQ= conn.prepareStatement(query))  {</span>
+<span class="fc" id="L105">		query = &quot;select * from GIORNALE where idGiornale=? or idGiornale=? or titolo=? or editore=?&quot;;</span>
+<span class="fc" id="L106">		try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="fc" id="L107">			 PreparedStatement prepQ= conn.prepareStatement(query))  {</span>
 
-<span class="nc" id="L109">			prepQ.setInt(1,g.getId());</span>
-<span class="nc" id="L110">			prepQ.setInt(2,vis.getId());</span>
-<span class="nc" id="L111">			prepQ.setString(3,g.getTitolo());</span>
-<span class="nc" id="L112">			prepQ.setString(4,g.getEditore());</span>
+<span class="fc" id="L109">			prepQ.setInt(1,g.getId());</span>
+<span class="fc" id="L110">			prepQ.setInt(2,vis.getId());</span>
+<span class="fc" id="L111">			prepQ.setString(3,g.getTitolo());</span>
+<span class="fc" id="L112">			prepQ.setString(4,g.getEditore());</span>
 
-<span class="nc" id="L114">			ResultSet rs=prepQ.executeQuery();</span>
-<span class="nc bnc" id="L115" title="All 2 branches missed.">			while (rs.next())</span>
+<span class="fc" id="L114">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L115" title="All 2 branches covered.">			while (rs.next())</span>
 			{
-<span class="nc" id="L117">				f.createRaccoltaFinale1(GIORNALE, rs.getString(1), null, rs.getString(4), null,rs.getString(4), rs.getString(3));</span>
+<span class="fc" id="L117">				f.createRaccoltaFinale1(GIORNALE, rs.getString(1), null, rs.getString(4), null,rs.getString(4), rs.getString(3));</span>
 
 
-<span class="nc" id="L120">				f.createRaccoltaFinale2(GIORNALE, 0, rs.getInt(6), rs.getInt(7),rs.getFloat(8),rs.getInt(9));</span>
+<span class="fc" id="L120">				f.createRaccoltaFinale2(GIORNALE, 0, rs.getInt(6), rs.getInt(7),rs.getFloat(8),rs.getInt(9));</span>
 
-<span class="nc" id="L122">				catalogo.add(f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), rs.getString(6), null));</span>
+<span class="fc" id="L122">				catalogo.add(f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), rs.getString(6), null));</span>
 
 
 			}
 <span class="nc" id="L126">		} catch (SQLException e) {</span>
 <span class="nc" id="L127">			java.util.logging.Logger.getLogger(&quot;get giornale id&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="nc" id="L128">		}</span>
-<span class="nc" id="L129">		return catalogo;</span>
+<span class="fc" id="L128">		}</span>
+<span class="fc" id="L129">		return catalogo;</span>
 	}
 
 	public ObservableList&lt;Giornale&gt; getGiornaleIdTitoloAutore(Giornale g) {

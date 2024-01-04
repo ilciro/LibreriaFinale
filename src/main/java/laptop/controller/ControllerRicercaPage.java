@@ -52,7 +52,6 @@ public class ControllerRicercaPage {
 			case "rivista":
 				riv.setTitolo(s);
 				riv.setAutore(s);
-
 				r=rD.getRivisteIdTitoloAutore(riv);
 				break;
 			default:return r;
