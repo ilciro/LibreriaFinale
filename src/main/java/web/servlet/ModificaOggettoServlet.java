@@ -200,7 +200,7 @@ public class ModificaOggettoServlet extends HttpServlet {
                             view.forward(req,resp);
                         }
                         else{
-
+                            req.setAttribute("beanG",gB);
                             view= getServletContext().getRequestDispatcher("/modificaOggettoPage.jsp");
                             view.forward(req,resp);
                         }
@@ -239,7 +239,7 @@ public class ModificaOggettoServlet extends HttpServlet {
                             view.forward(req,resp);
                         }
                         else{
-
+                            req.setAttribute("beanR",rB);
                             view= getServletContext().getRequestDispatcher("/modificaOggettoPage.jsp");
                             view.forward(req,resp);
                         }

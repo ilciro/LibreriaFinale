@@ -1,5 +1,6 @@
 laptop/controller/ControllerModificaUtenteTest.class
 laptop/controller/ControllerPagamentoCCTest.class
+laptop/controller/ControllerDownloadTest.class
 laptop/controller/ControllerRegistraUtenteTest.class
 laptop/controller/ControllerAcquistaTest.class
 laptop/controller/ControllerCompravenditaTest.class

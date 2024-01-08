@@ -41,10 +41,10 @@ public class Rivista implements Raccolta  {
 <span class="fc" id="L41">		this.copieRim = copieRim;</span>
 <span class="fc" id="L42">		this.id = id;</span>
 <span class="fc" id="L43">		this.titolo=info[0];</span>
-<span class="fc" id="L44">		this.tipologia=info[1];</span>
-<span class="fc" id="L45">		this.editore=info[4];</span>
-<span class="fc" id="L46">		this.lingua=info[3];</span>
-<span class="fc" id="L47">		this.autore=info[2];</span>
+<span class="fc" id="L44">		this.tipologia=info[5];</span>
+<span class="fc" id="L45">		this.editore=info[2];</span>
+<span class="fc" id="L46">		this.lingua=info[4];</span>
+<span class="fc" id="L47">		this.autore=info[3];</span>
 <span class="fc" id="L48">	}</span>
 	public Rivista() {
 <span class="fc" id="L50">		super();</span>
@@ -180,24 +180,24 @@ public class Rivista implements Raccolta  {
 	
 	@Override
 	public void scarica() throws IOException {
-<span class="nc" id="L183">		Desktop desktop = Desktop.getDesktop();</span>
-<span class="nc" id="L184">		desktop.open(new File(URLL));</span>
-<span class="nc" id="L185">	}</span>
+<span class="fc" id="L183">		Desktop desktop = Desktop.getDesktop();</span>
+<span class="fc" id="L184">		desktop.open(new File(URLL));</span>
+<span class="fc" id="L185">	}</span>
 	@Override
 	public void leggi(int i) throws FileNotFoundException, DocumentException {
-<span class="nc" id="L188">		Document document=null;</span>
+		Document document;
 		
 		
 		
 		
-<span class="nc" id="L193">		 ResourceBundle rBR=ResourceBundle.getBundle(&quot;configurations/downloadConfigurationRivista&quot;);</span>
+<span class="fc" id="L193">		 ResourceBundle rBR=ResourceBundle.getBundle(&quot;configurations/downloadConfigurationRivista&quot;);</span>
 		
 		    		 
-<span class="nc" id="L196">		  			document = new Document();</span>
-<span class="nc" id="L197">		     			PdfWriter.getInstance(document, new FileOutputStream(rBR.getString(&quot;pathL&quot;)));</span>
-<span class="nc" id="L198">		     			document.open();	</span>
+<span class="fc" id="L196">		  			document = new Document();</span>
+<span class="fc" id="L197">		     			PdfWriter.getInstance(document, new FileOutputStream(rBR.getString(&quot;pathL&quot;)));</span>
+<span class="fc" id="L198">		     			document.open();	</span>
 
-<span class="nc" id="L200">		     			document.add(new Paragraph(&quot;&quot;&quot;</span>
+<span class="fc" id="L200">		     			document.add(new Paragraph(&quot;&quot;&quot;</span>
 						Rivista/Magazine not avalaible
 						Nam ultricies efficitur magna, sit amet luctus magna luctus volutpat
 						Pellentesque facilisis lacinia mi, nec posuere justo pharetra non:
@@ -211,10 +211,10 @@ public class Rivista implements Raccolta  {
 						Nam malesuada in massa eu venenatis.
 						&quot;&quot;&quot;));
 
-<span class="nc" id="L214">		     			document.close();</span>
+<span class="fc" id="L214">		     			document.close();</span>
 		
 		
-<span class="nc" id="L217">	}</span>
+<span class="fc" id="L217">	}</span>
 	public String [] getInfoGenerali() {
 <span class="fc" id="L219">		return infoGenerali;</span>
 	}

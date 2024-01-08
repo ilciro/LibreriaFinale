@@ -1,6 +1,5 @@
 package laptop.controller;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -14,8 +13,22 @@ class ControllerReportPageTest {
     }
 
     @Test
-    void reportTotale() throws IOException {
-        assertThrows(IOException.class, cRP::reportTotale);
+    void leggiLibro() throws IOException {
+        assertNotNull(cRP.leggiLibro());
+    }
 
+    @Test
+    void leggiGiornale() throws IOException {
+        assertNotNull(cRP.leggiGiornale());
+    }
+
+    @Test
+    void leggiRivista() throws IOException {
+        assertNotNull(cRP.leggiRivista());
+    }
+
+    @Test
+    void leggiUtenti() throws IOException {
+        assertThrows(NullPointerException.class,cRP::leggiUtenti);
     }
 }

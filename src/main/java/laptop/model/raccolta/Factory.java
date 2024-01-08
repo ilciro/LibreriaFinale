@@ -10,10 +10,10 @@ import laptop.exception.IdException;
 
 
 public class Factory {
-	private MatchParam mp;
-	private Libro l;
-	private Giornale g;
-	private Rivista r;
+	private final MatchParam mp;
+	private final Libro l;
+	private final Giornale g;
+	private final Rivista r;
 	private String tipologiaO;
 	private static final String LIBRO = "libro";
 	private static final String GIORNALE = "giornale";
@@ -73,6 +73,7 @@ public class Factory {
 		}
 		if (tipologiaO.equals(GIORNALE))
 			{
+
 				g.setCopieRimanenti(nrCopie);
 			g.setDisponibilita(disp);
 			g.setPrezzo(prezzo);

@@ -30,7 +30,6 @@
 <c:choose>
 <c:when test="${tipo=='libro'}">
 <div>
-
 titolo:
 <label for="titoloL"></label>
 <input type="text" id="titoloL" name="titoloL">
@@ -134,9 +133,11 @@ copie rimanenti
 <input type="text" id="copieL" name="copieL">
 <br>
 <br>
+</div>
 </c:when>
 
 <c:when test="${tipo=='giornale'}">
+<div>
 titolo:
 <label for="titoloG"></label>
 <input type="text" id="titoloG" name="titoloG">
@@ -179,10 +180,11 @@ prezzo:
 <br>
 <br>
 
-
+</div>
 </c:when>
 
 <c:when test="${tipo=='rivista'}">
+<div>
 titolo :
 <label for="titoloL"></label>
 <input type="text" id="titoloL" name="titoloL">

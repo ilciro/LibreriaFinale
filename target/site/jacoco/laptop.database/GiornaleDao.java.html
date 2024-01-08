@@ -82,7 +82,7 @@ public class GiornaleDao {
 <span class="fc" id="L82">			 ResultSet rs = prepQ.executeQuery()) {</span>
 <span class="fc bfc" id="L83" title="All 2 branches covered.">			while (rs.next()) {</span>
 
-<span class="fc" id="L85">				f.createRaccoltaFinale1(GIORNALE, rs.getString(1), null, rs.getString(4), null,rs.getString(4), rs.getString(3));</span>
+<span class="fc" id="L85">				f.createRaccoltaFinale1(GIORNALE, rs.getString(1), null, rs.getString(4), null,rs.getString(3), rs.getString(2));</span>
 
 
 <span class="fc" id="L88">				f.createRaccoltaFinale2(GIORNALE, 0, rs.getInt(6), rs.getInt(7),rs.getFloat(8),rs.getInt(9));</span>
@@ -132,7 +132,7 @@ public class GiornaleDao {
 	public ObservableList&lt;Giornale&gt; getGiornaleIdTitoloAutore(Giornale g) {
 <span class="nc" id="L133">		ObservableList&lt;Giornale&gt; catalogo = FXCollections.observableArrayList();</span>
 
-<span class="nc" id="L135">		query = &quot;select * from GIORNALE where idGiornale=? or idGiornale=? or titolo=? or autore=?&quot;;</span>
+<span class="nc" id="L135">		query = &quot;select * from GIORNALE where idGiornale=? or idGiornale=? or titolo=? or editore=?&quot;;</span>
 <span class="nc" id="L136">		try (Connection conn = ConnToDb.connectionToDB();</span>
 <span class="nc" id="L137">			 PreparedStatement prepQ= conn.prepareStatement(query))  {</span>
 
@@ -258,10 +258,10 @@ public class GiornaleDao {
 				+ &quot;`lingua` = ?,&quot;
 				+ &quot;`editore` = ?,&quot;
 				+ &quot;`dataPubblicazione` = ?,&quot;
-				+ &quot;`copiRim` = ?,&quot;
+				+ &quot;`copieRimanenti` = ?,&quot;
 				+ &quot;`disp` = ?,&quot;
 				+ &quot;`prezzo` = ?&quot;
-				+ &quot;WHERE `id` = ? or id=?&quot;;
+				+ &quot;WHERE `idGiornale` = ? or idGiornale=?&quot;;
 <span class="nc" id="L265">		try(Connection conn=ConnToDb.connectionToDB();</span>
 <span class="nc" id="L266">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
@@ -291,46 +291,46 @@ public class GiornaleDao {
 	public void generaReport() throws IOException {
 
 		try {
-<span class="nc bnc" id="L294" title="All 2 branches missed.">			if (!fd.exists()) {</span>
+<span class="pc bpc" id="L294" title="1 of 2 branches missed.">			if (!fd.exists()) {</span>
 <span class="nc" id="L295">				throw new IOException(&quot;file not exists&quot;);</span>
 			}
-<span class="nc bnc" id="L297" title="All 2 branches missed.">			if(fd.exists())</span>
+<span class="pc bpc" id="L297" title="1 of 2 branches missed.">			if(fd.exists())</span>
 			{
-<span class="nc" id="L299">				cleanUp(Path.of(RIEPILOGOGIORNALI));</span>
-<span class="nc" id="L300">					throw new IOException(&quot;file deleted -&gt; not exists&quot;);</span>
+<span class="fc" id="L299">				cleanUp(Path.of(RIEPILOGOGIORNALI));</span>
+<span class="fc" id="L300">					throw new IOException(&quot;file deleted -&gt; not exists&quot;);</span>
 
 			}
-<span class="nc" id="L303">		} catch (IOException e) {</span>
-<span class="nc" id="L304">			java.util.logging.Logger.getLogger(&quot;Test genera report&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="nc bnc" id="L305" title="All 2 branches missed.">			if (fd.createNewFile()) {</span>
+<span class="fc" id="L303">		} catch (IOException e) {</span>
+<span class="fc" id="L304">			java.util.logging.Logger.getLogger(&quot;Test genera report&quot;).log(Level.INFO, ECCEZIONE, e);</span>
+<span class="pc bpc" id="L305" title="1 of 2 branches missed.">			if (fd.createNewFile()) {</span>
 
 
-<span class="nc" id="L308">				try (BufferedWriter b = new BufferedWriter(new FileWriter(RIEPILOGOGIORNALI))) {</span>
+<span class="fc" id="L308">				try (BufferedWriter b = new BufferedWriter(new FileWriter(RIEPILOGOGIORNALI))) {</span>
 
-<span class="nc" id="L310">					query = &quot;select titolo,copieRimanenti,prezzo  from GIORNALE&quot;;</span>
+<span class="fc" id="L310">					query = &quot;select titolo,copieRimanenti,prezzo  from GIORNALE&quot;;</span>
 
-<span class="nc" id="L312">					try (Connection conn = ConnToDb.connectionToDB();</span>
-<span class="nc" id="L313">						 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
+<span class="fc" id="L312">					try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="fc" id="L313">						 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
 
-<span class="nc" id="L315">						ResultSet rs = prepQ.executeQuery();</span>
+<span class="fc" id="L315">						ResultSet rs = prepQ.executeQuery();</span>
 
 
-<span class="nc bnc" id="L318" title="All 2 branches missed.">						while (rs.next()) {</span>
+<span class="fc bfc" id="L318" title="All 2 branches covered.">						while (rs.next()) {</span>
 
-<span class="nc" id="L320">							b.write(&quot;Titolo :&quot; + rs.getString(&quot;titolo&quot;) + &quot;\t&quot; + &quot;Ricavo totale :&quot; + rs.getInt(&quot;copieRimanenti&quot;) * rs.getFloat(&quot;prezzo&quot;) + &quot;\n&quot;);</span>
+<span class="fc" id="L320">							b.write(&quot;Titolo :&quot; + rs.getString(&quot;titolo&quot;) + &quot;\t&quot; + &quot;Ricavo totale :&quot; + rs.getInt(&quot;copieRimanenti&quot;) * rs.getFloat(&quot;prezzo&quot;) + &quot;\n&quot;);</span>
 
-<span class="nc" id="L322">							b.flush();</span>
+<span class="fc" id="L322">							b.flush();</span>
 
 						}
 
 <span class="nc" id="L326">					} catch (SQLException e1) {</span>
 <span class="nc" id="L327">						java.util.logging.Logger.getLogger(&quot;Test Eccezione report&quot;).log(Level.INFO, ECCEZIONE, e1);</span>
-<span class="nc" id="L328">					}</span>
+<span class="fc" id="L328">					}</span>
 				}
 			}
 
 <span class="nc" id="L332">		}</span>
-<span class="nc" id="L333">	}</span>
+<span class="fc" id="L333">	}</span>
 
 
 
@@ -378,8 +378,8 @@ public class GiornaleDao {
 <span class="nc" id="L378">	}</span>
 
 	public static void cleanUp(Path path) throws  IOException {
-<span class="nc" id="L381">		Files.delete(path);</span>
-<span class="nc" id="L382">	}</span>
+<span class="fc" id="L381">		Files.delete(path);</span>
+<span class="fc" id="L382">	}</span>
 
 
 

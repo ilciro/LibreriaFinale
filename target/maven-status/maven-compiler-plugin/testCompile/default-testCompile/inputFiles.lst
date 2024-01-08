@@ -8,6 +8,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerRicercaPageTest.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerGestionePageTest.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerReportPageTest.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerDownloadTest.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerScegliNegozioTest.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerAggiungiUtenteTest.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerLoginTest.java

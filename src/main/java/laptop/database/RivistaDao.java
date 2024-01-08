@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import java.time.LocalDate;
 import java.util.logging.Level;
 
 
@@ -38,7 +39,7 @@ public class 	RivistaDao {
 	private static final String ECCEZIONE="eccezione generata:";
 
 
-	private static final String RIEPILOGORIVISTE="riepilogoRivista.txt";
+	private static final String RIEPILOGORIVISTE="riepilogoRiviste.txt";
 	private final File fd;
 
 	public RivistaDao() throws IOException {
@@ -61,9 +62,9 @@ public class 	RivistaDao {
 				f.createRaccoltaFinale1(RIVISTA, rs.getString(1), null, rs.getString(5), rs.getString(3),rs.getString(4), rs.getString(2));
 
 
-				f.createRaccoltaFinale2(RIVISTA, 0, rs.getInt(10), rs.getInt(8),rs.getFloat(9),rs.getInt(10));
+				f.createRaccoltaFinale2(RIVISTA, 0, rs.getInt(10), rs.getInt(8),rs.getFloat(9),rs.getInt(11));
 
-				r=(Rivista) f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(),null, null);
+				r= (Rivista) f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(),null, null);
 
 
 			}
@@ -82,11 +83,11 @@ public class 	RivistaDao {
 			 PreparedStatement prepQ = conn.prepareStatement(query);
 			 ResultSet rs = prepQ.executeQuery()) {
 			while (rs.next()) {
+				f.createRaccoltaFinale1(RIVISTA,rs.getString(1),null,rs.getString(5),rs.getString(3),rs.getString(4),rs.getString(2));
 
-				f.createRaccoltaFinale1(RIVISTA, rs.getString(1), null, rs.getString(5), rs.getString(3),rs.getString(4), rs.getString(2));
 
 
-				f.createRaccoltaFinale2(RIVISTA, 0, rs.getInt(10), rs.getInt(8),rs.getFloat(9),rs.getInt(10));
+				f.createRaccoltaFinale2(RIVISTA, 0, rs.getInt(10), rs.getInt(8),rs.getFloat(9),rs.getInt(11));
 
 				catalogo.add(f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(),null, null));
 
@@ -260,11 +261,13 @@ public class 	RivistaDao {
 				+ "SET"
 				+ "`titolo` =?,"
 				+ "`tipologia` = ?,"
+				+ "`autore` = ?,"
 				+ "`lingua` = ?,"
 				+ "`editore` = ?,"
+				+ "`descrizione` = ?,"
 				+ "`dataPubblicazione` = ?,"
-				+ "`copiRim` = ?,"
 				+ "`disp` = ?,"
+				+ "`copieRimanenti` = ?,"
 				+ "`prezzo` = ?"
 				+ "WHERE `idRivista` = ? or idRivista=?";
 		try(Connection conn=ConnToDb.connectionToDB();
@@ -272,14 +275,16 @@ public class 	RivistaDao {
 		{
 			prepQ.setString(1,r.getTitolo());
 			prepQ.setString(2,r.getTipologia());
-			prepQ.setString(3,r.getLingua());
-			prepQ.setString(4, r.getEditore());
-			prepQ.setString(5,r.getDataPubb().toString());
-			prepQ.setInt(6,r.getCopieRim());
-			prepQ.setInt(7,r.getDisp());
-			prepQ.setFloat(8,r.getPrezzo());
-			prepQ.setInt(9, r.getId());
-			prepQ.setInt(10, vis.getId());
+			prepQ.setString(3,r.getAutore());
+			prepQ.setString(4,r.getLingua());
+			prepQ.setString(5,r.getEditore());
+			prepQ.setString(6,r.getDescrizione());
+			prepQ.setDate(7, Date.valueOf(r.getDataPubb().toString()));
+			prepQ.setInt(8,r.getDisp());
+			prepQ.setInt(9,r.getCopieRim());
+			prepQ.setFloat(10,r.getPrezzo());
+			prepQ.setInt(11,r.getId());
+			prepQ.setFloat(12,vis.getId());
 
 
 

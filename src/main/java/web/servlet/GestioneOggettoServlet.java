@@ -44,7 +44,7 @@ public class GestioneOggettoServlet extends HttpServlet {
         String modifica=req.getParameter("buttonMod");
         String cancella=req.getParameter("buttonCanc");
         String indietro=req.getParameter("buttonI");
-        int idOgg=0;
+        int idOgg;
         RequestDispatcher view;
         try{
             if(genera!=null && genera.equals("genera lista"))

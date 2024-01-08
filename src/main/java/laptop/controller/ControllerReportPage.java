@@ -3,7 +3,6 @@ package laptop.controller;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.SQLException;
 
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
@@ -14,25 +13,25 @@ public class ControllerReportPage {
 	private LibroDao lD;
 	private GiornaleDao gD;
 	private RivistaDao rD;
-	protected String fileLibro = "src/main/resources/Reports/riepilogoLibri.txt";
-	protected String fileGiornale ="src/main/resources/Reports/riepilogoGiornali.txt";
-	protected String fileRiviste = "src/main/resources/Reports/riepilogoRiviste.txt";
-	protected String fileUtenti = "src/main/resources/Reports/riepilogoUtenti.txt";
+	protected String fileLibro = "riepilogoLibri.txt";
+	protected String fileGiornale ="riepilogoGiornali.txt";
+	protected String fileRiviste = "riepilogoRiviste.txt";
+	protected String fileUtenti = "riepilogoUtenti.txt";
 
-	public void generaReportLibri () throws IOException
+	private void generaReportLibri () throws IOException
 	{
 		lD.generaReport();
 		
 	}
-	public void generaReportUtenti() throws IOException  {
+	private void generaReportUtenti() throws IOException {
 		UsersDao.getListaUtenti();
 	}
-	public void generaReportRiviste () throws IOException
+	private void generaReportRiviste () throws IOException
 	{
 		rD.generaReport();
 		
 	}
-	public void generaReportGiornali () throws IOException
+	private void generaReportGiornali () throws IOException
 	{
 		gD.generaReport();
 		
@@ -57,7 +56,7 @@ public class ControllerReportPage {
 	public String leggiLibro() throws  IOException {
 		generaReportLibri();
 		StringBuilder builder = new StringBuilder();
-		String line = "";
+		String line;
 		try (BufferedReader readerU = new BufferedReader(new FileReader(fileLibro))) {
 			while ((line = readerU.readLine()) != null) {
 				builder.append(line);
@@ -72,7 +71,7 @@ public class ControllerReportPage {
 	public String leggiGiornale() throws  IOException {
 		generaReportGiornali();
 		StringBuilder builder = new StringBuilder();
-		String line = "";
+		String line;
 		try (BufferedReader readerU = new BufferedReader(new FileReader(fileGiornale))) {
 			while ((line = readerU.readLine()) != null) {
 				builder.append(line);
@@ -87,7 +86,7 @@ public class ControllerReportPage {
 	public String leggiRivista() throws  IOException {
 		generaReportRiviste();
 		StringBuilder builder = new StringBuilder();
-		String line = "";
+		String line;
 		try (BufferedReader readerU = new BufferedReader(new FileReader(fileRiviste))) {
 			while ((line = readerU.readLine()) != null) {
 				builder.append(line);
@@ -102,7 +101,7 @@ public class ControllerReportPage {
 	public String leggiUtenti() throws IOException {
 		generaReportUtenti();
 		StringBuilder builder = new StringBuilder();
-		String line = "";
+		String line;
 		try (BufferedReader readerU = new BufferedReader(new FileReader(fileUtenti))) {
 			while ((line = readerU.readLine()) != null) {
 				builder.append(line);

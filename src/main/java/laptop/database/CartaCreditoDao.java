@@ -87,7 +87,7 @@ public class CartaCreditoDao {
 		n = null;
 		cog = null;
 		cod = null;
-		Date date=null;
+		Date date = null;
 		String civ = null;
 
 
@@ -115,10 +115,13 @@ public class CartaCreditoDao {
 				cc.setNomeUser(n);
 				cc.setCognomeUser(cog);
 				cc.setNumeroCC(cod);
-                assert date != null;
-                cc.setScadenza(Date.valueOf(date.toLocalDate()));
-				cc.setCiv(civ);
-			} catch (SQLException e) {
+
+
+                if (date != null) {
+                    cc.setScadenza(Date.valueOf(date.toLocalDate()));
+                }
+                cc.setCiv(civ);
+			} catch (SQLException  e) {
 				Logger.getLogger("report libro").log(Level.SEVERE,"\n eccezione ottenuta .",e);
 
 			}

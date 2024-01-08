@@ -37,7 +37,7 @@ public class ModificaUtenteServlet extends HttpServlet {
                tUser.setId(uB.getIdB());
 
                 //creato di dafault
-                uB.setRuoloB("U");
+                uB.setRuoloB(UsersDao.getTempUserSingolo(tUser).getIdRuolo());
                 uB.setNomeB(UsersDao.getTempUserSingolo(tUser).getNomeT());
                 uB.setCognomeB(UsersDao.getTempUserSingolo(tUser).getCognomeT());
                 uB.setEmailB(UsersDao.getTempUserSingolo(tUser).getEmailT());

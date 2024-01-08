@@ -25,9 +25,14 @@ public class UsersDao {
 	private static boolean state = false;
 	private static final String ECCEZIONE = "errore in mysql :";
 	private static int row = 0;
+	private static final String TXT_FILE_NAME="riepilogoUtenti.txt";
+
+	private static final File fd=new File(TXT_FILE_NAME);
 
 
-    // use this function on controller after you had check the email
+
+
+	// use this function on controller after you had check the email
 	// add an user on db after registration
 	// prende i dati dall'oggetto che gli abbiamo passato 
 	public static boolean createUser(User u) throws SQLException {
@@ -250,57 +255,58 @@ public class UsersDao {
 
 	public static void getListaUtenti() throws IOException {
 
-		  final String TXT_FILE_NAME="riepilogoUtenti.txt";
-
-		  try {
-              File fd = new File(TXT_FILE_NAME);
-
-			  if (!fd.exists()) {
-				  throw new IOException("file not found");
-			  }
-			  if(fd.exists())
-			  {
-				  cleanUp(Path.of(TXT_FILE_NAME));
-				  	throw new IOException("file deleted -> not exists");
-			  }
-		  }catch (IOException e)
-		  {
-			  Logger.getLogger("lista utenti").log(Level.SEVERE, "\n eccezione ottenuta .", e);
-
-			  query = "select * from USERS";
-			  FileWriter w;
-			  w = new FileWriter(TXT_FILE_NAME);
 
 
-			  try (BufferedWriter b = new BufferedWriter(w)) {
+		try {
 
-				  try (Connection conn = ConnToDb.connectionToDB();
-					   PreparedStatement prepQ = conn.prepareStatement(query)) {
+            if (!fd.exists()) {
+                throw new IOException("file not exists");
+            }
+			if(fd.exists()) {
+				cleanUp(Path.of(TXT_FILE_NAME));
+				throw new IOException("file deleted -> not exists");
+			}
+        } catch (IOException|NullPointerException e) {
 
-					  ResultSet rs = prepQ.executeQuery();
+
+				try (BufferedWriter b = new BufferedWriter(new FileWriter(TXT_FILE_NAME))) {
+					query = "select * from USERS";
 
 
-					  while (rs.next()) {
+					try (Connection conn = ConnToDb.connectionToDB();
+						 PreparedStatement prepQ = conn.prepareStatement(query)) {
 
-						  TempUser.getInstance().setId(rs.getInt(1));
-						  TempUser.getInstance().setIdRuolo(rs.getString(2));
-						  TempUser.getInstance().setNomeT(rs.getString(3));
-						  TempUser.getInstance().setCognomeT(rs.getString(4));
-						  TempUser.getInstance().setEmailT(rs.getString(5));
-						  TempUser.getInstance().setDescrizioneT(rs.getString(7));
-						  TempUser.getInstance().setDataDiNascitaT(rs.getDate(8).toLocalDate());
-						  b.write(TempUser.getInstance().getId() + "\t" + TempUser.getInstance().getIdRuolo() + "\t" + TempUser.getInstance().getNomeT() + "\t" + TempUser.getInstance().getCognomeT() +
-								  "\t" + TempUser.getInstance().getEmailT() + "\t" + TempUser.getInstance().getDescrizioneT() + "\t" + TempUser.getInstance().getDataDiNascitaT().toString() + "\n");
+						ResultSet rs = prepQ.executeQuery();
 
-					  }
-				  } catch (SQLException e1) {
-					  Logger.getLogger("lista utenti").log(Level.SEVERE, "\n eccezione ottenuta .", e1);
 
-				  }
-				  b.flush();
+						while (rs.next()) {
 
-			  }
-		  }
+							TempUser.getInstance().setId(rs.getInt(1));
+							TempUser.getInstance().setIdRuolo(rs.getString(2));
+							TempUser.getInstance().setNomeT(rs.getString(3));
+							TempUser.getInstance().setCognomeT(rs.getString(4));
+							TempUser.getInstance().setEmailT(rs.getString(5));
+							TempUser.getInstance().setDescrizioneT(rs.getString(7));
+							TempUser.getInstance().setDataDiNascitaT(rs.getDate(8).toLocalDate());
+							b.write(TempUser.getInstance().getId() + "\t" + TempUser.getInstance().getIdRuolo() + "\t" + TempUser.getInstance().getNomeT() + "\t" + TempUser.getInstance().getCognomeT() +
+									"\t" + TempUser.getInstance().getEmailT() + "\t" + TempUser.getInstance().getDescrizioneT() + "\t" + TempUser.getInstance().getDataDiNascitaT().toString() + "\n");
+
+						}
+					} catch (SQLException e1) {
+						Logger.getLogger("lista utenti").log(Level.SEVERE, "\n eccezione ottenuta .", e1);
+
+					}
+					b.flush();
+
+				}
+
+		}
+
+
+
+
+
+
 
 
 

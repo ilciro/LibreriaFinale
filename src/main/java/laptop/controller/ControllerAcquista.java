@@ -114,19 +114,19 @@ public class ControllerAcquista {
 
 				l.setId(vis.getId());
 				rimanenza=lD.getData(l).getNrCopie();
-				checkRimanenza(rimanenza,i);
+				checkRimanenza(rimanenza);
 				break;
 			case GIORNALE:
 
 				g.setId(vis.getId());
 				rimanenza=gD.getData(g).getCopieRimanenti();
-				checkRimanenza(rimanenza,i);
+				checkRimanenza(rimanenza);
 				break;
 			case RIVISTA:
 
 				r.setId(vis.getId());
 				rimanenza=rD.getData(r).getCopieRim();
-				checkRimanenza(rimanenza,i);
+				checkRimanenza(rimanenza);
 				break;
 			default: throw new IdException("incorrect id");
 
@@ -134,8 +134,8 @@ public class ControllerAcquista {
 		}
 	}
 
-	private void checkRimanenza(int quantita,int i) throws AcquistaException {
-		if(quantita-i<0)
+	private void checkRimanenza(int quantita) throws AcquistaException {
+		if(quantita<0)
 		{
 			throw new AcquistaException("rimanenza <0");
 		}

@@ -225,45 +225,45 @@ public class Libro implements Raccolta {
 
 	@Override
 	public void scarica() throws DocumentException, IOException {
-<span class="nc" id="L228">		Desktop desktop = Desktop.getDesktop();</span>
-<span class="nc" id="L229">		desktop.open(new File(URLL));</span>
+<span class="fc" id="L228">		Desktop desktop = Desktop.getDesktop();</span>
+<span class="fc" id="L229">		desktop.open(new File(URLL));</span>
 
 
-<span class="nc" id="L232">	}</span>
+<span class="fc" id="L232">	}</span>
 	@Override
 	public void leggi(int i) throws IOException, DocumentException, URISyntaxException {
-<span class="nc" id="L235">		Document document=null;</span>
+		Document document;
 		File file;
 
 
-<span class="nc" id="L239">		int dimensione=0;</span>
+<span class="fc" id="L239">		int dimensione=0;</span>
 
-<span class="nc" id="L241">		ResourceBundle rB=ResourceBundle.getBundle(&quot;configurations/booksPath&quot;);</span>
-<span class="nc" id="L242">		 ResourceBundle rBD=ResourceBundle.getBundle(&quot;configurations/downloadConfiguration&quot;);</span>
-<span class="nc" id="L243">			 Enumeration&lt;String&gt; enumeration = rBD.getKeys();</span>
+<span class="fc" id="L241">		ResourceBundle rB=ResourceBundle.getBundle(&quot;configurations/booksPath&quot;);</span>
+<span class="fc" id="L242">		 ResourceBundle rBD=ResourceBundle.getBundle(&quot;configurations/downloadConfiguration&quot;);</span>
+<span class="fc" id="L243">			 Enumeration&lt;String&gt; enumeration = rBD.getKeys();</span>
 
 
 
 		      // print all the keys
-<span class="nc bnc" id="L248" title="All 2 branches missed.">		      while (enumeration.hasMoreElements()) {</span>
-<span class="nc" id="L249">		    	 enumeration.nextElement();</span>
+<span class="fc bfc" id="L248" title="All 2 branches covered.">		      while (enumeration.hasMoreElements()) {</span>
+<span class="fc" id="L249">		    	 enumeration.nextElement();</span>
 
 
-<span class="nc bnc" id="L252" title="All 2 branches missed.">		    		 if(i==dimensione)</span>
+<span class="fc bfc" id="L252" title="All 2 branches covered.">		    		 if(i==dimensione)</span>
 		    	  {
-<span class="nc" id="L254">		    		  document = new Document();</span>
-<span class="nc" id="L255">		     			PdfWriter.getInstance(document, new FileOutputStream(rBD.getString(&quot;path&quot;+i+&quot;L&quot;)));</span>
-<span class="nc" id="L256">		     			document.open();</span>
-<span class="nc" id="L257">		  			file=new File(rB.getString(&quot;path&quot;+i+&quot;L&quot;));</span>
-<span class="nc" id="L258">		  			Desktop.getDesktop().open(file);</span>
+<span class="fc" id="L254">		    		  document = new Document();</span>
+<span class="fc" id="L255">		     			PdfWriter.getInstance(document, new FileOutputStream(rBD.getString(&quot;path&quot;+i)));</span>
+<span class="fc" id="L256">		     			document.open();</span>
+<span class="fc" id="L257">		  			file=new File(rB.getString(&quot;path&quot;+i));</span>
+<span class="fc" id="L258">		  			Desktop.getDesktop().open(file);</span>
 		    	  }
 
 		    	  else {
-<span class="nc" id="L262">		  			document = new Document();</span>
-<span class="nc" id="L263">		     			PdfWriter.getInstance(document, new FileOutputStream(rBD.getString(&quot;pathNonFound&quot;)));</span>
-<span class="nc" id="L264">		     			document.open();</span>
+<span class="fc" id="L262">		  			document = new Document();</span>
+<span class="fc" id="L263">		     			PdfWriter.getInstance(document, new FileOutputStream(rBD.getString(&quot;pathNonFound&quot;)));</span>
+<span class="fc" id="L264">		     			document.open();</span>
 
-<span class="nc" id="L266">		     			document.add(new Paragraph(&quot;&quot;&quot;</span>
+<span class="fc" id="L266">		     			document.add(new Paragraph(&quot;&quot;&quot;</span>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat ornare dictum. Donec semper pellentesque risus, quis pulvinar nisl efficitur nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus nisl mi, ullamcorper cursus pulvinar ut, pretium ut quam. Proin felis mauris, pretium non scelerisque vitae, posuere vel risus. Sed tortor enim, sollicitudin et eros at, fermentum suscipit urna. Sed at nisi quis libero hendrerit interdum at sodales dui. Nullam nec mattis urna. Quisque rhoncus pharetra malesuada. Etiam porttitor ligula consequat nisi luctus scelerisque. Sed purus purus, gravida ac orci sit amet, faucibus euismod diam. In dignissim enim sed nisl euismod, in vulputate odio facilisis. Sed venenatis facilisis massa, ac condimentum ante rutrum blandit. Vivamus efficitur eros quis diam semper, nec porttitor lectus vehicula. Fusce turpis ipsum, mollis vel nunc vitae, blandit molestie nunc. Nunc sit amet feugiat lacus.
 										     					
 								Aenean sollicitudin id dolor eu luctus. Proin tincidunt semper lobortis. Nunc nec odio lorem. Praesent consectetur, nunc sed egestas elementum, orci ligula dictum ligula, ut vehicula augue nibh sit amet quam. Nam nec massa lorem. Donec sed elit massa. Praesent neque ante, suscipit nec ornare id, bibendum non dolor. Donec sem ex, placerat ac hendrerit quis, ullamcorper nec quam. Morbi tempus tellus at porta fermentum. Donec vitae dolor orci. Vivamus fermentum faucibus eros, et cursus lorem aliquet in. Integer vitae ipsum eu nulla sodales porta.
@@ -278,7 +278,7 @@ public class Libro implements Raccolta {
 
 		  		}
 
-<span class="nc" id="L281">		    	   dimensione++;</span>
+<span class="fc" id="L281">		    	   dimensione++;</span>
 
 		      }
 
@@ -289,7 +289,7 @@ public class Libro implements Raccolta {
 
 
 
-<span class="nc" id="L292">	}</span>
+<span class="fc" id="L292">	}</span>
 
 	/*
 	 * provo a levare i codeSmells &gt; 7 paramentri

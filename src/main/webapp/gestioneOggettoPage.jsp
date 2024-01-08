@@ -15,6 +15,7 @@
 
 <h2> Scegliere cosa fare... Per modificare/eliminare inserire id oggetto corrispondente</h2>
 
+
 <c:set var="tipo" scope="session" value="${beanS.getTypeB()}"/>
 
 <form action="GestioneOggettoServlet" method="post">
@@ -44,7 +45,6 @@ autore
 prezzo
 </th>
 <th>
-<th>
 id
 </th>
 </tr>
@@ -58,6 +58,7 @@ id
 <td>${ lista.getPrezzo() }</td>
 <td>${ lista.getId()}</td>
 </tr>
+</div>
 </c:forEach>
 </table>
 
@@ -96,13 +97,14 @@ id
 <c:forEach items="#{beanMOB.miaListaB }" var="lista">
 <tr>
 <td>${ lista.getTitolo() }</td>
-<td>QUOTIDIANO</td>
+<td>${ lista.getTipologia()}</td>
 <td>${ lista.getEditore()}</td>
-<td> ${lista.getLingua()} </td>
+<td>${lista.getLingua()} </td>
 <td>${ lista.getPrezzo() }</td>
 <td>${ lista.getId()}</td>
 </tr>
 
+</div>
 </c:forEach>
 </table>
 
@@ -132,7 +134,6 @@ autore
 prezzo
 </th>
 <th>
-<th>
 id
 </th>
 </tr>
@@ -143,12 +144,14 @@ id
 <c:forEach items="#{beanMOB.miaListaB }" var="lista">
 <tr>
 <td>${ lista.getTitolo() }</td>
-<td>${lista.getTipologia()}</td>
+<td>${ lista.getTipologia()}</td>
 <td>${ lista.getEditore()}</td>
 <td>${ lista.getAutore()}</td>
 <td>${ lista.getPrezzo() }</td>
 <td>${ lista.getId()}</td>
 </tr>
+
+</div>
 </c:forEach>
 
 </table>

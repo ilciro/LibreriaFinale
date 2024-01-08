@@ -7,10 +7,10 @@ import java.time.LocalDate;
 
 public class TempUser {
 <span class="fc" id="L9">	enum RuoliT {</span>
-<span class="fc" id="L10">		ADMINT,</span>
-<span class="fc" id="L11">		UTENTET,</span>
-<span class="fc" id="L12">		SCRITTORET,</span>
-<span class="fc" id="L13">		EDITORET;</span>
+<span class="fc" id="L10">		ADMIN,</span>
+<span class="fc" id="L11">		UTENTE,</span>
+<span class="fc" id="L12">		SCRITTORE,</span>
+<span class="fc" id="L13">		EDITORE</span>
  }
 	@Override
 	public String toString() {
@@ -111,36 +111,25 @@ public String getIdRuolo()  {
 
 	public void setIdRuolo(String ruolo) {
 
-<span class="pc bpc" id="L114" title="7 of 8 branches missed.">		 switch (ruolo){</span>
-			case &quot;ADMINT&quot;:
-<span class="nc" id="L116">				r = RuoliT.ADMINT.toString();</span>
-<span class="nc" id="L117">				break;				</span>
-			case &quot;EDITORET&quot;:
-<span class="nc" id="L119">				r = RuoliT.EDITORET.toString();</span>
-<span class="nc" id="L120">				break;</span>
-			case &quot;SCRITTORET&quot;:
-<span class="nc" id="L122">				r = RuoliT.SCRITTORET.toString();</span>
-<span class="nc" id="L123">				break;</span>
-			case &quot;UTENTET&quot;:
-<span class="nc" id="L125">				r = RuoliT.UTENTET.toString();</span>
-<span class="nc" id="L126">				break;	</span>
-			case &quot;WT&quot;:
-<span class="nc" id="L128">				r = RuoliT.SCRITTORET.toString();</span>
-<span class="nc" id="L129">				break;</span>
-			case &quot;ET&quot;:
-<span class="nc" id="L131">				r = RuoliT.EDITORET.toString();</span>
-<span class="nc" id="L132">				break;	</span>
-			case &quot;AT&quot;:
-<span class="nc" id="L134">				r = RuoliT.ADMINT.toString();</span>
-<span class="nc" id="L135">				break;</span>
-				
-			default:
-<span class="fc" id="L138">				r= RuoliT.UTENTET.toString();</span>
+<span class="fc bfc" id="L114" title="All 4 branches covered.">		 switch (ruolo){</span>
+			case &quot;ADMIN&quot;,&quot;A&quot;:
+<span class="fc" id="L116">				r = RuoliT.ADMIN.toString();</span>
+<span class="fc" id="L117">				break;				</span>
+			case &quot;EDITORE&quot;,&quot;E&quot;:
+<span class="fc" id="L119">				r = RuoliT.EDITORE.toString();</span>
+<span class="fc" id="L120">				break;</span>
+			case &quot;SCRITTORE&quot;,&quot;W&quot;,&quot;S&quot;:
+<span class="fc" id="L122">				r = RuoliT.SCRITTORE.toString();</span>
+<span class="fc" id="L123">				break;</span>
+
+
+             default:
+<span class="fc" id="L127">				r= RuoliT.UTENTE.toString();</span>
 				break;
 			}
 		
 
-<span class="fc" id="L143">	}</span>
+<span class="fc" id="L132">	}</span>
 
 
 	

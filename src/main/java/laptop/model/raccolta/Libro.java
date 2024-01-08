@@ -232,7 +232,7 @@ public class Libro implements Raccolta {
 	}
 	@Override
 	public void leggi(int i) throws IOException, DocumentException, URISyntaxException {
-		Document document=null;
+		Document document;
 		File file;
 
 
@@ -252,9 +252,9 @@ public class Libro implements Raccolta {
 		    		 if(i==dimensione)
 		    	  {
 		    		  document = new Document();
-		     			PdfWriter.getInstance(document, new FileOutputStream(rBD.getString("path"+i+"L")));
+		     			PdfWriter.getInstance(document, new FileOutputStream(rBD.getString("path"+i)));
 		     			document.open();
-		  			file=new File(rB.getString("path"+i+"L"));
+		  			file=new File(rB.getString("path"+i));
 		  			Desktop.getDesktop().open(file);
 		    	  }
 

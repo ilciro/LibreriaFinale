@@ -16,11 +16,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import web.bean.*;
 
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.concurrent.TimeUnit;
 
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -54,13 +54,16 @@ class TestIndexPage {
     private final NegozioBean nB=new NegozioBean();
     private final NegozioDao nD=new NegozioDao();
 
+    TestIndexPage() throws IOException {
+    }
 
-           // Test for Admin all functionalities
+
+    // Test for Admin all functionalities
 
 
 
   @Test
-    void testLoginAdminRaccoltaLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+    void testLoginAdminRaccoltaLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException{
         //usato per prendere id
         String isbn;
         int idLibro;
@@ -97,7 +100,7 @@ class TestIndexPage {
         driver.findElement(By.id("recensioneL")).sendKeys(" questo e un libro inserito");
         driver.findElement(By.id("descL")).sendKeys("libro inserito per test");
         //non disponibile -> non clicco su checkbox
-        driver.findElement(By.id("prezzoL")).sendKeys("5.00f");
+        driver.findElement(By.id("prezzoL")).sendKeys("5f");
         driver.findElement(By.id("copieL")).sendKeys("16");
         driver.findElement(By.id("confermaB")).click();
         //previous page
@@ -106,13 +109,14 @@ class TestIndexPage {
 
         l.setCodIsbn(lB.getCodIsbnB());
 
-        idLibro=lD.retId(l);
+        idLibro=lD.getData(l).getId();
         PropertyUtils.setProperty(lB,"idB",idLibro);
 
         driver.findElement(By.id("idL")).sendKeys(PropertyUtils.getProperty(lB,"idB").toString());
         driver.findElement(By.id("buttonMod")).click();
         //schermata modifica
         driver.findElement(By.id("listaB")).click();
+
         //update
         driver.findElement(By.id("titoloNL")).sendKeys("un bel libro aggironato");
         driver.findElement(By.id("pagineNL")).sendKeys("180");
@@ -129,7 +133,8 @@ class TestIndexPage {
         driver.findElement(By.id("prezzoNL")).sendKeys("7.52f");
         driver.findElement(By.id("buttonI")).click();
         //updated book
-        driver.findElement(By.id("idL")).sendKeys(PropertyUtils.getProperty(lB,"idB").toString());
+        WebElement idOggetto=driver.findElement(By.id("idL"));
+        idOggetto.sendKeys(PropertyUtils.getProperty(lB,"idB").toString());
         //delete
         driver.findElement(By.id("buttonCanc")).click();
 
@@ -145,7 +150,7 @@ class TestIndexPage {
     //funziona
 
     @Test
-    void testLoginAdminRaccoltaGiornale() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+    void testLoginAdminRaccoltaGiornale() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         String titolo;
 
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
@@ -173,7 +178,7 @@ class TestIndexPage {
         //set id
         PropertyUtils.setProperty(gB,"titoloB",titolo);
         g.setTitolo(PropertyUtils.getProperty(gB,"titoloB").toString());
-        PropertyUtils.setProperty(gB,"idB",gD.retId(g));
+        PropertyUtils.setProperty(gB,"idB",gD.getData(g).getId());
 
 
         driver.findElement(By.id("linguaG")).sendKeys("italiano");
@@ -189,14 +194,9 @@ class TestIndexPage {
         driver.findElement(By.id("buttonMod")).click();
         driver.findElement(By.id("listaB")).click();
 
-
-
-
-
-
-
         //modif
-        driver.findElement(By.id("titoloNG")).sendKeys("La gazzetta del pirla");
+        WebElement titoloNG=driver.findElement(By.id("titoloNG"));
+        titoloNG.sendKeys("La gazzetta del pirla");
         driver.findElement(By.id("linguaNG")).sendKeys("italiano");
         driver.findElement(By.id("editoreNG")).sendKeys("mondadori");
         driver.findElement(By.id("dataNG")).sendKeys("2024/02/18");
@@ -216,7 +216,7 @@ class TestIndexPage {
 
      //funziona
     @Test
-    void testLoginAdminRaccoltaRiviste() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+    void testLoginAdminRaccoltaRiviste() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         String titolo;
 
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
@@ -242,7 +242,7 @@ class TestIndexPage {
         titolo=t.getAttribute("value");
         PropertyUtils.setProperty(rB,"titoloB",titolo);
         r.setTitolo(PropertyUtils.getProperty(rB,"titoloB").toString());
-        PropertyUtils.setProperty(rB,"idB",rD.retId(r));
+        PropertyUtils.setProperty(rB,"idB",rD.getData(r).getId());
         driver.findElement(By.id("catS")).sendKeys("INVERNALE");
         driver.findElement(By.id("autL")).sendKeys("mondadori");
         driver.findElement(By.id("linguaL")).sendKeys("italiano");
@@ -257,9 +257,7 @@ class TestIndexPage {
         driver.findElement(By.id("buttonMod")).click();
         driver.findElement(By.id("listaB")).click();
 
-
         //modif
-
         driver.findElement(By.id("titoloNR")).sendKeys("titolo aggoirnato");
         driver.findElement(By.id("categoriaNR")).sendKeys("TELEVISIVO");
         driver.findElement(By.id("autoreNR")).sendKeys("paperino");
@@ -316,7 +314,7 @@ class TestIndexPage {
 
         PropertyUtils.setProperty(uB,"emailB",email);
         PropertyUtils.setProperty(uB,"passB",pass);
-        System.out.println("email + pass :"+ PropertyUtils.getProperty(uB,"emailB")+ PropertyUtils.getProperty(uB,"passB"));
+
 
         tUser.setEmailT(PropertyUtils.getProperty(uB,"emailB").toString());
 
@@ -326,7 +324,10 @@ class TestIndexPage {
 
         driver.findElement(By.id("buttonI")).click();
 
-        PropertyUtils.setProperty(uB,"idB",UsersDao.checkTempUser(tUser));
+
+        PropertyUtils.setProperty(uB,"idB",UsersDao.getTempUserSingolo(tUser).getId());
+
+        System.out.print("id dell'users : "+ PropertyUtils.getProperty(uB,"idB"));
 
 
         //generate list
@@ -383,7 +384,7 @@ class TestIndexPage {
 
 
     @Test
-    void testLoginUserLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+    void testLoginUserLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //schermata index
         driver = new ChromeDriver();
@@ -401,14 +402,17 @@ class TestIndexPage {
         PropertyUtils.setProperty(lB,"elencoLibriB", lD.getLibri());
 
 
-        driver.findElement(By.id("idOgg")).sendKeys("1");
+        driver.findElement(By.id("idOgg")).sendKeys("2");
         int id=Integer.parseInt(driver.findElement(By.id("idOgg")).getAttribute("value"));
+        PropertyUtils.setProperty(lB,"idB",id);
+        l.setId((Integer) PropertyUtils.getProperty(lB,"idB"));
+        String titolo=lD.getData(l).getTitolo();
         PropertyUtils.setProperty(sB,"idB", id);
         PropertyUtils.setProperty(lB,"idB", id);
         l.setId(id);
-        PropertyUtils.setProperty(sB, "titoloB",lD.getTitolo(l));
+        PropertyUtils.setProperty(sB, "titoloB",lD.getData(l).getTitolo());
         PropertyUtils.setProperty(aB, "titoloB",sB.getTitoloB());
-        PropertyUtils.setProperty(aB,"prezzoB",lD.getCosto(l));
+        PropertyUtils.setProperty(aB,"prezzoB",lD.getData(l).getPrezzo());
         driver.findElement(By.id("procedi")).click();
         //schermata acquista
         driver.findElement(By.id("quantita")).clear();
@@ -446,13 +450,12 @@ class TestIndexPage {
         PropertyUtils.setProperty(fB,"comunicazioniB",com);
         driver.findElement(By.id("buttonC")).click();
         //schermata download
-        String titolo=PropertyUtils.getProperty(sB,"titoloB").toString();
         driver.findElement(By.id("titoloL")).sendKeys(titolo);
         driver.findElement(By.id("downloadB")).click();
 
 
 
-        assertEquals(1,PropertyUtils.getProperty(sB,"idB"));
+        assertNotEquals(0,PropertyUtils.getProperty(sB,"idB"));
 
 
     }
@@ -478,9 +481,9 @@ class TestIndexPage {
         PropertyUtils.setProperty(sB,"idB", id);
         PropertyUtils.setProperty(gB,"idB", id);
         g.setId(id);
-        PropertyUtils.setProperty(sB, "titoloB",gD.getTitolo(g));
+        PropertyUtils.setProperty(sB, "titoloB",gD.getData(g).getTitolo());
         PropertyUtils.setProperty(aB, "titoloB",sB.getTitoloB());
-        PropertyUtils.setProperty(aB,"prezzoB",gD.getCosto(g));
+        PropertyUtils.setProperty(aB,"prezzoB",gD.getData(g).getPrezzo());
         driver.findElement(By.id("procedi")).click();
         //schermata acquista
         driver.findElement(By.id("quantita")).clear();
@@ -565,7 +568,7 @@ class TestIndexPage {
 
 
     @Test
-    void testLoginUtenteAnnullaRivista() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+    void testLoginUtenteAnnullaRivista() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //schermata index
         driver = new ChromeDriver();
@@ -582,14 +585,18 @@ class TestIndexPage {
 
         PropertyUtils.setProperty(rB,"listaRivisteB", rD.getRiviste());
         PropertyUtils.setProperty(sB,"typeB", sB.getTypeB());
-        driver.findElement(By.id("idOgg")).sendKeys("1");
+        driver.findElement(By.id("idOgg")).sendKeys("2");
         int id=Integer.parseInt(driver.findElement(By.id("idOgg")).getAttribute("value"));
+        //aggiunto per passare titiolo
+        PropertyUtils.setProperty(rB,"idB",id);
+        r.setId((Integer) PropertyUtils.getProperty(rB,"idB"));
+        String titolo=rD.getData(r).getTitolo();
         PropertyUtils.setProperty(sB,"idB", id);
         PropertyUtils.setProperty(rB,"idB", id);
         r.setId(id);
-        PropertyUtils.setProperty(sB, "titoloB",rD.getTitolo(r));
+        PropertyUtils.setProperty(sB, "titoloB",rD.getData(r).getTitolo());
         PropertyUtils.setProperty(aB, "titoloB",sB.getTitoloB());
-        PropertyUtils.setProperty(aB,"prezzoB",rD.getCosto(r));
+        PropertyUtils.setProperty(aB,"prezzoB",rD.getData(r).getPrezzo());
         driver.findElement(By.id("procedi")).click();
         //schermata acquista
         driver.findElement(By.id("quantita")).clear();
@@ -625,13 +632,13 @@ class TestIndexPage {
         PropertyUtils.setProperty(fB,"comunicazioniB",com);
         driver.findElement(By.id("buttonC")).click();
         //schermata download
-        String titolo=PropertyUtils.getProperty(sB,"titoloB").toString();
+
         driver.findElement(By.id("titoloL")).sendKeys(titolo);
         driver.findElement(By.id("annullaB")).click();
 
 
 
-        assertEquals(1,PropertyUtils.getProperty(sB,"idB"));
+        assertNotEquals(0,PropertyUtils.getProperty(sB,"idB"));
 
 
 
@@ -640,7 +647,7 @@ class TestIndexPage {
         // test for Writer
 
     @Test
-    void testLoginRicercaScrittoreByTitoloLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+    void testLoginRicercaScrittoreByTitoloLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //schermata index
         driver = new ChromeDriver();
@@ -666,12 +673,12 @@ class TestIndexPage {
         l.setTitolo(PropertyUtils.getProperty(lB,"titoloB").toString());
 
 
-        assertNotNull(lD.getLibriByName(l));
+        assertNotNull(lD.getLibriIdTitoloAutore(l));
 
 
     }
     @Test
-    void testLoginRicercaScrittoreByAutoreLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+    void testLoginRicercaScrittoreByAutoreLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //schermata index
         driver = new ChromeDriver();
@@ -697,14 +704,14 @@ class TestIndexPage {
         l.setTitolo(PropertyUtils.getProperty(lB,"titoloB").toString());
 
 
-        assertNotNull(lD.getLibriByName(l));
+        assertNotNull(lD.getLibroIdTitoloAutore(l));
 
 
     }
 
     // test for editor
     @Test
-    void testLoginRicercaScrittoreByEditoreGiornale() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+    void testLoginRicercaScrittoreByEditoreGiornale() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //schermata index
         driver = new ChromeDriver();
@@ -730,12 +737,12 @@ class TestIndexPage {
         g.setEditore(PropertyUtils.getProperty(gB,"editoreB").toString());
 
 
-        assertNotNull(gD.getGiornaliByName(g));
+        assertNotNull(gD.getGiornaliIdTitoloAutore(g));
 
 
     }
     @Test
-    void testLoginRicercaScrittoreByTitoloGiornale() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+    void testLoginRicercaScrittoreByTitoloGiornale() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //schermata index
         driver = new ChromeDriver();
@@ -761,13 +768,13 @@ class TestIndexPage {
         g.setTitolo(PropertyUtils.getProperty(gB,"titoloB").toString());
 
 
-        assertNotNull(gD.getGiornaliByName(g));
+        assertNotNull(gD.getGiornaleIdTitoloAutore(g));
 
 
     }
 
     @Test
-    void testLoginRicercaScrittoreByTitoloRivista() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+    void testLoginRicercaScrittoreByTitoloRivista() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //schermata index
         driver = new ChromeDriver();
@@ -793,12 +800,12 @@ class TestIndexPage {
         r.setTitolo(PropertyUtils.getProperty(rB,"titoloB").toString());
 
 
-        assertNotNull(rD.getRivisteByName(r));
+        assertNotNull(rD.getRivistaIdTitoloAutore(r));
 
 
     }
     @Test
-    void testLoginRicercaScrittoreByAutoreRivista() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, SQLException {
+    void testLoginRicercaScrittoreByAutoreRivista() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //schermata index
         driver = new ChromeDriver();
@@ -824,7 +831,7 @@ class TestIndexPage {
         r.setAutore(PropertyUtils.getProperty(rB,"autoreB").toString());
 
 
-        assertNotNull(rD.getRivisteByName(r));
+        assertNotNull(rD.getRivistaIdTitoloAutore(r));
 
 
     }
@@ -842,9 +849,14 @@ class TestIndexPage {
 
 
 
+
+
 }
 
 
-
-
  */
+
+
+
+
+

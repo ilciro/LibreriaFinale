@@ -114,19 +114,19 @@ public class ControllerAcquista {
 
 <span class="fc" id="L115">				l.setId(vis.getId());</span>
 <span class="fc" id="L116">				rimanenza=lD.getData(l).getNrCopie();</span>
-<span class="fc" id="L117">				checkRimanenza(rimanenza,i);</span>
+<span class="fc" id="L117">				checkRimanenza(rimanenza);</span>
 <span class="fc" id="L118">				break;</span>
 			case GIORNALE:
 
 <span class="fc" id="L121">				g.setId(vis.getId());</span>
 <span class="fc" id="L122">				rimanenza=gD.getData(g).getCopieRimanenti();</span>
-<span class="fc" id="L123">				checkRimanenza(rimanenza,i);</span>
+<span class="fc" id="L123">				checkRimanenza(rimanenza);</span>
 <span class="fc" id="L124">				break;</span>
 			case RIVISTA:
 
 <span class="fc" id="L127">				r.setId(vis.getId());</span>
 <span class="fc" id="L128">				rimanenza=rD.getData(r).getCopieRim();</span>
-<span class="fc" id="L129">				checkRimanenza(rimanenza,i);</span>
+<span class="fc" id="L129">				checkRimanenza(rimanenza);</span>
 <span class="fc" id="L130">				break;</span>
 <span class="nc" id="L131">			default: throw new IdException(&quot;incorrect id&quot;);</span>
 
@@ -134,8 +134,8 @@ public class ControllerAcquista {
 		}
 <span class="fc" id="L135">	}</span>
 
-	private void checkRimanenza(int quantita,int i) throws AcquistaException {
-<span class="pc bpc" id="L138" title="1 of 2 branches missed.">		if(quantita-i&lt;0)</span>
+	private void checkRimanenza(int quantita) throws AcquistaException {
+<span class="pc bpc" id="L138" title="1 of 2 branches missed.">		if(quantita&lt;0)</span>
 		{
 <span class="nc" id="L140">			throw new AcquistaException(&quot;rimanenza &lt;0&quot;);</span>
 		}

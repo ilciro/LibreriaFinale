@@ -35,7 +35,7 @@ public class LibroDao implements DaoInterface{
 	private static final String LIBRO = "libro";
 	private static final String ECCEZIONE = "ECCEZIONE generata:";
 
-	private static final String REPORTLIBRI="ReportFinale/riepilogoLibro.txt";
+	private static final String REPORTLIBRI="riepilogoLibri.txt";
 	private final File fd;
 
 	public LibroDao() throws IOException {

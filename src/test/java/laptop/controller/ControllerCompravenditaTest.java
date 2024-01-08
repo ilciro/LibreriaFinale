@@ -25,6 +25,6 @@ class ControllerCompravenditaTest {
     @ParameterizedTest
     @ValueSource(strings = {"libro","giornale","rivista"})
     void disponibilita(String strings) throws SQLException, IdException {
-        assertTrue(cC.disponibilita(strings,"1"));
+        assertTrue(cC.disponibilita(strings,"4"));
     }
 }

@@ -87,7 +87,7 @@ import javafx.collections.ObservableList;
 <span class="fc" id="L87">		n = null;</span>
 <span class="fc" id="L88">		cog = null;</span>
 <span class="fc" id="L89">		cod = null;</span>
-<span class="fc" id="L90">		Date date=null;</span>
+<span class="fc" id="L90">		Date date = null;</span>
 <span class="fc" id="L91">		String civ = null;</span>
 
 
@@ -115,14 +115,17 @@ import javafx.collections.ObservableList;
 <span class="fc" id="L115">				cc.setNomeUser(n);</span>
 <span class="fc" id="L116">				cc.setCognomeUser(cog);</span>
 <span class="fc" id="L117">				cc.setNumeroCC(cod);</span>
-<span class="pc bpc" id="L118" title="1 of 2 branches missed.">                assert date != null;</span>
-<span class="fc" id="L119">                cc.setScadenza(Date.valueOf(date.toLocalDate()));</span>
-<span class="fc" id="L120">				cc.setCiv(civ);</span>
-<span class="nc" id="L121">			} catch (SQLException e) {</span>
-<span class="nc" id="L122">				Logger.getLogger(&quot;report libro&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta .&quot;,e);</span>
 
-<span class="fc" id="L124">			}</span>
-<span class="fc" id="L125">		return cc;</span>
+
+<span class="pc bpc" id="L120" title="1 of 2 branches missed.">                if (date != null) {</span>
+<span class="fc" id="L121">                    cc.setScadenza(Date.valueOf(date.toLocalDate()));</span>
+                }
+<span class="fc" id="L123">                cc.setCiv(civ);</span>
+<span class="nc" id="L124">			} catch (SQLException  e) {</span>
+<span class="nc" id="L125">				Logger.getLogger(&quot;report libro&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta .&quot;,e);</span>
+
+<span class="fc" id="L127">			}</span>
+<span class="fc" id="L128">		return cc;</span>
 
 	}
 

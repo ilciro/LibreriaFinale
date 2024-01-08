@@ -41,10 +41,10 @@ public class Rivista implements Raccolta  {
 		this.copieRim = copieRim;
 		this.id = id;
 		this.titolo=info[0];
-		this.tipologia=info[1];
-		this.editore=info[4];
-		this.lingua=info[3];
-		this.autore=info[2];
+		this.tipologia=info[5];
+		this.editore=info[2];
+		this.lingua=info[4];
+		this.autore=info[3];
 	}
 	public Rivista() {
 		super();
@@ -185,7 +185,7 @@ public class Rivista implements Raccolta  {
 	}
 	@Override
 	public void leggi(int i) throws FileNotFoundException, DocumentException {
-		Document document=null;
+		Document document;
 		
 		
 		

@@ -10,10 +10,10 @@ import laptop.exception.IdException;
 
 
 public class Factory {
-	private MatchParam mp;
-	private Libro l;
-	private Giornale g;
-	private Rivista r;
+	private final MatchParam mp;
+	private final Libro l;
+	private final Giornale g;
+	private final Rivista r;
 	private String tipologiaO;
 	private static final String LIBRO = &quot;libro&quot;;
 	private static final String GIORNALE = &quot;giornale&quot;;
@@ -73,53 +73,54 @@ public class Factory {
 		}
 <span class="fc bfc" id="L74" title="All 2 branches covered.">		if (tipologiaO.equals(GIORNALE))</span>
 			{
-<span class="fc" id="L76">				g.setCopieRimanenti(nrCopie);</span>
-<span class="fc" id="L77">			g.setDisponibilita(disp);</span>
-<span class="fc" id="L78">			g.setPrezzo(prezzo);</span>
-<span class="fc" id="L79">			g.setId(id);</span>
+
+<span class="fc" id="L77">				g.setCopieRimanenti(nrCopie);</span>
+<span class="fc" id="L78">			g.setDisponibilita(disp);</span>
+<span class="fc" id="L79">			g.setPrezzo(prezzo);</span>
+<span class="fc" id="L80">			g.setId(id);</span>
 
 			
 			
 			}	
-<span class="fc bfc" id="L84" title="All 2 branches covered.">		 if (tipologiaO.equals(RIVISTA))</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">		 if (tipologiaO.equals(RIVISTA))</span>
 		{
-<span class="fc" id="L86">			r.setDisp(disp);</span>
-<span class="fc" id="L87">			r.setPrezzo(prezzo);</span>
-<span class="fc" id="L88">			r.setCopieRim(nrCopie);</span>
-<span class="fc" id="L89">			r.setId(id);</span>
+<span class="fc" id="L87">			r.setDisp(disp);</span>
+<span class="fc" id="L88">			r.setPrezzo(prezzo);</span>
+<span class="fc" id="L89">			r.setCopieRim(nrCopie);</span>
+<span class="fc" id="L90">			r.setId(id);</span>
 		}
-<span class="fc" id="L91">	}</span>
+<span class="fc" id="L92">	}</span>
 	
 	
 	
 	public Raccolta createRaccoltaFinaleCompleta(String tipologiaO,LocalDate dataPubb,String recensione,String descrizione)
 	{
-<span class="pc bpc" id="L97" title="1 of 4 branches missed.">		switch(tipologiaO)</span>
+<span class="pc bpc" id="L98" title="1 of 4 branches missed.">		switch(tipologiaO)</span>
 		{
 			case LIBRO:
-<span class="fc" id="L100">				l.setDataPubb(dataPubb);</span>
-<span class="fc" id="L101">				l.setRecensione(recensione);</span>
-<span class="fc" id="L102">				l.setDesc(descrizione);</span>
-<span class="fc" id="L103">				return  new Libro(l.getInfoGenerali(),l.getDataPubb(),l.getRecensione(),l.getDesc(),l.getInfoCostiDisp());</span>
+<span class="fc" id="L101">				l.setDataPubb(dataPubb);</span>
+<span class="fc" id="L102">				l.setRecensione(recensione);</span>
+<span class="fc" id="L103">				l.setDesc(descrizione);</span>
+<span class="fc" id="L104">				return  new Libro(l.getInfoGenerali(),l.getDataPubb(),l.getRecensione(),l.getDesc(),l.getInfoCostiDisp());</span>
 			case GIORNALE:
-<span class="fc" id="L105">				g.setDataPubb(dataPubb);</span>
-<span class="fc" id="L106">				return new Giornale(g.getInfoGenerali(),g.getDataPubb(),g.getCopieRimanenti(),g.getDisponibilita(),g.getPrezzo(),g.getId());</span>
+<span class="fc" id="L106">				g.setDataPubb(dataPubb);</span>
+<span class="fc" id="L107">				return new Giornale(g.getInfoGenerali(),g.getDataPubb(),g.getCopieRimanenti(),g.getDisponibilita(),g.getPrezzo(),g.getId());</span>
 			case RIVISTA:
-<span class="fc" id="L108">				r.setDataPubb(dataPubb);</span>
-<span class="fc" id="L109">				r.setDescrizione(descrizione);</span>
-<span class="fc" id="L110">				return new Rivista(r.getInfoGenerali(), r.getDescrizione(), r.getDataPubb(),r.getDisp(),r.getPrezzo() ,r.getCopieRim(),r.getId());</span>
+<span class="fc" id="L109">				r.setDataPubb(dataPubb);</span>
+<span class="fc" id="L110">				r.setDescrizione(descrizione);</span>
+<span class="fc" id="L111">				return new Rivista(r.getInfoGenerali(), r.getDescrizione(), r.getDataPubb(),r.getDisp(),r.getPrezzo() ,r.getCopieRim(),r.getId());</span>
 		
 			default:
 				try {
 					
-<span class="nc" id="L115">					throw new IdException(&quot;id null -&gt; object not created&quot;);</span>
-<span class="nc" id="L116">				}catch(IdException e)</span>
+<span class="nc" id="L116">					throw new IdException(&quot;id null -&gt; object not created&quot;);</span>
+<span class="nc" id="L117">				}catch(IdException e)</span>
 				{
-<span class="nc" id="L118">					java.util.logging.Logger.getLogger(&quot;report libro&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta .&quot;,e);</span>
+<span class="nc" id="L119">					java.util.logging.Logger.getLogger(&quot;report libro&quot;).log(Level.SEVERE,&quot;\n eccezione ottenuta .&quot;,e);</span>
 
 				}
 				//crefdvc rds
-<span class="nc" id="L122">				return null;</span>
+<span class="nc" id="L123">				return null;</span>
 		}
 	}
 	
@@ -135,33 +136,33 @@ public class Factory {
 	public Raccolta creaLibro(String[] info,LocalDate dataPubb,String recensione,String desc,String []infoCosti)
 	{
 
-<span class="nc" id="L138">		return new Libro(info,dataPubb,recensione,desc,infoCosti);</span>
+<span class="nc" id="L139">		return new Libro(info,dataPubb,recensione,desc,infoCosti);</span>
 	}
 	
 	public Raccolta creaGiornale(String[] info,LocalDate dataPubb,int nrCopie, int disponibilita, float prezzo, int id)
 	{
-<span class="nc" id="L143">		return new Giornale(info,dataPubb,nrCopie,disponibilita,prezzo,id);</span>
+<span class="nc" id="L144">		return new Giornale(info,dataPubb,nrCopie,disponibilita,prezzo,id);</span>
 	}
 	public Raccolta creaRivista(String [] info,	String descrizione, LocalDate dataPubb2, int disp, float prezzo, int copieRim,int id)
 	{
-<span class="nc" id="L147">		return new Rivista(info,descrizione, dataPubb2,disp,prezzo,copieRim,id);</span>
+<span class="nc" id="L148">		return new Rivista(info,descrizione, dataPubb2,disp,prezzo,copieRim,id);</span>
 	}
 
 
 	
 	public Factory()
-<span class="fc" id="L153">	{</span>
-<span class="fc" id="L154">		mp=new MatchParam();</span>
-<span class="fc" id="L155">		l=new Libro();</span>
-<span class="fc" id="L156">		g=new Giornale();</span>
-<span class="fc" id="L157">		r=new Rivista();</span>
-<span class="fc" id="L158">	}</span>
+<span class="fc" id="L154">	{</span>
+<span class="fc" id="L155">		mp=new MatchParam();</span>
+<span class="fc" id="L156">		l=new Libro();</span>
+<span class="fc" id="L157">		g=new Giornale();</span>
+<span class="fc" id="L158">		r=new Rivista();</span>
+<span class="fc" id="L159">	}</span>
 	public String getTipologiaO() {
-<span class="nc" id="L160">		return tipologiaO;</span>
+<span class="nc" id="L161">		return tipologiaO;</span>
 	}
 	public void setTipologiaO(String tipologiaO) {
-<span class="nc" id="L163">		this.tipologiaO = tipologiaO;</span>
-<span class="nc" id="L164">	}</span>
+<span class="nc" id="L164">		this.tipologiaO = tipologiaO;</span>
+<span class="nc" id="L165">	}</span>
 	
 }
 
