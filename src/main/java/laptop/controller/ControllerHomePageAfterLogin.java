@@ -7,8 +7,8 @@ import laptop.model.User;
 
 public class ControllerHomePageAfterLogin {
 	
-	private static User u = User.getInstance();
-	private static ControllerSystemState vis = ControllerSystemState.getInstance() ;
+	private static final User u = User.getInstance();
+	private static final ControllerSystemState vis = ControllerSystemState.getInstance() ;
 
 	// qui ci va la funzione di logout
 	
