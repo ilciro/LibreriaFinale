@@ -159,6 +159,9 @@ public class ControllerAcquista {
                 r.setId(id);
                 name = rD.getData(r).getTitolo();
             }
+			default -> {
+				return "";
+			}
         }
 		return name ;
 	}

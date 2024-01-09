@@ -8,7 +8,7 @@ import java.util.logging.Level;
 public class ControllerRicercaPerTipo {
 
 
-	private boolean state=false;
+
 	
 	public ControllerRicercaPerTipo() 
 	{
@@ -19,13 +19,8 @@ public class ControllerRicercaPerTipo {
 
 	public boolean setRicerca(String type)
 	{
-		switch (type){
-			case "libro", "giornale", "rivista":
-				state=true;
-				break;
-            default:return state;
 
-		}
-		return true;
+
+        return type.equals("libro") || type.equals("giornale") || type.equals("rivista");
 	}
 }

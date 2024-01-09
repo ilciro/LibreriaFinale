@@ -8,7 +8,7 @@ import laptop.model.Negozio;
 
 public class ControllerScegliNegozio {
 	
-	private NegozioDao nD;
+	private final NegozioDao nD;
 	public Negozio getN() {
 		return n;
 	}
@@ -18,7 +18,7 @@ public class ControllerScegliNegozio {
 	}
 
 	private Negozio n;
-	private ControllerSystemState vis = ControllerSystemState.getInstance() ;
+
 
 	
 	public ControllerScegliNegozio()
