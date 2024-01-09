@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="test v6 ( commented webtest)">
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="test v7 ( commented webtest)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerAcquista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerAcquista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerRicercaPerTipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerRicercaPerTipo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerScegliNegozio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerScegliNegozio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/bean/RivistaBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/bean/RivistaBean.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -277,14 +275,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
-    </task>
-    <task id="LOCAL-00012" summary="insert books">
-      <option name="closed" value="true" />
-      <created>1700845426872</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1700845426872</updated>
     </task>
     <task id="LOCAL-00013" summary="insert books">
       <option name="closed" value="true" />
@@ -654,7 +644,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704795503553</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="test v7 ( commented webtest)">
+      <option name="closed" value="true" />
+      <created>1704796215227</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1704796215227</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -682,7 +680,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="insert management users" />
     <MESSAGE value="modified boundary" />
     <MESSAGE value="modified web app finish" />
     <MESSAGE value="resolve code smells" />
@@ -707,7 +704,8 @@
     <MESSAGE value="test v4" />
     <MESSAGE value="test v5 ( commented webtest)" />
     <MESSAGE value="test v6 ( commented webtest)" />
-    <option name="LAST_COMMIT_MESSAGE" value="test v6 ( commented webtest)" />
+    <MESSAGE value="test v7 ( commented webtest)" />
+    <option name="LAST_COMMIT_MESSAGE" value="test v7 ( commented webtest)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

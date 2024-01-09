@@ -8,7 +8,7 @@ import java.util.logging.Level;
 public class ControllerRicercaPerTipo {
 
 
-<span class="fc" id="L11">	private boolean state=false;</span>
+
 	
 	public ControllerRicercaPerTipo() 
 <span class="fc" id="L14">	{</span>
@@ -19,14 +19,9 @@ public class ControllerRicercaPerTipo {
 
 	public boolean setRicerca(String type)
 	{
-<span class="pc bpc" id="L22" title="1 of 2 branches missed.">		switch (type){</span>
-			case &quot;libro&quot;, &quot;giornale&quot;, &quot;rivista&quot;:
-<span class="fc" id="L24">				state=true;</span>
-<span class="fc" id="L25">				break;</span>
-<span class="nc" id="L26">            default:return state;</span>
 
-		}
-<span class="fc" id="L29">		return true;</span>
+
+<span class="pc bpc" id="L24" title="1 of 6 branches missed.">        return type.equals(&quot;libro&quot;) || type.equals(&quot;giornale&quot;) || type.equals(&quot;rivista&quot;);</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

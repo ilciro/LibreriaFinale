@@ -22,14 +22,13 @@ public class ControllerAcquista {
 	// Levatoil agamento in quanto lo faccio dopo a seconda del tipo
 	 
 
-	private LibroDao lD;
-	private GiornaleDao gD;
-	private RivistaDao rD;
-	private Libro l;
-	private Giornale g;
-	private Rivista r;
-	private static ControllerSystemState vis = ControllerSystemState.getInstance() ;
-	private String name;
+	private final LibroDao lD;
+	private final GiornaleDao gD;
+	private final RivistaDao rD;
+	private final Libro l;
+	private final Giornale g;
+	private final Rivista r;
+	private static final ControllerSystemState vis = ControllerSystemState.getInstance() ;
 
 	private float costo;//aggiunto per costo (vedere metodo in fondo ((getCosto()))
 
@@ -143,7 +142,9 @@ public class ControllerAcquista {
 
 	public String getNomeById() throws SQLException
 	{
-		
+		 String name;
+
+
 		int id = vis.getId();
 		String type =vis.getType();
         switch (type) {

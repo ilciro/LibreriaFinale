@@ -43,7 +43,7 @@ LibreriaMaven Maven Webapp,laptop.exception,AcquistaException,4,0,0,0,2,0,1,0,1,
 LibreriaMaven Maven Webapp,laptop.exception,LogoutException,4,0,0,0,2,0,1,0,1,0
 LibreriaMaven Maven Webapp,laptop.controller,ControllerGestionePage,4,133,3,11,2,35,3,10,0,4
 LibreriaMaven Maven Webapp,laptop.controller,ControllerRegistraUtente,11,123,11,11,3,27,11,6,0,6
-LibreriaMaven Maven Webapp,laptop.controller,ControllerAcquista,30,373,8,18,7,89,8,19,0,9
+LibreriaMaven Maven Webapp,laptop.controller,ControllerAcquista,32,370,8,18,8,90,8,19,0,9
 LibreriaMaven Maven Webapp,laptop.controller,ControllerModifPage,188,0,0,0,39,0,7,0,7,0
 LibreriaMaven Maven Webapp,laptop.controller,ControllerDownload,101,111,15,3,27,28,14,5,5,3
 LibreriaMaven Maven Webapp,laptop.controller,ControllerAggiungiPage,3,129,4,4,1,28,4,4,0,4
@@ -51,11 +51,11 @@ LibreriaMaven Maven Webapp,laptop.controller,ControllerPassword,10,44,5,3,1,11,4
 LibreriaMaven Maven Webapp,laptop.controller,ControllerReportPage,77,141,2,6,23,39,5,10,4,7
 LibreriaMaven Maven Webapp,laptop.controller,ControllerPagamentoCash,0,55,0,0,0,15,0,2,0,2
 LibreriaMaven Maven Webapp,laptop.controller,ControllerAggiungiUtente,0,45,0,0,0,13,0,2,0,2
-LibreriaMaven Maven Webapp,laptop.controller,ControllerRicercaPerTipo,3,25,1,1,1,8,1,2,0,2
+LibreriaMaven Maven Webapp,laptop.controller,ControllerRicercaPerTipo,1,23,1,5,0,4,1,4,0,2
 LibreriaMaven Maven Webapp,laptop.controller,ControllerVisualizzaProfilo,3,20,1,1,1,7,2,2,1,2
 LibreriaMaven Maven Webapp,laptop.controller,ControllerHomePageAfterLoginSE,5,51,1,1,1,15,1,2,0,2
 LibreriaMaven Maven Webapp,laptop.controller,ControllerReportRaccolta,9,0,0,0,3,0,3,0,3,0
-LibreriaMaven Maven Webapp,laptop.controller,ControllerScegliNegozio,7,22,0,0,3,7,2,2,2,2
+LibreriaMaven Maven Webapp,laptop.controller,ControllerScegliNegozio,7,19,0,0,3,6,2,2,2,2
 LibreriaMaven Maven Webapp,laptop.controller,ControllerLogin,3,51,1,1,1,14,1,3,0,3
 LibreriaMaven Maven Webapp,laptop.controller,ControllerBookData,0,87,0,0,0,17,0,2,0,2
 LibreriaMaven Maven Webapp,laptop.controller,ControllerRicercaPage,2,97,1,3,1,25,1,5,0,3

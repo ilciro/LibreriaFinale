@@ -6,9 +6,8 @@ import laptop.model.raccolta.CategorieRivista;
 import laptop.model.raccolta.Raccolta;
 
 import java.sql.Date;
-import java.sql.SQLException;
 
-<span class="nc" id="L11">public class RivistaBean {</span>
+<span class="nc" id="L10">public class RivistaBean {</span>
     private ObservableList&lt;Raccolta&gt; listaRivisteB;
     private int idB;
     private String titoloB;
@@ -25,135 +24,134 @@ import java.sql.SQLException;
     private int dispB;
 
     public String getTipologiaB() {
-<span class="nc" id="L28">        return tipologiaB;</span>
+<span class="nc" id="L27">        return tipologiaB;</span>
     }
 
     public void setTipologiaB(String tipologiaB) {
-<span class="nc bnc" id="L32" title="All 15 branches missed.">        switch (tipologiaB) {</span>
-<span class="nc" id="L33">            case &quot;SETTIMANALE&quot;-&gt;this.tipologiaB = CategorieRivista.SETTIMANALE.toString();</span>
-<span class="nc" id="L34">            case &quot;BISETTIMANALE&quot; -&gt;this.tipologiaB = CategorieRivista.BISETTIMANALE.toString();</span>
-<span class="nc" id="L35">            case &quot;MENSILE&quot;-&gt;  this.tipologiaB = CategorieRivista.MENSILE.toString();</span>
-<span class="nc" id="L36">            case &quot;BIMESTRALE&quot;-&gt; this.tipologiaB = CategorieRivista.BIMESTRALE.toString();</span>
-<span class="nc" id="L37">            case &quot;TRIMESTRALE&quot;-&gt; this.tipologiaB = CategorieRivista.TRIMESTRALE.toString();</span>
-<span class="nc" id="L38">            case &quot;ANNUALE&quot;-&gt; this.tipologiaB = CategorieRivista.ANNUALE.toString();</span>
-<span class="nc" id="L39">            case &quot;ESTIVO&quot;-&gt; this.tipologiaB = CategorieRivista.ESTIVO.toString();</span>
-<span class="nc" id="L40">            case &quot;INVERNALE&quot;-&gt; this.tipologiaB = CategorieRivista.INVERNALE.toString();</span>
-<span class="nc" id="L41">            case &quot;SPORTIVO&quot;-&gt;    this.tipologiaB = CategorieRivista.SPORTIVO.toString();</span>
-<span class="nc" id="L42">            case &quot;CINEMATOGRAFICA&quot;-&gt;    this.tipologiaB = CategorieRivista.CINEMATOGRAFICA.toString();</span>
-<span class="nc" id="L43">            case &quot;GOSSIP&quot;-&gt;    this.tipologiaB = CategorieRivista.GOSSIP.toString();</span>
-<span class="nc" id="L44">            case &quot;TELEVISIVO&quot;-&gt;    this.tipologiaB = CategorieRivista.TELEVISIVO.toString();</span>
-<span class="nc" id="L45">            case &quot;MILITARE&quot;-&gt;    this.tipologiaB = CategorieRivista.MILITARE.toString();</span>
-<span class="nc" id="L46">            case &quot;INFORMATICA&quot;-&gt;    this.tipologiaB = CategorieRivista.INFORMATICA.toString();</span>
-            default -&gt; {
-<span class="nc" id="L48">                this.tipologiaB=null;</span>
-            }
+<span class="nc bnc" id="L31" title="All 15 branches missed.">        switch (tipologiaB) {</span>
+<span class="nc" id="L32">            case &quot;SETTIMANALE&quot;-&gt;this.tipologiaB = CategorieRivista.SETTIMANALE.toString();</span>
+<span class="nc" id="L33">            case &quot;BISETTIMANALE&quot; -&gt;this.tipologiaB = CategorieRivista.BISETTIMANALE.toString();</span>
+<span class="nc" id="L34">            case &quot;MENSILE&quot;-&gt;  this.tipologiaB = CategorieRivista.MENSILE.toString();</span>
+<span class="nc" id="L35">            case &quot;BIMESTRALE&quot;-&gt; this.tipologiaB = CategorieRivista.BIMESTRALE.toString();</span>
+<span class="nc" id="L36">            case &quot;TRIMESTRALE&quot;-&gt; this.tipologiaB = CategorieRivista.TRIMESTRALE.toString();</span>
+<span class="nc" id="L37">            case &quot;ANNUALE&quot;-&gt; this.tipologiaB = CategorieRivista.ANNUALE.toString();</span>
+<span class="nc" id="L38">            case &quot;ESTIVO&quot;-&gt; this.tipologiaB = CategorieRivista.ESTIVO.toString();</span>
+<span class="nc" id="L39">            case &quot;INVERNALE&quot;-&gt; this.tipologiaB = CategorieRivista.INVERNALE.toString();</span>
+<span class="nc" id="L40">            case &quot;SPORTIVO&quot;-&gt;    this.tipologiaB = CategorieRivista.SPORTIVO.toString();</span>
+<span class="nc" id="L41">            case &quot;CINEMATOGRAFICA&quot;-&gt;    this.tipologiaB = CategorieRivista.CINEMATOGRAFICA.toString();</span>
+<span class="nc" id="L42">            case &quot;GOSSIP&quot;-&gt;    this.tipologiaB = CategorieRivista.GOSSIP.toString();</span>
+<span class="nc" id="L43">            case &quot;TELEVISIVO&quot;-&gt;    this.tipologiaB = CategorieRivista.TELEVISIVO.toString();</span>
+<span class="nc" id="L44">            case &quot;MILITARE&quot;-&gt;    this.tipologiaB = CategorieRivista.MILITARE.toString();</span>
+<span class="nc" id="L45">            case &quot;INFORMATICA&quot;-&gt;    this.tipologiaB = CategorieRivista.INFORMATICA.toString();</span>
+<span class="nc" id="L46">            default -&gt; this.tipologiaB=null;</span>
+
 
 
         }
 
-<span class="nc" id="L54">    }</span>
+<span class="nc" id="L52">    }</span>
 
     public String getAutoreB() {
-<span class="nc" id="L57">        return autoreB;</span>
+<span class="nc" id="L55">        return autoreB;</span>
     }
 
     public void setAutoreB(String autoreB) {
-<span class="nc" id="L61">        this.autoreB = autoreB;</span>
-<span class="nc" id="L62">    }</span>
+<span class="nc" id="L59">        this.autoreB = autoreB;</span>
+<span class="nc" id="L60">    }</span>
 
     public String getLinguaB() {
-<span class="nc" id="L65">        return linguaB;</span>
+<span class="nc" id="L63">        return linguaB;</span>
     }
 
     public void setLinguaB(String linguaB) {
-<span class="nc" id="L69">        this.linguaB = linguaB;</span>
-<span class="nc" id="L70">    }</span>
+<span class="nc" id="L67">        this.linguaB = linguaB;</span>
+<span class="nc" id="L68">    }</span>
 
     public String getEditoreB() {
-<span class="nc" id="L73">        return editoreB;</span>
+<span class="nc" id="L71">        return editoreB;</span>
     }
 
     public void setEditoreB(String editoreB) {
-<span class="nc" id="L77">        this.editoreB = editoreB;</span>
-<span class="nc" id="L78">    }</span>
+<span class="nc" id="L75">        this.editoreB = editoreB;</span>
+<span class="nc" id="L76">    }</span>
 
     public String getDescrizioneB() {
-<span class="nc" id="L81">        return descrizioneB;</span>
+<span class="nc" id="L79">        return descrizioneB;</span>
     }
 
     public void setDescrizioneB(String descrizioneB) {
-<span class="nc" id="L85">        this.descrizioneB = descrizioneB;</span>
-<span class="nc" id="L86">    }</span>
+<span class="nc" id="L83">        this.descrizioneB = descrizioneB;</span>
+<span class="nc" id="L84">    }</span>
 
     public Date getDataB() {
-<span class="nc" id="L89">        return dataB;</span>
+<span class="nc" id="L87">        return dataB;</span>
     }
 
     public void setDataB(Date dataB) {
-<span class="nc" id="L93">        this.dataB = dataB;</span>
-<span class="nc" id="L94">    }</span>
+<span class="nc" id="L91">        this.dataB = dataB;</span>
+<span class="nc" id="L92">    }</span>
 
     public float getPrezzoB() {
-<span class="nc" id="L97">        return prezzoB;</span>
+<span class="nc" id="L95">        return prezzoB;</span>
     }
 
     public void setPrezzoB(float prezzoB) {
-<span class="nc" id="L101">        this.prezzoB = prezzoB;</span>
-<span class="nc" id="L102">    }</span>
+<span class="nc" id="L99">        this.prezzoB = prezzoB;</span>
+<span class="nc" id="L100">    }</span>
 
     public int getCopieRimB() {
-<span class="nc" id="L105">        return copieRimB;</span>
+<span class="nc" id="L103">        return copieRimB;</span>
     }
 
     public void setCopieRimB(int copieRimB) {
-<span class="nc" id="L109">        this.copieRimB = copieRimB;</span>
-<span class="nc" id="L110">    }</span>
+<span class="nc" id="L107">        this.copieRimB = copieRimB;</span>
+<span class="nc" id="L108">    }</span>
 
     public ObservableList&lt;Raccolta&gt; getListaRivisteB() {
-<span class="nc" id="L113">        return listaRivisteB;</span>
+<span class="nc" id="L111">        return listaRivisteB;</span>
     }
 
     public void setListaRivisteB(ObservableList&lt;Raccolta&gt; listaRivisteB) {
-<span class="nc" id="L117">        this.listaRivisteB = listaRivisteB;</span>
-<span class="nc" id="L118">    }</span>
+<span class="nc" id="L115">        this.listaRivisteB = listaRivisteB;</span>
+<span class="nc" id="L116">    }</span>
 
     public int getIdB() {
-<span class="nc" id="L121">        return idB;</span>
+<span class="nc" id="L119">        return idB;</span>
     }
 
     public void setIdB(int idB) {
-<span class="nc bnc" id="L125" title="All 2 branches missed.">        if(idB&lt;1 )</span>
+<span class="nc bnc" id="L123" title="All 2 branches missed.">        if(idB&lt;1 )</span>
         {
-<span class="nc" id="L127">            this.idB=0;</span>
-<span class="nc" id="L128">            setMexB( new IdException(&quot;id incorrect&quot;));</span>
+<span class="nc" id="L125">            this.idB=0;</span>
+<span class="nc" id="L126">            setMexB( new IdException(&quot;id incorrect&quot;));</span>
 
         }
 
-<span class="nc" id="L132">        this.idB = idB;</span>
-<span class="nc" id="L133">    }</span>
+<span class="nc" id="L130">        this.idB = idB;</span>
+<span class="nc" id="L131">    }</span>
 
     public String getTitoloB() {
-<span class="nc" id="L136">        return titoloB;</span>
+<span class="nc" id="L134">        return titoloB;</span>
     }
 
     public void setTitoloB(String titoloB) {
-<span class="nc" id="L140">        this.titoloB = titoloB;</span>
-<span class="nc" id="L141">    }</span>
+<span class="nc" id="L138">        this.titoloB = titoloB;</span>
+<span class="nc" id="L139">    }</span>
 
     public Exception getMexB() {
-<span class="nc" id="L144">        return mexB;</span>
+<span class="nc" id="L142">        return mexB;</span>
     }
 
     public void setMexB(Exception mexB) {
-<span class="nc" id="L148">        this.mexB = mexB;</span>
-<span class="nc" id="L149">    }</span>
+<span class="nc" id="L146">        this.mexB = mexB;</span>
+<span class="nc" id="L147">    }</span>
 
     public int getDispB() {
-<span class="nc" id="L152">        return dispB;</span>
+<span class="nc" id="L150">        return dispB;</span>
     }
 
     public void setDispB(int dispB) {
-<span class="nc" id="L156">        this.dispB = dispB;</span>
-<span class="nc" id="L157">    }</span>
+<span class="nc" id="L154">        this.dispB = dispB;</span>
+<span class="nc" id="L155">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
