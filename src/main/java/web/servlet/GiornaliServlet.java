@@ -1,10 +1,9 @@
 package web.servlet;
 
 import java.io.IOException;
-import java.sql.SQLException;
+import java.io.Serial;
 
 import laptop.database.GiornaleDao;
-import laptop.exception.IdException;
 import web.bean.AcquistaBean;
 import web.bean.GiornaleBean;
 import web.bean.SystemBean;
@@ -23,8 +22,8 @@ public class GiornaliServlet extends HttpServlet{
     /**
      *
      */
+    @Serial
     private static final long serialVersionUID = 1L;
-    private final String giornali="/giornali.jsp";
     private final GiornaleBean gB=new GiornaleBean();
     private final GiornaleDao gD=new GiornaleDao();
     private final Giornale giornale=new Giornale();
@@ -46,10 +45,11 @@ public class GiornaliServlet extends HttpServlet{
         {
 
 
-            gB.setListaGiornaliB(gD.getGiornali());
+            gB.setListaGiornaliB(gD.getGiornaliIdTitoloAutore(new Giornale()));
 
             req.setAttribute("beanG",gB);
-             view = getServletContext().getRequestDispatcher(giornali);
+            String giornali = "/giornali.jsp";
+            view = getServletContext().getRequestDispatcher(giornali);
             view.forward(req,resp);
 
 

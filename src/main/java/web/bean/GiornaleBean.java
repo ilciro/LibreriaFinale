@@ -1,10 +1,10 @@
 package web.bean;
 
 import javafx.collections.ObservableList;
-import laptop.exception.IdException;
 import laptop.model.raccolta.Raccolta;
 
 import java.sql.Date;
+import java.util.logging.Level;
 
 public class GiornaleBean {
 
@@ -89,8 +89,7 @@ public class GiornaleBean {
         if(idB<1 )
         {
             this.idB=0;
-            setMexB( new IdException("id incorrect"));
-
+            java.util.logging.Logger.getLogger("Test set id").log(Level.INFO,"id <1!!");
         }
 
         this.idB = idB;

@@ -73,40 +73,25 @@ public class GiornaleDao {
 
 	}
 
-	public ObservableList<Raccolta> getGiornali() {
-		ObservableList<Raccolta> catalogo = FXCollections.observableArrayList();
 
-		query = "select * from GIORNALE";
-		try (Connection conn = ConnToDb.connectionToDB();
-			 PreparedStatement prepQ = conn.prepareStatement(query);
-			 ResultSet rs = prepQ.executeQuery()) {
-			while (rs.next()) {
-
-				f.createRaccoltaFinale1(GIORNALE, rs.getString(1), null, rs.getString(4), null,rs.getString(3), rs.getString(2));
-
-
-				f.createRaccoltaFinale2(GIORNALE, 0, rs.getInt(6), rs.getInt(7),rs.getFloat(8),rs.getInt(9));
-
-				catalogo.add(f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), rs.getString(6), null));
-
-
-
-
-			}
-		} catch (SQLException e) {
-			java.util.logging.Logger.getLogger("get libri").log(Level.INFO, ECCEZIONE, e);
-		}
-		return catalogo;
-	}
 
 	public ObservableList<Raccolta> getGiornaliIdTitoloAutore(Giornale g) {
 		ObservableList<Raccolta> catalogo = FXCollections.observableArrayList();
 
-		query = "select * from GIORNALE where idGiornale=? or idGiornale=? or titolo=? or editore=?";
+
+		if(g.getId()<0 )
+		{
+			query = "select * from GIORNALE";
+
+		}
+		else
+
+			query = "select * from GIORNALE where idGiornale=? or idGiornale=? or titolo=? or editore=?";
 		try (Connection conn = ConnToDb.connectionToDB();
 			 PreparedStatement prepQ= conn.prepareStatement(query))  {
 
-			prepQ.setInt(1,g.getId());
+
+            prepQ.setInt(1,g.getId());
 			prepQ.setInt(2,vis.getId());
 			prepQ.setString(3,g.getTitolo());
 			prepQ.setString(4,g.getEditore());
@@ -123,7 +108,7 @@ public class GiornaleDao {
 
 
 			}
-		} catch (SQLException e) {
+		} catch (SQLException |NullPointerException e) {
 			java.util.logging.Logger.getLogger("get giornale id").log(Level.INFO, ECCEZIONE, e);
 		}
 		return catalogo;

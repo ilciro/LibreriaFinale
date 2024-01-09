@@ -57,7 +57,7 @@ public class ControllerCompravendita {
 				catalogo.addAll(lD.getLibri());
 				break;
 			case GIORNALE:
-				catalogo.addAll(gD.getGiornali());
+				catalogo.addAll(gD.getGiornaliIdTitoloAutore(new Giornale()));
 				break;
 			case RIVISTA:
 				catalogo.addAll(rD.getRiviste());

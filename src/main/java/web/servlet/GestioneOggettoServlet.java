@@ -56,7 +56,7 @@ public class GestioneOggettoServlet extends HttpServlet {
                         req.setAttribute("beanMOB",mOB);
                         break;
                     case "giornale":
-                        mOB.setMiaListaB(gD.getGiornali());
+                        mOB.setMiaListaB(gD.getGiornaliIdTitoloAutore(new Giornale()));
                         req.setAttribute("beanMOB",mOB);
                         break;
                     case "rivista":

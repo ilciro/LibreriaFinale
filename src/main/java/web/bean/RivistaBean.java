@@ -6,6 +6,7 @@ import laptop.model.raccolta.CategorieRivista;
 import laptop.model.raccolta.Raccolta;
 
 import java.sql.Date;
+import java.util.logging.Level;
 
 public class RivistaBean {
     private ObservableList<Raccolta> listaRivisteB;
@@ -120,10 +121,15 @@ public class RivistaBean {
     }
 
     public void setIdB(int idB) {
-        if(idB<1 )
+        try {
+            if (idB < 1) {
+                throw new IdException("id incorrect");
+
+            }
+        }catch (IdException e)
         {
             this.idB=0;
-            setMexB( new IdException("id incorrect"));
+            java.util.logging.Logger.getLogger("Test set id").log(Level.INFO,"id <1!!");
 
         }
 
