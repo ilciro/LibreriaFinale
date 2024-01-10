@@ -16,23 +16,4 @@ Titolo :La scuola di pizze in faccia del professor Calcare	Ricavo totale :21400.
 Titolo :Dodici	Ricavo totale :11000.0
 Titolo :Tecniche proibite di persuasione, manipolazione e influenza utilizzando schemi di linguaggio e tecniche di PNL	Ricavo totale :15400.0
 Titolo :CiccioGamer89 Presenta Fortnite. Trucchi e Segreti	Ricavo totale :110.0
-Titolo :In cucina con Ciccio	Ricavo totale :16.5
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
+Titolo :titolo modificato	Ricavo totale :774.0

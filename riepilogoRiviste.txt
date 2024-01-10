@@ -1,24 +1,5 @@
 Titolo :Focus	Ricavo totale :615.0
 Titolo :Focus Junior	Ricavo totale :2.0
 Titolo :Tv Sorrisi e canzoni	Ricavo totale :200.0
-Titolo :Rivista A	Ricavo totale :242.0
+Titolo :titolo rivista aggiornato	Ricavo totale :225.0
 Titolo :Rivista B	Ricavo totale :262.0
-Titolo :rivista prova	Ricavo totale :130.0
-Titolo :rivista prova	Ricavo totale :130.0
-Titolo :rivista prova	Ricavo totale :130.0
-Titolo :rivista prova	Ricavo totale :130.0
-Titolo :rivista prova	Ricavo totale :130.0
-Titolo :rivista prova	Ricavo totale :130.0
-Titolo :rivista prova	Ricavo totale :130.0
-Titolo :rivista prova	Ricavo totale :130.0
-Titolo :rivista prova	Ricavo totale :130.0
-Titolo :rivista prova	Ricavo totale :130.0
-Titolo :rivista prova	Ricavo totale :130.0
-Titolo :rivista prova	Ricavo totale :130.0
-Titolo :rivista prova	Ricavo totale :130.0
-Titolo :rivista prova	Ricavo totale :130.0
-Titolo :rivista prova	Ricavo totale :130.0
-Titolo :rivista prova	Ricavo totale :130.0
-Titolo :rivista prova	Ricavo totale :130.0
-Titolo :rivista prova	Ricavo totale :130.0
-Titolo :rivista prova	Ricavo totale :130.0

@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import laptop.model.raccolta.Libro;
 
 public class ControllerBookData {
-	private Libro l;
+	private final Libro l;
 
 	
 	public Libro  checkBookData(String []info,String recensione,String descrizione,LocalDate data,String[] infoCosti)

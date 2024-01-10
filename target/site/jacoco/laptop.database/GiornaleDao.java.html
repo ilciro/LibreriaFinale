@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GiornaleDao.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.database</a> &gt; <span class="el_source">GiornaleDao.java</span></div><h1>GiornaleDao.java</h1><pre class="source lang-java linenums">package laptop.database;
+
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import java.util.logging.Level;
+
+import laptop.controller.ControllerSystemState;
+import laptop.model.raccolta.Factory;
+import laptop.model.raccolta.Giornale;
+import laptop.model.raccolta.Raccolta;
+import laptop.utilities.ConnToDb;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+public class GiornaleDao {
+	
+	private final Factory f;
+	
+
+	private  String query  ;
+	
+
+<span class="fc" id="L34">	private boolean state=false;</span>
+<span class="fc" id="L35">	private final ControllerSystemState vis=ControllerSystemState.getInstance();</span>
+	private static final String GIORNALE = &quot;giornale&quot;;
+	private static final String ECCEZIONE=&quot;eccezione generata:&quot;;
+
+	private static final String RIEPILOGOGIORNALI=&quot;riepilogoGiornali.txt&quot;;
+	private final File fd;
+
+<span class="fc" id="L42">	public GiornaleDao() {</span>
+<span class="fc" id="L43">		f = new Factory();</span>
+<span class="fc" id="L44">		this.fd=new File(RIEPILOGOGIORNALI);</span>
+
+<span class="fc" id="L46">	}</span>
+
+	public Giornale getData(Giornale g) {
+
+<span class="fc" id="L50">		 query =&quot;select * from GIORNALE where idGiornale=? or idGiornale=?&quot;;</span>
+
+<span class="fc" id="L52">		try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="fc" id="L53">			 PreparedStatement prepQ= conn.prepareStatement(query))  {</span>
+
+<span class="fc" id="L55">			prepQ.setInt(1,g.getId());</span>
+<span class="fc" id="L56">			prepQ.setInt(2,vis.getId());</span>
+<span class="fc" id="L57">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">			while (rs.next())</span>
+			{
+<span class="fc" id="L60">				f.createRaccoltaFinale1(GIORNALE, rs.getString(1), null, rs.getString(4), null,rs.getString(4), rs.getString(3));</span>
+
+
+<span class="fc" id="L63">				f.createRaccoltaFinale2(GIORNALE, 0, rs.getInt(6), rs.getInt(7),rs.getFloat(8),rs.getInt(9));</span>
+
+<span class="fc" id="L65">				g=(Giornale) f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), rs.getString(6), null);</span>
+
+
+			}
+<span class="nc" id="L69">		} catch (SQLException e) {</span>
+<span class="nc" id="L70">			java.util.logging.Logger.getLogger(&quot;get data&quot;).log(Level.INFO, ECCEZIONE, e);</span>
+<span class="fc" id="L71">		}</span>
+<span class="fc" id="L72">		return g;</span>
+
+	}
+
+
+
+	public ObservableList&lt;Raccolta&gt; getGiornaliIdTitoloAutore(Giornale g) {
+<span class="fc" id="L79">		ObservableList&lt;Raccolta&gt; catalogo = FXCollections.observableArrayList();</span>
+
+
+<span class="pc bpc" id="L82" title="1 of 2 branches missed.">		if(g.getId()&lt;0 )</span>
+		{
+<span class="nc" id="L84">			query = &quot;select * from GIORNALE&quot;;</span>
+
+		}
+		else
+
+<span class="fc" id="L89">			query = &quot;select * from GIORNALE where idGiornale=? or idGiornale=? or titolo=? or editore=?&quot;;</span>
+<span class="fc" id="L90">		try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="fc" id="L91">			 PreparedStatement prepQ= conn.prepareStatement(query))  {</span>
+
+
+<span class="fc" id="L94">            prepQ.setInt(1,g.getId());</span>
+<span class="fc" id="L95">			prepQ.setInt(2,vis.getId());</span>
+<span class="fc" id="L96">			prepQ.setString(3,g.getTitolo());</span>
+<span class="fc" id="L97">			prepQ.setString(4,g.getEditore());</span>
+
+<span class="fc" id="L99">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L100" title="All 2 branches covered.">			while (rs.next())</span>
+			{
+<span class="fc" id="L102">				f.createRaccoltaFinale1(GIORNALE, rs.getString(1), null, rs.getString(4), null,rs.getString(4), rs.getString(3));</span>
+
+
+<span class="fc" id="L105">				f.createRaccoltaFinale2(GIORNALE, 0, rs.getInt(6), rs.getInt(7),rs.getFloat(8),rs.getInt(9));</span>
+
+<span class="fc" id="L107">				catalogo.add(f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), rs.getString(6), null));</span>
+
+
+			}
+<span class="nc" id="L111">		} catch (SQLException |NullPointerException e) {</span>
+<span class="nc" id="L112">			java.util.logging.Logger.getLogger(&quot;get giornale id&quot;).log(Level.INFO, ECCEZIONE, e);</span>
+<span class="fc" id="L113">		}</span>
+<span class="fc" id="L114">		return catalogo;</span>
+	}
+
+	public ObservableList&lt;Giornale&gt; getGiornaleIdTitoloAutore(Giornale g) {
+<span class="fc" id="L118">		ObservableList&lt;Giornale&gt; catalogo = FXCollections.observableArrayList();</span>
+
+<span class="fc" id="L120">		query = &quot;select * from GIORNALE where idGiornale=? or idGiornale=? or titolo=? or editore=?&quot;;</span>
+<span class="fc" id="L121">		try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="fc" id="L122">			 PreparedStatement prepQ= conn.prepareStatement(query))  {</span>
+
+<span class="fc" id="L124">			prepQ.setInt(1,g.getId());</span>
+<span class="fc" id="L125">			prepQ.setInt(2,vis.getId());</span>
+<span class="fc" id="L126">			prepQ.setString(3,g.getTitolo());</span>
+<span class="fc" id="L127">			prepQ.setString(4,g.getEditore());</span>
+
+<span class="fc" id="L129">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L130" title="All 2 branches covered.">			while (rs.next())</span>
+			{
+<span class="fc" id="L132">				f.createRaccoltaFinale1(GIORNALE, rs.getString(1), null, rs.getString(4), null,rs.getString(4), rs.getString(3));</span>
+
+
+<span class="fc" id="L135">				f.createRaccoltaFinale2(GIORNALE, 0, rs.getInt(6), rs.getInt(7),rs.getFloat(8),rs.getInt(9));</span>
+
+<span class="fc" id="L137">				catalogo.add((Giornale) f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), rs.getString(6), null));</span>
+
+
+			}
+<span class="nc" id="L141">		} catch (SQLException e) {</span>
+<span class="nc" id="L142">			java.util.logging.Logger.getLogger(&quot;get giornale titolo id&quot;).log(Level.INFO, ECCEZIONE, e);</span>
+<span class="fc" id="L143">		}</span>
+<span class="fc" id="L144">		return catalogo;</span>
+	}
+
+
+
+	public void aggiornaDisponibilita(Giornale g) throws SQLException
+	{
+		//vedere il segno che cambia
+<span class="fc" id="L152">		int d=vis.getQuantita();</span>
+<span class="fc" id="L153">		int i=g.getCopieRimanenti();</span>
+<span class="fc" id="L154">		int rim=i-d;</span>
+
+
+
+
+
+<span class="fc" id="L160">		query=&quot;update GIORNALE set copieRimanenti=? where  idGiornale=?&quot;;</span>
+
+<span class="fc" id="L162">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L163">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
+		{
+<span class="fc" id="L165">			prepQ.setInt(1, rim);</span>
+<span class="fc" id="L166">			prepQ.setInt(2, g.getId());</span>
+<span class="fc" id="L167">			prepQ.executeUpdate();</span>
+<span class="nc" id="L168">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L170">			java.util.logging.Logger.getLogger(&quot;aggiorna disp l&quot;).log(Level.INFO, ECCEZIONE, e);</span>
+<span class="fc" id="L171">		}</span>
+
+
+
+<span class="fc" id="L175">	}</span>
+	// Creo il Giornale nel terzo caso d'uso per l'aggiunta manuale
+	public  boolean creaGiornale(Giornale g) throws SQLException  {
+		int row;
+
+
+<span class="fc" id="L181">		query= &quot;INSERT INTO `GIORNALE`&quot;</span>
+				+ &quot;(`titolo`,&quot;
+				+ &quot;`tipologia`,&quot;
+				+ &quot;`lingua`,&quot;
+				+ &quot;`editore`,&quot;
+				+ &quot;`dataPubblicazione`,&quot;
+				+ &quot;`copieRimanenti`,&quot;
+				+ &quot;`disp`,&quot;
+				+ &quot;`prezzo`)&quot;
+				+ &quot;VALUES&quot;
+				+ &quot;(?,?,?,?,?,?,?,?)&quot;;
+<span class="fc" id="L192">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L193">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
+		{
+
+<span class="fc" id="L196">			prepQ.setString(1,g.getTitolo());</span>
+<span class="fc" id="L197">			prepQ.setString(2,g.getTipologia());</span>
+<span class="fc" id="L198">			prepQ.setString(3,g.getLingua());</span>
+<span class="fc" id="L199">			prepQ.setString(4,g.getEditore());</span>
+<span class="fc" id="L200">			prepQ.setDate(5, java.sql.Date.valueOf(g.getDataPubb().toString()));</span>
+<span class="fc" id="L201">			prepQ.setInt(6,g.getCopieRimanenti());</span>
+<span class="fc" id="L202">			prepQ.setInt(7, g.getDisponibilita());</span>
+<span class="fc" id="L203">			prepQ.setFloat(8, g.getPrezzo());</span>
+
+
+<span class="fc" id="L206">			row=prepQ.executeUpdate();</span>
+<span class="pc bpc" id="L207" title="1 of 2 branches missed.">			state= row == 1; // true</span>
+
+<span class="nc" id="L209">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L211">			java.util.logging.Logger.getLogger(&quot;creazione giornale&quot;).log(Level.INFO, ECCEZIONE, e);</span>
+<span class="fc" id="L212">		}</span>
+
+
+<span class="fc" id="L215">		return state;</span>
+
+
+	}
+	public int cancella(Giornale l) throws SQLException {
+		int row;
+<span class="fc" id="L221">		query=&quot;delete from GIORNALE where idGiornale=? or idGiornale=?&quot;;</span>
+
+<span class="fc" id="L223">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L224">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
+		{
+<span class="fc" id="L226">			prepQ.setInt(1, l.getId());</span>
+<span class="fc" id="L227">			prepQ.setInt(2,vis.getId());</span>
+<span class="fc" id="L228">			row=prepQ.executeUpdate();</span>
+		}
+
+<span class="fc" id="L231">		java.util.logging.Logger.getLogger(&quot;Cancella Giornale&quot;).log(Level.INFO,&quot;Giornale cancellato {0}&quot;,row);</span>
+<span class="fc" id="L232">		return row;</span>
+
+	}
+	public  int aggiornaGiornale(Giornale g) throws SQLException  {
+<span class="fc" id="L236">		int row=0;</span>
+
+
+<span class="fc" id="L239">		query=&quot; UPDATE `GIORNALE`&quot;</span>
+				+ &quot;SET&quot;
+				+ &quot;`titolo` =?,&quot;
+				+ &quot;`tipologia` = ?,&quot;
+				+ &quot;`lingua` = ?,&quot;
+				+ &quot;`editore` = ?,&quot;
+				+ &quot;`dataPubblicazione` = ?,&quot;
+				+ &quot;`copieRimanenti` = ?,&quot;
+				+ &quot;`disp` = ?,&quot;
+				+ &quot;`prezzo` = ?&quot;
+				+ &quot;WHERE `idGiornale` = ? or idGiornale=?&quot;;
+<span class="fc" id="L250">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L251">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
+		{
+<span class="fc" id="L253">			prepQ.setString(1,g.getTitolo());</span>
+<span class="fc" id="L254">			prepQ.setString(2,g.getTipologia());</span>
+<span class="fc" id="L255">			prepQ.setString(3,g.getLingua());</span>
+<span class="fc" id="L256">			prepQ.setString(4, g.getEditore());</span>
+<span class="fc" id="L257">			prepQ.setString(5,g.getDataPubb().toString());</span>
+<span class="fc" id="L258">			prepQ.setInt(6,g.getCopieRimanenti());</span>
+<span class="fc" id="L259">			prepQ.setInt(7,g.getDisponibilita());</span>
+<span class="fc" id="L260">			prepQ.setFloat(8,g.getPrezzo());</span>
+<span class="fc" id="L261">			prepQ.setInt(9, g.getId());</span>
+<span class="fc" id="L262">			prepQ.setInt(10, vis.getId());</span>
+
+
+
+<span class="fc" id="L266">			row=prepQ.executeUpdate();</span>
+<span class="nc" id="L267">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L269">			java.util.logging.Logger.getLogger(&quot;update g&quot;).log(Level.INFO, ECCEZIONE, e);</span>
+<span class="fc" id="L270">		}</span>
+
+<span class="fc" id="L272">		java.util.logging.Logger.getLogger(&quot;aggiorna g&quot;).log(Level.INFO,&quot; rows aggiornalte {0}&quot;,row);</span>
+<span class="fc" id="L273">		return row;</span>
+
+	}
+	public void generaReport() throws IOException {
+
+		try {
+<span class="pc bpc" id="L279" title="1 of 2 branches missed.">			if (!fd.exists()) {</span>
+<span class="nc" id="L280">				throw new IOException(&quot;file not exists&quot;);</span>
+			}
+<span class="pc bpc" id="L282" title="1 of 2 branches missed.">			if(fd.exists())</span>
+			{
+<span class="fc" id="L284">				cleanUp(Path.of(RIEPILOGOGIORNALI));</span>
+<span class="fc" id="L285">					throw new IOException(&quot;file deleted -&gt; not exists&quot;);</span>
+
+			}
+<span class="fc" id="L288">		} catch (IOException e) {</span>
+<span class="fc" id="L289">			java.util.logging.Logger.getLogger(&quot;Test genera report&quot;).log(Level.INFO, ECCEZIONE, e);</span>
+<span class="pc bpc" id="L290" title="1 of 2 branches missed.">			if (fd.createNewFile()) {</span>
+
+
+<span class="fc" id="L293">				try (BufferedWriter b = new BufferedWriter(new FileWriter(RIEPILOGOGIORNALI))) {</span>
+
+<span class="fc" id="L295">					query = &quot;select titolo,copieRimanenti,prezzo  from GIORNALE&quot;;</span>
+
+<span class="fc" id="L297">					try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="fc" id="L298">						 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
+
+<span class="fc" id="L300">						ResultSet rs = prepQ.executeQuery();</span>
+
+
+<span class="fc bfc" id="L303" title="All 2 branches covered.">						while (rs.next()) {</span>
+
+<span class="fc" id="L305">							b.write(&quot;Titolo :&quot; + rs.getString(&quot;titolo&quot;) + &quot;\t&quot; + &quot;Ricavo totale :&quot; + rs.getInt(&quot;copieRimanenti&quot;) * rs.getFloat(&quot;prezzo&quot;) + &quot;\n&quot;);</span>
+
+<span class="fc" id="L307">							b.flush();</span>
+
+						}
+
+<span class="nc" id="L311">					} catch (SQLException e1) {</span>
+<span class="nc" id="L312">						java.util.logging.Logger.getLogger(&quot;Test Eccezione report&quot;).log(Level.INFO, ECCEZIONE, e1);</span>
+<span class="fc" id="L313">					}</span>
+				}
+			}
+
+<span class="nc" id="L317">		}</span>
+<span class="fc" id="L318">	}</span>
+
+
+
+
+	public void incrementaDisponibilita(Giornale g)
+	{
+<span class="nc" id="L325">		int d=vis.getQuantita();</span>
+<span class="nc" id="L326">		int i=g.getCopieRimanenti();</span>
+
+<span class="nc" id="L328">		int rim=i+d;</span>
+<span class="nc" id="L329">		query=&quot;update GIORNALE set copieRimanenti= ? where idGiornale=?&quot;;</span>
+
+
+
+<span class="nc" id="L333">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="nc" id="L334">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
+		{
+<span class="nc" id="L336">			prepQ.setInt(1, rim);</span>
+<span class="nc" id="L337">			prepQ.setInt(2, g.getId());</span>
+<span class="nc" id="L338">			prepQ.executeUpdate();</span>
+<span class="nc" id="L339">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L341">			java.util.logging.Logger.getLogger(&quot;Test incrementa disp&quot;).log(Level.INFO, ECCEZIONE, e);</span>
+<span class="nc" id="L342">		}</span>
+
+
+
+<span class="nc" id="L346">	}</span>
+
+	public void aggiornaData(Giornale g, Date sqlDate) throws SQLException {
+		int row;
+<span class="nc" id="L350">		query=&quot;update GIORNALE set dataPubblicazione=? where idGiornale=? or idGiornale=?&quot;;</span>
+<span class="nc" id="L351">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="nc" id="L352">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
+		{
+<span class="nc" id="L354">			prepQ.setDate(1, sqlDate);</span>
+<span class="nc" id="L355">			prepQ.setInt(2, g.getId());</span>
+<span class="nc" id="L356">			prepQ.setInt(3, vis.getId());</span>
+<span class="nc" id="L357">			row=prepQ.executeUpdate();</span>
+
+		}
+
+<span class="nc" id="L361">		java.util.logging.Logger.getLogger(&quot;aggiorna data&quot;).log(Level.INFO, &quot;libri aggiornati {0}.&quot;,row);</span>
+
+<span class="nc" id="L363">	}</span>
+
+	public static void cleanUp(Path path) throws  IOException {
+<span class="fc" id="L366">		Files.delete(path);</span>
+<span class="fc" id="L367">	}</span>
+
+
+
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -2,6 +2,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerRegistraUtenteTest.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerAggiungiPageTest.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerRicercaPageTest.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerModifPageTest.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerHomePageAfterLoginSETest.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerScegliNegozioTest.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerLoginTest.java

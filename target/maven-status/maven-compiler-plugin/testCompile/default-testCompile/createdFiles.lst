@@ -1,6 +1,7 @@
 laptop/controller/ControllerRegistraUtenteTest.class
 laptop/controller/ControllerCheckPagamentoDataTest.class
 laptop/controller/ControllerHomePageAfterLoginTest.class
+laptop/controller/ControllerModifPageTest.class
 laptop/controller/ControllerVisualizzaOrdineTest.class
 laptop/controller/ControllerReportPageTest.class
 laptop/controller/ControllerRicercaPerTipoTest.class

@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Libro.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.model.raccolta</a> &gt; <span class="el_source">Libro.java</span></div><h1>Libro.java</h1><pre class="source lang-java linenums">package laptop.model.raccolta;
+
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.time.LocalDate;
+import java.util.Enumeration;
+import java.util.ResourceBundle;
+
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+
+
+
+public class Libro implements Raccolta {
+	private String titolo;
+	private String codIsbn;
+	private String editore;
+	private String autore;
+	private String lingua;
+	private String categoria;
+	private String descrizione;
+	private LocalDate dataPubb;
+	private String recensione;
+
+	private int nrPagine;
+	private int nrCopie; // numero copie vendute
+	private int disponibilita;
+	private float prezzo;
+	private int id;
+<span class="fc" id="L36">	private String[] infoGenerali=new String[7];</span>
+<span class="fc" id="L37">	private String[] infoCostiDisp=new String[5];</span>
+
+	private static final String URLL=&quot;/home/daniele/Scaricati/libriPerSito/&quot;;
+
+<span class="fc" id="L41">	public Libro() {</span>
+
+<span class="fc" id="L43">	}</span>
+
+
+	public String getTitolo() {
+<span class="fc" id="L47">		return this.titolo;</span>
+	}
+
+	public String getCodIsbn() {
+<span class="fc" id="L51">		return this.codIsbn;</span>
+	}
+	public String getEditore() {
+<span class="fc" id="L54">		return this.editore;</span>
+	}
+	public String getAutore() {
+<span class="fc" id="L57">		return this.autore;</span>
+	}
+	public String getLingua() {
+<span class="fc" id="L60">		return this.lingua;</span>
+	}
+	public String getCategoria() {
+<span class="fc" id="L63">		return this.categoria;</span>
+	}
+	public LocalDate getDataPubb() {
+<span class="fc" id="L66">		return this.dataPubb;</span>
+	}
+	public String getRecensione() {
+<span class="fc" id="L69">		return this.recensione;</span>
+	}
+	public int getNrCopie() {
+<span class="fc" id="L72">		return this.nrCopie;</span>
+	}
+	public String getDesc() {
+<span class="fc" id="L75">		return this.descrizione;</span>
+	}
+	public int getDisponibilita() {
+<span class="fc" id="L78">		return this.disponibilita;</span>
+	}
+	public float getPrezzo() {
+<span class="fc" id="L81">		return this.prezzo;</span>
+	}
+
+	public void setTitolo(String titolo) {
+<span class="fc" id="L85">		this.titolo = titolo;</span>
+<span class="fc" id="L86">	}</span>
+
+	public void setCodIsbn(String codIsbn) {
+<span class="fc" id="L89">		this.codIsbn = codIsbn;</span>
+<span class="fc" id="L90">	}</span>
+	public void setEditore(String editore) {
+<span class="fc" id="L92">		this.editore = editore;</span>
+<span class="fc" id="L93">	}</span>
+	public void setAutore(String autore) {
+<span class="fc" id="L95">		this.autore = autore;</span>
+<span class="fc" id="L96">	}</span>
+	public void setLingua(String lingua) {
+<span class="fc" id="L98">		this.lingua = lingua;</span>
+<span class="fc" id="L99">	}</span>
+
+	public void setDataPubb(LocalDate dataPubb) {
+<span class="fc" id="L102">		this.dataPubb = dataPubb;</span>
+<span class="fc" id="L103">	}</span>
+	public void setRecensione(String recensione) {
+<span class="fc" id="L105">		this.recensione = recensione;</span>
+<span class="fc" id="L106">	}</span>
+	public void setNrCopie(int nrCopie) {
+<span class="fc" id="L108">		this.nrCopie = nrCopie;</span>
+<span class="fc" id="L109">	}</span>
+	public void setDesc(String desc) {
+<span class="fc" id="L111">		this.descrizione = desc;</span>
+<span class="fc" id="L112">	}</span>
+	public void setDisponibilita(int disponibilita) {
+<span class="fc" id="L114">		this.disponibilita = disponibilita;</span>
+<span class="fc" id="L115">	}</span>
+	public void setPrezzo(float prezzo) {
+<span class="fc" id="L117">		this.prezzo = prezzo;</span>
+<span class="fc" id="L118">	}</span>
+
+
+	public int getId() {
+<span class="fc" id="L122">		return id;</span>
+	}
+
+	public void setId(int id)
+	{
+<span class="fc" id="L127">		this.id = id ;</span>
+<span class="fc" id="L128">	}</span>
+
+	public void setCategoria(String categoria) {
+<span class="pc bpc" id="L131" title="28 of 30 branches missed.">		switch (categoria){</span>
+			case &quot;ADOLESCENTI_RAGAZZI&quot;:
+<span class="nc" id="L133">				this.categoria = CategorieLibro.ADOLESCENTI_RAGAZZI.toString();</span>
+<span class="nc" id="L134">				break;</span>
+			case &quot;ARTE&quot;:
+<span class="fc" id="L136">				this.categoria = CategorieLibro.ARTE.toString();</span>
+<span class="fc" id="L137">				break;</span>
+			case &quot;CINEMA_FOTOGRAFIA&quot; :
+<span class="nc" id="L139">				this.categoria = CategorieLibro.CINEMA_FOTOGRAFIA.toString();</span>
+<span class="nc" id="L140">				break;</span>
+			case &quot;BIOGRAFIE&quot; :
+<span class="nc" id="L142">				this.categoria = CategorieLibro.BIOGRAFIE.toString();</span>
+<span class="nc" id="L143">				break;</span>
+			case &quot;DIARI_MEMORIE&quot; :
+<span class="nc" id="L145">				this.categoria = CategorieLibro.DIARI_MEMORIE.toString();</span>
+<span class="nc" id="L146">				break;</span>
+			case &quot;CALENDARI_AGENDE&quot; :
+<span class="nc" id="L148">				this.categoria = CategorieLibro.CALENDARI_AGENDE.toString();</span>
+<span class="nc" id="L149">				break;</span>
+			case &quot;DIRITTO&quot; :
+<span class="nc" id="L151">				this.categoria = CategorieLibro.DIRITTO.toString();</span>
+<span class="nc" id="L152">				break;</span>
+			case &quot;DIZINARI_OPERE&quot; :
+<span class="nc" id="L154">				this.categoria = CategorieLibro.DIZINARI_OPERE.toString();</span>
+<span class="nc" id="L155">				break;</span>
+			case &quot;ECONOMIA&quot; :
+<span class="nc" id="L157">				this.categoria = CategorieLibro.ECONOMIA.toString();</span>
+<span class="nc" id="L158">				break;</span>
+			case &quot;FAMIGLIA&quot; :
+<span class="nc" id="L160">				this.categoria = CategorieLibro.FAMIGLIA.toString();</span>
+<span class="nc" id="L161">				break;</span>
+			case &quot;SALUTE_BENESSERE&quot; :
+<span class="nc" id="L163">				this.categoria = CategorieLibro.SALUTE_BENESSERE.toString();</span>
+<span class="nc" id="L164">				break;</span>
+			case &quot;FANTASCIENZA_FANTASY&quot; :
+<span class="fc" id="L166">				this.categoria = CategorieLibro.FANTASCIENZA_FANTASY.toString();</span>
+<span class="fc" id="L167">				break;</span>
+			case &quot;FUMETTI_MANGA&quot; :
+<span class="nc" id="L169">				this.categoria = CategorieLibro.FUMETTI_MANGA.toString();</span>
+<span class="nc" id="L170">				break;</span>
+			case &quot;GIALLI_THRILLER&quot; :
+<span class="nc" id="L172">				this.categoria = CategorieLibro.GIALLI_THRILLER.toString();</span>
+<span class="nc" id="L173">				break;</span>
+			case &quot;COMPUTER_GIOCHI&quot; :
+<span class="nc" id="L175">				this.categoria = CategorieLibro.COMPUTER_GIOCHI.toString();</span>
+<span class="nc" id="L176">				break;</span>
+			case &quot;HUMOR&quot; :
+<span class="nc" id="L178">				this.categoria = CategorieLibro.HUMOR.toString();</span>
+<span class="nc" id="L179">				break;</span>
+			case &quot;INFORMATICA&quot; :
+<span class="nc" id="L181">				this.categoria = CategorieLibro.INFORMATICA.toString();</span>
+<span class="nc" id="L182">				break;</span>
+			case &quot;WEB_DIGITAL_MEDIA&quot; :
+<span class="nc" id="L184">				this.categoria = CategorieLibro.WEB_DIGITAL_MEDIA.toString();</span>
+<span class="nc" id="L185">				break;</span>
+			case &quot;LETTERATURA_NARRATIVA&quot; :
+<span class="nc" id="L187">				this.categoria = CategorieLibro.LETTERATURA_NARRATIVA.toString();</span>
+<span class="nc" id="L188">				break;</span>
+			case &quot;LIBRI_BAMBINI&quot; :
+<span class="nc" id="L190">				this.categoria = CategorieLibro.LIBRI_BAMBINI.toString();</span>
+<span class="nc" id="L191">				break;</span>
+			case &quot;LIBRI_SCOLASTICI&quot; :
+<span class="nc" id="L193">				this.categoria = CategorieLibro.LIBRI_SCOLASTICI.toString();</span>
+<span class="nc" id="L194">				break;</span>
+			case &quot;LIBRI_UNIVERSITARI&quot; :
+<span class="nc" id="L196">				this.categoria = CategorieLibro.LIBRI_UNIVERSITARI.toString();</span>
+<span class="nc" id="L197">				break;</span>
+			case &quot;RICETTARI_GENERALI&quot; :
+<span class="nc" id="L199">				this.categoria = CategorieLibro.RICETTARI_GENERALI.toString();</span>
+<span class="nc" id="L200">				break;</span>
+			case &quot;LINGUISTICA_SCRITTURA&quot; :
+<span class="nc" id="L202">				this.categoria = CategorieLibro.LINGUISTICA_SCRITTURA.toString();</span>
+<span class="nc" id="L203">				break;</span>
+			case &quot;POLITICA&quot; :
+<span class="nc" id="L205">				this.categoria = CategorieLibro.POLITICA.toString();</span>
+<span class="nc" id="L206">				break;</span>
+			case &quot;RELIGIONE&quot; :
+<span class="nc" id="L208">				this.categoria = CategorieLibro.RELIGIONE.toString();</span>
+<span class="nc" id="L209">				break;</span>
+			case &quot;ROMANZI_ROSA&quot; :
+<span class="nc" id="L211">				this.categoria = CategorieLibro.ROMANZI_ROSA.toString();</span>
+<span class="nc" id="L212">				break;</span>
+			case &quot;SCIENZE&quot; :
+<span class="nc" id="L214">				this.categoria = CategorieLibro.SCIENZE.toString();</span>
+<span class="nc" id="L215">				break;</span>
+			case &quot;TECNOLOGIA_MEDICINA&quot; :
+<span class="nc" id="L217">				this.categoria = CategorieLibro.TECNOLOGIA_MEDICINA.toString();</span>
+<span class="nc" id="L218">				break;</span>
+
+			default :
+<span class="nc" id="L221">				this.categoria = null;</span>
+				break;
+		}
+<span class="fc" id="L224">	}</span>
+
+	@Override
+	public void scarica() throws DocumentException, IOException {
+<span class="fc" id="L228">		Desktop desktop = Desktop.getDesktop();</span>
+<span class="fc" id="L229">		desktop.open(new File(URLL));</span>
+
+
+<span class="fc" id="L232">	}</span>
+	@Override
+	public void leggi(int i) throws IOException, DocumentException, URISyntaxException {
+		Document document;
+		File file;
+
+
+<span class="fc" id="L239">		int dimensione=0;</span>
+
+<span class="fc" id="L241">		ResourceBundle rB=ResourceBundle.getBundle(&quot;configurations/booksPath&quot;);</span>
+<span class="fc" id="L242">		 ResourceBundle rBD=ResourceBundle.getBundle(&quot;configurations/downloadConfiguration&quot;);</span>
+<span class="fc" id="L243">			 Enumeration&lt;String&gt; enumeration = rBD.getKeys();</span>
+
+
+
+		      // print all the keys
+<span class="fc bfc" id="L248" title="All 2 branches covered.">		      while (enumeration.hasMoreElements()) {</span>
+<span class="fc" id="L249">		    	 enumeration.nextElement();</span>
+
+
+<span class="fc bfc" id="L252" title="All 2 branches covered.">		    		 if(i==dimensione)</span>
+		    	  {
+<span class="fc" id="L254">		    		  document = new Document();</span>
+<span class="fc" id="L255">		     			PdfWriter.getInstance(document, new FileOutputStream(rBD.getString(&quot;path&quot;+i)));</span>
+<span class="fc" id="L256">		     			document.open();</span>
+<span class="fc" id="L257">		  			file=new File(rB.getString(&quot;path&quot;+i));</span>
+<span class="fc" id="L258">		  			Desktop.getDesktop().open(file);</span>
+		    	  }
+
+		    	  else {
+<span class="fc" id="L262">		  			document = new Document();</span>
+<span class="fc" id="L263">		     			PdfWriter.getInstance(document, new FileOutputStream(rBD.getString(&quot;pathNonFound&quot;)));</span>
+<span class="fc" id="L264">		     			document.open();</span>
+
+<span class="fc" id="L266">		     			document.add(new Paragraph(&quot;&quot;&quot;</span>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat ornare dictum. Donec semper pellentesque risus, quis pulvinar nisl efficitur nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus nisl mi, ullamcorper cursus pulvinar ut, pretium ut quam. Proin felis mauris, pretium non scelerisque vitae, posuere vel risus. Sed tortor enim, sollicitudin et eros at, fermentum suscipit urna. Sed at nisi quis libero hendrerit interdum at sodales dui. Nullam nec mattis urna. Quisque rhoncus pharetra malesuada. Etiam porttitor ligula consequat nisi luctus scelerisque. Sed purus purus, gravida ac orci sit amet, faucibus euismod diam. In dignissim enim sed nisl euismod, in vulputate odio facilisis. Sed venenatis facilisis massa, ac condimentum ante rutrum blandit. Vivamus efficitur eros quis diam semper, nec porttitor lectus vehicula. Fusce turpis ipsum, mollis vel nunc vitae, blandit molestie nunc. Nunc sit amet feugiat lacus.
+										     					
+								Aenean sollicitudin id dolor eu luctus. Proin tincidunt semper lobortis. Nunc nec odio lorem. Praesent consectetur, nunc sed egestas elementum, orci ligula dictum ligula, ut vehicula augue nibh sit amet quam. Nam nec massa lorem. Donec sed elit massa. Praesent neque ante, suscipit nec ornare id, bibendum non dolor. Donec sem ex, placerat ac hendrerit quis, ullamcorper nec quam. Morbi tempus tellus at porta fermentum. Donec vitae dolor orci. Vivamus fermentum faucibus eros, et cursus lorem aliquet in. Integer vitae ipsum eu nulla sodales porta.
+								
+								Donec et purus aliquam, sagittis est eget, molestie dui. In porttitor maximus dui, a mattis urna faucibus ut. Fusce vulputate nisi dolor, sed hendrerit urna placerat quis. In hac habitasse platea dictumst. Aliquam a tempus eros. Aenean at augue quam. Vestibulum lectus enim, mollis sed pulvinar quis, porta vel lorem. Mauris vel eleifend dui. Sed venenatis ullamcorper mollis.
+								
+								Proin non ullamcorper ex, quis bibendum diam. Aliquam eleifend efficitur diam ut porta. Morbi ipsum sapien, vehicula sit amet felis nec, vulputate malesuada tortor. Sed finibus, augue at auctor ornare, ligula nunc venenatis nunc, sit amet mollis est dolor sed erat. Integer fermentum gravida tellus, mattis finibus turpis fringilla et. Nam sed aliquet nunc. Pellentesque nec urna metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rhoncus condimentum ornare. Curabitur pellentesque lacinia scelerisque. Curabitur faucibus et purus fermentum venenatis. Quisque sed tempor augue, non mattis massa. Vivamus vestibulum pulvinar elit id iaculis. Proin tincidunt eros nisi, et volutpat lorem rutrum ut. Phasellus convallis metus fermentum nisi molestie, sit amet rhoncus mauris laoreet.
+								
+								Vestibulum aliquet nisi sit amet tristique consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a fringilla libero. Fusce pharetra purus eu tortor dapibus laoreet. Quisque mattis justo et lacus fringilla mattis. Cras sit amet elementum ipsum. Sed varius congue dolor ac placerat. Integer cursus nulla at lectus sollicitudin hendrerit. Suspendisse sit amet tincidunt nunc, at volutpat nisi.
+								&quot;&quot;&quot;));
+
+
+		  		}
+
+<span class="fc" id="L281">		    	   dimensione++;</span>
+
+		      }
+
+
+
+
+
+
+
+
+<span class="fc" id="L292">	}</span>
+
+	/*
+	 * provo a levare i codeSmells &gt; 7 paramentri
+	 */
+<span class="fc" id="L297">	public Libro(String[] info, LocalDate dataPubb,  String recensione, String descrizione,String [] prezzi) {</span>
+<span class="fc" id="L298">		this.infoGenerali=info;</span>
+<span class="fc" id="L299">		this.infoCostiDisp=prezzi;</span>
+<span class="fc" id="L300">		this.descrizione=descrizione;</span>
+
+<span class="fc" id="L302">		this.recensione=recensione;</span>
+<span class="fc" id="L303">		this.dataPubb = dataPubb;</span>
+
+<span class="fc" id="L305">		this.titolo=info[0];</span>
+<span class="fc" id="L306">		this.codIsbn=info[1];</span>
+<span class="fc" id="L307">		this.editore=info[2];</span>
+<span class="fc" id="L308">		this.autore=info[3];</span>
+<span class="fc" id="L309">		this.lingua=info[4];</span>
+<span class="fc" id="L310">		this.categoria=info[5];</span>
+<span class="fc" id="L311">		this.descrizione=info[6];</span>
+
+<span class="fc" id="L313">		this.nrPagine=Integer.parseInt(prezzi[0]);</span>
+<span class="fc" id="L314">		this.nrCopie=Integer.parseInt(prezzi[1]);</span>
+<span class="fc" id="L315">		this.disponibilita=Integer.parseInt(prezzi[2]);</span>
+<span class="fc" id="L316">		this.prezzo=Float.parseFloat(prezzi[3]);</span>
+<span class="fc" id="L317">		this.id=Integer.parseInt(prezzi[4]);</span>
+
+
+
+<span class="fc" id="L321">	}</span>
+
+	public String[] getInfoGenerali() {
+<span class="fc" id="L324">		return infoGenerali;</span>
+	}
+
+	public void setInfoGenerali(String[] infoGenerali) {
+<span class="fc" id="L328">		this.infoGenerali = infoGenerali;</span>
+<span class="fc" id="L329">	}</span>
+
+
+
+
+	public String[] getInfoCostiDisp() {
+<span class="fc" id="L335">		return infoCostiDisp;</span>
+	}
+
+	public void setInfoCostiDisp(String[] infoCostiDisp) {
+<span class="fc" id="L339">		this.infoCostiDisp = infoCostiDisp;</span>
+<span class="fc" id="L340">	}</span>
+
+
+	public int getNrPagine() {
+<span class="fc" id="L344">		return nrPagine;</span>
+	}
+
+	public void setNrPagine(int nrPagine) {
+<span class="fc" id="L348">		this.nrPagine = nrPagine;</span>
+<span class="fc" id="L349">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

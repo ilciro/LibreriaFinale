@@ -13,13 +13,13 @@ import laptop.model.raccolta.Libro;
 import laptop.model.raccolta.Rivista;
 
 public class ControllerModifPage {
-	private LibroDao ld;
-	private Libro l;
-	private Giornale g;
-	private GiornaleDao gD;
-	private Rivista r;
-	private RivistaDao rD;
-	private ControllerBookData cBD;
+	private final LibroDao ld;
+	private final Libro l;
+	private final Giornale g;
+	private final GiornaleDao gD;
+	private final Rivista r;
+	private final RivistaDao rD;
+	private final ControllerBookData cBD;
 	
 	
 	public ObservableList<Libro> getLibriById(int id) throws SQLException {
@@ -89,7 +89,7 @@ public class ControllerModifPage {
 	}
 	
 	
-	public boolean checkDataL(String []info,String recensione,String descrizione,LocalDate data,String[] infoCosti) throws NullPointerException, SQLException
+	public boolean checkDataL(String []info,String recensione,String descrizione,LocalDate data,String[] infoCosti) throws NullPointerException
 	{
 		
 		

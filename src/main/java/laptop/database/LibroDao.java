@@ -252,7 +252,7 @@ public class LibroDao implements DaoInterface{
 		boolean status = false;
 
 
-		query = " UPDATE LIBRO SET  `titolo` =?, `numeroPagine` = ?, `codIsbn` = ?, `editore` = ?, `autore` = ?, `lingua` = ?, `categoria` = ?, `dataPubblicazione` = ?, `recensione` = ?, `copieRimanenti` = ?, `breveDescrizione` =?, `disp` = ?,`prezzo` = ? WHERE `idLibro`= ? ";
+		query = " UPDATE LIBRO SET  `titolo` =?, `numeroPagine` = ?, `codIsbn` = ?, `editore` = ?, `autore` = ?, `lingua` = ?, `categoria` = ?, `dataPubblicazione` = ?, `recensione` = ?, `copieRimanenti` = ?, `breveDescrizione` =?, `disp` = ?,`prezzo` = ? WHERE `idLibro`= ? or `idLibro`= ?";
 		try (Connection conn = ConnToDb.connectionToDB();
 			 PreparedStatement prepQ = conn.prepareStatement(query)) {
 
@@ -270,6 +270,7 @@ public class LibroDao implements DaoInterface{
 			prepQ.setInt(12, l.getDisponibilita());
 			prepQ.setFloat(13, l.getPrezzo());
 			prepQ.setInt(14, l.getId());
+			prepQ.setInt(15,vis.getId());
 
 
 			rowAffected = prepQ.executeUpdate();
