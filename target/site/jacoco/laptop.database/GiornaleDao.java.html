@@ -322,28 +322,28 @@ public class GiornaleDao {
 
 	public void incrementaDisponibilita(Giornale g)
 	{
-<span class="nc" id="L325">		int d=vis.getQuantita();</span>
-<span class="nc" id="L326">		int i=g.getCopieRimanenti();</span>
+<span class="fc" id="L325">		int d=vis.getQuantita();</span>
+<span class="fc" id="L326">		int i=g.getCopieRimanenti();</span>
 
-<span class="nc" id="L328">		int rim=i+d;</span>
-<span class="nc" id="L329">		query=&quot;update GIORNALE set copieRimanenti= ? where idGiornale=?&quot;;</span>
+<span class="fc" id="L328">		int rim=i+d;</span>
+<span class="fc" id="L329">		query=&quot;update GIORNALE set copieRimanenti= ? where idGiornale=?&quot;;</span>
 
 
 
-<span class="nc" id="L333">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L334">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="fc" id="L333">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L334">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
-<span class="nc" id="L336">			prepQ.setInt(1, rim);</span>
-<span class="nc" id="L337">			prepQ.setInt(2, g.getId());</span>
-<span class="nc" id="L338">			prepQ.executeUpdate();</span>
+<span class="fc" id="L336">			prepQ.setInt(1, rim);</span>
+<span class="fc" id="L337">			prepQ.setInt(2, g.getId());</span>
+<span class="fc" id="L338">			prepQ.executeUpdate();</span>
 <span class="nc" id="L339">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L341">			java.util.logging.Logger.getLogger(&quot;Test incrementa disp&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="nc" id="L342">		}</span>
+<span class="fc" id="L342">		}</span>
 
 
 
-<span class="nc" id="L346">	}</span>
+<span class="fc" id="L346">	}</span>
 
 	public void aggiornaData(Giornale g, Date sqlDate) throws SQLException {
 		int row;

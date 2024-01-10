@@ -338,25 +338,25 @@ public class LibroDao implements DaoInterface{
 
 
 	public void incrementaDisponibilita(Libro l) {
-<span class="nc" id="L341">		int d = vis.getQuantita();</span>
-<span class="nc" id="L342">		int i = l.getNrCopie();</span>
+<span class="fc" id="L341">		int d = vis.getQuantita();</span>
+<span class="fc" id="L342">		int i = l.getNrCopie();</span>
 
-<span class="nc" id="L344">		int rim = i + d;</span>
-<span class="nc" id="L345">		query = &quot;update LIBRO set copieRimanenti= ? where codIsbn=? or idLibro=?&quot;;</span>
+<span class="fc" id="L344">		int rim = i + d;</span>
+<span class="fc" id="L345">		query = &quot;update LIBRO set copieRimanenti= ? where codIsbn=? or idLibro=?&quot;;</span>
 
 
-<span class="nc" id="L348">		try (Connection conn = ConnToDb.connectionToDB();</span>
-<span class="nc" id="L349">			 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
-<span class="nc" id="L350">			prepQ.setInt(1, rim);</span>
-<span class="nc" id="L351">			prepQ.setString(2, l.getCodIsbn());</span>
-<span class="nc" id="L352">			prepQ.setInt(3, l.getId());</span>
-<span class="nc" id="L353">			prepQ.executeUpdate();</span>
+<span class="fc" id="L348">		try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="fc" id="L349">			 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
+<span class="fc" id="L350">			prepQ.setInt(1, rim);</span>
+<span class="fc" id="L351">			prepQ.setString(2, l.getCodIsbn());</span>
+<span class="fc" id="L352">			prepQ.setInt(3, l.getId());</span>
+<span class="fc" id="L353">			prepQ.executeUpdate();</span>
 <span class="nc" id="L354">		} catch (SQLException e) {</span>
 <span class="nc" id="L355">			java.util.logging.Logger.getLogger(&quot;Test incremeta disp&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="nc" id="L356">		}</span>
+<span class="fc" id="L356">		}</span>
 
 
-<span class="nc" id="L359">	}</span>
+<span class="fc" id="L359">	}</span>
 
 	public void aggiornaData(Libro l, Date sqlDate) throws SQLException {
 		int row;

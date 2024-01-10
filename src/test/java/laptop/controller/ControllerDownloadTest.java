@@ -7,6 +7,9 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.sql.SQLException;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 class ControllerDownloadTest {
@@ -36,4 +39,26 @@ class ControllerDownloadTest {
         vis.setId(1);
         cD.scarica(vis.getType());
     }
+    @Test
+    void annullaOrdineL() throws SQLException {
+        vis.setMetodoP("cash");
+        vis.setTypeAsBook();
+        cD.annullaOrdine();
+        assertEquals("libro",vis.getType());
+    }
+    @Test
+    void annullaOrdineG() throws SQLException {
+        vis.setMetodoP("cash");
+        vis.setTypeAsDaily();
+        cD.annullaOrdine();
+        assertEquals("giornale",vis.getType());
+    }
+    @Test
+    void annullaOrdineR() throws SQLException {
+        vis.setMetodoP("cCredito");
+        vis.setTypeAsMagazine();
+        cD.annullaOrdine();
+        assertEquals("rivista",vis.getType());
+    }
+
 }

@@ -40,34 +40,34 @@ public class ControllerDownload {
 		/*
 		 * MEtodo usato per cancellare pafamento e fatture.. ma con una query di ritardo
 		 */
-<span class="nc" id="L43">		boolean statusF=false;</span>
-<span class="nc" id="L44">		boolean statusP=false;</span>
-<span class="nc" id="L45">		String typeP=vis.getMetodoP(); //tipo pagamento</span>
-<span class="nc" id="L46">		String typeO=vis.getType(); //tipo oggetto</span>
+<span class="fc" id="L43">		boolean statusF=false;</span>
+<span class="fc" id="L44">		boolean statusP=false;</span>
+<span class="fc" id="L45">		String typeP=vis.getMetodoP(); //tipo pagamento</span>
+<span class="fc" id="L46">		String typeO=vis.getType(); //tipo oggetto</span>
 		
-<span class="nc" id="L48">		int idF=cDao.retUltimoOrdineF(); //ultimo elemento (preso con count)</span>
-<span class="nc" id="L49">		statusF=cDao.annullaOrdineF(idF);</span>
+<span class="fc" id="L48">		int idF=cDao.retUltimoOrdineF(); //ultimo elemento (preso con count)</span>
+<span class="fc" id="L49">		statusF=cDao.annullaOrdineF(idF);</span>
 		
-<span class="nc" id="L51">		int idP=pDao.retUltimoOrdinePag();</span>
-<span class="nc" id="L52">		statusP=pDao.annullaOrdinePag(idP);</span>
+<span class="fc" id="L51">		int idP=pDao.retUltimoOrdinePag();</span>
+<span class="fc" id="L52">		statusP=pDao.annullaOrdinePag(idP);</span>
 		
 		
-<span class="nc bnc" id="L55" title="All 10 branches missed.">		if((typeP.equals(&quot;cash&quot;) &amp;&amp;(statusF &amp;&amp; statusP))||(typeP.equals(&quot;cCredito&quot;) &amp;&amp; statusP))</span>
+<span class="pc bpc" id="L55" title="5 of 10 branches missed.">		if((typeP.equals(&quot;cash&quot;) &amp;&amp;(statusF &amp;&amp; statusP))||(typeP.equals(&quot;cCredito&quot;) &amp;&amp; statusP))</span>
 			{
 				//aggiorno disponibilita
 				
-<span class="nc bnc" id="L59" title="All 4 branches missed.">				switch(typeO)</span>
+<span class="pc bpc" id="L59" title="2 of 4 branches missed.">				switch(typeO)</span>
 				{
 					case &quot;libro&quot;:
 					{
-<span class="nc" id="L63">						incrementaLibri();</span>
-<span class="nc" id="L64">						break;</span>
+<span class="fc" id="L63">						incrementaLibri();</span>
+<span class="fc" id="L64">						break;</span>
 					}
 					case &quot;giornale&quot;:
 					{
-<span class="nc" id="L68">						incrementaGiornali();</span>
+<span class="fc" id="L68">						incrementaGiornali();</span>
 
-<span class="nc" id="L70">						break;</span>
+<span class="fc" id="L70">						break;</span>
 					}
 					case &quot;rivista&quot;:
 					{
@@ -85,7 +85,7 @@ public class ControllerDownload {
 		// messo su come condizione		
 		
 		
-<span class="nc" id="L88">	}</span>
+<span class="fc" id="L88">	}</span>
 	public void scarica(String type) throws  IOException, URISyntaxException,  DocumentException {
 <span class="pc bpc" id="L90" title="1 of 4 branches missed.">		switch (type)</span>
 		{
@@ -151,14 +151,14 @@ public class ControllerDownload {
 	
 	public void incrementaLibri() throws SQLException
 	{
-<span class="nc" id="L154">		l.setId(vis.getId());</span>
-<span class="nc" id="L155">		lD.incrementaDisponibilita(l);</span>
-<span class="nc" id="L156">	}</span>
+<span class="fc" id="L154">		l.setId(vis.getId());</span>
+<span class="fc" id="L155">		lD.incrementaDisponibilita(l);</span>
+<span class="fc" id="L156">	}</span>
 	public void incrementaGiornali() throws SQLException
 	{
-<span class="nc" id="L159">		g.setId(vis.getId());</span>
-<span class="nc" id="L160">		gD.incrementaDisponibilita(g);</span>
-<span class="nc" id="L161">	}</span>
+<span class="fc" id="L159">		g.setId(vis.getId());</span>
+<span class="fc" id="L160">		gD.incrementaDisponibilita(g);</span>
+<span class="fc" id="L161">	}</span>
 	public void incrementaRivista() throws SQLException
 	{
 <span class="nc" id="L164">		r.setId(vis.getId());</span>
