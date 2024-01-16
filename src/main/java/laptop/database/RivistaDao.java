@@ -133,6 +133,7 @@ public class 	RivistaDao {
 
 	public ObservableList<Rivista> getRivistaIdTitoloAutore(Rivista r) {
 		ObservableList<Rivista> catalogo = FXCollections.observableArrayList();
+		String[] info=new String[7];
 
 		query = "select * from RIVISTA where idRivista=? or idRivista=? or titolo=? or autore=?";
 		try (Connection conn = ConnToDb.connectionToDB();
@@ -146,13 +147,12 @@ public class 	RivistaDao {
 			ResultSet rs=prepQ.executeQuery();
 			while (rs.next())
 			{
-				f.createRaccoltaFinale1(RIVISTA, rs.getString(1), null, rs.getString(5), rs.getString(3),rs.getString(4), rs.getString(2));
-
-
-				f.createRaccoltaFinale2(RIVISTA, 0, rs.getInt(10), rs.getInt(8),rs.getFloat(9),rs.getInt(10));
-
-				catalogo.add((Rivista) f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(),null, null));
-
+				info[0]=rs.getString("titolo");
+				info[2]=rs.getString("editore");
+				info[3]=rs.getString("autore");
+				info[4]=rs.getString("lingua");
+				info[5]=rs.getString("tipologia");
+				catalogo.add((Rivista)f.creaRivista(info,rs.getString("descrizione"),rs.getDate("dataPubblicazioe").toLocalDate(),rs.getInt("disp"),rs.getFloat("prezzo"),rs.getInt("copieRimanenti"),rs.getInt("idRivista")));
 
 			}
 		} catch (SQLException e) {

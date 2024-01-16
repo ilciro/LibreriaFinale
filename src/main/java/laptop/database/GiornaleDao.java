@@ -116,6 +116,8 @@ public class GiornaleDao {
 
 	public ObservableList<Giornale> getGiornaleIdTitoloAutore(Giornale g) {
 		ObservableList<Giornale> catalogo = FXCollections.observableArrayList();
+		String[] info =new String[7];
+
 
 		query = "select * from GIORNALE where idGiornale=? or idGiornale=? or titolo=? or editore=?";
 		try (Connection conn = ConnToDb.connectionToDB();
@@ -129,13 +131,11 @@ public class GiornaleDao {
 			ResultSet rs=prepQ.executeQuery();
 			while (rs.next())
 			{
-				f.createRaccoltaFinale1(GIORNALE, rs.getString(1), null, rs.getString(4), null,rs.getString(4), rs.getString(3));
-
-
-				f.createRaccoltaFinale2(GIORNALE, 0, rs.getInt(6), rs.getInt(7),rs.getFloat(8),rs.getInt(9));
-
-				catalogo.add((Giornale) f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), rs.getString(6), null));
-
+				info[0]=rs.getString("titolo");
+				info[2]=rs.getString("editore");
+				info[4]=rs.getString("lingua");
+				info[5]=rs.getString("tipologia");
+				catalogo.add((Giornale) f.creaGiornale(info,rs.getDate("dataPubblicazione").toLocalDate(),rs.getInt("copieRimanenti"),rs.getInt("disp"),rs.getFloat("prezzo"),rs.getInt("idGiornale")));
 
 			}
 		} catch (SQLException e) {

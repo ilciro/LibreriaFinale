@@ -37,13 +37,11 @@ public class LibroDao implements DaoInterface{
 
 	private static final String REPORTLIBRI="riepilogoLibri.txt";
 	private final File fd;
-	private final File fd1;
 	private static final String REPORTLIBRIWEB="webapp/reportWeb/riepilogoLibriWeb.txt";
 
 	public LibroDao() throws IOException {
 		f = new Factory();
 		this.fd=new File(REPORTLIBRI);
-		this.fd1=new File(REPORTLIBRIWEB);
 
 	}
 
@@ -132,8 +130,8 @@ public class LibroDao implements DaoInterface{
 
 	public ObservableList<Libro> getLibroIdTitoloAutore(Libro l) {
 
-		String info[]=new String[7];
-		String prezzo[]=new String[6];
+		String[] info =new String[7];
+		String[] prezzo =new String[6];
 
 		ObservableList<Libro> catalogo = FXCollections.observableArrayList();
 
