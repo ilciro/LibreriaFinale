@@ -28,9 +28,6 @@
 titolo
 </th>
 <th>
-numPagine
-</th>
-<th>
 codice isbn
 </th>
 <th>
@@ -79,7 +76,6 @@ id prodotto
 
 
 <td>${ lista.getTitolo() }</td>
-<td>${ lista.getNumeroPagine() }</td>
 <td>${ lista.getCodIsbn() }</td>
 <td>${ lista.getEditore() }</td>
 <td>${ lista.getAutore() }</td>

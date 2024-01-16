@@ -1,6 +1,7 @@
 package web.servlet;
 
 import java.io.IOException;
+import java.io.Serial;
 
 import laptop.database.LibroDao;
 import laptop.model.raccolta.Libro;
@@ -17,6 +18,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/LibriServlet")
 public class LibriServlet extends HttpServlet {
 
+    @Serial
     private static final long serialVersionUID = 1L;
     private final LibroBean lB = new LibroBean();
     private final String libri = "/libri.jsp";

@@ -1,13 +1,10 @@
 package laptop.view;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.sql.SQLException;
-import java.time.Duration;
-import java.time.LocalDate;
+import java.io.*;
+
 import java.util.Objects;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -15,13 +12,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import laptop.database.CsvDao;
-import laptop.database.GiornaleDao;
-import laptop.model.User;
-import laptop.model.raccolta.Giornale;
+
 import laptop.utilities.ConnToDb;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 
 
 public class Main  extends Application {
@@ -43,7 +36,7 @@ public class Main  extends Application {
 		} 
 		catch (Exception e)
 		{
-			java.util.logging.Logger.getLogger("main page").log(Level.SEVERE,"\n eccezione ottenuta .",e);
+			Logger.getLogger("main page").log(Level.SEVERE,"\n eccezione ottenuta .",e);
 
 			
 		}
@@ -60,14 +53,22 @@ public class Main  extends Application {
 
 
 		} catch (FileNotFoundException eFile) {
-			java.util.logging.Logger.getLogger("crwa db").log(Level.SEVERE, "\n eccezione ottenuta .", eFile);
+			Logger.getLogger("crwa db").log(Level.SEVERE, "\n eccezione ottenuta .", eFile);
 
 		}
 
 
+
+
+	}
+
+
+
+
+
 	//	launch(args);
 
-
+/*
 
 		csvDao=new CsvDao();
 
@@ -102,9 +103,36 @@ public class Main  extends Application {
 
 
 
+ */
 
 
-	}
+
+	/*
+	todo
+	copia file
+	public static void copyFile(File sourceFile, File destFile) throws IOException {
+    if(!destFile.exists()) {
+        destFile.createNewFile();
+    }
+
+    FileChannel source = null;
+    FileChannel destination = null;
+
+    try {
+        source = new FileInputStream(sourceFile).getChannel();
+        destination = new FileOutputStream(destFile).getChannel();
+        destination.transferFrom(source, 0, source.size());
+    }
+    finally {
+        if(source != null) {
+            source.close();
+        }
+        if(destination != null) {
+            destination.close();
+        }
+    }
+}
+	 */
 
 
 

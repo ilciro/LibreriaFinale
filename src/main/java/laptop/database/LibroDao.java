@@ -37,10 +37,13 @@ public class LibroDao implements DaoInterface{
 
 	private static final String REPORTLIBRI="riepilogoLibri.txt";
 	private final File fd;
+	private final File fd1;
+	private static final String REPORTLIBRIWEB="webapp/reportWeb/riepilogoLibriWeb.txt";
 
 	public LibroDao() throws IOException {
 		f = new Factory();
 		this.fd=new File(REPORTLIBRI);
+		this.fd1=new File(REPORTLIBRIWEB);
 
 	}
 
@@ -128,6 +131,10 @@ public class LibroDao implements DaoInterface{
 	}
 
 	public ObservableList<Libro> getLibroIdTitoloAutore(Libro l) {
+
+		String info[]=new String[7];
+		String prezzo[]=new String[6];
+
 		ObservableList<Libro> catalogo = FXCollections.observableArrayList();
 
 		query = "select * from LIBRO where idLibro=? or idLibro=? or titolo=? or autore=?";
@@ -139,15 +146,28 @@ public class LibroDao implements DaoInterface{
 			prepQ.setString(3, l.getTitolo());
 			prepQ.setString(4, l.getAutore());
 
+
+
 			ResultSet rs = prepQ.executeQuery();
 			while (rs.next()) {
-				f.createRaccoltaFinale1(LIBRO, rs.getString(1), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7));
+
+				info[0]=rs.getString("titolo");
+				info[1]=rs.getString("codIsbn");
+				info[2]=rs.getString("editore");
+				info[3]=rs.getString("autore");
+				info[4]=rs.getString("lingua");
+				info[5]=rs.getString("categoria");
 
 
-				f.createRaccoltaFinale2(LIBRO, rs.getInt(2), rs.getInt(10), rs.getInt(12), rs.getFloat(13), rs.getInt(14));
+				prezzo[0]= String.valueOf(rs.getInt("numeroPagine"));
+				prezzo[1]=String.valueOf(rs.getInt("copieRimanenti"));
+				prezzo[2]=String.valueOf(rs.getInt("disp"));
+				prezzo[3]=String.valueOf(rs.getFloat("prezzo"));
+				prezzo[4]=String.valueOf(rs.getInt("idLibro"));
 
 
-				catalogo.add((Libro) f.createRaccoltaFinaleCompleta(LIBRO, rs.getDate(8).toLocalDate(), rs.getString(9), rs.getString(11)));
+				catalogo.add((Libro) f.creaLibro(info,rs.getDate("dataPubblicazione").toLocalDate(),rs.getString("recensione"),rs.getString("breveDescrizione"),prezzo));
+
 
 
 			}
@@ -306,6 +326,7 @@ public class LibroDao implements DaoInterface{
 			}
 		} catch (IOException e) {
 			java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, ECCEZIONE, e);
+
 			if (fd.createNewFile()) {
 
 
@@ -331,6 +352,8 @@ public class LibroDao implements DaoInterface{
 						java.util.logging.Logger.getLogger("Test Eccezione sqlexception").log(Level.INFO, ECCEZIONE, e1);
 					}
 				}
+				Files.copy(Path.of(REPORTLIBRI), Path.of(REPORTLIBRIWEB));
+
 			}
 
 		}
@@ -379,3 +402,10 @@ public class LibroDao implements DaoInterface{
 
 }
 
+/*
+	TODO
+	cambiare file report in src/main/resources
+	cambiare file db in src/main resources
+	vedere come fae copie di report in webapp
+	
+ */

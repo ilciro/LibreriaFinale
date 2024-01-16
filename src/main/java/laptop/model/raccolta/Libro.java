@@ -308,7 +308,7 @@ public class Libro implements Raccolta {
 		this.autore=info[3];
 		this.lingua=info[4];
 		this.categoria=info[5];
-		this.descrizione=info[6];
+
 
 		this.nrPagine=Integer.parseInt(prezzi[0]);
 		this.nrCopie=Integer.parseInt(prezzi[1]);
