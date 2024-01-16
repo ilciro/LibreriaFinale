@@ -269,7 +269,6 @@ public class GiornaleDao {
 			java.util.logging.Logger.getLogger("update g").log(Level.INFO, ECCEZIONE, e);
 		}
 
-		java.util.logging.Logger.getLogger("aggiorna g").log(Level.INFO," rows aggiornalte {0}",row);
 		return row;
 
 	}

@@ -294,7 +294,6 @@ public class 	RivistaDao {
 			java.util.logging.Logger.getLogger("update r").log(Level.INFO, ECCEZIONE, e);
 		}
 
-		java.util.logging.Logger.getLogger("aggiorna r").log(Level.INFO," rows aggiornalte {0}",row);
 		return row;
 
 	}
