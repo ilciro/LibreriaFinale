@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.rmi.server.ExportException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -37,11 +38,13 @@ public class LibroDao implements DaoInterface{
 
 	private static final String REPORTLIBRI="riepilogoLibri.txt";
 	private final File fd;
-	private static final String REPORTLIBRIWEB="webapp/reportWeb/riepilogoLibriWeb.txt";
+	private final File fd1;
+	private static final String REPORTLIBRIWEB="src/main/webapp/riepilogoLibri.txt";
 
 	public LibroDao() throws IOException {
 		f = new Factory();
 		this.fd=new File(REPORTLIBRI);
+		this.fd1=new File(REPORTLIBRIWEB);
 
 	}
 
@@ -350,9 +353,23 @@ public class LibroDao implements DaoInterface{
 						java.util.logging.Logger.getLogger("Test Eccezione sqlexception").log(Level.INFO, ECCEZIONE, e1);
 					}
 				}
-				Files.copy(Path.of(REPORTLIBRI), Path.of(REPORTLIBRIWEB));
+
 
 			}
+		}
+		try{
+			if(!fd1.exists())
+				throw new IOException("file web not found");
+			if(fd1.exists())
+			{
+				cleanUp(Path.of(REPORTLIBRIWEB));
+				throw new IOException( " file web deleted -> not found");
+			}
+		}catch (IOException e2)
+		{
+
+				if(fd1.createNewFile())
+					Files.copy(Path.of(REPORTLIBRI), Path.of(REPORTLIBRIWEB));
 
 		}
 	}
@@ -400,10 +417,3 @@ public class LibroDao implements DaoInterface{
 
 }
 
-/*
-	TODO
-	cambiare file report in src/main/resources
-	cambiare file db in src/main resources
-	vedere come fae copie di report in webapp
-	
- */

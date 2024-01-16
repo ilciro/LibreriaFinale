@@ -37,11 +37,15 @@ public class GiornaleDao {
 	private static final String ECCEZIONE="eccezione generata:";
 
 	private static final String RIEPILOGOGIORNALI="riepilogoGiornali.txt";
+	private static final String RIEPILOGOGIORNALIWEB="src/main/webapp/riepilogoGiornali.txt";
+
 	private final File fd;
+	private final File fd1;
 
 	public GiornaleDao() {
 		f = new Factory();
 		this.fd=new File(RIEPILOGOGIORNALI);
+		this.fd1=new File(RIEPILOGOGIORNALIWEB);
 
 	}
 
@@ -312,6 +316,20 @@ public class GiornaleDao {
 					}
 				}
 			}
+		}
+		try{
+			if(!fd1.exists())
+				throw new IOException("file web not found");
+			if(fd1.exists())
+			{
+				cleanUp(Path.of(RIEPILOGOGIORNALIWEB));
+				throw new IOException( " file web deleted -> not found");
+			}
+		}catch (IOException e2)
+		{
+
+			if(fd1.createNewFile())
+				Files.copy(Path.of(RIEPILOGOGIORNALI), Path.of(RIEPILOGOGIORNALIWEB));
 
 		}
 	}

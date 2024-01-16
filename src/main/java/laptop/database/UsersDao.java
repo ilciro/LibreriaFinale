@@ -26,8 +26,11 @@ public class UsersDao {
 	private static final String ECCEZIONE = "errore in mysql :";
 	private static int row = 0;
 	private static final String TXT_FILE_NAME="riepilogoUtenti.txt";
+	private static final String TXT_FILE_NAME_WEB="src/main/webapp/riepilogoUtenti.txt";
+
 
 	private static final File fd=new File(TXT_FILE_NAME);
+	private static final File fd1=new File(TXT_FILE_NAME_WEB);
 
 
 
@@ -301,6 +304,22 @@ public class UsersDao {
 				}
 
 		}
+		try{
+			if(!fd1.exists())
+				throw new IOException("file web not found");
+			if(fd1.exists())
+			{
+				cleanUp(Path.of(TXT_FILE_NAME_WEB));
+				throw new IOException( " file web deleted -> not found");
+			}
+		}catch (IOException e2)
+		{
+
+			if(fd1.createNewFile())
+				Files.copy(Path.of(TXT_FILE_NAME), Path.of(TXT_FILE_NAME_WEB));
+
+		}
+
 
 
 

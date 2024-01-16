@@ -12,7 +12,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import java.time.LocalDate;
 import java.util.logging.Level;
 
 
@@ -40,11 +39,15 @@ public class 	RivistaDao {
 
 
 	private static final String RIEPILOGORIVISTE="riepilogoRiviste.txt";
+	private static final String RIEPILOGORIVISTEWEB="src/main/webapp/riepilogoRiviste.txt";
+
 	private final File fd;
+	private final File fd1;
 
 	public RivistaDao() throws IOException {
 		f = new Factory();
 		this.fd=new File(RIEPILOGORIVISTE);
+		this.fd1=new File(RIEPILOGORIVISTEWEB);
 
 	}
 	public Rivista getData(Rivista r) {
@@ -152,7 +155,7 @@ public class 	RivistaDao {
 				info[3]=rs.getString("autore");
 				info[4]=rs.getString("lingua");
 				info[5]=rs.getString("tipologia");
-				catalogo.add((Rivista)f.creaRivista(info,rs.getString("descrizione"),rs.getDate("dataPubblicazioe").toLocalDate(),rs.getInt("disp"),rs.getFloat("prezzo"),rs.getInt("copieRimanenti"),rs.getInt("idRivista")));
+				catalogo.add((Rivista)f.creaRivista(info,rs.getString("descrizione"),rs.getDate("dataPubblicazione").toLocalDate(),rs.getInt("disp"),rs.getFloat("prezzo"),rs.getInt("copieRimanenti"),rs.getInt("idRivista")));
 
 			}
 		} catch (SQLException e) {
@@ -337,6 +340,20 @@ public class 	RivistaDao {
 					}
 				}
 			}
+		}
+		try{
+			if(!fd1.exists())
+				throw new IOException("file web not found");
+			if(fd1.exists())
+			{
+				cleanUp(Path.of(RIEPILOGORIVISTEWEB));
+				throw new IOException( " file web deleted -> not found");
+			}
+		}catch (IOException e2)
+		{
+
+			if(fd1.createNewFile())
+				Files.copy(Path.of(RIEPILOGORIVISTE), Path.of(RIEPILOGORIVISTEWEB));
 
 		}
 	}
