@@ -1,7 +1,5 @@
 package laptop.database;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -281,7 +279,7 @@ public class UsersDao {
 			if(fd.createNewFile()) {
 				java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd.getPath());
 				//codice per report non so se mettere in altra classe
-				if(!gRC.generateReport("utenti",TXT_FILE_NAME))
+				if(gRC.generateReport("utenti"))
 					throw new IOException(" report not generaterd");
 				try {
 					if (!fd1.exists())

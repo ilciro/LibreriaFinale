@@ -1,9 +1,7 @@
 package laptop.database;
 
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -263,13 +261,10 @@ public class GiornaleDao {
 
 	}
 
-	public void generaReport() throws IOException {
-
-		Path path = Path.of(RIEPILOGOGIORNALI);
-		Path path1 = Path.of(RIEPILOGOGIORNALIWEB);
+	private void checkFilePath(Path path) throws IOException {
 
 		try {
-			cleanUp(path1);
+			cleanUp(path);
 
 			if (!fd.exists())
 				throw new IOException("file " + fd.getPath() + " not exists -> creating");
@@ -279,33 +274,20 @@ public class GiornaleDao {
 			}
 
 		} catch (IOException e) {
-			java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, ECCEZIONE, e);
-
-			if (fd.createNewFile()) {
-				java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd.getPath());
-				//codice per report non so se mettere in altra classe
-				if (!gRC.generateReport("giornale", RIEPILOGOGIORNALI))
-					throw new IOException(" report not generaterd");
-				try {
-					if (!fd1.exists())
-						throw new IOException("file " + fd1.getPath() + "-> not exists");
-					if (fd1.exists()) {
-						cleanUp(path1);
-						throw new IOException("file " + fd1.getPath() + " deleted -> not exists -> creating");
-					}
-				} catch (IOException e1) {
-					java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, ECCEZIONE, e1);
-
-					if (fd1.createNewFile())
-						java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd1.getPath());
-
-				}
-
+			if (fd1.createNewFile()) {
+				java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd1.getPath());
 			}
-
 		}
-		java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "coping file ");
 
+	}
+
+	public void generaReport() throws IOException {
+
+		Path path = Path.of(RIEPILOGOGIORNALI);
+		Path path1 = Path.of(RIEPILOGOGIORNALIWEB);
+		checkFilePath(path);
+		if(Boolean.TRUE.equals(gRC.generateReport("giornale")))
+			checkFilePath(path1);
 		Files.copy(path, path1, StandardCopyOption.REPLACE_EXISTING);
 	}
 

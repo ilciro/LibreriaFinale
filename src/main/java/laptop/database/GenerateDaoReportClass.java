@@ -26,37 +26,51 @@ public class GenerateDaoReportClass {
 
     private String query;
 
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    private String path;
+
+    private final static String RIVISTA="rivista";
+    private final static String LIBRO="libro";
+    private final static String GIORNALE="giornale";
 
 
-    public boolean generateReport(String type,String path) throws IOException {
+
+    public boolean generateReport(String type) throws IOException {
         boolean status=false;
 
         switch (type) {
-            case "libro":
-                setQuery("select  idLibro ,titolo,copieRimanenti,prezzo  from LIBRO");
-                path = "riepilogoLibri.txt";
-                status=writetoFileLGR("libro",path);
-                break;
-            case "giornale":
-                setQuery("select  idGiornale ,titolo,copieRimanenti,prezzo  from GIORNALE");
-                path = "riepilogoGiornali.txt";
-                status=writetoFileLGR("giornale",path);
-                break;
-            case "rivista":
-                setQuery("select  idRivista ,titolo,copieRimanenti,prezzo  from RIVISTA");
-                path = "riepilogoRiviste.txt";
-                status=writetoFileLGR("rivista",path);
-                break;
-            case "utente", "utenti":
-                setQuery("select  * from USERS");
-                path = "riepilogoUtenti.txt";
-                status=writeToFileU(path);
-                break;
-            default:
-                break;
+            case LIBRO -> {
 
+                setQuery("select  idLibro ,titolo,copieRimanenti,prezzo  from LIBRO");
+                setPath("riepilogoLibri.txt");
+                status = writetoFileLGR("libro", getPath());
+            }
+            case GIORNALE -> {
+                setQuery("select  idGiornale ,titolo,copieRimanenti,prezzo  from GIORNALE");
+                setPath("riepilogoGiornali.txt");
+                status = writetoFileLGR("giornale", getPath());
+            }
+            case RIVISTA -> {
+
+                setQuery("select  idRivista ,titolo,copieRimanenti,prezzo  from RIVISTA");
+                setPath("riepilogoRiviste.txt");
+                status = writetoFileLGR("rivista", getPath());
+            }
+            case "utente", "utenti" -> {
+
+            setQuery("select  * from USERS");
+            path = "riepilogoUtenti.txt";
+            status = writeToFileU(path);
+         }
         }
-       return status;
+       return !status;
 
     }
 
@@ -64,7 +78,7 @@ public class GenerateDaoReportClass {
         boolean status=false;
         switch (type)
         {
-            case "libro","giornale","rivista":
+            case LIBRO ,GIORNALE,RIVISTA:
                 try (BufferedWriter b = new BufferedWriter(new FileWriter(path))) {
                     try (Connection conn = ConnToDb.connectionToDB();
                          PreparedStatement prepQ = conn.prepareStatement(getQuery())) {
@@ -122,6 +136,8 @@ public class GenerateDaoReportClass {
             status=true;
         return status;
     }
+
+
 
 
 }
