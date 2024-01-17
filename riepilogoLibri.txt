@@ -1,31 +1,47 @@
-Titolo :Apocalypse town: Cronache dalla fine della civilta urbana	Ricavo totale :0.0
-Titolo :Andrea Baranes : contro i falsi miti	Ricavo totale :599.0
-Titolo :Il libro dello splendore	Ricavo totale :7450.0
-Titolo :Come i servizi segreti usano i media	Ricavo totale :259.59998
-Titolo :Sulla verità	Ricavo totale :164.0
-Titolo :Erasgon Vol 1	Ricavo totale :480000.0
-Titolo :Scritti inediti di linguistica generale	Ricavo totale :0.0
-Titolo :Alchimia e kabbalah	Ricavo totale :1700.0
-Titolo :EXCEL le 10 cose che devi conoscere del foglio elettronico	Ricavo totale :4995.0
-Titolo :Dungeons & Dragons - 5a Edizione - Manuale del Giocatore	Ricavo totale :1035000.0
-Titolo :Grammatica italiana	Ricavo totale :2750.0
-Titolo :Kobane calling. Oggi:	Ricavo totale :44000.0
-Titolo :A babbo morto. Una storia di Natale 	Ricavo totale :1100.0
-Titolo :Scheletri	Ricavo totale :20000.0
-Titolo :La scuola di pizze in faccia del professor Calcare	Ricavo totale :21400.0
-Titolo :Dodici	Ricavo totale :11000.0
-Titolo :Tecniche proibite di persuasione, manipolazione e influenza utilizzando schemi di linguaggio e tecniche di PNL	Ricavo totale :15400.0
-Titolo :CiccioGamer89 Presenta Fortnite. Trucchi e Segreti	Ricavo totale :110.0
-Titolo :titolo modificato	Ricavo totale :774.0
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
-Titolo :libro prova	Ricavo totale :197.44
+Id :	1titolo :	Apocalypse town: Cronache dalla fine della civilta urbanaricavo totale :	0.0
+Id :	2titolo :	Andrea Baranes : contro i falsi mitiricavo totale :	599.0
+Id :	3titolo :	Il libro dello splendorericavo totale :	7450.0
+Id :	4titolo :	Come i servizi segreti usano i mediaricavo totale :	259.59998
+Id :	5titolo :	Sulla veritàricavo totale :	164.0
+Id :	6titolo :	Erasgon Vol 1ricavo totale :	480000.0
+Id :	7titolo :	Scritti inediti di linguistica generalericavo totale :	0.0
+Id :	8titolo :	Alchimia e kabbalahricavo totale :	1700.0
+Id :	9titolo :	EXCEL le 10 cose che devi conoscere del foglio elettronicoricavo totale :	4995.0
+Id :	10titolo :	Dungeons & Dragons - 5a Edizione - Manuale del Giocatorericavo totale :	1035000.0
+Id :	11titolo :	Grammatica italianaricavo totale :	2750.0
+Id :	12titolo :	Kobane calling. Oggi:ricavo totale :	44000.0
+Id :	13titolo :	A babbo morto. Una storia di Natale ricavo totale :	1100.0
+Id :	14titolo :	Scheletriricavo totale :	20000.0
+Id :	15titolo :	La scuola di pizze in faccia del professor Calcarericavo totale :	21400.0
+Id :	16titolo :	Dodiciricavo totale :	11000.0
+Id :	17titolo :	Tecniche proibite di persuasione, manipolazione e influenza utilizzando schemi di linguaggio e tecniche di PNLricavo totale :	15400.0
+Id :	18titolo :	CiccioGamer89 Presenta Fortnite. Trucchi e Segretiricavo totale :	110.0
+Id :	19titolo :	titolo modificatoricavo totale :	774.0
+Id :	21titolo :	libro provaricavo totale :	197.44
+Id :	22titolo :	libro provaricavo totale :	197.44
+Id :	23titolo :	libro provaricavo totale :	197.44
+Id :	24titolo :	libro provaricavo totale :	197.44
+Id :	25titolo :	libro provaricavo totale :	197.44
+Id :	26titolo :	libro provaricavo totale :	197.44
+Id :	27titolo :	libro provaricavo totale :	197.44
+Id :	28titolo :	libro provaricavo totale :	197.44
+Id :	29titolo :	libro provaricavo totale :	197.44
+Id :	30titolo :	libro provaricavo totale :	197.44
+Id :	31titolo :	libro provaricavo totale :	197.44
+Id :	32titolo :	libro provaricavo totale :	197.44
+Id :	33titolo :	libro provaricavo totale :	197.44
+Id :	34titolo :	libro provaricavo totale :	197.44
+Id :	35titolo :	libro provaricavo totale :	197.44
+Id :	36titolo :	libro provaricavo totale :	197.44
+Id :	37titolo :	libro provaricavo totale :	197.44
+Id :	38titolo :	libro provaricavo totale :	197.44
+Id :	39titolo :	libro provaricavo totale :	197.44
+Id :	40titolo :	libro provaricavo totale :	197.44
+Id :	41titolo :	libro provaricavo totale :	197.44
+Id :	42titolo :	libro provaricavo totale :	197.44
+Id :	43titolo :	libro provaricavo totale :	197.44
+Id :	44titolo :	libro provaricavo totale :	197.44
+Id :	45titolo :	libro provaricavo totale :	197.44
+Id :	46titolo :	libro provaricavo totale :	197.44
+Id :	47titolo :	libro provaricavo totale :	197.44
+Id :	48titolo :	libro provaricavo totale :	197.44

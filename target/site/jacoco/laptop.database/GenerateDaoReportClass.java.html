@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GenerateDaoReportClass.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LibreriaMaven Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.database</a> &gt; <span class="el_source">GenerateDaoReportClass.java</span></div><h1>GenerateDaoReportClass.java</h1><pre class="source lang-java linenums">package laptop.database;
+/*
+ this class was created for
+ reduce complexity and duplication for sonarcloud
+ */
+
+import laptop.model.TempUser;
+import laptop.utilities.ConnToDb;
+
+import java.io.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+<span class="fc" id="L18">public class GenerateDaoReportClass {</span>
+    public String getQuery() {
+<span class="fc" id="L20">        return query;</span>
+    }
+
+    public void setQuery(String query) {
+<span class="fc" id="L24">        this.query = query;</span>
+<span class="fc" id="L25">    }</span>
+
+    private String query;
+
+
+
+    public boolean generateReport(String type,String path) throws IOException {
+<span class="fc" id="L32">        boolean status=false;</span>
+
+<span class="pc bpc" id="L34" title="2 of 5 branches missed.">        switch (type) {</span>
+            case &quot;libro&quot;:
+<span class="fc" id="L36">                setQuery(&quot;select  idLibro ,titolo,copieRimanenti,prezzo  from LIBRO&quot;);</span>
+<span class="fc" id="L37">                path = &quot;riepilogoLibri.txt&quot;;</span>
+<span class="fc" id="L38">                status=writetoFileLGR(&quot;libro&quot;,path);</span>
+<span class="fc" id="L39">                break;</span>
+            case &quot;giornale&quot;:
+<span class="fc" id="L41">                setQuery(&quot;select  idGiornale ,titolo,copieRimanenti,prezzo  from GIORNALE&quot;);</span>
+<span class="fc" id="L42">                path = &quot;riepilogoGiornali.txt&quot;;</span>
+<span class="fc" id="L43">                status=writetoFileLGR(&quot;giornale&quot;,path);</span>
+<span class="fc" id="L44">                break;</span>
+            case &quot;rivista&quot;:
+<span class="fc" id="L46">                setQuery(&quot;select  idRivista ,titolo,copieRimanenti,prezzo  from RIVISTA&quot;);</span>
+<span class="fc" id="L47">                path = &quot;riepilogoRiviste.txt&quot;;</span>
+<span class="fc" id="L48">                status=writetoFileLGR(&quot;rivista&quot;,path);</span>
+<span class="fc" id="L49">                break;</span>
+            case &quot;utente&quot;, &quot;utenti&quot;:
+<span class="nc" id="L51">                setQuery(&quot;select  * from USERS&quot;);</span>
+<span class="nc" id="L52">                path = &quot;riepilogoUtenti.txt&quot;;</span>
+<span class="nc" id="L53">                status=writeToFileU(path);</span>
+<span class="nc" id="L54">                break;</span>
+            default:
+                break;
+
+        }
+<span class="fc" id="L59">       return status;</span>
+
+    }
+
+    private boolean writetoFileLGR(String type,String path) throws IOException {
+<span class="fc" id="L64">        boolean status=false;</span>
+<span class="pc bpc" id="L65" title="1 of 2 branches missed.">        switch (type)</span>
+        {
+            case &quot;libro&quot;,&quot;giornale&quot;,&quot;rivista&quot;:
+<span class="fc" id="L68">                try (BufferedWriter b = new BufferedWriter(new FileWriter(path))) {</span>
+<span class="fc" id="L69">                    try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="fc" id="L70">                         PreparedStatement prepQ = conn.prepareStatement(getQuery())) {</span>
+<span class="fc" id="L71">                        ResultSet rs= prepQ.executeQuery();</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">                        while(rs.next())</span>
+                        {
+<span class="fc" id="L74">                            b.write(&quot;Id :\t&quot;+rs.getInt(1) + &quot;titolo :\t&quot; + rs.getString(2)+&quot;ricavo totale :\t&quot;+ rs.getInt(3)*rs.getFloat(4)  +&quot;\n&quot;);</span>
+
+                        }
+
+<span class="nc" id="L78">                    } catch (SQLException e) {</span>
+<span class="nc" id="L79">                        java.util.logging.Logger.getLogger(&quot;Test Eccezione genera report&quot;).log(Level.INFO, &quot;Error in SQL&quot;, e);</span>
+<span class="fc" id="L80">                    }</span>
+<span class="fc" id="L81">                    b.flush();</span>
+                }
+<span class="pc bpc" id="L83" title="1 of 2 branches missed.">                if (!path.isEmpty())</span>
+<span class="fc" id="L84">                    status=true;</span>
+        }
+<span class="fc" id="L86">        return status;</span>
+    }
+    private boolean writeToFileU(String path) throws IOException
+    {
+<span class="nc" id="L90">        boolean status=false;</span>
+<span class="nc" id="L91">        try (BufferedWriter b = new BufferedWriter(new FileWriter(path))) {</span>
+<span class="nc" id="L92">            query = &quot;select * from USERS&quot;;</span>
+
+
+<span class="nc" id="L95">            try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="nc" id="L96">                 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
+
+<span class="nc" id="L98">                ResultSet rs = prepQ.executeQuery();</span>
+
+
+<span class="nc bnc" id="L101" title="All 2 branches missed.">                while (rs.next()) {</span>
+
+<span class="nc" id="L103">                    TempUser.getInstance().setId(rs.getInt(1));</span>
+<span class="nc" id="L104">                    TempUser.getInstance().setIdRuolo(rs.getString(2));</span>
+<span class="nc" id="L105">                    TempUser.getInstance().setNomeT(rs.getString(3));</span>
+<span class="nc" id="L106">                    TempUser.getInstance().setCognomeT(rs.getString(4));</span>
+<span class="nc" id="L107">                    TempUser.getInstance().setEmailT(rs.getString(5));</span>
+<span class="nc" id="L108">                    TempUser.getInstance().setDescrizioneT(rs.getString(7));</span>
+<span class="nc" id="L109">                    TempUser.getInstance().setDataDiNascitaT(rs.getDate(8).toLocalDate());</span>
+<span class="nc" id="L110">                    b.write(TempUser.getInstance().getId() + &quot;\t&quot; + TempUser.getInstance().getIdRuolo() + &quot;\t&quot; + TempUser.getInstance().getNomeT() + &quot;\t&quot; + TempUser.getInstance().getCognomeT() +</span>
+<span class="nc" id="L111">                            &quot;\t&quot; + TempUser.getInstance().getEmailT() + &quot;\t&quot; + TempUser.getInstance().getDescrizioneT() + &quot;\t&quot; + TempUser.getInstance().getDataDiNascitaT().toString() + &quot;\n&quot;);</span>
+
+                }
+<span class="nc" id="L114">            } catch (SQLException e1) {</span>
+<span class="nc" id="L115">                Logger.getLogger(&quot;lista utenti&quot;).log(Level.SEVERE, &quot;\n eccezione ottenuta .&quot;, e1);</span>
+
+<span class="nc" id="L117">            }</span>
+<span class="nc" id="L118">            b.flush();</span>
+
+        }
+<span class="nc bnc" id="L121" title="All 2 branches missed.">        if(!path.isEmpty())</span>
+<span class="nc" id="L122">            status=true;</span>
+<span class="nc" id="L123">        return status;</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

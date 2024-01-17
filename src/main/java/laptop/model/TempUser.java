@@ -121,8 +121,6 @@ public String getIdRuolo()  {
 			case "SCRITTORE","W","S":
 				r = RuoliT.SCRITTORE.toString();
 				break;
-
-
              default:
 				r= RuoliT.UTENTE.toString();
 				break;

@@ -105,7 +105,6 @@ public class User {
 			case "SCRITTORE", "W":
 				r = Ruoli.SCRITTORE.toString();
 				break;
-
              default:
 				r= Ruoli.UTENTE.toString();
 				break;

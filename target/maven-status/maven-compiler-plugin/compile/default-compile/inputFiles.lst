@@ -69,6 +69,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/view/BoundaryRicercaPerTipo.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/controller/ControllerSystemState.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/AcquistaServlet.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/database/GenerateDaoReportClass.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/model/TempUser.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/laptop/model/raccolta/CategorieLibro.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/main/java/web/servlet/IndexServlet.java

@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.rmi.server.ExportException;
+import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -40,11 +40,13 @@ public class LibroDao implements DaoInterface{
 	private final File fd;
 	private final File fd1;
 	private static final String REPORTLIBRIWEB="src/main/webapp/riepilogoLibri.txt";
+	private final GenerateDaoReportClass gRC;
 
 	public LibroDao() throws IOException {
 		f = new Factory();
 		this.fd=new File(REPORTLIBRI);
 		this.fd1=new File(REPORTLIBRIWEB);
+		gRC=new GenerateDaoReportClass();
 
 	}
 
@@ -315,86 +317,77 @@ public class LibroDao implements DaoInterface{
 
 	public void generaReport() throws IOException {
 
+		Path path = Path.of(REPORTLIBRI);
+		Path path1 = Path.of(REPORTLIBRIWEB);
+
 		try {
-			if (!fd.exists()) {
-				throw new IOException("file not exists");
-			}
+			cleanUp(path1);
+
+			if(!fd.exists())
+				throw new IOException("file "+ fd.getPath() +" not exists -> creating");
 			if(fd.exists())
 			{
-				cleanUp(Path.of(REPORTLIBRI));
-					throw new IOException("file deleted -> not exists");
-
+				cleanUp(path);
+				throw new IOException("file "+ fd.getPath()+" -> deleted not exists -> creating");
 			}
+
 		} catch (IOException e) {
 			java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, ECCEZIONE, e);
 
-			if (fd.createNewFile()) {
-
-
-				try (BufferedWriter b = new BufferedWriter(new FileWriter(REPORTLIBRI))) {
-
-					query = "select titolo,copieRimanenti,prezzo  from LIBRO";
-
-					try (Connection conn = ConnToDb.connectionToDB();
-						 PreparedStatement prepQ = conn.prepareStatement(query)) {
-
-						ResultSet rs = prepQ.executeQuery();
-
-
-						while (rs.next()) {
-
-							b.write("Titolo :" + rs.getString("titolo") + "\t" + "Ricavo totale :" + rs.getInt("copieRimanenti") * rs.getFloat("prezzo") + "\n");
-
-							b.flush();
-
-						}
-
-					} catch (SQLException e1) {
-						java.util.logging.Logger.getLogger("Test Eccezione sqlexception").log(Level.INFO, ECCEZIONE, e1);
+			if(fd.createNewFile()) {
+				java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd.getPath());
+				//codice per report non so se mettere in altra classe
+				if(!gRC.generateReport("libro",REPORTLIBRI))
+					throw new IOException(" report not generaterd");
+				try {
+					if (!fd1.exists())
+						throw new IOException("file "+ fd1.getPath()+ "-> not exists");
+					if(fd1.exists())
+					{
+						cleanUp(path1);
+						throw new IOException("file "+ fd1.getPath()+" deleted -> not exists -> creating");
 					}
+				}catch (IOException e1)
+				{
+					java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, ECCEZIONE, e1);
+
+					if(fd1.createNewFile())
+						java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd1.getPath());
+
 				}
 
-
 			}
-		}
-		try{
-			if(!fd1.exists())
-				throw new IOException("file web not found");
-			if(fd1.exists())
-			{
-				cleanUp(Path.of(REPORTLIBRIWEB));
-				throw new IOException( " file web deleted -> not found");
-			}
-		}catch (IOException e2)
-		{
-
-				if(fd1.createNewFile())
-					Files.copy(Path.of(REPORTLIBRI), Path.of(REPORTLIBRIWEB));
 
 		}
+		java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "coping file ");
+
+		Files.copy(path,path1, StandardCopyOption.REPLACE_EXISTING);
 	}
 
 
-	public void incrementaDisponibilita(Libro l) {
-		int d = vis.getQuantita();
-		int i = l.getNrCopie();
-
-		int rim = i + d;
-		query = "update LIBRO set copieRimanenti= ? where codIsbn=? or idLibro=?";
 
 
-		try (Connection conn = ConnToDb.connectionToDB();
-			 PreparedStatement prepQ = conn.prepareStatement(query)) {
-			prepQ.setInt(1, rim);
-			prepQ.setString(2, l.getCodIsbn());
-			prepQ.setInt(3, l.getId());
-			prepQ.executeUpdate();
-		} catch (SQLException e) {
-			java.util.logging.Logger.getLogger("Test incremeta disp").log(Level.INFO, ECCEZIONE, e);
+
+	public void incrementaDisponibilita(Libro l){
+			int d = vis.getQuantita();
+			int i = l.getNrCopie();
+
+			int rim = i + d;
+			query = "update LIBRO set copieRimanenti= ? where codIsbn=? or idLibro=?";
+
+
+			try (Connection conn = ConnToDb.connectionToDB();
+				 PreparedStatement prepQ = conn.prepareStatement(query)) {
+				prepQ.setInt(1, rim);
+				prepQ.setString(2, l.getCodIsbn());
+				prepQ.setInt(3, l.getId());
+				prepQ.executeUpdate();
+			} catch (SQLException e) {
+				java.util.logging.Logger.getLogger("Test incremeta disp").log(Level.INFO, ECCEZIONE, e);
+			}
 		}
 
 
-	}
 
 	public void aggiornaData(Libro l, Date sqlDate) throws SQLException {
 		int row;
@@ -411,9 +404,12 @@ public class LibroDao implements DaoInterface{
 		java.util.logging.Logger.getLogger("aggiorna data").log(Level.INFO, "libri aggiornati {0}.", row);
 
 	}
-	public static void cleanUp(Path path) throws IOException {
+
+	private static void cleanUp(Path path) throws IOException {
 		Files.delete(path);
 	}
+
+
 
 }
 

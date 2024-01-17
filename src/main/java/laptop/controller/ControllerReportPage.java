@@ -10,9 +10,9 @@ import laptop.database.RivistaDao;
 import laptop.database.UsersDao;
 
 public class ControllerReportPage {
-	private LibroDao lD;
-	private GiornaleDao gD;
-	private RivistaDao rD;
+	private final LibroDao lD;
+	private final GiornaleDao gD;
+	private final RivistaDao rD;
 	protected String fileLibro = "riepilogoLibri.txt";
 	protected String fileGiornale ="riepilogoGiornali.txt";
 	protected String fileRiviste = "riepilogoRiviste.txt";
@@ -100,7 +100,8 @@ public class ControllerReportPage {
 	}
 	public String leggiUtenti() throws IOException {
 		generaReportUtenti();
-		StringBuilder builder = new StringBuilder();
+
+	StringBuilder builder = new StringBuilder();
 		String line;
 		try (BufferedReader readerU = new BufferedReader(new FileReader(fileUtenti))) {
 			while ((line = readerU.readLine()) != null) {

@@ -11,8 +11,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import laptop.controller.ControllerReportPage;
 import laptop.database.CsvDao;
 
+import laptop.database.LibroDao;
+import laptop.database.UsersDao;
 import laptop.utilities.ConnToDb;
 
 

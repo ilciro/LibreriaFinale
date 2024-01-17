@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.sql.*;
 import java.time.LocalDate;
 
@@ -32,6 +33,7 @@ public class UsersDao {
 	private static final File fd=new File(TXT_FILE_NAME);
 	private static final File fd1=new File(TXT_FILE_NAME_WEB);
 
+	private static GenerateDaoReportClass gRC;
 
 
 
@@ -258,79 +260,56 @@ public class UsersDao {
 
 	public static void getListaUtenti() throws IOException {
 
-
+		Path path = Path.of(TXT_FILE_NAME);
+		Path path1 = Path.of(TXT_FILE_NAME_WEB);
+		gRC=new GenerateDaoReportClass();
 
 		try {
+			cleanUp(path1);
 
-            if (!fd.exists()) {
-                throw new IOException("file not exists");
-            }
-			if(fd.exists()) {
-				cleanUp(Path.of(TXT_FILE_NAME));
-				throw new IOException("file deleted -> not exists");
+			if(!fd.exists())
+				throw new IOException("file "+ fd.getPath() +" not exists -> creating");
+			if(fd.exists())
+			{
+				cleanUp(path);
+				throw new IOException("file "+ fd.getPath()+" -> deleted not exists -> creating");
 			}
-        } catch (IOException|NullPointerException e) {
 
+		} catch (IOException e) {
+			java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, ECCEZIONE, e);
 
-				try (BufferedWriter b = new BufferedWriter(new FileWriter(TXT_FILE_NAME))) {
-					query = "select * from USERS";
-
-
-					try (Connection conn = ConnToDb.connectionToDB();
-						 PreparedStatement prepQ = conn.prepareStatement(query)) {
-
-						ResultSet rs = prepQ.executeQuery();
-
-
-						while (rs.next()) {
-
-							TempUser.getInstance().setId(rs.getInt(1));
-							TempUser.getInstance().setIdRuolo(rs.getString(2));
-							TempUser.getInstance().setNomeT(rs.getString(3));
-							TempUser.getInstance().setCognomeT(rs.getString(4));
-							TempUser.getInstance().setEmailT(rs.getString(5));
-							TempUser.getInstance().setDescrizioneT(rs.getString(7));
-							TempUser.getInstance().setDataDiNascitaT(rs.getDate(8).toLocalDate());
-							b.write(TempUser.getInstance().getId() + "\t" + TempUser.getInstance().getIdRuolo() + "\t" + TempUser.getInstance().getNomeT() + "\t" + TempUser.getInstance().getCognomeT() +
-									"\t" + TempUser.getInstance().getEmailT() + "\t" + TempUser.getInstance().getDescrizioneT() + "\t" + TempUser.getInstance().getDataDiNascitaT().toString() + "\n");
-
-						}
-					} catch (SQLException e1) {
-						Logger.getLogger("lista utenti").log(Level.SEVERE, "\n eccezione ottenuta .", e1);
-
+			if(fd.createNewFile()) {
+				java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd.getPath());
+				//codice per report non so se mettere in altra classe
+				if(!gRC.generateReport("utenti",TXT_FILE_NAME))
+					throw new IOException(" report not generaterd");
+				try {
+					if (!fd1.exists())
+						throw new IOException("file "+ fd1.getPath()+ "-> not exists");
+					if(fd1.exists())
+					{
+						cleanUp(path1);
+						throw new IOException("file "+ fd1.getPath()+" deleted -> not exists -> creating");
 					}
-					b.flush();
+				}catch (IOException e1)
+				{
+					java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, ECCEZIONE, e1);
+
+					if(fd1.createNewFile())
+						java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd1.getPath());
 
 				}
 
-		}
-		try{
-			if(!fd1.exists())
-				throw new IOException("file web not found");
-			if(fd1.exists())
-			{
-				cleanUp(Path.of(TXT_FILE_NAME_WEB));
-				throw new IOException( " file web deleted -> not found");
 			}
-		}catch (IOException e2)
-		{
-
-			if(fd1.createNewFile())
-				Files.copy(Path.of(TXT_FILE_NAME), Path.of(TXT_FILE_NAME_WEB));
 
 		}
+		java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "coping file ");
+
+		Files.copy(path,path1, StandardCopyOption.REPLACE_EXISTING);
 
 
 
-
-
-
-
-
-
-
-
-	}
+}
 
 	public static TempUser getTempUserSingolo(TempUser uT) throws SQLException {
 
@@ -470,7 +449,7 @@ public class UsersDao {
 		return row;
 	}
 
-	public static void cleanUp(Path path) throws IOException {
+	private static void cleanUp(Path path) throws IOException {
 		Files.delete(path);
 	}
 }

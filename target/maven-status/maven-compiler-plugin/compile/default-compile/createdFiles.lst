@@ -14,6 +14,7 @@ web/servlet/FatturaServlet.class
 laptop/model/User$Ruoli.class
 laptop/view/BoundaryCompravendita.class
 laptop/view/Main.class
+laptop/database/GenerateDaoReportClass.class
 web/bean/DownloadBean.class
 web/servlet/RivisteServlet.class
 laptop/exception/AcquistaException.class

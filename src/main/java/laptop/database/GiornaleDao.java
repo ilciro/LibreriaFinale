@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -24,49 +25,50 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class GiornaleDao {
-	
+
 	private final Factory f;
-	
 
-	private  String query  ;
-	
 
-	private boolean state=false;
-	private final ControllerSystemState vis=ControllerSystemState.getInstance();
+	private String query;
+
+
+	private boolean state = false;
+	private final ControllerSystemState vis = ControllerSystemState.getInstance();
 	private static final String GIORNALE = "giornale";
-	private static final String ECCEZIONE="eccezione generata:";
+	private static final String ECCEZIONE = "eccezione generata:";
 
-	private static final String RIEPILOGOGIORNALI="riepilogoGiornali.txt";
-	private static final String RIEPILOGOGIORNALIWEB="src/main/webapp/riepilogoGiornali.txt";
+	private static final String RIEPILOGOGIORNALI = "riepilogoGiornali.txt";
+	private static final String RIEPILOGOGIORNALIWEB = "src/main/webapp/riepilogoGiornali.txt";
 
 	private final File fd;
 	private final File fd1;
+	private final GenerateDaoReportClass gRC;
 
 	public GiornaleDao() {
 		f = new Factory();
-		this.fd=new File(RIEPILOGOGIORNALI);
-		this.fd1=new File(RIEPILOGOGIORNALIWEB);
+		this.fd = new File(RIEPILOGOGIORNALI);
+		this.fd1 = new File(RIEPILOGOGIORNALIWEB);
+		gRC = new GenerateDaoReportClass();
 
 	}
 
 	public Giornale getData(Giornale g) {
 
-		 query ="select * from GIORNALE where idGiornale=? or idGiornale=?";
+		query = "select * from GIORNALE where idGiornale=? or idGiornale=?";
 
 		try (Connection conn = ConnToDb.connectionToDB();
-			 PreparedStatement prepQ= conn.prepareStatement(query))  {
+			 PreparedStatement prepQ = conn.prepareStatement(query)) {
 
-			prepQ.setInt(1,g.getId());
-			prepQ.setInt(2,vis.getId());
-			ResultSet rs=prepQ.executeQuery();
-			while (rs.next())
-			{
-				f.createRaccoltaFinale1(GIORNALE, rs.getString(1), null, rs.getString(4), null,rs.getString(4), rs.getString(3));
+			prepQ.setInt(1, g.getId());
+			prepQ.setInt(2, vis.getId());
+			ResultSet rs = prepQ.executeQuery();
+			while (rs.next()) {
+				f.createRaccoltaFinale1(GIORNALE, rs.getString(1), null, rs.getString(4), null, rs.getString(4), rs.getString(3));
 
 
-				f.createRaccoltaFinale2(GIORNALE, 0, rs.getInt(6), rs.getInt(7),rs.getFloat(8),rs.getInt(9));
+				f.createRaccoltaFinale2(GIORNALE, 0, rs.getInt(6), rs.getInt(7), rs.getFloat(8), rs.getInt(9));
 
-				g=(Giornale) f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), rs.getString(6), null);
+				g = (Giornale) f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), rs.getString(6), null);
 
 
 			}
@@ -78,41 +80,37 @@ public class GiornaleDao {
 	}
 
 
-
 	public ObservableList<Raccolta> getGiornaliIdTitoloAutore(Giornale g) {
 		ObservableList<Raccolta> catalogo = FXCollections.observableArrayList();
 
 
-		if(g.getId()<0 )
-		{
+		if (g.getId() < 0) {
 			query = "select * from GIORNALE";
 
-		}
-		else
+		} else
 
 			query = "select * from GIORNALE where idGiornale=? or idGiornale=? or titolo=? or editore=?";
 		try (Connection conn = ConnToDb.connectionToDB();
-			 PreparedStatement prepQ= conn.prepareStatement(query))  {
+			 PreparedStatement prepQ = conn.prepareStatement(query)) {
 
 
-            prepQ.setInt(1,g.getId());
-			prepQ.setInt(2,vis.getId());
-			prepQ.setString(3,g.getTitolo());
-			prepQ.setString(4,g.getEditore());
+			prepQ.setInt(1, g.getId());
+			prepQ.setInt(2, vis.getId());
+			prepQ.setString(3, g.getTitolo());
+			prepQ.setString(4, g.getEditore());
 
-			ResultSet rs=prepQ.executeQuery();
-			while (rs.next())
-			{
-				f.createRaccoltaFinale1(GIORNALE, rs.getString(1), null, rs.getString(4), null,rs.getString(4), rs.getString(3));
+			ResultSet rs = prepQ.executeQuery();
+			while (rs.next()) {
+				f.createRaccoltaFinale1(GIORNALE, rs.getString(1), null, rs.getString(4), null, rs.getString(4), rs.getString(3));
 
 
-				f.createRaccoltaFinale2(GIORNALE, 0, rs.getInt(6), rs.getInt(7),rs.getFloat(8),rs.getInt(9));
+				f.createRaccoltaFinale2(GIORNALE, 0, rs.getInt(6), rs.getInt(7), rs.getFloat(8), rs.getInt(9));
 
 				catalogo.add(f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), rs.getString(6), null));
 
 
 			}
-		} catch (SQLException |NullPointerException e) {
+		} catch (SQLException | NullPointerException e) {
 			java.util.logging.Logger.getLogger("get giornale id").log(Level.INFO, ECCEZIONE, e);
 		}
 		return catalogo;
@@ -120,26 +118,25 @@ public class GiornaleDao {
 
 	public ObservableList<Giornale> getGiornaleIdTitoloAutore(Giornale g) {
 		ObservableList<Giornale> catalogo = FXCollections.observableArrayList();
-		String[] info =new String[7];
+		String[] info = new String[7];
 
 
 		query = "select * from GIORNALE where idGiornale=? or idGiornale=? or titolo=? or editore=?";
 		try (Connection conn = ConnToDb.connectionToDB();
-			 PreparedStatement prepQ= conn.prepareStatement(query))  {
+			 PreparedStatement prepQ = conn.prepareStatement(query)) {
 
-			prepQ.setInt(1,g.getId());
-			prepQ.setInt(2,vis.getId());
-			prepQ.setString(3,g.getTitolo());
-			prepQ.setString(4,g.getEditore());
+			prepQ.setInt(1, g.getId());
+			prepQ.setInt(2, vis.getId());
+			prepQ.setString(3, g.getTitolo());
+			prepQ.setString(4, g.getEditore());
 
-			ResultSet rs=prepQ.executeQuery();
-			while (rs.next())
-			{
-				info[0]=rs.getString("titolo");
-				info[2]=rs.getString("editore");
-				info[4]=rs.getString("lingua");
-				info[5]=rs.getString("tipologia");
-				catalogo.add((Giornale) f.creaGiornale(info,rs.getDate("dataPubblicazione").toLocalDate(),rs.getInt("copieRimanenti"),rs.getInt("disp"),rs.getFloat("prezzo"),rs.getInt("idGiornale")));
+			ResultSet rs = prepQ.executeQuery();
+			while (rs.next()) {
+				info[0] = rs.getString("titolo");
+				info[2] = rs.getString("editore");
+				info[4] = rs.getString("lingua");
+				info[5] = rs.getString("tipologia");
+				catalogo.add((Giornale) f.creaGiornale(info, rs.getDate("dataPubblicazione").toLocalDate(), rs.getInt("copieRimanenti"), rs.getInt("disp"), rs.getFloat("prezzo"), rs.getInt("idGiornale")));
 
 			}
 		} catch (SQLException e) {
@@ -149,40 +146,33 @@ public class GiornaleDao {
 	}
 
 
-
-	public void aggiornaDisponibilita(Giornale g) throws SQLException
-	{
+	public void aggiornaDisponibilita(Giornale g) throws SQLException {
 		//vedere il segno che cambia
-		int d=vis.getQuantita();
-		int i=g.getCopieRimanenti();
-		int rim=i-d;
+		int d = vis.getQuantita();
+		int i = g.getCopieRimanenti();
+		int rim = i - d;
 
 
+		query = "update GIORNALE set copieRimanenti=? where  idGiornale=?";
 
-
-
-		query="update GIORNALE set copieRimanenti=? where  idGiornale=?";
-
-		try(Connection conn=ConnToDb.connectionToDB();
-			PreparedStatement prepQ=conn.prepareStatement(query))
-		{
+		try (Connection conn = ConnToDb.connectionToDB();
+			 PreparedStatement prepQ = conn.prepareStatement(query)) {
 			prepQ.setInt(1, rim);
 			prepQ.setInt(2, g.getId());
 			prepQ.executeUpdate();
-		}catch(SQLException e)
-		{
+		} catch (SQLException e) {
 			java.util.logging.Logger.getLogger("aggiorna disp l").log(Level.INFO, ECCEZIONE, e);
 		}
 
 
-
 	}
+
 	// Creo il Giornale nel terzo caso d'uso per l'aggiunta manuale
-	public  boolean creaGiornale(Giornale g) throws SQLException  {
+	public boolean creaGiornale(Giornale g) throws SQLException {
 		int row;
 
 
-		query= "INSERT INTO `GIORNALE`"
+		query = "INSERT INTO `GIORNALE`"
 				+ "(`titolo`,"
 				+ "`tipologia`,"
 				+ "`lingua`,"
@@ -193,25 +183,23 @@ public class GiornaleDao {
 				+ "`prezzo`)"
 				+ "VALUES"
 				+ "(?,?,?,?,?,?,?,?)";
-		try(Connection conn=ConnToDb.connectionToDB();
-			PreparedStatement prepQ=conn.prepareStatement(query))
-		{
+		try (Connection conn = ConnToDb.connectionToDB();
+			 PreparedStatement prepQ = conn.prepareStatement(query)) {
 
-			prepQ.setString(1,g.getTitolo());
-			prepQ.setString(2,g.getTipologia());
-			prepQ.setString(3,g.getLingua());
-			prepQ.setString(4,g.getEditore());
+			prepQ.setString(1, g.getTitolo());
+			prepQ.setString(2, g.getTipologia());
+			prepQ.setString(3, g.getLingua());
+			prepQ.setString(4, g.getEditore());
 			prepQ.setDate(5, java.sql.Date.valueOf(g.getDataPubb().toString()));
-			prepQ.setInt(6,g.getCopieRimanenti());
+			prepQ.setInt(6, g.getCopieRimanenti());
 			prepQ.setInt(7, g.getDisponibilita());
 			prepQ.setFloat(8, g.getPrezzo());
 
 
-			row=prepQ.executeUpdate();
-			state= row == 1; // true
+			row = prepQ.executeUpdate();
+			state = row == 1; // true
 
-		}catch(SQLException e)
-		{
+		} catch (SQLException e) {
 			java.util.logging.Logger.getLogger("creazione giornale").log(Level.INFO, ECCEZIONE, e);
 		}
 
@@ -220,27 +208,28 @@ public class GiornaleDao {
 
 
 	}
+
 	public int cancella(Giornale l) throws SQLException {
 		int row;
-		query="delete from GIORNALE where idGiornale=? or idGiornale=?";
+		query = "delete from GIORNALE where idGiornale=? or idGiornale=?";
 
-		try(Connection conn=ConnToDb.connectionToDB();
-			PreparedStatement prepQ=conn.prepareStatement(query))
-		{
+		try (Connection conn = ConnToDb.connectionToDB();
+			 PreparedStatement prepQ = conn.prepareStatement(query)) {
 			prepQ.setInt(1, l.getId());
-			prepQ.setInt(2,vis.getId());
-			row=prepQ.executeUpdate();
+			prepQ.setInt(2, vis.getId());
+			row = prepQ.executeUpdate();
 		}
 
-		java.util.logging.Logger.getLogger("Cancella Giornale").log(Level.INFO,"Giornale cancellato {0}",row);
+		java.util.logging.Logger.getLogger("Cancella Giornale").log(Level.INFO, "Giornale cancellato {0}", row);
 		return row;
 
 	}
-	public  int aggiornaGiornale(Giornale g) throws SQLException  {
-		int row=0;
+
+	public int aggiornaGiornale(Giornale g) throws SQLException {
+		int row = 0;
 
 
-		query=" UPDATE `GIORNALE`"
+		query = " UPDATE `GIORNALE`"
 				+ "SET"
 				+ "`titolo` =?,"
 				+ "`tipologia` = ?,"
@@ -251,87 +240,73 @@ public class GiornaleDao {
 				+ "`disp` = ?,"
 				+ "`prezzo` = ?"
 				+ "WHERE `idGiornale` = ? or idGiornale=?";
-		try(Connection conn=ConnToDb.connectionToDB();
-			PreparedStatement prepQ=conn.prepareStatement(query))
-		{
-			prepQ.setString(1,g.getTitolo());
-			prepQ.setString(2,g.getTipologia());
-			prepQ.setString(3,g.getLingua());
+		try (Connection conn = ConnToDb.connectionToDB();
+			 PreparedStatement prepQ = conn.prepareStatement(query)) {
+			prepQ.setString(1, g.getTitolo());
+			prepQ.setString(2, g.getTipologia());
+			prepQ.setString(3, g.getLingua());
 			prepQ.setString(4, g.getEditore());
-			prepQ.setString(5,g.getDataPubb().toString());
-			prepQ.setInt(6,g.getCopieRimanenti());
-			prepQ.setInt(7,g.getDisponibilita());
-			prepQ.setFloat(8,g.getPrezzo());
+			prepQ.setString(5, g.getDataPubb().toString());
+			prepQ.setInt(6, g.getCopieRimanenti());
+			prepQ.setInt(7, g.getDisponibilita());
+			prepQ.setFloat(8, g.getPrezzo());
 			prepQ.setInt(9, g.getId());
 			prepQ.setInt(10, vis.getId());
 
 
-
-			row=prepQ.executeUpdate();
-		}catch(SQLException e)
-		{
+			row = prepQ.executeUpdate();
+		} catch (SQLException e) {
 			java.util.logging.Logger.getLogger("update g").log(Level.INFO, ECCEZIONE, e);
 		}
 
 		return row;
 
 	}
+
 	public void generaReport() throws IOException {
 
+		Path path = Path.of(RIEPILOGOGIORNALI);
+		Path path1 = Path.of(RIEPILOGOGIORNALIWEB);
+
 		try {
-			if (!fd.exists()) {
-				throw new IOException("file not exists");
-			}
-			if(fd.exists())
-			{
-				cleanUp(Path.of(RIEPILOGOGIORNALI));
-					throw new IOException("file deleted -> not exists");
+			cleanUp(path1);
 
+			if (!fd.exists())
+				throw new IOException("file " + fd.getPath() + " not exists -> creating");
+			if (fd.exists()) {
+				cleanUp(path);
+				throw new IOException("file " + fd.getPath() + " -> deleted not exists -> creating");
 			}
+
 		} catch (IOException e) {
-			java.util.logging.Logger.getLogger("Test genera report").log(Level.INFO, ECCEZIONE, e);
+			java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, ECCEZIONE, e);
+
 			if (fd.createNewFile()) {
-
-
-				try (BufferedWriter b = new BufferedWriter(new FileWriter(RIEPILOGOGIORNALI))) {
-
-					query = "select titolo,copieRimanenti,prezzo  from GIORNALE";
-
-					try (Connection conn = ConnToDb.connectionToDB();
-						 PreparedStatement prepQ = conn.prepareStatement(query)) {
-
-						ResultSet rs = prepQ.executeQuery();
-
-
-						while (rs.next()) {
-
-							b.write("Titolo :" + rs.getString("titolo") + "\t" + "Ricavo totale :" + rs.getInt("copieRimanenti") * rs.getFloat("prezzo") + "\n");
-
-							b.flush();
-
-						}
-
-					} catch (SQLException e1) {
-						java.util.logging.Logger.getLogger("Test Eccezione report").log(Level.INFO, ECCEZIONE, e1);
+				java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd.getPath());
+				//codice per report non so se mettere in altra classe
+				if (!gRC.generateReport("giornale", RIEPILOGOGIORNALI))
+					throw new IOException(" report not generaterd");
+				try {
+					if (!fd1.exists())
+						throw new IOException("file " + fd1.getPath() + "-> not exists");
+					if (fd1.exists()) {
+						cleanUp(path1);
+						throw new IOException("file " + fd1.getPath() + " deleted -> not exists -> creating");
 					}
+				} catch (IOException e1) {
+					java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, ECCEZIONE, e1);
+
+					if (fd1.createNewFile())
+						java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd1.getPath());
+
 				}
-			}
-		}
-		try{
-			if(!fd1.exists())
-				throw new IOException("file web not found");
-			if(fd1.exists())
-			{
-				cleanUp(Path.of(RIEPILOGOGIORNALIWEB));
-				throw new IOException( " file web deleted -> not found");
-			}
-		}catch (IOException e2)
-		{
 
-			if(fd1.createNewFile())
-				Files.copy(Path.of(RIEPILOGOGIORNALI), Path.of(RIEPILOGOGIORNALIWEB));
+			}
 
 		}
+		java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "coping file ");
+
+		Files.copy(path, path1, StandardCopyOption.REPLACE_EXISTING);
 	}
 
 
@@ -379,7 +354,7 @@ public class GiornaleDao {
 
 	}
 
-	public static void cleanUp(Path path) throws  IOException {
+	private static void cleanUp(Path path) throws  IOException {
 		Files.delete(path);
 	}
 

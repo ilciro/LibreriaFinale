@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -43,12 +44,13 @@ public class 	RivistaDao {
 
 	private final File fd;
 	private final File fd1;
+	private final GenerateDaoReportClass gRC;
 
 	public RivistaDao() throws IOException {
 		f = new Factory();
 		this.fd=new File(RIEPILOGORIVISTE);
 		this.fd1=new File(RIEPILOGORIVISTEWEB);
-
+		gRC=new GenerateDaoReportClass();
 	}
 	public Rivista getData(Rivista r) {
 
@@ -301,62 +303,57 @@ public class 	RivistaDao {
 
 	}
 	public void generaReport() throws IOException {
+		Path path = Path.of(RIEPILOGORIVISTE);
+		Path path1 = Path.of(RIEPILOGORIVISTEWEB);
 
 		try {
-			if (!fd.exists()) {
-				throw new IOException("file not exists");
-			}
+			cleanUp(path1);
+
+			if(!fd.exists())
+				throw new IOException("file "+ fd.getPath() +" not exists -> creating");
 			if(fd.exists())
 			{
-				cleanUp(Path.of(RIEPILOGORIVISTE));
-					throw new IOException("file deleted -> not exists");
-
+				cleanUp(path);
+				throw new IOException("file "+ fd.getPath()+" -> deleted not exists -> creating");
 			}
+
 		} catch (IOException e) {
 			java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, ECCEZIONE, e);
-			if (fd.createNewFile()) {
 
-
-				try (BufferedWriter b = new BufferedWriter(new FileWriter(RIEPILOGORIVISTE))) {
-
-					query = "select titolo,copieRimanenti,prezzo  from RIVISTA";
-
-					try (Connection conn = ConnToDb.connectionToDB();
-						 PreparedStatement prepQ = conn.prepareStatement(query)) {
-
-						ResultSet rs = prepQ.executeQuery();
-
-
-						while (rs.next()) {
-
-							b.write("Titolo :" + rs.getString("titolo") + "\t" + "Ricavo totale :" + rs.getInt("copieRimanenti") * rs.getFloat("prezzo") + "\n");
-
-							b.flush();
-
-						}
-
-					} catch (SQLException e1) {
-						java.util.logging.Logger.getLogger("Test Eccezione sql").log(Level.INFO, ECCEZIONE, e1);
+			if(fd.createNewFile()) {
+				java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd.getPath());
+				//codice per report non so se mettere in altra classe
+				if(!gRC.generateReport("rivista",RIEPILOGORIVISTE))
+					throw new IOException(" report not generaterd");
+				try {
+					if (!fd1.exists())
+						throw new IOException("file "+ fd1.getPath()+ "-> not exists");
+					if(fd1.exists())
+					{
+						cleanUp(path1);
+						throw new IOException("file "+ fd1.getPath()+" deleted -> not exists -> creating");
 					}
+				}catch (IOException e1)
+				{
+					java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, ECCEZIONE, e1);
+
+					if(fd1.createNewFile())
+						java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd1.getPath());
+
 				}
-			}
-		}
-		try{
-			if(!fd1.exists())
-				throw new IOException("file web not found");
-			if(fd1.exists())
-			{
-				cleanUp(Path.of(RIEPILOGORIVISTEWEB));
-				throw new IOException( " file web deleted -> not found");
-			}
-		}catch (IOException e2)
-		{
 
-			if(fd1.createNewFile())
-				Files.copy(Path.of(RIEPILOGORIVISTE), Path.of(RIEPILOGORIVISTEWEB));
+			}
 
 		}
-	}
+		java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "coping file ");
+
+		Files.copy(path,path1, StandardCopyOption.REPLACE_EXISTING);
+
+
+
+
+
+}
 
 	public void incrementaDisponibilita(Rivista r)
 	{
@@ -401,7 +398,7 @@ public class 	RivistaDao {
 	}
 
 
-	public void cleanUp(Path path) throws IOException {
+	private void cleanUp(Path path) throws IOException {
 		Files.delete(path);
 	}
 
