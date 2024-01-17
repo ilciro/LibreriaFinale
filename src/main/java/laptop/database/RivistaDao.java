@@ -45,7 +45,7 @@ public class 	RivistaDao {
 	public RivistaDao() throws IOException {
 		f = new Factory();
 
-		gRC=new GenerateDaoReportClass("rivista");
+		gRC=new GenerateDaoReportClass(RIVISTA);
 	}
 	public Rivista getData(Rivista r) {
 

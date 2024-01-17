@@ -74,6 +74,7 @@ public class GenerateDaoReportClass {
                     this.fd=new File(TXT_FILE_NAME);
                     this.fd1=new File(TXT_FILE_NAME_WEB);
                 }
+                default -> {}
 
             }
 
@@ -111,7 +112,7 @@ public class GenerateDaoReportClass {
             case "utente", "utenti" -> {
 
             setQuery("select  * from USERS");
-            path = "riepilogoUtenti.txt";
+            path = TXT_FILE_NAME;
             status = writeToFileU(path);
          }
             default -> {
@@ -124,30 +125,29 @@ public class GenerateDaoReportClass {
 
     private boolean writetoFileLGR(String type,String path) throws IOException {
         boolean status=false;
-        switch (type)
-        {
-            case LIBRO ,GIORNALE,RIVISTA-> {
-                try (BufferedWriter b = new BufferedWriter(new FileWriter(path))) {
-                    try (Connection conn = ConnToDb.connectionToDB();
-                         PreparedStatement prepQ = conn.prepareStatement(getQuery())) {
-                        ResultSet rs = prepQ.executeQuery();
-                        while (rs.next()) {
-                            b.write("Id :\t" + rs.getInt(1) + "titolo :\t" + rs.getString(2) + "ricavo totale :\t" + rs.getInt(3) * rs.getFloat(4) + "\n");
+        if(type.equals(LIBRO)|| type.equals(GIORNALE)||type.equals(RIVISTA)) {
 
-                        }
+            try (BufferedWriter b = new BufferedWriter(new FileWriter(path))) {
+                try (Connection conn = ConnToDb.connectionToDB();
+                     PreparedStatement prepQ = conn.prepareStatement(getQuery())) {
+                    ResultSet rs = prepQ.executeQuery();
+                    while (rs.next()) {
+                        b.write("Id :\t" + rs.getInt(1) + "titolo :\t" + rs.getString(2) + "ricavo totale :\t" + rs.getInt(3) * rs.getFloat(4) + "\n");
 
-                    } catch (SQLException e) {
-                        java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "Error in SQL", e);
                     }
-                    b.flush();
-                }
 
-                if (!path.isEmpty())
-                    status = true;
+                } catch (SQLException e) {
+                    java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "Error in SQL", e);
+                }
+                b.flush();
             }
-            default -> {}
+
+            if (!path.isEmpty())
+                status = true;
         }
-        return status;
+
+            return status;
+
     }
     private boolean writeToFileU(String path) throws IOException
     {

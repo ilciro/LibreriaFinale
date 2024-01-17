@@ -41,7 +41,7 @@ public class LibroDao implements DaoInterface{
 	public LibroDao() throws IOException {
 		f = new Factory();
 
-		gRC=new GenerateDaoReportClass("libro");
+		gRC=new GenerateDaoReportClass(LIBRO);
 
 	}
 

@@ -43,7 +43,7 @@ public class GiornaleDao {
 	public GiornaleDao() {
 		f = new Factory();
 
-		gRC = new GenerateDaoReportClass("giornale");
+		gRC = new GenerateDaoReportClass(GIORNALE);
 
 	}
 
