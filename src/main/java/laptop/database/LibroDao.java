@@ -1,6 +1,5 @@
 package laptop.database;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -35,16 +34,14 @@ public class LibroDao implements DaoInterface{
 	private static final String ECCEZIONE = "ECCEZIONE generata:";
 
 	private static final String REPORTLIBRI="riepilogoLibri.txt";
-	private final File fd;
-	private final File fd1;
+
 	private static final String REPORTLIBRIWEB="src/main/webapp/riepilogoLibri.txt";
 	private final GenerateDaoReportClass gRC;
 
 	public LibroDao() throws IOException {
 		f = new Factory();
-		this.fd=new File(REPORTLIBRI);
-		this.fd1=new File(REPORTLIBRIWEB);
-		gRC=new GenerateDaoReportClass();
+
+		gRC=new GenerateDaoReportClass("libro");
 
 	}
 
@@ -313,35 +310,18 @@ public class LibroDao implements DaoInterface{
 
 	}
 
-	private void checkFilePath(Path path) throws IOException {
-
-		try {
-			cleanUp(path);
-
-			if (!fd.exists())
-				throw new IOException("file " + fd.getPath() + " not exists -> creating");
-			if (fd.exists()) {
-				cleanUp(path);
-				throw new IOException("file " + fd.getPath() + " -> deleted not exists -> creating");
-			}
-
-		} catch (IOException e) {
-			if (fd1.createNewFile()) {
-				java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd1.getPath());
-			}
-		}
-
-	}
-
 	public void generaReport() throws IOException {
+
 
 		Path path = Path.of(REPORTLIBRI);
 		Path path1 = Path.of(REPORTLIBRIWEB);
-		checkFilePath(path);
+		gRC.checkFilePath(path);
 		if(Boolean.TRUE.equals(gRC.generateReport("libro")))
-			checkFilePath(path1);
+			gRC.checkFilePath(path1);
 		Files.copy(path, path1, StandardCopyOption.REPLACE_EXISTING);
 	}
+
+
 
 
 
@@ -382,9 +362,6 @@ public class LibroDao implements DaoInterface{
 
 	}
 
-	private static void cleanUp(Path path) throws IOException {
-		Files.delete(path);
-	}
 
 
 

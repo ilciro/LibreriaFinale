@@ -1,6 +1,5 @@
 package laptop.database;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -40,15 +39,13 @@ public class 	RivistaDao {
 	private static final String RIEPILOGORIVISTE="riepilogoRiviste.txt";
 	private static final String RIEPILOGORIVISTEWEB="src/main/webapp/riepilogoRiviste.txt";
 
-	private final File fd;
-	private final File fd1;
+
 	private final GenerateDaoReportClass gRC;
 
 	public RivistaDao() throws IOException {
 		f = new Factory();
-		this.fd=new File(RIEPILOGORIVISTE);
-		this.fd1=new File(RIEPILOGORIVISTEWEB);
-		gRC=new GenerateDaoReportClass();
+
+		gRC=new GenerateDaoReportClass("rivista");
 	}
 	public Rivista getData(Rivista r) {
 
@@ -300,36 +297,17 @@ public class 	RivistaDao {
 		return row;
 
 	}
-	private void checkFilePath(Path path) throws IOException {
-
-		try {
-			cleanUp(path);
-
-			if (!fd.exists())
-				throw new IOException("file " + fd.getPath() + " not exists -> creating");
-			if (fd.exists()) {
-				cleanUp(path);
-				throw new IOException("file " + fd.getPath() + " -> deleted not exists -> creating");
-			}
-
-		} catch (IOException e) {
-			if (fd1.createNewFile()) {
-				java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd1.getPath());
-			}
-		}
-
-	}
 
 	public void generaReport() throws IOException {
 
+
 		Path path = Path.of(RIEPILOGORIVISTE);
 		Path path1 = Path.of(RIEPILOGORIVISTEWEB);
-		checkFilePath(path);
-		if(Boolean.TRUE.equals(gRC.generateReport("giornale")))
-			checkFilePath(path1);
+		gRC.checkFilePath(path);
+		if(Boolean.TRUE.equals(gRC.generateReport("libro")))
+			gRC.checkFilePath(path1);
 		Files.copy(path, path1, StandardCopyOption.REPLACE_EXISTING);
 	}
-
 	public void incrementaDisponibilita(Rivista r)
 	{
 		int d=vis.getQuantita();
@@ -373,9 +351,6 @@ public class 	RivistaDao {
 	}
 
 
-	private void cleanUp(Path path) throws IOException {
-		Files.delete(path);
-	}
 
 
 	

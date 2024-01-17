@@ -34,19 +34,17 @@ public class GiornaleDao {
 	private final ControllerSystemState vis = ControllerSystemState.getInstance();
 	private static final String GIORNALE = "giornale";
 	private static final String ECCEZIONE = "eccezione generata:";
-
 	private static final String RIEPILOGOGIORNALI = "riepilogoGiornali.txt";
 	private static final String RIEPILOGOGIORNALIWEB = "src/main/webapp/riepilogoGiornali.txt";
 
-	private final File fd;
-	private final File fd1;
+
+
 	private final GenerateDaoReportClass gRC;
 
 	public GiornaleDao() {
 		f = new Factory();
-		this.fd = new File(RIEPILOGOGIORNALI);
-		this.fd1 = new File(RIEPILOGOGIORNALIWEB);
-		gRC = new GenerateDaoReportClass();
+
+		gRC = new GenerateDaoReportClass("giornale");
 
 	}
 
@@ -261,33 +259,16 @@ public class GiornaleDao {
 
 	}
 
-	private void checkFilePath(Path path) throws IOException {
 
-		try {
-			cleanUp(path);
-
-			if (!fd.exists())
-				throw new IOException("file " + fd.getPath() + " not exists -> creating");
-			if (fd.exists()) {
-				cleanUp(path);
-				throw new IOException("file " + fd.getPath() + " -> deleted not exists -> creating");
-			}
-
-		} catch (IOException e) {
-			if (fd1.createNewFile()) {
-				java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd1.getPath());
-			}
-		}
-
-	}
 
 	public void generaReport() throws IOException {
 
+
 		Path path = Path.of(RIEPILOGOGIORNALI);
 		Path path1 = Path.of(RIEPILOGOGIORNALIWEB);
-		checkFilePath(path);
+		gRC.checkFilePath(path);
 		if(Boolean.TRUE.equals(gRC.generateReport("giornale")))
-			checkFilePath(path1);
+			gRC.checkFilePath(path1);
 		Files.copy(path, path1, StandardCopyOption.REPLACE_EXISTING);
 	}
 
@@ -336,9 +317,6 @@ public class GiornaleDao {
 
 	}
 
-	private static void cleanUp(Path path) throws  IOException {
-		Files.delete(path);
-	}
 
 
 

@@ -1,5 +1,4 @@
 package laptop.database;
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -26,16 +25,15 @@ public class UsersDao {
 	private static int row = 0;
 	private static final String TXT_FILE_NAME="riepilogoUtenti.txt";
 	private static final String TXT_FILE_NAME_WEB="src/main/webapp/riepilogoUtenti.txt";
-
-
-	private static final File fd=new File(TXT_FILE_NAME);
-	private static final File fd1=new File(TXT_FILE_NAME_WEB);
-
-	private static GenerateDaoReportClass gRC;
+	private static final GenerateDaoReportClass gRC=new GenerateDaoReportClass("utenti");
 
 
 
-	// use this function on controller after you had check the email
+
+
+
+
+    // use this function on controller after you had check the email
 	// add an user on db after registration
 	// prende i dati dall'oggetto che gli abbiamo passato 
 	public static boolean createUser(User u) throws SQLException {
@@ -258,52 +256,14 @@ public class UsersDao {
 
 	public static void getListaUtenti() throws IOException {
 
-		Path path = Path.of(TXT_FILE_NAME);
-		Path path1 = Path.of(TXT_FILE_NAME_WEB);
-		gRC=new GenerateDaoReportClass();
 
-		try {
-			cleanUp(path1);
 
-			if(!fd.exists())
-				throw new IOException("file "+ fd.getPath() +" not exists -> creating");
-			if(fd.exists())
-			{
-				cleanUp(path);
-				throw new IOException("file "+ fd.getPath()+" -> deleted not exists -> creating");
-			}
-
-		} catch (IOException e) {
-			java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, ECCEZIONE, e);
-
-			if(fd.createNewFile()) {
-				java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd.getPath());
-				//codice per report non so se mettere in altra classe
-				if(gRC.generateReport("utenti"))
-					throw new IOException(" report not generaterd");
-				try {
-					if (!fd1.exists())
-						throw new IOException("file "+ fd1.getPath()+ "-> not exists");
-					if(fd1.exists())
-					{
-						cleanUp(path1);
-						throw new IOException("file "+ fd1.getPath()+" deleted -> not exists -> creating");
-					}
-				}catch (IOException e1)
-				{
-					java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, ECCEZIONE, e1);
-
-					if(fd1.createNewFile())
-						java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd1.getPath());
-
-				}
-
-			}
-
-		}
-		java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "coping file ");
-
-		Files.copy(path,path1, StandardCopyOption.REPLACE_EXISTING);
+			Path path = Path.of(TXT_FILE_NAME);
+			Path path1 = Path.of(TXT_FILE_NAME_WEB);
+			gRC.checkFilePath(path);
+			if(Boolean.TRUE.equals(gRC.generateReport("libro")))
+				gRC.checkFilePath(path1);
+			Files.copy(path, path1, StandardCopyOption.REPLACE_EXISTING);
 
 
 
@@ -447,8 +407,6 @@ public class UsersDao {
 		return row;
 	}
 
-	private static void cleanUp(Path path) throws IOException {
-		Files.delete(path);
-	}
+
 }
 

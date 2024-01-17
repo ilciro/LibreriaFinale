@@ -8,6 +8,8 @@ import laptop.model.TempUser;
 import laptop.utilities.ConnToDb;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,6 +18,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class GenerateDaoReportClass {
+
+    private  File fd;
+    private  File fd1;
+
+
     public String getQuery() {
         return query;
     }
@@ -32,6 +39,44 @@ public class GenerateDaoReportClass {
 
     public void setPath(String path) {
         this.path = path;
+    }
+
+
+
+    private static final String RIEPILOGOGIORNALI = "riepilogoGiornali.txt";
+    private static final String RIEPILOGOGIORNALIWEB = "src/main/webapp/riepilogoGiornali.txt";
+    private static final String REPORTLIBRI="riepilogoLibri.txt";
+
+    private static final String REPORTLIBRIWEB="src/main/webapp/riepilogoLibri.txt";
+    private static final String RIEPILOGORIVISTE="riepilogoRiviste.txt";
+    private static final String RIEPILOGORIVISTEWEB="src/main/webapp/riepilogoRiviste.txt";
+    private static final String TXT_FILE_NAME="riepilogoUtenti.txt";
+    private static final String TXT_FILE_NAME_WEB="src/main/webapp/riepilogoUtenti.txt";
+
+
+    public GenerateDaoReportClass(String type)
+    {
+        	switch (type)
+            {
+                case GIORNALE -> {
+                    this.fd = new File(RIEPILOGOGIORNALI);
+                    this.fd1 = new File(RIEPILOGOGIORNALIWEB);
+                }
+                case LIBRO -> {
+                    this.fd=new File(REPORTLIBRI);
+                    this.fd1=new File(REPORTLIBRIWEB);
+                }
+                case RIVISTA -> {
+                    this.fd=new File(RIEPILOGORIVISTE);
+                    this.fd1=new File(RIEPILOGORIVISTEWEB);
+                }
+                case "utenti"->{
+                    this.fd=new File(TXT_FILE_NAME);
+                    this.fd1=new File(TXT_FILE_NAME_WEB);
+                }
+
+            }
+
     }
 
     private String path;
@@ -78,14 +123,13 @@ public class GenerateDaoReportClass {
         boolean status=false;
         switch (type)
         {
-            case LIBRO ,GIORNALE,RIVISTA:
+            case LIBRO ,GIORNALE,RIVISTA-> {
                 try (BufferedWriter b = new BufferedWriter(new FileWriter(path))) {
                     try (Connection conn = ConnToDb.connectionToDB();
                          PreparedStatement prepQ = conn.prepareStatement(getQuery())) {
-                        ResultSet rs= prepQ.executeQuery();
-                        while(rs.next())
-                        {
-                            b.write("Id :\t"+rs.getInt(1) + "titolo :\t" + rs.getString(2)+"ricavo totale :\t"+ rs.getInt(3)*rs.getFloat(4)  +"\n");
+                        ResultSet rs = prepQ.executeQuery();
+                        while (rs.next()) {
+                            b.write("Id :\t" + rs.getInt(1) + "titolo :\t" + rs.getString(2) + "ricavo totale :\t" + rs.getInt(3) * rs.getFloat(4) + "\n");
 
                         }
 
@@ -95,7 +139,8 @@ public class GenerateDaoReportClass {
                     b.flush();
                 }
                 if (!path.isEmpty())
-                    status=true;
+                    status = true;
+            }
         }
         return status;
     }
@@ -137,6 +182,29 @@ public class GenerateDaoReportClass {
         return status;
     }
 
+    public void checkFilePath(Path path) throws IOException {
+
+        try {
+            cleanUp(path);
+
+            if (!fd.exists())
+                throw new IOException("file " + fd.getPath() + " not exists -> creating");
+            if (fd.exists()) {
+                cleanUp(path);
+                throw new IOException("file " + fd.getPath() + " -> deleted not exists -> creating");
+            }
+
+        } catch (IOException e) {
+            if (fd.createNewFile()) {
+                java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd1.getPath());
+            }
+        }
+
+    }
+
+    private static void cleanUp(Path path) throws  IOException {
+        Files.delete(path);
+    }
 
 
 
