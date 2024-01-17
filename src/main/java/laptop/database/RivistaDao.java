@@ -304,7 +304,7 @@ public class 	RivistaDao {
 		Path path = Path.of(RIEPILOGORIVISTE);
 		Path path1 = Path.of(RIEPILOGORIVISTEWEB);
 		gRC.checkFilePath(path);
-		if(Boolean.TRUE.equals(gRC.generateReport("libro")))
+		if(Boolean.TRUE.equals(gRC.generateReport(RIVISTA)))
 			gRC.checkFilePath(path1);
 		Files.copy(path, path1, StandardCopyOption.REPLACE_EXISTING);
 	}

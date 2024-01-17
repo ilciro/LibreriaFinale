@@ -81,9 +81,9 @@ public class GenerateDaoReportClass {
 
     private String path;
 
-    private final static String RIVISTA="rivista";
-    private final static String LIBRO="libro";
-    private final static String GIORNALE="giornale";
+    private  static final  String RIVISTA="rivista";
+    private  static final String LIBRO="libro";
+    private  static final String GIORNALE="giornale";
 
 
 
@@ -94,19 +94,19 @@ public class GenerateDaoReportClass {
             case LIBRO -> {
 
                 setQuery("select  idLibro ,titolo,copieRimanenti,prezzo  from LIBRO");
-                setPath("riepilogoLibri.txt");
-                status = writetoFileLGR("libro", getPath());
+                setPath(REPORTLIBRI);
+                status = writetoFileLGR(LIBRO, getPath());
             }
             case GIORNALE -> {
                 setQuery("select  idGiornale ,titolo,copieRimanenti,prezzo  from GIORNALE");
-                setPath("riepilogoGiornali.txt");
-                status = writetoFileLGR("giornale", getPath());
+                setPath(RIEPILOGOGIORNALI);
+                status = writetoFileLGR(GIORNALE, getPath());
             }
             case RIVISTA -> {
 
                 setQuery("select  idRivista ,titolo,copieRimanenti,prezzo  from RIVISTA");
-                setPath("riepilogoRiviste.txt");
-                status = writetoFileLGR("rivista", getPath());
+                setPath(RIEPILOGORIVISTE);
+                status = writetoFileLGR(RIVISTA, getPath());
             }
             case "utente", "utenti" -> {
 
@@ -114,6 +114,9 @@ public class GenerateDaoReportClass {
             path = "riepilogoUtenti.txt";
             status = writeToFileU(path);
          }
+            default -> {
+
+            }
         }
        return !status;
 
@@ -138,9 +141,11 @@ public class GenerateDaoReportClass {
                     }
                     b.flush();
                 }
+
                 if (!path.isEmpty())
                     status = true;
             }
+            default -> {}
         }
         return status;
     }

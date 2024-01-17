@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="reduce duplication v5">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="reduce duplication v6">
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/GenerateDaoReportClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/GenerateDaoReportClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/LibroDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/LibroDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/UsersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/UsersDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,14 +274,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
-    </task>
-    <task id="LOCAL-00022" summary="added test login v2">
-      <option name="closed" value="true" />
-      <created>1701780017620</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1701780017620</updated>
     </task>
     <task id="LOCAL-00023" summary="remove webapp">
       <option name="closed" value="true" />
@@ -656,7 +643,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705497555682</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="reduce duplication v6">
+      <option name="closed" value="true" />
+      <created>1705499520717</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1705499520717</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -684,7 +679,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="restrung dao v2" />
     <MESSAGE value="restrung dao v3 (insert file dao pt1)" />
     <MESSAGE value="restrung dao v3 (insert file dao pt2) exceptions" />
     <MESSAGE value="restrung dao v3 (insert file dao pt3) csvDao" />
@@ -709,7 +703,8 @@
     <MESSAGE value="reduce duplication v3" />
     <MESSAGE value="reduce duplication v4" />
     <MESSAGE value="reduce duplication v5" />
-    <option name="LAST_COMMIT_MESSAGE" value="reduce duplication v5" />
+    <MESSAGE value="reduce duplication v6" />
+    <option name="LAST_COMMIT_MESSAGE" value="reduce duplication v6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

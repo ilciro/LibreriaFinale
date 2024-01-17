@@ -1,7 +1,6 @@
 package laptop.database;
 
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -267,7 +266,7 @@ public class GiornaleDao {
 		Path path = Path.of(RIEPILOGOGIORNALI);
 		Path path1 = Path.of(RIEPILOGOGIORNALIWEB);
 		gRC.checkFilePath(path);
-		if(Boolean.TRUE.equals(gRC.generateReport("giornale")))
+		if(Boolean.TRUE.equals(gRC.generateReport(GIORNALE)))
 			gRC.checkFilePath(path1);
 		Files.copy(path, path1, StandardCopyOption.REPLACE_EXISTING);
 	}

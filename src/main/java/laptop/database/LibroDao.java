@@ -316,7 +316,7 @@ public class LibroDao implements DaoInterface{
 		Path path = Path.of(REPORTLIBRI);
 		Path path1 = Path.of(REPORTLIBRIWEB);
 		gRC.checkFilePath(path);
-		if(Boolean.TRUE.equals(gRC.generateReport("libro")))
+		if(Boolean.TRUE.equals(gRC.generateReport(LIBRO)))
 			gRC.checkFilePath(path1);
 		Files.copy(path, path1, StandardCopyOption.REPLACE_EXISTING);
 	}
