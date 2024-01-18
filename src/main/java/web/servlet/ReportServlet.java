@@ -8,29 +8,31 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import laptop.database.GiornaleDao;
-import laptop.model.TempUser;
-import laptop.utilities.ConnToDb;
+import laptop.database.LibroDao;
+import laptop.database.RivistaDao;
+import laptop.database.UsersDao;
+
 import web.bean.TextAreaBean;
 
 import java.io.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.logging.Level;
 
 @WebServlet("/ReportServlet")
 
 public class ReportServlet extends HttpServlet {
 
-    private static final String ECCEZIONE="ECCEZIONE generata:";
+    private static final String ECCEZIONE = "ECCEZIONE generata:";
 
-    private final TextAreaBean tAB=new TextAreaBean();
+    private final TextAreaBean tAB = new TextAreaBean();
 
-    private final GiornaleDao gD=new GiornaleDao();
+    private final GiornaleDao gD = new GiornaleDao();
+    private final LibroDao lD = new LibroDao();
+    private final RivistaDao rD = new RivistaDao();
 
-
+    public ReportServlet() throws IOException {
+    }
 
 
     @Override
@@ -46,163 +48,55 @@ public class ReportServlet extends HttpServlet {
         try {
 
             if (libro != null && libro.equals("libro")) {
-                // nou used report , but dicrectly
 
-                tAB.setScriviB(reportLibro());
-                req.setAttribute("beanTA", tAB);
-                view = getServletContext().getRequestDispatcher("/report.jsp");
-                view.forward(req, resp);
+                tAB.setScriviB(lD.generaReportWebLibro());
+
             }
             if (giornale != null && giornale.equals("giornale")) {
-                tAB.setScriviB(reportGiornale());
-                req.setAttribute("beanTA", tAB);
-                view = getServletContext().getRequestDispatcher("/report.jsp");
-                view.forward(req, resp);
+                tAB.setScriviB(gD.generaReportWebGiornale());
+
             }
             if (rivista != null && rivista.equals("rivista")) {
-                tAB.setScriviB(reportRivista());
-                req.setAttribute("beanTA", tAB);
-                view = getServletContext().getRequestDispatcher("/report.jsp");
-                view.forward(req, resp);
+                tAB.setScriviB(rD.generaReportWebRivista());
+
             }
             if (raccolta != null && raccolta.equals("raccolta")) {
-                String builder = reportLibro() + "\n" +
-                        reportGiornale() + "\n" +
-                        reportRivista() + "\n";
+                String builder = lD.generaReportWebLibro() + "\n" +
+                        gD.generaReportWebGiornale() + "\n" +
+                        rD.generaReportWebRivista() + "\n";
                 tAB.setScriviB(builder);
-                req.setAttribute("beanTA", tAB);
-                view = getServletContext().getRequestDispatcher("/report.jsp");
-                view.forward(req, resp);
+
             }
             if (totale != null && totale.equals("totale")) {
-                String builder = reportLibro() + "\n" +
-                        reportGiornale() + "\n" +
-                        reportRivista() + "\n" +
-                        reportUtenti() + "\n";
+                String builder = lD.generaReportWebLibro() + "\n" +
+                        gD.generaReportWebGiornale() + "\n" +
+                        rD.generaReportWebRivista() + "\n" +
+                        UsersDao.generaReportWebUsers();
                 tAB.setScriviB(builder);
-                req.setAttribute("beanTA", tAB);
-                view = getServletContext().getRequestDispatcher("/report.jsp");
-                view.forward(req, resp);
+
             }
             if (indietro != null && indietro.equals("indietro")) {
                 view = getServletContext().getRequestDispatcher("/admin.jsp");
                 view.forward(req, resp);
             }
-        }catch (IOException e)
-        {
+
+            req.setAttribute("beanTA", tAB);
+            view = getServletContext().getRequestDispatcher("/report.jsp");
+            view.forward(req, resp);
+
+        } catch (IOException | SQLException e) {
             java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
 
         }
     }
 
-    private String reportLibro()
-    {
-        String  query="select titolo,copieVendute,prezzo as totale from LIBRO";
-
-        StringBuilder report=new StringBuilder();
-            try(Connection conn = ConnToDb.connectionToDB();
-                PreparedStatement prepQ=conn.prepareStatement(query);)
-            {
-                ResultSet rs=prepQ.executeQuery();
-                while(rs.next())
-                {
-                    report.append("Titolo :").append(rs.getString(1)).append("\t").append("Ricavo totale :").append(rs.getInt(2) * rs.getFloat(3)).append("\n");
-
-                }
-
-            }catch(SQLException e)
-            {
-                java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
-            }
-        return report.toString();
-    }
-    public  String reportGiornale() throws IOException {
-
-       gD.generaReport();
-        StringBuilder builder = new StringBuilder();
-        String line ;
-
-        String fileGiornale = "src/main/resources/Reports/riepilogoGiornali.txt";
-        try (BufferedReader readerU = new BufferedReader(new FileReader(fileGiornale))) {
-            while (( line = readerU.readLine()) != null) {
-                builder.append(line);
-                builder.append("\n");
-            }
-
-        } catch (IOException e) {
-            throw new IOException(e);
-        }
-
-        return builder.toString();
-    }
-
-    private String reportRivista()
-    {
-
-        String query="select titolo,editore,copieRimanenti,prezzo as totale ,dataPubblicazione from RIVISTA";
-
-       StringBuilder report=new StringBuilder();
-            try(Connection conn=ConnToDb.connectionToDB();
-                PreparedStatement prepQ=conn.prepareStatement(query))
-            {
-
-                ResultSet rs=prepQ.executeQuery();
-
-
-                while(rs.next())
-                {
-
-                   report.append("Titolo :").append(rs.getString(1)).append("\t").append("Editore :").append(rs.getString(2)).append("\t").append("Ricavo totale :").append(rs.getInt(3) * rs.getFloat(4)).append("\t").append("pubblicato il : ").append(rs.getDate("dataPubblicazione")).append("\n");
-
-
-
-                }
-            }catch(SQLException e)
-            {
-                java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, ECCEZIONE, e);
-            }
-            return report.toString();
-
-        }
-
-    public String   reportUtenti()   {
-        String query="select * from USERS";
-       StringBuilder report=new StringBuilder();
-
-
-            try(Connection conn=ConnToDb.connectionToDB();
-                PreparedStatement prepQ=conn.prepareStatement(query))
-            {
-
-                ResultSet rs=prepQ.executeQuery();
-
-
-
-                while(rs.next())
-                {
-
-                    TempUser.getInstance().setId(rs.getInt(1));
-                    TempUser.getInstance().setIdRuolo(rs.getString(2));
-                    TempUser.getInstance().setNomeT(rs.getString(3));
-                    TempUser.getInstance().setCognomeT(rs.getString(4));
-                    TempUser.getInstance().setEmailT(rs.getString(5));
-                    TempUser.getInstance().setDescrizioneT(rs.getString(7));
-                    TempUser.getInstance().setDataDiNascitaT(rs.getDate(8).toLocalDate());
-                    report.append(TempUser.getInstance().getId()).append("\t").append(TempUser.getInstance().getIdRuolo()).append("\t").append(TempUser.getInstance().getNomeT()).append("\t").append(TempUser.getInstance().getCognomeT()).append("\t").append(TempUser.getInstance().getEmailT()).append("\t").append(TempUser.getInstance().getDescrizioneT()).append("\t").append(TempUser.getInstance().getDataDiNascitaT().toString()).append("\n");
-
-                }
-            }catch(SQLException e)
-            {
-                java.util.logging.Logger.getLogger("lista utenti").log(Level.SEVERE,ECCEZIONE,e);
-
-            }
-            return report.toString();
-
-        }
+    //add comment
+    private void prova() {
+        System.out.print("ciao");
 
     }
 
-
+}
 
 
 
