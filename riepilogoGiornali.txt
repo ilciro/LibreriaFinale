@@ -38,3 +38,9 @@ Id :	38titolo :	giornale provaricavo totale :	225.0
 Id :	39titolo :	giornale provaricavo totale :	225.0
 Id :	40titolo :	giornale provaricavo totale :	225.0
 Id :	41titolo :	giornale provaricavo totale :	225.0
+Id :	42titolo :	giornale provaricavo totale :	225.0
+Id :	43titolo :	giornale provaricavo totale :	225.0
+Id :	44titolo :	giornale provaricavo totale :	225.0
+Id :	45titolo :	giornale provaricavo totale :	225.0
+Id :	46titolo :	giornale provaricavo totale :	225.0
+Id :	47titolo :	giornale provaricavo totale :	225.0

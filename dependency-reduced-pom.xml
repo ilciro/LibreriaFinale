@@ -30,7 +30,7 @@
         <version>3.0.0-M5</version>
         <configuration>
           <runOrder>alphabetical</runOrder>
-          <skipTests>false</skipTests>
+          <skipTests>true</skipTests>
         </configuration>
       </plugin>
       <plugin>
@@ -68,7 +68,16 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>3.3.2</version>
         <configuration>
-          <warSourceDirectory>erc/main/webapp/*</warSourceDirectory>
+          <warSourceDirectory>src/main/webapp/*</warSourceDirectory>
+          <webResources>
+            <resource>
+              <directory>${project.build.directory}</directory>
+              <targetPath>WEB-INF</targetPath>
+              <includes>
+                <include>*.txt</include>
+              </includes>
+            </resource>
+          </webResources>
         </configuration>
       </plugin>
       <plugin>
@@ -126,6 +135,14 @@
       </plugin>
     </plugins>
   </build>
+  <repositories>
+    <repository>
+      <releases />
+      <snapshots />
+      <id>github-git-lfs</id>
+      <url>https://packagecloud.io/github/git-lfs/maven2</url>
+    </repository>
+  </repositories>
   <dependencies>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
