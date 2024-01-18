@@ -269,6 +269,10 @@ public class UsersDao {
 
 }
 
+	public static String generaReportWebUsers() throws SQLException {
+		return gRC.getReportView("utenti");
+	}
+
 	public static TempUser getTempUserSingolo(TempUser uT) throws SQLException {
 
 

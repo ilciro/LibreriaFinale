@@ -1,7 +1,7 @@
 package laptop.database;
 /*
- this class was created for
- reduce complexity and duplication for sonarcloud
+ * this class was created for
+ * reduce complexity and duplication for sonarcloud
  */
 
 import laptop.model.TempUser;
@@ -85,6 +85,7 @@ public class GenerateDaoReportClass {
     private  static final  String RIVISTA="rivista";
     private  static final String LIBRO="libro";
     private  static final String GIORNALE="giornale";
+    private static final String UTENTI="utenti";
 
 
 
@@ -109,7 +110,7 @@ public class GenerateDaoReportClass {
                 setPath(RIEPILOGORIVISTE);
                 status = writetoFileLGR(RIVISTA, getPath());
             }
-            case "utente", "utenti" -> {
+            case UTENTI-> {
 
             setQuery("select  * from USERS");
             path = TXT_FILE_NAME;
@@ -137,7 +138,7 @@ public class GenerateDaoReportClass {
                     }
 
                 } catch (SQLException e) {
-                    java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "Error in SQL", e);
+                    Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "Error in SQL", e);
                 }
                 b.flush();
             }
@@ -201,14 +202,126 @@ public class GenerateDaoReportClass {
 
         } catch (IOException e) {
             if (fd.createNewFile()) {
-                java.util.logging.Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd1.getPath());
+                Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd1.getPath());
             }
         }
 
     }
 
+    public String getReportView(String type) throws SQLException {
+        String reportFinale = null;
+
+        switch (type) {
+            case LIBRO -> {
+                setQuery("create or replace view reportLibri (id,titolo,ricavoMassimo) as select idLibro,titolo,copieRimanenti*prezzo from LIBRO");
+                try(Connection conn=ConnToDb.connectionToDB();
+                    PreparedStatement prepQ=conn.prepareStatement(getQuery())) {
+                    prepQ.executeQuery();
+                }catch (SQLException e)
+                {
+                    Logger.getLogger("Test report book view ").log(Level.SEVERE, "view book not created!");
+
+                }
+                reportFinale=leggiReport(LIBRO);
+            }
+            case GIORNALE -> {
+                setQuery("create or replace view reportGiornali (id,titolo,ricavoMassimo) as select idLibro,titolo,copieRimanenti*prezzo from GIORNALE");
+                try(Connection conn=ConnToDb.connectionToDB();
+                    PreparedStatement prepQ=conn.prepareStatement(getQuery())) {
+                    prepQ.executeQuery();
+                }catch (SQLException e)
+                {
+                    Logger.getLogger("Test report daily view ").log(Level.SEVERE, "view giornali not created!");
+
+                }
+                reportFinale=leggiReport(GIORNALE);
+            }
+            case RIVISTA -> {
+                setQuery("create or replace view reportRiviste (id,titolo,ricavoMassimo) as select idLibro,titolo,copieRimanenti*prezzo from RIVISTA");
+                try(Connection conn=ConnToDb.connectionToDB();
+                    PreparedStatement prepQ=conn.prepareStatement(getQuery())) {
+                    prepQ.executeQuery();
+                }catch (SQLException e)
+                {
+                    Logger.getLogger("Test report magazine view ").log(Level.SEVERE, "view magazine not created!");
+
+                }
+                reportFinale=leggiReport(RIVISTA);
+            }
+            case UTENTI -> {
+
+                    setQuery("create or replace view reportUtenti (id,ruolo,nome,cognome) as select idUser,idRuolo,nome,cognome from USERS");
+                    try(Connection conn=ConnToDb.connectionToDB();
+                        PreparedStatement prepQ=conn.prepareStatement(getQuery())) {
+                        prepQ.executeQuery();
+                    }catch (SQLException e)
+                    {
+                        Logger.getLogger("Test report users view ").log(Level.SEVERE, "view users not created!");
+
+                    }
+                    reportFinale=leggiReport(UTENTI);
+
+            }
+        }
+        return reportFinale;
+    }
+
     private static void cleanUp(Path path) throws  IOException {
         Files.delete(path);
+    }
+    private String leggiReport(String type) throws SQLException {
+        StringBuilder builder = new StringBuilder();
+        switch (type) {
+            case LIBRO -> setQuery("select * from reportLibri");
+            case GIORNALE -> setQuery("select * from reportGiornali");
+            case RIVISTA -> setQuery("select * from reportRiviste");
+            case UTENTI -> setQuery("select * from reportUtenti");
+        }
+
+
+        switch (type){
+            case LIBRO ,RIVISTA,GIORNALE->{
+            try(Connection conn=ConnToDb.connectionToDB();
+                PreparedStatement prepQ=conn.prepareStatement(getQuery())) {
+                ResultSet rs = prepQ.executeQuery();
+                while (rs.next()) {
+                    builder.append("id :");
+                    builder.append(rs.getInt(1));
+                    builder.append("\t");
+                    builder.append("titolo :");
+                    builder.append(rs.getString(2));
+                    builder.append("\t");
+                    builder.append("ricavoMassimo :");
+                    builder.append(rs.getInt(1));
+                    builder.append("\n");
+
+                }
+            }
+        }
+            case UTENTI -> {
+                try(Connection conn=ConnToDb.connectionToDB();
+                    PreparedStatement prepQ=conn.prepareStatement(getQuery()))
+                {
+                    ResultSet rs= prepQ.executeQuery();
+                    while(rs.next())
+                    {
+                        builder.append("id :");
+                        builder.append(rs.getInt(1));
+                        builder.append("\t");
+                        builder.append("ruolo :");
+                        builder.append(rs.getString(2));
+                        builder.append("\t");
+                        builder.append("nome :");
+                        builder.append(rs.getString(3));
+                        builder.append("\t");
+                        builder.append("cognome :");
+                        builder.append(rs.getString(4));
+                        builder.append("\n");
+                    }
+                }
+            }
+        }
+        return builder.toString();
     }
 
 
