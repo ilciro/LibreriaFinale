@@ -14,6 +14,19 @@
     <name>LibreriaMaven Maven Webapp</name>
     <url>https://github.com/ilciro/LibreriaFinale.git</url>
 
+         <repositories>
+  <repository>
+    <id>github-git-lfs</id>
+    <url>https://packagecloud.io/github/git-lfs/maven2</url>
+    <releases>
+      <enabled>true</enabled>
+    </releases>
+    <snapshots>
+      <enabled>true</enabled>
+    </snapshots>
+  </repository>
+</repositories>
+
     <properties>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
