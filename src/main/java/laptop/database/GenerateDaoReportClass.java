@@ -315,7 +315,6 @@ public class GenerateDaoReportClass {
                         builder.append(rs.getString(2));
                         builder.append("id :");
                         builder.append(rs.getInt(1));
-
                         builder.append("\n");
 
                     }
