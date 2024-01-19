@@ -274,7 +274,8 @@
                 <version>3.3.2</version>
                 <!-- added this-->
                 <configuration>
-                    <warSourceDirectory>src/main/webapp/*</warSourceDirectory>
+                    <!-- levare "*"-->
+                    <warSourceDirectory>src/main/webapp</warSourceDirectory>
                     <webResources>
                         <resource>
                             <directory>${project.build.directory}</directory>
