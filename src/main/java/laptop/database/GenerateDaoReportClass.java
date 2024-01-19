@@ -70,11 +70,11 @@ public class GenerateDaoReportClass {
                     this.fd=new File(RIEPILOGORIVISTE);
                     this.fd1=new File(RIEPILOGORIVISTEWEB);
                 }
-                case "utenti"->{
+                case UTENTI->{
                     this.fd=new File(TXT_FILE_NAME);
                     this.fd1=new File(TXT_FILE_NAME_WEB);
                 }
-                default -> {}
+
 
             }
 
@@ -116,9 +116,7 @@ public class GenerateDaoReportClass {
             path = TXT_FILE_NAME;
             status = writeToFileU(path);
          }
-            default -> {
 
-            }
         }
        return !status;
 
