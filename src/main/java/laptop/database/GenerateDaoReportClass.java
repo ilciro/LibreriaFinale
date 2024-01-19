@@ -305,18 +305,19 @@ public class GenerateDaoReportClass {
                     ResultSet rs= prepQ.executeQuery();
                     while(rs.next())
                     {
-                        builder.append("id :");
-                        builder.append(rs.getInt(1));
-                        builder.append("\t");
-                        builder.append("ruolo :");
-                        builder.append(rs.getString(2));
-                        builder.append("\t");
                         builder.append("nome :");
                         builder.append(rs.getString(3));
                         builder.append("\t");
                         builder.append("cognome :");
                         builder.append(rs.getString(4));
+                        builder.append("\t");
+                        builder.append("ruolo :");
+                        builder.append(rs.getString(2));
+                        builder.append("id :");
+                        builder.append(rs.getInt(1));
+
                         builder.append("\n");
+
                     }
                 }
             }
