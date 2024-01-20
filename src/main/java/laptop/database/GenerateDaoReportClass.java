@@ -278,6 +278,8 @@ public class GenerateDaoReportClass {
             case GIORNALE -> setQuery("select * from reportGiornali");
             case RIVISTA -> setQuery("select * from reportRiviste");
             case UTENTI -> setQuery("select * from reportUtenti");
+            default -> Logger.getLogger("leggi report").log(Level.INFO, "choice for view is wrong");
+
         }
 
 
