@@ -4,89 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="reduce duplication v7">
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="remove code smelle v1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/GenerateDaoReportClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/GenerateDaoReportClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/acquista.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/acquista.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/adminPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/adminPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/aggiungiOggettoPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/aggiungiOggettoPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/aggiungiUtente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/aggiungiUtente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/bsoRegister.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/bsoRegister.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/compravendita.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/compravendita.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/bookCategories.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/bookCategories.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/booksPath.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/booksPath.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/configDb.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/configDb.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/downloadConfiguration.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/downloadConfiguration.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/magazineCategories.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/magazineCategories.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/download.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/download.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/homePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/homePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GenerateDaoReportClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GenerateDaoReportClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GiornaleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GiornaleDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/LibroDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/LibroDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/RivistaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/RivistaDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/UsersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/UsersDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/loginPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/loginPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/modificaOggettoPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/modificaOggettoPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/modificaUtente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/modificaUtente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/modificaUtentePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/modificaUtentePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/pagamentoCC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/pagamentoCC.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/pagamentoContrassegno.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/pagamentoContrassegno.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/paginaGestione.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/paginaGestione.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/raccoltaPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/raccoltaPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/registraUtente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/registraUtente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/registrazioneOk.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/registrazioneOk.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/reportPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/reportPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/resetPwd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/resetPwd.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/ricercaPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/ricercaPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/ricercaPerTipo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/ricercaPerTipo.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/scegliNegozio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/scegliNegozio.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/userPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/userPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/visualizzaOrdine.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/visualizzaOrdine.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/visualizzaPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/visualizzaPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/visualizzaProfilo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/visualizzaProfilo.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/ReportServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/ReportServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/acquista.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/acquista.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adminPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/adminPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/aggiungiOggettoPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aggiungiOggettoPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/aggiungiUtente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aggiungiUtente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bsoRegister.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bsoRegister.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/compravendita.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/compravendita.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/configurations/bookCategories.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/configurations/bookCategories.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/configurations/booksPath.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/configurations/booksPath.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/configurations/configDb.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/configurations/configDb.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/configurations/downloadConfiguration.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/configurations/downloadConfiguration.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/configurations/magazineCategories.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/configurations/magazineCategories.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/download.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/download.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/homePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/homePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/GenerateDaoReportClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/GenerateDaoReportClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/GiornaleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/GiornaleDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/LibroDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/LibroDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/RivistaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/RivistaDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/UsersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/UsersDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/loginPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/loginPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/modificaOggettoPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modificaOggettoPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/modificaUtente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modificaUtente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/modificaUtentePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modificaUtentePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pagamentoCC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pagamentoCC.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pagamentoContrassegno.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pagamentoContrassegno.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/paginaGestione.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/paginaGestione.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/raccoltaPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/raccoltaPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/registraUtente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/registraUtente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/registrazioneOk.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/registrazioneOk.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/reportPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/reportPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resetPwd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resetPwd.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ricercaPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ricercaPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ricercaPerTipo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ricercaPerTipo.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/scegliNegozio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/scegliNegozio.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/userPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/userPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/visualizzaOrdine.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/visualizzaOrdine.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/visualizzaPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/visualizzaPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/visualizzaProfilo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/visualizzaProfilo.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/ReportServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/ReportServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-LibreriaMaven.war" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +27,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -141,31 +62,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestIndexPage.testAcquistaLibro.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestIndexPage.testIndexBook.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LibreriaMaven [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LibreriaMaven [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LibreriaMaven [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/daniele/IdeaProjects/LibreriaFinale/src/main/resources&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Main.executor": "Run",
+    "JUnit.TestIndexPage.testAcquistaLibro.executor": "Run",
+    "JUnit.TestIndexPage.testIndexBook.executor": "Run",
+    "Maven.LibreriaMaven [clean].executor": "Run",
+    "Maven.LibreriaMaven [install].executor": "Run",
+    "Maven.LibreriaMaven [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/daniele/IdeaProjects/LibreriaFinale/src/main/resources",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Color Scheme Font"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="web.bean" />
@@ -301,6 +222,7 @@
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
       <option name="extraClassPath" value="" />
       <option name="vmOptions" value="" />
+      <module name="LibreriaMaven" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -354,30 +276,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
-    </task>
-    <task id="LOCAL-00024" summary="insert buy book">
-      <option name="closed" value="true" />
-      <created>1701955803748</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1701955803748</updated>
-    </task>
-    <task id="LOCAL-00025" summary="insert buy newspaper and magazines">
-      <option name="closed" value="true" />
-      <created>1701963551449</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1701963551449</updated>
-    </task>
-    <task id="LOCAL-00026" summary="insert buy magazines and test -&gt; first use case closed">
-      <option name="closed" value="true" />
-      <created>1702146905641</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1702146905746</updated>
     </task>
     <task id="LOCAL-00027" summary="insert management book web">
       <option name="closed" value="true" />
@@ -731,7 +629,31 @@
       <option name="project" value="LOCAL" />
       <updated>1705500024826</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="delete books">
+      <option name="closed" value="true" />
+      <created>1705661884373</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1705661884374</updated>
+    </task>
+    <task id="LOCAL-00072" summary="delete books">
+      <option name="closed" value="true" />
+      <created>1705661947188</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1705661947188</updated>
+    </task>
+    <task id="LOCAL-00073" summary="remove code smelle v1">
+      <option name="closed" value="true" />
+      <created>1705662488780</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1705662488780</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -759,8 +681,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="restrung dao v3 (insert file dao pt2) exceptions" />
-    <MESSAGE value="restrung dao v3 (insert file dao pt3) csvDao" />
     <MESSAGE value="restrung dao v4 code smells" />
     <MESSAGE value="restrung dao v4 code smells v2" />
     <MESSAGE value="restrung dao v4 code smells v3" />
@@ -784,7 +704,9 @@
     <MESSAGE value="reduce duplication v5" />
     <MESSAGE value="reduce duplication v6" />
     <MESSAGE value="reduce duplication v7" />
-    <option name="LAST_COMMIT_MESSAGE" value="reduce duplication v7" />
+    <MESSAGE value="delete books" />
+    <MESSAGE value="remove code smelle v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove code smelle v1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

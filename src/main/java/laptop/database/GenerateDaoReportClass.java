@@ -223,7 +223,7 @@ public class GenerateDaoReportClass {
                 reportFinale=leggiReport(LIBRO);
             }
             case GIORNALE -> {
-                setQuery("create or replace view reportGiornali (id,titolo,ricavoMassimo) as select idLibro,titolo,copieRimanenti*prezzo from GIORNALE");
+                setQuery("create or replace view reportGiornali (id,titolo,ricavoMassimo) as select idGiornale,titolo,copieRimanenti*prezzo from GIORNALE");
                 try(Connection conn=ConnToDb.connectionToDB();
                     PreparedStatement prepQ=conn.prepareStatement(getQuery())) {
                     prepQ.executeQuery();
@@ -235,7 +235,7 @@ public class GenerateDaoReportClass {
                 reportFinale=leggiReport(GIORNALE);
             }
             case RIVISTA -> {
-                setQuery("create or replace view reportRiviste (id,titolo,ricavoMassimo) as select idLibro,titolo,copieRimanenti*prezzo from RIVISTA");
+                setQuery("create or replace view reportRiviste (id,titolo,ricavoMassimo) as select idRivista,titolo,copieRimanenti*prezzo from RIVISTA");
                 try(Connection conn=ConnToDb.connectionToDB();
                     PreparedStatement prepQ=conn.prepareStatement(getQuery())) {
                     prepQ.executeQuery();
@@ -313,6 +313,7 @@ public class GenerateDaoReportClass {
                         builder.append(rs.getString(2));
                         builder.append("id :");
                         builder.append(rs.getInt(1));
+                        builder.append("\t");
                         builder.append("\n");
 
                     }
