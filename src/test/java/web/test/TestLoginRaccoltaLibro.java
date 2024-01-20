@@ -1,4 +1,4 @@
-/*package web.test;
+package web.test;
 
 
 import laptop.database.*;
@@ -11,65 +11,42 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import web.bean.*;
 
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
-class TestIndexPage {
+class TestLoginRaccoltaLibro {
     WebDriver driver;
     private final LibroBean lB=new LibroBean();
     private final LibroDao lD=new LibroDao();
 
     private final Libro l=new Libro();
-
-    private final Giornale g=new Giornale();
-    private final GiornaleDao gD=new GiornaleDao();
-    private final GiornaleBean gB=new GiornaleBean();
-
-
-    private final Rivista r=new Rivista();
-    private final RivistaBean rB=new RivistaBean();
-    private final RivistaDao rD=new RivistaDao();
     private final UserBean uB=UserBean.getInstance();
 
-    private final TempUser tUser=TempUser.getInstance();
-    private final TextAreaBean tAB=new TextAreaBean();
-    private final SystemBean sB=SystemBean.getInstance();
-    private final AcquistaBean aB=new AcquistaBean();
-    private final FatturaBean fB=new FatturaBean();
 
-    private final CartaCreditoBean cCB=new CartaCreditoBean();
-    private final PagamentoBean pB=new PagamentoBean();
-    private final NegozioBean nB=new NegozioBean();
-    private final NegozioDao nD=new NegozioDao();
-
-    TestIndexPage() throws IOException {
+    TestLoginRaccoltaLibro() throws IOException {
     }
 
 
     // Test for Admin all functionalities
 
+    private int id;
+    private String titolo;
 
 
   @Test
     void testLoginAdminRaccoltaLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException{
         //usato per prendere id
-        String isbn;
-        int idLibro;
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 
-      //schermata index
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //schermata index
         driver = new ChromeDriver();
         driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
         driver.findElement(By.id("buttonLogin")).click();
@@ -89,9 +66,7 @@ class TestIndexPage {
         //insierimento nuovo libro
         driver.findElement(By.id("titoloL")).sendKeys("provo ad inserire un nuovo libro");
         driver.findElement(By.id("nrPagL")).sendKeys("150");
-        WebElement id=driver.findElement(By.id("codL"));
-        id.sendKeys("18552963");
-        isbn=id.getAttribute("value");
+        driver.findElement(By.id("codL")).sendKeys("18552963");
         driver.findElement(By.id("autoreL")).sendKeys("autore prova");
         driver.findElement(By.id("editoreL")).sendKeys("editore prova");
         driver.findElement(By.id("linguaL")).sendKeys("italiano");
@@ -105,18 +80,15 @@ class TestIndexPage {
         driver.findElement(By.id("confermaB")).click();
         //previous page
         driver.findElement(By.id("buttonGenera")).click();
-        PropertyUtils.setProperty(lB,"codIsbnB",isbn);
-
-        l.setCodIsbn(lB.getCodIsbnB());
-
-        idLibro=lD.getData(l).getId();
-        PropertyUtils.setProperty(lB,"idB",idLibro);
-
+        //get last id
+        int appoggioId=lD.getLibri().size();
+        setId(appoggioId);
+        PropertyUtils.setProperty(lB,"idB",getId());
+        l.setId((Integer) PropertyUtils.getProperty(lB,"idB"));
         driver.findElement(By.id("idL")).sendKeys(PropertyUtils.getProperty(lB,"idB").toString());
         driver.findElement(By.id("buttonMod")).click();
         //schermata modifica
         driver.findElement(By.id("listaB")).click();
-
         //update
         driver.findElement(By.id("titoloNL")).sendKeys("un bel libro aggironato");
         driver.findElement(By.id("pagineNL")).sendKeys("180");
@@ -133,151 +105,39 @@ class TestIndexPage {
         driver.findElement(By.id("prezzoNL")).sendKeys("7.52f");
         driver.findElement(By.id("buttonI")).click();
         //updated book
-        WebElement idOggetto=driver.findElement(By.id("idL"));
-        idOggetto.sendKeys(PropertyUtils.getProperty(lB,"idB").toString());
+        driver.findElement(By.id("buttonGenera")).click();
+        driver.findElement(By.id("idL")).sendKeys(PropertyUtils.getProperty(lB,"idB").toString());
         //delete
         driver.findElement(By.id("buttonCanc")).click();
-
-
-
-
-
-      assertNotEquals(0,PropertyUtils.getProperty(lB,"idB"));
+        driver.findElement(By.id("buttonGenera")).click();
+        assertNotEquals(0,PropertyUtils.getProperty(lB,"idB"));
 
     }
 
+    private int getId() {
+        return id;
+    }
 
+    private void setId(int id) {
+        this.id = id;
+    }
+
+    private String getTitolo() {
+        return titolo;
+    }
+
+    private void setTitolo(String titolo) {
+        this.titolo = titolo;
+    }
+
+/*
     //funziona
 
-    @Test
-    void testLoginAdminRaccoltaGiornale() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
-        String titolo;
-
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-        //schermata index
-        driver = new ChromeDriver();
-        driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
-        driver.findElement(By.id("buttonLogin")).click();
-        driver.findElement(By.id("emailL")).sendKeys("admin@admin.com");
-        driver.findElement(By.id("passL")).sendKeys("Admin871");
-        PropertyUtils.setProperty(uB,"emailB",driver.findElement(By.id("emailL")).getAttribute("value"));
-        PropertyUtils.setProperty(uB,"passB",driver.findElement(By.id("passL")).getAttribute("value"));
-        driver.findElement(By.id("loginB")).click();
-        //schermata admin
-        driver.findElement(By.id("raccoltaB")).click();
-        //schermata raccolta
-        driver.findElement(By.id("buttonG")).click();
-        //ho generato la lista
-        driver.findElement(By.id("buttonGenera")).click();
-        // 1 ) inserisco libro
-        driver.findElement(By.id("buttonAdd")).click();
-        //insierimento nuovo giornale
-        WebElement t=driver.findElement(By.id("titoloG"));
-        t.sendKeys("provo ad inserire un nuovo giornale");
-        titolo=t.getAttribute("value");
-        //set id
-        PropertyUtils.setProperty(gB,"titoloB",titolo);
-        g.setTitolo(PropertyUtils.getProperty(gB,"titoloB").toString());
-        PropertyUtils.setProperty(gB,"idB",gD.getData(g).getId());
 
 
-        driver.findElement(By.id("linguaG")).sendKeys("italiano");
-        driver.findElement(By.id("editoreG")).sendKeys("editore prova");
-        driver.findElement(By.id("dataG")).sendKeys("2024/01/08");
-        driver.findElement(By.id("copieG")).sendKeys("52");
-        driver.findElement(By.id("dispG")).sendKeys("1");
-        driver.findElement(By.id("prezzoG")).sendKeys("1.65f");
-        driver.findElement(By.id("confermaB")).click();
-        //
-        driver.findElement(By.id("idL")).sendKeys(PropertyUtils.getProperty(gB,"idB").toString());
-
-        driver.findElement(By.id("buttonMod")).click();
-        driver.findElement(By.id("listaB")).click();
-
-        //modif
-        WebElement titoloNG=driver.findElement(By.id("titoloNG"));
-        titoloNG.sendKeys("La gazzetta del pirla");
-        driver.findElement(By.id("linguaNG")).sendKeys("italiano");
-        driver.findElement(By.id("editoreNG")).sendKeys("mondadori");
-        driver.findElement(By.id("dataNG")).sendKeys("2024/02/18");
-        driver.findElement(By.id("copieNG")).sendKeys("100");
-        driver.findElement(By.id("dispNG")).sendKeys("1");
-        driver.findElement(By.id("prezzoNG")).sendKeys("4.56f");
-        driver.findElement(By.id("buttonI")).click();
-
-        //delete
-        driver.findElement(By.id("idL")).sendKeys(PropertyUtils.getProperty(gB,"idB").toString());
-        driver.findElement(By.id("buttonCanc")).click();
-        assertNotEquals(0,PropertyUtils.getProperty(gB,"idB"));
-
-
-    }
-
-
+/*
      //funziona
-    @Test
-    void testLoginAdminRaccoltaRiviste() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
-        String titolo;
 
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-        //schermata index
-        driver = new ChromeDriver();
-        driver.get("http://localhost:8080/original-LibreriaMaven/index.jsp");
-        driver.findElement(By.id("buttonLogin")).click();
-        driver.findElement(By.id("emailL")).sendKeys("admin@admin.com");
-        driver.findElement(By.id("passL")).sendKeys("Admin871");
-        PropertyUtils.setProperty(uB,"emailB",driver.findElement(By.id("emailL")).getAttribute("value"));
-        PropertyUtils.setProperty(uB,"passB",driver.findElement(By.id("passL")).getAttribute("value"));
-        driver.findElement(By.id("loginB")).click();
-        //schermata admin
-        driver.findElement(By.id("raccoltaB")).click();
-        //schermata raccolta
-        driver.findElement(By.id("buttonR")).click();
-        //ho generato la lista
-        driver.findElement(By.id("buttonGenera")).click();
-        // 1 ) inserisco libro
-        driver.findElement(By.id("buttonAdd")).click();
-        WebElement t=driver.findElement(By.id("titoloL"));
-        t.sendKeys("provo ad inserire un nuovo giornale");
-        titolo=t.getAttribute("value");
-        PropertyUtils.setProperty(rB,"titoloB",titolo);
-        r.setTitolo(PropertyUtils.getProperty(rB,"titoloB").toString());
-        PropertyUtils.setProperty(rB,"idB",rD.getData(r).getId());
-        driver.findElement(By.id("catS")).sendKeys("INVERNALE");
-        driver.findElement(By.id("autL")).sendKeys("mondadori");
-        driver.findElement(By.id("linguaL")).sendKeys("italiano");
-        driver.findElement(By.id("editoreL")).sendKeys("mondandori");
-        driver.findElement(By.id("descL")).sendKeys("prova");
-        driver.findElement(By.id("dataL")).sendKeys("2024/01/08");
-        driver.findElement(By.id("checkL")).click();
-        driver.findElement(By.id("prezzoL")).sendKeys("2.63f");
-        driver.findElement(By.id("copieL")).sendKeys("100");
-        driver.findElement(By.id("confermaB")).click();
-        driver.findElement(By.id("idL")).sendKeys(PropertyUtils.getProperty(rB,"idB").toString());
-        driver.findElement(By.id("buttonMod")).click();
-        driver.findElement(By.id("listaB")).click();
-
-        //modif
-        driver.findElement(By.id("titoloNR")).sendKeys("titolo aggoirnato");
-        driver.findElement(By.id("categoriaNR")).sendKeys("TELEVISIVO");
-        driver.findElement(By.id("autoreNR")).sendKeys("paperino");
-        driver.findElement(By.id("linguaNR")).sendKeys("italiano");
-        driver.findElement(By.id("editoreNR")).sendKeys("pluto");
-        driver.findElement(By.id("descNR")).sendKeys("questa rivista e stata modificata");
-        driver.findElement(By.id("dataNR")).sendKeys("2024/05/10");
-        driver.findElement(By.id("dispNR")).sendKeys("1");
-        driver.findElement(By.id("prezzoNR")).sendKeys("3.25f");
-        driver.findElement(By.id("copieNR")).sendKeys("30");
-        driver.findElement(By.id("buttonI")).click();
-
-        //delete
-        driver.findElement(By.id("idL")).sendKeys(PropertyUtils.getProperty(rB,"idB").toString());
-        driver.findElement(By.id("buttonCanc")).click();
-
-        assertNotEquals(0,PropertyUtils.getProperty(rB,"idB"));
-
-
-    }
 
 
     @Test
@@ -836,7 +696,7 @@ class TestIndexPage {
 
     }
 
-
+*/
 
 
 
@@ -851,12 +711,8 @@ class TestIndexPage {
 
 
 
+
+
 }
-
-
- */
-
-
-
 
 

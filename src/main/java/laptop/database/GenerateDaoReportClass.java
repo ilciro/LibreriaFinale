@@ -74,10 +74,9 @@ public class GenerateDaoReportClass {
                     this.fd=new File(TXT_FILE_NAME);
                     this.fd1=new File(TXT_FILE_NAME_WEB);
                 }
-                default -> {
-                    Logger.getLogger("GenerateDaoReportClass").log(Level.SEVERE, " choice not correct !!");
+                default -> Logger.getLogger("GenerateDaoReportClass").log(Level.SEVERE, " choice not correct !!");
 
-                }
+
 
 
             }
@@ -120,11 +119,7 @@ public class GenerateDaoReportClass {
             path = TXT_FILE_NAME;
             status = writeToFileU(path);
          }
-            default -> {
-                Logger.getLogger("generateReport").log(Level.SEVERE, " query not correct !!");
-
-            }
-
+            default -> Logger.getLogger("generateReport").log(Level.SEVERE, " query not correct !!");
         }
        return !status;
 
@@ -268,10 +263,7 @@ public class GenerateDaoReportClass {
                     reportFinale=leggiReport(UTENTI);
 
             }
-            default -> {
-                Logger.getLogger("getReportView").log(Level.INFO, "choice for view is wrong");
-
-            }
+            default -> Logger.getLogger("getReportView").log(Level.INFO, "choice for view is wrong");
         }
         return reportFinale;
     }
