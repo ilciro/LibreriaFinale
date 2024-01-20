@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="remove code smelle v1">
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="report webv1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/GenerateDaoReportClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/GenerateDaoReportClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GenerateDaoReportClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GenerateDaoReportClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/GenerateDaoReportClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/GenerateDaoReportClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-LibreriaMaven.war" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,14 +280,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
-    </task>
-    <task id="LOCAL-00027" summary="insert management book web">
-      <option name="closed" value="true" />
-      <created>1702374143995</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1702374143995</updated>
     </task>
     <task id="LOCAL-00028" summary="insert management book web v2( fix bugs)">
       <option name="closed" value="true" />
@@ -653,7 +649,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705662488780</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="report webv1">
+      <option name="closed" value="true" />
+      <created>1705743309021</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1705743309022</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -681,7 +685,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="restrung dao v4 code smells" />
     <MESSAGE value="restrung dao v4 code smells v2" />
     <MESSAGE value="restrung dao v4 code smells v3" />
     <MESSAGE value="restrung dao v4 code smells v4" />
@@ -706,7 +709,8 @@
     <MESSAGE value="reduce duplication v7" />
     <MESSAGE value="delete books" />
     <MESSAGE value="remove code smelle v1" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove code smelle v1" />
+    <MESSAGE value="report webv1" />
+    <option name="LAST_COMMIT_MESSAGE" value="report webv1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

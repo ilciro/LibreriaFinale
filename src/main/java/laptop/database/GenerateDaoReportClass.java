@@ -74,6 +74,10 @@ public class GenerateDaoReportClass {
                     this.fd=new File(TXT_FILE_NAME);
                     this.fd1=new File(TXT_FILE_NAME_WEB);
                 }
+                default -> {
+                    Logger.getLogger("GenerateDaoReportClass").log(Level.SEVERE, " choice not correct !!");
+
+                }
 
 
             }
@@ -116,6 +120,10 @@ public class GenerateDaoReportClass {
             path = TXT_FILE_NAME;
             status = writeToFileU(path);
          }
+            default -> {
+                Logger.getLogger("generateReport").log(Level.SEVERE, " query not correct !!");
+
+            }
 
         }
        return !status;
@@ -260,6 +268,10 @@ public class GenerateDaoReportClass {
                     reportFinale=leggiReport(UTENTI);
 
             }
+            default -> {
+                Logger.getLogger("getReportView").log(Level.INFO, "choice for view is wrong");
+
+            }
         }
         return reportFinale;
     }
@@ -277,26 +289,27 @@ public class GenerateDaoReportClass {
         }
 
 
-        switch (type){
-            case LIBRO ,RIVISTA,GIORNALE->{
-            try(Connection conn=ConnToDb.connectionToDB();
-                PreparedStatement prepQ=conn.prepareStatement(getQuery())) {
-                ResultSet rs = prepQ.executeQuery();
-                while (rs.next()) {
-                    builder.append("id :");
-                    builder.append(rs.getInt(1));
-                    builder.append("\t");
-                    builder.append("titolo :");
-                    builder.append(rs.getString(2));
-                    builder.append("\t");
-                    builder.append("ricavoMassimo :");
-                    builder.append(rs.getInt(1));
-                    builder.append("\n");
+
+            if(type.equals(LIBRO)||type.equals(GIORNALE)|| type.equals(RIVISTA)) {
+                try (Connection conn = ConnToDb.connectionToDB();
+                     PreparedStatement prepQ = conn.prepareStatement(getQuery())) {
+                    ResultSet rs = prepQ.executeQuery();
+                    while (rs.next()) {
+                        builder.append("id :");
+                        builder.append(rs.getInt(1));
+                        builder.append("\t");
+                        builder.append("titolo :");
+                        builder.append(rs.getString(2));
+                        builder.append("\t");
+                        builder.append("ricavoMassimo :");
+                        builder.append(rs.getInt(1));
+                        builder.append("\n");
+
+                    }
 
                 }
             }
-        }
-            case UTENTI -> {
+            if(type.equals(UTENTI)) {
                 try(Connection conn=ConnToDb.connectionToDB();
                     PreparedStatement prepQ=conn.prepareStatement(getQuery()))
                 {
@@ -319,7 +332,7 @@ public class GenerateDaoReportClass {
                     }
                 }
             }
-        }
+
         return builder.toString();
     }
 
