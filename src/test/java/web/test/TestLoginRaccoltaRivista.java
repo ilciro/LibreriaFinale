@@ -1,12 +1,12 @@
 package web.test;
 
+import laptop.database.GenerateDaoReportClass;
 import laptop.database.RivistaDao;
 import laptop.model.raccolta.Rivista;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import web.bean.RivistaBean;
 import web.bean.UserBean;
@@ -26,6 +26,7 @@ public class TestLoginRaccoltaRivista {
     private final RivistaBean rB=new RivistaBean();
 
     private final UserBean uB=UserBean.getInstance();
+    private static final String RIVISTA="rivista";
 
 
     public TestLoginRaccoltaRivista() throws IOException {
@@ -81,7 +82,8 @@ public class TestLoginRaccoltaRivista {
         driver.findElement(By.id("copieL")).sendKeys("100");
         driver.findElement(By.id("confermaB")).click();
         driver.findElement(By.id("buttonGenera")).click();
-        int idOggetto=rD.getRiviste().size();
+        GenerateDaoReportClass grCD=new GenerateDaoReportClass(RIVISTA);
+        int idOggetto=grCD.getIdMax(RIVISTA);
         setId(idOggetto);
         PropertyUtils.setProperty(rB,"idB",getId());
         r.setId((Integer)PropertyUtils.getProperty(rB,"idB"));

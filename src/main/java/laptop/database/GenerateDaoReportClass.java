@@ -330,6 +330,33 @@ public class GenerateDaoReportClass {
         return builder.toString();
     }
 
+    public int getIdMax(String type)
+    {
+        int idMax = 0;
+        switch (type) {
+            case LIBRO -> query = "select count(*) as massimo from LIBRO";
+            case GIORNALE -> query = "select count(*) as massimo from GIORNALE";
+            case RIVISTA -> query = "select count(*) as massimo from RIVISTA";
+            default -> Logger.getLogger("idMax").log(Level.INFO, "id max not found");
+
+        }
+        try(Connection conn=ConnToDb.generalConnection();
+            PreparedStatement prepQ=conn.prepareStatement(query)) {
+            
+            ResultSet rs=prepQ.executeQuery();
+            if (rs.next())
+                idMax=rs.getInt("massimo");
+            
+            
+        } catch (SQLException e) {
+            Logger.getLogger("get idMAx").log(Level.INFO, "id max not avalaible");
+
+        }
+
+        return idMax;
+    }
+
+
 
 
 }

@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: web.test.TestLoginRaccoltaGiornale
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 11.602 s <<< FAILURE! - in web.test.TestLoginRaccoltaGiornale
+web.test.TestLoginRaccoltaGiornale.testLoginAdminRaccoltaGiornale  Time elapsed: 11.466 s  <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"#titoloNG"}
+  (Session info: chrome=120.0.6099.224)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.5.0-14-generic', java.version: '17.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [78130efa1f7a7013210d58d83709e570, findElement {using=id, value=titoloNG}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.224, chrome: {chromedriverVersion: 120.0.6099.224 (3587067cafd..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:42531}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:42531/devtoo..., se:cdpVersion: 120.0.6099.224, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 78130efa1f7a7013210d58d83709e570
+	at web.test.TestLoginRaccoltaGiornale.testLoginAdminRaccoltaGiornale(TestLoginRaccoltaGiornale.java:88)
+

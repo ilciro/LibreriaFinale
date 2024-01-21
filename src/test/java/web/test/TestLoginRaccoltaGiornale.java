@@ -1,12 +1,12 @@
 package web.test;
 
+import laptop.database.GenerateDaoReportClass;
 import laptop.database.GiornaleDao;
 import laptop.model.raccolta.Giornale;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import web.bean.GiornaleBean;
 import web.bean.UserBean;
@@ -21,6 +21,7 @@ public class TestLoginRaccoltaGiornale {
     private final GiornaleDao gD=new GiornaleDao();
     private final GiornaleBean gB=new GiornaleBean();
     private final UserBean uB=UserBean.getInstance();
+    private static final String GIORNALE="giornale";
 
     private  int id;
     private  String titolo;
@@ -75,7 +76,8 @@ public class TestLoginRaccoltaGiornale {
         driver.findElement(By.id("confermaB")).click();
         driver.findElement(By.id("buttonGenera")).click();
         //get last id
-        int appoggioId=gD.getGiornali().size();
+        GenerateDaoReportClass gDRC=new GenerateDaoReportClass(GIORNALE);
+        int appoggioId= gDRC.getIdMax(GIORNALE);
         setId(appoggioId);
         PropertyUtils.setProperty(gB,"idB",getId());
         g.setId((Integer) PropertyUtils.getProperty(gB,"idB"));

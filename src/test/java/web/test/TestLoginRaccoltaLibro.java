@@ -2,10 +2,8 @@ package web.test;
 
 
 import laptop.database.*;
-import laptop.model.TempUser;
-import laptop.model.raccolta.Giornale;
+
 import laptop.model.raccolta.Libro;
-import laptop.model.raccolta.Rivista;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -29,6 +27,7 @@ class TestLoginRaccoltaLibro {
 
     private final Libro l=new Libro();
     private final UserBean uB=UserBean.getInstance();
+    private static final String LIBRO="libro";
 
 
     TestLoginRaccoltaLibro() throws IOException {
@@ -81,7 +80,8 @@ class TestLoginRaccoltaLibro {
         //previous page
         driver.findElement(By.id("buttonGenera")).click();
         //get last id
-        int appoggioId=lD.getLibri().size();
+        GenerateDaoReportClass gRDC = new GenerateDaoReportClass(LIBRO);
+        int appoggioId= gRDC.getIdMax(LIBRO);
         setId(appoggioId);
         PropertyUtils.setProperty(lB,"idB",getId());
         l.setId((Integer) PropertyUtils.getProperty(lB,"idB"));
