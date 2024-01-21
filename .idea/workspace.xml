@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="modif pom (delete tomcat-plugin)">
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/GenerateDaoReportClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/GenerateDaoReportClass.java" afterDir="false" />
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="modif pom (delete tomcat-plugin) v2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GenerateDaoReportClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GenerateDaoReportClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/GenerateDaoReportClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/GenerateDaoReportClass.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/original-LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-LibreriaMaven.war" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -276,14 +281,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
-    </task>
-    <task id="LOCAL-00030" summary="insert management daily web (no test) v2">
-      <option name="closed" value="true" />
-      <created>1702405015446</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1702405015446</updated>
     </task>
     <task id="LOCAL-00031" summary="insert management magazine web">
       <option name="closed" value="true" />
@@ -653,7 +650,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705757439479</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="modif pom (delete tomcat-plugin) v2">
+      <option name="closed" value="true" />
+      <created>1705757707656</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1705757707656</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -681,7 +686,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="restrung dao v4 code smells v4" />
     <MESSAGE value="restrung dao v4 code smells v5" />
     <MESSAGE value="test v1" />
     <MESSAGE value="test v2" />
@@ -706,7 +710,8 @@
     <MESSAGE value="report webv1" />
     <MESSAGE value="report web v2" />
     <MESSAGE value="modif pom (delete tomcat-plugin)" />
-    <option name="LAST_COMMIT_MESSAGE" value="modif pom (delete tomcat-plugin)" />
+    <MESSAGE value="modif pom (delete tomcat-plugin) v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="modif pom (delete tomcat-plugin) v2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
