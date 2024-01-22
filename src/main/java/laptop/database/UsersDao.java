@@ -40,27 +40,30 @@ public class UsersDao {
 
 
 		LocalDate d = u.getDataDiNascita();
+		u.setIdRuolo("U");
 
 		query = "INSERT INTO `USERS`"
-				+ "(`Nome`,"
+				+ "(`idRuolo`,"
+				+ "`Nome`,"
 				+ "`Cognome`,"
 				+ "`Email`,"
 				+ "`pwd`,"
 				+ " `descrizione`,"
 				+ "`DataNascita`)"
 				+ "VALUES"
-				+ "(?,?,?,?,?,?)";
+				+ "(?,?,?,?,?,?,?)";
 
 		try (Connection conn = ConnToDb.connectionToDB();
 			 PreparedStatement prepQ = conn.prepareStatement(query)) {
 
 
-			prepQ.setString(1, User.getInstance().getNome());
-			prepQ.setString(2, User.getInstance().getCognome());
-			prepQ.setString(3, User.getInstance().getEmail());
-			prepQ.setString(4, User.getInstance().getPassword());
-			prepQ.setString(5, "utente aggiunto");
-			prepQ.setDate(6, Date.valueOf(d));
+			prepQ.setString(1,User.getInstance().getIdRuolo().substring(0,1));
+			prepQ.setString(2, User.getInstance().getNome());
+			prepQ.setString(3, User.getInstance().getCognome());
+			prepQ.setString(4, User.getInstance().getEmail());
+			prepQ.setString(5, User.getInstance().getPassword());
+			prepQ.setString(6, "utente aggiunto");
+			prepQ.setDate(7,Date.valueOf(d));
 			prepQ.executeUpdate();
 
 			state = true;
@@ -181,7 +184,7 @@ public class UsersDao {
 
 		}
 
-
+		gRC.ripristinaOrdine("utenti");
 		Logger.getLogger("delete user ruolo").log(Level.INFO, "cancello user id{0}", id);
 
 
@@ -261,7 +264,7 @@ public class UsersDao {
 			Path path = Path.of(TXT_FILE_NAME);
 			Path path1 = Path.of(TXT_FILE_NAME_WEB);
 			gRC.checkFilePath(path);
-			if(Boolean.TRUE.equals(gRC.generateReport("libro")))
+			if(Boolean.TRUE.equals(gRC.generateReport("utenti")))
 				gRC.checkFilePath(path1);
 			Files.copy(path, path1, StandardCopyOption.REPLACE_EXISTING);
 
@@ -412,5 +415,8 @@ public class UsersDao {
 	}
 
 
+    public static int getIdMax() {
+		return gRC.getIdMax("utenti");
+    }
 }
 

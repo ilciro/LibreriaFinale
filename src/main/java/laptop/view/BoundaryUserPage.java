@@ -141,7 +141,7 @@ public class BoundaryUserPage implements Initializable {
 		elencoUtenti.clear();
 		
 		
-		try (BufferedReader reader = new BufferedReader(new FileReader("ReportFinale/riepilogoUtenti.txt")))
+		try (BufferedReader reader = new BufferedReader(new FileReader("riepilogoUtenti.txt")))
 		{
 			String line= reader.readLine();		
 

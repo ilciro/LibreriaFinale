@@ -236,6 +236,7 @@ public class GiornaleDao {
 		}
 
 		java.util.logging.Logger.getLogger("Cancella Giornale").log(Level.INFO, "Giornale cancellato {0}", row);
+		gRC.ripristinaOrdine(GIORNALE);
 		return row;
 
 	}

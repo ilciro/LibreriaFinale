@@ -118,7 +118,7 @@ public class InserisciOggettoServlet extends HttpServlet {
                         if (lD.creaLibrio(l)) {
                             lD.aggiornaData(l, sqlDate);
                             lB.setIdB(lD.getIdMax());
-                            sB.setIdB(lB.getIdB());
+                            sB.setIdB(lD.getIdMax());
                             req.setAttribute("beanL", lB);
                             req.setAttribute("beanS", sB);
                             RequestDispatcher view = getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");

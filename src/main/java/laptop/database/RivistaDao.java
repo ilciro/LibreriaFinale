@@ -250,6 +250,7 @@ public class 	RivistaDao {
 		}
 
 		java.util.logging.Logger.getLogger("Cancella Rivista").log(Level.INFO,"Rivista cancellato {0}",row);
+		gRC.ripristinaOrdine(RIVISTA);
 		return row;
 
 	}

@@ -1,7 +1,5 @@
 package web.bean;
 
-import javafx.collections.ObservableList;
-import laptop.model.User;
 
 import java.time.LocalDate;
 import java.util.regex.Pattern;
@@ -138,17 +136,17 @@ public class UserBean {
         this.passB = passB;
     }
 
-    private String getRuolo(String r)
-    {
-        String rB = switch (r) {
-            case "ADMIN", "A" -> Ruoli.ADMIN.toString();
-            case "EDITORE", "E" -> Ruoli.EDITORE.toString();
-            case "SCRITTORE", "W" -> Ruoli.SCRITTORE.toString();
-            case "UTENTE", "U" -> Ruoli.UTENTE.toString();
-            default -> null;
+    private String getRuolo(String r) {
+        String rB;
+        switch (r) {
+            case "ADMIN", "A" -> rB=Ruoli.ADMIN.toString().substring(0,1);
+            case "EDITORE", "E" -> rB=Ruoli.EDITORE.toString().substring(0,1);
+            case "SCRITTORE", "W" -> rB=Ruoli.SCRITTORE.toString().substring(0,1);
+            default -> rB=Ruoli.UTENTE.toString().substring(0,1);
+
         };
 
-        assert rB != null;
-        return rB.substring(0,1);
+
+        return rB;
     }
 }

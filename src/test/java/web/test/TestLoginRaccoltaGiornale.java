@@ -1,9 +1,9 @@
 //package web.test;
 //
-//import laptop.database.GenerateDaoReportClass;
 //import laptop.database.GiornaleDao;
 //import laptop.model.raccolta.Giornale;
 //import org.apache.commons.beanutils.PropertyUtils;
+//import org.junit.jupiter.api.AfterEach;
 //import org.junit.jupiter.api.Test;
 //import org.openqa.selenium.By;
 //import org.openqa.selenium.WebDriver;
@@ -17,35 +17,18 @@
 //
 //public class TestLoginRaccoltaGiornale {
 //    WebDriver driver;
-//    private final Giornale g=new Giornale();
-//    private final GiornaleDao gD=new GiornaleDao();
+//
 //    private final GiornaleBean gB=new GiornaleBean();
 //    private final UserBean uB=UserBean.getInstance();
-//    private static final String GIORNALE="giornale";
+//    private final GiornaleDao gD=new GiornaleDao();
 //
-//    private  int id;
-//    private  String titolo;
 //
-//    private int getId() {
-//        return id;
-//    }
 //
-//    private void setId(int id) {
-//        this.id = id;
-//    }
 //
-//    private String getTitolo() {
-//        return titolo;
-//    }
-//
-//    private void setTitolo(String titolo) {
-//        this.titolo = titolo;
-//    }
 //
 //
 //    @Test
 //    void testLoginAdminRaccoltaGiornale() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
-//        String titolo;
 //
 //        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 //        //schermata index
@@ -76,11 +59,7 @@
 //        driver.findElement(By.id("confermaB")).click();
 //        driver.findElement(By.id("buttonGenera")).click();
 //        //get last id
-//        GenerateDaoReportClass gDRC=new GenerateDaoReportClass(GIORNALE);
-//        int appoggioId= gDRC.getIdMax(GIORNALE);
-//        setId(appoggioId);
-//        PropertyUtils.setProperty(gB,"idB",getId());
-//        g.setId((Integer) PropertyUtils.getProperty(gB,"idB"));
+//
 //        driver.findElement(By.id("idL")).sendKeys(PropertyUtils.getProperty(gB,"idB").toString());
 //        driver.findElement(By.id("buttonMod")).click();
 //        driver.findElement(By.id("listaB")).click();
@@ -94,11 +73,19 @@
 //        driver.findElement(By.id("prezzoNG")).sendKeys("4.56f");
 //        driver.findElement(By.id("buttonI")).click();
 //        driver.findElement(By.id("buttonGenera")).click();
+//        PropertyUtils.setProperty(gB,"idB",gD.getIdMax());
+//
 //        //delete
 //        driver.findElement(By.id("idL")).sendKeys(PropertyUtils.getProperty(gB,"idB").toString());
 //        driver.findElement(By.id("buttonCanc")).click();
 //        assertNotEquals(0,PropertyUtils.getProperty(gB,"idB"));
 //
+//
+//    }
+//    @AfterEach
+//    void chiudiTest()
+//    {
+//        driver.close();
 //
 //    }
 //}

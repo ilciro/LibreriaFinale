@@ -6,6 +6,7 @@ package laptop.database;
 
 import laptop.model.TempUser;
 import laptop.utilities.ConnToDb;
+import org.checkerframework.checker.units.qual.C;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -337,6 +338,7 @@ public class GenerateDaoReportClass {
             case LIBRO -> query = "select count(*) as massimo from LIBRO";
             case GIORNALE -> query = "select count(*) as massimo from GIORNALE";
             case RIVISTA -> query = "select count(*) as massimo from RIVISTA";
+            case UTENTI -> query="select count(*) as massimo from USERS";
             default -> Logger.getLogger("idMax").log(Level.INFO, "id max not found");
 
         }
@@ -353,6 +355,25 @@ public class GenerateDaoReportClass {
         }
 
         return idMax;
+    }
+    public void ripristinaOrdine(String type)
+    {
+
+        switch (type)
+        {
+            case LIBRO -> query="ALTER TABLE LIBRO AUTO_INCREMENT = 1";
+            case GIORNALE -> query="ALTER TABLE GIORNALE AUTO_INCREMENT =1";
+            case RIVISTA -> query="ALTER TABLE RIVISTA AUTO_INCREMENT=1";
+            case UTENTI -> query="ALTER TABLE USERS AUTO_INCREMENT=1";
+            default -> java.util.logging.Logger.getLogger("ripristino ").log(Level.SEVERE," id restore failed");
+
+        }
+        try (Connection conn=ConnToDb.connectionToDB();
+            PreparedStatement prepQ=conn.prepareStatement(query)){
+            prepQ.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

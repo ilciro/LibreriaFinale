@@ -55,8 +55,6 @@ public class GestioneOggettoServlet extends HttpServlet {
                 switch (sB.getTypeB()) {
                     case LIBRO -> {
                         mOB.setMiaListaB(lD.getLibri());
-                        req.setAttribute("beanS", sB);
-                        req.setAttribute("beanL", lB);
                         req.setAttribute("beanMOB", mOB);
                     }
                     case GIORNALE -> {

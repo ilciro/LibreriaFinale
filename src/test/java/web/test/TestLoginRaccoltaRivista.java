@@ -18,8 +18,7 @@
 //
 //public class TestLoginRaccoltaRivista {
 //
-//    private int id;
-//    private String titolo;
+//
 //    WebDriver driver;
 //    private final RivistaDao rD=new RivistaDao();
 //    private final Rivista r=new Rivista();
@@ -32,21 +31,6 @@
 //    public TestLoginRaccoltaRivista() throws IOException {
 //    }
 //
-//    private int getId() {
-//        return id;
-//    }
-//
-//    private void setId(int id) {
-//        this.id = id;
-//    }
-//
-//    private String getTitolo() {
-//        return titolo;
-//    }
-//
-//    private void setTitolo(String titolo) {
-//        this.titolo = titolo;
-//    }
 //
 //    @Test
 //    void testLoginAdminRaccoltaRiviste() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
@@ -82,11 +66,8 @@
 //        driver.findElement(By.id("copieL")).sendKeys("100");
 //        driver.findElement(By.id("confermaB")).click();
 //        driver.findElement(By.id("buttonGenera")).click();
-//        GenerateDaoReportClass grCD=new GenerateDaoReportClass(RIVISTA);
-//        int idOggetto=grCD.getIdMax(RIVISTA);
-//        setId(idOggetto);
-//        PropertyUtils.setProperty(rB,"idB",getId());
-//        r.setId((Integer)PropertyUtils.getProperty(rB,"idB"));
+//
+//        PropertyUtils.setProperty(rB,"idB",rD.getIdMax());
 //        driver.findElement(By.id("idL")).sendKeys(PropertyUtils.getProperty(rB,"idB").toString());
 //        driver.findElement(By.id("buttonMod")).click();
 //        //modif

@@ -53,8 +53,8 @@ public class ModificaOggettoServlet extends HttpServlet {
                 switch (sB.getTypeB())
                 {
                     case LIBRO-> {
-                        lB.setIdB(sB.getIdB());
-                        l.setId(lB.getIdB());
+                        lB.setIdB(lD.getIdMax());
+                        l.setId(lD.getIdMax());
 
                         //passo tutti i valori al bean
 
@@ -159,6 +159,7 @@ public class ModificaOggettoServlet extends HttpServlet {
                         l.setNrCopie(lB.getNrCopieB());
                         l.setDesc(lB.getDescB());
                         l.setPrezzo(lB.getPrezzoB());
+                        l.setId(lB.getIdB());
 
                         if (lD.aggiornaLibro(l)) {
 

@@ -251,6 +251,7 @@ public class LibroDao implements DaoInterface{
 		int row;
 		query = "delete from LIBRO where idLibro=? or codIsbn=?";
 
+
 		try (Connection conn = ConnToDb.connectionToDB();
 			 PreparedStatement prepQ = conn.prepareStatement(query)) {
 			prepQ.setInt(1, l.getId());
@@ -259,6 +260,7 @@ public class LibroDao implements DaoInterface{
 		}
 
 		java.util.logging.Logger.getLogger("Cancella libro").log(Level.INFO, "libro cancellato {0}", row);
+		gRC.ripristinaOrdine(LIBRO);
 		return row;
 
 	}

@@ -44,7 +44,6 @@ public class ProfiloServlet extends HttpServlet{
         //scrittore gestione
         String dati=req.getParameter("prendiDatiB");
         String ordini=req.getParameter("ordiniB");
-        String indietro=req.getParameter("indietroB");
 
 
 
@@ -87,11 +86,7 @@ public class ProfiloServlet extends HttpServlet{
                 }
 
             }
-            if(annulla!=null && annulla.equals("indietro"))
-            {
-                view= getServletContext().getRequestDispatcher("/utenti.jsp");
-                view.forward(req,resp);
-            }
+
             if(dati!=null && dati.equals("prendi dati"))
             {
                 u.setEmail(uB.getEmailB());
@@ -117,9 +112,10 @@ public class ProfiloServlet extends HttpServlet{
                  view = getServletContext().getRequestDispatcher(profilo);
                 view.forward(req,resp);
             }
-            if(indietro!=null && indietro.equals("indietro"))
+            if(annulla!=null && annulla.equals("indietro"))
             {
-                 view = getServletContext().getRequestDispatcher("/scrittore.jsp");
+
+                 view = getServletContext().getRequestDispatcher("/index.jsp");
                 view.forward(req,resp);
             }
 

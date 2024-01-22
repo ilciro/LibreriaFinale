@@ -35,6 +35,7 @@ public class InserisciUtenteServlet extends HttpServlet {
         try {
             if(invia!=null && invia.equals("invia"))
             {
+                uB.setRuoloB("U");
                 uB.setNomeB(nome);
                 uB.setCognomeB(cognome);
                 uB.setEmailB(email);
@@ -49,6 +50,7 @@ public class InserisciUtenteServlet extends HttpServlet {
                 sqlDate = new java.sql.Date(utilDate.getTime());
                 UserBean.getInstance().setDataDiNascitaB(sqlDate.toLocalDate());
 
+                u.setIdRuolo(uB.getRuoloB());
                 u.setNome(uB.getNomeB());
                 u.setCognome(uB.getCognomeB());
                 u.setEmail(uB.getEmailB());
