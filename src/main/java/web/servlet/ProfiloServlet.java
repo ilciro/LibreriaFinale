@@ -2,6 +2,7 @@ package web.servlet;
 
 import java.io.IOException;
 
+import java.io.Serial;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
@@ -23,6 +24,7 @@ public class ProfiloServlet extends HttpServlet{
     /**
      *
      */
+    @Serial
     private static final long serialVersionUID = 1L;
     private final PagamentoBean pB=new PagamentoBean();
     private final PagamentoDao pD=new PagamentoDao();

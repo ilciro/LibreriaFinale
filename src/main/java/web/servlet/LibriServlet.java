@@ -21,10 +21,10 @@ public class LibriServlet extends HttpServlet {
     @Serial
     private static final long serialVersionUID = 1L;
     private final LibroBean lB = new LibroBean();
-    private final String libri = "/libri.jsp";
+    private static final String libri = "/libri.jsp";
     private final LibroDao lD = new LibroDao();
     private final Libro l = new Libro();
-    private final String beanL = "beanL";
+    private static final String beanL = "beanL";
     private final SystemBean sB=SystemBean.getInstance();
     private final AcquistaBean aB=new AcquistaBean();
 

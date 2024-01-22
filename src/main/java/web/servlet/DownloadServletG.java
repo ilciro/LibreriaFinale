@@ -15,10 +15,12 @@ import web.bean.DownloadBean;
 import web.bean.SystemBean;
 
 import java.io.IOException;
+import java.io.Serial;
 import java.sql.SQLException;
 @WebServlet("/DownloadServletG")
 
 public class DownloadServletG extends HttpServlet {
+    @Serial
     private static final long serialVersionUID = 1L;
     private final DownloadBean dB=new DownloadBean();
     private final SystemBean sB=SystemBean.getInstance();
@@ -26,7 +28,7 @@ public class DownloadServletG extends HttpServlet {
     private final PagamentoDao pD=new PagamentoDao();
     private final GiornaleDao gD=new GiornaleDao();
     private final ContrassegnoDao fDao=new ContrassegnoDao();
-    private final String index="/index.jsp";
+    private static final String index="/index.jsp";
 
     public DownloadServletG() throws IOException {
     }
@@ -54,8 +56,8 @@ public class DownloadServletG extends HttpServlet {
             if (annulla != null && annulla.equals("annulla")) {
 
                 //split
-                boolean statusF = false;
-                boolean statusP = false;
+                boolean statusF;
+                boolean statusP;
 
                 String metodoP = sB.getMetodoPB();
 

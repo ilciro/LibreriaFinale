@@ -355,10 +355,9 @@ public class 	RivistaDao {
 	}
 
 
-
-
-	
-		
+    public int getIdMax() {
+		return gRC.getIdMax(RIVISTA);
+    }
 }
 
 		

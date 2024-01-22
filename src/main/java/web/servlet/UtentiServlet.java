@@ -2,6 +2,7 @@ package web.servlet;
 
 import java.io.IOException;
 
+import java.io.Serial;
 import java.util.logging.Level;
 
 
@@ -22,6 +23,7 @@ public class UtentiServlet extends HttpServlet {
     /**
      *
      */
+    @Serial
     private static final long serialVersionUID = 1L;
     private final UserBean uB=UserBean.getInstance();
     private final SystemBean sB=SystemBean.getInstance();

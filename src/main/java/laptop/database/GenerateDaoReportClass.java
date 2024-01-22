@@ -340,14 +340,13 @@ public class GenerateDaoReportClass {
             default -> Logger.getLogger("idMax").log(Level.INFO, "id max not found");
 
         }
-        try(Connection conn=ConnToDb.generalConnection();
+        try(Connection conn=ConnToDb.connectionToDB();
             PreparedStatement prepQ=conn.prepareStatement(query)) {
             
             ResultSet rs=prepQ.executeQuery();
-            if (rs.next())
-                idMax=rs.getInt("massimo");
-            
-            
+            while (rs.next())
+               idMax=rs.getInt("massimo");
+
         } catch (SQLException e) {
             Logger.getLogger("get idMAx").log(Level.INFO, "id max not avalaible");
 

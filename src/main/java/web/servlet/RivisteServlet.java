@@ -12,13 +12,15 @@ import web.bean.RivistaBean;
 import web.bean.SystemBean;
 
 import java.io.IOException;
+import java.io.Serial;
+
 @WebServlet("/RivisteServlet")
 
 public class RivisteServlet extends HttpServlet {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     private final RivistaBean rB=new RivistaBean();
-    private final String riviste="/riviste.jsp";
     private final Rivista r=new Rivista();
     private final RivistaDao rD=new RivistaDao();
     private final static String beanR="beanR";

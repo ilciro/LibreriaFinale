@@ -1,6 +1,7 @@
 package web.servlet;
 
 import java.io.IOException;
+import java.io.Serial;
 
 import web.bean.SystemBean;
 import jakarta.servlet.RequestDispatcher;
@@ -16,9 +17,10 @@ public class RicercaServlet extends HttpServlet {
     /**
      *
      */
+    @Serial
     private static final long serialVersionUID = 1L;
-    private final String beanS="beanS";
-    private final String ricercaInCatalogo="/ricercaInCatalogo.jsp";
+    private static final String beanS="beanS";
+    private static final String ricercaInCatalogo="/ricercaInCatalogo.jsp";
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

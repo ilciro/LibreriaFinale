@@ -1,6 +1,7 @@
 package web.servlet;
 
 import java.io.IOException;
+import java.io.Serial;
 import java.sql.Date;
 
 import java.sql.SQLException;
@@ -24,6 +25,7 @@ public class RegistrazioneServlet extends HttpServlet {
     /**
      *
      */
+    @Serial
     private static final long serialVersionUID = 1L;
 
     private final UserBean uB=UserBean.getInstance();

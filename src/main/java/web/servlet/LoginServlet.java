@@ -45,25 +45,23 @@ public class LoginServlet extends HttpServlet {
                     u.setIdRuolo(UsersDao.getRuolo(u));
                     uB.setRuoloB(u.getIdRuolo());
 
-                    String ruolo = uB.getRuoloB();
-
-                    switch (ruolo) {
-                        case "A", "a":
+                    switch (uB.getRuoloB()) {
+                        case "A", "a"-> {
                             sB.setLoggedB(true);
                             req.setAttribute("beanUb", uB);
                             req.setAttribute("beanS", sB);
                             view = getServletContext().getRequestDispatcher("/admin.jsp");
                             view.forward(req, resp);
-                            break;
-                        case "U", "u", "W", "w", "S", "s", "E", "e":
+                        }
+                        case "U", "u", "W", "w", "S", "s", "E", "e"-> {
                             sB.setLoggedB(true);
                             req.setAttribute("beanUb", uB);
                             req.setAttribute("beanS", sB);
                             view = getServletContext().getRequestDispatcher("/utenti.jsp");
                             view.forward(req, resp);
-                            break;
-                        default:
-                            break;
+                        }
+                        default->java.util.logging.Logger.getLogger("login").log(Level.SEVERE, "login  error");
+
 
                     }
                 }

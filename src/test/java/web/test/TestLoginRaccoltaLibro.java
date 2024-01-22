@@ -23,11 +23,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class TestLoginRaccoltaLibro {
     WebDriver driver;
     private final LibroBean lB=new LibroBean();
-    private final LibroDao lD=new LibroDao();
+    private final SystemBean sB=SystemBean.getInstance();
 
     private final Libro l=new Libro();
     private final UserBean uB=UserBean.getInstance();
     private static final String LIBRO="libro";
+    private final LibroDao lD=new LibroDao();
 
 
     TestLoginRaccoltaLibro() throws IOException {
@@ -36,14 +37,13 @@ class TestLoginRaccoltaLibro {
 
     // Test for Admin all functionalities
 
-    private int id;
-    private String titolo;
 
 
   @Test
     void testLoginAdminRaccoltaLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException{
         //usato per prendere id
 
+        int id;
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //schermata index
         driver = new ChromeDriver();
@@ -77,17 +77,17 @@ class TestLoginRaccoltaLibro {
         driver.findElement(By.id("prezzoL")).sendKeys("5f");
         driver.findElement(By.id("copieL")).sendKeys("16");
         driver.findElement(By.id("confermaB")).click();
+
+
         //previous page
+
         driver.findElement(By.id("buttonGenera")).click();
         //get last id
-        GenerateDaoReportClass gRDC = new GenerateDaoReportClass(LIBRO);
-        int appoggioId= gRDC.getIdMax(LIBRO);
-        setId(appoggioId);
-        PropertyUtils.setProperty(lB,"idB",getId());
-        l.setId((Integer) PropertyUtils.getProperty(lB,"idB"));
+
         driver.findElement(By.id("idL")).sendKeys(PropertyUtils.getProperty(lB,"idB").toString());
         driver.findElement(By.id("buttonMod")).click();
         //schermata modifica
+
         driver.findElement(By.id("listaB")).click();
         //update
         driver.findElement(By.id("titoloNL")).sendKeys("un bel libro aggironato");
@@ -106,29 +106,18 @@ class TestLoginRaccoltaLibro {
         driver.findElement(By.id("buttonI")).click();
         //updated book
         driver.findElement(By.id("buttonGenera")).click();
-        driver.findElement(By.id("idL")).sendKeys(PropertyUtils.getProperty(lB,"idB").toString());
+
+        PropertyUtils.setProperty(lB,"idB",lD.getIdMax());
+        driver.findElement(By.id("idL")).sendKeys(String.valueOf(PropertyUtils.getProperty(lB,"idB")));
         //delete
         driver.findElement(By.id("buttonCanc")).click();
         driver.findElement(By.id("buttonGenera")).click();
+
+
         assertNotEquals(0,PropertyUtils.getProperty(lB,"idB"));
 
     }
 
-    private int getId() {
-        return id;
-    }
-
-    private void setId(int id) {
-        this.id = id;
-    }
-
-    private String getTitolo() {
-        return titolo;
-    }
-
-    private void setTitolo(String titolo) {
-        this.titolo = titolo;
-    }
 
 /*
     //funziona
@@ -696,7 +685,7 @@ class TestLoginRaccoltaLibro {
 
     }
 
-*/
+
 
 
 
@@ -707,7 +696,7 @@ class TestLoginRaccoltaLibro {
 
     }
 
-
+*/
 
 
 

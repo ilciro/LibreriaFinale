@@ -2,6 +2,7 @@ package web.servlet;
 
 import java.io.IOException;
 
+import java.io.Serial;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
@@ -21,6 +22,7 @@ public class ResetPasswordServlet extends HttpServlet {
     /**
      *
      */
+    @Serial
     private static final long serialVersionUID = 1L;
     private final UserBean uB=UserBean.getInstance();
     private final User u= User.getInstance();

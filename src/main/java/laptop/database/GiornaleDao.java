@@ -35,10 +35,8 @@ public class GiornaleDao {
 	private static final String ECCEZIONE = "eccezione generata:";
 	private static final String RIEPILOGOGIORNALI = "riepilogoGiornali.txt";
 	private static final String RIEPILOGOGIORNALIWEB = "src/main/webapp/riepilogoGiornali.txt";
-
-
-
 	private final GenerateDaoReportClass gRC;
+
 
 	public GiornaleDao() {
 		f = new Factory();
@@ -342,7 +340,8 @@ public class GiornaleDao {
 	}
 
 
-
-
+	public int getIdMax() {
+		return gRC.getIdMax(GIORNALE);
+	}
 }
 

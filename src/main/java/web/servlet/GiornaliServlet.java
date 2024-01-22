@@ -44,9 +44,7 @@ public class GiornaliServlet extends HttpServlet{
         if(g!=null && g.equals("genera lista"))
         {
 
-
-            gB.setListaGiornaliB(gD.getGiornaliIdTitoloAutore(new Giornale()));
-
+            gB.setListaGiornaliB(gD.getGiornali());
             req.setAttribute("beanG",gB);
             String giornali = "/giornali.jsp";
             view = getServletContext().getRequestDispatcher(giornali);
@@ -56,13 +54,10 @@ public class GiornaliServlet extends HttpServlet{
         }
         if(i!=null && i.equals("procedi"))
         {
-
             int idOgg=Integer.parseInt(id);
             sB.setIdB(idOgg);
-
             gB.setIdB(idOgg);
             giornale.setId(gB.getIdB());
-
             gB.setTitoloB(gD.getData(giornale).getTitolo());
             sB.setTitoloB(gB.getTitoloB());
             sB.setIdB(gB.getIdB());

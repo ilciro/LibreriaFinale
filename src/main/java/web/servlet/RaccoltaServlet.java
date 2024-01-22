@@ -16,7 +16,7 @@ import java.util.logging.Level;
 @WebServlet("/RaccoltaServlet")
 public class RaccoltaServlet extends HttpServlet {
 
-    private final String beanS="beanS";
+    private static final String beanS="beanS";
     private final UserBean uB=UserBean.getInstance();
 
     private final SystemBean sB=SystemBean.getInstance();

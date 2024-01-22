@@ -51,20 +51,20 @@ public class InserisciOggettoServlet extends HttpServlet {
             {
                 switch (sB.getTypeB())
                 {
-                    case "libro":
-                        String titolo=req.getParameter("titoloL");
-                        String pagine=req.getParameter("nrPagL");
-                        String codice=req.getParameter("codL");
-                        String autore=req.getParameter("autoreL");
-                        String editore=req.getParameter("editoreL");
-                        String lingua=req.getParameter("linguaL");
-                        String cat=req.getParameter("catS");
-                        String dataL=req.getParameter("dataL");
-                        String recensione=req.getParameter("recensioneL");
-                        String desc=req.getParameter("descL");
-                        String disp=req.getParameter("checkL");
-                        String prezzo=req.getParameter("prezzoL");
-                        String copie=req.getParameter("copieL");
+                    case "libro"-> {
+                        String titolo = req.getParameter("titoloL");
+                        String pagine = req.getParameter("nrPagL");
+                        String codice = req.getParameter("codL");
+                        String autore = req.getParameter("autoreL");
+                        String editore = req.getParameter("editoreL");
+                        String lingua = req.getParameter("linguaL");
+                        String cat = req.getParameter("catS");
+                        String dataL = req.getParameter("dataL");
+                        String recensione = req.getParameter("recensioneL");
+                        String desc = req.getParameter("descL");
+                        String disp = req.getParameter("checkL");
+                        String prezzo = req.getParameter("prezzoL");
+                        String copie = req.getParameter("copieL");
 
 
                         lB.setTitoloB(titolo);
@@ -117,7 +117,10 @@ public class InserisciOggettoServlet extends HttpServlet {
 
                         if (lD.creaLibrio(l)) {
                             lD.aggiornaData(l, sqlDate);
+                            lB.setIdB(lD.getIdMax());
+                            sB.setIdB(lB.getIdB());
                             req.setAttribute("beanL", lB);
+                            req.setAttribute("beanS", sB);
                             RequestDispatcher view = getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
                             view.forward(req, resp);
 
@@ -125,9 +128,10 @@ public class InserisciOggettoServlet extends HttpServlet {
                             RequestDispatcher view = getServletContext().getRequestDispatcher("/aggiungiOggettoPage.jsp");
                             view.forward(req, resp);
                         }
-                        break;
-                    case "giornale":
-                        String dataG=req.getParameter("dataG");
+                    }
+
+                    case "giornale"-> {
+                        String dataG = req.getParameter("dataG");
 
                         gB.setTitoloB(req.getParameter("titoloG"));
                         gB.setTipologiaB(req.getParameter("tipoG"));
@@ -159,20 +163,21 @@ public class InserisciOggettoServlet extends HttpServlet {
                         g.setDisponibilita(gB.getDisponibilitaB());
                         g.setPrezzo(gB.getPrezzoB());
 
-                        if(gD.creaGiornale(g))
-                        {
+                        if (gD.creaGiornale(g)) {
                             gD.aggiornaData(g, sqlDate1);
+                            gB.setIdB(gD.getIdMax());
+                            sB.setIdB(gB.getIdB());
+                            req.setAttribute("beanS", sB);
                             req.setAttribute("beanG", gB);
                             RequestDispatcher view = getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
                             view.forward(req, resp);
-                        }
-                        else{
+                        } else {
                             RequestDispatcher view = getServletContext().getRequestDispatcher("/aggiungiOggettoPage.jsp");
                             view.forward(req, resp);
                         }
-                        break;
-                    case "rivista":
-                        String dataR=req.getParameter("dataL");
+                    }
+                    case "rivista"-> {
+                        String dataR = req.getParameter("dataL");
                         rB.setTitoloB(req.getParameter("titoloL"));
                         rB.setTipologiaB(req.getParameter("catS"));
                         rB.setAutoreB(req.getParameter("autL"));
@@ -189,7 +194,7 @@ public class InserisciOggettoServlet extends HttpServlet {
 
                         rB.setDataB(sqlDate2);
 
-                        if(req.getParameter("checkL")!=null)
+                        if (req.getParameter("checkL") != null)
                             rB.setDispB(1);
                         else
                             rB.setDispB(0);
@@ -211,21 +216,23 @@ public class InserisciOggettoServlet extends HttpServlet {
                         r.setPrezzo(rB.getPrezzoB());
                         r.setCopieRim(rB.getCopieRimB());
 
-                        if(rD.creaRivista(r))
-                        {
+                        if (rD.creaRivista(r)) {
 
                             rD.aggiornaData(r, sqlDate2);
 
+                            rB.setIdB(rD.getIdMax());
+                            sB.setIdB(rB.getIdB());
+
+                            req.setAttribute("beanS", sB);
                             req.setAttribute("beanR", rB);
                             RequestDispatcher view = getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
                             view.forward(req, resp);
-                        }
-                        else{
+                        } else {
                             RequestDispatcher view = getServletContext().getRequestDispatcher("/aggiungiOggettoPage.jsp");
                             view.forward(req, resp);
                         }
-                    default:break;
-
+                    }
+                    default->java.util.logging.Logger.getLogger("creation").log(Level.SEVERE, "creation error");
 
                 }
             }

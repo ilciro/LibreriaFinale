@@ -1,6 +1,7 @@
 package web.servlet;
 
 import java.io.IOException;
+import java.io.Serial;
 import java.net.URISyntaxException;
 import java.sql.SQLException;
 
@@ -26,6 +27,7 @@ public class DownloadServlet extends HttpServlet{
     /**
      *
      */
+    @Serial
     private static final long serialVersionUID = 1L;
     private final DownloadBean dB=new DownloadBean();
     private final SystemBean sB=SystemBean.getInstance();
@@ -36,7 +38,7 @@ public class DownloadServlet extends HttpServlet{
 
 
 
-    private final String index="/index.jsp";
+    private static final String index="/index.jsp";
 
     public DownloadServlet() throws IOException {
     }
@@ -67,8 +69,8 @@ public class DownloadServlet extends HttpServlet{
             {
 
                 //split
-                boolean statusF=false;
-                boolean statusP=false;
+                boolean statusF;
+                boolean statusP;
 
                 String metodoP=sB.getMetodoPB();
 

@@ -90,11 +90,7 @@ public class ReportServlet extends HttpServlet {
         }
     }
 
-    //add comment
-    private void prova() {
-        System.out.print("ciao");
 
-    }
 
 }
 

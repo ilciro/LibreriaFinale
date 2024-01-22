@@ -46,16 +46,11 @@ public class AdminServlet extends HttpServlet {
         if (logout != null && logout.equals("logout")) {
             String email = uB.getEmailB();
 
-
             if (email == null) {
                  view = getServletContext().getRequestDispatcher("/admin.jsp");
                 view.forward(req, resp);
                 throw new LogoutException("Errore Logout");
-
-
-
             } else {
-
                 uB.setIdB(-1);
                 uB.setNomeB(null);
                 uB.setCognomeB(null);
@@ -63,15 +58,10 @@ public class AdminServlet extends HttpServlet {
                 uB.setDescrizioneB(null);
                 uB.setEmailB("");
                 uB.setPassB("");
-
-
                 java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, "stai sloggando {0}", uB.getEmailB());
                 sB.setLoggedB(false);
-
                  view = getServletContext().getRequestDispatcher("/index.jsp");
                 view.forward(req, resp);
-
-
 
             }
 
@@ -84,5 +74,5 @@ public class AdminServlet extends HttpServlet {
     }
 
 
-}
+    }
 }

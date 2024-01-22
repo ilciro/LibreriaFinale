@@ -1,6 +1,7 @@
 package web.servlet;
 
 import java.io.IOException;
+import java.io.Serial;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -10,7 +11,6 @@ import java.util.logging.Level;
 import laptop.database.CartaCreditoDao;
 import laptop.exception.IdException;
 import web.bean.CartaCreditoBean;
-import web.bean.LibroBean;
 import web.bean.PagamentoBean;
 import web.bean.SystemBean;
 import jakarta.servlet.RequestDispatcher;
@@ -22,8 +22,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import laptop.database.PagamentoDao;
 import laptop.model.CartaDiCredito;
 import laptop. model.Pagamento;
-import laptop.model.raccolta.Giornale;
-import laptop.model.raccolta.Libro;
 
 
 @WebServlet("/CartaCreditoServlet")
@@ -33,16 +31,14 @@ public class CartaCreditoServlet extends HttpServlet {
     /**
      *
      */
+    @Serial
     private static final long serialVersionUID = 1L;
     private final CartaCreditoBean ccB=new CartaCreditoBean();
     private final CartaDiCredito cc=new CartaDiCredito();
-    private final Libro l=new Libro();
-    private final LibroBean lB=new LibroBean();
-    private final Giornale g=new Giornale();
 
     private final PagamentoBean pB=new PagamentoBean();
 
-    private static PagamentoDao pD=new PagamentoDao();
+    private final PagamentoDao pD=new PagamentoDao();
 
     private final CartaCreditoDao cCD=new CartaCreditoDao();
     private final SystemBean sB=SystemBean.getInstance();

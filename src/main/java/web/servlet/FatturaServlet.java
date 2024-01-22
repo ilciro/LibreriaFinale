@@ -1,6 +1,7 @@
 package web.servlet;
 
 import java.io.IOException;
+import java.io.Serial;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
@@ -25,6 +26,7 @@ public class FatturaServlet extends HttpServlet{
     /**
      *
      */
+    @Serial
     private static final long serialVersionUID = 1L;
     private final FatturaBean fB=new FatturaBean();
     private final  Fattura f=new Fattura();

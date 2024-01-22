@@ -1,6 +1,8 @@
 package web.servlet;
 
 import java.io.IOException;
+import java.io.Serial;
+import java.util.logging.Level;
 
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
@@ -23,6 +25,7 @@ public class RicercaCatalogoServlet extends HttpServlet {
     /**
      *
      */
+    @Serial
     private static final long serialVersionUID = 1L;
     private final RicercaBean rB=new RicercaBean();
     private final LibroDao lD=new LibroDao();
@@ -51,29 +54,29 @@ public class RicercaCatalogoServlet extends HttpServlet {
         {
             switch(type)
             {
-                case LIBRO:
-
+                case LIBRO-> {
                     rB.setTitoloB(titolo);
                     rB.setAutoreB(titolo);
                     l.setAutore(rB.getAutoreB());
                     l.setTitolo(rB.getTitoloB());
                     rB.setListaB(lD.getLibriIdTitoloAutore(l));
-                    break;
-                case GIORNALE:
+                }
+                case GIORNALE-> {
                     rB.setTitoloB(titolo);
                     rB.setEditoreB(titolo);
                     g.setTitolo(rB.getTitoloB());
                     g.setEditore(rB.getEditoreB());
                     rB.setListaB(gD.getGiornaliIdTitoloAutore(g));
-                    break;
-                case RIVISTA:
+                }
+                case RIVISTA-> {
                     rB.setTitoloB(titolo);
                     rB.setAutoreB(titolo);
                     r.setAutore(rB.getAutoreB());
                     r.setTitolo(rB.getTitoloB());
                     rB.setListaB(rD.getRivisteIdTitoloAutore(r));
-                    break;
-                default:break;
+                }
+                default->java.util.logging.Logger.getLogger("cerca").log(Level.SEVERE, "find error");
+
 
             }
             req.setAttribute("beanRicerca",rB);
@@ -91,19 +94,20 @@ public class RicercaCatalogoServlet extends HttpServlet {
             RequestDispatcher view;
             switch(type)
             {
-                case LIBRO:
-                    view=getServletContext().getRequestDispatcher("/libri.jsp");
+                case LIBRO-> {
+                    view = getServletContext().getRequestDispatcher("/libri.jsp");
                     view.forward(req, resp);
-                    break;
-                case GIORNALE:
-                    view=getServletContext().getRequestDispatcher("/giornali.jsp");
+                }
+                case GIORNALE-> {
+                    view = getServletContext().getRequestDispatcher("/giornali.jsp");
                     view.forward(req, resp);
-                    break;
-                case RIVISTA:
-                    view=getServletContext().getRequestDispatcher("/riviste.jsp");
+                }
+                case RIVISTA-> {
+                    view = getServletContext().getRequestDispatcher("/riviste.jsp");
                     view.forward(req, resp);
-                    break;
-                default:break;
+                }
+                default->java.util.logging.Logger.getLogger("visualizza").log(Level.SEVERE, "show error");
+
 
             }
         }

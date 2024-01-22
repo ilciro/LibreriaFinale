@@ -364,7 +364,10 @@ public class LibroDao implements DaoInterface{
 		java.util.logging.Logger.getLogger("aggiorna data").log(Level.INFO, "libri aggiornati {0}.", row);
 
 	}
-
+	public int getIdMax()
+	{
+		return gRC.getIdMax(LIBRO);
+	}
 
 
 

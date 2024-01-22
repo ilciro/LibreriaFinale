@@ -32,6 +32,9 @@ public class GestioneOggettoServlet extends HttpServlet {
     private final LibroBean lB=new LibroBean();
     private final RivistaBean rB=new RivistaBean();
     private final GiornaleBean gB=new GiornaleBean();
+    private static final String LIBRO="libro";
+    private static final String GIORNALE="giornale";
+    private static final String RIVISTA="rivista";
 
     public GestioneOggettoServlet() throws IOException {
     }
@@ -49,21 +52,28 @@ public class GestioneOggettoServlet extends HttpServlet {
         try{
             if(genera!=null && genera.equals("genera lista"))
             {
-                switch (sB.getTypeB())
-                {
-                    case "libro":
+                switch (sB.getTypeB()) {
+                    case LIBRO -> {
                         mOB.setMiaListaB(lD.getLibri());
-                        req.setAttribute("beanMOB",mOB);
-                        break;
-                    case "giornale":
-                        mOB.setMiaListaB(gD.getGiornaliIdTitoloAutore(new Giornale()));
-                        req.setAttribute("beanMOB",mOB);
-                        break;
-                    case "rivista":
+                        req.setAttribute("beanS", sB);
+                        req.setAttribute("beanL", lB);
+                        req.setAttribute("beanMOB", mOB);
+                    }
+                    case GIORNALE -> {
+
+                    mOB.setMiaListaB(gD.getGiornali());
+                    req.setAttribute("beanS", sB);
+                    req.setAttribute("beanG", gB);
+                    req.setAttribute("beanMOB", mOB);
+                    }
+                    case RIVISTA-> {
                         mOB.setMiaListaB(rD.getRiviste());
-                        req.setAttribute("beanMOB",mOB);
-                        break;
-                    default:break;
+                        req.setAttribute("beanS", sB);
+                        req.setAttribute("beanR", rB);
+                        req.setAttribute("beanMOB", mOB);
+                    }
+                    default->	java.util.logging.Logger.getLogger("genera lista").log(Level.SEVERE, "choice not correct");
+
                 }
                 req.setAttribute("beanS",sB);
                 view= getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
@@ -79,35 +89,31 @@ public class GestioneOggettoServlet extends HttpServlet {
             {
                 switch (sB.getTypeB())
                 {
-                    case "libro":
-                        idOgg=Integer.parseInt(id);
-                        sB.setIdB(idOgg);
-                        lB.setIdB(sB.getIdB());
-                        l.setId(sB.getIdB());
-                        //oggetto libro
-                        //li passo al bean
-                        req.setAttribute("beanS",sB);
-                        req.setAttribute("beanL",lB);
-                        break;
-                    case "giornale":
-                        idOgg=Integer.parseInt(req.getParameter("idL"));
-                        sB.setIdB(idOgg);
-                        gB.setIdB(sB.getIdB());
+                    case LIBRO-> {
+
+                        sB.setIdB(lD.getIdMax());
+                        lB.setIdB(lD.getIdMax());
+                        l.setId(lB.getIdB());
+
+                        req.setAttribute("beanS", sB);
+                        req.setAttribute("beanL", lB);
+                    }
+                    case GIORNALE -> {
+
+                        sB.setIdB(gD.getIdMax());
+                        gB.setIdB(gD.getIdMax());
                         g.setId(gB.getIdB());
-                        req.setAttribute("beanS",sB);
-                        req.setAttribute("beanG",gB);
-                        break;
-                    case "rivista":
-                        idOgg=Integer.parseInt(id);
-                        sB.setIdB(idOgg);
-                        rB.setIdB(sB.getIdB());
+                        req.setAttribute("beanS", sB);
+                        req.setAttribute("beanG", gB);
+                    }
+                    case RIVISTA -> {
+                        sB.setIdB(rD.getIdMax());
+                        rB.setIdB(rD.getIdMax());
                         r.setId(sB.getIdB());
-                        req.setAttribute("beanS",sB);
-                        req.setAttribute("beanR",rB);
-                        break;
-                    default:break;
-
-
+                        req.setAttribute("beanS", sB);
+                        req.setAttribute("beanR", rB);
+                    }
+                    default->	java.util.logging.Logger.getLogger("modifica").log(Level.SEVERE, "modif error");
 
                 }
                 view= getServletContext().getRequestDispatcher("/modificaOggettoPage.jsp");
@@ -119,52 +125,49 @@ public class GestioneOggettoServlet extends HttpServlet {
             {
                 switch (sB.getTypeB())
                 {
-                    case "libro":
-                        int idL=Integer.parseInt(id);
-                        sB.setIdB(idL);
+                    case LIBRO-> {
+
                         lB.setIdB(sB.getIdB());
                         l.setId(sB.getIdB());
-                        if(lD.cancella(l)==1)
-                        {
-                            view= getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
-                            view.forward(req,resp);
+                        if (lD.cancella(l) == 1) {
+                            view = getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
+                            view.forward(req, resp);
+                        } else {
+                            view = getServletContext().getRequestDispatcher("/modificaLibroPage.jsp");
+                            view.forward(req, resp);
                         }
-                        else {
-                            view= getServletContext().getRequestDispatcher("/modificaLibroPage.jsp");
-                            view.forward(req,resp);
-                        }
-                        break;
-                    case "giornale":
-                        int idG=Integer.parseInt(id);
+                    }
+                    case GIORNALE -> {
+
+                        int idG = Integer.parseInt(id);
                         sB.setIdB(idG);
                         gB.setIdB(sB.getIdB());
                         g.setId(sB.getIdB());
-                        if(gD.cancella(g)==1)
-                        {
-                            view= getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
-                            view.forward(req,resp);
+                        if (gD.cancella(g) == 1) {
+                            view = getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
+                            view.forward(req, resp);
+                        } else {
+                            view = getServletContext().getRequestDispatcher("/modificaLibroPage.jsp");
+                            view.forward(req, resp);
                         }
-                        else {
-                            view= getServletContext().getRequestDispatcher("/modificaLibroPage.jsp");
-                            view.forward(req,resp);
-                        }
-                        break;
-                    case "rivista":
-                        int idR=Integer.parseInt(id);
+                    }
+                    case RIVISTA -> {
+                        int idR = Integer.parseInt(id);
                         sB.setIdB(idR);
                         rB.setIdB(sB.getIdB());
                         r.setId(sB.getIdB());
-                        if(rD.cancella(r)==1)
-                        {
-                            view= getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
-                            view.forward(req,resp);
+                        if (rD.cancella(r) == 1) {
+                            view = getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
+                            view.forward(req, resp);
+                        } else {
+                            view = getServletContext().getRequestDispatcher("/modificaLibroPage.jsp");
+                            view.forward(req, resp);
                         }
-                        else {
-                            view= getServletContext().getRequestDispatcher("/modificaLibroPage.jsp");
-                            view.forward(req,resp);
-                        }
+                    }
+                    default->java.util.logging.Logger.getLogger("cancella").log(Level.SEVERE, "delete error");
+
                 }
-                //same scene
+
 
             }
             if(indietro!=null && indietro.equals("indietro"))

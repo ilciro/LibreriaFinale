@@ -34,6 +34,9 @@ public class ModificaOggettoServlet extends HttpServlet {
     private final RivistaDao rD=new RivistaDao();
     private final Rivista r=new Rivista();
     private final RivistaBean rB=new RivistaBean();
+    private static final String LIBRO="libro";
+    private static final String GIORNALE="giornale";
+    private static final String RIVISTA="rivista";
 
     public ModificaOggettoServlet() throws IOException {
     }
@@ -49,7 +52,7 @@ public class ModificaOggettoServlet extends HttpServlet {
             {
                 switch (sB.getTypeB())
                 {
-                    case "libro":
+                    case LIBRO-> {
                         lB.setIdB(sB.getIdB());
                         l.setId(lB.getIdB());
 
@@ -70,10 +73,10 @@ public class ModificaOggettoServlet extends HttpServlet {
                         lB.setNrCopieB(lD.getData(l).getNrCopie());
 
 
-                        req.setAttribute("beanS",sB);
-                        req.setAttribute("beanL",lB);
-                        break;
-                    case "giornale":
+                        req.setAttribute("beanS", sB);
+                        req.setAttribute("beanL", lB);
+                    }
+                    case GIORNALE-> {
                         g.setId(sB.getIdB());
                         gB.setTitoloB(gD.getData(g).getTitolo());
                         gB.setTipologiaB("QUOTIDIANO");
@@ -84,10 +87,10 @@ public class ModificaOggettoServlet extends HttpServlet {
                         gB.setDisponibilitaB(gD.getData(g).getDisponibilita());
                         gB.setPrezzoB(gD.getData(g).getPrezzo());
 
-                        req.setAttribute("beanS",sB);
-                        req.setAttribute("beanG",gB);
-                        break;
-                    case "rivista":
+                        req.setAttribute("beanS", sB);
+                        req.setAttribute("beanG", gB);
+                    }
+                    case RIVISTA-> {
                         rB.setIdB(sB.getIdB());
                         r.setId(rB.getIdB());
                         rB.setTitoloB(rD.getData(r).getTitolo());
@@ -102,9 +105,11 @@ public class ModificaOggettoServlet extends HttpServlet {
                         rB.setCopieRimB(rD.getData(r).getCopieRim());
 
 
-                        req.setAttribute("beanS",sB);
-                        req.setAttribute("beanR",rB); break;
-                    default:break;
+                        req.setAttribute("beanS", sB);
+                        req.setAttribute("beanR", rB);
+                    }
+                    default->java.util.logging.Logger.getLogger("modif").log(Level.SEVERE, "modif error");
+
                 }
                 view= getServletContext().getRequestDispatcher("/modificaOggettoPage.jsp");
                 view.forward(req,resp);
@@ -115,7 +120,7 @@ public class ModificaOggettoServlet extends HttpServlet {
             {
                 switch (sB.getTypeB())
                 {
-                    case "libro":
+                    case LIBRO-> {
                         lB.setTitoloB(req.getParameter("titoloNL"));
                         lB.setNumeroPagineB(Integer.parseInt(req.getParameter("pagineNL")));
                         lB.setCodIsbnB(req.getParameter("codiceNL"));
@@ -155,19 +160,18 @@ public class ModificaOggettoServlet extends HttpServlet {
                         l.setDesc(lB.getDescB());
                         l.setPrezzo(lB.getPrezzoB());
 
-                        if(lD.aggiornaLibro(l)) {
+                        if (lD.aggiornaLibro(l)) {
 
                             req.setAttribute("beanL", lB);
                             view = getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
                             view.forward(req, resp);
-                        }
-                        else {
+                        } else {
                             req.setAttribute("beanL", lB);
                             view = getServletContext().getRequestDispatcher("/modificaOggettoPage.jsp");
                             view.forward(req, resp);
                         }
-                        break;
-                    case "giornale":
+                    }
+                    case GIORNALE-> {
                         gB.setTitoloB(req.getParameter("titoloNG"));
                         gB.setTipologiaB(req.getParameter("tipoG"));
                         gB.setLinguaB(req.getParameter("linguaNG"));
@@ -193,19 +197,17 @@ public class ModificaOggettoServlet extends HttpServlet {
                         g.setDisponibilita(gB.getDisponibilitaB());
                         g.setPrezzo(gB.getPrezzoB());
 
-                        if(gD.aggiornaGiornale(g)==1)
-                        {
-                            req.setAttribute("beanG",gB);
-                            view= getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
-                            view.forward(req,resp);
+                        if (gD.aggiornaGiornale(g) == 1) {
+                            req.setAttribute("beanG", gB);
+                            view = getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
+                            view.forward(req, resp);
+                        } else {
+                            req.setAttribute("beanG", gB);
+                            view = getServletContext().getRequestDispatcher("/modificaOggettoPage.jsp");
+                            view.forward(req, resp);
                         }
-                        else{
-                            req.setAttribute("beanG",gB);
-                            view= getServletContext().getRequestDispatcher("/modificaOggettoPage.jsp");
-                            view.forward(req,resp);
-                        }
-                        break;
-                    case "rivista":
+                    }
+                    case RIVISTA-> {
                         rB.setTitoloB(req.getParameter("titoloNR"));
                         rB.setTipologiaB(req.getParameter("categoriaNR"));
                         rB.setAutoreB(req.getParameter("autoreNR"));
@@ -232,17 +234,18 @@ public class ModificaOggettoServlet extends HttpServlet {
                         r.setPrezzo(rB.getPrezzoB());
                         r.setCopieRim(rB.getCopieRimB());
 
-                        if(rD.aggiornaRivista(r)==1)
-                        {
-                            req.setAttribute("beanR",rB);
-                            view= getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
-                            view.forward(req,resp);
+                        if (rD.aggiornaRivista(r) == 1) {
+                            req.setAttribute("beanR", rB);
+                            view = getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
+                            view.forward(req, resp);
+                        } else {
+                            req.setAttribute("beanR", rB);
+                            view = getServletContext().getRequestDispatcher("/modificaOggettoPage.jsp");
+                            view.forward(req, resp);
                         }
-                        else{
-                            req.setAttribute("beanR",rB);
-                            view= getServletContext().getRequestDispatcher("/modificaOggettoPage.jsp");
-                            view.forward(req,resp);
-                        }
+                    }
+                    default->java.util.logging.Logger.getLogger("update").log(Level.SEVERE, "update error");
+
                 }
             }
             if(annulla!=null && annulla.equals("indietro"))
