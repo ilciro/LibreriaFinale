@@ -33,8 +33,8 @@ public class GiornaleDao {
 	private final ControllerSystemState vis = ControllerSystemState.getInstance();
 	private static final String GIORNALE = "giornale";
 	private static final String ECCEZIONE = "eccezione generata:";
-	private static final String RIEPILOGOGIORNALI = "riepilogoGiornali.txt";
-	private static final String RIEPILOGOGIORNALIWEB = "src/main/webapp/riepilogoGiornali.txt";
+	private static final String RIEPILOGOGIORNALI = "src/main/resources/riepilogoGiornali.txt";
+	private static final String RIEPILOGOGIORNALIWEB = "src/main/webapp/WEB-INF/riepilogoGiornali.txt";
 	private final GenerateDaoReportClass gRC;
 
 

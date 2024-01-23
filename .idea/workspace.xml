@@ -5,420 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="modified servlet v2( fixed managament objects)">
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven.war" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/Search-icon-13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/acquista.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/adminPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/aggiungiOggettoPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/aggiungiUtente.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/bsoRegister.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/compravendita.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/bookCategories.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/books.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/booksPath.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/configDb.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/downloadConfiguration.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/downloadConfigurationGiornale.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/downloadConfigurationRivista.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/infoObjects.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/magazineCategories.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/reportsPath.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/users.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/download.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/homePage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/homePageAfterLogin.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/homePageAfterLoginES.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerAcquista.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerAggiungiPage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerAggiungiUtente.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerBookData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerCancellaUser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerCheckPagamentoData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerCompravendita.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerDownload.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerGestionePage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerHomePageAfterLogin.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerHomePageAfterLoginSE.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerLogin.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerModifPage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerModificaUtente.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerPagamentoCC.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerPagamentoCash.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerPassword.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerRegistraUtente.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerReportPage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerReportRaccolta.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerRicercaPage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerRicercaPerTipo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerScegliNegozio.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerSystemState.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerUserPage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerVisualizza.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerVisualizzaOrdine.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerVisualizzaProfilo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/CartaCreditoDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/ContrassegnoDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/CsvDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/DaoInterface.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GenerateDaoReportClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GiornaleDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/LibroDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/NegozioDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/PagamentoDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/RivistaDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/UsersDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/exception/AcquistaException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/exception/IdException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/exception/LogoutException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/CartaDiCredito.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/Fattura.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/Negozio.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/Pagamento.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/TempUser$RuoliT.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/TempUser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/User$Ruoli.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/CategorieLibro.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/CategorieRivista.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Factory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Giornale.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Libro.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/MatchParam.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Raccolta.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Rivista.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/utilities/ConnToDb.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryAcquista.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryAdminPage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryAggiungiPage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryAggiungiUtente.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryCompravendita.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryDownload.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryGestionePage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryHomePage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryHomePageAfterLogin.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryHomePageAfterLoginSE.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryLogin.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryModificaPage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryModificaUtente.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryModificaUtentePage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryPagamentoCC.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryPagamentoCash.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryRaccoltaPage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryRegistraUtente.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryRegistrazioneOk.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryReportPage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryResetPwd.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryRicercaPage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryRicercaPerTipo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryScegliNegozio.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryUserPage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryVisualizza.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryVisualizzaOrdine.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryVisualizzaProfilo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/libro.png_860.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/loginPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/modificaOggettoPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/modificaUtente.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/modificaUtentePage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/newspaper-284-542534.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/pagamentoCC.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/pagamentoContrassegno.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/paginaGestione.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/password-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/raccoltaPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/register-button-png-26.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/registraUtente.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/registraz_ok.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/registrazioneOk.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/reportPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/resetPwd.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/ricercaPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/ricercaPerTipo.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/scegliNegozio.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/una-rivista_318-1607.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/userPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/vector-users-icon-png_302626.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/visualizzaOrdine.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/visualizzaPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/visualizzaProfilo.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/AcquistaBean.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/CartaCreditoBean.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/DownloadBean.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/FatturaBean.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/GiornaleBean.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/LibroBean.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/ModificaOggettoBean.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/NegozioBean.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/PagamentoBean.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/RicercaBean.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/RivistaBean.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/SystemBean.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/TextAreaBean.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/UserBean$Ruoli.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/bean/UserBean.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/AcquistaServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/AdminServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/CartaCreditoServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/DownloadServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/DownloadServletG.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/DownloadServletR.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/FatturaServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/GestioneOggettoServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/GiornaliServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/IndexServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/InserisciOggettoServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/InserisciUtenteServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/LibriServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/LoginServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/ModificaOggettoServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/ModificaUtenteServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/NegozioServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/ProfiloServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/RaccoltaServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/RegistrazioneServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/ReportServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/ResetPasswordServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/RicercaCatalogoServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/RicercaServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/RivisteServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/ServletScrittore.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/UtentiServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/async-http-client-2.12.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/async-http-client-netty-utils-2.12.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/auto-common-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/auto-service-1.0.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/auto-service-annotations-1.0.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/bsh-2.0b6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/build-helper-maven-plugin-3.4.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/byte-buddy-1.14.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/checker-qual-3.12.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/commons-beanutils-1.9.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/commons-collections-3.2.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/commons-collections4-4.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/commons-exec-1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/commons-io-2.11.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/commons-lang-2.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/commons-lang3-3.12.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/commons-logging-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/commons-text-1.10.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/error_prone_annotations-2.11.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/failsafe-3.3.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/failureaccess-1.0.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/file-management-3.1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/guava-31.1-jre.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/itextpdf-5.5.13.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/j2objc-annotations-1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/jakarta.activation-1.2.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/jakarta.el-api-5.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/jakarta.servlet-api-6.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/jakarta.servlet.jsp.jstl-3.0.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-3.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/javafx-base-17-linux.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/javafx-base-17.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/javafx-controls-17-linux.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/javafx-controls-17.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/javafx-fxml-17-linux.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/javafx-fxml-17.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/javafx-graphics-17-linux.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/javafx-graphics-17.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/javax.inject-1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/jsr305-3.0.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/mybatis-3.5.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/mysql-connector-j-8.0.32.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/netty-buffer-4.1.92.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/netty-codec-4.1.92.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/netty-codec-http-4.1.92.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/netty-codec-socks-4.1.60.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/netty-common-4.1.92.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/netty-handler-4.1.92.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/netty-handler-proxy-4.1.60.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/netty-reactive-streams-2.0.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/netty-resolver-4.1.92.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/netty-transport-4.1.92.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/netty-transport-classes-epoll-4.1.92.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/netty-transport-classes-kqueue-4.1.92.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/netty-transport-native-epoll-4.1.60.Final-linux-x86_64.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/netty-transport-native-epoll-4.1.92.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/netty-transport-native-kqueue-4.1.60.Final-osx-x86_64.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/netty-transport-native-kqueue-4.1.92.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/netty-transport-native-unix-common-4.1.92.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/opencsv-5.7.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/opentelemetry-api-1.26.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/opentelemetry-api-events-1.26.0-alpha.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/opentelemetry-api-logs-1.26.0-alpha.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/opentelemetry-context-1.26.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/opentelemetry-exporter-logging-1.26.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/opentelemetry-extension-incubator-1.26.0-alpha.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/opentelemetry-sdk-1.26.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/opentelemetry-sdk-common-1.26.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/opentelemetry-sdk-extension-autoconfigure-1.26.0-alpha.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/opentelemetry-sdk-extension-autoconfigure-spi-1.26.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/opentelemetry-sdk-logs-1.26.0-alpha.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/opentelemetry-sdk-metrics-1.26.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/opentelemetry-sdk-trace-1.26.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/opentelemetry-semconv-1.26.0-alpha.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/plexus-cipher-2.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/plexus-sec-dispatcher-2.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/plexus-utils-3.5.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/protobuf-java-3.21.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/reactive-streams-1.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/selenium-api-4.10.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/selenium-chrome-driver-4.10.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/selenium-chromium-driver-4.10.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/selenium-devtools-v112-4.10.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/selenium-devtools-v113-4.10.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/selenium-devtools-v114-4.10.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/selenium-devtools-v85-4.10.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/selenium-edge-driver-4.10.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/selenium-firefox-driver-4.10.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/selenium-http-4.10.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/selenium-ie-driver-4.10.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/selenium-java-4.10.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/selenium-json-4.10.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/selenium-manager-4.10.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/selenium-remote-driver-4.10.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/selenium-safari-driver-4.10.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/selenium-support-4.10.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/slf4j-api-1.7.36.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/sonar-maven-plugin-3.10.0.2594.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/lib/sonar-scanner-api-2.16.3.1081.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/acquista.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/admin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/aggiungiOggettoPage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/cartaCredito.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/acquista.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/aggiungiOggetto.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/aggiungiUtente.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/cartaCredito.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/download.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/editore.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/fattura.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/gestioneOggetto.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/gestioneUtente.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/giornali.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/homePage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/libri.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/modificaOggetto.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/modificaUtente.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/negozio.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/profilo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/raccolta.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/register.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/report.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/resetPassword.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/ricerca.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/ricercaInCatalogo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/riviste.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/scrittore.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/utenti.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/download.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/editore.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/fattura.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/gestioneOggettoPage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/giornali.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/immagini/Profile-PNG-High-Quality-Image-180x180.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/immagini/Search-icon-13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/immagini/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/immagini/icons8-logout-rounded-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/immagini/libro.png_860.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/immagini/newspaper-284-542534.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/immagini/password-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/immagini/pngtree-shop-png-image_1699051.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/immagini/register-button-png-26.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/immagini/registraz_ok.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/immagini/una-rivista_318-1607.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/immagini/vector-users-icon-png_302626.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/inserisciUtente.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/libri.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/modificaOggettoPage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/modificaUtente.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/negozi.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/profilo.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/raccolta.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/registrazione.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/report.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/resetPassword.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/ricerca.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/ricercaInCatalogo.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/riepilogoGiornali.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/riepilogoLibri.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/riepilogoRiviste.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/riviste.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/LibreriaMaven/utenti.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/original-LibreriaMaven.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/riepilogoUtenti.txt" beforeDir="false" afterPath="$PROJECT_DIR$/riepilogoUtenti.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/riepilogoGiornali.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/riepilogoLibri.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/riepilogoRiviste.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/riepilogoUtenti.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerReportPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerReportPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/GenerateDaoReportClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/GenerateDaoReportClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/LibroDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/LibroDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/UsersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/UsersDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/TempUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/TempUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryUserPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryUserPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/bean/UserBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/bean/UserBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/GestioneOggettoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/GestioneOggettoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/InserisciOggettoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/InserisciOggettoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/InserisciUtenteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/InserisciUtenteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/ModificaOggettoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/ModificaOggettoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/ProfiloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/ProfiloServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/web/test/TestLoginRaccoltaGiornale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/test/TestLoginRaccoltaGiornale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/ReportServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/ReportServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/report.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/report.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/report.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/report.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/riepilogoGiornali.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/riepilogoLibri.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/riepilogoRiviste.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/riepilogoUtenti.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/web/test/TestLoginRaccoltaLibro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/test/TestLoginRaccoltaLibro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/web/test/TestLoginRaccoltaRivista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/test/TestLoginRaccoltaRivista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/test/TestLoginRaccoltaUtenti.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/test/TestLoginRaccoltaUtenti.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerReportPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerReportPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GenerateDaoReportClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GenerateDaoReportClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GiornaleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/GiornaleDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/LibroDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/LibroDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/RivistaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/RivistaDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/UsersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/database/UsersDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/ReportServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/ReportServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/report.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/report.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/report.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/report.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/riepilogoGiornali.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/riepilogoLibri.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/riepilogoRiviste.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/riepilogoUtenti.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerReportPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerReportPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/GenerateDaoReportClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/GenerateDaoReportClass.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/GiornaleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/GiornaleDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/LibroDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/LibroDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/RivistaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/RivistaDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/UsersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/UsersDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/TempUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/TempUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryUserPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryUserPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/bean/UserBean$Ruoli.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/bean/UserBean$Ruoli.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/bean/UserBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/bean/UserBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/AcquistaServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/AcquistaServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/AdminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/AdminServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/CartaCreditoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/CartaCreditoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/DownloadServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/DownloadServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/DownloadServletG.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/DownloadServletG.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/DownloadServletR.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/DownloadServletR.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/FatturaServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/FatturaServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/GestioneOggettoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/GestioneOggettoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/GiornaliServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/GiornaliServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/InserisciOggettoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/InserisciOggettoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/InserisciUtenteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/InserisciUtenteServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/LibriServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/LibriServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/ModificaOggettoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/ModificaOggettoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/NegozioServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/NegozioServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/ProfiloServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/ProfiloServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/RaccoltaServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/RaccoltaServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/RegistrazioneServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/RegistrazioneServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/ReportServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/ReportServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/ResetPasswordServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/ResetPasswordServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/RicercaCatalogoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/RicercaCatalogoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/RicercaServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/RicercaServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/RivisteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/RivisteServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/UtentiServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/UtentiServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-web.test.TestLoginRaccoltaLibro.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/web.test.TestLoginRaccoltaLibro.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/web/test/TestLoginRaccoltaLibro.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-LibreriaMaven.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/web/test/TestLoginRaccoltaUtenti.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -482,6 +115,8 @@
     &quot;JUnit.TestIndexPage.testIndexBook.executor&quot;: &quot;Run&quot;,
     &quot;Maven.LibreriaMaven [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.LibreriaMaven [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.LibreriaMaven [org.apache.maven.plugins:maven-install-plugin:3.1.1:install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.LibreriaMaven [org.apache.maven.plugins:maven-war-plugin:3.3.2:war].executor&quot;: &quot;Run&quot;,
     &quot;Maven.LibreriaMaven [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -688,14 +323,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
-    </task>
-    <task id="LOCAL-00037" summary="test admin web">
-      <option name="closed" value="true" />
-      <created>1703174560606</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1703174560606</updated>
     </task>
     <task id="LOCAL-00038" summary="test user web">
       <option name="closed" value="true" />
@@ -1065,7 +692,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705935357268</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="modified servlet v2( fixed managament objects)">
+      <option name="closed" value="true" />
+      <created>1705943616602</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1705943616607</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="UnknownFeatures">

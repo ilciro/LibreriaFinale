@@ -15,6 +15,8 @@
 
 
 <div>
+
+
 <input type="submit" id="buttonT" name="buttonT" value="totale" class="totale">
 <input type="submit" id="buttonL" name="buttonL" value="libro" class="libri">
 <input type="submit" id="buttonG" name="buttonG" value="giornale" class="giornali">
@@ -22,12 +24,14 @@
 <input type="submit" id="raccoltaB" name="raccoltaB" value="raccolta" class="raccolta">
 <input type="submit" id="buttonI" name="buttonI" value="indietro" class="annulla">
 
+
+
 <br>
 <br>
 
 <label for="tArea"></label>
 <textarea rows="100" cols="145" name="tArea" id="tArea" placeholder="tArea" class="tArea">
-${beanTA.getScriviB() }
+${beanTA.getScriviB()}
 </textarea>
 
 </div>

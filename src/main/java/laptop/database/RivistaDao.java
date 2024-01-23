@@ -36,8 +36,8 @@ public class 	RivistaDao {
 	private static final String ECCEZIONE="eccezione generata:";
 
 
-	private static final String RIEPILOGORIVISTE="riepilogoRiviste.txt";
-	private static final String RIEPILOGORIVISTEWEB="src/main/webapp/riepilogoRiviste.txt";
+	private static final String RIEPILOGORIVISTE="src/main/resources/riepilogoRiviste.txt";
+	private static final String RIEPILOGORIVISTEWEB="src/main/webapp/WEB-INF/riepilogoRiviste.txt";
 
 
 	private final GenerateDaoReportClass gRC;
@@ -111,7 +111,7 @@ public class 	RivistaDao {
 			prepQ.setInt(1,r.getId());
 			prepQ.setInt(2,vis.getId());
 			prepQ.setString(3,r.getTitolo());
-			prepQ.setString(4,r.getEditore());
+			prepQ.setString(4,r.getAutore());
 
 			ResultSet rs=prepQ.executeQuery();
 			while (rs.next())
