@@ -25,7 +25,9 @@ public class UsersDao {
 	private static int row = 0;
 	private static final String TXT_FILE_NAME="src/main/resources/riepilogoUtenti.txt";
 	private static final String TXT_FILE_NAME_WEB="src/main/webapp/WEB-INF/riepilogoUtenti.txt";
-	private static final GenerateDaoReportClass gRC=new GenerateDaoReportClass("utenti");
+
+	private static final String UTENTI="utenti";
+	private static final GenerateDaoReportClass gRC=new GenerateDaoReportClass(UTENTI);
 
 
 
@@ -184,7 +186,7 @@ public class UsersDao {
 
 		}
 
-		gRC.ripristinaOrdine("utenti");
+		gRC.ripristinaOrdine(UTENTI);
 		Logger.getLogger("delete user ruolo").log(Level.INFO, "cancello user id{0}", id);
 
 
@@ -264,7 +266,7 @@ public class UsersDao {
 			Path path = Path.of(TXT_FILE_NAME);
 			Path path1 = Path.of(TXT_FILE_NAME_WEB);
 			gRC.checkFilePath(path);
-			if(Boolean.TRUE.equals(gRC.generateReport("utenti")))
+			if(Boolean.TRUE.equals(gRC.generateReport(UTENTI)))
 				gRC.checkFilePath(path1);
 			Files.copy(path, path1, StandardCopyOption.REPLACE_EXISTING);
 
@@ -272,9 +274,7 @@ public class UsersDao {
 
 }
 
-	public static String generaReportWebUsers() throws SQLException {
-		return gRC.getReportView("utenti");
-	}
+
 
 	public static TempUser getTempUserSingolo(TempUser uT) throws SQLException {
 
@@ -416,7 +416,7 @@ public class UsersDao {
 
 
     public static int getIdMax() {
-		return gRC.getIdMax("utenti");
+		return gRC.getIdMax(UTENTI);
     }
 }
 

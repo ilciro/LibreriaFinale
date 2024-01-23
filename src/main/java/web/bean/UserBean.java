@@ -29,7 +29,7 @@ public class UserBean {
         ADMIN,
         UTENTE,
         SCRITTORE,
-        EDITORE;
+        EDITORE
     }
 
     private int idB;
@@ -144,7 +144,7 @@ public class UserBean {
             case "SCRITTORE", "W" -> rB=Ruoli.SCRITTORE.toString().substring(0,1);
             default -> rB=Ruoli.UTENTE.toString().substring(0,1);
 
-        };
+        }
 
 
         return rB;

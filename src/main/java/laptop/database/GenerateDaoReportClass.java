@@ -53,6 +53,7 @@ public class GenerateDaoReportClass {
     private static final String RIEPILOGORIVISTEWEB="src/main/webapp/WEB-INF/riepilogoRiviste.txt";
     private static final String TXT_FILE_NAME="src/main/resources/riepilogoUtenti.txt";
     private static final String TXT_FILE_NAME_WEB="src/main/webapp/WEB-INF/riepilogoUtenti.txt";
+    private static final String ECCEZIONE_METODO="Test Eccezione genera report";
 
 
     public GenerateDaoReportClass(String type)
@@ -141,7 +142,7 @@ public class GenerateDaoReportClass {
                     }
 
                 } catch (SQLException e) {
-                    Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "Error in SQL", e);
+                    Logger.getLogger(ECCEZIONE_METODO).log(Level.INFO, "Error in SQL", e);
                 }
                 b.flush();
             }
@@ -207,10 +208,10 @@ public class GenerateDaoReportClass {
 
 
         } catch (IOException e) {
-            Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd1.getPath());
+            Logger.getLogger(ECCEZIONE_METODO).log(Level.INFO, "creating file {0}.", fd1.getPath());
 
             if (fd.createNewFile()) {
-                Logger.getLogger("Test Eccezione genera report").log(Level.INFO, "creating file {0}.", fd1.getPath());
+                Logger.getLogger(ECCEZIONE_METODO).log(Level.INFO, "creating file {0}.", fd1.getPath());
             }
 
         }
@@ -382,7 +383,8 @@ public class GenerateDaoReportClass {
             PreparedStatement prepQ=conn.prepareStatement(query)){
             prepQ.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            Logger.getLogger("ripristina ordine").log(Level.INFO, "order managed");
+
         }
     }
 
