@@ -14,6 +14,7 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfCopy;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 
 
 	public class Giornale implements Raccolta{
@@ -32,7 +33,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 	private String[] infoGenerali=new String[5];
 
-        private final String DSTPATH="/home/daniele/Scaricati/libriPerSito/";
+
 
 
 
@@ -136,10 +137,11 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 	private void readPdf() throws IOException, DocumentException {
 
+
 		Document document = new Document();
-        String SRCPATH = "/home/daniele/IdeaProjects/LibreriaFinale/libriPerSito/";
-        PdfReader reader = new PdfReader(SRCPATH +rbTitoli.getString("titolo13"));
-		PdfCopy copy=new PdfCopy(document,new FileOutputStream(DSTPATH +rbTitoli.getString("titolo13")));
+
+		PdfReader reader = new PdfReader(rbTitoli.getString("srcPath") + rbTitoli.getString("titolo13"));
+		PdfCopy copy=new PdfCopy(document,new FileOutputStream(rbTitoli.getString("dstPath")+ rbTitoli.getString("titolo13")));
 		document.open();
 
 		int pages = reader.getNumberOfPages();
@@ -152,8 +154,6 @@ import com.itextpdf.text.pdf.PdfWriter;
 		reader.close();
 		document.close();
 
-
-
 	}
 
 	@Override
@@ -161,11 +161,23 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 		Document document=new Document();
 		try{
-			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream(DSTPATH+rbTitoli.getString("titolo13")));
+			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream(rbTitoli.getString("dstPath")+rbTitoli.getString("titolo13")));
 			document.open();
 			document.addTitle("Giornale ");
-			document.add(new Paragraph("that is a copy of daily"));
-
+			document.add(new Paragraph("""
+                    Giornale/Daily not avalaible.
+                    Integer et semper purus,non finibus augue
+                    Interpellates habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                    Praesent et tincidunt eros.Nunc malesuada ipsum non leo scelerisque molestie.
+                    Sed sit amet finibus nulla id ultrices diam.Vestibulum mollis ante eros,vitae accumsan ex lacinia
+                    nec.
+                    Sed tellus eros, tincidunt eu odio ac, tempor viverra libero.Maecenas id arcu laoreet, tristique felis
+                    sit amet,blandit nulla.
+                    Maecenas id arcu laoreet, tristique felis sit amet,blandit nulla.Phasellus suscipit sed est ut
+                    molestie.
+                    Maecenas consequat elit diam, eu semper erat porta nec.Etiam ullamcorper neque vitae mollis
+                    cursus."""
+			));
 			readPdf();
 			document.close();
 			writer.close();
@@ -182,7 +194,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 	@Override
 	public void leggi(int i) throws DocumentException, IOException {
-		File file=new File(DSTPATH+rbTitoli.getString("titolo13"));
+		File file=new File(rbTitoli.getString("dstPath")+rbTitoli.getString("titolo13"));
 		Desktop.getDesktop().open(file);
 
 

@@ -14,7 +14,7 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfCopy;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfWriter;
-
+import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 
 
 public class Rivista implements Raccolta  {
@@ -34,7 +34,6 @@ public class Rivista implements Raccolta  {
 	private final ResourceBundle rbTitoli=ResourceBundle.getBundle("configurations/titles");
 	private String [] infoGenerali=new String[5];
 
-	private final String DSTPATH="/home/daniele/Scaricati/libriPerSito/";
 
 
     public Rivista(String [] info,String descrizione, LocalDate dataPubb2, int disp, float prezzo, int copieRim,int id) {
@@ -187,10 +186,21 @@ public class Rivista implements Raccolta  {
 	public void scarica(int i) throws IOException {
 		Document document=new Document();
 		try{
-			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream(DSTPATH+ rbTitoli.getString("titolo15")));
+			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream(rbTitoli.getString("dstPath")+ rbTitoli.getString("titolo15")));
 			document.open();
 			document.addTitle("Rivista ");
-			document.add(new Paragraph("that is a copy of magazine"));
+			document.add(new Paragraph("""
+                    Rivista/Magazine not avalaible
+                    Nam ultricies efficitur magna, sit amet luctus magna luctus volutpat
+                    Pellentesque facilisis lacinia mi, nec posuere justo pharetra non:
+                    Nulla vel risus sit amet risus aliquam auctor.
+                    Nunc viverra felis sit amet nulla faucibus, sed euismod neque lacinia.
+                    Integer pharetra sapien sed odio mattis, sed efficitur justo blandit.
+                    Praesent in quam non neque hendrerit pulvinar ut quis tortor.
+                    Maecenas nec convallis nunc.
+                    Donec ultricies malesuada mauris ac accumsan.
+                    Vestibulum auctor est ac laoreet egestas.
+                    Nam malesuada in massa eu venenatis."""));
 
 			readPdf();
 			document.close();
@@ -207,7 +217,7 @@ public class Rivista implements Raccolta  {
 	@Override
 	public void leggi(int i) throws IOException, DocumentException {
 		Desktop desktop = Desktop.getDesktop();
-		desktop.open(new File(DSTPATH+rbTitoli.getString("titolo15")));
+		desktop.open(new File(rbTitoli.getString("dstPath")+rbTitoli.getString("titolo15")));
 		
 	}
 	public String [] getInfoGenerali() {
@@ -220,9 +230,9 @@ public class Rivista implements Raccolta  {
 	private void readPdf() throws IOException, DocumentException {
 
 		Document document = new Document();
-        String SRCPATH = "/home/daniele/IdeaProjects/LibreriaFinale/libriPerSito/";
-        PdfReader reader = new PdfReader(SRCPATH +rbTitoli.getString("titolo15"));
-		PdfCopy copy=new PdfCopy(document,new FileOutputStream(DSTPATH+rbTitoli.getString("titolo15")));
+
+		PdfReader reader = new PdfReader(rbTitoli.getString("srcPath") + rbTitoli.getString("titolo15"));
+		PdfCopy copy=new PdfCopy(document,new FileOutputStream(rbTitoli.getString("dstPath")+ rbTitoli.getString("titolo15")));
 		document.open();
 
 		int pages = reader.getNumberOfPages();
@@ -234,8 +244,6 @@ public class Rivista implements Raccolta  {
 
 		reader.close();
 		document.close();
-
-
 
 	}
 	

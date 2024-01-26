@@ -70,7 +70,7 @@ public class Main  extends Application {
 
 		Giornale g=new Giornale();
 		Rivista r=new Rivista();
-		for (int i=1;i<12;i++)
+		for (int i=1;i<13;i++)
 		{
 			l.setId(i);
 			l.scarica(l.getId());

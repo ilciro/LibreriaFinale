@@ -4,30 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="read/download objects">
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="read/download objects v2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libriPerSito/Andrea Baranes - Dobbiamo restituire.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/Andrea Baranes - Dobbiamo restituire.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libriPerSito/Ariel Toaff, Elio Toaff - Zohar. Il libro dello splendore.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/Ariel Toaff, Elio Toaff - Zohar. Il libro dello splendore.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libriPerSito/Come i servizi segreti usano i media - Aldo Giannuli.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/Come i servizi segreti usano i media - Aldo Giannuli.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libriPerSito/Donald Davidson - Sulla verita (2006).pdf" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/Donald Davidson - Sulla verita (2006).pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libriPerSito/Excell - Giampietro Lanzanova.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/Excell - Giampietro Lanzanova.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libriPerSito/Ferdinand de Saussure - Scritti inediti.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/Ferdinand de Saussure - Scritti inediti.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libriPerSito/Galaxy anno I  n 06  Novembre 1958 - AA.VV_.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/Galaxy anno I  n 06  Novembre 1958 - AA.VV_.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libriPerSito/Gershom Scholem - Alchimia E Kabbalah.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/Gershom Scholem - Alchimia E Kabbalah.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libriPerSito/Giocatore5.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/Giocatore5.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libriPerSito/Grammatica italiana-Garzanti(le garzantine)(2012).pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/libriPerSito/LibroNotFound.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libriPerSito/Monthly-Planner-1-day-intervals.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libriPerSito/eragon.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/libriPerSito/eragon.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libriPerSito/file (2).pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Giornale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Giornale.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Libro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Rivista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Rivista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configurations/titles.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configurations/titles.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/downloadConfiguration.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/configurations/downloadConfiguration.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Giornale.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Giornale.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Libro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Libro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Rivista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Rivista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/configurations/titles.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/configurations/titles.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Giornale.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Giornale.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Libro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Libro.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Rivista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Rivista.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-LibreriaMaven.war" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -299,14 +295,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
-    </task>
-    <task id="LOCAL-00041" summary="add tests v1( only laptop)">
-      <option name="closed" value="true" />
-      <created>1703268646420</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1703268646420</updated>
     </task>
     <task id="LOCAL-00042" summary="restrung dao">
       <option name="closed" value="true" />
@@ -676,7 +664,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706271327139</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="read/download objects v2">
+      <option name="closed" value="true" />
+      <created>1706275713390</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1706275713431</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -704,7 +700,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test v7 ( commented webtest)" />
     <MESSAGE value="test v8 ( commented webtest)" />
     <MESSAGE value="remove duplication" />
     <MESSAGE value="test v9" />
@@ -729,7 +724,8 @@
     <MESSAGE value="modified servlet v3( report)" />
     <MESSAGE value="modified servlet v3( report v2)" />
     <MESSAGE value="read/download objects" />
-    <option name="LAST_COMMIT_MESSAGE" value="read/download objects" />
+    <MESSAGE value="read/download objects v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="read/download objects v2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
