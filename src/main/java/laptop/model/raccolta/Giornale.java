@@ -14,7 +14,6 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfCopy;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfWriter;
-import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 
 
 	public class Giornale implements Raccolta{
@@ -30,6 +29,8 @@ import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 	private int id;
 
 	private final ResourceBundle rbTitoli=ResourceBundle.getBundle("configurations/titles");
+	private static final String TITOLO="titolo13";
+	private static final String DSTPATH="dstPath";
 
 	private String[] infoGenerali=new String[5];
 
@@ -140,8 +141,8 @@ import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 
 		Document document = new Document();
 
-		PdfReader reader = new PdfReader(rbTitoli.getString("srcPath") + rbTitoli.getString("titolo13"));
-		PdfCopy copy=new PdfCopy(document,new FileOutputStream(rbTitoli.getString("dstPath")+ rbTitoli.getString("titolo13")));
+		PdfReader reader = new PdfReader(rbTitoli.getString("srcPath") + rbTitoli.getString(TITOLO));
+		PdfCopy copy=new PdfCopy(document,new FileOutputStream(rbTitoli.getString(DSTPATH)+ rbTitoli.getString(TITOLO)));
 		document.open();
 
 		int pages = reader.getNumberOfPages();
@@ -161,7 +162,7 @@ import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 
 		Document document=new Document();
 		try{
-			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream(rbTitoli.getString("dstPath")+rbTitoli.getString("titolo13")));
+			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream(rbTitoli.getString(DSTPATH)+rbTitoli.getString(TITOLO)));
 			document.open();
 			document.addTitle("Giornale ");
 			document.add(new Paragraph("""
@@ -194,7 +195,7 @@ import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 
 	@Override
 	public void leggi(int i) throws DocumentException, IOException {
-		File file=new File(rbTitoli.getString("dstPath")+rbTitoli.getString("titolo13"));
+		File file=new File(rbTitoli.getString(DSTPATH)+rbTitoli.getString(TITOLO));
 		Desktop.getDesktop().open(file);
 
 

@@ -32,6 +32,7 @@ public class Libro implements Raccolta {
 	private int id;
 	private String[] infoGenerali = new String[7];
 	private String[] infoCostiDisp = new String[5];
+	private static final String DSTPATH="dstPath";
 
 
 
@@ -246,13 +247,12 @@ public class Libro implements Raccolta {
 		//create a pdf with a paragraph
 		Document document=new Document();
 		try{
-			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream(rbTitoli.getString("dstPath")+name));
+			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream(rbTitoli.getString(DSTPATH)+name));
 			document.open();
 			document.addTitle("Libro ");
 			document.add(new Paragraph("""
-					 libro/book not avalaible
+					libro/book not avalaible
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempus tincidunt justo eget eleifend. Maecenas nisl nulla, lobortis quis semper quis, scelerisque nec purus. Mauris laoreet ac tellus molestie varius. Maecenas scelerisque, nibh ac pellentesque luctus, quam nibh congue tortor, vitae placerat dui lorem eget erat. Proin non porta odio, ac porta nisl. Donec vitae commodo sem. Fusce sit amet urna nec quam mattis tristique. Nam non neque a nunc rhoncus ullamcorper eu in ex. Proin et orci lacus. Cras rutrum lorem erat, nec ultrices urna efficitur sed. Praesent auctor non lorem at bibendum.
-    
 					Proin tincidunt mauris a velit pulvinar posuere. Suspendisse posuere ex sed enim sollicitudin, sit amet ullamcorper nunc mollis. Quisque sagittis aliquet ipsum vitae facilisis. Etiam id ligula sed sem viverra cursus. Aenean suscipit molestie posuere. Duis id ante ut nibh suscipit gravida. Cras egestas risus ac tellus varius, et rhoncus enim porttitor."""));
 			document.close();
 			writer.close();
@@ -271,7 +271,7 @@ public class Libro implements Raccolta {
 		Document document = new Document();
 
         PdfReader reader = new PdfReader(rbTitoli.getString("srcPath") +name);
-		PdfCopy copy=new PdfCopy(document,new FileOutputStream(rbTitoli.getString("dstPath")+name));
+		PdfCopy copy=new PdfCopy(document,new FileOutputStream(rbTitoli.getString(DSTPATH)+name));
 		document.open();
 
 		int pages = reader.getNumberOfPages();
@@ -320,19 +320,19 @@ public class Libro implements Raccolta {
 
 		File f = null;
 		switch (i) {
-			case 1 -> f=new File(rbTitoli.getString("dstPath") + rbTitoli.getString("titolo1"));
-			case 2->f=new File(rbTitoli.getString("dstPath") + rbTitoli.getString("titolo2"));
-			case 3->f=new File(rbTitoli.getString("dstPath") + rbTitoli.getString("titolo3"));
-			case 4->f=new File(rbTitoli.getString("dstPath") + rbTitoli.getString("titolo4"));
-			case 5->f=new File(rbTitoli.getString("dstPath") + rbTitoli.getString("titolo5"));
-			case 6->f=new File(rbTitoli.getString("dstPath") + rbTitoli.getString("titolo6"));
-			case 7->f=new File(rbTitoli.getString("dstPath") + rbTitoli.getString("titolo7"));
-			case 8->f=new File(rbTitoli.getString("dstPath") + rbTitoli.getString("titolo8"));
-			case 9->f=new File(rbTitoli.getString("dstPath") + rbTitoli.getString("titolo9"));
-			case 10->f=new File(rbTitoli.getString("dstPath") + rbTitoli.getString("titolo10"));
-			case 11->f=new File(rbTitoli.getString("dstPath") + rbTitoli.getString("titolo11"));
+			case 1 -> f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString("titolo1"));
+			case 2->f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString("titolo2"));
+			case 3->f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString("titolo3"));
+			case 4->f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString("titolo4"));
+			case 5->f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString("titolo5"));
+			case 6->f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString("titolo6"));
+			case 7->f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString("titolo7"));
+			case 8->f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString("titolo8"));
+			case 9->f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString("titolo9"));
+			case 10->f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString("titolo10"));
+			case 11->f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString("titolo11"));
 
-			case 12->f=new File(rbTitoli.getString("dstPath") + rbTitoli.getString("titolo12"));
+			case 12->f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString("titolo12"));
 
 			default -> 	Logger.getLogger("Test leggi").log(Level.SEVERE, "read error");
 		}

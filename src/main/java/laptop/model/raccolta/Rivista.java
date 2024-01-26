@@ -14,7 +14,6 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfCopy;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfWriter;
-import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 
 
 public class Rivista implements Raccolta  {
@@ -33,6 +32,9 @@ public class Rivista implements Raccolta  {
 
 	private final ResourceBundle rbTitoli=ResourceBundle.getBundle("configurations/titles");
 	private String [] infoGenerali=new String[5];
+	private static final String TITOLO="titolo15";
+	private static final String DSTPATH="dstPath";
+
 
 
 
@@ -186,7 +188,7 @@ public class Rivista implements Raccolta  {
 	public void scarica(int i) throws IOException {
 		Document document=new Document();
 		try{
-			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream(rbTitoli.getString("dstPath")+ rbTitoli.getString("titolo15")));
+			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream(rbTitoli.getString(DSTPATH)+ rbTitoli.getString(TITOLO)));
 			document.open();
 			document.addTitle("Rivista ");
 			document.add(new Paragraph("""
@@ -217,7 +219,7 @@ public class Rivista implements Raccolta  {
 	@Override
 	public void leggi(int i) throws IOException, DocumentException {
 		Desktop desktop = Desktop.getDesktop();
-		desktop.open(new File(rbTitoli.getString("dstPath")+rbTitoli.getString("titolo15")));
+		desktop.open(new File(rbTitoli.getString(DSTPATH)+rbTitoli.getString(TITOLO)));
 		
 	}
 	public String [] getInfoGenerali() {
@@ -231,8 +233,8 @@ public class Rivista implements Raccolta  {
 
 		Document document = new Document();
 
-		PdfReader reader = new PdfReader(rbTitoli.getString("srcPath") + rbTitoli.getString("titolo15"));
-		PdfCopy copy=new PdfCopy(document,new FileOutputStream(rbTitoli.getString("dstPath")+ rbTitoli.getString("titolo15")));
+		PdfReader reader = new PdfReader(rbTitoli.getString("srcPath") + rbTitoli.getString(TITOLO));
+		PdfCopy copy=new PdfCopy(document,new FileOutputStream(rbTitoli.getString(DSTPATH)+ rbTitoli.getString(TITOLO)));
 		document.open();
 
 		int pages = reader.getNumberOfPages();
