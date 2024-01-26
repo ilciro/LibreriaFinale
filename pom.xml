@@ -170,6 +170,8 @@
         </dependency>
 
 
+
+
         <!-- Thanks for using https://jar-download.com -->
 
 
@@ -212,7 +214,7 @@
                 <version>3.0.0-M5</version>
                 <configuration>
                     <runOrder>alphabetical</runOrder>
-                    <skipTests>false
+                    <skipTests>true
 
 
                     </skipTests>

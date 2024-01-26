@@ -48,7 +48,7 @@ public class DownloadServletR extends HttpServlet {
                 dB.setIdB(sB.getIdB());
                 dB.setTitoloB(sB.getTitoloB());
                 r.setId(sB.getIdB());
-                r.scarica();
+                r.scarica(sB.getIdB());
                 r.leggi(r.getId());
 
                 request.setAttribute("bean",dB);

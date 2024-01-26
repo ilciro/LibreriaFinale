@@ -1,20 +1,17 @@
 package laptop.model.raccolta;
 
 import java.awt.Desktop;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.URISyntaxException;
+
 import java.time.LocalDate;
-import java.util.Enumeration;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfWriter;
-
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.*;
+import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 
 
 public class Libro implements Raccolta {
@@ -33,10 +30,9 @@ public class Libro implements Raccolta {
 	private int disponibilita;
 	private float prezzo;
 	private int id;
-	private String[] infoGenerali=new String[7];
-	private String[] infoCostiDisp=new String[5];
+	private String[] infoGenerali = new String[7];
+	private String[] infoCostiDisp = new String[5];
 
-	private static final String URLL="/home/daniele/Scaricati/libriPerSito/";
 
 	public Libro() {
 
@@ -50,33 +46,43 @@ public class Libro implements Raccolta {
 	public String getCodIsbn() {
 		return this.codIsbn;
 	}
+
 	public String getEditore() {
 		return this.editore;
 	}
+
 	public String getAutore() {
 		return this.autore;
 	}
+
 	public String getLingua() {
 		return this.lingua;
 	}
+
 	public String getCategoria() {
 		return this.categoria;
 	}
+
 	public LocalDate getDataPubb() {
 		return this.dataPubb;
 	}
+
 	public String getRecensione() {
 		return this.recensione;
 	}
+
 	public int getNrCopie() {
 		return this.nrCopie;
 	}
+
 	public String getDesc() {
 		return this.descrizione;
 	}
+
 	public int getDisponibilita() {
 		return this.disponibilita;
 	}
+
 	public float getPrezzo() {
 		return this.prezzo;
 	}
@@ -88,12 +94,15 @@ public class Libro implements Raccolta {
 	public void setCodIsbn(String codIsbn) {
 		this.codIsbn = codIsbn;
 	}
+
 	public void setEditore(String editore) {
 		this.editore = editore;
 	}
+
 	public void setAutore(String autore) {
 		this.autore = autore;
 	}
+
 	public void setLingua(String lingua) {
 		this.lingua = lingua;
 	}
@@ -101,193 +110,245 @@ public class Libro implements Raccolta {
 	public void setDataPubb(LocalDate dataPubb) {
 		this.dataPubb = dataPubb;
 	}
+
 	public void setRecensione(String recensione) {
 		this.recensione = recensione;
 	}
+
 	public void setNrCopie(int nrCopie) {
 		this.nrCopie = nrCopie;
 	}
+
 	public void setDesc(String desc) {
 		this.descrizione = desc;
 	}
+
 	public void setDisponibilita(int disponibilita) {
 		this.disponibilita = disponibilita;
 	}
+
 	public void setPrezzo(float prezzo) {
 		this.prezzo = prezzo;
 	}
 
+	private final ResourceBundle rB = ResourceBundle.getBundle("configurations/booksPath");
+	private final ResourceBundle rBD = ResourceBundle.getBundle("configurations/downloadConfiguration");
+
+	private final ResourceBundle rbTitoli=ResourceBundle.getBundle("configurations/titles");
 
 	public int getId() {
 		return id;
 	}
 
-	public void setId(int id)
-	{
-		this.id = id ;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public void setCategoria(String categoria) {
-		switch (categoria){
+		switch (categoria) {
 			case "ADOLESCENTI_RAGAZZI":
 				this.categoria = CategorieLibro.ADOLESCENTI_RAGAZZI.toString();
 				break;
 			case "ARTE":
 				this.categoria = CategorieLibro.ARTE.toString();
 				break;
-			case "CINEMA_FOTOGRAFIA" :
+			case "CINEMA_FOTOGRAFIA":
 				this.categoria = CategorieLibro.CINEMA_FOTOGRAFIA.toString();
 				break;
-			case "BIOGRAFIE" :
+			case "BIOGRAFIE":
 				this.categoria = CategorieLibro.BIOGRAFIE.toString();
 				break;
-			case "DIARI_MEMORIE" :
+			case "DIARI_MEMORIE":
 				this.categoria = CategorieLibro.DIARI_MEMORIE.toString();
 				break;
-			case "CALENDARI_AGENDE" :
+			case "CALENDARI_AGENDE":
 				this.categoria = CategorieLibro.CALENDARI_AGENDE.toString();
 				break;
-			case "DIRITTO" :
+			case "DIRITTO":
 				this.categoria = CategorieLibro.DIRITTO.toString();
 				break;
-			case "DIZINARI_OPERE" :
+			case "DIZINARI_OPERE":
 				this.categoria = CategorieLibro.DIZINARI_OPERE.toString();
 				break;
-			case "ECONOMIA" :
+			case "ECONOMIA":
 				this.categoria = CategorieLibro.ECONOMIA.toString();
 				break;
-			case "FAMIGLIA" :
+			case "FAMIGLIA":
 				this.categoria = CategorieLibro.FAMIGLIA.toString();
 				break;
-			case "SALUTE_BENESSERE" :
+			case "SALUTE_BENESSERE":
 				this.categoria = CategorieLibro.SALUTE_BENESSERE.toString();
 				break;
-			case "FANTASCIENZA_FANTASY" :
+			case "FANTASCIENZA_FANTASY":
 				this.categoria = CategorieLibro.FANTASCIENZA_FANTASY.toString();
 				break;
-			case "FUMETTI_MANGA" :
+			case "FUMETTI_MANGA":
 				this.categoria = CategorieLibro.FUMETTI_MANGA.toString();
 				break;
-			case "GIALLI_THRILLER" :
+			case "GIALLI_THRILLER":
 				this.categoria = CategorieLibro.GIALLI_THRILLER.toString();
 				break;
-			case "COMPUTER_GIOCHI" :
+			case "COMPUTER_GIOCHI":
 				this.categoria = CategorieLibro.COMPUTER_GIOCHI.toString();
 				break;
-			case "HUMOR" :
+			case "HUMOR":
 				this.categoria = CategorieLibro.HUMOR.toString();
 				break;
-			case "INFORMATICA" :
+			case "INFORMATICA":
 				this.categoria = CategorieLibro.INFORMATICA.toString();
 				break;
-			case "WEB_DIGITAL_MEDIA" :
+			case "WEB_DIGITAL_MEDIA":
 				this.categoria = CategorieLibro.WEB_DIGITAL_MEDIA.toString();
 				break;
-			case "LETTERATURA_NARRATIVA" :
+			case "LETTERATURA_NARRATIVA":
 				this.categoria = CategorieLibro.LETTERATURA_NARRATIVA.toString();
 				break;
-			case "LIBRI_BAMBINI" :
+			case "LIBRI_BAMBINI":
 				this.categoria = CategorieLibro.LIBRI_BAMBINI.toString();
 				break;
-			case "LIBRI_SCOLASTICI" :
+			case "LIBRI_SCOLASTICI":
 				this.categoria = CategorieLibro.LIBRI_SCOLASTICI.toString();
 				break;
-			case "LIBRI_UNIVERSITARI" :
+			case "LIBRI_UNIVERSITARI":
 				this.categoria = CategorieLibro.LIBRI_UNIVERSITARI.toString();
 				break;
-			case "RICETTARI_GENERALI" :
+			case "RICETTARI_GENERALI":
 				this.categoria = CategorieLibro.RICETTARI_GENERALI.toString();
 				break;
-			case "LINGUISTICA_SCRITTURA" :
+			case "LINGUISTICA_SCRITTURA":
 				this.categoria = CategorieLibro.LINGUISTICA_SCRITTURA.toString();
 				break;
-			case "POLITICA" :
+			case "POLITICA":
 				this.categoria = CategorieLibro.POLITICA.toString();
 				break;
-			case "RELIGIONE" :
+			case "RELIGIONE":
 				this.categoria = CategorieLibro.RELIGIONE.toString();
 				break;
-			case "ROMANZI_ROSA" :
+			case "ROMANZI_ROSA":
 				this.categoria = CategorieLibro.ROMANZI_ROSA.toString();
 				break;
-			case "SCIENZE" :
+			case "SCIENZE":
 				this.categoria = CategorieLibro.SCIENZE.toString();
 				break;
-			case "TECNOLOGIA_MEDICINA" :
+			case "TECNOLOGIA_MEDICINA":
 				this.categoria = CategorieLibro.TECNOLOGIA_MEDICINA.toString();
 				break;
 
-			default :
+			default:
 				this.categoria = null;
 				break;
 		}
 	}
+/*
+	private boolean checkFile(File dst) throws IOException {
 
-	@Override
-	public void scarica() throws DocumentException, IOException {
-		Desktop desktop = Desktop.getDesktop();
-		desktop.open(new File(URLL));
+		boolean status=false;
+		try {
+			if (!dst.exists())
+				throw new IOException(" file not exists");
+			if(dst.exists())
+				if(dst.delete())
+					throw new IOException("file deleted");
+		}catch (IOException e)
+		{
+			if(dst.createNewFile())
+				status=true;
+		}
+		return status;
+
+	}
+
+
+ */
+	private void createPDF(String name)
+	{
+		//create a pdf with a paragraph
+		Document document=new Document();
+		try{
+			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream("/home/daniele/Scaricati/libriPerSito/"+name));
+			document.open();
+			document.addTitle("Libro ");
+			document.add(new Paragraph("that is a copy of book"));
+			document.close();
+			writer.close();
+
+			readPdf(name);
+
+
+		}catch (DocumentException | IOException e)
+		{
+			java.util.logging.Logger.getLogger("create pdf").log(Level.SEVERE,"pdf not created");
+		}
+    }
+
+	private void readPdf(String name) throws IOException, DocumentException {
+
+		Document document = new Document();
+		PdfReader reader = new PdfReader("/home/daniele/IdeaProjects/LibreriaFinale/libriPerSito/"+name);
+		PdfCopy copy=new PdfCopy(document,new FileOutputStream("/home/daniele/Scaricati/libriPerSito/"+name));
+		document.open();
+
+		int pages = reader.getNumberOfPages();
+		for (int i = 1; i <= pages; i++) {
+			copy.addPage(copy.getImportedPage(reader,i));
+
+		}
+
+
+		reader.close();
+		document.close();
+
 
 
 	}
 	@Override
+	public void scarica(int i) throws DocumentException, IOException {
+
+		//here is copy of file
+
+			switch (i) {
+				case 1 ->createPDF(rbTitoli.getString("titolo1"));
+				case 2 -> createPDF(rbTitoli.getString("titolo2"));
+				case 3-> createPDF(rbTitoli.getString("titolo3"));
+				case 4-> createPDF(rbTitoli.getString("titolo4"));
+				case 5->createPDF(rbTitoli.getString("titolo5"));
+				case 6->createPDF(rbTitoli.getString("titolo6"));
+				case 7-> createPDF(rbTitoli.getString("titolo7"));
+				case 8->createPDF(rbTitoli.getString("titolo8"));
+				case 9-> createPDF(rbTitoli.getString("titolo9"));
+				case 10->createPDF(rbTitoli.getString("titolo10"));
+				case 11->createPDF(rbTitoli.getString("titolo11"));
+
+				default -> {
+					createPDF(rbTitoli.getString("titolo12"));
+				}
+
+
+			}
+
+}
+
+	@Override
 	public void leggi(int i) throws IOException, DocumentException, URISyntaxException {
-		Document document;
-		File file;
 
+		File f;
+		switch (i) {
+			case 1 -> f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo1"));
+			case 2->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo2"));
+			case 3->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo3"));
+			case 4->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo4"));
+			case 5->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo5"));
+			case 6->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo6"));
+			case 7->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo7"));
+			case 8->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo8"));
+			case 9->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo9"));
+			case 10->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo10"));
+			case 11->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo11"));
 
-		int dimensione=0;
+			default -> f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo12"));
 
-		ResourceBundle rB=ResourceBundle.getBundle("configurations/booksPath");
-		 ResourceBundle rBD=ResourceBundle.getBundle("configurations/downloadConfiguration");
-			 Enumeration<String> enumeration = rBD.getKeys();
-
-
-
-		      // print all the keys
-		      while (enumeration.hasMoreElements()) {
-		    	 enumeration.nextElement();
-
-
-		    		 if(i==dimensione)
-		    	  {
-		    		  document = new Document();
-		     			PdfWriter.getInstance(document, new FileOutputStream(rBD.getString("path"+i)));
-		     			document.open();
-		  			file=new File(rB.getString("path"+i));
-		  			Desktop.getDesktop().open(file);
-		    	  }
-
-		    	  else {
-		  			document = new Document();
-		     			PdfWriter.getInstance(document, new FileOutputStream(rBD.getString("pathNonFound")));
-		     			document.open();
-
-		     			document.add(new Paragraph("""
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat ornare dictum. Donec semper pellentesque risus, quis pulvinar nisl efficitur nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus nisl mi, ullamcorper cursus pulvinar ut, pretium ut quam. Proin felis mauris, pretium non scelerisque vitae, posuere vel risus. Sed tortor enim, sollicitudin et eros at, fermentum suscipit urna. Sed at nisi quis libero hendrerit interdum at sodales dui. Nullam nec mattis urna. Quisque rhoncus pharetra malesuada. Etiam porttitor ligula consequat nisi luctus scelerisque. Sed purus purus, gravida ac orci sit amet, faucibus euismod diam. In dignissim enim sed nisl euismod, in vulputate odio facilisis. Sed venenatis facilisis massa, ac condimentum ante rutrum blandit. Vivamus efficitur eros quis diam semper, nec porttitor lectus vehicula. Fusce turpis ipsum, mollis vel nunc vitae, blandit molestie nunc. Nunc sit amet feugiat lacus.
-										     					
-								Aenean sollicitudin id dolor eu luctus. Proin tincidunt semper lobortis. Nunc nec odio lorem. Praesent consectetur, nunc sed egestas elementum, orci ligula dictum ligula, ut vehicula augue nibh sit amet quam. Nam nec massa lorem. Donec sed elit massa. Praesent neque ante, suscipit nec ornare id, bibendum non dolor. Donec sem ex, placerat ac hendrerit quis, ullamcorper nec quam. Morbi tempus tellus at porta fermentum. Donec vitae dolor orci. Vivamus fermentum faucibus eros, et cursus lorem aliquet in. Integer vitae ipsum eu nulla sodales porta.
-								
-								Donec et purus aliquam, sagittis est eget, molestie dui. In porttitor maximus dui, a mattis urna faucibus ut. Fusce vulputate nisi dolor, sed hendrerit urna placerat quis. In hac habitasse platea dictumst. Aliquam a tempus eros. Aenean at augue quam. Vestibulum lectus enim, mollis sed pulvinar quis, porta vel lorem. Mauris vel eleifend dui. Sed venenatis ullamcorper mollis.
-								
-								Proin non ullamcorper ex, quis bibendum diam. Aliquam eleifend efficitur diam ut porta. Morbi ipsum sapien, vehicula sit amet felis nec, vulputate malesuada tortor. Sed finibus, augue at auctor ornare, ligula nunc venenatis nunc, sit amet mollis est dolor sed erat. Integer fermentum gravida tellus, mattis finibus turpis fringilla et. Nam sed aliquet nunc. Pellentesque nec urna metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rhoncus condimentum ornare. Curabitur pellentesque lacinia scelerisque. Curabitur faucibus et purus fermentum venenatis. Quisque sed tempor augue, non mattis massa. Vivamus vestibulum pulvinar elit id iaculis. Proin tincidunt eros nisi, et volutpat lorem rutrum ut. Phasellus convallis metus fermentum nisi molestie, sit amet rhoncus mauris laoreet.
-								
-								Vestibulum aliquet nisi sit amet tristique consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a fringilla libero. Fusce pharetra purus eu tortor dapibus laoreet. Quisque mattis justo et lacus fringilla mattis. Cras sit amet elementum ipsum. Sed varius congue dolor ac placerat. Integer cursus nulla at lectus sollicitudin hendrerit. Suspendisse sit amet tincidunt nunc, at volutpat nisi.
-								"""));
-
-
-		  		}
-
-		    	   dimensione++;
-
-		      }
-
-
-
-
-
-
-
+		}
+		Desktop.getDesktop().open(f);
 
 	}
 

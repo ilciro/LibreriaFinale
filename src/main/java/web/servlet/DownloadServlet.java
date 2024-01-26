@@ -56,12 +56,12 @@ public class DownloadServlet extends HttpServlet{
 
                 dB.setIdB(sB.getIdB());
                 dB.setTitoloB(sB.getTitoloB());
-                l.setId(sB.getIdB());
-                l.scarica();
-                l.leggi(l.getId());
+                l.setId(dB.getIdB());
+                l.scarica(sB.getIdB());
+                //l.leggi(l.getId());
 
                 req.setAttribute("bean",dB);
-                req.setAttribute("beanS",SystemBean.getInstance());
+                req.setAttribute("beanS",sB);
                 RequestDispatcher view = getServletContext().getRequestDispatcher(index);
                 view.forward(req,resp);
             }
@@ -114,7 +114,7 @@ public class DownloadServlet extends HttpServlet{
             }
 
 
-        }catch(SQLException | DocumentException |URISyntaxException  e)
+        }catch(SQLException | DocumentException   e)
         {
             req.setAttribute("bean",dB);
             RequestDispatcher view = getServletContext().getRequestDispatcher(index);

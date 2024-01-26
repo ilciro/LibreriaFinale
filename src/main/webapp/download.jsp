@@ -18,6 +18,9 @@
 <p> parametri :</p>
 <p> oggetto beanS : ${beanS.getTypeB()} </p>
 <p> categoria beanS :${beanS.getCategoriaB()}</p>
+<p> id del libro dal bean : ${beanL.getIdB()}</p>
+<p> id da system :${beanS.getIdB()}</p>
+
 
 <c:set var = "tipo" scope = "session" value = "${beanS.getTypeB() }"/>
 

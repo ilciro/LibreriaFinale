@@ -7,10 +7,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfCopy;
+import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfWriter;
 
 
@@ -28,7 +31,7 @@ public class Rivista implements Raccolta  {
 	private float prezzo;
 	private int copieRim;
 	private int id;
-	private static  final String URLL="/home/daniele/Scaricati/libriPerSito/";
+	private static  final String URLL="/home/daniele/Scaricati/libriPerSito/rivista.pdf";
 
 	private String [] infoGenerali=new String[5];
 
@@ -179,40 +182,30 @@ public class Rivista implements Raccolta  {
 	}
 	
 	@Override
-	public void scarica() throws IOException {
-		Desktop desktop = Desktop.getDesktop();
-		desktop.open(new File(URLL));
+	public void scarica(int i) throws IOException {
+		Document document=new Document();
+		try{
+			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream("/home/daniele/Scaricati/libriPerSito/rivista.pdf"));
+			document.open();
+			document.addTitle("Rivista ");
+			document.add(new Paragraph("that is a copy of magazine"));
+
+			readPdf();
+			document.close();
+			writer.close();
+
+
+
+
+		}catch (DocumentException | IOException e)
+		{
+			java.util.logging.Logger.getLogger("create pdf").log(Level.SEVERE,"pdf not created");
+		}
 	}
 	@Override
-	public void leggi(int i) throws FileNotFoundException, DocumentException {
-		Document document;
-		
-		
-		
-		
-		 ResourceBundle rBR=ResourceBundle.getBundle("configurations/downloadConfigurationRivista");
-		
-		    		 
-		  			document = new Document();
-		     			PdfWriter.getInstance(document, new FileOutputStream(rBR.getString("pathL")));
-		     			document.open();	
-
-		     			document.add(new Paragraph("""
-						Rivista/Magazine not avalaible
-						Nam ultricies efficitur magna, sit amet luctus magna luctus volutpat
-						Pellentesque facilisis lacinia mi, nec posuere justo pharetra non:
-						Nulla vel risus sit amet risus aliquam auctor.
-						Nunc viverra felis sit amet nulla faucibus, sed euismod neque lacinia.
-						Integer pharetra sapien sed odio mattis, sed efficitur justo blandit.
-						Praesent in quam non neque hendrerit pulvinar ut quis tortor.
-						Maecenas nec convallis nunc.
-						Donec ultricies malesuada mauris ac accumsan.
-						Vestibulum auctor est ac laoreet egestas.
-						Nam malesuada in massa eu venenatis.
-						"""));
-
-		     			document.close();
-		
+	public void leggi(int i) throws IOException, DocumentException {
+		Desktop desktop = Desktop.getDesktop();
+		desktop.open(new File(URLL));
 		
 	}
 	public String [] getInfoGenerali() {
@@ -221,6 +214,26 @@ public class Rivista implements Raccolta  {
 	public void setInfoGenerali(String [] infoGenerali) {
 		this.infoGenerali = infoGenerali;
 	}
- 
+
+	private void readPdf() throws IOException, DocumentException {
+
+		Document document = new Document();
+		PdfReader reader = new PdfReader("/home/daniele/IdeaProjects/LibreriaFinale/libriPerSito/rivista.pdf");
+		PdfCopy copy=new PdfCopy(document,new FileOutputStream("/home/daniele/Scaricati/libriPerSito/rivista.pdf"));
+		document.open();
+
+		int pages = reader.getNumberOfPages();
+		for (int i = 1; i <= pages; i++) {
+			copy.addPage(copy.getImportedPage(reader,i));
+
+		}
+
+
+		reader.close();
+		document.close();
+
+
+
+	}
 	
 }

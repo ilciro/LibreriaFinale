@@ -6,10 +6,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfCopy;
+import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfWriter;
 
 
@@ -127,42 +130,55 @@ public class Giornale implements Raccolta{
 		this.id = id;
 	}
 
+	private void readPdf() throws IOException, DocumentException {
 
+		Document document = new Document();
+		PdfReader reader = new PdfReader("/home/daniele/IdeaProjects/LibreriaFinale/libriPerSito/giornale.pdf");
+		PdfCopy copy=new PdfCopy(document,new FileOutputStream("/home/daniele/Scaricati/libriPerSito/giornale.pdf"));
+		document.open();
+
+		int pages = reader.getNumberOfPages();
+		for (int i = 1; i <= pages; i++) {
+			copy.addPage(copy.getImportedPage(reader,i));
+
+		}
+
+
+		reader.close();
+		document.close();
+
+
+
+	}
 
 	@Override
-	public void scarica() throws IOException {
+	public void scarica(int i) throws IOException {
 
-		Desktop desktop = Desktop.getDesktop();
-		desktop.open(new File(URLL));
+		Document document=new Document();
+		try{
+			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream("/home/daniele/Scaricati/libriPerSito/giornale.pdf"));
+			document.open();
+			document.addTitle("Giornale ");
+			document.add(new Paragraph("that is a copy of daily"));
+
+			readPdf();
+			document.close();
+			writer.close();
+
+
+
+
+		}catch (DocumentException | IOException e)
+		{
+			java.util.logging.Logger.getLogger("create pdf").log(Level.SEVERE,"pdf not created");
+		}
 
 	}
 
 	@Override
 	public void leggi(int i) throws DocumentException, IOException {
-		Document document;
-		
-		
-		
-		 ResourceBundle rBG=ResourceBundle.getBundle("configurations/downloadConfigurationGiornale");
-
-
-		 document = new Document();
-		 PdfWriter.getInstance(document, new FileOutputStream(rBG.getString("pathL")));
-		 document.open();
-
-			document.add(new Paragraph("""
-					Giornale/Daily not avalaible.
-					Integer et semper purus,non finibus augue
-					Interpellates habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-					Praesent et tincidunt eros.Nunc malesuada ipsum non leo scelerisque molestie.
-					Sed sit amet finibus nulla id ultrices diam.Vestibulum mollis ante eros,vitae accumsan ex lacinia nec.
-					Sed tellus eros, tincidunt eu odio ac, tempor viverra libero.Maecenas id arcu laoreet, tristique felis sit amet,blandit nulla.
-					Maecenas id arcu laoreet, tristique felis sit amet,blandit nulla.Phasellus suscipit sed est ut molestie.
-					Maecenas consequat elit diam, eu semper erat porta nec.Etiam ullamcorper neque vitae mollis cursus.
-					"""));
-			document.close();
-
-
+		File file=new File("/home/daniele/Scaricati/libriPerSito/giornale.pdf");
+		Desktop.getDesktop().open(file);
 
 
 	}
