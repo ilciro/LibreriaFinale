@@ -45,7 +45,7 @@ public class BoundaryAcquista implements Initializable {
 	@FXML
 	private Label  nome;
 	@FXML
-	private Label  dispLabel;
+	private Label  copieLabel;
 	@FXML
 	private Label costo;
 	@FXML
@@ -67,8 +67,8 @@ public class BoundaryAcquista implements Initializable {
 	private Button link;
 
 	protected Scene scene;
-	private ControllerAcquista cA;
-	private ControllerSystemState vis = ControllerSystemState.getInstance() ;
+	private final ControllerAcquista cA;
+	private final ControllerSystemState vis = ControllerSystemState.getInstance() ;
 
 	
 	
@@ -83,7 +83,7 @@ public class BoundaryAcquista implements Initializable {
 		{
 			vis.setPickup(false);
 		}
-		if(Integer.parseInt(quantita.getText())>Integer.parseInt(dispLabel.getText()))
+		if(Integer.parseInt(quantita.getText())>Integer.parseInt(copieLabel.getText()))
 		{
 			Stage stage;
 			Parent root;
@@ -118,7 +118,7 @@ public class BoundaryAcquista implements Initializable {
 		{
 			vis.setPickup(false);
 		}
-		if(Integer.parseInt(quantita.getText())>Integer.parseInt(dispLabel.getText()))
+		if(Integer.parseInt(quantita.getText())>Integer.parseInt(copieLabel.getText()))
 		{
 			Stage stage;
 			Parent root;
@@ -161,7 +161,7 @@ public class BoundaryAcquista implements Initializable {
 
 
 
-			float x = cA.totale1(vis.getType(),labelT.getText(), Integer.parseInt(dispLabel.getText()),Integer.parseInt(quantita.getText()));
+			float x = cA.totale1(vis.getType(),labelT.getText(), Integer.parseInt(copieLabel.getText()),Integer.parseInt(quantita.getText()));
 			costo.setText(String.valueOf(x));
 			float tot;
 			tot = x * (Float.parseFloat(quantita.getText()));
@@ -179,7 +179,7 @@ public class BoundaryAcquista implements Initializable {
 
 	}
 
-	public BoundaryAcquista() throws SQLException, IOException {
+	public BoundaryAcquista() throws  IOException {
 		cA = new ControllerAcquista();
 	}
 
@@ -215,9 +215,11 @@ public class BoundaryAcquista implements Initializable {
 			try {
 			nome.setText(cA.getNomeById());
 
+			System.out.print("copie Rimanenti \n:"+cA.getDisp("libro"));
+			System.out.print("type:"+ vis.getType());
+			System.out.print("id :"+vis.getId());
 
-
-			dispLabel.setText(String.valueOf(cA.getDisp(vis.getType())));
+			copieLabel.setText(String.valueOf(cA.getDisp(vis.getType())));
 		
 				costo.setText(String.valueOf(cA.getCosto(vis.getType())));
 			} catch (SQLException | IdException e) {

@@ -1,6 +1,8 @@
 package web.servlet;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.Serial;
 import java.net.URISyntaxException;
 import java.sql.SQLException;
@@ -49,6 +51,7 @@ public class DownloadServlet extends HttpServlet{
         String invia=req.getParameter("downloadB");
         String annulla=req.getParameter("annullaB");
 
+
         try {
             if(invia!=null && invia.equals("scarica e leggi") )
 
@@ -57,8 +60,10 @@ public class DownloadServlet extends HttpServlet{
                 dB.setIdB(sB.getIdB());
                 dB.setTitoloB(sB.getTitoloB());
                 l.setId(dB.getIdB());
+
                 l.scarica(sB.getIdB());
-                //l.leggi(l.getId());
+                l.leggi(l.getId());
+
 
                 req.setAttribute("bean",dB);
                 req.setAttribute("beanS",sB);
@@ -114,14 +119,13 @@ public class DownloadServlet extends HttpServlet{
             }
 
 
-        }catch(SQLException | DocumentException   e)
-        {
-            req.setAttribute("bean",dB);
+        }catch(SQLException |DocumentException|URISyntaxException e) {
+            req.setAttribute("bean", dB);
             RequestDispatcher view = getServletContext().getRequestDispatcher(index);
-            view.forward(req,resp);
+            view.forward(req, resp);
+
 
         }
-
     }
 
 

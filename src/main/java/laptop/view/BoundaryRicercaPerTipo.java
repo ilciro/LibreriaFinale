@@ -33,11 +33,11 @@ public class BoundaryRicercaPerTipo implements Initializable {
 	@FXML
 	private Button buttonB;
 	
-	private static String title = "Benvenuto nella schermata del riepilogo ordine";
-	private static String pageFxml = "ricercaPage.fxml";
+	private static final String title = "Benvenuto nella schermata del riepilogo ordine";
+	private static final String pageFxml = "ricercaPage.fxml";
 	private ControllerRicercaPerTipo cRPT;
 	protected Scene scene;
-	private static String reportLibro="report libro";
+	private static final String reportLibro="report libro";
 		
 	
 	@FXML

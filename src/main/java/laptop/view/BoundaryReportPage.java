@@ -1,13 +1,11 @@
 package laptop.view;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.Objects;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -50,13 +48,13 @@ public class BoundaryReportPage implements Initializable {
 	
 	
 	@FXML
-	private void totale() throws NullPointerException, SQLException, IOException {
+	private void totale() throws NullPointerException,  IOException {
 		ta.setText(cRP.reportTotale());
 		
 
 	}
 	@FXML
-	private void reportLibri() throws IOException, SQLException 
+	private void reportLibri() throws IOException
 	{
 		ta.setText(cRP.leggiLibro());
 
@@ -66,13 +64,13 @@ public class BoundaryReportPage implements Initializable {
 
 	
 	@FXML
-	private void raccolta() throws IOException, SQLException {
+	private void raccolta() throws IOException{
 		ta.setText(cRP.reportRaccolta());
         
 		
 	}
 	@FXML
-	private void reportGiornali() throws SQLException, IOException {
+	private void reportGiornali() throws  IOException {
 		ta.setText(cRP.leggiGiornale());
 		
 	}
@@ -91,7 +89,7 @@ public class BoundaryReportPage implements Initializable {
 
 	}
 	@FXML
-	private void reportRiviste() throws IOException, SQLException
+	private void reportRiviste() throws IOException
 	{
 		ta.setText(cRP.leggiRivista());
 	}

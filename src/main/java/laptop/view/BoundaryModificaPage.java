@@ -118,15 +118,15 @@ public class BoundaryModificaPage implements Initializable {
 	private Label labelCopie;
 
 	private ControllerModifPage cMP;
-	private ControllerSystemState vis= ControllerSystemState.getInstance();
+	private final ControllerSystemState vis= ControllerSystemState.getInstance();
 	protected float prezzo ;
 	protected int copie;
 	protected Scene scene;
 	protected int np;
-	private String[] infoGen=new String[7];
-	private String[] infoCostoDisp=new String[7];
-	private String [] info=new String[5];
-	private ObservableList<String> items = FXCollections.observableArrayList();
+	private final String[] infoGen=new String[7];
+	private final String[] infoCostoDisp=new String[7];
+	private final String [] info=new String[5];
+	private final ObservableList<String> items = FXCollections.observableArrayList();
 
 
 	@FXML

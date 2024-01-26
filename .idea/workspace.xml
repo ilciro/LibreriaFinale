@@ -4,11 +4,119 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="read/download objects v3">
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="read/download objects v4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileSql/export-db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/FileSql/export-db.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerAcquista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerAcquista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerAggiungiPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerAggiungiPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerCheckPagamentoData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerCheckPagamentoData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerCompravendita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerCompravendita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerDownload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerDownload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerPagamentoCC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerPagamentoCC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerPagamentoCash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerPagamentoCash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerRicercaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerRicercaPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerVisualizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerVisualizza.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Giornale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Giornale.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Libro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Rivista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Rivista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryAcquista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryAcquista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryAggiungiPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryAggiungiPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryCompravendita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryCompravendita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryDownload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryDownload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryGestionePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryGestionePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryHomePageAfterLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryHomePageAfterLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryHomePageAfterLoginSE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryHomePageAfterLoginSE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryModificaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryModificaPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryModificaUtentePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryModificaUtentePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryPagamentoCC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryPagamentoCC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryPagamentoCash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryPagamentoCash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryRaccoltaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryRaccoltaPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryReportPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryReportPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryRicercaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryRicercaPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryRicercaPerTipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryRicercaPerTipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryScegliNegozio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryScegliNegozio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryUserPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryUserPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryVisualizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryVisualizza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryVisualizzaOrdine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryVisualizzaOrdine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryVisualizzaProfilo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/BoundaryVisualizzaProfilo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/view/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/servlet/DownloadServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/servlet/DownloadServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/acquista.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/acquista.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/acquista.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/acquista.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerAcquista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerAcquista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerAggiungiPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerAggiungiPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerCheckPagamentoData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerCheckPagamentoData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerCompravendita.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerCompravendita.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerDownload.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerDownload.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerPagamentoCC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerPagamentoCC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerPagamentoCash.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerPagamentoCash.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerRicercaPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerRicercaPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerVisualizza.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/controller/ControllerVisualizza.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Giornale.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Giornale.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Libro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Libro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Rivista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/model/raccolta/Rivista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryAcquista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryAcquista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryAggiungiPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryAggiungiPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryCompravendita.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryCompravendita.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryDownload.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryDownload.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryGestionePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryGestionePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryHomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryHomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryHomePageAfterLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryHomePageAfterLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryHomePageAfterLoginSE.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryHomePageAfterLoginSE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryModificaPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryModificaPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryModificaUtentePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryModificaUtentePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryPagamentoCC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryPagamentoCC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryPagamentoCash.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryPagamentoCash.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryRaccoltaPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryRaccoltaPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryReportPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryReportPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryRicercaPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryRicercaPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryRicercaPerTipo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryRicercaPerTipo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryScegliNegozio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryScegliNegozio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryUserPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryUserPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryVisualizza.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryVisualizza.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryVisualizzaOrdine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryVisualizzaOrdine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryVisualizzaProfilo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/BoundaryVisualizzaProfilo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/laptop/view/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/DownloadServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/WEB-INF/classes/web/servlet/DownloadServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/acquista.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/acquista.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerAcquista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerAcquista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerAggiungiPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerAggiungiPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerCheckPagamentoData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerCheckPagamentoData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerCompravendita.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerCompravendita.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerDownload.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerDownload.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerPagamentoCC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerPagamentoCC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerPagamentoCash.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerPagamentoCash.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerRicercaPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerRicercaPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerVisualizza.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerVisualizza.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Giornale.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Giornale.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Libro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Libro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Rivista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Rivista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryAcquista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryAcquista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryAggiungiPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryAggiungiPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryCompravendita.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryCompravendita.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryDownload.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryDownload.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryGestionePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryGestionePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryHomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryHomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryHomePageAfterLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryHomePageAfterLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryHomePageAfterLoginSE.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryHomePageAfterLoginSE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryModificaPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryModificaPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryModificaUtentePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryModificaUtentePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryPagamentoCC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryPagamentoCC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryPagamentoCash.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryPagamentoCash.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryRaccoltaPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryRaccoltaPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryReportPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryReportPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryRicercaPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryRicercaPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryRicercaPerTipo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryRicercaPerTipo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryScegliNegozio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryScegliNegozio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryUserPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryUserPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryVisualizza.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryVisualizza.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryVisualizzaOrdine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryVisualizzaOrdine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryVisualizzaProfilo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/BoundaryVisualizzaProfilo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/view/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/view/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/DownloadServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/DownloadServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-LibreriaMaven.war" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,33 +172,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestIndexPage.testAcquistaLibro.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestIndexPage.testIndexBook.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LibreriaMaven [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LibreriaMaven [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LibreriaMaven [org.apache.maven.plugins:maven-install-plugin:3.1.1:install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LibreriaMaven [org.apache.maven.plugins:maven-war-plugin:3.3.2:war].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LibreriaMaven [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/daniele/IdeaProjects/LibreriaFinale/libriPerSito&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Color Scheme Font&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Main.executor": "Run",
+    "JUnit.TestIndexPage.testAcquistaLibro.executor": "Run",
+    "JUnit.TestIndexPage.testIndexBook.executor": "Run",
+    "Maven.LibreriaMaven [clean].executor": "Run",
+    "Maven.LibreriaMaven [install].executor": "Run",
+    "Maven.LibreriaMaven [org.apache.maven.plugins:maven-install-plugin:3.1.1:install].executor": "Run",
+    "Maven.LibreriaMaven [org.apache.maven.plugins:maven-war-plugin:3.3.2:war].executor": "Run",
+    "Maven.LibreriaMaven [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
+    "Maven.LibreriaMaven [package].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/daniele/IdeaProjects/LibreriaFinale/libriPerSito",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Color Scheme Font"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="web.bean" />
@@ -280,14 +389,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
-    </task>
-    <task id="LOCAL-00043" summary="restrung dao v2">
-      <option name="closed" value="true" />
-      <created>1703633276418</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1703633276418</updated>
     </task>
     <task id="LOCAL-00044" summary="restrung dao v3 (insert file dao pt1)">
       <option name="closed" value="true" />
@@ -657,7 +758,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706281081072</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="read/download objects v4">
+      <option name="closed" value="true" />
+      <created>1706281600730</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1706281600730</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -685,7 +794,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove duplication" />
     <MESSAGE value="test v9" />
     <MESSAGE value="test v10" />
     <MESSAGE value="reduce duplication v1" />
@@ -710,7 +818,8 @@
     <MESSAGE value="read/download objects" />
     <MESSAGE value="read/download objects v2" />
     <MESSAGE value="read/download objects v3" />
-    <option name="LAST_COMMIT_MESSAGE" value="read/download objects v3" />
+    <MESSAGE value="read/download objects v4" />
+    <option name="LAST_COMMIT_MESSAGE" value="read/download objects v4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -43,7 +43,7 @@ public class BoundaryScegliNegozio implements Initializable {
 	@FXML
 	private Button buttonV;
 	
-	private ControllerScegliNegozio cSN;
+	private final ControllerScegliNegozio cSN;
 	protected ObservableList<Negozio> listOfNegozi;
 	protected String alertTitle = "Ordine ricevuto!";
 	protected String alertHeaderTexr = "Il negozio che hai selezionato ha ricevuto il tuo ordine. \n Presentati dopo 3 giorni lavorativi per ritirare il tuo acquisto";
@@ -51,8 +51,8 @@ public class BoundaryScegliNegozio implements Initializable {
 	protected String warningTitle =" Negozio chiuso o non disponibile per il ritiro";
 	protected String warningHeaderText = "Il negozio seleziopnato non � al momento pronto per questo tipo di operazioni";
 	private static final  String WARNINGCONTENTTEXT = "Torna indietro e seleziona un'altro negozio fra quelli che ti vengono mostrati ! ";
-	private static String homePage = "homePage.fxml";
-	private static String homePageA = "homePageAfterLogin.fxml" ;
+	private static final String homePage = "homePage.fxml";
+	private static final String homePageA = "homePageAfterLogin.fxml" ;
 	
 	protected Boolean statusA = false ;
 	protected Boolean statusB = false ;

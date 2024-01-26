@@ -85,7 +85,7 @@ public class BoundaryPagamentoCC implements Initializable {
 	protected Boolean esito;
 	protected Scene scene;
 	
-	private static ControllerSystemState vis = ControllerSystemState.getInstance();
+	private static final ControllerSystemState vis = ControllerSystemState.getInstance();
 
 	@FXML
 	private void procediCC() throws IOException, SQLException, IdException {

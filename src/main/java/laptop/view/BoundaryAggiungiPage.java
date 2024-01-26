@@ -97,10 +97,10 @@ public class BoundaryAggiungiPage implements Initializable {
 	protected Scene scene; 
 	protected float prezzo;
 	protected int copie;
-	private ObservableList<String> items = FXCollections.observableArrayList();
-	private String[] infoGen=new String[6];
-	private String[]infoCostoDisp =new String[6];
-	private String[] info=new String[5];
+	private final ObservableList<String> items = FXCollections.observableArrayList();
+	private final String[] infoGen=new String[6];
+	private final String[]infoCostoDisp =new String[6];
+	private final String[] info=new String[5];
 
 	@FXML
 	private void conferma() throws SQLException

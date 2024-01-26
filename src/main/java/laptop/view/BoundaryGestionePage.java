@@ -58,15 +58,15 @@ public class BoundaryGestionePage implements Initializable {
 	@FXML
 	private TextField idL;
 	private ControllerGestionePage cGP;
-	private ControllerSystemState vis=ControllerSystemState.getInstance();
+	private final ControllerSystemState vis=ControllerSystemState.getInstance();
 	protected Scene scene;
-	protected int identity;
+
 	
 	
 	
 	
 	@FXML
-	private void genera() throws SQLException  
+	private void genera()
 	{
 
 		table.setItems(cGP.getLista(vis.getType()));

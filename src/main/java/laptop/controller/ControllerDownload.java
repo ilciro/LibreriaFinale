@@ -91,10 +91,12 @@ public class ControllerDownload {
 		{
 			case "libro":
 			{
+
 				l.setId(vis.getId());
+
 				l.scarica(vis.getId());
 				l.leggi(vis.getId());
-				break;
+			break;
 			}
 			case "giornale":
 			{

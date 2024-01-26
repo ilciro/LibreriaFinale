@@ -96,7 +96,7 @@ public class BoundaryModificaUtentePage implements Initializable {
 		User.getInstance().setId(ControllerSystemState.getInstance().getId());
 		User.getInstance().setDescrizione(descTA.getText());
 		
-		Date sqlDate = null;
+		Date sqlDate;
 		java.util.Date utilDate;
 		SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
 

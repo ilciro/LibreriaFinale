@@ -15,12 +15,12 @@ import laptop.model.raccolta.Rivista;
 
 public class ControllerAggiungiPage {
 
-	private GiornaleDao gD;
+	private final GiornaleDao gD;
 	private boolean status = false;
-	private Rivista r;
-	private RivistaDao rD;
-	private LibroDao lD;
-	private ControllerBookData cBD;
+	private final Rivista r;
+	private final RivistaDao rD;
+	private final LibroDao lD;
+	private final ControllerBookData cBD;
 
 	
 	//funzione di aggiunta dei libri

@@ -14,15 +14,15 @@ import laptop.model.raccolta.Libro;
 import laptop.model.raccolta.Rivista;
 
 public class ControllerCheckPagamentoData {
-	private ControllerSystemState vis=ControllerSystemState.getInstance();
-	private Libro l;
-	private Giornale g;
-	private Rivista r;
+	private final ControllerSystemState vis=ControllerSystemState.getInstance();
+	private final Libro l;
+	private final Giornale g;
+	private final  Rivista r;
 	
-	private LibroDao  lD;
-	private GiornaleDao gD;
-	private RivistaDao rD;
-	private PagamentoDao pagD;
+	private final LibroDao  lD;
+	private final GiornaleDao gD;
+	private final RivistaDao rD;
+	private final PagamentoDao pagD;
 	public void checkPagamentoData(String nome) throws SQLException, IdException {
 		String tipo=vis.getType();
 		

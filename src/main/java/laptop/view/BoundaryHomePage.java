@@ -44,7 +44,7 @@ public class BoundaryHomePage {
 	private Button buttonC;
 
 	protected Scene scene;
-	private static String compravendita="compravendita.fxml";
+	private static final String compravendita="compravendita.fxml";
 
 	@FXML
 	private void getListaGiornali() throws IOException {

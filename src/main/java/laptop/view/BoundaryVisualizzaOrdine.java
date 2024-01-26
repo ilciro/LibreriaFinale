@@ -56,7 +56,7 @@ public class BoundaryVisualizzaOrdine implements Initializable {
 	private Button buttonG;
 	
 	
-	private ControllerVisualizzaOrdine cVO;
+	private final ControllerVisualizzaOrdine cVO;
 	protected Scene scene;
 	@FXML
 	private void riepilogo() throws SQLException 

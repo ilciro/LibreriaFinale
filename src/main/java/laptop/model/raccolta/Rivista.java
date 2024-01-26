@@ -32,7 +32,7 @@ public class Rivista implements Raccolta  {
 
 	private final ResourceBundle rbTitoli=ResourceBundle.getBundle("configurations/titles");
 	private String [] infoGenerali=new String[5];
-	private static final String TITOLO="titolo15";
+	private static final String TITOLOR="titolo15";
 	private static final String DSTPATH="dstPath";
 
 
@@ -188,7 +188,7 @@ public class Rivista implements Raccolta  {
 	public void scarica(int i) throws IOException {
 		Document document=new Document();
 		try{
-			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream(rbTitoli.getString(DSTPATH)+ rbTitoli.getString(TITOLO)));
+			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream(rbTitoli.getString(DSTPATH)+ rbTitoli.getString(TITOLOR)));
 			document.open();
 			document.addTitle("Rivista ");
 			document.add(new Paragraph("""
@@ -219,7 +219,7 @@ public class Rivista implements Raccolta  {
 	@Override
 	public void leggi(int i) throws IOException, DocumentException {
 		Desktop desktop = Desktop.getDesktop();
-		desktop.open(new File(rbTitoli.getString(DSTPATH)+rbTitoli.getString(TITOLO)));
+		desktop.open(new File(rbTitoli.getString(DSTPATH)+rbTitoli.getString(TITOLOR)));
 		
 	}
 	public String [] getInfoGenerali() {
@@ -233,8 +233,8 @@ public class Rivista implements Raccolta  {
 
 		Document document = new Document();
 
-		PdfReader reader = new PdfReader(rbTitoli.getString("srcPath") + rbTitoli.getString(TITOLO));
-		PdfCopy copy=new PdfCopy(document,new FileOutputStream(rbTitoli.getString(DSTPATH)+ rbTitoli.getString(TITOLO)));
+		PdfReader reader = new PdfReader(rbTitoli.getString("srcPath") + rbTitoli.getString(TITOLOR));
+		PdfCopy copy=new PdfCopy(document,new FileOutputStream(rbTitoli.getString(DSTPATH)+ rbTitoli.getString(TITOLOR)));
 		document.open();
 
 		int pages = reader.getNumberOfPages();

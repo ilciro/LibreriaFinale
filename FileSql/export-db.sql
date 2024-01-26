@@ -5,7 +5,7 @@
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
 -- Schema mydb
@@ -362,5 +362,6 @@ INSERT INTO `ISPW`.`RIVISTA` (`titolo`, `tipologia`, `autore`, `lingua`, `editor
 INSERT INTO `ISPW`.`RIVISTA` (`titolo`, `tipologia`, `autore`, `lingua`, `editore`, `Descrizione`, `dataPubblicazione`, `disp`, `prezzo`, `copieRimanenti`, `idRivista`) VALUES ('Rivista B', 'SPORTIVO', 'Bao Publishing', 'italiano', 'Bao Publishing', 'testo casuale', '1970-01-01', 1, 2.0, 131, 5);
 
 COMMIT;
+
 
 

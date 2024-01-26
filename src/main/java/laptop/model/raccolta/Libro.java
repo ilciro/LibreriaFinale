@@ -34,7 +34,7 @@ public class Libro implements Raccolta {
 	private String[] infoCostiDisp = new String[5];
 	private static final String DSTPATH="dstPath";
 
-
+	private static File f;
 
 
 
@@ -318,7 +318,9 @@ public class Libro implements Raccolta {
 	@Override
 	public void leggi(int i) throws IOException, DocumentException, URISyntaxException {
 
-		File f = null;
+		System.setProperty("java.awt.headless", "false"); //Disables headless
+
+
 		switch (i) {
 			case 1 -> f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString("titolo1"));
 			case 2->f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString("titolo2"));

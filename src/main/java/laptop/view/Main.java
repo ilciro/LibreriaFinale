@@ -64,104 +64,27 @@ public class Main  extends Application {
 		}
 
 
-		//launch(args);
-
-		Libro l=new Libro();
-
+			launch(args);
+/*
+		Libro l = new Libro();
 		Giornale g=new Giornale();
 		Rivista r=new Rivista();
-		for (int i=1;i<13;i++)
-		{
+		for (int i = 1; i < 13; i++) {
 			l.setId(i);
 			l.scarica(l.getId());
 			l.leggi(l.getId());
 		}
-		g.setId(1);
-		g.scarica(g.getId());
-		g.leggi(g.getId());
-		r.setId(1);
-		r.scarica(r.getId());
-		r.leggi(r.getId());
-
-
-
-
-
-	}
-
-
-
-
-
-
-
-/*
-
-		csvDao=new CsvDao();
-
-		csvDao.generaReport();
-		User u=User.getInstance();
-		User u1=User.getInstance();
-
-		// vedere se id presente
-		u.setId(10);
-		u.setIdRuolo("U");
-		u.setNome("daniele");
-		u.setCognome("cinus");
-		u.setEmail("danielecinus10@gmail.com");
-		u.setDescrizione("utente semplice");
-		u.setDataDiNascita(LocalDate.of(1995,10,31));
-		File fd=new File("localDBFile.csv");
-		//funziona
-		CsvDao.saveUser(fd,User.getInstance());
-		System.out.println("lista by name / email :"+CsvDao.retreiveByNomeEmail(fd,User.getInstance().getNome(), User.getInstance().getEmail()));
-		System.out.println("modif users \n");
-
-		//modif data
-		u1.setId(u.getId());
-		u1.setIdRuolo(u.getIdRuolo());
-		u1.setNome(u.getNome());
-		u1.setCognome(u.getCognome());
-		u1.setEmail("gnappetto1995@gmail.com");
-		u1.setDescrizione(u.getDescrizione());
-		u1.setDataDiNascita(u.getDataDiNascita());
-		CsvDao.modifPassUser(fd,u,u1);
-
-
+//		g.setId(1);
+//		g.scarica(g.getId());
+//		g.leggi(g.getId());
+//		r.setId(1);
+//		r.scarica(r.getId());
+//		r.leggi(r.getId());
 
 
  */
 
-
-
-	/*
-	todo
-	copia file
-	public static void copyFile(File sourceFile, File destFile) throws IOException {
-    if(!destFile.exists()) {
-        destFile.createNewFile();
-    }
-
-    FileChannel source = null;
-    FileChannel destination = null;
-
-    try {
-        source = new FileInputStream(sourceFile).getChannel();
-        destination = new FileOutputStream(destFile).getChannel();
-        destination.transferFrom(source, 0, source.size());
-    }
-    finally {
-        if(source != null) {
-            source.close();
-        }
-        if(destination != null) {
-            destination.close();
-        }
-    }
-}
-	 */
-
-
+	}
 
 
 		

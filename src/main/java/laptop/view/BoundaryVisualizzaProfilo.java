@@ -57,7 +57,7 @@ public class BoundaryVisualizzaProfilo implements Initializable  {
 	@FXML
 	private Button cancellaB;
 	
-	private ControllerVisualizzaProfilo cVP;
+	private final ControllerVisualizzaProfilo cVP;
 	protected Scene scene;
 	
 	
@@ -114,7 +114,7 @@ public class BoundaryVisualizzaProfilo implements Initializable  {
 	}
 	
 	@FXML
-	private void eliminaProfilo() throws IOException, SQLException
+	private void eliminaProfilo()
 	{
 		
 			try {

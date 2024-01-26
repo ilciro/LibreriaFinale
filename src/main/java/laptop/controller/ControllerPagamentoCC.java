@@ -16,17 +16,17 @@ import laptop.model.Pagamento;
 
 
 public class ControllerPagamentoCC {
-	private CartaCreditoDao cDao;
+	private final CartaCreditoDao cDao;
 	private String appoggio = "";
 	private CartaDiCredito cc;
-	private PagamentoDao pDao;
-	private ControllerSystemState vis= ControllerSystemState.getInstance();
+	private final PagamentoDao pDao;
+	private final ControllerSystemState vis= ControllerSystemState.getInstance();
 	
 	private boolean state=false;
 	
 	
 	private int cont=0;
-	private ControllerCheckPagamentoData cCPD;
+	private final ControllerCheckPagamentoData cCPD;
 
 	public boolean controllaPag(String d, String c,String civ) {
 		int x;

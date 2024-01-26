@@ -52,10 +52,10 @@ public class BoundaryUserPage implements Initializable {
 	private ControllerCancellaUser cCU;
 
 	
-	private ControllerSystemState vis=ControllerSystemState.getInstance();
+	private final ControllerSystemState vis=ControllerSystemState.getInstance();
 	protected Scene scene ;
 	
-	protected int max = 0;
+
 
 	@FXML
 	private void aggiungi() throws IOException
@@ -90,7 +90,7 @@ public class BoundaryUserPage implements Initializable {
 	@FXML
 	private void cancella() throws NumberFormatException, SQLException, IOException
 	{
-		 boolean state=false;
+		 boolean state;
 
 		vis.setId(Integer.parseInt(utenteTF.getText()));
 		if(vis.getId()>=0)

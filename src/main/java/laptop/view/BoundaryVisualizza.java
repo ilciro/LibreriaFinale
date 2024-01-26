@@ -82,13 +82,12 @@ public class BoundaryVisualizza implements Initializable {
 	@FXML
 	private Label copieRimanenteL;
 	
-	private ControllerVisualizza cV;
+	private final ControllerVisualizza cV;
 	protected int i;
-	private ControllerSystemState vis = ControllerSystemState.getInstance() ;
-	private static String indisponibile="not found";
+	private final ControllerSystemState vis = ControllerSystemState.getInstance() ;
 
-	
-	public BoundaryVisualizza() throws IOException {
+
+    public BoundaryVisualizza() throws IOException {
 		cV = new ControllerVisualizza();
 	}
 	
@@ -135,55 +134,55 @@ public class BoundaryVisualizza implements Initializable {
 		String tipo=vis.getType();
 		
 		try {
-			if(tipo.equals("libro"))
-			{
-		
-				labelTitolo.setText(cV.getDataL(i).getTitolo());
-				labelNumeroPagine.setText(String.valueOf(cV.getDataL(i).getNrPagine()));
-				labelCodiceISBN.setText(cV.getDataL(i).getCodIsbn());
-				labelEditore.setText(cV.getDataL(i).getEditore());
-				labelAutore.setText(cV.getDataL(i).getAutore());
-				labelLingua.setText(cV.getDataL(i).getLingua());
-				labelCategoria.setText(cV.getDataL(i).getCategoria());
-				labelDate.setText(String.valueOf(cV.getDataL(i).getDataPubb()));
-				labelRecensione.setText(cV.getDataL(i).getRecensione());
-				labelDescrizione.setText(cV.getDataL(i).getDesc());
-				labelDisp.setText(String.valueOf(cV.getDataL(i).getDisponibilita()));
-				labelPrezzo.setText(String.valueOf(cV.getDataL(i).getPrezzo()));
-				labelCopieRimanenti.setText(String.valueOf(cV.getDataL(i).getNrCopie()));
-			}
-			else if(tipo.equals("giornale"))
-			{
-				labelTitolo.setText(cV.getDataG(i).getTitolo());
-				labelNumeroPagine.setText(String.valueOf(0));
-				labelCodiceISBN.setText(indisponibile);
-				labelEditore.setText(cV.getDataG(i).getEditore());
-				labelAutore.setText(indisponibile);
-				labelLingua.setText(cV.getDataG(i).getLingua());
-				labelCategoria.setText(indisponibile);
-				labelDate.setText(String.valueOf(cV.getDataG(i).getDataPubb()));
-				labelRecensione.setText(indisponibile);
-				labelDescrizione.setText(indisponibile);
-				labelDisp.setText(String.valueOf(cV.getDataG(i).getDisponibilita()));
-				labelPrezzo.setText(String.valueOf(cV.getDataG(i).getPrezzo()));
-				labelCopieRimanenti.setText(String.valueOf(0));
-			}
-			else if(tipo.equals("rivista"))
-			{
-				labelTitolo.setText(cV.getDataR(i).getTitolo());
-				labelNumeroPagine.setText(String.valueOf(0));
-				labelCodiceISBN.setText(String.valueOf(0));
-				labelEditore.setText(cV.getDataR(i).getEditore());
-				labelAutore.setText(cV.getDataR(i).getAutore());
-				labelLingua.setText(cV.getDataL(i).getLingua());
-				labelCategoria.setText(indisponibile);
-				labelDate.setText(String.valueOf(cV.getDataR(i).getDataPubb()));
-				labelRecensione.setText(indisponibile);
-				labelDescrizione.setText(cV.getDataR(i).getDescrizione());
-				labelDisp.setText(String.valueOf(cV.getDataL(i).getDisponibilita()));
-				labelPrezzo.setText(String.valueOf(cV.getDataL(i).getPrezzo()));
-				labelCopieRimanenti.setText(String.valueOf(cV.getDataL(i).getNrCopie()));
-			}
+            String indisponibile = "not found";
+            switch (tipo) {
+                case "libro" -> {
+
+                    labelTitolo.setText(cV.getDataL(i).getTitolo());
+                    labelNumeroPagine.setText(String.valueOf(cV.getDataL(i).getNrPagine()));
+                    labelCodiceISBN.setText(cV.getDataL(i).getCodIsbn());
+                    labelEditore.setText(cV.getDataL(i).getEditore());
+                    labelAutore.setText(cV.getDataL(i).getAutore());
+                    labelLingua.setText(cV.getDataL(i).getLingua());
+                    labelCategoria.setText(cV.getDataL(i).getCategoria());
+                    labelDate.setText(String.valueOf(cV.getDataL(i).getDataPubb()));
+                    labelRecensione.setText(cV.getDataL(i).getRecensione());
+                    labelDescrizione.setText(cV.getDataL(i).getDesc());
+                    labelDisp.setText(String.valueOf(cV.getDataL(i).getDisponibilita()));
+                    labelPrezzo.setText(String.valueOf(cV.getDataL(i).getPrezzo()));
+                    labelCopieRimanenti.setText(String.valueOf(cV.getDataL(i).getNrCopie()));
+                }
+                case "giornale" -> {
+                    labelTitolo.setText(cV.getDataG(i).getTitolo());
+                    labelNumeroPagine.setText(String.valueOf(0));
+                    labelCodiceISBN.setText(indisponibile);
+                    labelEditore.setText(cV.getDataG(i).getEditore());
+                    labelAutore.setText(indisponibile);
+                    labelLingua.setText(cV.getDataG(i).getLingua());
+                    labelCategoria.setText(indisponibile);
+                    labelDate.setText(String.valueOf(cV.getDataG(i).getDataPubb()));
+                    labelRecensione.setText(indisponibile);
+                    labelDescrizione.setText(indisponibile);
+                    labelDisp.setText(String.valueOf(cV.getDataG(i).getDisponibilita()));
+                    labelPrezzo.setText(String.valueOf(cV.getDataG(i).getPrezzo()));
+                    labelCopieRimanenti.setText(String.valueOf(0));
+                }
+                case "rivista" -> {
+                    labelTitolo.setText(cV.getDataR(i).getTitolo());
+                    labelNumeroPagine.setText(String.valueOf(0));
+                    labelCodiceISBN.setText(String.valueOf(0));
+                    labelEditore.setText(cV.getDataR(i).getEditore());
+                    labelAutore.setText(cV.getDataR(i).getAutore());
+                    labelLingua.setText(cV.getDataL(i).getLingua());
+                    labelCategoria.setText(indisponibile);
+                    labelDate.setText(String.valueOf(cV.getDataR(i).getDataPubb()));
+                    labelRecensione.setText(indisponibile);
+                    labelDescrizione.setText(cV.getDataR(i).getDescrizione());
+                    labelDisp.setText(String.valueOf(cV.getDataL(i).getDisponibilita()));
+                    labelPrezzo.setText(String.valueOf(cV.getDataL(i).getPrezzo()));
+                    labelCopieRimanenti.setText(String.valueOf(cV.getDataL(i).getNrCopie()));
+                }
+            }
 		} catch (SQLException  e) {
 			e.getMessage();
 

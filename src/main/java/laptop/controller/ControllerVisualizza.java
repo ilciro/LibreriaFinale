@@ -14,15 +14,15 @@ import laptop.model.raccolta.Rivista;
 
 public class ControllerVisualizza {
 	
-	private LibroDao lD;
-	private Libro l;
-	private Giornale g;
-	private Rivista r;
-	private RivistaDao rD;
-	private GiornaleDao gD;
+	private final LibroDao lD;
+	private final Libro l;
+	private final Giornale g;
+	private final Rivista r;
+	private final RivistaDao rD;
+	private final GiornaleDao gD;
 	
 	
-	private ControllerSystemState vis = ControllerSystemState.getInstance() ;
+	private final ControllerSystemState vis = ControllerSystemState.getInstance() ;
 	
 	public ControllerVisualizza() throws IOException {
 		l = new Libro();

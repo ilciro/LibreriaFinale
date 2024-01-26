@@ -61,7 +61,7 @@ public class BoundaryCompravendita implements Initializable {
 	private Button buttonI;
 
 	private ControllerCompravendita cCV;
-	private ControllerSystemState vis = ControllerSystemState.getInstance() ;
+	private final ControllerSystemState vis = ControllerSystemState.getInstance() ;
 	protected Scene scene;
 	private static final String TITOLOS="titolo";
 	private static final String EDITORES="editore";
@@ -78,7 +78,7 @@ public class BoundaryCompravendita implements Initializable {
 			String i = entryText.getText();
 			
 
-			if(i==null || i.equals(""))
+			if(i==null || i.isEmpty())
 			{
 				try {
 					throw new IdException("id null or empty");
@@ -96,14 +96,15 @@ public class BoundaryCompravendita implements Initializable {
 			
 			if( cCV.disponibilita(vis.getType(),i) )
 			{
-				
-				vis.setId(Integer.parseInt(i));
+
+                assert i != null;
+                vis.setId(Integer.parseInt(i));
 				
 			}
 
 			
 			Stage stage;
-			Parent root=null;
+			Parent root;
 			stage = (Stage) buttonV.getScene().getWindow();
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("visualizzaPage.fxml")));
 			stage.setTitle("Benvenuto nella schermata del riepilogo ordine");
@@ -139,7 +140,7 @@ public class BoundaryCompravendita implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonA.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("acquista.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("acquista.fxml")));
 			stage.setTitle("Benvenuto nella schermata del riepilogo ordine");
 
 			scene = new Scene(root);
@@ -264,7 +265,7 @@ public class BoundaryCompravendita implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonI.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("homePageAfterLogin.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePageAfterLogin.fxml")));
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
@@ -273,7 +274,7 @@ public class BoundaryCompravendita implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonI.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("homePageAfterLoginES.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePageAfterLoginES.fxml")));
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
@@ -283,7 +284,7 @@ public class BoundaryCompravendita implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonI.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("homePage.fxml"));
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePage.fxml")));
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();

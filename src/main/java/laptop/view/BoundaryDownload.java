@@ -44,7 +44,7 @@ public class BoundaryDownload implements Initializable {
 	private Button buttonA;
 
 	private ControllerDownload cD;
-	private ControllerSystemState vis = ControllerSystemState.getInstance() ;
+	private final ControllerSystemState vis = ControllerSystemState.getInstance() ;
 	protected Alert a;
 	protected Scene scene;
 
@@ -64,15 +64,16 @@ public class BoundaryDownload implements Initializable {
 
 	            //passo 0 per evitare il NullPointer
             	cD.scarica(vis.getType());
-	            Stage stage;
-				Parent root;
-				stage = (Stage) buttonA.getScene().getWindow();
-				root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePage.fxml")));
-				scene = new Scene(root);
-				stage.setScene(scene);
-				stage.show();
+
 
 	        }
+		Stage stage;
+		Parent root;
+		stage = (Stage) buttonA.getScene().getWindow();
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("homePage.fxml")));
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 	}
 
 	@FXML

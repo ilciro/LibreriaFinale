@@ -9,10 +9,10 @@ import laptop.model.Fattura;
 
 
 public class ControllerPagamentoCash {
-	private ContrassegnoDao cD;
-	private Fattura f;
-	private ControllerSystemState vis= ControllerSystemState.getInstance();
-	private ControllerCheckPagamentoData cCPD;
+	private final ContrassegnoDao cD;
+	private final Fattura f;
+	private final ControllerSystemState vis= ControllerSystemState.getInstance();
+	private final ControllerCheckPagamentoData cCPD;
 	
 	
 

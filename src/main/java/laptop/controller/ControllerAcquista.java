@@ -47,7 +47,7 @@ public class ControllerAcquista {
 			{
 				checkID(vis.getId());
 				l.setTitolo(titolo);
-				l.setNrCopie(quantita);
+				l.setNrCopie(disp);
 				vis.setQuantita(quantita);
 				 x = lD.getData(l).getPrezzo();
 				lD.aggiornaDisponibilita(l);
@@ -58,8 +58,8 @@ public class ControllerAcquista {
 				checkID(vis.getId());
 				g.setTitolo(titolo);
 				g.setId(vis.getId());
-				g.setCopieRimanenti(quantita);
-				vis.setQuantita(disp);
+				g.setCopieRimanenti(disp);
+				vis.setQuantita(quantita);
 				x = gD.getData(g).getPrezzo();
 				gD.aggiornaDisponibilita(g);
 				break;
@@ -69,8 +69,8 @@ public class ControllerAcquista {
 				checkID(vis.getId());
 				r.setTitolo(titolo);
 				r.setId(vis.getId());
-				r.setCopieRim(quantita);
-				vis.setQuantita(disp);
+				r.setCopieRim(disp);
+				vis.setQuantita(quantita);
 				x= rD.getData(r).getPrezzo();
 				rD.aggiornaDisponibilita(r);
 				break;
@@ -205,15 +205,16 @@ public class ControllerAcquista {
 		{
 			case LIBRO:
 				l.setId(vis.getId());
-				disp=lD.getData(l).getDisponibilita();
+				disp=lD.getData(l).getNrCopie();
+
 				break;
 			case GIORNALE:
 				g.setId(vis.getId());
-				disp=gD.getData(g).getDisponibilita();
+				disp=gD.getData(g).getCopieRimanenti();
 				break;
 			case RIVISTA:
 				r.setId(vis.getId());
-				disp=rD.getData(r).getDisp();
+				disp=rD.getData(r).getCopieRim();
 				break;
 			default:checkID(vis.getId());
 				return disp;
