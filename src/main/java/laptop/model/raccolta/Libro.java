@@ -34,7 +34,7 @@ public class Libro implements Raccolta {
 	private String[] infoCostiDisp = new String[5];
 	private static final String DSTPATH="dstPath";
 
-	private static File f;
+	private  File f;
 
 
 
