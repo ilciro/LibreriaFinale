@@ -7,11 +7,11 @@ import java.net.URISyntaxException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
-import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 
 
 public class Libro implements Raccolta {
@@ -32,6 +32,10 @@ public class Libro implements Raccolta {
 	private int id;
 	private String[] infoGenerali = new String[7];
 	private String[] infoCostiDisp = new String[5];
+
+    private final String DSTPATH="/home/daniele/Scaricati/libriPerSito/";
+
+
 
 
 	public Libro() {
@@ -130,9 +134,6 @@ public class Libro implements Raccolta {
 	public void setPrezzo(float prezzo) {
 		this.prezzo = prezzo;
 	}
-
-	private final ResourceBundle rB = ResourceBundle.getBundle("configurations/booksPath");
-	private final ResourceBundle rBD = ResourceBundle.getBundle("configurations/downloadConfiguration");
 
 	private final ResourceBundle rbTitoli=ResourceBundle.getBundle("configurations/titles");
 
@@ -239,33 +240,13 @@ public class Libro implements Raccolta {
 				break;
 		}
 	}
-/*
-	private boolean checkFile(File dst) throws IOException {
 
-		boolean status=false;
-		try {
-			if (!dst.exists())
-				throw new IOException(" file not exists");
-			if(dst.exists())
-				if(dst.delete())
-					throw new IOException("file deleted");
-		}catch (IOException e)
-		{
-			if(dst.createNewFile())
-				status=true;
-		}
-		return status;
-
-	}
-
-
- */
 	private void createPDF(String name)
 	{
 		//create a pdf with a paragraph
 		Document document=new Document();
 		try{
-			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream("/home/daniele/Scaricati/libriPerSito/"+name));
+			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream(DSTPATH+name));
 			document.open();
 			document.addTitle("Libro ");
 			document.add(new Paragraph("that is a copy of book"));
@@ -284,8 +265,9 @@ public class Libro implements Raccolta {
 	private void readPdf(String name) throws IOException, DocumentException {
 
 		Document document = new Document();
-		PdfReader reader = new PdfReader("/home/daniele/IdeaProjects/LibreriaFinale/libriPerSito/"+name);
-		PdfCopy copy=new PdfCopy(document,new FileOutputStream("/home/daniele/Scaricati/libriPerSito/"+name));
+        String SRCPATH = "/home/daniele/IdeaProjects/LibreriaFinale/libriPerSito/";
+        PdfReader reader = new PdfReader(SRCPATH +name);
+		PdfCopy copy=new PdfCopy(document,new FileOutputStream(DSTPATH+name));
 		document.open();
 
 		int pages = reader.getNumberOfPages();
@@ -318,10 +300,11 @@ public class Libro implements Raccolta {
 				case 9-> createPDF(rbTitoli.getString("titolo9"));
 				case 10->createPDF(rbTitoli.getString("titolo10"));
 				case 11->createPDF(rbTitoli.getString("titolo11"));
+				case 12->createPDF(rbTitoli.getString("titolo12"));
 
-				default -> {
-					createPDF(rbTitoli.getString("titolo12"));
-				}
+				default -> 	Logger.getLogger("Test scarica").log(Level.SEVERE, "download error");
+
+
 
 
 			}
@@ -333,19 +316,19 @@ public class Libro implements Raccolta {
 
 		File f;
 		switch (i) {
-			case 1 -> f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo1"));
-			case 2->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo2"));
-			case 3->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo3"));
-			case 4->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo4"));
-			case 5->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo5"));
-			case 6->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo6"));
-			case 7->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo7"));
-			case 8->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo8"));
-			case 9->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo9"));
-			case 10->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo10"));
-			case 11->f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo11"));
+			case 1 -> f=new File(DSTPATH + rbTitoli.getString("titolo1"));
+			case 2->f=new File(DSTPATH + rbTitoli.getString("titolo2"));
+			case 3->f=new File(DSTPATH + rbTitoli.getString("titolo3"));
+			case 4->f=new File(DSTPATH + rbTitoli.getString("titolo4"));
+			case 5->f=new File(DSTPATH + rbTitoli.getString("titolo5"));
+			case 6->f=new File(DSTPATH + rbTitoli.getString("titolo6"));
+			case 7->f=new File(DSTPATH + rbTitoli.getString("titolo7"));
+			case 8->f=new File(DSTPATH + rbTitoli.getString("titolo8"));
+			case 9->f=new File(DSTPATH + rbTitoli.getString("titolo9"));
+			case 10->f=new File(DSTPATH + rbTitoli.getString("titolo10"));
+			case 11->f=new File(DSTPATH + rbTitoli.getString("titolo11"));
 
-			default -> f=new File("/home/daniele/Scaricati/libriPerSito/" + rbTitoli.getString("titolo12"));
+			default -> f=new File(DSTPATH + rbTitoli.getString("titolo12"));
 
 		}
 		Desktop.getDesktop().open(f);

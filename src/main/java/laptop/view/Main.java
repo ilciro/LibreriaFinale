@@ -67,6 +67,7 @@ public class Main  extends Application {
 		//launch(args);
 
 		Libro l=new Libro();
+
 		Giornale g=new Giornale();
 		Rivista r=new Rivista();
 		for (int i=1;i<12;i++)
@@ -81,6 +82,8 @@ public class Main  extends Application {
 		r.setId(1);
 		r.scarica(r.getId());
 		r.leggi(r.getId());
+
+
 
 
 

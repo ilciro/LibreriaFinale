@@ -16,8 +16,7 @@ import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfWriter;
 
 
-
-public class Giornale implements Raccolta{
+	public class Giornale implements Raccolta{
 
 	private String  titolo;
 	private String tipologia;
@@ -28,11 +27,16 @@ public class Giornale implements Raccolta{
 	private int disponibilita;
 	private float prezzo;
 	private int id;
-	private static final String URLL="/home/daniele/Scaricati/libriPerSito/";
+
+	private final ResourceBundle rbTitoli=ResourceBundle.getBundle("configurations/titles");
 
 	private String[] infoGenerali=new String[5];
 
-	
+        private final String DSTPATH="/home/daniele/Scaricati/libriPerSito/";
+
+
+
+
 	public Giornale()
 	{
 		super();
@@ -133,8 +137,9 @@ public class Giornale implements Raccolta{
 	private void readPdf() throws IOException, DocumentException {
 
 		Document document = new Document();
-		PdfReader reader = new PdfReader("/home/daniele/IdeaProjects/LibreriaFinale/libriPerSito/giornale.pdf");
-		PdfCopy copy=new PdfCopy(document,new FileOutputStream("/home/daniele/Scaricati/libriPerSito/giornale.pdf"));
+        String SRCPATH = "/home/daniele/IdeaProjects/LibreriaFinale/libriPerSito/";
+        PdfReader reader = new PdfReader(SRCPATH +rbTitoli.getString("titolo13"));
+		PdfCopy copy=new PdfCopy(document,new FileOutputStream(DSTPATH +rbTitoli.getString("titolo13")));
 		document.open();
 
 		int pages = reader.getNumberOfPages();
@@ -156,7 +161,7 @@ public class Giornale implements Raccolta{
 
 		Document document=new Document();
 		try{
-			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream("/home/daniele/Scaricati/libriPerSito/giornale.pdf"));
+			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream(DSTPATH+rbTitoli.getString("titolo13")));
 			document.open();
 			document.addTitle("Giornale ");
 			document.add(new Paragraph("that is a copy of daily"));
@@ -177,7 +182,7 @@ public class Giornale implements Raccolta{
 
 	@Override
 	public void leggi(int i) throws DocumentException, IOException {
-		File file=new File("/home/daniele/Scaricati/libriPerSito/giornale.pdf");
+		File file=new File(DSTPATH+rbTitoli.getString("titolo13"));
 		Desktop.getDesktop().open(file);
 
 

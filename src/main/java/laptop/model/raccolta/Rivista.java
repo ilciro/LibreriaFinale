@@ -2,7 +2,6 @@ package laptop.model.raccolta;
 
 import java.awt.Desktop;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -31,11 +30,14 @@ public class Rivista implements Raccolta  {
 	private float prezzo;
 	private int copieRim;
 	private int id;
-	private static  final String URLL="/home/daniele/Scaricati/libriPerSito/rivista.pdf";
 
+	private final ResourceBundle rbTitoli=ResourceBundle.getBundle("configurations/titles");
 	private String [] infoGenerali=new String[5];
 
-	public Rivista(String [] info,String descrizione, LocalDate dataPubb2, int disp, float prezzo, int copieRim,int id) {
+	private final String DSTPATH="/home/daniele/Scaricati/libriPerSito/";
+
+
+    public Rivista(String [] info,String descrizione, LocalDate dataPubb2, int disp, float prezzo, int copieRim,int id) {
 		this.setInfoGenerali(info);
 		this.descrizione = descrizione;
 		this.dataPubb = dataPubb2;
@@ -185,7 +187,7 @@ public class Rivista implements Raccolta  {
 	public void scarica(int i) throws IOException {
 		Document document=new Document();
 		try{
-			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream("/home/daniele/Scaricati/libriPerSito/rivista.pdf"));
+			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream(DSTPATH+ rbTitoli.getString("titolo15")));
 			document.open();
 			document.addTitle("Rivista ");
 			document.add(new Paragraph("that is a copy of magazine"));
@@ -205,7 +207,7 @@ public class Rivista implements Raccolta  {
 	@Override
 	public void leggi(int i) throws IOException, DocumentException {
 		Desktop desktop = Desktop.getDesktop();
-		desktop.open(new File(URLL));
+		desktop.open(new File(DSTPATH+rbTitoli.getString("titolo15")));
 		
 	}
 	public String [] getInfoGenerali() {
@@ -218,8 +220,9 @@ public class Rivista implements Raccolta  {
 	private void readPdf() throws IOException, DocumentException {
 
 		Document document = new Document();
-		PdfReader reader = new PdfReader("/home/daniele/IdeaProjects/LibreriaFinale/libriPerSito/rivista.pdf");
-		PdfCopy copy=new PdfCopy(document,new FileOutputStream("/home/daniele/Scaricati/libriPerSito/rivista.pdf"));
+        String SRCPATH = "/home/daniele/IdeaProjects/LibreriaFinale/libriPerSito/";
+        PdfReader reader = new PdfReader(SRCPATH +rbTitoli.getString("titolo15"));
+		PdfCopy copy=new PdfCopy(document,new FileOutputStream(DSTPATH+rbTitoli.getString("titolo15")));
 		document.open();
 
 		int pages = reader.getNumberOfPages();
