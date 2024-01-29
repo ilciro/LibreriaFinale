@@ -4,26 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="read/download objects v7">
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="read/download objects v6( chanhed pdf)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/download.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/download.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/test/TestDownloadLibro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/test/TestDownloadLibro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/test/TestEditoreRicerca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/test/TestEditoreRicerca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/test/TestLoginRaccoltaGiornale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/test/TestLoginRaccoltaGiornale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/test/TestLoginRaccoltaLibro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/test/TestLoginRaccoltaLibro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/test/TestLoginRaccoltaRivista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/test/TestLoginRaccoltaRivista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/test/TestLoginRaccoltaUtenti.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/test/TestLoginRaccoltaUtenti.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/test/TestLoginReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/test/TestLoginReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/test/TestLoginUserLibro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/test/TestLoginUserLibro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/test/TestScrittoreRicerca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/test/TestScrittoreRicerca.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/Alessandro Coppola - Apocalypse Town.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/Alessandro Coppola - Apocalypse Town.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/Andrea Baranes - Dobbiamo restituire.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/Andrea Baranes - Dobbiamo restituire.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/Ariel Toaff, Elio Toaff - Zohar. Il libro dello splendore.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/Ariel Toaff, Elio Toaff - Zohar. Il libro dello splendore.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/Come i servizi segreti usano i media - Aldo Giannuli.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/Come i servizi segreti usano i media - Aldo Giannuli.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/Donald Davidson - Sulla verita (2006).pdf" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/Donald Davidson - Sulla verita (2006).pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/Excell - Giampietro Lanzanova.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/Excell - Giampietro Lanzanova.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/Ferdinand de Saussure - Scritti inediti.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/Ferdinand de Saussure - Scritti inediti.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/Galaxy anno I  n 06  Novembre 1958 - AA.VV_.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/Gershom Scholem - Alchimia E Kabbalah.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/Gershom Scholem - Alchimia E Kabbalah.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/Giocatore5.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/Giocatore5.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/Grammatica italiana-Garzanti(le garzantine)(2012).pdf" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/Grammatica italiana-Garzanti(le garzantine)(2012).pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/css/download.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/css/download.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/eragon.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/eragon.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/giornale.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/giornale.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/libro.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/libro.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/rivista.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/rivista.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/LibreriaMaven/download.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/LibreriaMaven/download.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/original-LibreriaMaven.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-LibreriaMaven.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/web/test/TestDownloadLibro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/test/TestDownloadLibro.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,6 +129,9 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="laptop.controller" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="laptop.controller" />
@@ -299,14 +302,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
-    </task>
-    <task id="LOCAL-00049" summary="restrung dao v4 code smells v3">
-      <option name="closed" value="true" />
-      <created>1704300900543</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1704300900543</updated>
     </task>
     <task id="LOCAL-00050" summary="restrung dao v4 code smells v4">
       <option name="closed" value="true" />
@@ -676,7 +671,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706542292534</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="read/download objects v6( chanhed pdf)">
+      <option name="closed" value="true" />
+      <created>1706542706549</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1706542706549</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -704,7 +707,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="reduce duplication v2" />
     <MESSAGE value="reduce duplication v3" />
     <MESSAGE value="reduce duplication v4" />
     <MESSAGE value="reduce duplication v5" />
@@ -729,7 +731,8 @@
     <MESSAGE value="read/download objects v5" />
     <MESSAGE value="read/download objects v6" />
     <MESSAGE value="read/download objects v7" />
-    <option name="LAST_COMMIT_MESSAGE" value="read/download objects v7" />
+    <MESSAGE value="read/download objects v6( chanhed pdf)" />
+    <option name="LAST_COMMIT_MESSAGE" value="read/download objects v6( chanhed pdf)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

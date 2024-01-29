@@ -75,7 +75,7 @@ titolo della rivista da scaricare:
 <p> titolo da susyemBean : ${beanS.getTitoloB()}</p>
 <p> titolo del bean download :${beanD.getTitoloB()}</p>
 <div>
-<a href="${beanD.getTitoloB()}"> open pdf</a>
+<a href="${beanD.getTitoloB()}">open pdf</a>
 </div>
 </body>
 </html>

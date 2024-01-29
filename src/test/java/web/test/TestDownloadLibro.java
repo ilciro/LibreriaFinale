@@ -3,6 +3,7 @@ package web.test;
 import laptop.database.LibroDao;
 import laptop.model.raccolta.Libro;
 import org.apache.commons.beanutils.PropertyUtils;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -97,11 +98,17 @@ public class TestDownloadLibro {
         //schermata download
         driver.findElement(By.id("titoloL")).sendKeys(titolo);
         driver.findElement(By.id("downloadB")).click();
-
-
+        driver.findElement(By.linkText("open pdf")).click();
 
         assertNotEquals(0,PropertyUtils.getProperty(sB,"idB"));
 
 
     }
+    @AfterEach
+    public void cleanUpEach(){
+        driver.close();
+    }
+
+
 }
+
