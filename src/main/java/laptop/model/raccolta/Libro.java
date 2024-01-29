@@ -318,7 +318,6 @@ public class Libro implements Raccolta {
 	@Override
 	public void leggi(int i) throws IOException, DocumentException, URISyntaxException {
 
-		System.setProperty("java.awt.headless", "false"); //Disables headless
 
 
 		switch (i) {
@@ -338,8 +337,14 @@ public class Libro implements Raccolta {
 
 			default -> 	Logger.getLogger("Test leggi").log(Level.SEVERE, "read error");
 		}
-		Desktop.getDesktop().open(f);
-
+		if (Desktop.isDesktopSupported()) {
+			new Thread(() -> {
+				try {
+					Desktop.getDesktop().open(f);
+				} catch (IOException e) {
+					Logger.getLogger("open file").log(Level.SEVERE, "open error");				}
+			}).start();
+		}
 	}
 
 	/*

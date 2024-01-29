@@ -53,6 +53,7 @@ public class Main  extends Application {
 		//uso status per vedere se trigger creati
 
 
+
 		try {
 
 			ConnToDb.creaPopolaDb();

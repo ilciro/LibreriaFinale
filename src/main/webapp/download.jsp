@@ -55,16 +55,27 @@ titolo del giornale da scaricare:
 <form action="DownloadServletR" method="post">
 <div>
 titolo della rivista da scaricare:
-<input type="text" id="titoloL" name="titoloL" value="${bean1.getTitoloB()}">
+<input type="text" id="titoloL" name="titoloL" value="${beanS.getTitoloB()}">
 </div>
 <br>
 <div>
 <input type="submit" class="invia" id="downloadB" name="downloadB" value="scarica e leggi">
 <input type="submit" class="annulla" id="annullaB" name="annullaB" value="annulla">
+<input type="submit" class="homepage" id="homePage" name="homePage" value="home page">
+
 </div>
 </form>
 </c:when>
 </c:choose>
+<br>
+<br>
 
+<p> parametri </p>
+<p> id da systembean :${beanS.getIdB()}</p>
+<p> titolo da susyemBean : ${beanS.getTitoloB()}</p>
+<p> titolo del bean download :${beanD.getTitoloB()}</p>
+<div>
+<a href="${beanD.getTitoloB()}"> open pdf</a>
+</div>
 </body>
 </html>

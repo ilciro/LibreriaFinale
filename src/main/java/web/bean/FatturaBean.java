@@ -35,7 +35,7 @@ public class FatturaBean {
     }
 
     public void setIndirizzoB(String indirizzoB) {
-        if(Objects.equals(indirizzoB, ""))
+        if(indirizzoB.isEmpty())
             this.indirizzoB="";
         this.indirizzoB = indirizzoB;
     }

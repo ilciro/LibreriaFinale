@@ -17,6 +17,7 @@ import web.bean.SystemBean;
 import java.io.IOException;
 import java.io.Serial;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 @WebServlet("/DownloadServletR")
 public class DownloadServletR extends HttpServlet {
@@ -29,6 +30,8 @@ public class DownloadServletR extends HttpServlet {
     private final RivistaDao rD=new RivistaDao();
     private final ContrassegnoDao fDao=new ContrassegnoDao();
     private static final String index="/index.jsp";
+    private final ResourceBundle rbTitoli=ResourceBundle.getBundle("configurations/titles");
+
 
     public DownloadServletR() throws IOException {
     }
@@ -38,6 +41,8 @@ public class DownloadServletR extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String invia=request.getParameter("downloadB");
         String annulla=request.getParameter("annullaB");
+        String hp=request.getParameter("homePage");
+
         RequestDispatcher view;
 
         try {
@@ -45,14 +50,12 @@ public class DownloadServletR extends HttpServlet {
 
             {
 
-                dB.setIdB(sB.getIdB());
-                dB.setTitoloB(sB.getTitoloB());
-                r.setId(sB.getIdB());
-                r.scarica(sB.getIdB());
-                r.leggi(r.getId());
+                dB.setTitoloB(rbTitoli.getString("titolo15"));
 
-                request.setAttribute("bean",dB);
-                 view = getServletContext().getRequestDispatcher(index);
+                request.setAttribute("beanD",dB);
+                request.setAttribute("beanS",sB);
+
+                view = getServletContext().getRequestDispatcher("/download.jsp");
                 view.forward(request,response);
             }
             if(annulla!=null && annulla.equals("annulla"))
@@ -99,9 +102,14 @@ public class DownloadServletR extends HttpServlet {
                 }
 
             }
+            if(hp!=null && hp.equals("home page"))
+            {
+                view=getServletContext().getRequestDispatcher(index);
+                view.forward(request,response);
+            }
 
 
-        }catch(SQLException | DocumentException | IOException e)
+        }catch(SQLException  | IOException e)
         {
             request.setAttribute("bean",dB);
              view = getServletContext().getRequestDispatcher(index);

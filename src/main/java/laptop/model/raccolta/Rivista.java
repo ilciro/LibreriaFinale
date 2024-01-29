@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -218,8 +219,16 @@ public class Rivista implements Raccolta  {
 	}
 	@Override
 	public void leggi(int i) throws IOException, DocumentException {
-		Desktop desktop = Desktop.getDesktop();
-		desktop.open(new File(rbTitoli.getString(DSTPATH)+rbTitoli.getString(TITOLOR)));
+		if (Desktop.isDesktopSupported()) {
+			new Thread(() -> {
+				try {
+					Desktop.getDesktop().open(new File(rbTitoli.getString(DSTPATH)+rbTitoli.getString(TITOLOR)));
+				} catch (IOException e) {
+					Logger.getLogger("open file").log(Level.SEVERE, "open error");				}
+			}).start();
+		}
+
+
 		
 	}
 	public String [] getInfoGenerali() {

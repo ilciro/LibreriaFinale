@@ -1,6 +1,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/web/test/TestScrittoreRicerca.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/web/test/TestLoginRaccoltaLibro.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/web/test/TestEditoreRicerca.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/test/java/web/test/TestDownloadLibro.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/web/test/TestLoginRaccoltaUtenti.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/web/test/TestLoginUserLibro.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/web/test/TestLoginRaccoltaGiornale.java

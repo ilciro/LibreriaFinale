@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -195,9 +196,14 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 	@Override
 	public void leggi(int i) throws DocumentException, IOException {
-		File file=new File(rbTitoli.getString(DSTPATH)+rbTitoli.getString(TITOLOG));
-		Desktop.getDesktop().open(file);
-
+		if (Desktop.isDesktopSupported()) {
+			new Thread(() -> {
+				try {
+					Desktop.getDesktop().open(new File(rbTitoli.getString(DSTPATH)+rbTitoli.getString(TITOLOG)));
+				} catch (IOException e) {
+					Logger.getLogger("open file").log(Level.SEVERE, "open error");				}
+			}).start();
+		}
 
 	}
 
