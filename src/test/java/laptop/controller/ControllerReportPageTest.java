@@ -27,11 +27,15 @@ class ControllerReportPageTest {
     void leggiRivista() throws IOException {
         assertNotNull(cRP.leggiRivista());
     }
-/*
+
     @Test
-    void leggiUtenti() throws IOException {
-       assertNotNull(cRP.leggiUtenti());
+    void reportTotale() throws IOException {
+        assertNotNull(cRP.reportTotale());
     }
 
- */
+    @Test
+    void reportRaccolta() throws IOException {
+        assertNotNull(cRP.reportRaccolta());
+    }
+
 }

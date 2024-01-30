@@ -3,7 +3,9 @@ package web.test;
 import laptop.database.LibroDao;
 import laptop.model.raccolta.Libro;
 import org.apache.commons.beanutils.PropertyUtils;
-import org.junit.jupiter.api.AfterEach;
+
+
+
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +19,7 @@ import java.lang.reflect.InvocationTargetException;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class TestDownloadLibro {
-    WebDriver driver;
+    static WebDriver driver;
     private final UserBean uB= UserBean.getInstance();
     private final LibroDao lD=new LibroDao();
     private final SystemBean sB= SystemBean.getInstance();
@@ -103,10 +105,6 @@ public class TestDownloadLibro {
         assertNotEquals(0,PropertyUtils.getProperty(sB,"idB"));
 
 
-    }
-    @AfterEach
-     void tearDown(){
-        driver.close();
     }
 
 

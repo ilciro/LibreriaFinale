@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import web.bean.PagamentoBean;
 
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class TestPagamento {
     private final Pagamento p=new Pagamento();
@@ -27,5 +28,11 @@ public class TestPagamento {
         pB.setIdOggettoB(p.getIdOggetto());
 
         assertNotEquals(0,pB.getIdOggettoB());
+        }
+    @Test
+    void testPagamento()
+        {
+            Pagamento p1=new Pagamento(0,"cCredito", 0,"luigi", 125f, "ARTE",7);
+            assertNotNull(p1.toString());
         }
 }

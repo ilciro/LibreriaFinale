@@ -7,13 +7,17 @@ import web.bean.RivistaBean;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.util.Enumeration;
+import java.util.ResourceBundle;
 
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class TestRivista {
     private final Rivista r=new Rivista();
     private final RivistaDao rD=new RivistaDao();
     private final RivistaBean rB=new RivistaBean();
+    private final ResourceBundle rBCategories=ResourceBundle.getBundle("configurations/magazineCategories");
     public TestRivista() throws IOException {
     }
     @Test
@@ -34,4 +38,18 @@ public class TestRivista {
         rB.setIdB(r1.getId());
         assertNotEquals(0,rB.getIdB());
     }
+    @Test
+    void setCategories()
+    {
+        Enumeration<String> systemKeys = rBCategories.getKeys();
+
+        while (systemKeys.hasMoreElements()) {
+            String key = systemKeys.nextElement();
+            r.setTipologia(key);
+
+        }
+        rB.setTipologiaB(r.getTipologia());
+        assertNotNull(systemKeys);
+    }
+
 }

@@ -7,13 +7,17 @@ import web.bean.LibroBean;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.util.Enumeration;
+import java.util.ResourceBundle;
 
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class TestLibro {
     private final LibroDao lD=new LibroDao();
     private final Libro l=new Libro();
     private final LibroBean lB=new LibroBean();
+    private final ResourceBundle rBCategories=ResourceBundle.getBundle("configurations/bookCategories");
 
     public TestLibro() throws IOException {
     }
@@ -36,6 +40,7 @@ public class TestLibro {
         lB.setDescB(l1.getDesc());
         lB.setDisponibilitaB(l1.getDisponibilita());
         lB.setPrezzoB(l1.getPrezzo());
+        lB.setLinguaB(l1.getLingua());
         lB.setIdB(l1.getId());
 
         assertNotEquals(0,lB.getIdB());
@@ -43,6 +48,23 @@ public class TestLibro {
 
 
     }
+
+    @Test
+    void setCategories()
+    {
+        Enumeration<String> systemKeys = rBCategories.getKeys();
+
+        while (systemKeys.hasMoreElements()) {
+            String key = systemKeys.nextElement();
+            l.setCategoria(key);
+
+        }
+        lB.setCategoriaB(l.getCategoria());
+        assertNotNull(systemKeys);
+    }
+
+
+
 
 
 }

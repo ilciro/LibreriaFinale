@@ -98,7 +98,7 @@ public class GenerateDaoReportClass {
     public boolean generateReport(String type) throws IOException {
 <span class="fc" id="L99">        boolean status=false;</span>
 
-<span class="pc bpc" id="L101" title="2 of 5 branches missed.">        switch (type) {</span>
+<span class="pc bpc" id="L101" title="1 of 5 branches missed.">        switch (type) {</span>
             case LIBRO -&gt; {
 
 <span class="fc" id="L104">                setQuery(&quot;select  idLibro ,titolo,copieRimanenti,prezzo  from LIBRO&quot;);</span>
@@ -118,10 +118,10 @@ public class GenerateDaoReportClass {
 <span class="fc" id="L118">            }</span>
             case UTENTI-&gt; {
 
-<span class="nc" id="L121">            setQuery(&quot;select  * from USERS&quot;);</span>
-<span class="nc" id="L122">            path = TXT_FILE_NAME;</span>
-<span class="nc" id="L123">            status = writeToFileU(path);</span>
-<span class="nc" id="L124">         }</span>
+<span class="fc" id="L121">            setQuery(&quot;select  * from USERS&quot;);</span>
+<span class="fc" id="L122">            path = TXT_FILE_NAME;</span>
+<span class="fc" id="L123">            status = writeToFileU(path);</span>
+<span class="fc" id="L124">         }</span>
 <span class="nc" id="L125">            default -&gt; Logger.getLogger(&quot;generateReport&quot;).log(Level.SEVERE, &quot; query not correct !!&quot;);</span>
         }
 <span class="pc bpc" id="L127" title="1 of 2 branches missed.">       return !status;</span>
@@ -156,40 +156,40 @@ public class GenerateDaoReportClass {
     }
     private boolean writeToFileU(String path) throws IOException
     {
-<span class="nc" id="L159">        boolean status=false;</span>
-<span class="nc" id="L160">        try (BufferedWriter b = new BufferedWriter(new FileWriter(path))) {</span>
-<span class="nc" id="L161">            query = &quot;select * from USERS&quot;;</span>
+<span class="fc" id="L159">        boolean status=false;</span>
+<span class="fc" id="L160">        try (BufferedWriter b = new BufferedWriter(new FileWriter(path))) {</span>
+<span class="fc" id="L161">            query = &quot;select * from USERS&quot;;</span>
 
 
-<span class="nc" id="L164">            try (Connection conn = ConnToDb.connectionToDB();</span>
-<span class="nc" id="L165">                 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
+<span class="fc" id="L164">            try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="fc" id="L165">                 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
 
-<span class="nc" id="L167">                ResultSet rs = prepQ.executeQuery();</span>
+<span class="fc" id="L167">                ResultSet rs = prepQ.executeQuery();</span>
 
 
-<span class="nc bnc" id="L170" title="All 2 branches missed.">                while (rs.next()) {</span>
+<span class="fc bfc" id="L170" title="All 2 branches covered.">                while (rs.next()) {</span>
 
-<span class="nc" id="L172">                    TempUser.getInstance().setId(rs.getInt(1));</span>
-<span class="nc" id="L173">                    TempUser.getInstance().setIdRuolo(rs.getString(2));</span>
-<span class="nc" id="L174">                    TempUser.getInstance().setNomeT(rs.getString(3));</span>
-<span class="nc" id="L175">                    TempUser.getInstance().setCognomeT(rs.getString(4));</span>
-<span class="nc" id="L176">                    TempUser.getInstance().setEmailT(rs.getString(5));</span>
-<span class="nc" id="L177">                    TempUser.getInstance().setDescrizioneT(rs.getString(7));</span>
-<span class="nc" id="L178">                    TempUser.getInstance().setDataDiNascitaT(rs.getDate(8).toLocalDate());</span>
-<span class="nc" id="L179">                    b.write(TempUser.getInstance().getId() + &quot;\t&quot; + TempUser.getInstance().getIdRuolo() + &quot;\t&quot; + TempUser.getInstance().getNomeT() + &quot;\t&quot; + TempUser.getInstance().getCognomeT() +</span>
-<span class="nc" id="L180">                            &quot;\t&quot; + TempUser.getInstance().getEmailT() + &quot;\t&quot; + TempUser.getInstance().getDescrizioneT() + &quot;\t&quot; + TempUser.getInstance().getDataDiNascitaT().toString() + &quot;\n&quot;);</span>
+<span class="fc" id="L172">                    TempUser.getInstance().setId(rs.getInt(1));</span>
+<span class="fc" id="L173">                    TempUser.getInstance().setIdRuolo(rs.getString(2));</span>
+<span class="fc" id="L174">                    TempUser.getInstance().setNomeT(rs.getString(3));</span>
+<span class="fc" id="L175">                    TempUser.getInstance().setCognomeT(rs.getString(4));</span>
+<span class="fc" id="L176">                    TempUser.getInstance().setEmailT(rs.getString(5));</span>
+<span class="fc" id="L177">                    TempUser.getInstance().setDescrizioneT(rs.getString(7));</span>
+<span class="fc" id="L178">                    TempUser.getInstance().setDataDiNascitaT(rs.getDate(8).toLocalDate());</span>
+<span class="fc" id="L179">                    b.write(TempUser.getInstance().getId() + &quot;\t&quot; + TempUser.getInstance().getIdRuolo() + &quot;\t&quot; + TempUser.getInstance().getNomeT() + &quot;\t&quot; + TempUser.getInstance().getCognomeT() +</span>
+<span class="fc" id="L180">                            &quot;\t&quot; + TempUser.getInstance().getEmailT() + &quot;\t&quot; + TempUser.getInstance().getDescrizioneT() + &quot;\t&quot; + TempUser.getInstance().getDataDiNascitaT().toString() + &quot;\n&quot;);</span>
 
                 }
 <span class="nc" id="L183">            } catch (SQLException e1) {</span>
 <span class="nc" id="L184">                Logger.getLogger(&quot;lista utenti&quot;).log(Level.SEVERE, &quot;\n eccezione ottenuta .&quot;, e1);</span>
 
-<span class="nc" id="L186">            }</span>
-<span class="nc" id="L187">            b.flush();</span>
+<span class="fc" id="L186">            }</span>
+<span class="fc" id="L187">            b.flush();</span>
 
         }
-<span class="nc bnc" id="L190" title="All 2 branches missed.">        if(!path.isEmpty())</span>
-<span class="nc" id="L191">            status=true;</span>
-<span class="nc" id="L192">        return status;</span>
+<span class="pc bpc" id="L190" title="1 of 2 branches missed.">        if(!path.isEmpty())</span>
+<span class="fc" id="L191">            status=true;</span>
+<span class="fc" id="L192">        return status;</span>
     }
 
     public void checkFilePath(Path path) throws IOException {

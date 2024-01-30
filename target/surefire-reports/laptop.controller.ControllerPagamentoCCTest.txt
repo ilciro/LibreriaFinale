@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: laptop.controller.ControllerPagamentoCCTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.124 s - in laptop.controller.ControllerPagamentoCCTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.738 s - in laptop.controller.ControllerPagamentoCCTest

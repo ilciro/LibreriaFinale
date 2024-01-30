@@ -263,16 +263,16 @@ public class UsersDao {
 
 
 
-<span class="nc" id="L266">			Path path = Path.of(TXT_FILE_NAME);</span>
-<span class="nc" id="L267">			Path path1 = Path.of(TXT_FILE_NAME_WEB);</span>
-<span class="nc" id="L268">			gRC.checkFilePath(path);</span>
-<span class="nc bnc" id="L269" title="All 2 branches missed.">			if(Boolean.TRUE.equals(gRC.generateReport(UTENTI)))</span>
+<span class="fc" id="L266">			Path path = Path.of(TXT_FILE_NAME);</span>
+<span class="fc" id="L267">			Path path1 = Path.of(TXT_FILE_NAME_WEB);</span>
+<span class="fc" id="L268">			gRC.checkFilePath(path);</span>
+<span class="pc bpc" id="L269" title="1 of 2 branches missed.">			if(Boolean.TRUE.equals(gRC.generateReport(UTENTI)))</span>
 <span class="nc" id="L270">				gRC.checkFilePath(path1);</span>
-<span class="nc" id="L271">			Files.copy(path, path1, StandardCopyOption.REPLACE_EXISTING);</span>
+<span class="fc" id="L271">			Files.copy(path, path1, StandardCopyOption.REPLACE_EXISTING);</span>
 
 
 
-<span class="nc" id="L275">}</span>
+<span class="fc" id="L275">}</span>
 
 
 

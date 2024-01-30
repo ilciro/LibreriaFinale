@@ -6,6 +6,7 @@ laptop/controller/ControllerHomePageAfterLoginTest.class
 laptop/controller/ControllerModifPageTest.class
 laptop/controller/ControllerVisualizzaOrdineTest.class
 web/test/TestLoginRaccoltaLibro.class
+laptop/added/TestTempUser.class
 laptop/added/TestGiornale.class
 laptop/controller/ControllerReportPageTest.class
 laptop/controller/ControllerRicercaPerTipoTest.class

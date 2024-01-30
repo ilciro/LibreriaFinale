@@ -24,8 +24,8 @@ public class ControllerReportPage {
 		
 <span class="fc" id="L25">	}</span>
 	private void generaReportUtenti() throws IOException {
-<span class="nc" id="L27">		UsersDao.getListaUtenti();</span>
-<span class="nc" id="L28">	}</span>
+<span class="fc" id="L27">		UsersDao.getListaUtenti();</span>
+<span class="fc" id="L28">	}</span>
 	private void generaReportRiviste () throws IOException
 	{
 <span class="fc" id="L31">		rD.generaReport();</span>
@@ -38,13 +38,13 @@ public class ControllerReportPage {
 <span class="fc" id="L38">	}</span>
 
 	public String reportTotale() throws  IOException {
-<span class="nc" id="L41">        return leggiLibro() +</span>
+<span class="fc" id="L41">        return leggiLibro() +</span>
 				&quot;\n&quot; +
-<span class="nc" id="L43">				leggiRivista() +</span>
+<span class="fc" id="L43">				leggiRivista() +</span>
 				&quot;\n&quot; +
-<span class="nc" id="L45">				leggiGiornale() +</span>
+<span class="fc" id="L45">				leggiGiornale() +</span>
 				&quot;\n&quot; +
-<span class="nc" id="L47">				leggiUtenti() +</span>
+<span class="fc" id="L47">				leggiUtenti() +</span>
 				&quot;\n&quot;;
 
 	}
@@ -99,26 +99,26 @@ public class ControllerReportPage {
 <span class="fc" id="L99">		return builder.toString();</span>
 	}
 	public String leggiUtenti() throws IOException {
-<span class="nc" id="L102">		generaReportUtenti();</span>
+<span class="fc" id="L102">		generaReportUtenti();</span>
 
-<span class="nc" id="L104">	StringBuilder builder = new StringBuilder();</span>
+<span class="fc" id="L104">	StringBuilder builder = new StringBuilder();</span>
 		String line;
-<span class="nc" id="L106">		try (BufferedReader readerU = new BufferedReader(new FileReader(fileUtenti))) {</span>
-<span class="nc bnc" id="L107" title="All 2 branches missed.">			while ((line = readerU.readLine()) != null) {</span>
-<span class="nc" id="L108">				builder.append(line);</span>
-<span class="nc" id="L109">				builder.append(&quot;\n&quot;);</span>
+<span class="fc" id="L106">		try (BufferedReader readerU = new BufferedReader(new FileReader(fileUtenti))) {</span>
+<span class="fc bfc" id="L107" title="All 2 branches covered.">			while ((line = readerU.readLine()) != null) {</span>
+<span class="fc" id="L108">				builder.append(line);</span>
+<span class="fc" id="L109">				builder.append(&quot;\n&quot;);</span>
 			}
 
 <span class="nc" id="L112">		} catch (IOException e) {</span>
 <span class="nc" id="L113">			throw new IOException(e);</span>
-<span class="nc" id="L114">		}</span>
-<span class="nc" id="L115">		return builder.toString();</span>
+<span class="fc" id="L114">		}</span>
+<span class="fc" id="L115">		return builder.toString();</span>
 	}
 
 
 
 	public String reportRaccolta() throws IOException {
-<span class="nc" id="L121">		return leggiLibro()+&quot;\n&quot;+leggiGiornale()+&quot;\n&quot;+leggiRivista()+&quot;\n&quot;;</span>
+<span class="fc" id="L121">		return leggiLibro()+&quot;\n&quot;+leggiGiornale()+&quot;\n&quot;+leggiRivista()+&quot;\n&quot;;</span>
 	}
 <span class="fc" id="L123">	public ControllerReportPage() throws IOException {</span>
 <span class="fc" id="L124">		lD=new LibroDao();</span>
