@@ -56,18 +56,18 @@ public class ControllerDownload {
 			{
 				//aggiorno disponibilita
 				
-<span class="pc bpc" id="L59" title="3 of 4 branches missed.">				switch(typeO)</span>
+<span class="pc bpc" id="L59" title="1 of 4 branches missed.">				switch(typeO)</span>
 				{
 					case &quot;libro&quot;:
 					{
-<span class="nc" id="L63">						incrementaLibri();</span>
-<span class="nc" id="L64">						break;</span>
+<span class="fc" id="L63">						incrementaLibri();</span>
+<span class="fc" id="L64">						break;</span>
 					}
 					case &quot;giornale&quot;:
 					{
-<span class="nc" id="L68">						incrementaGiornali();</span>
+<span class="fc" id="L68">						incrementaGiornali();</span>
 
-<span class="nc" id="L70">						break;</span>
+<span class="fc" id="L70">						break;</span>
 					}
 					case &quot;rivista&quot;:
 					{
@@ -153,14 +153,14 @@ public class ControllerDownload {
 	
 	public void incrementaLibri() throws SQLException
 	{
-<span class="nc" id="L156">		l.setId(vis.getId());</span>
-<span class="nc" id="L157">		lD.incrementaDisponibilita(l);</span>
-<span class="nc" id="L158">	}</span>
+<span class="fc" id="L156">		l.setId(vis.getId());</span>
+<span class="fc" id="L157">		lD.incrementaDisponibilita(l);</span>
+<span class="fc" id="L158">	}</span>
 	public void incrementaGiornali() throws SQLException
 	{
-<span class="nc" id="L161">		g.setId(vis.getId());</span>
-<span class="nc" id="L162">		gD.incrementaDisponibilita(g);</span>
-<span class="nc" id="L163">	}</span>
+<span class="fc" id="L161">		g.setId(vis.getId());</span>
+<span class="fc" id="L162">		gD.incrementaDisponibilita(g);</span>
+<span class="fc" id="L163">	}</span>
 	public void incrementaRivista() throws SQLException
 	{
 <span class="fc" id="L166">		r.setId(vis.getId());</span>

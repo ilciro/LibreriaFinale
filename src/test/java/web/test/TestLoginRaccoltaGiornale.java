@@ -1,7 +1,6 @@
 package web.test;
 
 import laptop.database.GiornaleDao;
-import laptop.model.raccolta.Giornale;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;

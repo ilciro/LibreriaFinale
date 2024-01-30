@@ -73,26 +73,26 @@ public class GiornaleDao {
 	}
 
 	public ObservableList&lt;Raccolta&gt; getGiornali(){
-<span class="nc" id="L76">		ObservableList&lt;Raccolta&gt; catalogo=FXCollections.observableArrayList();</span>
-<span class="nc" id="L77">		query = &quot;select * from GIORNALE &quot;;</span>
-<span class="nc" id="L78">		try (Connection conn = ConnToDb.connectionToDB();</span>
-<span class="nc" id="L79">			 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
+<span class="fc" id="L76">		ObservableList&lt;Raccolta&gt; catalogo=FXCollections.observableArrayList();</span>
+<span class="fc" id="L77">		query = &quot;select * from GIORNALE &quot;;</span>
+<span class="fc" id="L78">		try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="fc" id="L79">			 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
 
-<span class="nc" id="L81">			ResultSet rs = prepQ.executeQuery();</span>
-<span class="nc bnc" id="L82" title="All 2 branches missed.">			while (rs.next()) {</span>
-<span class="nc" id="L83">				f.createRaccoltaFinale1(GIORNALE, rs.getString(1), null, rs.getString(4), null, rs.getString(4), rs.getString(3));</span>
+<span class="fc" id="L81">			ResultSet rs = prepQ.executeQuery();</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">			while (rs.next()) {</span>
+<span class="fc" id="L83">				f.createRaccoltaFinale1(GIORNALE, rs.getString(1), null, rs.getString(4), null, rs.getString(4), rs.getString(3));</span>
 
 
-<span class="nc" id="L86">				f.createRaccoltaFinale2(GIORNALE, 0, rs.getInt(6), rs.getInt(7), rs.getFloat(8), rs.getInt(9));</span>
+<span class="fc" id="L86">				f.createRaccoltaFinale2(GIORNALE, 0, rs.getInt(6), rs.getInt(7), rs.getFloat(8), rs.getInt(9));</span>
 
-<span class="nc" id="L88">				catalogo.add(f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), rs.getString(6), null));</span>
+<span class="fc" id="L88">				catalogo.add(f.createRaccoltaFinaleCompleta(GIORNALE, rs.getDate(5).toLocalDate(), rs.getString(6), null));</span>
 
 
 			}
 <span class="nc" id="L92">		} catch (SQLException | NullPointerException e) {</span>
 <span class="nc" id="L93">			java.util.logging.Logger.getLogger(&quot;get giornale id&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="nc" id="L94">		}</span>
-<span class="nc" id="L95">		return catalogo;</span>
+<span class="fc" id="L94">		}</span>
+<span class="fc" id="L95">		return catalogo;</span>
 
 	}
 
@@ -300,28 +300,28 @@ public class GiornaleDao {
 
 	public void incrementaDisponibilita(Giornale g)
 	{
-<span class="nc" id="L303">		int d=vis.getQuantita();</span>
-<span class="nc" id="L304">		int i=g.getCopieRimanenti();</span>
+<span class="fc" id="L303">		int d=vis.getQuantita();</span>
+<span class="fc" id="L304">		int i=g.getCopieRimanenti();</span>
 
-<span class="nc" id="L306">		int rim=i+d;</span>
-<span class="nc" id="L307">		query=&quot;update GIORNALE set copieRimanenti= ? where idGiornale=?&quot;;</span>
+<span class="fc" id="L306">		int rim=i+d;</span>
+<span class="fc" id="L307">		query=&quot;update GIORNALE set copieRimanenti= ? where idGiornale=?&quot;;</span>
 
 
 
-<span class="nc" id="L311">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L312">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="fc" id="L311">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L312">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
-<span class="nc" id="L314">			prepQ.setInt(1, rim);</span>
-<span class="nc" id="L315">			prepQ.setInt(2, g.getId());</span>
-<span class="nc" id="L316">			prepQ.executeUpdate();</span>
+<span class="fc" id="L314">			prepQ.setInt(1, rim);</span>
+<span class="fc" id="L315">			prepQ.setInt(2, g.getId());</span>
+<span class="fc" id="L316">			prepQ.executeUpdate();</span>
 <span class="nc" id="L317">		}catch(SQLException e)</span>
 		{
 <span class="nc" id="L319">			java.util.logging.Logger.getLogger(&quot;Test incrementa disp&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="nc" id="L320">		}</span>
+<span class="fc" id="L320">		}</span>
 
 
 
-<span class="nc" id="L324">	}</span>
+<span class="fc" id="L324">	}</span>
 
 	public void aggiornaData(Giornale g, Date sqlDate) throws SQLException {
 		int row;

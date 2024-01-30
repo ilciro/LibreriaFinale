@@ -195,10 +195,10 @@ public class GenerateDaoReportClass {
     public void checkFilePath(Path path) throws IOException {
 
         try {
-<span class="nc" id="L198">            cleanUp(path);</span>
+<span class="fc" id="L198">            cleanUp(path);</span>
 
-<span class="nc bnc" id="L200" title="All 2 branches missed.">            if (!fd.exists())</span>
-<span class="nc" id="L201">                throw new IOException(&quot;file &quot; + fd.getPath() + &quot; not exists -&gt; creating&quot;);</span>
+<span class="pc bpc" id="L200" title="1 of 2 branches missed.">            if (!fd.exists())</span>
+<span class="fc" id="L201">                throw new IOException(&quot;file &quot; + fd.getPath() + &quot; not exists -&gt; creating&quot;);</span>
 <span class="nc bnc" id="L202" title="All 2 branches missed.">            if (fd.exists()) {</span>
 <span class="nc" id="L203">                cleanUp(path);</span>
 <span class="nc" id="L204">                throw new IOException(&quot;file &quot; + fd.getPath() + &quot; -&gt; deleted not exists -&gt; creating&quot;);</span>
@@ -281,8 +281,8 @@ public class GenerateDaoReportClass {
     }
 
     private static void cleanUp(Path path) throws  IOException {
-<span class="nc" id="L284">        Files.delete(path);</span>
-<span class="nc" id="L285">    }</span>
+<span class="fc" id="L284">        Files.delete(path);</span>
+<span class="fc" id="L285">    }</span>
     private String leggiReport(String type) throws SQLException {
 <span class="nc" id="L287">        StringBuilder builder = new StringBuilder();</span>
 <span class="nc bnc" id="L288" title="All 5 branches missed.">        switch (type) {</span>

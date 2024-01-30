@@ -32,7 +32,7 @@ public class TestEditoreRicerca {
     private final GiornaleBean gB=new GiornaleBean();
     private final Rivista r=new Rivista();
     private final RivistaDao rD=new RivistaDao();
-    private final RivistaBean rB=new RivistaBean();
+
     public TestEditoreRicerca() throws IOException {
     }
 

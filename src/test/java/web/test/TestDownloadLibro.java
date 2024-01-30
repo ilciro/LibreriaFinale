@@ -105,7 +105,7 @@ public class TestDownloadLibro {
 
     }
     @AfterEach
-    public void cleanUpEach(){
+     void tearDown(){
         driver.close();
     }
 
