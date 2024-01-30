@@ -55,11 +55,12 @@ public class TestLibro {
         Enumeration<String> systemKeys = rBCategories.getKeys();
 
         while (systemKeys.hasMoreElements()) {
-            String key = systemKeys.nextElement();
-            l.setCategoria(key);
+            String key =  systemKeys.nextElement();
+            l.setCategoria(rBCategories.getString(key));
+            lB.setCategoriaB(rBCategories.getString(key));
 
         }
-        lB.setCategoriaB(l.getCategoria());
+
         assertNotNull(systemKeys);
     }
 

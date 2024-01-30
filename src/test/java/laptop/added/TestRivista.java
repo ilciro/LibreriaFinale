@@ -44,11 +44,12 @@ public class TestRivista {
         Enumeration<String> systemKeys = rBCategories.getKeys();
 
         while (systemKeys.hasMoreElements()) {
-            String key = systemKeys.nextElement();
-            r.setTipologia(key);
+            String key =  systemKeys.nextElement();
+            r.setTipologia(rBCategories.getString(key));
+            rB.setTipologiaB(rBCategories.getString(key));
 
         }
-        rB.setTipologiaB(r.getTipologia());
+
         assertNotNull(systemKeys);
     }
 
