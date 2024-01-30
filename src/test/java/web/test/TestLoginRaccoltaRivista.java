@@ -60,7 +60,7 @@ public class TestLoginRaccoltaRivista {
         driver.findElement(By.id("autL")).sendKeys("mondadori");
         driver.findElement(By.id("linguaL")).sendKeys("italiano");
         driver.findElement(By.id("editoreL")).sendKeys("mondandori");
-        driver.findElement(By.id("descL")).sendKeys("prova");
+        driver.findElement(By.id("descL")).sendKeys("Prova");
         driver.findElement(By.id("dataL")).sendKeys("2024/01/08");
         driver.findElement(By.id("checkL")).click();
         driver.findElement(By.id("prezzoL")).sendKeys("2.63f");

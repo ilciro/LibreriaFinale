@@ -56,9 +56,8 @@ public class TestLibro {
 
         while (systemKeys.hasMoreElements()) {
             String key =  systemKeys.nextElement();
-            l.setCategoria(rBCategories.getString(key));
-            lB.setCategoriaB(rBCategories.getString(key));
-
+            l.setCategoria(key);
+            lB.setCategoriaB(l.getCategoria());
         }
 
         assertNotNull(systemKeys);

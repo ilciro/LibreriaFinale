@@ -50,7 +50,7 @@ public class TestLoginRaccoltaGiornale {
         //insierimento nuovo giornale
         driver.findElement(By.id("titoloG")).sendKeys("provo ad inserire un nuovo giornale");
         driver.findElement(By.id("linguaG")).sendKeys("italiano");
-        driver.findElement(By.id("editoreG")).sendKeys("editore prova");
+        driver.findElement(By.id("editoreG")).sendKeys("editore Prova");
         driver.findElement(By.id("dataG")).sendKeys("2024/01/08");
         driver.findElement(By.id("copieG")).sendKeys("52");
         driver.findElement(By.id("dispG")).sendKeys("1");

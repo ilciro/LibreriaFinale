@@ -62,8 +62,8 @@ class TestLoginRaccoltaLibro {
         driver.findElement(By.id("titoloL")).sendKeys("provo ad inserire un nuovo libro");
         driver.findElement(By.id("nrPagL")).sendKeys("150");
         driver.findElement(By.id("codL")).sendKeys("18552963");
-        driver.findElement(By.id("autoreL")).sendKeys("autore prova");
-        driver.findElement(By.id("editoreL")).sendKeys("editore prova");
+        driver.findElement(By.id("autoreL")).sendKeys("autore Prova");
+        driver.findElement(By.id("editoreL")).sendKeys("editore Prova");
         driver.findElement(By.id("linguaL")).sendKeys("italiano");
         driver.findElement(By.id("catS")).sendKeys("ARTE");
         driver.findElement(By.id("dataL")).sendKeys("2024/11/03");

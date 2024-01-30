@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: web.test.TestLoginRaccoltaLibro
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.195 s - in web.test.TestLoginRaccoltaLibro
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.943 s - in web.test.TestLoginRaccoltaLibro

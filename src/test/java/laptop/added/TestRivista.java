@@ -45,8 +45,8 @@ public class TestRivista {
 
         while (systemKeys.hasMoreElements()) {
             String key =  systemKeys.nextElement();
-            r.setTipologia(rBCategories.getString(key));
-            rB.setTipologiaB(rBCategories.getString(key));
+            r.setTipologia(key);
+            rB.setTipologiaB(key);
 
         }
 
