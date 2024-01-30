@@ -18,4 +18,5 @@ Id :	17titolo :	Tecniche proibite di persuasione, manipolazione e influenza util
 Id :	18titolo :	CiccioGamer89 Presenta Fortnite. Trucchi e Segretiricavo totale :	110.0
 Id :	19titolo :	titolo modificatoricavo totale :	774.0
 Id :	21titolo :	libro provaricavo totale :	197.44
-Id :	22titolo :	libro provaricavo totale :	197.44
+Id :	23titolo :	provo ad inserire un nuovo libroricavo totale :	80.0
+Id :	24titolo :	libro provaricavo totale :	197.44

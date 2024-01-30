@@ -3,6 +3,7 @@ package web.test;
 import laptop.database.UsersDao;
 import laptop.model.TempUser;
 import org.apache.commons.beanutils.PropertyUtils;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -98,8 +99,11 @@ public class TestLoginRaccoltaUtenti {
         assertNotEquals(0,PropertyUtils.getProperty(uB,"idB"));
 
 
-
-
+    }
+    @AfterEach
+    void chiudiTest()
+    {
+        driver.close();
 
     }
 }

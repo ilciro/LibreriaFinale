@@ -5,7 +5,7 @@ import laptop.model.raccolta.Libro;
 import org.apache.commons.beanutils.PropertyUtils;
 
 
-
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -104,6 +104,13 @@ public class TestDownloadLibro {
 
         assertNotEquals(0,PropertyUtils.getProperty(sB,"idB"));
 
+
+
+    }
+    @AfterEach
+    void chiudiTest()
+    {
+        driver.close();
 
     }
 

@@ -80,6 +80,7 @@ public class TestLoginRaccoltaGiornale {
         assertNotEquals(0,PropertyUtils.getProperty(gB,"idB"));
 
 
+
     }
     @AfterEach
     void chiudiTest()

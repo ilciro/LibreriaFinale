@@ -4,6 +4,7 @@ import laptop.database.GiornaleDao;
 import laptop.database.NegozioDao;
 import laptop.model.raccolta.Giornale;
 import org.apache.commons.beanutils.PropertyUtils;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -149,5 +150,11 @@ public class TestPagamentoCartaCredito {
 
 
         assertEquals(1,PropertyUtils.getProperty(sB,"idB"));
+    }
+    @AfterEach
+    void chiudiTest()
+    {
+        driver.close();
+
     }
 }

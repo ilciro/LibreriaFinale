@@ -37,6 +37,7 @@ web/test/TestLoginRaccoltaUtenti.class
 laptop/controller/ControllerUserPageTest.class
 laptop/controller/ControllerVisualizzaTest.class
 web/test/TestPagamentoAnnullato.class
+laptop/added/TestGenerateReport.class
 laptop/controller/ControllerPagamentoCashTest.class
 web/test/TestLoginUserLibro.class
 laptop/added/TestRicerca.class

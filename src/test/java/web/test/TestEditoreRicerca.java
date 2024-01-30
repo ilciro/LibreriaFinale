@@ -7,6 +7,7 @@ import laptop.model.raccolta.Giornale;
 import laptop.model.raccolta.Libro;
 import laptop.model.raccolta.Rivista;
 import org.apache.commons.beanutils.PropertyUtils;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -66,6 +67,7 @@ public class TestEditoreRicerca {
         assertNotNull(lD.getLibriIdTitoloAutore(l));
 
 
+
     }
         @Test
     void testLoginRicercaScrittoreByAutoreLibro() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
@@ -95,6 +97,7 @@ public class TestEditoreRicerca {
 
 
         assertNotNull(lD.getLibroIdTitoloAutore(l));
+
 
 
     }
@@ -130,6 +133,7 @@ public class TestEditoreRicerca {
         assertNotNull(gD.getGiornaliIdTitoloAutore(g));
 
 
+
     }
     @Test
     void testLoginRicercaEditoreByTitoloGiornale() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
@@ -160,6 +164,13 @@ public class TestEditoreRicerca {
 
         assertNotNull(gD.getGiornaleIdTitoloAutore(g));
 
+
+
+    }
+    @AfterEach
+    void chiudiTest()
+    {
+        driver.close();
 
     }
 

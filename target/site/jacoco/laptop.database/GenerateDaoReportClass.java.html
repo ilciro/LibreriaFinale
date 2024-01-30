@@ -84,7 +84,7 @@ public class GenerateDaoReportClass {
             }
 
 <span class="fc" id="L86">    }</span>
-<span class="nc" id="L87">    public GenerateDaoReportClass(){}</span>
+<span class="fc" id="L87">    public GenerateDaoReportClass(){}</span>
 
     private String path;
 
@@ -219,48 +219,48 @@ public class GenerateDaoReportClass {
 <span class="fc" id="L219">    }</span>
 
     public String getReportView(String type) throws SQLException {
-<span class="nc" id="L222">        String reportFinale = null;</span>
+<span class="fc" id="L222">        String reportFinale = null;</span>
 
-<span class="nc bnc" id="L224" title="All 5 branches missed.">        switch (type) {</span>
+<span class="pc bpc" id="L224" title="2 of 5 branches missed.">        switch (type) {</span>
             case LIBRO -&gt; {
-<span class="nc" id="L226">                setQuery(&quot;create or replace view reportLibri (id,titolo,ricavoMassimo) as select idLibro,titolo,(copieRimanenti*prezzo) from LIBRO&quot;);</span>
-<span class="nc" id="L227">                try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L228">                    PreparedStatement prepQ=conn.prepareStatement(getQuery())) {</span>
-<span class="nc" id="L229">                    prepQ.executeUpdate();</span>
+<span class="fc" id="L226">                setQuery(&quot;create or replace view reportLibri (id,titolo,ricavoMassimo) as select idLibro,titolo,(copieRimanenti*prezzo) from LIBRO&quot;);</span>
+<span class="fc" id="L227">                try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L228">                    PreparedStatement prepQ=conn.prepareStatement(getQuery())) {</span>
+<span class="fc" id="L229">                    prepQ.executeUpdate();</span>
 <span class="nc" id="L230">                }catch (SQLException e)</span>
                 {
 
 <span class="nc" id="L233">                    Logger.getLogger(&quot;Test report book view &quot;).log(Level.SEVERE, &quot;view book not created!&quot;);</span>
 
-<span class="nc" id="L235">                }</span>
-<span class="nc" id="L236">                reportFinale=leggiReport(LIBRO);</span>
+<span class="fc" id="L235">                }</span>
+<span class="fc" id="L236">                reportFinale=leggiReport(LIBRO);</span>
 
 
-<span class="nc" id="L239">            }</span>
+<span class="fc" id="L239">            }</span>
             case GIORNALE -&gt; {
-<span class="nc" id="L241">                setQuery(&quot;create or replace view reportGiornali (id,titolo,ricavoMassimo) as select idGiornale,titolo,(copieRimanenti*prezzo) from GIORNALE&quot;);</span>
-<span class="nc" id="L242">                try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L243">                    PreparedStatement prepQ=conn.prepareStatement(getQuery())) {</span>
-<span class="nc" id="L244">                    prepQ.executeUpdate();</span>
+<span class="fc" id="L241">                setQuery(&quot;create or replace view reportGiornali (id,titolo,ricavoMassimo) as select idGiornale,titolo,(copieRimanenti*prezzo) from GIORNALE&quot;);</span>
+<span class="fc" id="L242">                try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L243">                    PreparedStatement prepQ=conn.prepareStatement(getQuery())) {</span>
+<span class="fc" id="L244">                    prepQ.executeUpdate();</span>
 <span class="nc" id="L245">                }catch (SQLException e)</span>
                 {
 <span class="nc" id="L247">                    Logger.getLogger(&quot;Test report daily view &quot;).log(Level.SEVERE, &quot;view giornali not created!&quot;);</span>
 
-<span class="nc" id="L249">                }</span>
-<span class="nc" id="L250">                reportFinale=leggiReport(GIORNALE);</span>
-<span class="nc" id="L251">            }</span>
+<span class="fc" id="L249">                }</span>
+<span class="fc" id="L250">                reportFinale=leggiReport(GIORNALE);</span>
+<span class="fc" id="L251">            }</span>
             case RIVISTA -&gt; {
-<span class="nc" id="L253">                setQuery(&quot;create or replace view reportRiviste (id,titolo,ricavoMassimo) as select idRivista,titolo,(copieRimanenti*prezzo) from RIVISTA&quot;);</span>
-<span class="nc" id="L254">                try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L255">                    PreparedStatement prepQ=conn.prepareStatement(getQuery())) {</span>
-<span class="nc" id="L256">                    prepQ.executeUpdate();</span>
+<span class="fc" id="L253">                setQuery(&quot;create or replace view reportRiviste (id,titolo,ricavoMassimo) as select idRivista,titolo,(copieRimanenti*prezzo) from RIVISTA&quot;);</span>
+<span class="fc" id="L254">                try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L255">                    PreparedStatement prepQ=conn.prepareStatement(getQuery())) {</span>
+<span class="fc" id="L256">                    prepQ.executeUpdate();</span>
 <span class="nc" id="L257">                }catch (SQLException e)</span>
                 {
 <span class="nc" id="L259">                    Logger.getLogger(&quot;Test report magazine view &quot;).log(Level.SEVERE, &quot;view magazine not created!&quot;);</span>
 
-<span class="nc" id="L261">                }</span>
-<span class="nc" id="L262">                reportFinale=leggiReport(RIVISTA);</span>
-<span class="nc" id="L263">            }</span>
+<span class="fc" id="L261">                }</span>
+<span class="fc" id="L262">                reportFinale=leggiReport(RIVISTA);</span>
+<span class="fc" id="L263">            }</span>
             case UTENTI -&gt; {
 
 <span class="nc" id="L266">                    setQuery(&quot;create or replace view reportUtenti (id,ruolo,nome,cognome) as select idUser,idRuolo,nome,cognome from USERS&quot;);</span>
@@ -277,18 +277,18 @@ public class GenerateDaoReportClass {
 <span class="nc" id="L277">            }</span>
 <span class="nc" id="L278">            default -&gt; Logger.getLogger(&quot;getReportView&quot;).log(Level.INFO, &quot;choice for view is wrong&quot;);</span>
         }
-<span class="nc" id="L280">        return reportFinale;</span>
+<span class="fc" id="L280">        return reportFinale;</span>
     }
 
     private static void cleanUp(Path path) throws  IOException {
 <span class="fc" id="L284">        Files.delete(path);</span>
 <span class="fc" id="L285">    }</span>
     private String leggiReport(String type) throws SQLException {
-<span class="nc" id="L287">        StringBuilder builder = new StringBuilder();</span>
-<span class="nc bnc" id="L288" title="All 5 branches missed.">        switch (type) {</span>
-<span class="nc" id="L289">            case LIBRO -&gt; setQuery(&quot;select * from reportLibri&quot;);</span>
-<span class="nc" id="L290">            case GIORNALE -&gt; setQuery(&quot;select * from reportGiornali&quot;);</span>
-<span class="nc" id="L291">            case RIVISTA -&gt; setQuery(&quot;select * from reportRiviste&quot;);</span>
+<span class="fc" id="L287">        StringBuilder builder = new StringBuilder();</span>
+<span class="pc bpc" id="L288" title="2 of 5 branches missed.">        switch (type) {</span>
+<span class="fc" id="L289">            case LIBRO -&gt; setQuery(&quot;select * from reportLibri&quot;);</span>
+<span class="fc" id="L290">            case GIORNALE -&gt; setQuery(&quot;select * from reportGiornali&quot;);</span>
+<span class="fc" id="L291">            case RIVISTA -&gt; setQuery(&quot;select * from reportRiviste&quot;);</span>
 <span class="nc" id="L292">            case UTENTI -&gt; setQuery(&quot;select * from reportUtenti&quot;);</span>
 <span class="nc" id="L293">            default -&gt; Logger.getLogger(&quot;leggi report&quot;).log(Level.INFO, &quot;choice for view is wrong&quot;);</span>
 
@@ -296,26 +296,26 @@ public class GenerateDaoReportClass {
 
 
 
-<span class="nc bnc" id="L299" title="All 6 branches missed.">            if(type.equals(LIBRO)||type.equals(GIORNALE)|| type.equals(RIVISTA)) {</span>
-<span class="nc" id="L300">                try (Connection conn = ConnToDb.connectionToDB();</span>
-<span class="nc" id="L301">                     PreparedStatement prepQ = conn.prepareStatement(getQuery())) {</span>
-<span class="nc" id="L302">                    ResultSet rs = prepQ.executeQuery();</span>
-<span class="nc bnc" id="L303" title="All 2 branches missed.">                    while (rs.next()) {</span>
-<span class="nc" id="L304">                        builder.append(&quot;id :&quot;);</span>
-<span class="nc" id="L305">                        builder.append(rs.getInt(1));</span>
-<span class="nc" id="L306">                        builder.append(&quot;\t&quot;);</span>
-<span class="nc" id="L307">                        builder.append(&quot;titolo :&quot;);</span>
-<span class="nc" id="L308">                        builder.append(rs.getString(2));</span>
-<span class="nc" id="L309">                        builder.append(&quot;\t&quot;);</span>
-<span class="nc" id="L310">                        builder.append(&quot;ricavoMassimo :&quot;);</span>
-<span class="nc" id="L311">                        builder.append(rs.getInt(1));</span>
-<span class="nc" id="L312">                        builder.append(&quot;\n&quot;);</span>
+<span class="pc bpc" id="L299" title="1 of 6 branches missed.">            if(type.equals(LIBRO)||type.equals(GIORNALE)|| type.equals(RIVISTA)) {</span>
+<span class="fc" id="L300">                try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="fc" id="L301">                     PreparedStatement prepQ = conn.prepareStatement(getQuery())) {</span>
+<span class="fc" id="L302">                    ResultSet rs = prepQ.executeQuery();</span>
+<span class="fc bfc" id="L303" title="All 2 branches covered.">                    while (rs.next()) {</span>
+<span class="fc" id="L304">                        builder.append(&quot;id :&quot;);</span>
+<span class="fc" id="L305">                        builder.append(rs.getInt(1));</span>
+<span class="fc" id="L306">                        builder.append(&quot;\t&quot;);</span>
+<span class="fc" id="L307">                        builder.append(&quot;titolo :&quot;);</span>
+<span class="fc" id="L308">                        builder.append(rs.getString(2));</span>
+<span class="fc" id="L309">                        builder.append(&quot;\t&quot;);</span>
+<span class="fc" id="L310">                        builder.append(&quot;ricavoMassimo :&quot;);</span>
+<span class="fc" id="L311">                        builder.append(rs.getInt(1));</span>
+<span class="fc" id="L312">                        builder.append(&quot;\n&quot;);</span>
 
                     }
 
                 }
             }
-<span class="nc bnc" id="L318" title="All 2 branches missed.">            if(type.equals(UTENTI)) {</span>
+<span class="pc bpc" id="L318" title="1 of 2 branches missed.">            if(type.equals(UTENTI)) {</span>
 <span class="nc" id="L319">                try(Connection conn=ConnToDb.connectionToDB();</span>
 <span class="nc" id="L320">                    PreparedStatement prepQ=conn.prepareStatement(getQuery()))</span>
                 {
@@ -339,7 +339,7 @@ public class GenerateDaoReportClass {
                 }
             }
 
-<span class="nc" id="L342">        return builder.toString();</span>
+<span class="fc" id="L342">        return builder.toString();</span>
     }
 
     public int getIdMax(String type)

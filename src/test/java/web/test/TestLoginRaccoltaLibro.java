@@ -4,6 +4,7 @@ package web.test;
 import laptop.database.*;
 
 import org.apache.commons.beanutils.PropertyUtils;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -110,6 +111,12 @@ class TestLoginRaccoltaLibro {
 
 
         assertNotEquals(0,PropertyUtils.getProperty(lB,"idB"));
+
+    }
+    @AfterEach
+    void chiudiTest()
+    {
+        driver.close();
 
     }
 

@@ -4,4 +4,5 @@ Id :	3titolo :	Tv Sorrisi e canzoniricavo totale :	200.0
 Id :	4titolo :	titolo rivista aggiornatoricavo totale :	225.0
 Id :	5titolo :	Rivista Bricavo totale :	262.0
 Id :	7titolo :	rivista provaricavo totale :	130.0
-Id :	8titolo :	rivista provaricavo totale :	130.0
+Id :	9titolo :	provo ad inserire un nuovo giornalericavo totale :	263.0
+Id :	10titolo :	rivista provaricavo totale :	130.0

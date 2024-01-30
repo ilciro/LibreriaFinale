@@ -4,6 +4,7 @@ import laptop.database.GenerateDaoReportClass;
 import laptop.database.RivistaDao;
 import laptop.model.raccolta.Rivista;
 import org.apache.commons.beanutils.PropertyUtils;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -91,6 +92,12 @@ public class TestLoginRaccoltaRivista {
 
         assertNotEquals(0,PropertyUtils.getProperty(rB,"idB"));
 
+
+    }
+    @AfterEach
+    void chiudiTest()
+    {
+        driver.close();
 
     }
 }
