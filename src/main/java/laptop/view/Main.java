@@ -66,24 +66,7 @@ public class Main  extends Application {
 
 
 			launch(args);
-/*
-		Libro l = new Libro();
-		Giornale g=new Giornale();
-		Rivista r=new Rivista();
-		for (int i = 1; i < 13; i++) {
-			l.setId(i);
-			l.scarica(l.getId());
-			l.leggi(l.getId());
-		}
-//		g.setId(1);
-//		g.scarica(g.getId());
-//		g.leggi(g.getId());
-//		r.setId(1);
-//		r.scarica(r.getId());
-//		r.leggi(r.getId());
 
-
- */
 
 	}
 

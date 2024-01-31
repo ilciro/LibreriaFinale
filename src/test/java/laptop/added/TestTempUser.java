@@ -36,6 +36,16 @@ public class TestTempUser {
 
 
     }
+    @Test
+    void testGetLista() throws SQLException {
+        assertNotNull(UsersDao.getUserList());
+    }
+
+    @Test
+    void testGetTempUser() throws SQLException {
+        tU.setId(1);
+        assertNotNull(UsersDao.getTempUserSingolo(tU));
+    }
 
 
 }

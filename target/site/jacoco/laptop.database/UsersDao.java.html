@@ -279,31 +279,31 @@ public class UsersDao {
 	public static TempUser getTempUserSingolo(TempUser uT) throws SQLException {
 
 
-<span class="nc" id="L282">		query = &quot;SELECT * FROM USERS where idUser = ?&quot;;</span>
-<span class="nc" id="L283">		try (Connection conn = ConnToDb.connectionToDB();</span>
-<span class="nc" id="L284">			 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
+<span class="fc" id="L282">		query = &quot;SELECT * FROM USERS where idUser = ?&quot;;</span>
+<span class="fc" id="L283">		try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="fc" id="L284">			 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
 
-<span class="nc" id="L286">			prepQ.setInt(1, uT.getId());</span>
+<span class="fc" id="L286">			prepQ.setInt(1, uT.getId());</span>
 
-<span class="nc" id="L288">			ResultSet rs = prepQ.executeQuery();</span>
-<span class="nc bnc" id="L289" title="All 2 branches missed.">			while (rs.next()) {</span>
+<span class="fc" id="L288">			ResultSet rs = prepQ.executeQuery();</span>
+<span class="fc bfc" id="L289" title="All 2 branches covered.">			while (rs.next()) {</span>
 
-<span class="nc" id="L291">				uT.setIdRuolo(rs.getString(2));</span>
-<span class="nc" id="L292">				uT.setNomeT(rs.getString(3));</span>
-<span class="nc" id="L293">				uT.setCognomeT(rs.getString(4));</span>
-<span class="nc" id="L294">				uT.setEmailT(rs.getString(5));</span>
-<span class="nc" id="L295">				uT.setPasswordT(rs.getString(6));</span>
-<span class="nc" id="L296">				uT.setDescrizioneT(rs.getString(7));</span>
-<span class="nc" id="L297">				uT.setDataDiNascitaT(rs.getDate(8).toLocalDate());</span>
+<span class="fc" id="L291">				uT.setIdRuolo(rs.getString(2));</span>
+<span class="fc" id="L292">				uT.setNomeT(rs.getString(3));</span>
+<span class="fc" id="L293">				uT.setCognomeT(rs.getString(4));</span>
+<span class="fc" id="L294">				uT.setEmailT(rs.getString(5));</span>
+<span class="fc" id="L295">				uT.setPasswordT(rs.getString(6));</span>
+<span class="fc" id="L296">				uT.setDescrizioneT(rs.getString(7));</span>
+<span class="fc" id="L297">				uT.setDataDiNascitaT(rs.getDate(8).toLocalDate());</span>
 
 
 			}
 <span class="nc" id="L301">		} catch (SQLException e) {</span>
 <span class="nc" id="L302">			Logger.getLogger(&quot;get single temp user&quot;).log(Level.INFO, ECCEZIONE, e);</span>
 
-<span class="nc" id="L304">		}</span>
+<span class="fc" id="L304">		}</span>
 
-<span class="nc" id="L306">		return uT;</span>
+<span class="fc" id="L306">		return uT;</span>
 	}
 
 	public static User aggiornaUtente(User u,String vecchiaEmail)  {
@@ -345,39 +345,39 @@ public class UsersDao {
 	}
 
 	public static String getUserList() throws SQLException {
-<span class="nc" id="L348">		query = &quot;select * from USERS&quot;;</span>
-<span class="nc" id="L349">		StringBuilder s = new StringBuilder();</span>
-<span class="nc" id="L350">		try (Connection conn = ConnToDb.connectionToDB();</span>
-<span class="nc" id="L351">			 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
-<span class="nc" id="L352">			ResultSet rs = prepQ.executeQuery();</span>
-<span class="nc bnc" id="L353" title="All 2 branches missed.">			while (rs.next()) {</span>
-<span class="nc" id="L354">				s.append(&quot;\n Id User \t&quot;);</span>
-<span class="nc" id="L355">				s.append(&quot;Id Ruolo \t&quot;);</span>
-<span class="nc" id="L356">				s.append(&quot;Nome \t&quot;);</span>
-<span class="nc" id="L357">				s.append(&quot;Cognome \t&quot;);</span>
-<span class="nc" id="L358">				s.append(&quot;Email \t&quot;);</span>
-<span class="nc" id="L359">				s.append(&quot;Data di nascita \n&quot;);</span>
+<span class="fc" id="L348">		query = &quot;select * from USERS&quot;;</span>
+<span class="fc" id="L349">		StringBuilder s = new StringBuilder();</span>
+<span class="fc" id="L350">		try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="fc" id="L351">			 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
+<span class="fc" id="L352">			ResultSet rs = prepQ.executeQuery();</span>
+<span class="fc bfc" id="L353" title="All 2 branches covered.">			while (rs.next()) {</span>
+<span class="fc" id="L354">				s.append(&quot;\n Id User \t&quot;);</span>
+<span class="fc" id="L355">				s.append(&quot;Id Ruolo \t&quot;);</span>
+<span class="fc" id="L356">				s.append(&quot;Nome \t&quot;);</span>
+<span class="fc" id="L357">				s.append(&quot;Cognome \t&quot;);</span>
+<span class="fc" id="L358">				s.append(&quot;Email \t&quot;);</span>
+<span class="fc" id="L359">				s.append(&quot;Data di nascita \n&quot;);</span>
 
-<span class="nc" id="L361">				s.append(rs.getInt(1));</span>
-<span class="nc" id="L362">				s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L363">				s.append(rs.getInt(1));</span>
-<span class="nc" id="L364">				s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L365">				s.append(rs.getString(2));</span>
-<span class="nc" id="L366">				s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L367">				s.append(rs.getString(3));</span>
-<span class="nc" id="L368">				s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L369">				s.append(rs.getString(4));</span>
-<span class="nc" id="L370">				s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L371">				s.append(rs.getString(5));</span>
-<span class="nc" id="L372">				s.append(&quot;\t&quot;);</span>
-<span class="nc" id="L373">				s.append(rs.getDate(8).toLocalDate());</span>
-<span class="nc" id="L374">				s.append(&quot;\n&quot;);</span>
+<span class="fc" id="L361">				s.append(rs.getInt(1));</span>
+<span class="fc" id="L362">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L363">				s.append(rs.getInt(1));</span>
+<span class="fc" id="L364">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L365">				s.append(rs.getString(2));</span>
+<span class="fc" id="L366">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L367">				s.append(rs.getString(3));</span>
+<span class="fc" id="L368">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L369">				s.append(rs.getString(4));</span>
+<span class="fc" id="L370">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L371">				s.append(rs.getString(5));</span>
+<span class="fc" id="L372">				s.append(&quot;\t&quot;);</span>
+<span class="fc" id="L373">				s.append(rs.getDate(8).toLocalDate());</span>
+<span class="fc" id="L374">				s.append(&quot;\n&quot;);</span>
 			}
 <span class="nc" id="L376">		} catch (SQLException e) {</span>
 <span class="nc" id="L377">			Logger.getLogger(&quot;user list&quot;).log(Level.INFO, &quot;user list {0}.&quot;, e.toString());</span>
 
-<span class="nc" id="L379">		}</span>
-<span class="nc" id="L380">		return s.toString();</span>
+<span class="fc" id="L379">		}</span>
+<span class="fc" id="L380">		return s.toString();</span>
 	}
 
 	public static int aggiornaTempUser(TempUser uT) throws SQLException {

@@ -6,7 +6,6 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerRicercaPageTest.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerModifPageTest.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerHomePageAfterLoginSETest.java
-/home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/added/Prova.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/web/test/TestScrittoreRicerca.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerScegliNegozioTest.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerLoginTest.java
@@ -22,6 +21,7 @@
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/web/test/TestPagamentoCartaCredito.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerCheckPagamentoDataTest.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerModificaUtenteTest.java
+/home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/added/TestCSVDao.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerCancellaUserTest.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/added/TestRivista.java
 /home/daniele/IdeaProjects/LibreriaFinale/src/test/java/laptop/controller/ControllerVisualizzaProfiloTest.java

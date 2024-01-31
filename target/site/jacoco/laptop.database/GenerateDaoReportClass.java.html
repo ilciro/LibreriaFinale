@@ -221,7 +221,7 @@ public class GenerateDaoReportClass {
     public String getReportView(String type) throws SQLException {
 <span class="fc" id="L222">        String reportFinale = null;</span>
 
-<span class="pc bpc" id="L224" title="2 of 5 branches missed.">        switch (type) {</span>
+<span class="pc bpc" id="L224" title="1 of 5 branches missed.">        switch (type) {</span>
             case LIBRO -&gt; {
 <span class="fc" id="L226">                setQuery(&quot;create or replace view reportLibri (id,titolo,ricavoMassimo) as select idLibro,titolo,(copieRimanenti*prezzo) from LIBRO&quot;);</span>
 <span class="fc" id="L227">                try(Connection conn=ConnToDb.connectionToDB();</span>
@@ -263,18 +263,18 @@ public class GenerateDaoReportClass {
 <span class="fc" id="L263">            }</span>
             case UTENTI -&gt; {
 
-<span class="nc" id="L266">                    setQuery(&quot;create or replace view reportUtenti (id,ruolo,nome,cognome) as select idUser,idRuolo,nome,cognome from USERS&quot;);</span>
-<span class="nc" id="L267">                    try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L268">                        PreparedStatement prepQ=conn.prepareStatement(getQuery())) {</span>
-<span class="nc" id="L269">                        prepQ.executeUpdate();</span>
+<span class="fc" id="L266">                    setQuery(&quot;create or replace view reportUtenti (id,ruolo,nome,cognome) as select idUser,idRuolo,nome,cognome from USERS&quot;);</span>
+<span class="fc" id="L267">                    try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L268">                        PreparedStatement prepQ=conn.prepareStatement(getQuery())) {</span>
+<span class="fc" id="L269">                        prepQ.executeUpdate();</span>
 <span class="nc" id="L270">                    }catch (SQLException e)</span>
                     {
 <span class="nc" id="L272">                        Logger.getLogger(&quot;Test report users view &quot;).log(Level.SEVERE, &quot;view users not created!&quot;);</span>
 
-<span class="nc" id="L274">                    }</span>
-<span class="nc" id="L275">                    reportFinale=leggiReport(UTENTI);</span>
+<span class="fc" id="L274">                    }</span>
+<span class="fc" id="L275">                    reportFinale=leggiReport(UTENTI);</span>
 
-<span class="nc" id="L277">            }</span>
+<span class="fc" id="L277">            }</span>
 <span class="nc" id="L278">            default -&gt; Logger.getLogger(&quot;getReportView&quot;).log(Level.INFO, &quot;choice for view is wrong&quot;);</span>
         }
 <span class="fc" id="L280">        return reportFinale;</span>
@@ -285,18 +285,18 @@ public class GenerateDaoReportClass {
 <span class="fc" id="L285">    }</span>
     private String leggiReport(String type) throws SQLException {
 <span class="fc" id="L287">        StringBuilder builder = new StringBuilder();</span>
-<span class="pc bpc" id="L288" title="2 of 5 branches missed.">        switch (type) {</span>
+<span class="pc bpc" id="L288" title="1 of 5 branches missed.">        switch (type) {</span>
 <span class="fc" id="L289">            case LIBRO -&gt; setQuery(&quot;select * from reportLibri&quot;);</span>
 <span class="fc" id="L290">            case GIORNALE -&gt; setQuery(&quot;select * from reportGiornali&quot;);</span>
 <span class="fc" id="L291">            case RIVISTA -&gt; setQuery(&quot;select * from reportRiviste&quot;);</span>
-<span class="nc" id="L292">            case UTENTI -&gt; setQuery(&quot;select * from reportUtenti&quot;);</span>
+<span class="fc" id="L292">            case UTENTI -&gt; setQuery(&quot;select * from reportUtenti&quot;);</span>
 <span class="nc" id="L293">            default -&gt; Logger.getLogger(&quot;leggi report&quot;).log(Level.INFO, &quot;choice for view is wrong&quot;);</span>
 
         }
 
 
 
-<span class="pc bpc" id="L299" title="1 of 6 branches missed.">            if(type.equals(LIBRO)||type.equals(GIORNALE)|| type.equals(RIVISTA)) {</span>
+<span class="fc bfc" id="L299" title="All 6 branches covered.">            if(type.equals(LIBRO)||type.equals(GIORNALE)|| type.equals(RIVISTA)) {</span>
 <span class="fc" id="L300">                try (Connection conn = ConnToDb.connectionToDB();</span>
 <span class="fc" id="L301">                     PreparedStatement prepQ = conn.prepareStatement(getQuery())) {</span>
 <span class="fc" id="L302">                    ResultSet rs = prepQ.executeQuery();</span>
@@ -315,25 +315,25 @@ public class GenerateDaoReportClass {
 
                 }
             }
-<span class="pc bpc" id="L318" title="1 of 2 branches missed.">            if(type.equals(UTENTI)) {</span>
-<span class="nc" id="L319">                try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L320">                    PreparedStatement prepQ=conn.prepareStatement(getQuery()))</span>
+<span class="fc bfc" id="L318" title="All 2 branches covered.">            if(type.equals(UTENTI)) {</span>
+<span class="fc" id="L319">                try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L320">                    PreparedStatement prepQ=conn.prepareStatement(getQuery()))</span>
                 {
-<span class="nc" id="L322">                    ResultSet rs= prepQ.executeQuery();</span>
-<span class="nc bnc" id="L323" title="All 2 branches missed.">                    while(rs.next())</span>
+<span class="fc" id="L322">                    ResultSet rs= prepQ.executeQuery();</span>
+<span class="fc bfc" id="L323" title="All 2 branches covered.">                    while(rs.next())</span>
                     {
-<span class="nc" id="L325">                        builder.append(&quot;nome :&quot;);</span>
-<span class="nc" id="L326">                        builder.append(rs.getString(3));</span>
-<span class="nc" id="L327">                        builder.append(&quot;\t&quot;);</span>
-<span class="nc" id="L328">                        builder.append(&quot;cognome :&quot;);</span>
-<span class="nc" id="L329">                        builder.append(rs.getString(4));</span>
-<span class="nc" id="L330">                        builder.append(&quot;\t&quot;);</span>
-<span class="nc" id="L331">                        builder.append(&quot;ruolo :&quot;);</span>
-<span class="nc" id="L332">                        builder.append(rs.getString(2));</span>
-<span class="nc" id="L333">                        builder.append(&quot;id :&quot;);</span>
-<span class="nc" id="L334">                        builder.append(rs.getInt(1));</span>
-<span class="nc" id="L335">                        builder.append(&quot;\t&quot;);</span>
-<span class="nc" id="L336">                        builder.append(&quot;\n&quot;);</span>
+<span class="fc" id="L325">                        builder.append(&quot;nome :&quot;);</span>
+<span class="fc" id="L326">                        builder.append(rs.getString(3));</span>
+<span class="fc" id="L327">                        builder.append(&quot;\t&quot;);</span>
+<span class="fc" id="L328">                        builder.append(&quot;cognome :&quot;);</span>
+<span class="fc" id="L329">                        builder.append(rs.getString(4));</span>
+<span class="fc" id="L330">                        builder.append(&quot;\t&quot;);</span>
+<span class="fc" id="L331">                        builder.append(&quot;ruolo :&quot;);</span>
+<span class="fc" id="L332">                        builder.append(rs.getString(2));</span>
+<span class="fc" id="L333">                        builder.append(&quot;id :&quot;);</span>
+<span class="fc" id="L334">                        builder.append(rs.getInt(1));</span>
+<span class="fc" id="L335">                        builder.append(&quot;\t&quot;);</span>
+<span class="fc" id="L336">                        builder.append(&quot;\n&quot;);</span>
 
                     }
                 }

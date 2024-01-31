@@ -12,7 +12,7 @@ public class TestGenerateReport {
     private final GenerateDaoReportClass gRC=new GenerateDaoReportClass();
 
     @ParameterizedTest
-    @ValueSource(strings = {"libro","giornale","rivista"})
+    @ValueSource(strings = {"libro","giornale","rivista","utenti"})
     void testGeneraView(String strings) throws SQLException {
         assertNotNull(gRC.getReportView(strings));
     }

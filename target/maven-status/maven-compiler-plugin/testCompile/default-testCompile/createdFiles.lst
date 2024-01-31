@@ -21,7 +21,7 @@ web/test/TestLoginReport.class
 laptop/controller/ControllerRicercaPageTest.class
 web/test/TestLoginRaccoltaGiornale.class
 laptop/controller/ControllerAggiungiUtenteTest.class
-laptop/added/Prova.class
+laptop/added/TestCSVDao.class
 laptop/added/TestRivista.class
 laptop/controller/ControllerModificaUtenteTest.class
 laptop/controller/ControllerPagamentoCCTest.class
