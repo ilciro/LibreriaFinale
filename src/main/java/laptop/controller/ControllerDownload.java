@@ -56,15 +56,9 @@ public class ControllerDownload {
 		statusP=pDao.annullaOrdinePag(idP);
 		
 		
-		if((typeP.equals("cash") &&(statusF && statusP))||(typeP.equals("cCredito") && statusP))
-			{
-				//aggiorno disponibilita
-
-				if(typeO.equals(LIBRO)|| typeO.equals(GIORNALE)|| typeO.equals(RIVISTA  ))
-				{
-					incrementaOggetto(typeO);
-				}
-
+		if(((typeP.equals("cash") &&(statusF && statusP))||(typeP.equals("cCredito") && statusP) )&& (typeO.equals(LIBRO)|| typeO.equals(GIORNALE)|| typeO.equals(RIVISTA  )))
+		{
+			incrementaOggetto(typeO);
 		}
 		// messo su come condizione		
 

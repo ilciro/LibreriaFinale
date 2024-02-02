@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="insert test v6">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerCheckPagamentoData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerCheckPagamentoData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerDownload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerDownload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/CartaCreditoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/CartaCreditoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/ContrassegnoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/ContrassegnoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/GenerateDaoReportClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/GenerateDaoReportClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/GiornaleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/LibroDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/LibroDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/NegozioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/NegozioDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/PagamentoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/PagamentoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/database/RivistaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
-    </list>
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="management v1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -261,14 +248,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
-    </task>
-    <task id="LOCAL-00057" summary="test v5 ( commented webtest)">
-      <option name="closed" value="true" />
-      <created>1704737374549</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1704737374550</updated>
     </task>
     <task id="LOCAL-00058" summary="test v6 ( commented webtest)">
       <option name="closed" value="true" />
@@ -638,7 +617,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706702224755</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="management v1">
+      <option name="closed" value="true" />
+      <created>1706871418879</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1706871418881</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -666,7 +653,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="report webv1" />
     <MESSAGE value="report web v2" />
     <MESSAGE value="modif pom (delete tomcat-plugin)" />
     <MESSAGE value="modif pom (delete tomcat-plugin) v2" />
@@ -691,7 +677,8 @@
     <MESSAGE value="insert test v5 (request bundle)" />
     <MESSAGE value="insert test v5 (request bundle v2)" />
     <MESSAGE value="insert test v6" />
-    <option name="LAST_COMMIT_MESSAGE" value="insert test v6" />
+    <MESSAGE value="management v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="management v1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
