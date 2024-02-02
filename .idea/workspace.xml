@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="management v1" />
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="management v2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerDownload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/controller/ControllerDownload.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -248,14 +251,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
-    </task>
-    <task id="LOCAL-00058" summary="test v6 ( commented webtest)">
-      <option name="closed" value="true" />
-      <created>1704795503553</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1704795503553</updated>
     </task>
     <task id="LOCAL-00059" summary="test v7 ( commented webtest)">
       <option name="closed" value="true" />
@@ -625,7 +620,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706871418881</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="management v2">
+      <option name="closed" value="true" />
+      <created>1706871860136</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1706871860136</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -653,7 +656,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="report web v2" />
     <MESSAGE value="modif pom (delete tomcat-plugin)" />
     <MESSAGE value="modif pom (delete tomcat-plugin) v2" />
     <MESSAGE value="modif pom (delete tomcat-plugin) v3" />
@@ -678,7 +680,8 @@
     <MESSAGE value="insert test v5 (request bundle v2)" />
     <MESSAGE value="insert test v6" />
     <MESSAGE value="management v1" />
-    <option name="LAST_COMMIT_MESSAGE" value="management v1" />
+    <MESSAGE value="management v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="management v2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
