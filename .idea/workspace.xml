@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="management v4 (fix 3)">
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="management v4 (fix 4)">
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Libro.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -250,14 +250,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
-    </task>
-    <task id="LOCAL-00065" summary="reduce duplication v2">
-      <option name="closed" value="true" />
-      <created>1705406524626</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1705406524627</updated>
     </task>
     <task id="LOCAL-00066" summary="reduce duplication v3">
       <option name="closed" value="true" />
@@ -627,7 +619,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706906573937</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="management v4 (fix 4)">
+      <option name="closed" value="true" />
+      <created>1706906886363</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1706906886363</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -655,7 +655,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modified servlet v2( fixed managament objects)" />
     <MESSAGE value="modified servlet v3( report)" />
     <MESSAGE value="modified servlet v3( report v2)" />
     <MESSAGE value="read/download objects" />
@@ -680,7 +679,8 @@
     <MESSAGE value="management v4 (fix 1)" />
     <MESSAGE value="management v4 (fix 2)" />
     <MESSAGE value="management v4 (fix 3)" />
-    <option name="LAST_COMMIT_MESSAGE" value="management v4 (fix 3)" />
+    <MESSAGE value="management v4 (fix 4)" />
+    <option name="LAST_COMMIT_MESSAGE" value="management v4 (fix 4)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
