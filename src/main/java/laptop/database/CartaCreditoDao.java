@@ -19,8 +19,6 @@ public class CartaCreditoDao {
 	private  String cog;
 	private String query;
 	private static final String ECCEZIONE="eccezione ottenuta :";
-	
-
 
 	public ObservableList<CartaDiCredito> getCarteCredito(String nome)
 	{
@@ -56,7 +54,6 @@ public class CartaCreditoDao {
 
 	}	
 
-	
 	public void insCC(CartaDiCredito cc) {
 
 
@@ -83,16 +80,12 @@ public class CartaCreditoDao {
 	public CartaDiCredito  popolaDati(CartaDiCredito cc)
 	{
 		String cod;
-
 		n = null;
 		cog = null;
 		cod = null;
 		Date date = null;
 		String civ = null;
 
-
-
-		
 		query="select distinct nomeP,cognomeP,codiceCarta,scadenza,pin from CARTACREDITO where codiceCarta=?";
 
 		

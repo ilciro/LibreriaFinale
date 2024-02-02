@@ -323,9 +323,7 @@ public class LibroDao implements DaoInterface{
 		Files.copy(path, path1, StandardCopyOption.REPLACE_EXISTING);
 	}
 
-	public String generaReportWebLibro() throws SQLException {
-		return gRC.getReportView(LIBRO);
-	}
+
 
 
 

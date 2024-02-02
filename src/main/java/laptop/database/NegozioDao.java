@@ -13,16 +13,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class NegozioDao {
-	
 	private String query;
 	private static final String ECCEZIONE="eccezione ottenuta:";
-	
-	
-    
-	public ObservableList<Negozio> getNegozi() throws SQLException
-	{
-		Negozio shop; 
-		
+
+	public ObservableList<Negozio> getNegozi() {
+		Negozio shop;
 		 ObservableList<Negozio> listOfNegozi;
 		listOfNegozi=FXCollections.observableArrayList();
 
@@ -47,7 +42,7 @@ public class NegozioDao {
 		return listOfNegozi;
 	}
 	
-	public Boolean setOpen(Negozio shop, boolean i) throws SQLException 
+	public Boolean setOpen(Negozio shop, boolean i)
 	{
 		// vanno messe  le query
 		
@@ -80,9 +75,6 @@ public class NegozioDao {
 					PreparedStatement  prepQ=conn.prepareStatement(query);
 					)
 			{
-			
-				
-				
 					prepQ.setBoolean(1, i);
 					prepQ.setString(2, shop.getNome());
 					prepQ.executeUpdate();

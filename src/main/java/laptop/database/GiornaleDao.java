@@ -292,9 +292,7 @@ public class GiornaleDao {
 		Files.copy(path, path1, StandardCopyOption.REPLACE_EXISTING);
 	}
 
-	public String generaReportWebGiornale() throws SQLException {
-		return gRC.getReportView(GIORNALE);
-	}
+
 
 
 

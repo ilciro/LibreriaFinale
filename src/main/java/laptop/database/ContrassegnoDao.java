@@ -14,7 +14,7 @@ public class ContrassegnoDao {
 	
 	private  static  final String ECCEZIONE="eccezione ottenuta:";
 	private String query;
-	private ControllerSystemState vis=ControllerSystemState.getInstance();
+	private final ControllerSystemState vis=ControllerSystemState.getInstance();
 
 	
 

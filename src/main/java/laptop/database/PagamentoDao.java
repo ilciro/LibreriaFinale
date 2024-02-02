@@ -16,19 +16,7 @@ import javafx.collections.ObservableList;
 public class PagamentoDao {
 	private String query;
 	private static final String ECCEZIONE="eccezione ottenuta:";
-
-	
-
-	
-	
-
-		
-
 	public void inserisciPagamento(Pagamento p) throws SQLException {
-		
-
-		
-		
 
 		query="INSERT INTO PAGAMENTO(metodo,esito,nomeUtente,spesaTotale,eMail,tipoAcquisto,idProdotto) values (?,?,?,?,?,?,?)";
 
@@ -77,11 +65,7 @@ public class PagamentoDao {
 		
 		return catalogo;
 	}
-	
-	
 
-	
-		
 	public int retUltimoOrdinePag() throws SQLException 
 	{
 		int id=0;

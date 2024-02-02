@@ -6,7 +6,6 @@ package laptop.database;
 
 import laptop.model.TempUser;
 import laptop.utilities.ConnToDb;
-import org.checkerframework.checker.units.qual.C;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -47,7 +46,6 @@ public class GenerateDaoReportClass {
     private static final String RIEPILOGOGIORNALI = "src/main/resources/riepilogoGiornali.txt";
     private static final String RIEPILOGOGIORNALIWEB = "src/main/webapp/WEB-INF/riepilogoGiornali.txt";
     private static final String REPORTLIBRI="src/main/resources/riepilogoLibri.txt";
-
     private static final String REPORTLIBRIWEB="src/main/webapp/WEB-INF/riepilogoLibri.txt";
     private static final String RIEPILOGORIVISTE="src/main/resources/riepilogoRiviste.txt";
     private static final String RIEPILOGORIVISTEWEB="src/main/webapp/WEB-INF/riepilogoRiviste.txt";

@@ -310,9 +310,7 @@ public class 	RivistaDao {
 		Files.copy(path, path1, StandardCopyOption.REPLACE_EXISTING);
 	}
 
-	public String generaReportWebRivista() throws SQLException {
-		return gRC.getReportView(RIVISTA);
-	}
+
 	public void incrementaDisponibilita(Rivista r)
 	{
 		int d=vis.getQuantita();

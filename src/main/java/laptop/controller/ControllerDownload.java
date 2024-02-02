@@ -4,7 +4,8 @@ package laptop.controller;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.SQLException;
-import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 import com.itextpdf.text.DocumentException;
@@ -20,28 +21,31 @@ import laptop.model.raccolta.Rivista;
 
 
 public class ControllerDownload {
-	private String nrOrdine;
-	private ControllerSystemState vis=ControllerSystemState.getInstance();
-	private ContrassegnoDao cDao;
-	private PagamentoDao pDao;
-	private LibroDao lD;
-	private Giornale g;
-	private GiornaleDao gD;
-	private RivistaDao rD;
-	private Rivista r;	
-	private  Libro l;
+    private final ControllerSystemState vis=ControllerSystemState.getInstance();
+	private final ContrassegnoDao cDao;
+	private final PagamentoDao pDao;
+	private final LibroDao lD;
+	private final Giornale g;
+	private final GiornaleDao gD;
+	private final RivistaDao rD;
+	private final Rivista r;
+	private final Libro l;
+
+	private static final String LIBRO="libro";
+	private static final String GIORNALE="giornale";
+	private static final String RIVISTA="rivista";
 	
 
 	
 	
 	
 
-	public void annullaOrdine() throws SQLException {
+	public void annullaOrdine() throws SQLException 	{
 		/*
 		 * MEtodo usato per cancellare pafamento e fatture.. ma con una query di ritardo
 		 */
-		boolean statusF=false;
-		boolean statusP=false;
+		boolean statusF;
+		boolean statusP;
 		String typeP=vis.getMetodoP(); //tipo pagamento
 		String typeO=vis.getType(); //tipo oggetto
 		
@@ -55,70 +59,49 @@ public class ControllerDownload {
 		if((typeP.equals("cash") &&(statusF && statusP))||(typeP.equals("cCredito") && statusP))
 			{
 				//aggiorno disponibilita
-				
-				switch(typeO)
-				{
-					case "libro":
-					{
-						incrementaLibri();
-						break;
-					}
-					case "giornale":
-					{
-						incrementaGiornali();
 
-						break;
-					}
-					case "rivista":
-					{
-						incrementaRivista();
-						break;
-					}
-					default :
-						break;
+				if(typeO.equals(LIBRO)|| typeO.equals(GIORNALE)|| typeO.equals(RIVISTA  ))
+				{
+					incrementaOggetto(typeO);
 				}
-				
-			
-			
-			
+
 		}
 		// messo su come condizione		
-		
-		
+
 	}
 	public void scarica(String type) throws  IOException, URISyntaxException,  DocumentException {
 		switch (type)
 		{
-			case "libro":
+			case LIBRO->
 			{
 
 				l.setId(vis.getId());
-
 				l.scarica(vis.getId());
 				l.leggi(vis.getId());
-			break;
+
 			}
-			case "giornale":
+			case GIORNALE->
 			{
 				g.setId(vis.getId());
 				g.scarica(vis.getId());
 				g.leggi(vis.getId());
-				break;
+
 			}
-			case "rivista":
+			case RIVISTA ->
 			{
 				r.setId(vis.getId());
 				r.scarica(vis.getId());
 				r.leggi(vis.getId());
-				break;
+
 			}
-			default:break;
+			default -> 	Logger.getLogger("Test scarica").log(Level.SEVERE,"download error");
+
 		}
 	}
 
 
 	public ControllerDownload() throws IOException {
-		this.setNrOrdine(UUID.randomUUID().toString());
+
 		l = new Libro();
 		cDao=new ContrassegnoDao();
 		pDao=new PagamentoDao();
@@ -132,39 +115,29 @@ public class ControllerDownload {
 
 
 
+	private void incrementaOggetto(String type)
+	{
+		switch (type)
+		{
+			case LIBRO->{
+				l.setId(vis.getId());
+				lD.incrementaDisponibilita(l);
+			}
+			case GIORNALE->{
+				g.setId(vis.getId());
+				gD.incrementaDisponibilita(g);
+			}
+			case RIVISTA->
+			{
 
+				r.setId(vis.getId());
+				rD.incrementaDisponibilita(r);
+			}
+			default -> 	Logger.getLogger("Test incrementa").log(Level.SEVERE,"type not found");
 
-
-
-
-
-
-
-	public String getNrOrdine() {
-		return nrOrdine;
-	}
-
-
-
-
-	public void setNrOrdine(String nrOrdine) {
-		this.nrOrdine = nrOrdine;
+		}
 	}
 	
-	public void incrementaLibri() throws SQLException
-	{
-		l.setId(vis.getId());
-		lD.incrementaDisponibilita(l);
-	}
-	public void incrementaGiornali() throws SQLException
-	{
-		g.setId(vis.getId());
-		gD.incrementaDisponibilita(g);
-	}
-	public void incrementaRivista() throws SQLException
-	{
-		r.setId(vis.getId());
-		rD.incrementaDisponibilita(r);
-	}
+
 
 }

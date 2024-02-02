@@ -18,7 +18,6 @@ public class ControllerCheckPagamentoData {
 	private final Libro l;
 	private final Giornale g;
 	private final  Rivista r;
-	
 	private final LibroDao  lD;
 	private final GiornaleDao gD;
 	private final RivistaDao rD;
