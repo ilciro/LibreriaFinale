@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="management v4">
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="management v4 (fix 1)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/laptop/model/raccolta/Libro.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +46,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -250,14 +251,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
-    </task>
-    <task id="LOCAL-00062" summary="test v9">
-      <option name="closed" value="true" />
-      <created>1704881056878</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1704881056879</updated>
     </task>
     <task id="LOCAL-00063" summary="test v10">
       <option name="closed" value="true" />
@@ -627,7 +620,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706905711992</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="management v4 (fix 1)">
+      <option name="closed" value="true" />
+      <created>1706905924476</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1706905924476</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -655,7 +656,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modif pom (delete tomcat-plugin) v3" />
     <MESSAGE value="removed gitlfs" />
     <MESSAGE value="modified servlet" />
     <MESSAGE value="modified servlet v2( fixed managament objects)" />
@@ -680,7 +680,8 @@
     <MESSAGE value="management v2" />
     <MESSAGE value="management v3" />
     <MESSAGE value="management v4" />
-    <option name="LAST_COMMIT_MESSAGE" value="management v4" />
+    <MESSAGE value="management v4 (fix 1)" />
+    <option name="LAST_COMMIT_MESSAGE" value="management v4 (fix 1)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
