@@ -250,11 +250,13 @@ public class Libro implements Raccolta {
 			PdfWriter writer=PdfWriter.getInstance(document,new FileOutputStream(rbTitoli.getString(DSTPATH)+name));
 			document.open();
 			document.addTitle("Libro ");
-			document.add(new Paragraph("""
-				libro/book not avalaible
-				Lorem ipsum	dolor sit amet, consectetur adipiscing elit. Curabitur tempus tincidunt justo eget eleifend. Maecenas nisl nulla, lobortis quis semper quis, scelerisque nec purus. Mauris laoreet ac tellus molestie varius. Maecenas scelerisque, nibh ac pellentesque luctus, quam nibh congue tortor, vitae placerat dui lorem eget erat. Proin non porta odio, ac porta nisl. Donec vitae commodo sem. Fusce sit amet urna nec quam mattis tristique. Nam non neque a nunc rhoncus ullamcorper eu in ex. Proin et orci lacus. Cras rutrum lorem erat, nec ultrices urna efficitur sed. Praesent auctor non lorem at bibendum.
-				Proin tincidunt mauris a velit pulvinar posuere. Suspendisse posuere ex sed enim sollicitudin, sit amet ullamcorper nunc mollis. Quisque sagittis aliquet ipsum vitae facilisis. Etiam id ligula sed sem viverra cursus. Aenean suscipit molestie posuere. Duis id ante ut nibh suscipit gravida. Cras egestas risus ac tellus varius, et rhoncus enim porttitor.
-			"""));
+			document.add(new Paragraph(
+      """
+	libro/book not avalaible
+	Lorem ipsum	dolor sit amet, consectetur adipiscing elit.
+	Curabitur tempus tincidunt justo eget eleifend. Maecenas nisl nulla, lobortis quis semper quis, scelerisque nec purus. Mauris laoreet ac tellus molestie varius. Maecenas scelerisque, nibh ac pellentesque luctus, quam nibh congue tortor, vitae placerat dui lorem eget erat. Proin non porta odio, ac porta nisl. Donec vitae commodo sem. Fusce sit amet urna nec quam mattis tristique. Nam non neque a nunc rhoncus ullamcorper eu in ex. Proin et orci lacus. Cras rutrum lorem erat, nec ultrices urna efficitur sed. Praesent auctor non lorem at bibendum.
+	Proin tincidunt mauris a velit pulvinar posuere. Suspendisse posuere ex sed enim sollicitudin, sit amet ullamcorper nunc mollis. Quisque sagittis aliquet ipsum vitae facilisis. Etiam id ligula sed sem viverra cursus. Aenean suscipit molestie posuere. Duis id ante ut nibh suscipit gravida. Cras egestas risus ac tellus varius, et rhoncus enim porttitor.
+	"""));
 			document.close();
 			writer.close();
 
