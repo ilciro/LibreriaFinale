@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
-import laptop.controller.ControllerSystemState;
 import laptop.model.Pagamento;
 import laptop. model.User;
 import laptop.utilities.ConnToDb;
