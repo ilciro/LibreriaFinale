@@ -16,111 +16,95 @@ import javafx.collections.ObservableList;
 <span class="fc" id="L16">public class PagamentoDao {</span>
 	private String query;
 	private static final String ECCEZIONE=&quot;eccezione ottenuta:&quot;;
-
-	
-
-	
-	
-
-		
-
 	public void inserisciPagamento(Pagamento p) throws SQLException {
-		
 
-		
-		
+<span class="fc" id="L21">		query=&quot;INSERT INTO PAGAMENTO(metodo,esito,nomeUtente,spesaTotale,eMail,tipoAcquisto,idProdotto) values (?,?,?,?,?,?,?)&quot;;</span>
 
-<span class="fc" id="L33">		query=&quot;INSERT INTO PAGAMENTO(metodo,esito,nomeUtente,spesaTotale,eMail,tipoAcquisto,idProdotto) values (?,?,?,?,?,?,?)&quot;;</span>
-
-<span class="fc" id="L35">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="fc" id="L36">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="fc" id="L23">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L24">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
 			
 			
-<span class="fc" id="L40">			prepQ.setString(1,p.getMetodo()); // </span>
-<span class="fc" id="L41">			prepQ.setInt(2,p.getEsito());</span>
-<span class="fc" id="L42">			prepQ.setString(3,p.getNomeUtente());</span>
-<span class="fc" id="L43">			prepQ.setFloat(4,p.getAmmontare());</span>
-<span class="fc" id="L44">			prepQ.setString(5, User.getInstance().getEmail());</span>
-<span class="fc" id="L45">			prepQ.setString(6,p.getTipo());</span>
-<span class="fc" id="L46">			prepQ.setInt(7, p.getIdOggetto());</span>
-<span class="fc" id="L47">			prepQ.executeUpdate();</span>
-<span class="nc" id="L48">		}catch(SQLException e)</span>
+<span class="fc" id="L28">			prepQ.setString(1,p.getMetodo()); // </span>
+<span class="fc" id="L29">			prepQ.setInt(2,p.getEsito());</span>
+<span class="fc" id="L30">			prepQ.setString(3,p.getNomeUtente());</span>
+<span class="fc" id="L31">			prepQ.setFloat(4,p.getAmmontare());</span>
+<span class="fc" id="L32">			prepQ.setString(5, User.getInstance().getEmail());</span>
+<span class="fc" id="L33">			prepQ.setString(6,p.getTipo());</span>
+<span class="fc" id="L34">			prepQ.setInt(7, p.getIdOggetto());</span>
+<span class="fc" id="L35">			prepQ.executeUpdate();</span>
+<span class="nc" id="L36">		}catch(SQLException e)</span>
 		{
-<span class="nc" id="L50">						java.util.logging.Logger.getLogger(&quot;insert pagamento&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="fc" id="L51">		}</span>
+<span class="nc" id="L38">						java.util.logging.Logger.getLogger(&quot;insert pagamento&quot;).log(Level.INFO, ECCEZIONE, e);</span>
+<span class="fc" id="L39">		}</span>
 		
 		
-<span class="fc" id="L54">		}</span>
+<span class="fc" id="L42">		}</span>
 		
 	
 	public ObservableList&lt;Pagamento&gt; getPagamenti() throws SQLException  {
 
-<span class="fc" id="L59">			ObservableList&lt;Pagamento&gt; catalogo=FXCollections.observableArrayList();</span>
-<span class="fc" id="L60">			query=&quot;SELECT idPagamento,metodo,esito,nomeUtente,spesaTotale,tipoAcquisto,idProdotto from PAGAMENTO where eMail=?&quot;;</span>
-<span class="fc" id="L61">			try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="fc" id="L62">					PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="fc" id="L47">			ObservableList&lt;Pagamento&gt; catalogo=FXCollections.observableArrayList();</span>
+<span class="fc" id="L48">			query=&quot;SELECT idPagamento,metodo,esito,nomeUtente,spesaTotale,tipoAcquisto,idProdotto from PAGAMENTO where eMail=?&quot;;</span>
+<span class="fc" id="L49">			try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L50">					PreparedStatement prepQ=conn.prepareStatement(query))</span>
 			{
-<span class="fc" id="L64">				prepQ.setString(1, User.getInstance().getEmail());</span>
-<span class="fc" id="L65">				ResultSet rs=prepQ.executeQuery();</span>
-<span class="fc bfc" id="L66" title="All 2 branches covered.">			while(rs.next())</span>
+<span class="fc" id="L52">				prepQ.setString(1, User.getInstance().getEmail());</span>
+<span class="fc" id="L53">				ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">			while(rs.next())</span>
 			{
 
 
-<span class="fc" id="L70">				catalogo.add(new Pagamento (rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getFloat(5),rs.getString(6)));</span>
+<span class="fc" id="L58">				catalogo.add(new Pagamento (rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getFloat(5),rs.getString(6)));</span>
 
 			}
-<span class="nc" id="L73">			}catch(SQLException e)</span>
+<span class="nc" id="L61">			}catch(SQLException e)</span>
 			{
-<span class="nc" id="L75">							java.util.logging.Logger.getLogger(&quot;lista pagamenti&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="fc" id="L76">			}</span>
+<span class="nc" id="L63">							java.util.logging.Logger.getLogger(&quot;lista pagamenti&quot;).log(Level.INFO, ECCEZIONE, e);</span>
+<span class="fc" id="L64">			}</span>
 		
-<span class="fc" id="L78">		return catalogo;</span>
+<span class="fc" id="L66">		return catalogo;</span>
 	}
-	
-	
 
-	
-		
 	public int retUltimoOrdinePag() throws SQLException 
 	{
-<span class="fc" id="L87">		int id=0;</span>
-<span class="fc" id="L88">		query=&quot;select count(*) as massimoP from PAGAMENTO&quot;;</span>
-<span class="fc" id="L89">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="fc" id="L90">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="fc" id="L71">		int id=0;</span>
+<span class="fc" id="L72">		query=&quot;select count(*) as massimoP from PAGAMENTO&quot;;</span>
+<span class="fc" id="L73">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L74">				PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
-<span class="fc" id="L92">			ResultSet rs=prepQ.executeQuery();</span>
-<span class="fc bfc" id="L93" title="All 2 branches covered.">			while ( rs.next() ) {</span>
-<span class="fc" id="L94">				id=rs.getInt(&quot;massimoP&quot;);</span>
+<span class="fc" id="L76">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L77" title="All 2 branches covered.">			while ( rs.next() ) {</span>
+<span class="fc" id="L78">				id=rs.getInt(&quot;massimoP&quot;);</span>
 
 			}
-<span class="nc" id="L97">		}catch(SQLException e)</span>
+<span class="nc" id="L81">		}catch(SQLException e)</span>
 		{
-<span class="nc" id="L99">						java.util.logging.Logger.getLogger(&quot;ultimo ordine&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="fc" id="L100">		}</span>
+<span class="nc" id="L83">						java.util.logging.Logger.getLogger(&quot;ultimo ordine&quot;).log(Level.INFO, ECCEZIONE, e);</span>
+<span class="fc" id="L84">		}</span>
 				
-<span class="fc" id="L102">		return id;</span>
+<span class="fc" id="L86">		return id;</span>
 		
 	}
 
 	public boolean annullaOrdinePag(int idC) throws SQLException
 	{
-<span class="fc" id="L108">		boolean state=false;</span>
-<span class="fc" id="L109">		int row=0;</span>
-<span class="fc" id="L110">		String query2=&quot;delete from PAGAMENTO where idPagamento=?&quot;;</span>
-<span class="fc" id="L111">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="fc" id="L112">				PreparedStatement prepQ=conn.prepareStatement(query2))</span>
+<span class="fc" id="L92">		boolean state=false;</span>
+<span class="fc" id="L93">		int row=0;</span>
+<span class="fc" id="L94">		String query2=&quot;delete from PAGAMENTO where idPagamento=?&quot;;</span>
+<span class="fc" id="L95">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L96">				PreparedStatement prepQ=conn.prepareStatement(query2))</span>
 		{
-<span class="fc" id="L114">			prepQ.setInt(1,idC);</span>
-<span class="fc" id="L115">			row=prepQ.executeUpdate();</span>
-<span class="pc bpc" id="L116" title="1 of 2 branches missed.">			if(row==1)</span>
-<span class="fc" id="L117">				state=true;</span>
-<span class="nc" id="L118">		}catch(SQLException e)</span>
+<span class="fc" id="L98">			prepQ.setInt(1,idC);</span>
+<span class="fc" id="L99">			row=prepQ.executeUpdate();</span>
+<span class="pc bpc" id="L100" title="1 of 2 branches missed.">			if(row==1)</span>
+<span class="fc" id="L101">				state=true;</span>
+<span class="nc" id="L102">		}catch(SQLException e)</span>
 		{
-<span class="nc" id="L120">						java.util.logging.Logger.getLogger(&quot;annulla ordine&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="fc" id="L121">		}</span>
+<span class="nc" id="L104">						java.util.logging.Logger.getLogger(&quot;annulla ordine&quot;).log(Level.INFO, ECCEZIONE, e);</span>
+<span class="fc" id="L105">		}</span>
 			
-<span class="fc" id="L123">			return state;</span>
+<span class="fc" id="L107">			return state;</span>
 
 		}
 		

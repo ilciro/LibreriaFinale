@@ -310,54 +310,52 @@ public class 	RivistaDao {
 <span class="fc" id="L310">		Files.copy(path, path1, StandardCopyOption.REPLACE_EXISTING);</span>
 <span class="fc" id="L311">	}</span>
 
-	public String generaReportWebRivista() throws SQLException {
-<span class="nc" id="L314">		return gRC.getReportView(RIVISTA);</span>
-	}
+
 	public void incrementaDisponibilita(Rivista r)
 	{
-<span class="fc" id="L318">		int d=vis.getQuantita();</span>
-<span class="fc" id="L319">		int i=r.getCopieRim();</span>
+<span class="fc" id="L316">		int d=vis.getQuantita();</span>
+<span class="fc" id="L317">		int i=r.getCopieRim();</span>
 
-<span class="fc" id="L321">		int rim=i+d;</span>
-<span class="fc" id="L322">		query=&quot;update RIVISTA set copieRimanenti= ? where idRivista=?&quot;;</span>
+<span class="fc" id="L319">		int rim=i+d;</span>
+<span class="fc" id="L320">		query=&quot;update RIVISTA set copieRimanenti= ? where idRivista=?&quot;;</span>
 
 
 
-<span class="fc" id="L326">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="fc" id="L327">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="fc" id="L324">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L325">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
-<span class="fc" id="L329">			prepQ.setInt(1, rim);</span>
-<span class="fc" id="L330">			prepQ.setInt(2, r.getId());</span>
-<span class="fc" id="L331">			prepQ.executeUpdate();</span>
-<span class="nc" id="L332">		}catch(SQLException e)</span>
+<span class="fc" id="L327">			prepQ.setInt(1, rim);</span>
+<span class="fc" id="L328">			prepQ.setInt(2, r.getId());</span>
+<span class="fc" id="L329">			prepQ.executeUpdate();</span>
+<span class="nc" id="L330">		}catch(SQLException e)</span>
 		{
-<span class="nc" id="L334">			java.util.logging.Logger.getLogger(&quot;Test Eccezione incrementa disp&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="fc" id="L335">		}</span>
+<span class="nc" id="L332">			java.util.logging.Logger.getLogger(&quot;Test Eccezione incrementa disp&quot;).log(Level.INFO, ECCEZIONE, e);</span>
+<span class="fc" id="L333">		}</span>
 
 
 
-<span class="fc" id="L339">	}</span>
+<span class="fc" id="L337">	}</span>
 
 	public void aggiornaData(Rivista r, Date sqlDate) throws SQLException {
 		int row;
-<span class="nc" id="L343">		query=&quot;update RIVISTA set dataPubblicazione=? where idRivista=? or idRivista=?&quot;;</span>
-<span class="nc" id="L344">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L345">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="nc" id="L341">		query=&quot;update RIVISTA set dataPubblicazione=? where idRivista=? or idRivista=?&quot;;</span>
+<span class="nc" id="L342">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="nc" id="L343">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
-<span class="nc" id="L347">			prepQ.setDate(1, sqlDate);</span>
-<span class="nc" id="L348">			prepQ.setInt(2, r.getId());</span>
-<span class="nc" id="L349">			prepQ.setInt(3, vis.getId());</span>
-<span class="nc" id="L350">			row=prepQ.executeUpdate();</span>
+<span class="nc" id="L345">			prepQ.setDate(1, sqlDate);</span>
+<span class="nc" id="L346">			prepQ.setInt(2, r.getId());</span>
+<span class="nc" id="L347">			prepQ.setInt(3, vis.getId());</span>
+<span class="nc" id="L348">			row=prepQ.executeUpdate();</span>
 
 		}
 
-<span class="nc" id="L354">		java.util.logging.Logger.getLogger(&quot;aggiorna data&quot;).log(Level.INFO, &quot;libri aggiornati {0}.&quot;,row);</span>
+<span class="nc" id="L352">		java.util.logging.Logger.getLogger(&quot;aggiorna data&quot;).log(Level.INFO, &quot;libri aggiornati {0}.&quot;,row);</span>
 
-<span class="nc" id="L356">	}</span>
+<span class="nc" id="L354">	}</span>
 
 
     public int getIdMax() {
-<span class="fc" id="L360">		return gRC.getIdMax(RIVISTA);</span>
+<span class="fc" id="L358">		return gRC.getIdMax(RIVISTA);</span>
     }
 }
 

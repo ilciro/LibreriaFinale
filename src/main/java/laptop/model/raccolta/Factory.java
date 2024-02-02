@@ -14,7 +14,6 @@ public class Factory {
 	private final Libro l;
 	private final Giornale g;
 	private final Rivista r;
-	private String tipologiaO;
 	private static final String LIBRO = "libro";
 	private static final String GIORNALE = "giornale";
 	private static final String RIVISTA = "rivista";
@@ -157,12 +156,6 @@ public class Factory {
 		g=new Giornale();
 		r=new Rivista();
 	}
-	public String getTipologiaO() {
-		return tipologiaO;
-	}
-	public void setTipologiaO(String tipologiaO) {
-		this.tipologiaO = tipologiaO;
-	}
-	
+
 }
 

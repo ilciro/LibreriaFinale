@@ -292,57 +292,55 @@ public class GiornaleDao {
 <span class="fc" id="L292">		Files.copy(path, path1, StandardCopyOption.REPLACE_EXISTING);</span>
 <span class="fc" id="L293">	}</span>
 
-	public String generaReportWebGiornale() throws SQLException {
-<span class="nc" id="L296">		return gRC.getReportView(GIORNALE);</span>
-	}
+
 
 
 
 	public void incrementaDisponibilita(Giornale g)
 	{
-<span class="fc" id="L303">		int d=vis.getQuantita();</span>
-<span class="fc" id="L304">		int i=g.getCopieRimanenti();</span>
+<span class="fc" id="L301">		int d=vis.getQuantita();</span>
+<span class="fc" id="L302">		int i=g.getCopieRimanenti();</span>
 
-<span class="fc" id="L306">		int rim=i+d;</span>
-<span class="fc" id="L307">		query=&quot;update GIORNALE set copieRimanenti= ? where idGiornale=?&quot;;</span>
+<span class="fc" id="L304">		int rim=i+d;</span>
+<span class="fc" id="L305">		query=&quot;update GIORNALE set copieRimanenti= ? where idGiornale=?&quot;;</span>
 
 
 
-<span class="fc" id="L311">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="fc" id="L312">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="fc" id="L309">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="fc" id="L310">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
-<span class="fc" id="L314">			prepQ.setInt(1, rim);</span>
-<span class="fc" id="L315">			prepQ.setInt(2, g.getId());</span>
-<span class="fc" id="L316">			prepQ.executeUpdate();</span>
-<span class="nc" id="L317">		}catch(SQLException e)</span>
+<span class="fc" id="L312">			prepQ.setInt(1, rim);</span>
+<span class="fc" id="L313">			prepQ.setInt(2, g.getId());</span>
+<span class="fc" id="L314">			prepQ.executeUpdate();</span>
+<span class="nc" id="L315">		}catch(SQLException e)</span>
 		{
-<span class="nc" id="L319">			java.util.logging.Logger.getLogger(&quot;Test incrementa disp&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="fc" id="L320">		}</span>
+<span class="nc" id="L317">			java.util.logging.Logger.getLogger(&quot;Test incrementa disp&quot;).log(Level.INFO, ECCEZIONE, e);</span>
+<span class="fc" id="L318">		}</span>
 
 
 
-<span class="fc" id="L324">	}</span>
+<span class="fc" id="L322">	}</span>
 
 	public void aggiornaData(Giornale g, Date sqlDate) throws SQLException {
 		int row;
-<span class="nc" id="L328">		query=&quot;update GIORNALE set dataPubblicazione=? where idGiornale=? or idGiornale=?&quot;;</span>
-<span class="nc" id="L329">		try(Connection conn=ConnToDb.connectionToDB();</span>
-<span class="nc" id="L330">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
+<span class="nc" id="L326">		query=&quot;update GIORNALE set dataPubblicazione=? where idGiornale=? or idGiornale=?&quot;;</span>
+<span class="nc" id="L327">		try(Connection conn=ConnToDb.connectionToDB();</span>
+<span class="nc" id="L328">			PreparedStatement prepQ=conn.prepareStatement(query))</span>
 		{
-<span class="nc" id="L332">			prepQ.setDate(1, sqlDate);</span>
-<span class="nc" id="L333">			prepQ.setInt(2, g.getId());</span>
-<span class="nc" id="L334">			prepQ.setInt(3, vis.getId());</span>
-<span class="nc" id="L335">			row=prepQ.executeUpdate();</span>
+<span class="nc" id="L330">			prepQ.setDate(1, sqlDate);</span>
+<span class="nc" id="L331">			prepQ.setInt(2, g.getId());</span>
+<span class="nc" id="L332">			prepQ.setInt(3, vis.getId());</span>
+<span class="nc" id="L333">			row=prepQ.executeUpdate();</span>
 
 		}
 
-<span class="nc" id="L339">		java.util.logging.Logger.getLogger(&quot;aggiorna data&quot;).log(Level.INFO, &quot;libri aggiornati {0}.&quot;,row);</span>
+<span class="nc" id="L337">		java.util.logging.Logger.getLogger(&quot;aggiorna data&quot;).log(Level.INFO, &quot;libri aggiornati {0}.&quot;,row);</span>
 
-<span class="nc" id="L341">	}</span>
+<span class="nc" id="L339">	}</span>
 
 
 	public int getIdMax() {
-<span class="fc" id="L345">		return gRC.getIdMax(GIORNALE);</span>
+<span class="fc" id="L343">		return gRC.getIdMax(GIORNALE);</span>
 	}
 }
 

@@ -323,52 +323,50 @@ public class LibroDao implements DaoInterface{
 <span class="fc" id="L323">		Files.copy(path, path1, StandardCopyOption.REPLACE_EXISTING);</span>
 <span class="fc" id="L324">	}</span>
 
-	public String generaReportWebLibro() throws SQLException {
-<span class="nc" id="L327">		return gRC.getReportView(LIBRO);</span>
-	}
+
 
 
 
 
 	public void incrementaDisponibilita(Libro l){
-<span class="fc" id="L334">			int d = vis.getQuantita();</span>
-<span class="fc" id="L335">			int i = l.getNrCopie();</span>
+<span class="nc" id="L332">			int d = vis.getQuantita();</span>
+<span class="nc" id="L333">			int i = l.getNrCopie();</span>
 
-<span class="fc" id="L337">			int rim = i + d;</span>
-<span class="fc" id="L338">			query = &quot;update LIBRO set copieRimanenti= ? where codIsbn=? or idLibro=?&quot;;</span>
+<span class="nc" id="L335">			int rim = i + d;</span>
+<span class="nc" id="L336">			query = &quot;update LIBRO set copieRimanenti= ? where codIsbn=? or idLibro=?&quot;;</span>
 
 
-<span class="fc" id="L341">			try (Connection conn = ConnToDb.connectionToDB();</span>
-<span class="fc" id="L342">				 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
-<span class="fc" id="L343">				prepQ.setInt(1, rim);</span>
-<span class="fc" id="L344">				prepQ.setString(2, l.getCodIsbn());</span>
-<span class="fc" id="L345">				prepQ.setInt(3, l.getId());</span>
-<span class="fc" id="L346">				prepQ.executeUpdate();</span>
-<span class="nc" id="L347">			} catch (SQLException e) {</span>
-<span class="nc" id="L348">				java.util.logging.Logger.getLogger(&quot;Test incremeta disp&quot;).log(Level.INFO, ECCEZIONE, e);</span>
-<span class="fc" id="L349">			}</span>
-<span class="fc" id="L350">		}</span>
+<span class="nc" id="L339">			try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="nc" id="L340">				 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
+<span class="nc" id="L341">				prepQ.setInt(1, rim);</span>
+<span class="nc" id="L342">				prepQ.setString(2, l.getCodIsbn());</span>
+<span class="nc" id="L343">				prepQ.setInt(3, l.getId());</span>
+<span class="nc" id="L344">				prepQ.executeUpdate();</span>
+<span class="nc" id="L345">			} catch (SQLException e) {</span>
+<span class="nc" id="L346">				java.util.logging.Logger.getLogger(&quot;Test incremeta disp&quot;).log(Level.INFO, ECCEZIONE, e);</span>
+<span class="nc" id="L347">			}</span>
+<span class="nc" id="L348">		}</span>
 
 
 
 	public void aggiornaData(Libro l, Date sqlDate) throws SQLException {
 		int row;
-<span class="nc" id="L356">		query = &quot;update LIBRO set dataPubblicazione=? where idLibro=? or idLibro=?&quot;;</span>
-<span class="nc" id="L357">		try (Connection conn = ConnToDb.connectionToDB();</span>
-<span class="nc" id="L358">			 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
-<span class="nc" id="L359">			prepQ.setDate(1, sqlDate);</span>
-<span class="nc" id="L360">			prepQ.setInt(2, l.getId());</span>
-<span class="nc" id="L361">			prepQ.setInt(3, vis.getId());</span>
-<span class="nc" id="L362">			row = prepQ.executeUpdate();</span>
+<span class="nc" id="L354">		query = &quot;update LIBRO set dataPubblicazione=? where idLibro=? or idLibro=?&quot;;</span>
+<span class="nc" id="L355">		try (Connection conn = ConnToDb.connectionToDB();</span>
+<span class="nc" id="L356">			 PreparedStatement prepQ = conn.prepareStatement(query)) {</span>
+<span class="nc" id="L357">			prepQ.setDate(1, sqlDate);</span>
+<span class="nc" id="L358">			prepQ.setInt(2, l.getId());</span>
+<span class="nc" id="L359">			prepQ.setInt(3, vis.getId());</span>
+<span class="nc" id="L360">			row = prepQ.executeUpdate();</span>
 
 		}
 
-<span class="nc" id="L366">		java.util.logging.Logger.getLogger(&quot;aggiorna data&quot;).log(Level.INFO, &quot;libri aggiornati {0}.&quot;, row);</span>
+<span class="nc" id="L364">		java.util.logging.Logger.getLogger(&quot;aggiorna data&quot;).log(Level.INFO, &quot;libri aggiornati {0}.&quot;, row);</span>
 
-<span class="nc" id="L368">	}</span>
+<span class="nc" id="L366">	}</span>
 	public int getIdMax()
 	{
-<span class="fc" id="L371">		return gRC.getIdMax(LIBRO);</span>
+<span class="fc" id="L369">		return gRC.getIdMax(LIBRO);</span>
 	}
 
 
