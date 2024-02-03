@@ -251,8 +251,7 @@ public class Libro implements Raccolta {
 			document.open();
 			document.addTitle("Libro ");
 			document.add(new Paragraph("""
-                    libro/book not avalaible
-                    Lorem ipsum	dolor sit amet, consectetur adipiscing elit.
+                    libro/book not avalaible.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Curabitur tempus tincidunt justo eget eleifend.
                     Maecenas nisl nulla, lobortis quis semper quis, scelerisque nec purus.
                     Mauris laoreet ac tellus molestie varius. Maecenas scelerisque, nibh ac pellentesque luctus, quam nibh congue tortor, vitae placerat dui lorem eget erat.
