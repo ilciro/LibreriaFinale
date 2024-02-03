@@ -11,21 +11,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import laptop.controller.ControllerReportPage;
-import laptop.database.CsvDao;
-
-import laptop.database.LibroDao;
-import laptop.database.UsersDao;
-import laptop.model.raccolta.Giornale;
-import laptop.model.raccolta.Libro;
-import laptop.model.raccolta.Rivista;
 import laptop.utilities.ConnToDb;
 
 
 
 public class Main  extends Application {
-    public static final String ANSI_GREEN = "\u001B[32m";
-	private static CsvDao csvDao ;
+
 
     	// insert a comment
 	

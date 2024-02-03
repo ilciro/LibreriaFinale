@@ -45,11 +45,12 @@ public class BoundaryHomePage {
 
 	protected Scene scene;
 	private static final String compravendita="compravendita.fxml";
+	private final ControllerSystemState vis=ControllerSystemState.getInstance();
 
 	@FXML
 	private void getListaGiornali() throws IOException {
-		ControllerSystemState.getInstance().setIsSearch(false);
-		ControllerSystemState.getInstance().setTypeAsDaily();
+		vis.setIsSearch(false);
+		vis.setTypeAsDaily();
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonL.getScene().getWindow();
@@ -62,8 +63,8 @@ public class BoundaryHomePage {
 
 	@FXML
 	private void getListaRiviste() throws IOException {
-		ControllerSystemState.getInstance().setIsSearch(false);
-		ControllerSystemState.getInstance().setTypeAsMagazine();
+		vis.setIsSearch(false);
+		vis.setTypeAsMagazine();
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonL.getScene().getWindow();
@@ -76,8 +77,8 @@ public class BoundaryHomePage {
 
 	@FXML
 	private void getListaLibri() throws IOException {
-		ControllerSystemState.getInstance().setIsSearch(false);
-		ControllerSystemState.getInstance().setTypeAsBook();
+		vis.setIsSearch(false);
+		vis.setTypeAsBook();
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonL.getScene().getWindow();
@@ -104,7 +105,7 @@ public class BoundaryHomePage {
 	
 	@FXML
 	private void cerca() throws IOException {
-		ControllerSystemState.getInstance().setIsSearch(true);
+		vis.setIsSearch(true);
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonC.getScene().getWindow();

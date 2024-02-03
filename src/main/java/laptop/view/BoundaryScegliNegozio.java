@@ -53,6 +53,7 @@ public class BoundaryScegliNegozio implements Initializable {
 	private static final  String WARNINGCONTENTTEXT = "Torna indietro e seleziona un'altro negozio fra quelli che ti vengono mostrati ! ";
 	private static final String homePage = "homePage.fxml";
 	private static final String homePageA = "homePageAfterLogin.fxml" ;
+	private final ControllerSystemState vis=ControllerSystemState.getInstance();
 	
 	protected Boolean statusA = false ;
 	protected Boolean statusB = false ;
@@ -145,7 +146,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		        if ((result.isPresent()) && (result.get() == ButtonType.OK))
 		        	
 		        {
-		        	if(ControllerSystemState.getInstance().getIsLogged())	
+		        	if(vis.getIsLogged())
 					{
 		            	Stage stage;
 		                Parent root;
@@ -202,7 +203,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		        if ((result.isPresent()) && (result.get() == ButtonType.OK))
 		        	
 		        {
-		        	if(ControllerSystemState.getInstance().getIsLogged())	
+		        	if(vis.getIsLogged())
 					{
 		            	Stage stage;
 		                Parent root;
@@ -258,7 +259,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		        if ((result.isPresent()) && (result.get() == ButtonType.OK))
 		        	
 		        {
-		        	if(ControllerSystemState.getInstance().getIsLogged())	
+		        	if(vis.getIsLogged())
 					{
 		            	Stage stage;
 		                Parent root;
@@ -315,7 +316,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		        if ((result.isPresent()) && (result.get() == ButtonType.OK))
 		        	
 		        {
-		        	if(ControllerSystemState.getInstance().getIsLogged())	
+		        	if(vis.getIsLogged())
 					{
 		            	Stage stage;
 		                Parent root;
