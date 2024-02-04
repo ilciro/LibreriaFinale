@@ -62,8 +62,6 @@ e
 [
 +src/main/java/laptop/database/LibroDao.java,d\5\d5c39a1a4747047d557c69424c3bae6be0388bcc
 Å
-Q.idea/sonarlint/securityhotspotstore/c/6/c62a87d821793ae6fe165f58d544a04c81b4eae0,e\6\e6c7ed850322c4a158d7a31d0263e14c3b0c1be8
-Å
 Q.idea/sonarlint/securityhotspotstore/4/9/495f95506fad3c278a2483c662649e11f2353703,2\5\25013b95e410bf6ff5738d2f4b9c8e5e3dd4646a
 Å
 Q.idea/sonarlint/securityhotspotstore/1/c/1cbb6bcea830dcb82b8fd1afe84c6df9c5aebbf5,6\1\61f9e92ad425ed70961fe22889e19607b5ae1b53
@@ -98,13 +96,9 @@ G.idea/sonarlint/issuestore/6/e/6ecd6000a7b6f4a2884412ff19f74193ed089648,3\8\38
 w
 G.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0,f\0\f0e0f9cec86fe4b939ae22be5264c758801eb28f
 w
-G.idea/sonarlint/issuestore/1/4/14785c3a86712ced8f37cf4eb22549961fcc139a,e\1\e178facce89629464519757cc7d4a6e43f12f724
-w
 G.idea/sonarlint/issuestore/1/0/10a03f31c4dce92cb371e761ce9429428bb6c176,0\3\030ed2ccb712537825891dfda283154162e458a8
 w
 G.idea/sonarlint/issuestore/0/7/07403b9f4b19a649a851a96ae0736c2d86939af4,c\0\c0c551eefe35c24b57c08239431d8fbd06e87371
-w
-G.idea/sonarlint/issuestore/c/6/c62a87d821793ae6fe165f58d544a04c81b4eae0,4\f\4fa4a055d1fd7eb76d1c5cbe915cd6ac21ddcc16
 w
 G.idea/sonarlint/issuestore/e/6/e6f47614f459e0926714d0f81f2bc0f376b58272,a\c\ace7db91fd043f0dd4a22e914c9067b497023724
 w
@@ -122,8 +116,6 @@ G.idea/sonarlint/issuestore/b/d/bda73dcaf0ecd9e12ae8a67e645ca0615dd6b427,2\0\20
 w
 G.idea/sonarlint/issuestore/8/0/80c73f8419c788b4cd25fe00e62d869c26338b85,e\9\e96bd3c8d8b6f34404a3b7c74d393cb2cd40f8ea
 w
-G.idea/sonarlint/issuestore/8/5/856281adddf1ac1389fc9d480dcd5db6995659bd,d\6\d62c2bd45b0def63b72c6b244ddf2394fc67ffb5
-w
 G.idea/sonarlint/issuestore/4/9/495f95506fad3c278a2483c662649e11f2353703,1\1\116a34a6df36bf5576213ad3ecc6027678fd2aea
 w
 G.idea/sonarlint/issuestore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e,a\e\ae9ddf453f55affea2d6b9e3973cac1eb2efb4e1
@@ -138,8 +130,6 @@ Q.idea/sonarlint/securityhotspotstore/d/d/dd7b3350c29c49497756c7f32c69a3bed18b1c
 Å
 Q.idea/sonarlint/securityhotspotstore/9/e/9eeeca0e7d05a191bf5a492fdce26631a51c6ad4,7\b\7b2fc945c9faeb93190d4c711d6c6578abcb3f79
 Å
-Q.idea/sonarlint/securityhotspotstore/1/4/14785c3a86712ced8f37cf4eb22549961fcc139a,c\8\c8630014e004b46ec5d68b2422b89cc6cb22f6dc
-Å
 Q.idea/sonarlint/securityhotspotstore/d/0/d0ed64aee65e4707ad959511bf3ac96da9a5057c,1\2\128e4d85c91b0ce1e3a79417e78e430cd8f790d0
 Å
 Q.idea/sonarlint/securityhotspotstore/6/e/6ecd6000a7b6f4a2884412ff19f74193ed089648,4\2\42f7c266cbd4ce558ab6bb86ba595325ed88080c
@@ -151,8 +141,6 @@ Q.idea/sonarlint/securityhotspotstore/4/f/4fdc4cd1be6592059cbf0a76af0d8212dd9f92
 Q.idea/sonarlint/securityhotspotstore/1/0/10a03f31c4dce92cb371e761ce9429428bb6c176,6\4\64876b8bea138a82803d0008198401e04ab468aa
 Å
 Q.idea/sonarlint/securityhotspotstore/e/6/e6f47614f459e0926714d0f81f2bc0f376b58272,1\a\1a6d41f8b703ecc583ef94f27c82629e83394990
-Å
-Q.idea/sonarlint/securityhotspotstore/8/5/856281adddf1ac1389fc9d480dcd5db6995659bd,7\d\7d602fbdf0b8d2d89441cc847c9ad6dda08d8c08
 _
 /src/main/java/laptop/view/BoundaryAcquista.java,5\b\5be008db18b8dc7eb699352b3f9c3b1df087a15c
 m
