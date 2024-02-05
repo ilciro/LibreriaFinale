@@ -1,0 +1,17 @@
+
+[	java:S112p"FDefine and throw a dedicated exception instead of using a generic one.(î¨ñÎ
+\	java:S112‚"FDefine and throw a dedicated exception instead of using a generic one.(Øı¬ş
+a	java:S112¡"FDefine and throw a dedicated exception instead of using a generic one.(»Éßíûÿÿÿÿ
+\	java:S112Ò"FDefine and throw a dedicated exception instead of using a generic one.(ÓÿÖ
+b
+java:S2095Q"GUse try-with-resources or close this "CSVWriter" in a "finally" clause.(Ç—Ôóøÿÿÿÿ
+c
+java:S2095Ô"GUse try-with-resources or close this "CSVReader" in a "finally" clause.(–©Ûşÿÿÿÿÿ
+]
+java:S2095q"GUse try-with-resources or close this "CSVWriter" in a "finally" clause.(¿Éş
+c
+java:S2095„"GUse try-with-resources or close this "CSVReader" in a "finally" clause.(–©Ûşÿÿÿÿÿ
+c
+java:S2095±"GUse try-with-resources or close this "CSVWriter" in a "finally" clause.(·Æì­ûÿÿÿÿ
+c
+java:S2095®"GUse try-with-resources or close this "CSVReader" in a "finally" clause.(–©Ûşÿÿÿÿÿ

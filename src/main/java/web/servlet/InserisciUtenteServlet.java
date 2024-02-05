@@ -19,8 +19,8 @@ import java.util.logging.Level;
 
 @WebServlet("/InserisciUtenteServlet")
 public class InserisciUtenteServlet extends HttpServlet {
-    private final UserBean uB=UserBean.getInstance();
-    private final User u=User.getInstance();
+    private static final UserBean uB=UserBean.getInstance();
+    private static final User u=User.getInstance();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String nome=req.getParameter("nomeU");

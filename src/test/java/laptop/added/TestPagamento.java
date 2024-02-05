@@ -8,7 +8,7 @@ import web.bean.PagamentoBean;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class TestPagamento {
+ class TestPagamento {
     private final Pagamento p=new Pagamento();
     private final PagamentoBean pB=new PagamentoBean();
 

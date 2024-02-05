@@ -5,6 +5,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 
 import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -127,8 +128,9 @@ public class BoundaryGestionePage implements Initializable {
         try {
             cGP=new ControllerGestionePage();
         } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+			java.util.logging.Logger.getLogger("Test initialize").log(Level.SEVERE, "eccezione ottenuta",e);
+
+		}
         header.setText(cGP.settaHeader(vis.getType()));
 		
 		titolo.setCellValueFactory(new PropertyValueFactory<>("titolo"));

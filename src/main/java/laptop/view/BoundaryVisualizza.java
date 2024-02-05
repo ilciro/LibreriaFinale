@@ -5,6 +5,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -182,7 +183,9 @@ public class BoundaryVisualizza implements Initializable {
                     labelPrezzo.setText(String.valueOf(cV.getDataL(i).getPrezzo()));
                     labelCopieRimanenti.setText(String.valueOf(cV.getDataL(i).getNrCopie()));
                 }
-            }
+				default -> java.util.logging.Logger.getLogger("Test initialize").log(Level.SEVERE, "type is wrong");
+
+			}
 		} catch (SQLException  e) {
 			e.getMessage();
 

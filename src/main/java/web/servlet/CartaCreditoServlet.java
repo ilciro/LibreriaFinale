@@ -33,15 +33,18 @@ public class CartaCreditoServlet extends HttpServlet {
      */
     @Serial
     private static final long serialVersionUID = 1L;
-    private final CartaCreditoBean ccB=new CartaCreditoBean();
-    private final CartaDiCredito cc=new CartaDiCredito();
+    private static final CartaCreditoBean ccB=new CartaCreditoBean();
+    private static final CartaDiCredito cc=new CartaDiCredito();
 
-    private final PagamentoBean pB=new PagamentoBean();
+    private static final PagamentoBean pB=new PagamentoBean();
 
-    private final PagamentoDao pD=new PagamentoDao();
+    private static final PagamentoDao pD=new PagamentoDao();
 
-    private final CartaCreditoDao cCD=new CartaCreditoDao();
-    private final SystemBean sB=SystemBean.getInstance();
+    private static final CartaCreditoDao cCD=new CartaCreditoDao();
+    private static final SystemBean sB=SystemBean.getInstance();
+    private static final String BEANS="beanS";
+    private static final String BEANCC="beanCC";
+    private static final String CARTACREDITO="/cartaCredito.jsp";
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String n=req.getParameter("nomeL");
@@ -88,15 +91,14 @@ public class CartaCreditoServlet extends HttpServlet {
                 pD.inserisciPagamento(p);
 
 
-                if(SystemBean.getInstance().isNegozioSelezionatoB())
+                if(sB.isNegozioSelezionatoB())
                 {
-                    req.setAttribute("beanS",sB);
+                    req.setAttribute(BEANS,sB);
                      view = getServletContext().getRequestDispatcher("/negozi.jsp");
                     view.forward(req,resp);
                 }
                 else {
-
-                    req.setAttribute("beanS",sB);
+                    req.setAttribute(BEANS,sB);
                      view = getServletContext().getRequestDispatcher("/download.jsp");
                     view.forward(req,resp);
                 }
@@ -104,7 +106,7 @@ public class CartaCreditoServlet extends HttpServlet {
             }
             if(registra!=null && registra.equals("registra e paga"))
             {
-                Date sqlDate = null;
+                Date sqlDate;
                 java.util.Date utilDate;
                 SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
 
@@ -162,9 +164,9 @@ public class CartaCreditoServlet extends HttpServlet {
                     view.forward(req,resp);
                 }
                 else {
-                    req.setAttribute("beanCC",ccB);
-                    req.setAttribute("beanS",sB);
-                    view= getServletContext().getRequestDispatcher("/cartaCredito.jsp");
+                    req.setAttribute(BEANCC,ccB);
+                    req.setAttribute(BEANS,sB);
+                    view= getServletContext().getRequestDispatcher(CARTACREDITO);
                     view.forward(req,resp);
                 }
 
@@ -184,10 +186,10 @@ public class CartaCreditoServlet extends HttpServlet {
                 ccB.setDataScadB(cCD.popolaDati(cc).getScadenza());
                 ccB.setCivB(cCD.popolaDati(cc).getCiv());
 
-                req.setAttribute("beanS",sB);
-                req.setAttribute("beanCC",ccB);
+                req.setAttribute(BEANS,sB);
+                req.setAttribute(BEANCC,ccB);
 
-                view= getServletContext().getRequestDispatcher("/cartaCredito.jsp");
+                view= getServletContext().getRequestDispatcher(CARTACREDITO);
                 view.forward(req,resp);
 
             }
@@ -198,9 +200,9 @@ public class CartaCreditoServlet extends HttpServlet {
                 cc.setNomeUser(ccB.getNomeB());
                 ccB.setListaCarteCreditoB(cCD.getCarteCredito(ccB.getNomeB()));
 
-                req.setAttribute("beanS",sB);
-                req.setAttribute("beanCC",ccB);
-                view= getServletContext().getRequestDispatcher("/cartaCredito.jsp");
+                req.setAttribute(BEANS,sB);
+                req.setAttribute(BEANCC,ccB);
+                view= getServletContext().getRequestDispatcher(CARTACREDITO);
                 view.forward(req,resp);
 
             }

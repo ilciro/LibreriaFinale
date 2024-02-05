@@ -13,7 +13,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-public class TestLoginReport {
+ class TestLoginReport {
     WebDriver driver;
     private final UserBean uB=UserBean.getInstance();
     private final TextAreaBean tAB=new TextAreaBean();

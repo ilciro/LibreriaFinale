@@ -1,18 +1,9 @@
 package web.servlet;
 
 import java.io.*;
-import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfCopy;
-import com.itextpdf.text.pdf.PdfReader;
-import com.itextpdf.text.pdf.PdfWriter;
-import jakarta.servlet.ServletContext;
 import web.bean.DownloadBean;
 
 import web.bean.SystemBean;
@@ -35,18 +26,18 @@ public class DownloadServlet extends HttpServlet{
      */
     @Serial
     private static final long serialVersionUID = 1L;
-    private final DownloadBean dB=new DownloadBean();
-    private final SystemBean sB=SystemBean.getInstance();
-    private final Libro l=new Libro();
-    private final PagamentoDao pD=new PagamentoDao();
-    private final LibroDao lD=new LibroDao();
-    private final ContrassegnoDao fDao=new ContrassegnoDao();
-    private final ResourceBundle rbTitoli=ResourceBundle.getBundle("configurations/titles");
+    private static final DownloadBean dB=new DownloadBean();
+    private static final SystemBean sB=SystemBean.getInstance();
+    private static final Libro l=new Libro();
+    private static final PagamentoDao pD=new PagamentoDao();
+    private  final LibroDao lD=new LibroDao();
+    private static final ContrassegnoDao fDao=new ContrassegnoDao();
+    private static final ResourceBundle rbTitoli=ResourceBundle.getBundle("configurations/titles");
 
 
 
 
-    private static final String index="/index.jsp";
+    private static final String INDEX="/index.jsp";
 
     public DownloadServlet() throws IOException {
     }
@@ -107,7 +98,7 @@ public class DownloadServlet extends HttpServlet{
 
 
                     req.setAttribute("bean", dB);
-                     view = getServletContext().getRequestDispatcher(index);
+                     view = getServletContext().getRequestDispatcher(INDEX);
                     view.forward(req, resp);
 
 
@@ -117,7 +108,7 @@ public class DownloadServlet extends HttpServlet{
                     l.setId(sB.getIdB());
                     lD.aggiornaDisponibilita(l);
                     req.setAttribute("bean", dB);
-                     view = getServletContext().getRequestDispatcher(index);
+                     view = getServletContext().getRequestDispatcher(INDEX);
                     view.forward(req, resp);
 
 
@@ -127,14 +118,14 @@ public class DownloadServlet extends HttpServlet{
             }
             if(hp!=null && hp.equals("home page"))
             {
-                view=getServletContext().getRequestDispatcher(index);
+                view=getServletContext().getRequestDispatcher(INDEX);
                 view.forward(req,resp);
             }
 
 
         } catch (SQLException  e) {
             req.setAttribute("bean", dB);
-            view = getServletContext().getRequestDispatcher(index);
+            view = getServletContext().getRequestDispatcher(INDEX);
             view.forward(req, resp);
 
 

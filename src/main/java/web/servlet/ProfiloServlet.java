@@ -26,12 +26,13 @@ public class ProfiloServlet extends HttpServlet{
      */
     @Serial
     private static final long serialVersionUID = 1L;
-    private final PagamentoBean pB=new PagamentoBean();
-    private final PagamentoDao pD=new PagamentoDao();
-    private final String profilo="/profilo.jsp";
-    private final UserBean uB=UserBean.getInstance();
-    private final SystemBean sB=SystemBean.getInstance();
-    private final User u= User.getInstance() ;
+    private static final PagamentoBean pB=new PagamentoBean();
+    private static final PagamentoDao pD=new PagamentoDao();
+    private static final String PROFILO="/profilo.jsp";
+    private static final String BEANUB="beanUb";
+    private static final UserBean uB=UserBean.getInstance();
+    private static final SystemBean sB=SystemBean.getInstance();
+    private static final User u= User.getInstance() ;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -52,7 +53,7 @@ public class ProfiloServlet extends HttpServlet{
         try {
             if (lista != null && lista.equals("genera lista")) {
                 uB.setStringB(UsersDao.getUserList());
-                req.setAttribute("beanUb",uB);
+                req.setAttribute(BEANUB,uB);
                  view=getServletContext().getRequestDispatcher("/profilo.jsp");
                 view.forward(req,resp);
 
@@ -67,7 +68,7 @@ public class ProfiloServlet extends HttpServlet{
                 int id=Integer.parseInt(idOgg);
                 sB.setIdB(id);
                 uB.setIdB(sB.getIdB());
-                req.setAttribute("beanUb",uB);
+                req.setAttribute(BEANUB,uB);
                 view= getServletContext().getRequestDispatcher("/modificaUtente.jsp");
                 view.forward(req,resp);
 
@@ -80,7 +81,7 @@ public class ProfiloServlet extends HttpServlet{
                 uB.setRuoloB("A");
                 if(UsersDao.deleteUser(u))
                 {
-                    req.setAttribute("beanUb",uB);
+                    req.setAttribute(BEANUB,uB);
                     view= getServletContext().getRequestDispatcher("/profilo.jsp");
                     view.forward(req,resp);
                 }
@@ -96,8 +97,8 @@ public class ProfiloServlet extends HttpServlet{
                 uB.setEmailB(u.getEmail());
                 uB.setDataDiNascitaB(u.getDataDiNascita());
                 uB.setRuoloB("W");
-                req.setAttribute("beanUb",uB);
-                 view = getServletContext().getRequestDispatcher(profilo);
+                req.setAttribute(BEANUB,uB);
+                 view = getServletContext().getRequestDispatcher(PROFILO);
                 view.forward(req,resp);
             }
             if(ordini!=null && ordini.equals("cronologia ordini"))
@@ -107,9 +108,9 @@ public class ProfiloServlet extends HttpServlet{
 
                 u.setEmail(uB.getEmailB());
                 pB.setListaPagamentiB(pD.getPagamenti());
-                req.setAttribute("beanUb",uB );
+                req.setAttribute(BEANUB,uB );
                 req.setAttribute("beanP", pB);
-                 view = getServletContext().getRequestDispatcher(profilo);
+                 view = getServletContext().getRequestDispatcher(PROFILO);
                 view.forward(req,resp);
             }
             if(annulla!=null && annulla.equals("indietro"))

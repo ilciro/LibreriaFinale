@@ -166,7 +166,7 @@ public class BoundaryModificaPage implements Initializable {
                 infoCostoDisp[5] = String.valueOf(copie);
 				if(!cMP.checkDataL(infoGen, r, desc, d, infoCostoDisp))
 				{
-					java.util.logging.Logger.getLogger("Test modif book").log(Level.SEVERE,"\n not modified {0}");
+					java.util.logging.Logger.getLogger("Test modif book").log(Level.SEVERE,"\n not modified ");
 
 				}
             }
@@ -230,6 +230,8 @@ public class BoundaryModificaPage implements Initializable {
 
 
             }
+            default -> 	java.util.logging.Logger.getLogger("Test aggiorna").log(Level.SEVERE, "type is worng");
+
         }
 	}
 		
@@ -343,13 +345,15 @@ public class BoundaryModificaPage implements Initializable {
                     items.add("MILITARE");
                     items.add("INFORMATICA");
                 }
+                default -> 	java.util.logging.Logger.getLogger("Test initialize").log(Level.SEVERE, "categories ot matched");
+
             }
 
 
 
 		} catch (SQLException |IOException  e)
 		{
-			java.util.logging.Logger.getLogger("Test pagacc").log(Level.SEVERE,"\n eccezione ottenuta {0}",e.toString());
+			java.util.logging.Logger.getLogger("Test initialize").log(Level.SEVERE,"\n eccezione ottenuta {0}",e.toString());
 
 		} 
 		

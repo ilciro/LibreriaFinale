@@ -16,7 +16,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-public class TestLoginUserLibro {
+ class TestLoginUserLibro {
       WebDriver driver;
       private final Libro l=new Libro();
       private final LibroDao lD=new LibroDao();

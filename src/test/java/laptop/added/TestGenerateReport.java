@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class TestGenerateReport {
+ class TestGenerateReport {
     private final GenerateDaoReportClass gRC=new GenerateDaoReportClass();
 
     @ParameterizedTest

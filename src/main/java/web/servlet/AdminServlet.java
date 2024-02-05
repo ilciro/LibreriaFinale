@@ -17,8 +17,8 @@ import java.util.logging.Level;
 
 public class AdminServlet extends HttpServlet {
 
-    private final UserBean uB=UserBean.getInstance();
-    private final SystemBean sB=SystemBean.getInstance();
+    private static final UserBean uB=UserBean.getInstance();
+    private static final SystemBean sB=SystemBean.getInstance();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

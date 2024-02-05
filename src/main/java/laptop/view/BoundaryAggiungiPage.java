@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -231,8 +232,9 @@ public class BoundaryAggiungiPage implements Initializable {
         try {
             cAP=new ControllerAggiungiPage();
         } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+			java.util.logging.Logger.getLogger("Test initialize").log(Level.SEVERE, "eccezione ottenuta",e);
+
+		}
         if(ControllerSystemState.getInstance().getType().equals("libro"))
 		{
 		

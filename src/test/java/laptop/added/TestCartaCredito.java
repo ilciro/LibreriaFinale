@@ -9,7 +9,7 @@ import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class TestCartaCredito {
+ class TestCartaCredito {
     private final CartaDiCredito cc=new CartaDiCredito();
     private final CartaCreditoBean cCB=new CartaCreditoBean();
 

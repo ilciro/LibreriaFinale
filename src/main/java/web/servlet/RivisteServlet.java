@@ -13,6 +13,7 @@ import web.bean.SystemBean;
 
 import java.io.IOException;
 import java.io.Serial;
+import java.util.logging.Level;
 
 @WebServlet("/RivisteServlet")
 
@@ -20,13 +21,15 @@ public class RivisteServlet extends HttpServlet {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    private final RivistaBean rB=new RivistaBean();
-    private final Rivista r=new Rivista();
+    private static final RivistaBean rB=new RivistaBean();
+    private static final Rivista r=new Rivista();
     private final RivistaDao rD=new RivistaDao();
-    private final static String beanR="beanR";
-    private final SystemBean sB=SystemBean.getInstance();
+    private static final  String BEANR="beanR";
+    private static final SystemBean sB=SystemBean.getInstance();
 
     public RivisteServlet() throws IOException {
+        java.util.logging.Logger.getLogger("initialize ").log(Level.INFO, "costruttore");
+
     }
 
     @Override
@@ -42,8 +45,8 @@ public class RivisteServlet extends HttpServlet {
         {
 
             rB.setListaRivisteB(rD.getRiviste());
-            req.setAttribute(beanR,rB);
-            req.setAttribute("beanS", SystemBean.getInstance());
+            req.setAttribute(BEANR,rB);
+            req.setAttribute("beanS", sB);
             view= getServletContext().getRequestDispatcher("/riviste.jsp");
             view.forward(req,resp);
 
@@ -66,7 +69,7 @@ public class RivisteServlet extends HttpServlet {
                 rB.setTitoloB(rD.getData(r).getTitolo());
                 sB.setIdB(rB.getIdB());
                 sB.setTitoloB(rB.getTitoloB());
-                req.setAttribute("beanR",rB);
+                req.setAttribute(BEANR,rB);
                 req.setAttribute("beanS",sB);
 
                  view = getServletContext().getRequestDispatcher("/acquista.jsp");

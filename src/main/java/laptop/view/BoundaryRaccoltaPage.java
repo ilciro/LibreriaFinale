@@ -33,7 +33,7 @@ public class BoundaryRaccoltaPage implements Initializable {
 	private ControllerReportRaccolta cRR;
 	private final ControllerSystemState vis=ControllerSystemState.getInstance();
 	protected Scene scene;	
-	private static final String gestione="paginaGestione.fxml";
+	private static final String GESTIONE="paginaGestione.fxml";
 	
 	@FXML
 	private void giornali() throws IOException
@@ -42,7 +42,7 @@ public class BoundaryRaccoltaPage implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonG.getScene().getWindow();
-		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(gestione)));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(GESTIONE)));
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
@@ -55,7 +55,7 @@ public class BoundaryRaccoltaPage implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) rivisteB.getScene().getWindow();
-		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(gestione)));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(GESTIONE)));
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
@@ -69,7 +69,7 @@ public class BoundaryRaccoltaPage implements Initializable {
 		Stage stage;
 		Parent root;
 		stage = (Stage) libriB.getScene().getWindow();
-		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(gestione)));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(GESTIONE)));
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();

@@ -24,8 +24,8 @@ public class ResetPasswordServlet extends HttpServlet {
      */
     @Serial
     private static final long serialVersionUID = 1L;
-    private final UserBean uB=UserBean.getInstance();
-    private final User u= User.getInstance();
+    private static final UserBean uB=UserBean.getInstance();
+    private static final User u= User.getInstance();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

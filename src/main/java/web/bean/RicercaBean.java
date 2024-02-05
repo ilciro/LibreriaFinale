@@ -1,7 +1,6 @@
 package web.bean;
 
 import javafx.collections.ObservableList;
-import laptop.model.raccolta.Libro;
 import laptop.model.raccolta.Raccolta;
 
 public class RicercaBean {

@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class TestRivista {
+ class TestRivista {
     private final Rivista r=new Rivista();
     private final RivistaDao rD=new RivistaDao();
     private final RivistaBean rB=new RivistaBean();

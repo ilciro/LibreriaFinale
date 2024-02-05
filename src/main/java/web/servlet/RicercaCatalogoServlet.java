@@ -34,12 +34,14 @@ public class RicercaCatalogoServlet extends HttpServlet {
     private static final String LIBRO="libro";
     private static final String GIORNALE= "giornale";
     private static final String RIVISTA="rivista";
-    private final Libro l=new Libro();
-    private final Giornale g=new Giornale();
+    private static final Libro l=new Libro();
+    private static final Giornale g=new Giornale();
 
-    private final Rivista r=new Rivista();
+    private static final Rivista r=new Rivista();
 
     public RicercaCatalogoServlet() throws IOException {
+        java.util.logging.Logger.getLogger("initialize ").log(Level.INFO, "costruttore");
+
     }
 
     @Override

@@ -16,7 +16,7 @@ import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-public class TestLoginRaccoltaUtenti {
+ class TestLoginRaccoltaUtenti {
     WebDriver driver;
     private final TempUser tUser=TempUser.getInstance();
 

@@ -51,7 +51,7 @@ public class BoundaryRicercaPage  implements Initializable{
 	@FXML
 	private Button buttonB;
 	
-	private final String title = "Benvenuto nella schermata del riepilogo ordine";
+	private static final String TITLE = "Benvenuto nella schermata del riepilogo ordine";
     private final ControllerRicercaPage cRP;
 	private final ControllerVisualizza cV;
 	protected Scene scene;
@@ -85,7 +85,7 @@ public class BoundaryRicercaPage  implements Initializable{
 			stage = (Stage) buttonV.getScene().getWindow();
             String visualizza = "visualizzaPage.fxml";
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(visualizza)));
-			stage.setTitle(title);
+			stage.setTitle(TITLE);
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
@@ -110,7 +110,7 @@ public class BoundaryRicercaPage  implements Initializable{
 		Parent root;
 		stage = (Stage) buttonB.getScene().getWindow();
 		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("ricercaPerTipo.fxml")));
-		stage.setTitle(title);
+		stage.setTitle(TITLE);
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();

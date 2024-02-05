@@ -51,8 +51,8 @@ public class BoundaryScegliNegozio implements Initializable {
 	protected String warningTitle =" Negozio chiuso o non disponibile per il ritiro";
 	protected String warningHeaderText = "Il negozio seleziopnato non � al momento pronto per questo tipo di operazioni";
 	private static final  String WARNINGCONTENTTEXT = "Torna indietro e seleziona un'altro negozio fra quelli che ti vengono mostrati ! ";
-	private static final String homePage = "homePage.fxml";
-	private static final String homePageA = "homePageAfterLogin.fxml" ;
+	private static final String HOMEPAGE = "homePage.fxml";
+	private static final String HOMEPAGEA = "homePageAfterLogin.fxml" ;
 	private final ControllerSystemState vis=ControllerSystemState.getInstance();
 	
 	protected Boolean statusA = false ;
@@ -151,7 +151,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		            	Stage stage;
 		                Parent root;
 		                stage = (Stage) buttonV.getScene().getWindow();
-		                loader = new FXMLLoader(getClass().getClassLoader().getResource(homePageA));
+		                loader = new FXMLLoader(getClass().getClassLoader().getResource(HOMEPAGEA));
 		                root = loader.load();
 		                scene = new Scene(root);
 		                stage.setScene(scene);
@@ -161,7 +161,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		            	Stage stage;
 		                Parent root;
 		                stage = (Stage) buttonV.getScene().getWindow();
-		                loader = new FXMLLoader(getClass().getClassLoader().getResource(homePage));
+		                loader = new FXMLLoader(getClass().getClassLoader().getResource(HOMEPAGE));
 		                root = loader.load();
 		                scene = new Scene(root);
 		                stage.setScene(scene);
@@ -208,7 +208,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		            	Stage stage;
 		                Parent root;
 		                stage = (Stage) buttonV.getScene().getWindow();
-		                loader = new FXMLLoader(getClass().getClassLoader().getResource(homePageA));
+		                loader = new FXMLLoader(getClass().getClassLoader().getResource(HOMEPAGEA));
 		                root = loader.load();
 		                scene = new Scene(root);
 		                stage.setScene(scene);
@@ -218,7 +218,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		            	Stage stage;
 		                Parent root;
 		                stage = (Stage) buttonV.getScene().getWindow();
-		                loader = new FXMLLoader(getClass().getClassLoader().getResource(homePage));
+		                loader = new FXMLLoader(getClass().getClassLoader().getResource(HOMEPAGE));
 		                root = loader.load();
 		                scene = new Scene(root);
 		                stage.setScene(scene);
@@ -264,7 +264,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		            	Stage stage;
 		                Parent root;
 		                stage = (Stage) buttonV.getScene().getWindow();
-		                loader = new FXMLLoader(getClass().getClassLoader().getResource(homePageA));
+		                loader = new FXMLLoader(getClass().getClassLoader().getResource(HOMEPAGEA));
 		                root = loader.load();
 		                scene = new Scene(root);
 		                stage.setScene(scene);
@@ -274,7 +274,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		            	Stage stage;
 		                Parent root;
 		                stage = (Stage) buttonV.getScene().getWindow();
-		                loader = new FXMLLoader(getClass().getClassLoader().getResource(homePage));
+		                loader = new FXMLLoader(getClass().getClassLoader().getResource(HOMEPAGE));
 		                root = loader.load();
 		                scene = new Scene(root);
 		                stage.setScene(scene);
@@ -321,7 +321,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		            	Stage stage;
 		                Parent root;
 		                stage = (Stage) buttonV.getScene().getWindow();
-		                loader = new FXMLLoader(getClass().getClassLoader().getResource(homePageA));
+		                loader = new FXMLLoader(getClass().getClassLoader().getResource(HOMEPAGEA));
 		                root = loader.load();
 		                scene = new Scene(root);
 		                stage.setScene(scene);
@@ -331,7 +331,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		            	Stage stage;
 		                Parent root;
 		                stage = (Stage) buttonV.getScene().getWindow();
-		                loader = new FXMLLoader(getClass().getClassLoader().getResource(homePage));
+		                loader = new FXMLLoader(getClass().getClassLoader().getResource(HOMEPAGE));
 		                root = loader.load();
 		                scene = new Scene(root);
 		                stage.setScene(scene);

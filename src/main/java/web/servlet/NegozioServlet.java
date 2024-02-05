@@ -24,121 +24,130 @@ public class NegozioServlet extends HttpServlet {
      */
     @Serial
     private static final long serialVersionUID = 1L;
-    private final NegozioBean nB=new NegozioBean();
-    private final Negozio n=new Negozio();
-    private final String index="/index.jsp";
-    private final NegozioDao nD=new NegozioDao();
+    private static final NegozioBean nB = new NegozioBean();
+    private static final Negozio n = new Negozio();
+    private static final String INDEX = "/index.jsp";
+    private static final String NEGOZI = "/negozi.jsp";
+    private static final String NEGOZIOCHIUSO = "negozio non disponibile e/o chiuso";
+    private static final String BEANN = "beanN";
+    private static final NegozioDao nD = new NegozioDao();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String neg1=req.getParameter("buttonNeg1");
-        String neg2=req.getParameter("buttonNeg2");
-        String neg3=req.getParameter("buttonNeg3");
-        String neg4=req.getParameter("buttonNeg4");
-        RequestDispatcher view;
+        String neg1 = req.getParameter("buttonNeg1");
+        String neg2 = req.getParameter("buttonNeg2");
+        String neg3 = req.getParameter("buttonNeg3");
+        String neg4 = req.getParameter("buttonNeg4");
+
 
         try {
-            if(neg1!=null && neg1.equals("Negozio A"))
-            {
-                nB.setNomeB("Negozio A");
-                n.setNome(nB.getNomeB());
-                n.setIsOpen(nD.checkOpen(n));
-                n.setIsValid(nD.checkRitiro(n));
-                nB.setValidB(n.getIsValid());
-                nB.setOpenB(n.getIsOpen());
-
-                if(nB.isOpenB()&&nB.isValidB())
-                {
-                    view=getServletContext().getRequestDispatcher("/index.jsp");
-                    view.forward(req,resp);
-                }
-                else{
-                    nB.setMexB("negozio non disponibile e/o chiuso");
-                    req.setAttribute("beanN",nB);
-                    view=getServletContext().getRequestDispatcher("/negozi.jsp");
-                    view.forward(req,resp);
-
-                }
+            if (neg1 != null && neg1.equals("Negozio A")) {
+                negozio1(req, resp);
 
             }
-            if(neg2!=null && neg2.equals("Negozio B"))
-            {
-                nB.setNomeB("Negozio B");
-                n.setNome(nB.getNomeB());
-                n.setIsOpen(nD.checkOpen(n));
-                n.setIsValid(nD.checkRitiro(n));
-                nB.setValidB(n.getIsValid());
-                nB.setOpenB(n.getIsOpen());
+            if (neg2 != null && neg2.equals("Negozio B")) {
 
-                if(nB.isOpenB()&&nB.isValidB())
-                {
-                    view=getServletContext().getRequestDispatcher("/index.jsp");
-                    view.forward(req,resp);
-                }
-                else{
-                nB.setMexB("negozio non disponibile e/o chiuso");
-                req.setAttribute("beanN",nB);
-                view=getServletContext().getRequestDispatcher("/negozi.jsp");
-                view.forward(req,resp);
+                negozio2(req,resp);
+            }
+            if (neg3 != null && neg3.equals("Negozio C")) {
 
+                negozio3(req,resp);
+            }
+            if (neg4 != null && neg4.equals("Negozio D")) {
+
+                negozio4(req,resp);
             }
 
-
-            }
-            if(neg3!=null && neg3.equals("Negozio C"))
-            {
-                nB.setNomeB("Negozio C");
-                n.setNome(nB.getNomeB());
-                n.setIsOpen(nD.checkOpen(n));
-                n.setIsValid(nD.checkRitiro(n));
-                nB.setValidB(n.getIsValid());
-                nB.setOpenB(n.getIsOpen());
-
-                if(nB.isOpenB()&&nB.isValidB())
-                {
-                    view=getServletContext().getRequestDispatcher("/index.jsp");
-                    view.forward(req,resp);
-                }
-                else{
-                    nB.setMexB("negozio non disponibile e/o chiuso");
-                    req.setAttribute("beanN",nB);
-                    view=getServletContext().getRequestDispatcher("/negozi.jsp");
-                    view.forward(req,resp);
-
-                }
-
-
-
-            }
-            if(neg4!=null && neg4.equals("Negozio D"))
-            {
-                nB.setNomeB("Negozio D");
-                n.setNome(nB.getNomeB());
-                n.setIsOpen(nD.checkOpen(n));
-                n.setIsValid(nD.checkRitiro(n));
-                nB.setValidB(n.getIsValid());
-                nB.setOpenB(n.getIsOpen());
-
-            if(nB.isOpenB()&&nB.isValidB())
-            {
-                view=getServletContext().getRequestDispatcher("/index.jsp");
-                view.forward(req,resp);
-            }
-            else{
-                nB.setMexB("negozio non disponibile e/o chiuso");
-                req.setAttribute("beanN",nB);
-                view=getServletContext().getRequestDispatcher("/negozi.jsp");
-                view.forward(req,resp);
-
-            }
-
-            }
-
-        } catch (SQLException e ) {
-            java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.getMessage());
+        } catch (SQLException e) {
+            java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.", e.getMessage());
 
         }
 
+    }
+
+    private void negozio1(HttpServletRequest req, HttpServletResponse resp) throws SQLException, ServletException, IOException {
+        RequestDispatcher view;
+        nB.setNomeB("Negozio A");
+        n.setNome(nB.getNomeB());
+        n.setIsOpen(nD.checkOpen(n));
+        n.setIsValid(nD.checkRitiro(n));
+        nB.setValidB(n.getIsValid());
+        nB.setOpenB(n.getIsOpen());
+
+        if (nB.isOpenB() && nB.isValidB()) {
+            view = getServletContext().getRequestDispatcher(INDEX);
+            view.forward(req, resp);
+        } else {
+            nB.setMexB(NEGOZIOCHIUSO);
+            req.setAttribute(BEANN, nB);
+            view = getServletContext().getRequestDispatcher(NEGOZI);
+            view.forward(req, resp);
+
+        }
+    }
+
+    private void negozio2(HttpServletRequest req, HttpServletResponse resp) throws SQLException, ServletException, IOException {
+        RequestDispatcher view;
+
+        nB.setNomeB("Negozio B");
+        n.setNome(nB.getNomeB());
+        n.setIsOpen(nD.checkOpen(n));
+        n.setIsValid(nD.checkRitiro(n));
+        nB.setValidB(n.getIsValid());
+        nB.setOpenB(n.getIsOpen());
+
+        if (nB.isOpenB() && nB.isValidB()) {
+            view = getServletContext().getRequestDispatcher(INDEX);
+            view.forward(req, resp);
+        } else {
+            nB.setMexB(NEGOZIOCHIUSO);
+            req.setAttribute(BEANN, nB);
+            view = getServletContext().getRequestDispatcher(NEGOZI);
+            view.forward(req, resp);
+
+        }
+
+    }
+    private void negozio3(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException, SQLException {
+        RequestDispatcher view;
+        nB.setNomeB("Negozio C");
+        n.setNome(nB.getNomeB());
+        n.setIsOpen(nD.checkOpen(n));
+        n.setIsValid(nD.checkRitiro(n));
+        nB.setValidB(n.getIsValid());
+        nB.setOpenB(n.getIsOpen());
+
+        if (nB.isOpenB() && nB.isValidB()) {
+            view = getServletContext().getRequestDispatcher(INDEX);
+            view.forward(req, resp);
+        } else {
+            nB.setMexB(NEGOZIOCHIUSO);
+            req.setAttribute(BEANN, nB);
+            view = getServletContext().getRequestDispatcher(NEGOZI);
+            view.forward(req, resp);
+
+        }
+
+    }
+    private void negozio4(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException, SQLException {
+        RequestDispatcher view;
+        nB.setNomeB("Negozio D");
+        n.setNome(nB.getNomeB());
+        n.setIsOpen(nD.checkOpen(n));
+        n.setIsValid(nD.checkRitiro(n));
+        nB.setValidB(n.getIsValid());
+        nB.setOpenB(n.getIsOpen());
+
+        if (nB.isOpenB() && nB.isValidB()) {
+            view = getServletContext().getRequestDispatcher(INDEX);
+            view.forward(req, resp);
+        } else {
+            nB.setMexB(NEGOZIOCHIUSO);
+            req.setAttribute(BEANN, nB);
+            view = getServletContext().getRequestDispatcher(NEGOZI);
+            view.forward(req, resp);
+
+        }
     }
 
 

@@ -28,8 +28,8 @@ public class RegistrazioneServlet extends HttpServlet {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    private final UserBean uB=UserBean.getInstance();
-    private final User u=User.getInstance();
+    private static final UserBean uB=UserBean.getInstance();
+    private static final User u=User.getInstance();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -75,13 +75,7 @@ public class RegistrazioneServlet extends HttpServlet {
                         RequestDispatcher view = getServletContext().getRequestDispatcher("/registrazione.jsp");
                         view.forward(req, resp);
                     } else {
-                        if (UsersDao.createUser(u)) {
-                            RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp");
-                            view.forward(req, resp);
-                        } else {
-                            RequestDispatcher view = getServletContext().getRequestDispatcher("/registrazione.jsp");
-                            view.forward(req, resp);
-                        }
+                        throw new SQLException("user not created");
                     }
                 }else {
                     RequestDispatcher view = getServletContext().getRequestDispatcher("/registrazione.jsp");
@@ -98,6 +92,18 @@ public class RegistrazioneServlet extends HttpServlet {
         {
             java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
 
+            try {
+                if (UsersDao.createUser(u)) {
+                    RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp");
+                    view.forward(req, resp);
+                } else {
+                    RequestDispatcher view = getServletContext().getRequestDispatcher("/registrazione.jsp");
+                    view.forward(req, resp);
+                }
+            } catch (SQLException ex) {
+                java.util.logging.Logger.getLogger("Exception ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+
+            }
         }
     }
 

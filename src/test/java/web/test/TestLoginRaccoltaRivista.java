@@ -17,7 +17,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-public class TestLoginRaccoltaRivista {
+ class TestLoginRaccoltaRivista {
 
 
     WebDriver driver;

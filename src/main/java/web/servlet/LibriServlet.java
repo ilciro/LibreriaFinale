@@ -3,6 +3,8 @@ package web.servlet;
 import java.io.IOException;
 import java.io.Serial;
 
+import java.util.logging.Level;
+
 import laptop.database.LibroDao;
 import laptop.model.raccolta.Libro;
 import web.bean.AcquistaBean;
@@ -20,15 +22,17 @@ public class LibriServlet extends HttpServlet {
 
     @Serial
     private static final long serialVersionUID = 1L;
-    private final LibroBean lB = new LibroBean();
-    private static final String libri = "/libri.jsp";
+    private static final LibroBean lB = new LibroBean();
+    private static final String LIBRI= "/libri.jsp";
     private final LibroDao lD = new LibroDao();
-    private final Libro l = new Libro();
-    private static final String beanL = "beanL";
-    private final SystemBean sB=SystemBean.getInstance();
-    private final AcquistaBean aB=new AcquistaBean();
+    private static final Libro l = new Libro();
+    private static final String BEANL = "beanL";
+    private static final SystemBean sB=SystemBean.getInstance();
+    private static final AcquistaBean aB=new AcquistaBean();
 
     public LibriServlet() throws IOException {
+        java.util.logging.Logger.getLogger("initialize").log(Level.INFO, "costruttore");
+
     }
 
 
@@ -42,9 +46,9 @@ public class LibriServlet extends HttpServlet {
         if (g != null && g.equals("genera lista")) {
 
            lB.setElencoLibriB(lD.getLibri());
-           req.setAttribute(beanL,lB);
+           req.setAttribute(BEANL,lB);
            req.setAttribute("beanS",sB);
-            view= getServletContext().getRequestDispatcher(libri);
+            view= getServletContext().getRequestDispatcher(LIBRI);
            view.forward(req,resp);
 
         }
@@ -69,7 +73,7 @@ public class LibriServlet extends HttpServlet {
                 aB.setPrezzoB(lD.getData(l).getPrezzo());
 
                 req.setAttribute("beanS", sB);
-                req.setAttribute(beanL, lB);
+                req.setAttribute(BEANL, lB);
                 req.setAttribute("beanA",aB);
                 view = getServletContext().getRequestDispatcher("/acquista.jsp");
                 view.forward(req, resp);

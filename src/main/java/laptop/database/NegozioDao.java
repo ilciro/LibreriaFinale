@@ -36,7 +36,7 @@ public class NegozioDao {
 				}
 			 }catch(SQLException e)
 			 {
-			java.util.logging.Logger.getLogger("get negozi").log(Level.INFO, ECCEZIONE, e);
+				java.util.logging.Logger.getLogger("get negozi").log(Level.INFO, ECCEZIONE, e);
 			 }
 		
 		return listOfNegozi;

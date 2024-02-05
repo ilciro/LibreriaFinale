@@ -19,7 +19,7 @@ import java.text.SimpleDateFormat;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestPagamentoCartaCredito {
+ class TestPagamentoCartaCredito {
     WebDriver driver;
     private final UserBean uB=UserBean.getInstance();
     private final Giornale g=new Giornale();

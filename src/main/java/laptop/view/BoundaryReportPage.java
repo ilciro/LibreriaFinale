@@ -3,9 +3,9 @@ package laptop.view;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -102,8 +102,9 @@ public class BoundaryReportPage implements Initializable {
         try {
             cRP=new ControllerReportPage();
         } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+			java.util.logging.Logger.getLogger("Test initialize").log(Level.SEVERE, "eccezione ottenuta",e);
+
+		}
 
     }
 

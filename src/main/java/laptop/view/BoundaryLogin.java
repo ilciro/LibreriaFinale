@@ -138,7 +138,9 @@ public class BoundaryLogin implements Initializable {
                     stage.setScene(scene);
                     stage.show();
                 }
-            }
+				default -> 	java.util.logging.Logger.getLogger("Test Controlla").log(Level.SEVERE, "type is wrong");
+
+			}
 			
 
 		} 

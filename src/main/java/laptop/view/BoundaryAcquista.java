@@ -215,10 +215,6 @@ public class BoundaryAcquista implements Initializable {
 			try {
 			nome.setText(cA.getNomeById());
 
-			System.out.print("copie Rimanenti \n:"+cA.getDisp("libro"));
-			System.out.print("type:"+ vis.getType());
-			System.out.print("id :"+vis.getId());
-
 			copieLabel.setText(String.valueOf(cA.getDisp(vis.getType())));
 		
 				costo.setText(String.valueOf(cA.getCosto(vis.getType())));

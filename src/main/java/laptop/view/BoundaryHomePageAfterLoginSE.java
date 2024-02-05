@@ -51,7 +51,7 @@ public class BoundaryHomePageAfterLoginSE {
 	
 	private final ControllerSystemState vis = ControllerSystemState.getInstance() ;
 	protected Scene scene;
-	private static final String compravendita="compravendita.fxml";
+	private static final String COMPRAVENDITA="compravendita.fxml";
 	
 	@FXML
 	private void getListaGiornali() throws IOException {
@@ -60,7 +60,7 @@ public class BoundaryHomePageAfterLoginSE {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonL.getScene().getWindow();
-		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(compravendita)));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(COMPRAVENDITA)));
 		stage.setTitle("Benvenuto nella schermata del riepilogo dei giornali");
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -75,7 +75,7 @@ public class BoundaryHomePageAfterLoginSE {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonL.getScene().getWindow();
-		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(compravendita)));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(COMPRAVENDITA)));
 		stage.setTitle("Benvenuto nella schermata del riepilogo delle riviste");
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -90,7 +90,7 @@ public class BoundaryHomePageAfterLoginSE {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonL.getScene().getWindow();
-		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(compravendita)));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(COMPRAVENDITA)));
 		stage.setTitle("Benvenuto nella schermata del riepilogo dei libri");
 		scene = new Scene(root);
 		stage.setScene(scene);

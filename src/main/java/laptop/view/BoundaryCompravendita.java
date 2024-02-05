@@ -200,7 +200,7 @@ public class BoundaryCompravendita implements Initializable {
         try {
             cCV = new ControllerCompravendita();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+			java.util.logging.Logger.getLogger("Test initialize").log(Level.SEVERE, "eccezione ottenuta",e);
         }
 
         buttonV.setText(popolaBottoneV());

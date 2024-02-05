@@ -3,7 +3,6 @@ package web.servlet;
 import java.io.IOException;
 import java.io.Serial;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
@@ -30,18 +29,19 @@ public class AcquistaServlet extends HttpServlet {
     private final Libro l=new Libro();
     private final LibroBean lB=new LibroBean();
 
-    private final Rivista r=new Rivista();
+    private static final Rivista r=new Rivista();
     private final RivistaDao rD=new RivistaDao();
-    private final RivistaBean rB=new RivistaBean();
+    private static final RivistaBean rB=new RivistaBean();
 
     private static final   String LIBRO = "libro";
-    private static final String beanS="beanS";
+    private static final String BEANS="beanS";
+    private static final String BEANA="beanA";
     private  static final String GIORNALE="giornale";
     private  static final String RIVISTA="rivista";
     private static final Giornale g=new Giornale();
-    private final GiornaleDao gD=new GiornaleDao();
-    private final GiornaleBean gB=new GiornaleBean();
-    private final SystemBean sB=SystemBean.getInstance();
+    private static final GiornaleDao gD=new GiornaleDao();
+    private static final GiornaleBean gB=new GiornaleBean();
+    private static final SystemBean sB=SystemBean.getInstance();
 
     public AcquistaServlet() throws IOException {
     }
@@ -75,8 +75,8 @@ public class AcquistaServlet extends HttpServlet {
                         sB.setSpesaTB(aB.getPrezzoB());
                         sB.setTitoloB(aB.getTitoloB());
                         sB.setIdB(lB.getIdB());
-                        req.setAttribute("beanS",sB);
-                        req.setAttribute("beanA",aB);
+                        req.setAttribute(BEANS,sB);
+                        req.setAttribute(BEANA,aB);
                     }
                     case GIORNALE -> {
                         gB.setIdB(sB.getIdB());
@@ -88,8 +88,8 @@ public class AcquistaServlet extends HttpServlet {
                         sB.setSpesaTB(aB.getPrezzoB());
                         sB.setTitoloB(aB.getTitoloB());
                         sB.setIdB(gB.getIdB());
-                        req.setAttribute("beanS",sB);
-                        req.setAttribute("beanA",aB);
+                        req.setAttribute(BEANS,sB);
+                        req.setAttribute(BEANA,aB);
                     }
                     case RIVISTA -> {
                         rB.setIdB(sB.getIdB());
@@ -101,8 +101,8 @@ public class AcquistaServlet extends HttpServlet {
                         sB.setSpesaTB(aB.getPrezzoB());
                         sB.setTitoloB(aB.getTitoloB());
                         sB.setIdB(rB.getIdB());
-                        req.setAttribute("beanS", sB);
-                        req.setAttribute("beanA", aB);
+                        req.setAttribute(BEANS,sB);
+                        req.setAttribute(BEANA,aB);
 
                     }
                     default -> 	java.util.logging.Logger.getLogger("calcola not correct").log(Level.SEVERE, "choice not correct");
@@ -125,7 +125,7 @@ public class AcquistaServlet extends HttpServlet {
                 {
                     case "cash"->
                     {
-                        req.setAttribute(beanS, sB);
+                        req.setAttribute(BEANS, sB);
                         RequestDispatcher view = getServletContext().getRequestDispatcher("/fattura.jsp");
                         view.forward(req,resp);
 
@@ -133,12 +133,12 @@ public class AcquistaServlet extends HttpServlet {
                     case "cCredito"->
                     {
                         sB.setSpesaTB(aB.getPrezzoB());
-                        req.setAttribute(beanS, sB);
+                        req.setAttribute(BEANS, sB);
                         RequestDispatcher view = getServletContext().getRequestDispatcher("/cartaCredito.jsp");
                         view.forward(req,resp);
 
                     }
-                    default->			java.util.logging.Logger.getLogger("ritiro in negozio").log(Level.SEVERE," pick from shop not avalaible");
+                    default->	java.util.logging.Logger.getLogger("ritiro in negozio").log(Level.SEVERE," pick from shop not avalaible");
 
                 }
 
@@ -150,7 +150,7 @@ public class AcquistaServlet extends HttpServlet {
                 {
                     case "cash"->
                     {
-                        req.setAttribute(beanS, sB);
+                        req.setAttribute(BEANS, sB);
                         RequestDispatcher view = getServletContext().getRequestDispatcher("/fattura.jsp");
                         view.forward(req,resp);
 
@@ -158,7 +158,7 @@ public class AcquistaServlet extends HttpServlet {
                     case "cCredito"->
                     {
                         sB.setSpesaTB(aB.getPrezzoB());
-                        req.setAttribute(beanS, sB);
+                        req.setAttribute(BEANS, sB);
                         RequestDispatcher view = getServletContext().getRequestDispatcher("/cartaCredito.jsp");
                         view.forward(req,resp);
 
@@ -171,7 +171,7 @@ public class AcquistaServlet extends HttpServlet {
 
         } catch (NumberFormatException e) {
             aB.setMexB(new IdException("quantita eccede la scorta nel magazzino"));
-            req.setAttribute("beanA",aB);
+            req.setAttribute(BEANA,aB);
             RequestDispatcher view = getServletContext().getRequestDispatcher("/acquista.jsp");
             view.forward(req,resp);
         }

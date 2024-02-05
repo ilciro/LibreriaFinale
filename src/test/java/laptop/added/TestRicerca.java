@@ -13,7 +13,7 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class TestRicerca {
+ class TestRicerca {
     private final LibroDao lD=new LibroDao();
     private final RicercaBean rB=new RicercaBean();
 

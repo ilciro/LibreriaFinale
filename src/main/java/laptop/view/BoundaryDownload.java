@@ -108,8 +108,9 @@ public class BoundaryDownload implements Initializable {
         try {
             cD = new ControllerDownload();
         } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+			java.util.logging.Logger.getLogger("Test initialize").log(Level.SEVERE, "eccezione ottenuta",e);
+
+		}
 
     }
 

@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class TestTempUser {
+ class TestTempUser {
     private final TempUser tU= TempUser.getInstance();
     private final User u=User.getInstance();
     private final UserBean uB=UserBean.getInstance();

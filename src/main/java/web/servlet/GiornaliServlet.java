@@ -2,6 +2,7 @@ package web.servlet;
 
 import java.io.IOException;
 import java.io.Serial;
+import java.util.logging.Level;
 
 import laptop.database.GiornaleDao;
 import web.bean.AcquistaBean;
@@ -24,13 +25,15 @@ public class GiornaliServlet extends HttpServlet{
      */
     @Serial
     private static final long serialVersionUID = 1L;
-    private final GiornaleBean gB=new GiornaleBean();
-    private final GiornaleDao gD=new GiornaleDao();
-    private final Giornale giornale=new Giornale();
-    private final SystemBean sB=SystemBean.getInstance();
-    private final AcquistaBean aB=new AcquistaBean();
+    private static final GiornaleBean gB=new GiornaleBean();
+    private static final GiornaleDao gD=new GiornaleDao();
+    private static final Giornale giornale=new Giornale();
+    private static final SystemBean sB=SystemBean.getInstance();
+    private static final AcquistaBean aB=new AcquistaBean();
 
     public GiornaliServlet() throws IOException {
+        java.util.logging.Logger.getLogger("Test costruttore").log(Level.INFO,"costruttore");
+
     }
 
     @Override

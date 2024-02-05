@@ -1,6 +1,5 @@
 package web.servlet;
 
-import com.itextpdf.text.DocumentException;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -23,14 +22,14 @@ import java.util.ResourceBundle;
 public class DownloadServletR extends HttpServlet {
     @Serial
     private static final long serialVersionUID = 1L;
-    private final DownloadBean dB=new DownloadBean();
-    private final SystemBean sB=SystemBean.getInstance();
-    private final Rivista r=new Rivista();
-    private final PagamentoDao pD=new PagamentoDao();
-    private final RivistaDao rD=new RivistaDao();
-    private final ContrassegnoDao fDao=new ContrassegnoDao();
-    private static final String index="/index.jsp";
-    private final ResourceBundle rbTitoli=ResourceBundle.getBundle("configurations/titles");
+    private static final DownloadBean dB=new DownloadBean();
+    private static final SystemBean sB=SystemBean.getInstance();
+    private static final Rivista r=new Rivista();
+    private static final PagamentoDao pD=new PagamentoDao();
+    private  final RivistaDao rD=new RivistaDao();
+    private static final ContrassegnoDao fDao=new ContrassegnoDao();
+    private static final String INDEX="/index.jsp";
+    private static final ResourceBundle rbTitoli=ResourceBundle.getBundle("configurations/titles");
 
 
     public DownloadServletR() throws IOException {
@@ -82,7 +81,7 @@ public class DownloadServletR extends HttpServlet {
 
 
                     request.setAttribute("bean",dB);
-                     view = getServletContext().getRequestDispatcher(index);
+                     view = getServletContext().getRequestDispatcher(INDEX);
                     view.forward(request,response);
 
 
@@ -93,7 +92,7 @@ public class DownloadServletR extends HttpServlet {
                     r.setId(sB.getIdB());
                     rD.aggiornaDisponibilita(r);
                     request.setAttribute("bean",dB);
-                     view = getServletContext().getRequestDispatcher(index);
+                     view = getServletContext().getRequestDispatcher(INDEX);
                     view.forward(request,response);
 
 
@@ -104,7 +103,7 @@ public class DownloadServletR extends HttpServlet {
             }
             if(hp!=null && hp.equals("home page"))
             {
-                view=getServletContext().getRequestDispatcher(index);
+                view=getServletContext().getRequestDispatcher(INDEX);
                 view.forward(request,response);
             }
 
@@ -112,7 +111,7 @@ public class DownloadServletR extends HttpServlet {
         }catch(SQLException  | IOException e)
         {
             request.setAttribute("bean",dB);
-             view = getServletContext().getRequestDispatcher(index);
+             view = getServletContext().getRequestDispatcher(INDEX);
             view.forward(request,response);
 
         }

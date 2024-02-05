@@ -44,7 +44,7 @@ public class BoundaryHomePage {
 	private Button buttonC;
 
 	protected Scene scene;
-	private static final String compravendita="compravendita.fxml";
+	private static final String COMPRAVENDITA="compravendita.fxml";
 	private final ControllerSystemState vis=ControllerSystemState.getInstance();
 
 	@FXML
@@ -54,7 +54,7 @@ public class BoundaryHomePage {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonL.getScene().getWindow();
-		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(compravendita)));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(COMPRAVENDITA)));
 		stage.setTitle("Benvenuto nella schermata del riepilogo dei giornali");
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -68,7 +68,7 @@ public class BoundaryHomePage {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonL.getScene().getWindow();
-		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(compravendita)));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(COMPRAVENDITA)));
 		stage.setTitle("Benvenuto nella schermata del riepilogo delle riviste");
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -82,7 +82,7 @@ public class BoundaryHomePage {
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonL.getScene().getWindow();
-		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(compravendita)));
+		root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(COMPRAVENDITA)));
 		stage.setTitle("Benvenuto nella schermata del riepilogo dei libri");
 		scene = new Scene(root);
 		stage.setScene(scene);

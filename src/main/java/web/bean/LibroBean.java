@@ -6,7 +6,6 @@ import laptop.model.raccolta.CategorieLibro;
 import laptop.model.raccolta.Raccolta;
 
 import java.sql.Date;
-import java.sql.SQLException;
 
 public class LibroBean {
 

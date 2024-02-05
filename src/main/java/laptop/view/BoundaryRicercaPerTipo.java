@@ -33,11 +33,11 @@ public class BoundaryRicercaPerTipo implements Initializable {
 	@FXML
 	private Button buttonB;
 	
-	private static final String title = "Benvenuto nella schermata del riepilogo ordine";
-	private static final String pageFxml = "ricercaPage.fxml";
+	private static final String TITLE = "Benvenuto nella schermata del riepilogo ordine";
+	private static final String PAGEFXML = "ricercaPage.fxml";
 	private ControllerRicercaPerTipo cRPT;
 	protected Scene scene;
-	private static final String reportLibro="report libro";
+	private static final String REPORTLIBRO="report libro";
 		
 	
 	@FXML
@@ -74,8 +74,8 @@ public class BoundaryRicercaPerTipo implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonL.getScene().getWindow();
-			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(pageFxml)));
-			stage.setTitle(title);
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(PAGEFXML)));
+			stage.setTitle(TITLE);
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
@@ -83,7 +83,7 @@ public class BoundaryRicercaPerTipo implements Initializable {
 		else
 		{
 			
-			java.util.logging.Logger.getLogger(reportLibro).log(Level.WARNING,"\n not found");
+			java.util.logging.Logger.getLogger(REPORTLIBRO).log(Level.WARNING,"\n not found");
 
 
 		}
@@ -96,18 +96,15 @@ public class BoundaryRicercaPerTipo implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonG.getScene().getWindow();
-			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(pageFxml)));
-			stage.setTitle(title);
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(PAGEFXML)));
+			stage.setTitle(TITLE);
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
 		}
 		else
 		{
-			
-			java.util.logging.Logger.getLogger(reportLibro).log(Level.WARNING,"\n not found ");
-
-
+			java.util.logging.Logger.getLogger(REPORTLIBRO).log(Level.WARNING,"\n not found ");
 		}
 	}
 	@FXML 
@@ -118,18 +115,15 @@ public class BoundaryRicercaPerTipo implements Initializable {
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonR.getScene().getWindow();
-			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(pageFxml)));
-			stage.setTitle(title);
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(PAGEFXML)));
+			stage.setTitle(TITLE);
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
 		}
 		else
 		{
-			
-			java.util.logging.Logger.getLogger(reportLibro).log(Level.WARNING,"\n not found");
-
-
+			java.util.logging.Logger.getLogger(REPORTLIBRO).log(Level.WARNING,"\n not found");
 		}
 	}
 

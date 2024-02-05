@@ -14,8 +14,9 @@ import java.util.logging.Level;
 
 @WebServlet("/ServletScrittore")
 public class ServletScrittore extends HttpServlet {
-    private final UserBean uB=UserBean.getInstance();
-    private final SystemBean sB=SystemBean.getInstance();
+    private static final UserBean uB=UserBean.getInstance();
+    private static final SystemBean sB=SystemBean.getInstance();
+    private static final String BEANS="beanS";
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String buttonL=req.getParameter("buttonL");
@@ -32,7 +33,7 @@ public class ServletScrittore extends HttpServlet {
             {
                 sB.setTypeB("libro");
                 sB.setLoggedB(true);
-                req.setAttribute("beanS",sB);
+                req.setAttribute(BEANS,sB);
                  view=getServletContext().getRequestDispatcher("/libri.jsp");
                 view.forward(req, resp);
             }
@@ -41,7 +42,7 @@ public class ServletScrittore extends HttpServlet {
                 sB.setTypeB("giornale");
                 sB.setLoggedB(true);
 
-                req.setAttribute("beanS",sB);
+                req.setAttribute(BEANS,sB);
                  view=getServletContext().getRequestDispatcher("/giornali.jsp");
                 view.forward(req, resp);
             }
@@ -50,7 +51,7 @@ public class ServletScrittore extends HttpServlet {
                 sB.setTypeB("rivista");
                 sB.setLoggedB(true);
 
-                req.setAttribute("beanS",sB);
+                req.setAttribute(BEANS,sB);
                  view=getServletContext().getRequestDispatcher("/riviste.jsp");
                 view.forward(req, resp);
             }

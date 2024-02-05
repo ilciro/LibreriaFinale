@@ -1,13 +1,9 @@
 package web.servlet;
 
-import com.google.common.io.Resources;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfWriter;
+
 import jakarta.servlet.RequestDispatcher;
 
-import jakarta.servlet.ServletContext;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -29,9 +25,9 @@ import java.util.logging.Logger;
 
 public class ReportServlet extends HttpServlet {
 
-    private static final String ECCEZIONE = "ECCEZIONE generata:";
 
-    private final TextAreaBean tAB = new TextAreaBean();
+
+    private static final TextAreaBean tAB = new TextAreaBean();
 
 
 
@@ -44,6 +40,8 @@ public class ReportServlet extends HttpServlet {
 
 
     public ReportServlet() throws IOException {
+        java.util.logging.Logger.getLogger("initialize ").log(Level.INFO, "costruttore");
+
     }
 
 

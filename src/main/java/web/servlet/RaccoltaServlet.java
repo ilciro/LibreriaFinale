@@ -16,10 +16,11 @@ import java.util.logging.Level;
 @WebServlet("/RaccoltaServlet")
 public class RaccoltaServlet extends HttpServlet {
 
-    private static final String beanS="beanS";
-    private final UserBean uB=UserBean.getInstance();
+    private static final String BEANS="beanS";
+    private static final UserBean uB=UserBean.getInstance();
 
-    private final SystemBean sB=SystemBean.getInstance();
+    private static final SystemBean sB=SystemBean.getInstance();
+    private static final String GESTIONE="/gestioneOggettoPage.jsp";
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,8 +34,8 @@ public class RaccoltaServlet extends HttpServlet {
             {
                 sB.setTypeAsBook();
                 sB.setTypeB("libro");
-                req.setAttribute(beanS,sB);
-                view = getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
+                req.setAttribute(BEANS,sB);
+                view = getServletContext().getRequestDispatcher(GESTIONE);
                 view.forward(req,resp);
             }
 
@@ -42,8 +43,8 @@ public class RaccoltaServlet extends HttpServlet {
             {
                sB.setTypeAsDaily();
                sB.setTypeB("giornale");
-                req.setAttribute(beanS,sB);
-                 view = getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
+                req.setAttribute(BEANS,sB);
+                 view = getServletContext().getRequestDispatcher(GESTIONE);
                 view.forward(req,resp);
             }
 
@@ -51,8 +52,8 @@ public class RaccoltaServlet extends HttpServlet {
             {
                 sB.setTypeAsMagazine();
                 sB.setTypeB("rivista");
-                req.setAttribute(beanS,sB);
-                 view = getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp");
+                req.setAttribute(BEANS,sB);
+                 view = getServletContext().getRequestDispatcher(GESTIONE);
                 view.forward(req,resp);
             }
 

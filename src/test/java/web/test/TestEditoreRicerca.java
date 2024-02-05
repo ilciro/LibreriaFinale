@@ -20,7 +20,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class TestEditoreRicerca {
+ class TestEditoreRicerca {
     WebDriver driver;
     private final Libro l=new Libro();
     private final LibroBean lB=new LibroBean();

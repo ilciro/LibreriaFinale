@@ -19,9 +19,11 @@ import java.util.logging.Level;
 @WebServlet("/ModificaUtenteServlet")
 public class ModificaUtenteServlet extends HttpServlet {
 
-    private final UserBean uB=UserBean.getInstance();
-    private final User u=User.getInstance();
-    private final TempUser tUser=TempUser.getInstance();
+    private static final UserBean uB=UserBean.getInstance();
+    private static final User u=User.getInstance();
+    private static final TempUser tUser=TempUser.getInstance();
+    private static final String MODIFICA="/modificaUtente.jsp";
+    private static final String BEANUB="beanUb";
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String genera=req.getParameter("generaB");
@@ -48,8 +50,8 @@ public class ModificaUtenteServlet extends HttpServlet {
 
 
 
-                req.setAttribute("beanUb",uB);
-                 view=getServletContext().getRequestDispatcher("/modificaUtente.jsp");
+                req.setAttribute(BEANUB,uB);
+                 view=getServletContext().getRequestDispatcher(MODIFICA);
                 view.forward(req, resp);
 
             }
@@ -85,14 +87,14 @@ public class ModificaUtenteServlet extends HttpServlet {
                 if(UsersDao.aggiornaTempUser(tUser)==1)
                 {
                     uB.setRuoloB("A");
-                    req.setAttribute("beanUb",uB);
+                    req.setAttribute(BEANUB,uB);
                     view=getServletContext().getRequestDispatcher("/profilo.jsp");
                     view.forward(req, resp);
                 }
                 else{
                     uB.setRuoloB("A");
-                    req.setAttribute("beanUb",uB);
-                    view=getServletContext().getRequestDispatcher("/modificaUtente.jsp");
+                    req.setAttribute(BEANUB,uB);
+                    view=getServletContext().getRequestDispatcher(MODIFICA);
                     view.forward(req, resp);
                 }
 
@@ -103,21 +105,21 @@ public class ModificaUtenteServlet extends HttpServlet {
                 if(UsersDao.deleteTempUser(tUser))
                 {
                     uB.setRuoloB("A");
-                    req.setAttribute("beanUb",uB);
+                    req.setAttribute(BEANUB,uB);
                     view=getServletContext().getRequestDispatcher("/profilo.jsp");
                     view.forward(req, resp);
                 }
                 else{
                     uB.setRuoloB("A");
-                    req.setAttribute("beanUb",uB);
-                    view=getServletContext().getRequestDispatcher("/modificaUtente.jsp");
+                    req.setAttribute(BEANUB,uB);
+                    view=getServletContext().getRequestDispatcher(MODIFICA);
                     view.forward(req, resp);
                 }
             }
             if(indietro!=null && indietro.equals("indietro"))
             {
                 uB.setRuoloB("A");
-                req.setAttribute("beanUb",uB);
+                req.setAttribute(BEANUB,uB);
                  view=getServletContext().getRequestDispatcher("/utenti.jsp");
                 view.forward(req, resp);
             }

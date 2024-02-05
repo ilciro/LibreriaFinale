@@ -18,7 +18,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-public class TestDownloadLibro {
+ class TestDownloadLibro {
     static WebDriver driver;
     private final UserBean uB= UserBean.getInstance();
     private final LibroDao lD=new LibroDao();

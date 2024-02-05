@@ -10,7 +10,7 @@ import java.sql.Date;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class TestGiornale {
+ class TestGiornale {
     private final Giornale g=new Giornale();
     private final GiornaleBean gB=new GiornaleBean();
     private final GiornaleDao gD=new GiornaleDao();

@@ -26,18 +26,21 @@ class ControllerDownloadTest {
         vis.setTypeAsBook();
         vis.setId(ints);
         cD.scarica(vis.getType());
+        assertEquals(ints,vis.getId());
     }
     @Test
     void scaricaG() throws DocumentException, IOException, URISyntaxException {
         vis.setTypeAsDaily();
         vis.setId(1);
         cD.scarica(vis.getType());
+        assertEquals(1,vis.getId());
     }
     @Test
     void scaricaR() throws DocumentException, IOException, URISyntaxException {
         vis.setTypeAsMagazine();
         vis.setId(1);
         cD.scarica(vis.getType());
+        assertEquals(1,vis.getId());
     }
     @Test
     void annullaOrdineL() throws SQLException {

@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class TestNegozio {
+ class TestNegozio {
 
     private final Negozio n=new Negozio();
     private final NegozioBean nB=new NegozioBean();

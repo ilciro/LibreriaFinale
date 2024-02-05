@@ -9,7 +9,7 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class TestCSVDao {
+ class TestCSVDao {
     private static final CsvDao csv=new CsvDao();
     private static final String LOCATION="localDBFile.csv";
 

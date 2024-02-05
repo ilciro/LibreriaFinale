@@ -19,8 +19,8 @@ public class RicercaServlet extends HttpServlet {
      */
     @Serial
     private static final long serialVersionUID = 1L;
-    private static final String beanS="beanS";
-    private static final String ricercaInCatalogo="/ricercaInCatalogo.jsp";
+    private static final String BEANS="beanS";
+    private static final String RICERCAINCATALOGO="/ricercaInCatalogo.jsp";
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,22 +31,22 @@ public class RicercaServlet extends HttpServlet {
         if(buttonL!=null && buttonL.equals("libri"))
         {
             SystemBean.getInstance().setTypeAsBook();
-            req.setAttribute(beanS,SystemBean.getInstance());
-            RequestDispatcher view=getServletContext().getRequestDispatcher(ricercaInCatalogo);
+            req.setAttribute(BEANS,SystemBean.getInstance());
+            RequestDispatcher view=getServletContext().getRequestDispatcher(RICERCAINCATALOGO);
             view.forward(req, resp);
         }
         if(buttonG!=null && buttonG.equals("giornali"))
         {
             SystemBean.getInstance().setTypeAsDaily();
-            req.setAttribute(beanS,SystemBean.getInstance());
-            RequestDispatcher view=getServletContext().getRequestDispatcher(ricercaInCatalogo);
+            req.setAttribute(BEANS,SystemBean.getInstance());
+            RequestDispatcher view=getServletContext().getRequestDispatcher(RICERCAINCATALOGO);
             view.forward(req, resp);
         }
         if(buttonR!=null && buttonR.equals("riviste"))
         {
             SystemBean.getInstance().setTypeAsMagazine();
-            req.setAttribute(beanS,SystemBean.getInstance());
-            RequestDispatcher view=getServletContext().getRequestDispatcher(ricercaInCatalogo);
+            req.setAttribute(BEANS,SystemBean.getInstance());
+            RequestDispatcher view=getServletContext().getRequestDispatcher(RICERCAINCATALOGO);
             view.forward(req, resp);
         }
         if(buttonI!=null && buttonI.equals("indietro"))

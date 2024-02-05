@@ -20,9 +20,11 @@ import java.util.logging.Level;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
-    private final UserBean uB=UserBean.getInstance();
-    private final User u= User.getInstance();
-    private final SystemBean sB=SystemBean.getInstance();
+    private static final UserBean uB=UserBean.getInstance();
+    private static final User u= User.getInstance();
+    private static final SystemBean sB=SystemBean.getInstance();
+    private static final String BEANS="beanS";
+    private static final String BEANUB="beanUb";
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String email=req.getParameter("emailL");
@@ -48,15 +50,15 @@ public class LoginServlet extends HttpServlet {
                     switch (uB.getRuoloB()) {
                         case "A", "a"-> {
                             sB.setLoggedB(true);
-                            req.setAttribute("beanUb", uB);
-                            req.setAttribute("beanS", sB);
+                            req.setAttribute(BEANUB, uB);
+                            req.setAttribute(BEANS, sB);
                             view = getServletContext().getRequestDispatcher("/admin.jsp");
                             view.forward(req, resp);
                         }
                         case "U", "u", "W", "w", "S", "s", "E", "e"-> {
                             sB.setLoggedB(true);
-                            req.setAttribute("beanUb", uB);
-                            req.setAttribute("beanS", sB);
+                            req.setAttribute(BEANUB, uB);
+                            req.setAttribute(BEANS, sB);
                             view = getServletContext().getRequestDispatcher("/utenti.jsp");
                             view.forward(req, resp);
                         }
@@ -67,7 +69,7 @@ public class LoginServlet extends HttpServlet {
                 }
                 else {
                     uB.setMexB("credenziali sbagliare .. riprovare");
-                    req.setAttribute("beanUb",uB);
+                    req.setAttribute(BEANUB,uB);
                     view= getServletContext().getRequestDispatcher("/login.jsp");
                     view.forward(req,resp);
                 }
@@ -94,8 +96,8 @@ public class LoginServlet extends HttpServlet {
                 PropertyUtils.setProperty(uB,"mexB","utente non registrato / credenziali sbagliate ... per favore registrarsi");
                 PropertyUtils.setProperty(sB,"loggedB",false);
 
-                req.setAttribute("beanUb",uB);
-                req.setAttribute("beanS",sB);
+                req.setAttribute(BEANUB,uB);
+                req.setAttribute(BEANS,sB);
                 view = getServletContext().getRequestDispatcher("/login.jsp");
                 view.forward(req,resp);
             }
