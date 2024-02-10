@@ -36,4 +36,6 @@
             <Button fx:id="buttonReg" mnemonicParsing="false" onAction="#register" text="Registrati" textFill="#c937aa" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField fx:id="textFieldUsername" GridPane.columnIndex="2" GridPane.rowIndex="1" />
          </children>
-   
+      </GridPane>
+   </children>
+</Pane>

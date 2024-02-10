@@ -24,4 +24,6 @@
       <TextField fx:id="entryText" layoutX="704.0" layoutY="141.0" prefHeight="25.0" prefWidth="135.0" promptText="Inserisci  ID del libro " />
       <Button fx:id="buttonV" layoutX="689.0" layoutY="188.0" mnemonicParsing="false" onAction="#verifica" prefHeight="25.0" prefWidth="155.0"  />
       <Button fx:id="buttonA" layoutX="694.0" layoutY="242.0" mnemonicParsing="false" onAction="#procedi" prefHeight="25.0" prefWidth="155.0"  />
-      <Button fx:id="buttonI" layoutX="684.0" layoutY="435.0" mnemonicParsing="false" onAction="#torna" prefHeight="25.0" prefWidth="155.0" text="Home Page" 
+      <Button fx:id="buttonI" layoutX="684.0" layoutY="435.0" mnemonicParsing="false" onAction="#torna" prefHeight="25.0" prefWidth="155.0" text="Home Page" />
+   </children>
+</Pane>

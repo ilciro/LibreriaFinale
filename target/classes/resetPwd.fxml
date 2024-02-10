@@ -43,4 +43,7 @@
                   <Image url="@password-icon.png" />
                </image>
             </ImageView>
-         </childr
+         </children>
+      </GridPane>
+   </children>
+</Pane>

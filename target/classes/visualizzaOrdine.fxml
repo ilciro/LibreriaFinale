@@ -23,3 +23,5 @@
       <Button fx:id="buttonG" layoutX="341.0" layoutY="393.0" mnemonicParsing="false" onAction="#acquisti" text="Mostra riepilogo" textAlignment="CENTER" textFill="#0826eb" />
       <Button fx:id="buttonI" layoutX="516.0" layoutY="393.0" mnemonicParsing="false" onAction="#indietro" text="Indietro" textAlignment="CENTER" textFill="#f50909" />
       <Button fx:id="buttonHP" layoutX="691.0" layoutY="393.0" mnemonicParsing="false" onAction="#home" text="Home Page" textAlignment="CENTER" textFill="#09f839" />
+   </children>
+</Pane>

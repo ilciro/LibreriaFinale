@@ -15,4 +15,5 @@
       <Button fx:id="giornaliB" layoutX="358.0" layoutY="133.0" mnemonicParsing="false" onAction="#reportGiornali" text="Giornali" textFill="#2ab9a6" />
       <Button fx:id="rivisteB" layoutX="489.0" layoutY="133.0" mnemonicParsing="false" onAction="#reportRiviste" text="Riviste" textFill="#2600ff" />
       <TextArea fx:id="ta" layoutX="38.0" layoutY="197.0" prefHeight="287.0" prefWidth="680.0" />
-   </c
+   </children>
+</Pane>

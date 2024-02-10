@@ -139,4 +139,10 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="buttonA" layoutX="629.0" layoutY="328.0" mnemonicParsing="false" onAction="#annulla" prefHeight="25.0" prefWidth="71.0" text="Indietro"
+      <Button fx:id="buttonA" layoutX="629.0" layoutY="328.0" mnemonicParsing="false" onAction="#annulla" prefHeight="25.0" prefWidth="71.0" text="Indietro" textFill="RED">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

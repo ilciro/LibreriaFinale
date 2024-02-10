@@ -22,3 +22,5 @@
             <Image url="@registraz_ok.png" />
          </image>
       </ImageView>
+   </children>
+</Pane>

@@ -52,4 +52,7 @@
             <PasswordField fx:id="passCheckTF" GridPane.columnIndex="2" GridPane.rowIndex="6" />
             <Label fx:id="dataL" prefHeight="17.0" prefWidth="122.0" text="Data di nascita" GridPane.rowIndex="7" />
             <DatePicker fx:id="calendarL" prefHeight="25.0" prefWidth="381.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-        
+         </children>
+      </GridPane>
+   </children>
+</Pane>
