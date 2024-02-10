@@ -269,8 +269,6 @@ Z
 0.settings/org.eclipse.wst.jsdt.ui.superType.name,6/8/68551620133113f17da7e71a4e7ffc802afebc25
 D
 .circleci/config.yml,f/d/fd5da61396a8376845bee5cdf71aaf3c98a888ae
-9
-	prova.txt,7/2/729d6da0dc90de52e1e0156e6b036e6743cfba7f
 M
 src/main/webapp/css/login.css,c/9/c953adb63298078442a1704870875d6d03cf7c6f
 O
@@ -794,8 +792,6 @@ Q.idea/sonarlint/securityhotspotstore/c/b/cbeb63d13c316e0d84be3639d172ea0522a616
 Q.idea/sonarlint/securityhotspotstore/b/2/b2cf3e620f8eccc9f16a6870bc4fbd5e62fb1eaa,4/a/4a4b7376f912c8b15ff0e2fee4ceacaf7df2568a
 Å
 Q.idea/sonarlint/securityhotspotstore/f/b/fb3030ba023b16b4774bbe72fb9833c46f8e799f,5/c/5c2d95e86948fbd8bf7baa52457490c581eda835
-Å
-Q.idea/sonarlint/securityhotspotstore/3/1/310b8be56176af62d19aaf82da83b611084cdeba,f/3/f354750546c5e147ed3989aba10b7760b2338067
 Å
 Q.idea/sonarlint/securityhotspotstore/3/9/39ccacb9059a75cf227d027db9fee5d0629257f5,d/5/d5134e9da23555ad0ce07fed9c26bf49ccef2139
 Å
