@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="pulizia v3" />
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="pulizia v4">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +37,7 @@
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
         <option name="accountId" value="6cd4b47d-c203-49a2-909e-168bbbe02c87" />
-        <option name="url" value="https://github.com/ilciro/LibreriaFinale.git" />
+        <option name="url" value="https://github.com/ilciro/LibreriaFinale" />
       </UrlAndAccount>
     </option>
   </component>
@@ -158,6 +160,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="LibreriaMaven" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="LibreriaMaven" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LibreriaMaven [javafx:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -247,6 +262,14 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
+    </task>
+    <task id="LOCAL-00074" summary="report webv1">
+      <option name="closed" value="true" />
+      <created>1705743309021</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1705743309022</updated>
     </task>
     <task id="LOCAL-00075" summary="report web v2">
       <option name="closed" value="true" />
@@ -616,15 +639,7 @@
       <option name="project" value="LOCAL" />
       <updated>1707566963530</updated>
     </task>
-    <task id="LOCAL-00121" summary="pulizia v3">
-      <option name="closed" value="true" />
-      <created>1707567338983</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1707567338985</updated>
-    </task>
-    <option name="localTasksCounter" value="122" />
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -652,7 +667,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="read/download objects v6" />
     <MESSAGE value="read/download objects v7" />
     <MESSAGE value="read/download objects v6( chanhed pdf)" />
     <MESSAGE value="insert test v1" />
@@ -677,7 +691,8 @@
     <MESSAGE value="pulizia v1" />
     <MESSAGE value="pulizia v2" />
     <MESSAGE value="pulizia v3" />
-    <option name="LAST_COMMIT_MESSAGE" value="pulizia v3" />
+    <MESSAGE value="pulizia v4" />
+    <option name="LAST_COMMIT_MESSAGE" value="pulizia v4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
