@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="pulizia v4">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="pulizia v5 (inset prova.txt)">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/3/135889d7d1953e289ba249f3ba71a2d3c77cd5fe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/b/bb91fa57fc8fbb01c35fd980edc0981a988a0474" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/a/ca1564ef42c34b1a28471ea4e27aa0c56bdcb4af" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/3/135889d7d1953e289ba249f3ba71a2d3c77cd5fe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/b/bb91fa57fc8fbb01c35fd980edc0981a988a0474" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/a/ca1564ef42c34b1a28471ea4e27aa0c56bdcb4af" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,14 +269,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
-    </task>
-    <task id="LOCAL-00074" summary="report webv1">
-      <option name="closed" value="true" />
-      <created>1705743309021</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1705743309022</updated>
     </task>
     <task id="LOCAL-00075" summary="report web v2">
       <option name="closed" value="true" />
@@ -639,7 +638,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707566963530</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="pulizia v5 (inset prova.txt)">
+      <option name="closed" value="true" />
+      <created>1707568444372</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1707568444372</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -667,7 +674,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="read/download objects v7" />
     <MESSAGE value="read/download objects v6( chanhed pdf)" />
     <MESSAGE value="insert test v1" />
     <MESSAGE value="insert test v2" />
@@ -692,7 +698,8 @@
     <MESSAGE value="pulizia v2" />
     <MESSAGE value="pulizia v3" />
     <MESSAGE value="pulizia v4" />
-    <option name="LAST_COMMIT_MESSAGE" value="pulizia v4" />
+    <MESSAGE value="pulizia v5 (inset prova.txt)" />
+    <option name="LAST_COMMIT_MESSAGE" value="pulizia v5 (inset prova.txt)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
