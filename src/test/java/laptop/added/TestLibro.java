@@ -7,6 +7,7 @@ import web.bean.LibroBean;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.util.Enumeration;
 import java.util.ResourceBundle;
 
@@ -63,8 +64,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
         assertNotNull(systemKeys);
     }
     @Test
-     void testIncrementaDisp() throws SQLException
-    {
+     void testIncrementaDisp() throws SQLException {
         java.sql.Date data=new Date(2024,1,2);
         l.setId(1);
         lD.aggiornaData(l,data);
