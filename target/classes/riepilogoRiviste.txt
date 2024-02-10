@@ -4,12 +4,18 @@ Id :	3titolo :	Tv Sorrisi e canzoniricavo totale :	200.0
 Id :	4titolo :	titolo rivista aggiornatoricavo totale :	225.0
 Id :	5titolo :	Rivista Bricavo totale :	262.0
 Id :	7titolo :	rivista provaricavo totale :	130.0
-Id :	16titolo :	rivista provaricavo totale :	130.0
 Id :	17titolo :	provo ad inserire un nuovo giornalericavo totale :	263.0
 Id :	18titolo :	rivista provaricavo totale :	130.0
 Id :	19titolo :	titolo rivista aggiornatoricavo totale :	225.0
 Id :	20titolo :	rivista provaricavo totale :	130.0
-Id :	21titolo :	provo ad inserire un nuovo giornalericavo totale :	263.0
 Id :	22titolo :	rivista provaricavo totale :	130.0
 Id :	23titolo :	provo ad inserire un nuovo giornalericavo totale :	263.0
 Id :	24titolo :	rivista provaricavo totale :	130.0
+Id :	25titolo :	provo ad inserire un nuovo giornalericavo totale :	263.0
+Id :	26titolo :	rivista provaricavo totale :	130.0
+Id :	27titolo :	rivista provaricavo totale :	130.0
+Id :	28titolo :	rivista provaricavo totale :	130.0
+Id :	29titolo :	provo ad inserire un nuovo giornalericavo totale :	263.0
+Id :	30titolo :	rivista provaricavo totale :	130.0
+Id :	31titolo :	provo ad inserire un nuovo giornalericavo totale :	263.0
+Id :	32titolo :	rivista provaricavo totale :	130.0
