@@ -624,6 +624,8 @@ k
 ;src/test/java/laptop/controller/ControllerAcquistaTest.java,1/5/1526c30a4d518bd9904813c6ca58363b33680d34
 q
 Asrc/test/java/laptop/controller/ControllerRicercaPerTipoTest.java,e/9/e9eed40c6bf995bde9b2e25d262a003fa17f3d27
+k
+;src/test/java/laptop/controller/ControllerUserPageTest.java,3/1/310b8be56176af62d19aaf82da83b611084cdeba
 u
 Esrc/test/java/laptop/controller/ControllerCheckPagamentoDataTest.java,5/3/53a964c23586e01c1e904c9f21a3e6d2174807e7
 n

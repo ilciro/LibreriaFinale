@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="pulizia v5 (inset prova.txt)">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/3/135889d7d1953e289ba249f3ba71a2d3c77cd5fe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/b/bb91fa57fc8fbb01c35fd980edc0981a988a0474" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/a/ca1564ef42c34b1a28471ea4e27aa0c56bdcb4af" beforeDir="false" />
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="pulizia v3">
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/a/ca1564ef42c34b1a28471ea4e27aa0c56bdcb4af" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/a/ca1564ef42c34b1a28471ea4e27aa0c56bdcb4af" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/3/135889d7d1953e289ba249f3ba71a2d3c77cd5fe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/b/bb91fa57fc8fbb01c35fd980edc0981a988a0474" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/a/ca1564ef42c34b1a28471ea4e27aa0c56bdcb4af" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +41,7 @@
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
         <option name="accountId" value="6cd4b47d-c203-49a2-909e-168bbbe02c87" />
-        <option name="url" value="https://github.com/ilciro/LibreriaFinale" />
+        <option name="url" value="https://github.com/ilciro/LibreriaFinale.git" />
       </UrlAndAccount>
     </option>
   </component>
@@ -68,38 +65,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestCSVDao.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestIndexPage.testAcquistaLibro.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestIndexPage.testIndexBook.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LibreriaMaven [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LibreriaMaven [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LibreriaMaven [org.apache.maven.plugins:maven-install-plugin:3.1.1:install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LibreriaMaven [org.apache.maven.plugins:maven-war-plugin:3.3.2:war].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LibreriaMaven [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LibreriaMaven [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LibreriaMaven [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LibreriaMaven [verify].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/daniele/IdeaProjects/LibreriaFinale/src/main/webapp&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Main.executor": "Run",
+    "JUnit.TestCSVDao.executor": "Run",
+    "JUnit.TestIndexPage.testAcquistaLibro.executor": "Run",
+    "JUnit.TestIndexPage.testIndexBook.executor": "Run",
+    "JUnit.Unnamed.executor": "Run",
+    "Maven.LibreriaMaven [clean].executor": "Run",
+    "Maven.LibreriaMaven [install].executor": "Run",
+    "Maven.LibreriaMaven [org.apache.maven.plugins:maven-install-plugin:3.1.1:install].executor": "Run",
+    "Maven.LibreriaMaven [org.apache.maven.plugins:maven-war-plugin:3.3.2:war].executor": "Run",
+    "Maven.LibreriaMaven [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
+    "Maven.LibreriaMaven [package].executor": "Run",
+    "Maven.LibreriaMaven [validate].executor": "Run",
+    "Maven.LibreriaMaven [verify].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "Reverting in master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/daniele/IdeaProjects/LibreriaFinale/src/main/webapp",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="web.bean" />
@@ -163,19 +160,6 @@
       <option name="MAIN_CLASS_NAME" value="laptop.added.Prova" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="LibreriaMaven" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="LibreriaMaven" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -269,6 +253,14 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
+    </task>
+    <task id="LOCAL-00074" summary="report webv1">
+      <option name="closed" value="true" />
+      <created>1705743309021</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1705743309022</updated>
     </task>
     <task id="LOCAL-00075" summary="report web v2">
       <option name="closed" value="true" />
@@ -638,15 +630,7 @@
       <option name="project" value="LOCAL" />
       <updated>1707566963530</updated>
     </task>
-    <task id="LOCAL-00121" summary="pulizia v5 (inset prova.txt)">
-      <option name="closed" value="true" />
-      <created>1707568444372</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1707568444372</updated>
-    </task>
-    <option name="localTasksCounter" value="122" />
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -674,6 +658,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="read/download objects v6" />
+    <MESSAGE value="read/download objects v7" />
     <MESSAGE value="read/download objects v6( chanhed pdf)" />
     <MESSAGE value="insert test v1" />
     <MESSAGE value="insert test v2" />
@@ -697,9 +683,7 @@
     <MESSAGE value="pulizia v1" />
     <MESSAGE value="pulizia v2" />
     <MESSAGE value="pulizia v3" />
-    <MESSAGE value="pulizia v4" />
-    <MESSAGE value="pulizia v5 (inset prova.txt)" />
-    <option name="LAST_COMMIT_MESSAGE" value="pulizia v5 (inset prova.txt)" />
+    <option name="LAST_COMMIT_MESSAGE" value="pulizia v3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
