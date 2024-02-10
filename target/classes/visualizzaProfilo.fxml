@@ -41,7 +41,4 @@
             <Label fx:id="labelInsD" prefHeight="62.0" prefWidth="132.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
             <Button fx:id="buttonCred" mnemonicParsing="false" onAction="#credenziali" prefHeight="59.0" prefWidth="131.0" text="Prendi dati" textFill="#da08ad" GridPane.columnIndex="4" GridPane.rowIndex="3" />
             <Button fx:id="cancellaB" mnemonicParsing="false" onAction="#eliminaProfilo" prefHeight="79.0" prefWidth="154.0" text="Cancella Profilo" textFill="#ff8800" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-         </children>
-      </GridPane>
-   </children>
-</Pane>
+         </children

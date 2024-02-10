@@ -25,6 +25,4 @@
       <Button fx:id="modB" layoutX="611.0" layoutY="175.0" mnemonicParsing="false" onAction="#modifica" text="Modifica" textFill="#16aebc" />
       <Button fx:id="buttonB" layoutX="615.0" layoutY="290.0" mnemonicParsing="false" onAction="#indietro" prefHeight="25.0" prefWidth="60.0" text="Indietro" />
       <Button fx:id="buttonG" layoutX="249.0" layoutY="351.0" mnemonicParsing="false" onAction="#genera" prefHeight="25.0" prefWidth="101.0" text="Genera Lista" textFill="#8f904c" />
-      <TextField fx:id="idL" layoutX="514.0" layoutY="175.0" prefHeight="25.0" prefWidth="82.0" />
-   </children>
-</Pane>
+      <TextField fx:id="idL" layoutX="514.0" layoutY="175.0" prefHeight="25.0" prefWidth="82.0"

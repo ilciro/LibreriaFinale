@@ -17,5 +17,4 @@
       <TextArea fx:id="elencoUtenti" layoutX="59.0" layoutY="81.0" prefHeight="254.0" prefWidth="468.0" />
       <Label fx:id="idL" layoutX="674.0" layoutY="172.0" prefHeight="17.0" prefWidth="107.0" text="Leggi id dell'utente" textAlignment="CENTER" textFill="#da0b6f" />
       <TextField fx:id="utenteTF" layoutX="685.0" layoutY="219.0" prefHeight="25.0" prefWidth="86.0" />
-   </children>
-</Pane>
+   <

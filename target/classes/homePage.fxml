@@ -62,8 +62,4 @@
                <image>
                   <Image url="@Search-icon-13.png" />
                </image>
-            </ImageView>
-         </children>
-      </GridPane>
-   </children>
-</Pane>
+            </ImageView

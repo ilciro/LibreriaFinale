@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: web.test.TestEditoreRicerca
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 40.934 s - in web.test.TestEditoreRicerca
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 29.355 s - in web.test.TestEditoreRicerca

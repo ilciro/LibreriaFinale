@@ -35,7 +35,6 @@ laptop/added/TestLibro.class
 laptop/controller/ControllerHomePageAfterLoginSETest.class
 web/test/TestPagamentoCartaCredito.class
 web/test/TestLoginRaccoltaUtenti.class
-laptop/controller/ControllerUserPageTest.class
 laptop/controller/ControllerVisualizzaTest.class
 web/test/TestPagamentoAnnullato.class
 laptop/added/TestGenerateReport.class

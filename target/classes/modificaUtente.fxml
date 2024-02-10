@@ -63,8 +63,4 @@
             <TextField fx:id="nuovaEmailL" GridPane.columnIndex="4" GridPane.rowIndex="8" />
             <TextField fx:id="nuovaDescL" GridPane.columnIndex="4" GridPane.rowIndex="10" />
             <TextField fx:id="nuovoNL" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-            <DatePicker fx:id="nuovaDNL" promptText="01/01/1970" GridPane.columnIndex="4" GridPane.rowIndex="11" />
-         </children>
-      </GridPane>
-   </children>
-</Pane>
+            <DatePicker fx:id="nuovaDNL" promptText="01/01/1970" GridPane.columnIndex="4" GridPane.rowIndex="11" 

@@ -39,6 +39,3 @@
             <Button fx:id="buttonI" mnemonicParsing="false" onAction="#procediCash" prefHeight="71.0" prefWidth="203.0" text="Conferma" textFill="#2bff00" GridPane.rowIndex="6" />
             <Button fx:id="buttonA" mnemonicParsing="false" onAction="#annullaCash" prefHeight="110.0" prefWidth="256.0" text="Annulla" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="6" />
          </children>
-      </GridPane>
-   </children>
-</Pane>

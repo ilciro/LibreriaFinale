@@ -21,5 +21,3 @@
       <TextField fx:id="emailTF" layoutX="300.0" layoutY="200.0" />
       <TextField fx:id="dataTF" layoutX="300.0" layoutY="300.0" />
       <PasswordField fx:id="passF" layoutX="300.0" layoutY="250.0" />
-   </children>
-</Pane>

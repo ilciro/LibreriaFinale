@@ -11,5 +11,4 @@
       <Button fx:id="rivisteB" layoutX="221.0" layoutY="155.0" mnemonicParsing="false" onAction="#riviste" text="Riviste" textFill="#1a1abc" />
       <Button fx:id="libriB" layoutX="372.0" layoutY="155.0" mnemonicParsing="false" onAction="#libri" text="Libri" textFill="#ff04c9" />
       <Button fx:id="buttonI" layoutX="220.0" layoutY="263.0" mnemonicParsing="false" onAction="#torna" text="Indietro" textFill="RED" />
-   </children>
-</Pane>
+   </child

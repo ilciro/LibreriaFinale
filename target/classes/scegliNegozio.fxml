@@ -13,5 +13,4 @@
       <RadioButton fx:id="radio2" layoutX="213.0" layoutY="130.0" mnemonicParsing="false" />
       <RadioButton fx:id="radio4" layoutX="213.0" layoutY="192.0" mnemonicParsing="false" />
       <Button fx:id="buttonV" layoutX="403.0" layoutY="155.0" mnemonicParsing="false" onAction="#verifica" text="verifca e conferma ritiro" />
-   </children>
-</Pane>
+   </chi

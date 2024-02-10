@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: web.test.TestPagamentoAnnullato
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.431 s - in web.test.TestPagamentoAnnullato
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.322 s - in web.test.TestPagamentoAnnullato

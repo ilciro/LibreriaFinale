@@ -26,6 +26,4 @@
       <Button fx:id="buttonC" layoutX="481.0" layoutY="76.0" mnemonicParsing="false" onAction="#cerca" text="Cerca" />
       <Button fx:id="buttonV" layoutX="429.0" layoutY="201.0" mnemonicParsing="false" onAction="#apri" text="Visualizza" />
       <Button fx:id="buttonB" layoutX="478.0" layoutY="328.0" mnemonicParsing="false" onAction="#torna" text="Indietro" />
-      <TextField fx:id="idT" layoutX="527.0" layoutY="201.0" prefHeight="25.0" prefWidth="46.0" promptText="id " />
-   </children>
-</Pane>
+      <TextField fx:id="idT" layoutX="527.0" layoutY="201.0" prefHeight="25.0" prefWidth="46.0" promptText="id 

@@ -33,6 +33,4 @@
       <ListView fx:id="ruoli" layoutX="583.0" layoutY="86.0" onMouseClicked="#ritornaUtente" prefHeight="129.0" prefWidth="121.0" />
       <TextField fx:id="utenteTF" layoutX="360.0" layoutY="100.0" />
       <Button fx:id="buttonM" layoutX="601.0" layoutY="248.0" mnemonicParsing="false" onMouseClicked="#aggiorna" text="modifica dati" textFill="#199010" />
-      <TextArea fx:id="descTA" layoutX="330.0" layoutY="410.0" prefHeight="130.0" prefWidth="200.0" />
-   </children>
-</Pane>
+      <TextArea fx:id="descTA" layoutX="330.0" layoutY="410.0" prefHeight="130.0" prefWidth

@@ -251,157 +251,171 @@ public class Libro implements Raccolta {
 <span class="fc" id="L251">			document.open();</span>
 <span class="fc" id="L252">			document.addTitle(&quot;Libro &quot;);</span>
 <span class="fc" id="L253">			document.add(new Paragraph(&quot;&quot;&quot;</span>
-					libro/book not avalaible
-					Lorem ipsum 	dolor sit amet, consectetur adipiscing elit. Curabitur tempus tincidunt justo eget eleifend. Maecenas nisl nulla, lobortis quis semper quis, scelerisque nec purus. Mauris laoreet ac tellus molestie varius. Maecenas scelerisque, nibh ac pellentesque luctus, quam nibh congue tortor, vitae placerat dui lorem eget erat. Proin non porta odio, ac porta nisl. Donec vitae commodo sem. Fusce sit amet urna nec quam mattis tristique. Nam non neque a nunc rhoncus ullamcorper eu in ex. Proin et orci lacus. Cras rutrum lorem erat, nec ultrices urna efficitur sed. Praesent auctor non lorem at bibendum.
-					Proin tincidunt mauris a velit pulvinar posuere. Suspendisse posuere ex sed enim sollicitudin, sit amet ullamcorper nunc mollis. Quisque sagittis aliquet ipsum vitae facilisis. Etiam id ligula sed sem viverra cursus. Aenean suscipit molestie posuere. Duis id ante ut nibh suscipit gravida. Cras egestas risus ac tellus varius, et rhoncus enim porttitor.&quot;&quot;&quot;));
-<span class="fc" id="L257">			document.close();</span>
-<span class="fc" id="L258">			writer.close();</span>
+                    libro/book not avalaible.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur tempus tincidunt justo eget eleifend.
+                    Maecenas nisl nulla, lobortis quis semper quis, scelerisque nec purus.
+                    Mauris laoreet ac tellus molestie varius. Maecenas scelerisque, nibh ac pellentesque luctus, quam nibh congue tortor, vitae placerat dui lorem eget erat.
+                    Proin non porta odio, ac porta nisl. Donec vitae commodo sem.
+                    Fusce sit amet urna nec quam mattis tristique.
+                    Nam non neque a nunc rhoncus ullamcorper eu in ex.
+                    Proin et orci lacus. Cras rutrum lorem erat, nec ultrices urna efficitur sed.
+                    Praesent auctor non lorem at bibendum.
+                    Proin tincidunt mauris a velit pulvinar posuere.
+                    Suspendisse posuere ex sed enim sollicitudin, sit amet ullamcorper nunc mollis.
+                    Quisque sagittis aliquet ipsum vitae facilisis.
+                    Etiam id ligula sed sem viverra cursus.
+                    Aenean suscipit molestie posuere.
+                    Duis id ante ut nibh suscipit gravida.
+                    Cras egestas risus ac tellus varius, et rhoncus enim porttitor.
+                    Nam malesuada in massa eu venenatis.&quot;&quot;&quot;));
+<span class="fc" id="L271">			document.close();</span>
+<span class="fc" id="L272">			writer.close();</span>
 
-<span class="fc" id="L260">			readPdf(name);</span>
+<span class="fc" id="L274">			readPdf(name);</span>
 
 
-<span class="nc" id="L263">		}catch (DocumentException | IOException e)</span>
+<span class="nc" id="L277">		}catch (DocumentException | IOException e)</span>
 		{
-<span class="nc" id="L265">			Logger.getLogger(&quot;create pdf&quot;).log(Level.SEVERE,&quot;pdf not created:{0} &quot;, name);</span>
-<span class="fc" id="L266">		}</span>
-<span class="fc" id="L267">    }</span>
+<span class="nc" id="L279">			Logger.getLogger(&quot;create pdf&quot;).log(Level.SEVERE,&quot;pdf not created:{0} &quot;, name);</span>
+<span class="fc" id="L280">		}</span>
+<span class="fc" id="L281">    }</span>
 
 	private void readPdf(String name) throws IOException, DocumentException {
 
-<span class="fc" id="L271">		Document document = new Document();</span>
+<span class="fc" id="L285">		Document document = new Document();</span>
 
-<span class="fc" id="L273">        PdfReader reader = new PdfReader(rbTitoli.getString(&quot;srcPath&quot;) +name);</span>
-<span class="fc" id="L274">		PdfCopy copy=new PdfCopy(document,new FileOutputStream(rbTitoli.getString(DSTPATH)+name));</span>
-<span class="fc" id="L275">		document.open();</span>
+<span class="fc" id="L287">        PdfReader reader = new PdfReader(rbTitoli.getString(&quot;srcPath&quot;) +name);</span>
+<span class="fc" id="L288">		PdfCopy copy=new PdfCopy(document,new FileOutputStream(rbTitoli.getString(DSTPATH)+name));</span>
+<span class="fc" id="L289">		document.open();</span>
 
-<span class="fc" id="L277">		int pages = reader.getNumberOfPages();</span>
-<span class="fc bfc" id="L278" title="All 2 branches covered.">		for (int i = 1; i &lt;= pages; i++) {</span>
-<span class="fc" id="L279">			copy.addPage(copy.getImportedPage(reader,i));</span>
+<span class="fc" id="L291">		int pages = reader.getNumberOfPages();</span>
+<span class="fc bfc" id="L292" title="All 2 branches covered.">		for (int i = 1; i &lt;= pages; i++) {</span>
+<span class="fc" id="L293">			copy.addPage(copy.getImportedPage(reader,i));</span>
 
 		}
 
 
-<span class="fc" id="L284">		reader.close();</span>
-<span class="fc" id="L285">		document.close();</span>
+<span class="fc" id="L298">		reader.close();</span>
+<span class="fc" id="L299">		document.close();</span>
 
 
 
-<span class="fc" id="L289">	}</span>
+<span class="fc" id="L303">	}</span>
 	@Override
 	public void scarica(int i) throws DocumentException, IOException {
 
 		//here is copy of file
 
-<span class="pc bpc" id="L295" title="7 of 13 branches missed.">			switch (i) {</span>
-<span class="fc" id="L296">				case 1 -&gt;createPDF(rbTitoli.getString(&quot;titolo1&quot;));</span>
-<span class="fc" id="L297">				case 2 -&gt; createPDF(rbTitoli.getString(&quot;titolo2&quot;));</span>
-<span class="fc" id="L298">				case 3-&gt; createPDF(rbTitoli.getString(&quot;titolo3&quot;));</span>
-<span class="fc" id="L299">				case 4-&gt; createPDF(rbTitoli.getString(&quot;titolo4&quot;));</span>
-<span class="fc" id="L300">				case 5-&gt;createPDF(rbTitoli.getString(&quot;titolo5&quot;));</span>
-<span class="fc" id="L301">				case 6-&gt;createPDF(rbTitoli.getString(&quot;titolo6&quot;));</span>
-<span class="nc" id="L302">				case 7-&gt; createPDF(rbTitoli.getString(&quot;titolo7&quot;));</span>
-<span class="nc" id="L303">				case 8-&gt;createPDF(rbTitoli.getString(&quot;titolo8&quot;));</span>
-<span class="nc" id="L304">				case 9-&gt; createPDF(rbTitoli.getString(&quot;titolo9&quot;));</span>
-<span class="nc" id="L305">				case 10-&gt;createPDF(rbTitoli.getString(&quot;titolo10&quot;));</span>
-<span class="nc" id="L306">				case 11-&gt;createPDF(rbTitoli.getString(&quot;titolo11&quot;));</span>
-<span class="nc" id="L307">				case 12-&gt;createPDF(rbTitoli.getString(&quot;titolo12&quot;));</span>
+<span class="pc bpc" id="L309" title="7 of 13 branches missed.">			switch (i) {</span>
+<span class="fc" id="L310">				case 1 -&gt;createPDF(rbTitoli.getString(&quot;titolo1&quot;));</span>
+<span class="fc" id="L311">				case 2 -&gt; createPDF(rbTitoli.getString(&quot;titolo2&quot;));</span>
+<span class="fc" id="L312">				case 3-&gt; createPDF(rbTitoli.getString(&quot;titolo3&quot;));</span>
+<span class="fc" id="L313">				case 4-&gt; createPDF(rbTitoli.getString(&quot;titolo4&quot;));</span>
+<span class="fc" id="L314">				case 5-&gt;createPDF(rbTitoli.getString(&quot;titolo5&quot;));</span>
+<span class="fc" id="L315">				case 6-&gt;createPDF(rbTitoli.getString(&quot;titolo6&quot;));</span>
+<span class="nc" id="L316">				case 7-&gt; createPDF(rbTitoli.getString(&quot;titolo7&quot;));</span>
+<span class="nc" id="L317">				case 8-&gt;createPDF(rbTitoli.getString(&quot;titolo8&quot;));</span>
+<span class="nc" id="L318">				case 9-&gt; createPDF(rbTitoli.getString(&quot;titolo9&quot;));</span>
+<span class="nc" id="L319">				case 10-&gt;createPDF(rbTitoli.getString(&quot;titolo10&quot;));</span>
+<span class="nc" id="L320">				case 11-&gt;createPDF(rbTitoli.getString(&quot;titolo11&quot;));</span>
+<span class="nc" id="L321">				case 12-&gt;createPDF(rbTitoli.getString(&quot;titolo12&quot;));</span>
 
-<span class="nc" id="L309">				default -&gt; 	Logger.getLogger(&quot;Test scarica&quot;).log(Level.SEVERE, &quot;download error&quot;);</span>
+<span class="nc" id="L323">				default -&gt; 	Logger.getLogger(&quot;Test scarica&quot;).log(Level.SEVERE, &quot;download error&quot;);</span>
 
 
 
 
 			}
 
-<span class="fc" id="L316">}</span>
+<span class="fc" id="L330">}</span>
 
 	@Override
 	public void leggi(int i) throws IOException, DocumentException, URISyntaxException {
 
 
 
-<span class="pc bpc" id="L323" title="7 of 13 branches missed.">		switch (i) {</span>
-<span class="fc" id="L324">			case 1 -&gt; f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo1&quot;));</span>
-<span class="fc" id="L325">			case 2-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo2&quot;));</span>
-<span class="fc" id="L326">			case 3-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo3&quot;));</span>
-<span class="fc" id="L327">			case 4-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo4&quot;));</span>
-<span class="fc" id="L328">			case 5-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo5&quot;));</span>
-<span class="fc" id="L329">			case 6-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo6&quot;));</span>
-<span class="nc" id="L330">			case 7-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo7&quot;));</span>
-<span class="nc" id="L331">			case 8-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo8&quot;));</span>
-<span class="nc" id="L332">			case 9-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo9&quot;));</span>
-<span class="nc" id="L333">			case 10-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo10&quot;));</span>
-<span class="nc" id="L334">			case 11-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo11&quot;));</span>
+<span class="pc bpc" id="L337" title="7 of 13 branches missed.">		switch (i) {</span>
+<span class="fc" id="L338">			case 1 -&gt; f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo1&quot;));</span>
+<span class="fc" id="L339">			case 2-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo2&quot;));</span>
+<span class="fc" id="L340">			case 3-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo3&quot;));</span>
+<span class="fc" id="L341">			case 4-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo4&quot;));</span>
+<span class="fc" id="L342">			case 5-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo5&quot;));</span>
+<span class="fc" id="L343">			case 6-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo6&quot;));</span>
+<span class="nc" id="L344">			case 7-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo7&quot;));</span>
+<span class="nc" id="L345">			case 8-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo8&quot;));</span>
+<span class="nc" id="L346">			case 9-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo9&quot;));</span>
+<span class="nc" id="L347">			case 10-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo10&quot;));</span>
+<span class="nc" id="L348">			case 11-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo11&quot;));</span>
 
-<span class="nc" id="L336">			case 12-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo12&quot;));</span>
+<span class="nc" id="L350">			case 12-&gt;f=new File(rbTitoli.getString(DSTPATH) + rbTitoli.getString(&quot;titolo12&quot;));</span>
 
-<span class="nc" id="L338">			default -&gt; 	Logger.getLogger(&quot;Test leggi&quot;).log(Level.SEVERE, &quot;read error&quot;);</span>
+<span class="nc" id="L352">			default -&gt; 	Logger.getLogger(&quot;Test leggi&quot;).log(Level.SEVERE, &quot;read error&quot;);</span>
 		}
-<span class="pc bpc" id="L340" title="1 of 2 branches missed.">		if (Desktop.isDesktopSupported()) {</span>
-<span class="fc" id="L341">			new Thread(() -&gt; {</span>
+<span class="pc bpc" id="L354" title="1 of 2 branches missed.">		if (Desktop.isDesktopSupported()) {</span>
+<span class="fc" id="L355">			new Thread(() -&gt; {</span>
 				try {
-<span class="fc" id="L343">					Desktop.getDesktop().open(f);</span>
-<span class="nc" id="L344">				} catch (IOException e) {</span>
-<span class="pc" id="L345">					Logger.getLogger(&quot;open file&quot;).log(Level.SEVERE, &quot;open error&quot;);				}</span>
-<span class="fc" id="L346">			}).start();</span>
+<span class="fc" id="L357">					Desktop.getDesktop().open(f);</span>
+<span class="nc" id="L358">				} catch (IOException e) {</span>
+<span class="pc" id="L359">					Logger.getLogger(&quot;open file&quot;).log(Level.SEVERE, &quot;open error&quot;);				}</span>
+<span class="fc" id="L360">			}).start();</span>
 		}
-<span class="fc" id="L348">	}</span>
+<span class="fc" id="L362">	}</span>
 
 	/*
 	 * provo a levare i codeSmells &gt; 7 paramentri
 	 */
-<span class="fc" id="L353">	public Libro(String[] info, LocalDate dataPubb,  String recensione, String descrizione,String [] prezzi) {</span>
-<span class="fc" id="L354">		this.infoGenerali=info;</span>
-<span class="fc" id="L355">		this.infoCostiDisp=prezzi;</span>
-<span class="fc" id="L356">		this.descrizione=descrizione;</span>
+<span class="fc" id="L367">	public Libro(String[] info, LocalDate dataPubb,  String recensione, String descrizione,String [] prezzi) {</span>
+<span class="fc" id="L368">		this.infoGenerali=info;</span>
+<span class="fc" id="L369">		this.infoCostiDisp=prezzi;</span>
+<span class="fc" id="L370">		this.descrizione=descrizione;</span>
 
-<span class="fc" id="L358">		this.recensione=recensione;</span>
-<span class="fc" id="L359">		this.dataPubb = dataPubb;</span>
+<span class="fc" id="L372">		this.recensione=recensione;</span>
+<span class="fc" id="L373">		this.dataPubb = dataPubb;</span>
 
-<span class="fc" id="L361">		this.titolo=info[0];</span>
-<span class="fc" id="L362">		this.codIsbn=info[1];</span>
-<span class="fc" id="L363">		this.editore=info[2];</span>
-<span class="fc" id="L364">		this.autore=info[3];</span>
-<span class="fc" id="L365">		this.lingua=info[4];</span>
-<span class="fc" id="L366">		this.categoria=info[5];</span>
-
-
-<span class="fc" id="L369">		this.nrPagine=Integer.parseInt(prezzi[0]);</span>
-<span class="fc" id="L370">		this.nrCopie=Integer.parseInt(prezzi[1]);</span>
-<span class="fc" id="L371">		this.disponibilita=Integer.parseInt(prezzi[2]);</span>
-<span class="fc" id="L372">		this.prezzo=Float.parseFloat(prezzi[3]);</span>
-<span class="fc" id="L373">		this.id=Integer.parseInt(prezzi[4]);</span>
+<span class="fc" id="L375">		this.titolo=info[0];</span>
+<span class="fc" id="L376">		this.codIsbn=info[1];</span>
+<span class="fc" id="L377">		this.editore=info[2];</span>
+<span class="fc" id="L378">		this.autore=info[3];</span>
+<span class="fc" id="L379">		this.lingua=info[4];</span>
+<span class="fc" id="L380">		this.categoria=info[5];</span>
 
 
+<span class="fc" id="L383">		this.nrPagine=Integer.parseInt(prezzi[0]);</span>
+<span class="fc" id="L384">		this.nrCopie=Integer.parseInt(prezzi[1]);</span>
+<span class="fc" id="L385">		this.disponibilita=Integer.parseInt(prezzi[2]);</span>
+<span class="fc" id="L386">		this.prezzo=Float.parseFloat(prezzi[3]);</span>
+<span class="fc" id="L387">		this.id=Integer.parseInt(prezzi[4]);</span>
 
-<span class="fc" id="L377">	}</span>
+
+
+<span class="fc" id="L391">	}</span>
 
 	public String[] getInfoGenerali() {
-<span class="fc" id="L380">		return infoGenerali;</span>
+<span class="fc" id="L394">		return infoGenerali;</span>
 	}
 
 	public void setInfoGenerali(String[] infoGenerali) {
-<span class="fc" id="L384">		this.infoGenerali = infoGenerali;</span>
-<span class="fc" id="L385">	}</span>
+<span class="fc" id="L398">		this.infoGenerali = infoGenerali;</span>
+<span class="fc" id="L399">	}</span>
 
 
 
 
 	public String[] getInfoCostiDisp() {
-<span class="fc" id="L391">		return infoCostiDisp;</span>
+<span class="fc" id="L405">		return infoCostiDisp;</span>
 	}
 
 	public void setInfoCostiDisp(String[] infoCostiDisp) {
-<span class="fc" id="L395">		this.infoCostiDisp = infoCostiDisp;</span>
-<span class="fc" id="L396">	}</span>
+<span class="fc" id="L409">		this.infoCostiDisp = infoCostiDisp;</span>
+<span class="fc" id="L410">	}</span>
 
 
 	public int getNrPagine() {
-<span class="fc" id="L400">		return nrPagine;</span>
+<span class="fc" id="L414">		return nrPagine;</span>
 	}
 
 	public void setNrPagine(int nrPagine) {
-<span class="fc" id="L404">		this.nrPagine = nrPagine;</span>
-<span class="fc" id="L405">	}</span>
+<span class="fc" id="L418">		this.nrPagine = nrPagine;</span>
+<span class="fc" id="L419">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

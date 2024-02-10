@@ -11,5 +11,4 @@
       <Button fx:id="raccoltaB" layoutX="240.0" layoutY="148.0" mnemonicParsing="false" onAction="#raccolta" prefHeight="49.0" prefWidth="117.0" text="Gestione Raccolta" textFill="#0a91ff" />
       <Button fx:id="buttonU" layoutX="431.0" layoutY="148.0" mnemonicParsing="false" onAction="#utenti" prefHeight="49.0" prefWidth="110.0" text="Gestione Utenti" textFill="#a5b911" />
       <Button fx:id="buttonL" layoutX="271.0" layoutY="269.0" mnemonicParsing="false" onAction="#logout" text="Logout" textFill="#fc0000" />
-   </children>
-</Pane>
+   </child
