@@ -62,7 +62,14 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
         assertNotNull(systemKeys);
     }
-
+    @Test
+     void testIncrementaDisp() throws SQLException
+    {
+        java.sql.Date data=new Date(2024,1,2);
+        l.setId(1);
+        lD.aggiornaData(l,data);
+        assertNotEquals(0,l.getId());
+    }
 
 
 

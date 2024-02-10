@@ -11,7 +11,6 @@ Id :	10titolo :	Il Fatto Quotidiano4ricavo totale :	30.0
 Id :	11titolo :	Il Fatto Quotidiano5ricavo totale :	32.0
 Id :	12titolo :	La gazzetta del profetaricavo totale :	-4.25
 Id :	14titolo :	giornale provaricavo totale :	225.0
-Id :	22titolo :	provo ad inserire un nuovo giornalericavo totale :	85.799995
 Id :	23titolo :	giornale provaricavo totale :	225.0
 Id :	24titolo :	provo ad inserire un nuovo giornalericavo totale :	85.799995
 Id :	25titolo :	giornale provaricavo totale :	225.0
@@ -19,3 +18,5 @@ Id :	26titolo :	provo ad inserire un nuovo giornalericavo totale :	85.799995
 Id :	27titolo :	giornale provaricavo totale :	225.0
 Id :	28titolo :	provo ad inserire un nuovo giornalericavo totale :	85.799995
 Id :	29titolo :	giornale provaricavo totale :	225.0
+Id :	30titolo :	provo ad inserire un nuovo giornalericavo totale :	85.799995
+Id :	31titolo :	giornale provaricavo totale :	225.0
