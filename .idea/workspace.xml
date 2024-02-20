@@ -4,7 +4,58 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="insert a comment" />
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="insert newdocumentazio">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/adminPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/adminPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aggiungiOggettoPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aggiungiOggettoPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aggiungiUtente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aggiungiUtente.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bsoRegister.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bsoRegister.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/compravendita.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/compravendita.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/configurations/bookCategories.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/configurations/bookCategories.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/configurations/configDb.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/configurations/configDb.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/configurations/magazineCategories.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/configurations/magazineCategories.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/download.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/download.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/homePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/homePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerPagamentoCC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerPagamentoCC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerReportPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/controller/ControllerReportPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/database/GenerateDaoReportClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/database/GenerateDaoReportClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/Fattura.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/Fattura.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/Negozio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/Negozio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/Pagamento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/Pagamento.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/TempUser$RuoliT.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/TempUser$RuoliT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/TempUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/TempUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/User$Ruoli.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/User$Ruoli.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/CategorieLibro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/CategorieLibro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/CategorieRivista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/CategorieRivista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Giornale.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Giornale.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Libro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Libro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Rivista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/laptop/model/raccolta/Rivista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/loginPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/loginPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/modificaOggettoPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modificaOggettoPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/modificaUtente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modificaUtente.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/modificaUtentePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modificaUtentePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pagamentoCC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pagamentoCC.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pagamentoContrassegno.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pagamentoContrassegno.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/paginaGestione.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/paginaGestione.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/raccoltaPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/raccoltaPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/registraUtente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/registraUtente.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/registrazioneOk.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/registrazioneOk.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/reportPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/reportPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resetPwd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resetPwd.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ricercaPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ricercaPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ricercaPerTipo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ricercaPerTipo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/scegliNegozio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/scegliNegozio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/userPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/userPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/visualizzaOrdine.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/visualizzaOrdine.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/visualizzaPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/visualizzaPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/visualizzaProfilo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/visualizzaProfilo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/bean/UserBean$Ruoli.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/bean/UserBean$Ruoli.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/servlet/ReportServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/servlet/ReportServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +63,9 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/exportToHTML" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -84,10 +138,10 @@
     &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/daniele/IdeaProjects/LibreriaFinale/src/main/webapp&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/daniele/Scrivania&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.14705884&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.49053627&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
@@ -119,7 +173,7 @@
       <recent name="laptop.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestCSVDao">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="laptop.view.Main" />
       <module name="LibreriaMaven" />
@@ -212,18 +266,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestCSVDao" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TestCSVDao" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.9-corretto-17.0.9-8336523bb0d9-9b5c8e75" />
-        <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-220112af" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -247,22 +293,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
-    </task>
-    <task id="LOCAL-00080" summary="modified servlet">
-      <option name="closed" value="true" />
-      <created>1705928886675</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1705928886676</updated>
-    </task>
-    <task id="LOCAL-00081" summary="modified servlet v2( fixed managament objects)">
-      <option name="closed" value="true" />
-      <created>1705933230917</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1705933230921</updated>
     </task>
     <task id="LOCAL-00082" summary="modified servlet v2( fixed managament objects)">
       <option name="closed" value="true" />
@@ -624,7 +654,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707931596127</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="delete old documentazio">
+      <option name="closed" value="true" />
+      <created>1708425194267</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1708425194269</updated>
+    </task>
+    <task id="LOCAL-00128" summary="insert newdocumentazio">
+      <option name="closed" value="true" />
+      <created>1708425480892</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1708425480892</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -633,6 +679,7 @@
     <option featureType="dependencySupport" implementationName="java:org.openjfx:javafx-base" />
     <option featureType="dependencySupport" implementationName="java:org.seleniumhq.selenium:selenium-java" />
     <option featureType="dependencySupport" implementationName="maven-packaging:war" />
+    <option featureType="com.intellij.configurationType" implementationName="com.poratu.idea.plugins.tomcat" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -652,8 +699,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="insert test v2" />
-    <MESSAGE value="insert test v3" />
     <MESSAGE value="insert test v4 (close each test selenium)" />
     <MESSAGE value="insert test v5 (request bundle)" />
     <MESSAGE value="insert test v5 (request bundle v2)" />
@@ -677,7 +722,9 @@
     <MESSAGE value="pulizia v7" />
     <MESSAGE value="fix v1" />
     <MESSAGE value="insert a comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="insert a comment" />
+    <MESSAGE value="delete old documentazio" />
+    <MESSAGE value="insert newdocumentazio" />
+    <option name="LAST_COMMIT_MESSAGE" value="insert newdocumentazio" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
