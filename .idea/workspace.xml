@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="fix v1" />
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="insert a comment" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -247,14 +247,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
-    </task>
-    <task id="LOCAL-00079" summary="removed gitlfs">
-      <option name="closed" value="true" />
-      <created>1705861367788</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1705861367788</updated>
     </task>
     <task id="LOCAL-00080" summary="modified servlet">
       <option name="closed" value="true" />
@@ -624,7 +616,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707581460824</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="insert a comment">
+      <option name="closed" value="true" />
+      <created>1707931596125</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1707931596127</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -652,7 +652,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="insert test v1" />
     <MESSAGE value="insert test v2" />
     <MESSAGE value="insert test v3" />
     <MESSAGE value="insert test v4 (close each test selenium)" />
@@ -677,7 +676,8 @@
     <MESSAGE value="Revert &quot;pulizia v3&quot;&#10;&#10;This reverts commit c1612b70" />
     <MESSAGE value="pulizia v7" />
     <MESSAGE value="fix v1" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix v1" />
+    <MESSAGE value="insert a comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="insert a comment" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
