@@ -1380,3 +1380,5 @@ Q.idea/sonarlint/securityhotspotstore/f/b/fbb602e3c5be7170f3bcfb0948ff23ec1cdd41
 Q.idea/sonarlint/securityhotspotstore/e/4/e43885a72f67d03979274ef8c77e3811b4eb4dfb,0/2/02f02503018efa4e4d9cc27f16764507ea09fd7c
 Å
 Q.idea/sonarlint/securityhotspotstore/e/d/edd55ca7ad774089fea02e09e30b48487132b922,f/0/f077e663b359ca5d80ee2c40edde149cc45c1ce7
+9
+	prova.txt,7/2/729d6da0dc90de52e1e0156e6b036e6743cfba7f
