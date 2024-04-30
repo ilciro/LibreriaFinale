@@ -109,8 +109,9 @@
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
-            <version>8.0.32</version>
+            <version>8.3.0</version>
         </dependency>
+
         <dependency>
             <groupId>com.itextpdf</groupId>
             <artifactId>itextpdf</artifactId>
@@ -122,11 +123,13 @@
 
         <!-- https://mvnrepository.com/artifact/jakarta.jstl -->
 
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.10.0</version>
+            <version>4.20.0</version>
         </dependency>
+
 
         <dependency>
             <groupId>org.glassfish.web</groupId>
@@ -145,7 +148,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
-            <version>4.10.0</version>
+            <version>4.20.0</version>
         </dependency>
 
 
