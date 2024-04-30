@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="insert a comment" />
+    <list default="true" id="9be01577-d3f2-434b-9c77-4ba81976524e" name="Changes" comment="modif pom">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,17 +30,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ilciro/LibreriaFinale&quot;,
+    &quot;accountId&quot;: &quot;82d8f7e3-7342-460f-bcf5-f46f7dba30ec&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="6cd4b47d-c203-49a2-909e-168bbbe02c87" />
-        <option name="url" value="https://github.com/ilciro/LibreriaFinale.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -217,14 +216,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.9-corretto-17.0.9-8336523bb0d9-9b5c8e75" />
-        <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-220112af" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -247,14 +238,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1698498083433</updated>
-    </task>
-    <task id="LOCAL-00080" summary="modified servlet">
-      <option name="closed" value="true" />
-      <created>1705928886675</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1705928886676</updated>
     </task>
     <task id="LOCAL-00081" summary="modified servlet v2( fixed managament objects)">
       <option name="closed" value="true" />
@@ -624,7 +607,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707931596127</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="modif pom">
+      <option name="closed" value="true" />
+      <created>1714496336462</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1714496336462</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -652,7 +643,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="insert test v2" />
     <MESSAGE value="insert test v3" />
     <MESSAGE value="insert test v4 (close each test selenium)" />
     <MESSAGE value="insert test v5 (request bundle)" />
@@ -677,7 +667,8 @@
     <MESSAGE value="pulizia v7" />
     <MESSAGE value="fix v1" />
     <MESSAGE value="insert a comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="insert a comment" />
+    <MESSAGE value="modif pom" />
+    <option name="LAST_COMMIT_MESSAGE" value="modif pom" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
