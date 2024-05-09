@@ -1,7 +1,0 @@
-
-
-java:S1130"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(É©ì·ıÿÿÿÿ8ªúª×1
-‹
-java:S1130"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(Ù¼Ò³8®úª×1
-
-java:S11304"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(§î–€üÿÿÿÿ8µúª×1

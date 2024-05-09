@@ -1,9 +1,0 @@
-
-u
-java:S1192K"SDefine a constant instead of duplicating this literal "/registrazione.jsp" 3 times.(Ô¡ı½şÿÿÿÿ8µêıÈ×1
-o
-java:S3776#"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(üª¼í8û°şÈ×1
-ƒ
-java:S1989b"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(¶úòÊüÿÿÿÿ8Œ±şÈ×1
-ƒ
-java:S1989e"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(¶úòÊüÿÿÿÿ8±şÈ×1
